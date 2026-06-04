@@ -1,0 +1,16 @@
+{
+  "fixture_notice": "Fake records for testing delta versioning mechanics only. Not classifier or normative evidence.",
+  "release_id": "fake-reference-v1",
+  "records": [
+    {"natural_key": "fake-ref-001", "object_type": "fake_reference_record", "payload": {"label": "Fake record 001", "group": "alpha", "value": "stable-001"}},
+    {"natural_key": "fake-ref-002", "object_type": "fake_reference_record", "payload": {"label": "Fake record 002", "group": "alpha", "value": "stable-002"}},
+    {"natural_key": "fake-ref-003", "object_type": "fake_reference_record", "payload": {"label": "Fake record 003", "group": "beta", "value": "old-value"}},
+    {"natural_key": "fake-ref-004", "object_type": "fake_reference_record", "payload": {"label": "Fake record 004", "group": "beta", "value": "stable-004"}},
+    {"natural_key": "fake-ref-005", "object_type": "fake_reference_record", "payload": {"label": "Fake record 005", "group": "gamma", "value": "stable-005"}},
+    {"natural_key": "fake-ref-006", "object_type": "fake_reference_record", "payload": {"label": "Fake record 006", "group": "gamma", "value": "stable-006"}},
+    {"natural_key": "fake-ref-007", "object_type": "fake_reference_record", "payload": {"label": "Fake record 007", "group": "delta", "value": "stable-007"}},
+    {"natural_key": "fake-ref-008", "object_type": "fake_reference_record", "payload": {"label": "Fake record 008", "group": "delta", "value": "stable-008"}},
+    {"natural_key": "fake-ref-009", "object_type": "fake_reference_record", "payload": {"label": "Fake record 009", "group": "epsilon", "value": "stable-009"}},
+    {"natural_key": "fake-ref-010", "object_type": "fake_reference_record", "payload": {"label": "Fake record 010", "group": "epsilon", "value": "deleted-in-v2"}}
+  ]
+}

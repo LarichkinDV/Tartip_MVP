@@ -1,0 +1,41 @@
+<KnowledgeGraph version="1.0" project="BIM5D Cost-Schedule Matching">
+  <Nodes>
+    <Node id="ModelElement" type="domain_entity"/>
+    <Node id="ModelElementProperty" type="domain_entity"/>
+    <Node id="KSIResultCode" type="classifier"/>
+    <Node id="KSIProcessCode" type="classifier"/>
+    <Node id="CalculationUnit" type="domain_entity"/>
+    <Node id="WorkType" type="classifier"/>
+    <Node id="GESNNorm" type="normative_entity"/>
+    <Node id="GESNResource" type="normative_entity"/>
+    <Node id="WorkQuantity" type="project_entity"/>
+    <Node id="WorkPackage" type="production_entity"/>
+    <Node id="ScheduleTask" type="planning_entity"/>
+    <Node id="ActualRecord" type="fact_entity"/>
+    <Node id="PlanFactComparison" type="analysis_entity"/>
+    <Node id="ControlDecision" type="management_entity"/>
+    <Node id="MatchingRule" type="rule_entity"/>
+  </Nodes>
+
+  <Edges>
+    <Edge from="ModelElement" to="ModelElementProperty" type="HAS_PROPERTY"/>
+    <Edge from="ModelElement" to="KSIResultCode" type="CLASSIFIED_AS"/>
+    <Edge from="MatchingRule" to="CalculationUnit" type="SELECTS"/>
+    <Edge from="CalculationUnit" to="WorkType" type="MAPS_TO"/>
+    <Edge from="CalculationUnit" to="GESNNorm" type="HAS_CANDIDATE_NORM"/>
+    <Edge from="ModelElement" to="WorkQuantity" type="GENERATES"/>
+    <Edge from="WorkQuantity" to="WorkPackage" type="AGGREGATED_IN"/>
+    <Edge from="WorkPackage" to="ScheduleTask" type="PLANNED_BY"/>
+    <Edge from="WorkPackage" to="ActualRecord" type="REPORTED_BY"/>
+    <Edge from="ScheduleTask" to="PlanFactComparison" type="PLAN_SOURCE"/>
+    <Edge from="ActualRecord" to="PlanFactComparison" type="FACT_SOURCE"/>
+    <Edge from="PlanFactComparison" to="ControlDecision" type="BASIS_FOR"/>
+  </Edges>
+
+  <ForbiddenEdges>
+    <ForbiddenEdge from="ModelElement" to="GESNNorm" type="DIRECT_MAPPING"/>
+    <ForbiddenEdge from="KSIResultCode" to="GESNNorm" type="DIRECT_SELECTION"/>
+    <ForbiddenEdge from="GESNNorm" to="ScheduleTask" type="TASK_PER_NORM"/>
+    <ForbiddenEdge from="CalculationUnit" to="ActualRecord" type="STORES_FACT_DATA"/>
+  </ForbiddenEdges>
+</KnowledgeGraph>

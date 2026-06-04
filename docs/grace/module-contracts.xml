@@ -1,0 +1,78 @@
+<ModuleContracts version="1.0">
+  <Module id="M-REFERENCE-GOVERNANCE" status="planned">
+    <Name>Reference Governance</Name>
+    <Responsibilities>
+      <Item>Maintain source manifests and import logs for reference data.</Item>
+      <Item>Reject LLM-generated content as evidence.</Item>
+      <Item>Reject user decisions as evidence for normative FSNB fields or official KSI codes.</Item>
+      <Item>Create structured questions when required evidence is missing.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>data/reference/inbox/** local user-provided files</Item>
+      <Item>data/reference/manifests/source-manifest.yml</Item>
+      <Item>rules/matching/*.yaml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>data/questions/*.yml</Item>
+      <Item>data/reference/reports/**</Item>
+    </Outputs>
+    <Invariants>
+      <Item>No source — no rule.</Item>
+      <Item>source_origin=llm_generated implies source_authority=forbidden.</Item>
+      <Item>Files in inbox are not trusted until accepted into raw with checksum.</Item>
+    </Invariants>
+  </Module>
+
+  <Module id="M-REFERENCE-VERSIONING" status="planned">
+    <Name>Reference Versioning</Name>
+    <Responsibilities>
+      <Item>Represent each imported source version as reference_release.</Item>
+      <Item>Represent stable logical records as reference_object.</Item>
+      <Item>Create reference_object_revision only when canonical payload hash changes, or records are added/deleted.</Item>
+      <Item>Create reference_change_set and reference_change_detail entries for added, changed, deleted, and unchanged records.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>Normalized reference release records</Item>
+      <Item>Canonical payload hashes</Item>
+    </Inputs>
+    <Outputs>
+      <Item>reference_release</Item>
+      <Item>reference_object</Item>
+      <Item>reference_object_revision</Item>
+      <Item>reference_change_set</Item>
+      <Item>reference_change_detail</Item>
+    </Outputs>
+    <Invariants>
+      <Item>Unchanged records reuse previous revisions.</Item>
+      <Item>Allowed operations are add, update, delete.</Item>
+      <Item>Allowed change types are added, changed, deleted, unchanged.</Item>
+    </Invariants>
+  </Module>
+
+  <Module id="M-MATCHING" status="planned">
+    <Name>Matching Rules</Name>
+    <Responsibilities>
+      <Item>Store draft and candidate matching rules with explicit evidence slots.</Item>
+      <Item>Prevent active status when required evidence is missing.</Item>
+      <Item>Track dependencies on reference objects and revisions.</Item>
+      <Item>Move rules to requires_norm_review when depended normative reference revisions change.</Item>
+    </Responsibilities>
+    <EvidenceRequirements>
+      <Item field="ksi_result_code" required_authority="classifier_authoritative"/>
+      <Item field="ksi_process_code" required_authority="classifier_authoritative"/>
+      <Item field="work_type" required_authority="project_authoritative"/>
+      <Item field="gesn_norm" required_authority="normative_authoritative"/>
+      <Item field="norm_unit" required_authority="normative_authoritative"/>
+      <Item field="included_works" required_authority="normative_authoritative"/>
+      <Item field="excluded_works" required_authority="normative_authoritative"/>
+      <Item field="resource_composition" required_authority="normative_authoritative"/>
+      <Item field="technical_part_reference" required_authority="normative_authoritative"/>
+    </EvidenceRequirements>
+    <Invariants>
+      <Item>ModelElement must not map directly to GESNNorm.</Item>
+      <Item>KSIResultCode must not directly select GESNNorm.</Item>
+      <Item>GESNNorm must not create ScheduleTask directly.</Item>
+      <Item>Missing evidence blocks active status.</Item>
+    </Invariants>
+  </Module>
+</ModuleContracts>

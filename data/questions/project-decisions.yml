@@ -1,0 +1,18 @@
+registry: project-decisions
+description: User decisions for project-only entities such as internal work types, work packages, grouping rules, and project naming.
+question_fields:
+  - id
+  - type
+  - status
+  - priority
+  - module
+  - topic
+  - question
+  - needed_for
+  - expected_input
+  - target_path
+  - blocks
+  - created_at
+  - resolved_at
+  - resolution
+questions: []

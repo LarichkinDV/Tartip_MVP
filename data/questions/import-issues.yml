@@ -1,0 +1,18 @@
+registry: import-issues
+description: Issues for local files that exist but cannot be imported or validated.
+question_fields:
+  - id
+  - type
+  - status
+  - priority
+  - module
+  - topic
+  - question
+  - needed_for
+  - expected_input
+  - target_path
+  - blocks
+  - created_at
+  - resolved_at
+  - resolution
+questions: []

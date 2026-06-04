@@ -1,0 +1,33 @@
+registry: normative-review-questions
+description: "Questions requiring review of normative applicability, technical parts, or official norm evidence."
+question_fields:
+  - id
+  - type
+  - status
+  - priority
+  - module
+  - topic
+  - question
+  - needed_for
+  - expected_input
+  - target_path
+  - blocks
+  - created_at
+  - resolved_at
+  - resolution
+questions:
+  -
+    id: NR-RULE-PARTITION-BRICK-120-REINF-001
+    type: normative_review_question
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Missing normative or classifier evidence"
+    question: "Provide official evidence references for missing matching rule evidence fields."
+    needed_for: rules/matching/partition_brick_120_reinf.yaml
+    expected_input: "source_id and normalized_record_id for: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type"
+    target_path: rules/matching/partition_brick_120_reinf.yaml
+    blocks: "rule activation"
+    created_at: 2026-06-04
+    resolved_at: null
+    resolution: null

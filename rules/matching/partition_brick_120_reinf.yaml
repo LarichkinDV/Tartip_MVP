@@ -1,0 +1,63 @@
+rule_id: partition_brick_120_reinf
+version: 0.1.0
+status: draft_requires_data
+status_reason: Required official classifier and normative evidence is not available in local reference data.
+scope:
+  description: Draft placeholder for a partition-related matching rule. It is not active evidence and must not be used for production matching.
+  source: project_draft
+evidence:
+  ksi_result_code:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: classifier_authoritative
+  ksi_process_code:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: classifier_authoritative
+  work_type:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: project_authoritative
+  gesn_norm:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+  norm_unit:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+  included_works:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+  excluded_works:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+  resource_composition:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+  technical_part_reference:
+    source_id: null
+    normalized_record_id: null
+    evidence_status: missing
+    required_authority: normative_authoritative
+review:
+  required: true
+  required_questions:
+    - DR-REF-KSI-001
+    - DR-REF-FSNB-001
+    - NR-RULE-PARTITION-BRICK-120-REINF-001
+  can_be_active_without_evidence: false
+notes:
+  - Do not add KSI or GESN codes until they are present in local normalized reference data with manifest evidence.
+  - Do not copy full normative content into this rule; reference source_id and normalized_record_id instead.

@@ -1,0 +1,11 @@
+{
+  "fixture_notice": "Fake dependency fixture for review propagation tests only. Not classifier or normative evidence.",
+  "dependencies": [
+    {
+      "rule_id": "partition_brick_120_reinf",
+      "natural_key": "fake-ref-003",
+      "dependency_type": "normative_candidate_fixture",
+      "required_review_on_change": true
+    }
+  ]
+}

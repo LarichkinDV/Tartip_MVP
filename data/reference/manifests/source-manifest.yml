@@ -1,0 +1,84 @@
+manifest_version: 1
+description: Source registry for trusted reference data. Empty sources mean no accepted official reference data is available locally.
+source_fields:
+  - source_id
+  - source_type
+  - title
+  - authority
+  - official_url
+  - source_origin
+  - source_authority
+  - local_original_path
+  - raw_immutable_path
+  - file_name
+  - file_size_bytes
+  - checksum_sha256
+  - acquired_by
+  - acquired_at
+  - declared_version
+  - detected_version
+  - valid_from
+  - valid_to
+  - license_or_usage_note
+  - import_status
+  - imported_at
+  - imported_by
+  - parser_version
+  - schema_detected
+  - row_count
+  - error_count
+  - status
+  - notes
+source_template:
+  source_id: null
+  source_type: null
+  title: null
+  authority: null
+  official_url: null
+  source_origin: null
+  source_authority: null
+  local_original_path: null
+  raw_immutable_path: null
+  file_name: null
+  file_size_bytes: null
+  checksum_sha256: null
+  acquired_by: null
+  acquired_at: null
+  declared_version: null
+  detected_version: null
+  valid_from: null
+  valid_to: null
+  license_or_usage_note: null
+  import_status: null
+  imported_at: null
+  imported_by: null
+  parser_version: null
+  schema_detected: null
+  row_count: null
+  error_count: null
+  status: null
+  notes: null
+allowed_values:
+  source_origin:
+    - official_machine_readable
+    - official_pdf
+    - official_web_page
+    - official_manual_transcription
+    - licensed_software_export
+    - project_dictionary
+    - user_decision
+    - secondary_source
+    - llm_generated
+  source_authority:
+    - normative_authoritative
+    - normative_authoritative_requires_review
+    - classifier_authoritative
+    - project_authoritative
+    - project_authoritative_only
+    - review_only
+    - forbidden
+validation_rules:
+  - If source_origin is llm_generated, source_authority must be forbidden.
+  - Sources without checksum_sha256 cannot be accepted into raw or normalized layers.
+  - Files in inbox are not trusted until accepted into raw with checksum_sha256.
+sources: []

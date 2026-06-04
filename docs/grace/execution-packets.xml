@@ -1,0 +1,53 @@
+<ExecutionPackets version="1.0">
+  <Packet id="EP-001-INFRA" status="planned">
+    <Name>Prepare local infrastructure</Name>
+    <Goal>Create a local-first project skeleton for BIM5D Cost-Schedule Matching.</Goal>
+    <Scope>
+      <Item>Create repository structure</Item>
+      <Item>Create Docker Compose</Item>
+      <Item>Create backend skeleton</Item>
+      <Item>Create frontend skeleton</Item>
+      <Item>Create Makefile</Item>
+      <Item>Create .env.example</Item>
+      <Item>Create backup scripts</Item>
+      <Item>Create CI skeleton</Item>
+    </Scope>
+    <NonGoals>
+      <Item>Do not implement business matching logic</Item>
+      <Item>Do not connect real FNSB databases</Item>
+      <Item>Do not create direct ModelElement to GESNNorm mapping</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-002-REFERENCE-GOVERNANCE" status="planned">
+    <Name>Reference data governance</Name>
+    <Goal>Prevent unsupported, invented, or LLM-generated classifier and normative data from becoming evidence for matching rules.</Goal>
+    <Scope>
+      <Item>Create reference data lifecycle folders</Item>
+      <Item>Create source manifest and import log</Item>
+      <Item>Create question registries</Item>
+      <Item>Define No source — no rule policy</Item>
+      <Item>Validate matching rule evidence requirements</Item>
+    </Scope>
+    <NonGoals>
+      <Item>Do not download external reference data</Item>
+      <Item>Do not invent KSI or GESN codes</Item>
+      <Item>Do not activate matching rules without evidence</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-003-REFERENCE-VERSIONING" status="planned">
+    <Name>Delta-based reference versioning</Name>
+    <Goal>Represent reference releases as logical objects and revisions so unchanged records are not duplicated.</Goal>
+    <Scope>
+      <Item>Document reference release/object/revision/change schemas</Item>
+      <Item>Create canonical payload hashing utility</Item>
+      <Item>Create release comparison utility</Item>
+      <Item>Add fake fixtures for versioning checks</Item>
+      <Item>Track matching rule dependencies on reference object revisions</Item>
+    </Scope>
+    <NonGoals>
+      <Item>Do not import real FSNB or KSI data</Item>
+      <Item>Do not create database migrations before database layer is ready</Item>
+      <Item>Do not duplicate unchanged reference records across releases</Item>
+    </NonGoals>
+  </Packet>
+</ExecutionPackets>

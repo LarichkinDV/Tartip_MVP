@@ -1,0 +1,1 @@
+"""Tartip backend application package."""

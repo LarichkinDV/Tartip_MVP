@@ -1,0 +1,34 @@
+<VerificationPlan version="1.0">
+  <Scenario id="V-REF-GOV-001" module="M-REFERENCE-GOVERNANCE">
+    <Name>llm_generated evidence is rejected</Name>
+    <Expected>Any source with source_origin=llm_generated must have source_authority=forbidden and must not be used as matching evidence.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-GOV-002" module="M-REFERENCE-GOVERNANCE">
+    <Name>user_decision cannot validate normative fields</Name>
+    <Expected>User decisions may validate project-only entities but cannot validate GESN code, norm unit, included works, excluded works, resource composition, coefficients, FSNB version, or technical part references.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-GOV-003" module="M-MATCHING">
+    <Name>rule with missing GESN evidence cannot be active</Name>
+    <Expected>Validation fails if a matching rule has status=active and missing GESN or other required evidence.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-GOV-004" module="M-REFERENCE-GOVERNANCE">
+    <Name>file in inbox is not trusted until accepted into raw with checksum</Name>
+    <Expected>Files in data/reference/inbox are not trusted evidence until accepted into raw with checksum_sha256 and manifest metadata.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-VERSION-001" module="M-REFERENCE-VERSIONING">
+    <Name>importing identical records across releases does not create duplicate revisions</Name>
+    <Expected>Records with identical canonical payload hashes reuse previous revisions.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-VERSION-002" module="M-REFERENCE-VERSIONING">
+    <Name>changing one reference record creates one new object revision and one change_set entry</Name>
+    <Expected>A changed canonical payload creates exactly one new revision and one change_set entry for that logical object.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-VERSION-003" module="M-REFERENCE-VERSIONING">
+    <Name>deleted reference record creates delete operation</Name>
+    <Expected>A record absent from the next release creates a delete operation and deleted change type.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-VERSION-004" module="M-MATCHING">
+    <Name>matching rule depending on changed normative object is marked requires_norm_review</Name>
+    <Expected>When a depended normative reference object changes, the matching rule is marked requires_norm_review before reactivation.</Expected>
+  </Scenario>
+</VerificationPlan>
