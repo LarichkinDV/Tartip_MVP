@@ -75,4 +75,154 @@
       <Item>Missing evidence blocks active status.</Item>
     </Invariants>
   </Module>
+  <Module id="M-PROJECT-PLANNING-AND-ACCEPTANCE" status="ready_for_acceptance">
+    <Name>Project Planning And Acceptance</Name>
+    <Responsibilities>
+      <Item>Maintain project plan, artifact registry, traceability matrix, decision log, and status report.</Item>
+      <Item>Prepare acceptance reports for execution packets.</Item>
+      <Item>Generate acceptance and user action dashboards from source files.</Item>
+      <Item>Generate verification dashboards from verification plans and monthly test protocols.</Item>
+      <Item>Validate artifact paths, expected artifacts, acceptance reports, and acceptance ownership rules.</Item>
+      <Item>Validate accepted artifact protection and user approval requirements.</Item>
+      <Item>Prevent Codex from marking packets accepted.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/grace/execution-packets.xml</Item>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/project-plan.md</Item>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+      <Item>data/questions/*.yml</Item>
+      <Item>docs/monthly/**/*.md</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/project-plan.md</Item>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/traceability-matrix.md</Item>
+      <Item>docs/decision-log.md</Item>
+      <Item>docs/status-report.md</Item>
+      <Item>docs/acceptance-dashboard.md</Item>
+      <Item>docs/acceptance-dashboard.yml</Item>
+      <Item>docs/user-action-dashboard.md</Item>
+      <Item>docs/user-action-dashboard.yml</Item>
+      <Item>docs/verification-dashboard.md</Item>
+      <Item>docs/verification-dashboard.yml</Item>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+    </Outputs>
+    <Invariants>
+      <Item>Codex may set ready_for_acceptance but must not set accepted.</Item>
+      <Item>accepted_by must not be Codex.</Item>
+      <Item>accepted status requires acceptance_decision=accepted and non-empty accepted_by.</Item>
+      <Item>decided_by must not be Codex.</Item>
+      <Item>Accepted artifacts are protected and require explicit user approval before material modification.</Item>
+      <Item>Manual verification checks must not be marked checked or passed by Codex.</Item>
+      <Item>checked_by must not be Codex.</Item>
+      <Item>Every created artifact must be registered in docs/artifact-registry.yml.</Item>
+    </Invariants>
+  </Module>
+  <Module id="M-DISSERTATION-SYNC" status="ready_for_acceptance">
+    <Name>Dissertation Synchronization</Name>
+    <Responsibilities>
+      <Item>Classify Tartip execution packet impact on dissertation sections.</Item>
+      <Item>Maintain dissertation impact log and section update queue.</Item>
+      <Item>Generate controlled prompts for user review.</Item>
+      <Item>Validate prompt metadata, forbidden claims, and DOCX update guardrails.</Item>
+      <Item>Prepare acceptance report for dissertation synchronization artifacts.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>execution packet results</Item>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/dissertation/dissertation-artifact-map.yml</Item>
+      <Item>docs/dissertation/dissertation-impact-log.yml</Item>
+      <Item>docs/dissertation/section-update-queue.yml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>impact entries</Item>
+      <Item>generated prompts</Item>
+      <Item>prompt validation reports</Item>
+      <Item>docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>direct DOCX editing without explicit user request</Item>
+      <Item>bibliography renumbering without explicit user request</Item>
+      <Item>claiming Codex/GRACE as scientific result</Item>
+      <Item>marking dissertation updates accepted</Item>
+      <Item>modifying accepted artifacts without user approval</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>DOCX update requires accepted markdown patch and explicit user request.</Item>
+      <Item>New bibliography sources require citation requests before bibliography changes.</Item>
+      <Item>Forbidden claims must not appear in generated prompts as assertions.</Item>
+      <Item>accepted_by must not be Codex.</Item>
+    </Invariants>
+  </Module>
+  <Module id="M-CODEX-SPEC-AUDIT" status="ready_for_acceptance">
+    <Name>Codex Specification Audit</Name>
+    <Responsibilities>
+      <Item>Maintain audit profile, audit reports, language policy, and audit findings registry.</Item>
+      <Item>Check Codex guardrails for domain logic, reference evidence, acceptance ownership, dashboard integrity, verification ownership, monthly planning, and dissertation sync.</Item>
+      <Item>Preserve existing user statuses and resolutions in audit-findings.yml.</Item>
+      <Item>Surface open audit findings in the user action dashboard.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>AGENTS.md</Item>
+      <Item>docs/grace/*.xml</Item>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/*-dashboard.yml</Item>
+      <Item>docs/monthly/monthly-plan.yml</Item>
+      <Item>docs/dissertation/**</Item>
+      <Item>README.md</Item>
+      <Item>CHANGELOG.md</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/audit/codex-spec-audit.md</Item>
+      <Item>docs/audit/language-audit-report.md</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+      <Item>docs/user-action-dashboard.md</Item>
+      <Item>docs/user-action-dashboard.yml</Item>
+    </Outputs>
+    <Invariants>
+      <Item>Audit-first packets must not mass-rewrite existing documents.</Item>
+      <Item>Medium and low language findings must not block make check.</Item>
+      <Item>Critical findings must block the corresponding audit command.</Item>
+      <Item>Accepted/protected artifacts must not be modified without user approval.</Item>
+      <Item>Audit scripts must not reset acknowledged, fixed, accepted_risk, false_positive, blocked, or requires_user_approval finding statuses to open.</Item>
+      <Item>User-facing audit reports must be written in Russian where possible.</Item>
+    </Invariants>
+  </Module>
+  <Module id="M-GIT-WORKFLOW" status="ready_for_acceptance">
+    <Name>Git Workflow Discipline</Name>
+    <Responsibilities>
+      <Item>Document branch naming, branch switching, merge readiness, merge prohibitions, and forbidden Git files.</Item>
+      <Item>Validate current Git state in advisory and strict modes without mutating Git state.</Item>
+      <Item>Warn about mixed execution packet scopes in the working tree.</Item>
+      <Item>Prevent merge readiness when acceptance is pending or user approval is missing.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>git branch --show-current</Item>
+      <Item>git status --porcelain</Item>
+      <Item>docs/grace/execution-packets.xml</Item>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/git-workflow.md</Item>
+      <Item>scripts/validate_git_workflow.py</Item>
+      <Item>Git workflow warnings and errors</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>git merge</Item>
+      <Item>git add</Item>
+      <Item>git commit</Item>
+      <Item>git push</Item>
+      <Item>branch deletion</Item>
+      <Item>adding secrets, dumps, real DOCX/PDF dissertation files, or real normative bases to Git</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Branch names should follow ep-&lt;number&gt;-&lt;short-slug&gt; unless a documented exception exists.</Item>
+      <Item>Merge requires acceptance_decision=accepted and accepted_by not empty.</Item>
+      <Item>accepted_by must not be Codex.</Item>
+      <Item>Advisory mode must not fail only because of warnings in the current dirty baseline.</Item>
+      <Item>Strict mode may fail on warnings before merge preparation.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>

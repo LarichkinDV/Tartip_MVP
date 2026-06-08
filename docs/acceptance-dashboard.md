@@ -1,0 +1,72 @@
+# Единое окно приемки проекта Tartip
+
+Дата обновления: 2026-06-08
+
+## 1. Сводка
+
+| Статус | Количество |
+|---|---:|
+| ready_for_acceptance | 9 |
+| accepted | 1 |
+| needs_revision | 0 |
+| rejected | 0 |
+| blocked | 0 |
+| pending | 8 |
+| protected_accepted_artifacts | 0 |
+
+## 2. Требуют приемки
+
+| Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
+|---|---|---|---|---|---|---|
+| - [ ] требует проверки | EP-002-REFERENCE-GOVERNANCE | Reference data governance | Acceptance criteria and artifacts | docs/grace/execution-packets.xml, docs/grace/knowledge-graph.xml, docs/grace/module-contracts.xml, docs/grace/verification-plan.xml, ... | make validate-reference, make generate-data-questions | [docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md](docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md) |
+| - [ ] требует проверки | EP-003-REFERENCE-VERSIONING | Delta-based reference versioning | Acceptance criteria and artifacts | docs/grace/execution-packets.xml, docs/grace/module-contracts.xml, docs/grace/verification-plan.xml, docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md, ... | make compare-reference-fixtures, source .venv/bin/activate && make test | [docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md](docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md) |
+| - [ ] требует проверки | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Project planning and acceptance contour | Acceptance criteria and artifacts | AGENTS.md, docs/grace/execution-packets.xml, docs/grace/verification-plan.xml, docs/grace/README.md, ... | make validate-plan, make check, make validate-reference, source .venv/bin/activate && python -m pytest | [docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md](docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md) |
+| - [ ] требует проверки | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | Acceptance criteria and artifacts | docs/grace/execution-packets.xml, docs/grace/verification-plan.xml, docs/grace/README.md, scripts/validate_project_plan.py, ... | make generate-dashboards, make validate-plan, make check, make validate-reference, source .venv/bin/activate && python -m pytest | [docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md](docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md) |
+| - [ ] требует проверки | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | Acceptance criteria and artifacts | docs/grace/execution-packets.xml, docs/grace/module-contracts.xml, docs/grace/verification-plan.xml, docs/grace/README.md, ... | - | [docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md](docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md) |
+| - [ ] требует проверки | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | Acceptance criteria and artifacts | docs/dissertation/README.md, docs/dissertation/dissertation-sync-plan.md, docs/dissertation/dissertation-impact-log.yml, docs/dissertation/dissertation-artifact-map.yml, ... | make validate-dissertation-sync, make validate-dissertation-prompts, make generate-dissertation-prompts, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, source .venv/bin/activate && make lint, source .venv/bin/activate && make test | [docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md](docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) |
+| - [ ] требует проверки | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | Acceptance criteria and artifacts | docs/audit/README.md, docs/audit/codex-spec-audit.md, docs/audit/codex-spec-audit.yml, docs/audit/language-policy.md, ... | make audit-codex-spec, make audit-language, make validate-audit, make audit, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, make validate-reference, pytest | [docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md](docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) |
+| - [ ] требует проверки | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Acceptance criteria and artifacts | docs/git-workflow.md, scripts/validate_git_workflow.py, docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | make validate-git-workflow, make audit, make validate-plan, make check | [docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
+
+## 3. Принятые задачи
+
+| Пакет | Наименование | Принял | Дата | Комментарий | Защита |
+|---|---|---|---|---|---|
+| EP-001-INFRA | Prepare local infrastructure | Дмитрий | 2026-06-08 | Принято. Проверки make lint, make test и make check выполнены успешно. Pytest: 3 passed, 1 warning FastAPI/Starlette/httpx. Docker Desktop установлен. Базовые образы python:3.12-slim и node:22-alpine загружены. Docker Compose build backend/frontend выполнен успешно. Локальный стек поднят через docker compose up -d: postgres healthy, backend/frontend/adminer started. Endpoint /health проверен с хоста: HTTP 200 OK, service tartip-backend, environment local. После проверки стек корректно остановлен через docker compose down. | protected |
+
+## 4. Защищенные принятые артефакты
+
+| Артефакт | Пакет | Принял | Дата | Политика изменения |
+|---|---|---|---|---|
+| - | - | - | - | Нет accepted artifacts |
+
+## 5. Требуют доработки
+
+| Пакет | Причина | Что доработать | Детальный отчет |
+|---|---|---|---|
+| - | - | - | - |
+
+## 6. Заблокированные задачи
+
+| Пакет | Причина блокировки | Что требуется | Детальный отчет |
+|---|---|---|---|
+| - | - | - | - |
+
+## 7. Как принять задачу
+
+1. Открыть детальный acceptance report.
+2. Проверить артефакты.
+3. Запустить команды проверки.
+4. Заполнить решение пользователя.
+5. Не указывать Codex в качестве accepted_by / decided_by.
+
+## 8. Как изменить принятый артефакт
+
+1. Не изменять accepted artifact напрямую.
+2. Создать change request.
+3. Указать причину изменения.
+4. Указать impact analysis.
+5. Получить согласование пользователя.
+6. Создать новую ревизию или отдельный пакет изменения.
+7. Провести повторную приемку.
+
+Состояние хранится в YAML dashboard и acceptance reports, а не только в Markdown-чекбоксах.

@@ -9,10 +9,19 @@ from reference_utils import load_data
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SOURCE_MANIFEST = PROJECT_ROOT / "data" / "reference" / "manifests" / "source-manifest.yml"
+SOURCE_MANIFEST = (
+    PROJECT_ROOT / "data" / "reference" / "manifests" / "source-manifest.yml"
+)
 RULES_DIR = PROJECT_ROOT / "rules" / "matching"
 
-ACCEPTED_STATUSES = {"accepted", "raw_accepted", "normalized", "active", "trusted", "imported"}
+ACCEPTED_STATUSES = {
+    "accepted",
+    "raw_accepted",
+    "normalized",
+    "active",
+    "trusted",
+    "imported",
+}
 NORMATIVE_FIELDS = {
     "gesn_norm",
     "norm_unit",
@@ -62,11 +71,15 @@ def validate_sources(sources: list[dict[str, Any]]) -> list[str]:
         authority = source.get("source_authority")
         checksum = source.get("checksum_sha256")
         if origin == "llm_generated" and authority != "forbidden":
-            errors.append(f"{source_id}: llm_generated source_authority must be forbidden")
+            errors.append(
+                f"{source_id}: llm_generated source_authority must be forbidden"
+            )
         if is_accepted(source) and not checksum:
             errors.append(f"{source_id}: accepted sources require checksum_sha256")
         if is_accepted(source) and is_inbox_path(source.get("local_original_path")):
-            errors.append(f"{source_id}: inbox files are not trusted until copied to raw with checksum")
+            errors.append(
+                f"{source_id}: inbox files are not trusted until copied to raw with checksum"
+            )
         if is_accepted(source) and is_inbox_path(source.get("raw_immutable_path")):
             errors.append(f"{source_id}: raw_immutable_path cannot point to inbox")
     return errors
@@ -74,14 +87,20 @@ def validate_sources(sources: list[dict[str, Any]]) -> list[str]:
 
 def validate_rules(source_by_id: dict[str, dict[str, Any]]) -> list[str]:
     errors: list[str] = []
-    for rule_path in sorted(list(RULES_DIR.glob("*.yaml")) + list(RULES_DIR.glob("*.yml"))):
+    for rule_path in sorted(
+        list(RULES_DIR.glob("*.yaml")) + list(RULES_DIR.glob("*.yml"))
+    ):
         rule = load_data(rule_path)
         if not isinstance(rule, dict):
             errors.append(f"{rule_path}: rule must be a mapping")
             continue
         status = rule.get("status")
         evidence = rule.get("evidence") or {}
-        missing_fields = [field for field in REQUIRED_EVIDENCE_FIELDS if evidence_missing(evidence.get(field))]
+        missing_fields = [
+            field
+            for field in REQUIRED_EVIDENCE_FIELDS
+            if evidence_missing(evidence.get(field))
+        ]
         if status == "active" and missing_fields:
             errors.append(
                 f"{rule_path}: active rule has missing evidence fields: {', '.join(missing_fields)}"
@@ -94,12 +113,16 @@ def validate_rules(source_by_id: dict[str, dict[str, Any]]) -> list[str]:
                 continue
             source = source_by_id.get(str(source_id))
             if source is None:
-                errors.append(f"{rule_path}: evidence {field_name} references unknown source {source_id}")
+                errors.append(
+                    f"{rule_path}: evidence {field_name} references unknown source {source_id}"
+                )
                 continue
             origin = source.get("source_origin")
             authority = source.get("source_authority")
             if origin == "llm_generated" or authority == "forbidden":
-                errors.append(f"{rule_path}: evidence {field_name} uses forbidden source {source_id}")
+                errors.append(
+                    f"{rule_path}: evidence {field_name} uses forbidden source {source_id}"
+                )
             if field_name in NORMATIVE_FIELDS and (
                 origin == "user_decision" or authority in PROJECT_ONLY_AUTHORITIES
             ):
@@ -109,7 +132,9 @@ def validate_rules(source_by_id: dict[str, dict[str, Any]]) -> list[str]:
             if is_inbox_path(source.get("local_original_path")) or is_inbox_path(
                 source.get("raw_immutable_path")
             ):
-                errors.append(f"{rule_path}: evidence {field_name} points to an inbox source")
+                errors.append(
+                    f"{rule_path}: evidence {field_name} points to an inbox source"
+                )
     return errors
 
 
@@ -129,7 +154,9 @@ def main() -> int:
         for source in sources
         if isinstance(source, dict) and source.get("source_id")
     }
-    errors = validate_sources([source for source in sources if isinstance(source, dict)])
+    errors = validate_sources(
+        [source for source in sources if isinstance(source, dict)]
+    )
     errors.extend(validate_rules(source_by_id))
 
     if errors:

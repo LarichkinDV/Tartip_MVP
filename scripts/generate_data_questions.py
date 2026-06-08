@@ -6,7 +6,11 @@ from pathlib import Path
 from typing import Any
 
 from reference_utils import load_data, write_yaml
-from validate_reference_sources import REQUIRED_EVIDENCE_FIELDS, SOURCE_MANIFEST, evidence_missing
+from validate_reference_sources import (
+    REQUIRED_EVIDENCE_FIELDS,
+    SOURCE_MANIFEST,
+    evidence_missing,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -65,7 +69,14 @@ def accepted_source_types() -> set[str]:
         return set()
     manifest = load_data(SOURCE_MANIFEST)
     sources = manifest.get("sources", []) if isinstance(manifest, dict) else []
-    accepted_statuses = {"accepted", "raw_accepted", "normalized", "active", "trusted", "imported"}
+    accepted_statuses = {
+        "accepted",
+        "raw_accepted",
+        "normalized",
+        "active",
+        "trusted",
+        "imported",
+    }
     result: set[str] = set()
     for source in sources:
         if not isinstance(source, dict):
@@ -78,7 +89,9 @@ def accepted_source_types() -> set[str]:
     return result
 
 
-def data_requirement(question_id: str, source_type: str, target_path: str) -> dict[str, Any]:
+def data_requirement(
+    question_id: str, source_type: str, target_path: str
+) -> dict[str, Any]:
     today = date.today().isoformat()
     return {
         "id": question_id,
@@ -98,7 +111,9 @@ def data_requirement(question_id: str, source_type: str, target_path: str) -> di
     }
 
 
-def normative_review_question(rule_path: Path, missing_fields: list[str]) -> dict[str, Any]:
+def normative_review_question(
+    rule_path: Path, missing_fields: list[str]
+) -> dict[str, Any]:
     today = date.today().isoformat()
     rule_id = rule_path.stem.upper().replace("_", "-")
     return {
@@ -144,16 +159,30 @@ def main() -> int:
     added = 0
     for question_id, source_type, target_path in source_requirements:
         if source_type not in present_types:
-            added += int(add_question(data_requirements, data_requirement(question_id, source_type, target_path)))
+            added += int(
+                add_question(
+                    data_requirements,
+                    data_requirement(question_id, source_type, target_path),
+                )
+            )
 
-    for rule_path in sorted(list(RULES_DIR.glob("*.yaml")) + list(RULES_DIR.glob("*.yml"))):
+    for rule_path in sorted(
+        list(RULES_DIR.glob("*.yaml")) + list(RULES_DIR.glob("*.yml"))
+    ):
         rule = load_data(rule_path)
         evidence = rule.get("evidence", {}) if isinstance(rule, dict) else {}
         missing_fields = [
-            field for field in sorted(REQUIRED_EVIDENCE_FIELDS) if evidence_missing(evidence.get(field))
+            field
+            for field in sorted(REQUIRED_EVIDENCE_FIELDS)
+            if evidence_missing(evidence.get(field))
         ]
         if missing_fields:
-            added += int(add_question(normative_questions, normative_review_question(rule_path, missing_fields)))
+            added += int(
+                add_question(
+                    normative_questions,
+                    normative_review_question(rule_path, missing_fields),
+                )
+            )
 
     write_yaml(data_requirements_path, data_requirements)
     write_yaml(normative_questions_path, normative_questions)

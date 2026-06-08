@@ -1,0 +1,1301 @@
+verification_dashboard:
+  updated_at: 2026-06-08
+  source_files:
+    - docs/grace/verification-plan.xml
+    - docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+    - docs/acceptance-dashboard.yml
+    - docs/artifact-registry.yml
+  summary:
+    pending: 44
+    in_progress: 0
+    passed: 0
+    failed: 0
+    blocked: 0
+    requires_user_action: 0
+    not_applicable: 0
+  warnings:
+    []
+  verification_scenarios_count: 68
+  checks:
+    -
+      check_id: VT-EP-004-001
+      title: "Проверить наличие docs/project-plan.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-004-001
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/project-plan.md."
+        -
+          step: "Проверить, что файл существует и содержит текущий execution packet."
+      expected_result:
+        -
+          result: "docs/project-plan.md существует и доступен для ручной проверки."
+      artifacts:
+        -
+          path: docs/project-plan.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-004-002
+      title: "Проверить наличие docs/artifact-registry.yml"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-004-002
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/artifact-registry.yml."
+        -
+          step: "Проверить, что реестр содержит созданные артефакты."
+      expected_result:
+        -
+          result: "docs/artifact-registry.yml существует и содержит artifact registry."
+      artifacts:
+        -
+          path: docs/artifact-registry.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-004-003
+      title: "Проверить, что accepted_by не может быть Codex"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-004-011
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_project_plan.py."
+        -
+          step: "Проверить наличие запрета accepted_by=Codex."
+      expected_result:
+        -
+          result: "Валидация запрещает accepted_by=Codex."
+      artifacts:
+        -
+          path: scripts/validate_project_plan.py
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-004-004
+      title: "Проверить, что make validate-plan проходит"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-004-010
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-plan."
+      expected_result:
+        -
+          result: "Команда завершается с кодом 0."
+      artifacts:
+        -
+          path: scripts/validate_project_plan.py
+      commands:
+        -
+          command: "make validate-plan"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-005-001
+      title: "Проверить генерацию acceptance dashboard"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      related_requirement: REQ-009
+      related_acceptance_criterion: AC-EP-005-001
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make generate-acceptance-dashboard."
+      expected_result:
+        -
+          result: "docs/acceptance-dashboard.md и docs/acceptance-dashboard.yml обновлены без accepted от Codex."
+      artifacts:
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/acceptance-dashboard.yml
+      commands:
+        -
+          command: "make generate-acceptance-dashboard"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-005-002
+      title: "Проверить генерацию user action dashboard"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-005-003
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make generate-user-action-dashboard."
+      expected_result:
+        -
+          result: "docs/user-action-dashboard.md и docs/user-action-dashboard.yml обновлены без закрытия вопросов за пользователя."
+      artifacts:
+        -
+          path: docs/user-action-dashboard.md
+        -
+          path: docs/user-action-dashboard.yml
+      commands:
+        -
+          command: "make generate-user-action-dashboard"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-005-003
+      title: "Проверить, что accepted artifacts отображаются как protected"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-005-011
+      check_type: manual_acceptance_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance-dashboard.md."
+        -
+          step: "Проверить раздел защищенных принятых артефактов."
+      expected_result:
+        -
+          result: "Accepted artifacts отображаются как protected или явно указано, что accepted artifacts отсутствуют."
+      artifacts:
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/acceptance-dashboard.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-005-004
+      title: "Проверить, что open questions отображаются в user-action-dashboard"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      related_requirement: REQ-005
+      related_acceptance_criterion: AC-EP-005-006
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/user-action-dashboard.md."
+        -
+          step: "Сверить open вопросы с data/questions/*.yml."
+      expected_result:
+        -
+          result: "Все open/high priority вопросы видны в user action dashboard."
+      artifacts:
+        -
+          path: docs/user-action-dashboard.md
+        -
+          path: data/questions/data-requirements.yml
+        -
+          path: data/questions/normative-review-questions.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-001
+      title: "Проверить наличие monthly-plan.yml"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-001
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+      expected_result:
+        -
+          result: "monthly-plan.yml существует и описывает блок 2026-06."
+      artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-002
+      title: "Проверить, что месячный блок содержит ровно 3 задачи"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-002
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+        -
+          step: "Посчитать задачи в monthly_plan.tasks."
+      expected_result:
+        -
+          result: "В блоке 2026-06 указано ровно 3 задачи."
+      artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-003
+      title: "Проверить, что каждая задача имеет 15 человеко-часов"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-003
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+        -
+          step: "Проверить planned_hours у каждой задачи."
+      expected_result:
+        -
+          result: "Каждая из 3 задач имеет planned_hours: 15."
+      artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-004
+      title: "Проверить наличие БФТ"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-004
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/01-bft-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Документ БФТ существует и не содержит нормативных данных, придуманных Codex."
+      artifacts:
+        -
+          path: docs/monthly/2026-06/01-bft-reference-data-governance.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-005
+      title: "Проверить наличие ТЗ"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-005
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/02-technical-task-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Документ ТЗ существует и фиксирует задачи проверки без изменения доменной методики."
+      artifacts:
+        -
+          path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-006-006
+      title: "Проверить наличие протокола тестирования"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-006-006
+      check_type: manual_document_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/03-test-protocol-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Протокол тестирования существует и связан с verification dashboard."
+      artifacts:
+        -
+          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-007-001
+      title: "Проверить наличие verification-dashboard.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-007-VERIFICATION-DASHBOARD
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-007-001
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.md."
+      expected_result:
+        -
+          result: "verification-dashboard.md существует и содержит окно ручной проверки."
+      artifacts:
+        -
+          path: docs/verification-dashboard.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-007-002
+      title: "Проверить наличие verification-dashboard.yml"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-007-VERIFICATION-DASHBOARD
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-007-002
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.yml."
+      expected_result:
+        -
+          result: "verification-dashboard.yml существует и содержит checks."
+      artifacts:
+        -
+          path: docs/verification-dashboard.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-007-003
+      title: "Проверить, что manual checks не отмечены Codex как passed"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-007-VERIFICATION-DASHBOARD
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-007-006
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.yml."
+        -
+          step: "Проверить manual_* checks и user_result."
+      expected_result:
+        -
+          result: "Manual checks не имеют checked_by: Codex и не закрыты Codex."
+      artifacts:
+        -
+          path: docs/verification-dashboard.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-007-004
+      title: "Проверить, что checked_by не может быть Codex"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-007-VERIFICATION-DASHBOARD
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-007-007
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_verification_dashboard.py."
+        -
+          step: "Проверить запрет checked_by=Codex."
+      expected_result:
+        -
+          result: "Валидатор запрещает checked_by=Codex."
+      artifacts:
+        -
+          path: scripts/validate_verification_dashboard.py
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-007-005
+      title: "Проверить, что verification dashboard связан с протоколом тестирования"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-007-VERIFICATION-DASHBOARD
+      related_requirement: REQ-010
+      related_acceptance_criterion: AC-EP-007-010
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/03-test-protocol-reference-data-governance.md."
+        -
+          step: "Проверить ссылки на docs/verification-dashboard.md и check_id."
+      expected_result:
+        -
+          result: "Протокол тестирования содержит раздел про окно ручной проверки и check_id."
+      artifacts:
+        -
+          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+        -
+          path: docs/verification-dashboard.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-001
+      title: "Проверить наличие docs/dissertation/README.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-011
+      related_acceptance_criterion: AC-EP-008-001
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/dissertation/README.md."
+      expected_result:
+        -
+          result: "docs/dissertation/README.md существует и описывает dissertation sync workflow."
+      artifacts:
+        -
+          path: docs/dissertation/README.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-002
+      title: "Проверить наличие forbidden-claims.yml"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-011
+      related_acceptance_criterion: AC-EP-008-005
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/dissertation/prompt-profiles/forbidden-claims.yml."
+      expected_result:
+        -
+          result: "forbidden-claims.yml содержит FC-001..FC-007 и запрет автоматического выбора ГЭСН по BIM-элементу."
+      artifacts:
+        -
+          path: docs/dissertation/prompt-profiles/forbidden-claims.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-003
+      title: "Проверить запрет docx_update prompt без accepted patch"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-011
+      related_acceptance_criterion: AC-EP-008-009
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-dissertation-prompts."
+      expected_result:
+        -
+          result: "Валидатор запрещает docx_update prompt без accepted patch."
+      artifacts:
+        -
+          path: scripts/validate_dissertation_prompts.py
+      commands:
+        -
+          command: "make validate-dissertation-prompts"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-004
+      title: "Проверить, что prompts не содержат forbidden claims"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-011
+      related_acceptance_criterion: AC-EP-008-009
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-dissertation-prompts."
+      expected_result:
+        -
+          result: "Валидатор запрещает generated prompts с forbidden claims."
+      artifacts:
+        -
+          path: scripts/validate_dissertation_prompts.py
+        -
+          path: docs/dissertation/prompt-profiles/forbidden-claims.yml
+      commands:
+        -
+          command: "make validate-dissertation-prompts"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-005
+      title: "Проверить, что Codex не создал DOCX"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-011
+      related_acceptance_criterion: AC-EP-008-013
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-dissertation-sync."
+      expected_result:
+        -
+          result: "Валидатор не находит DOCX/PDF в thesis/."
+      artifacts:
+        -
+          path: scripts/validate_dissertation_sync.py
+        -
+          path: thesis/.gitkeep
+      commands:
+        -
+          command: "make validate-dissertation-sync"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-006
+      title: "Проверить, что acceptance_decision остается pending"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-008-015
+      check_type: manual_acceptance_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md."
+        -
+          step: "Проверить блок Решение пользователя."
+      expected_result:
+        -
+          result: "acceptance_decision остается pending, accepted_by не заполнен Codex."
+      artifacts:
+        -
+          path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-008-007
+      title: "Проверить защиту accepted/protected artifacts"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-008-DISSERTATION-PROMPT-GENERATION
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-008-016
+      check_type: manual_acceptance_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance-dashboard.md."
+        -
+          step: "Проверить раздел защищенных принятых артефактов."
+      expected_result:
+        -
+          result: "Accepted/protected artifacts не изменены без user approval или явно указано, что таких артефактов нет."
+      artifacts:
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/artifact-registry.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-001
+      title: "Проверить наличие audit contour"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-001
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-audit."
+      expected_result:
+        -
+          result: "Все обязательные audit-файлы существуют и валидны."
+      artifacts:
+        -
+          path: docs/audit/README.md
+        -
+          path: docs/audit/codex-spec-audit.md
+        -
+          path: docs/audit/codex-spec-audit.yml
+        -
+          path: docs/audit/language-policy.md
+        -
+          path: docs/audit/language-audit-report.md
+        -
+          path: docs/audit/audit-findings.yml
+      commands:
+        -
+          command: "make validate-audit"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-002
+      title: "Проверить Codex spec audit script"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-006
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-codex-spec."
+      expected_result:
+        -
+          result: "Скрипт проверяет domain, acceptance, protection, dashboards, verification, monthly и dissertation guardrails."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: docs/audit/codex-spec-audit.md
+      commands:
+        -
+          command: "make audit-codex-spec"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-003
+      title: "Проверить language audit script"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-007
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-language."
+      expected_result:
+        -
+          result: "Скрипт создает language findings и не падает на medium/low пользовательских англоязычных фрагментах."
+      artifacts:
+        -
+          path: scripts/audit_language_policy.py
+        -
+          path: docs/audit/language-audit-report.md
+      commands:
+        -
+          command: "make audit-language"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-004
+      title: "Проверить Language policy в AGENTS.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-009
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Language policy."
+      expected_result:
+        -
+          result: "AGENTS.md содержит Language policy с исключениями для technical identifiers."
+      artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-005
+      title: "Проверить Audit discipline в AGENTS.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-010
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Audit discipline."
+      expected_result:
+        -
+          result: "AGENTS.md содержит audit-first/read-mostly discipline и запрет mass rewrite."
+      artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-006
+      title: "Проверить запрет ModelElement -> GESNNorm в audit"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-001
+      related_acceptance_criterion: AC-EP-009-011
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-codex-spec."
+      expected_result:
+        -
+          result: "Отсутствие forbidden edge ModelElement -> GESNNorm создает critical finding."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: docs/grace/knowledge-graph.xml
+      commands:
+        -
+          command: "make audit-codex-spec"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-007
+      title: "Проверить запрет Codex в user-owned fields"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-008
+      related_acceptance_criterion: AC-EP-009-012
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-codex-spec."
+      expected_result:
+        -
+          result: "accepted_by, decided_by, checked_by и answered_by не могут быть Codex."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+      commands:
+        -
+          command: "make audit-codex-spec"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-008
+      title: "Проверить preservation audit findings"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-017
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть scripts/audit_codex_spec.py и scripts/audit_language_policy.py."
+        -
+          step: "Проверить, что merge_findings сохраняет status, resolution, resolved_by и resolved_at."
+      expected_result:
+        -
+          result: "Audit scripts preserve existing user resolutions in audit-findings.yml."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: scripts/audit_language_policy.py
+        -
+          path: docs/audit/audit-findings.yml
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-009
+      title: "Проверить, что language findings не блокируют make check"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-021
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make check."
+      expected_result:
+        -
+          result: "Medium/low AUD-LANG-001 findings фиксируются, но не блокируют make check."
+      artifacts:
+        -
+          path: Makefile
+        -
+          path: scripts/audit_language_policy.py
+      commands:
+        -
+          command: "make check"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-009-010
+      title: "Проверить, что EP-009 не mass-rewrite packet"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-009-CODEX-SPEC-AUDIT
+      related_requirement: REQ-012
+      related_acceptance_criterion: AC-EP-009-019
+      check_type: manual_acceptance_review
+      priority: normal
+      status: pending
+      how_to_check:
+        -
+          step: "Проверить git diff."
+        -
+          step: "Убедиться, что изменения ограничены audit contour, scripts, GRACE registration, dashboards, plans, README и CHANGELOG."
+      expected_result:
+        -
+          result: "EP-009 не выполняет массовую русификацию существующих документов."
+      artifacts:
+        -
+          path: docs/audit/README.md
+        -
+          path: docs/audit/language-audit-report.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-001
+      title: "Проверить Git workflow validator"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-003
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-git-workflow."
+      expected_result:
+        -
+          result: "Advisory validator завершается с кодом 0 или фиксирует documented warning без Git mutations."
+      artifacts:
+        -
+          path: scripts/validate_git_workflow.py
+        -
+          path: Makefile
+      commands:
+        -
+          command: "make validate-git-workflow"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-002
+      title: "Проверить Git workflow discipline в AGENTS.md"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-001
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Git workflow discipline."
+      expected_result:
+        -
+          result: "AGENTS.md описывает branch creation, dirty tree, merge gate и forbidden files."
+      artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-003
+      title: "Проверить branch naming policy"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-004
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/git-workflow.md."
+      expected_result:
+        -
+          result: "Документ фиксирует формат ep-<number>-<short-slug>."
+      artifacts:
+        -
+          path: docs/git-workflow.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-004
+      title: "Проверить merge policy"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-005
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть docs/git-workflow.md и AGENTS.md."
+      expected_result:
+        -
+          result: "Merge в main разрешен только после accepted packet, make check, audit gate и explicit user approval."
+      artifacts:
+        -
+          path: docs/git-workflow.md
+        -
+          path: AGENTS.md
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-005
+      title: "Проверить запрет merge без acceptance"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-006
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-codex-spec."
+      expected_result:
+        -
+          result: "Audit фиксирует merge forbidden, пока acceptance_decision не accepted."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: docs/audit/audit-findings.yml
+      commands:
+        -
+          command: "make audit-codex-spec"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-006
+      title: "Проверить запрет accepted_by = Codex"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-007
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make audit-codex-spec."
+      expected_result:
+        -
+          result: "Audit и validator запрещают accepted_by = Codex."
+      artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: scripts/validate_git_workflow.py
+      commands:
+        -
+          command: "make audit-codex-spec"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-007
+      title: "Проверить forbidden Git files"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-008
+      check_type: automated_command
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Запустить make validate-git-workflow."
+      expected_result:
+        -
+          result: "Validator проверяет .env, .venv, node_modules, SQL/dump/backup files и реальные dissertation DOCX/PDF."
+      artifacts:
+        -
+          path: scripts/validate_git_workflow.py
+      commands:
+        -
+          command: "make validate-git-workflow"
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""
+    -
+      check_id: VT-EP-011-008
+      title: "Проверить, что validator не выполняет Git mutations"
+      source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      related_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+      related_requirement: REQ-013
+      related_acceptance_criterion: AC-EP-011-010
+      check_type: manual_document_review
+      priority: high
+      status: pending
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_git_workflow.py."
+      expected_result:
+        -
+          result: "Скрипт не вызывает git add, git commit, git merge, git push или удаление веток."
+      artifacts:
+        -
+          path: scripts/validate_git_workflow.py
+      commands:
+        []
+      user_result:
+        checked: false
+        checked_by: ""
+        checked_at: ""
+        result: ""
+        comments: ""

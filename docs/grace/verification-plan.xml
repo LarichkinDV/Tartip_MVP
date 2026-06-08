@@ -31,4 +31,244 @@
     <Name>matching rule depending on changed normative object is marked requires_norm_review</Name>
     <Expected>When a depended normative reference object changes, the matching rule is marked requires_norm_review before reactivation.</Expected>
   </Scenario>
+  <Scenario id="V-PLAN-001" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>all artifact registry paths exist</Name>
+    <Expected>All path values in docs/artifact-registry.yml exist unless artifact status is planned or blocked.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-002" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>expected artifacts are registered</Name>
+    <Expected>Each ExpectedArtifacts entry in execution-packets.xml is registered in docs/artifact-registry.yml or represented as planned/blocked.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-003" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>accepted packet has acceptance report</Name>
+    <Expected>Any accepted packet must have docs/acceptance/PACKET_ID.acceptance.md.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>accepted_by cannot be Codex</Name>
+    <Expected>Acceptance metadata rejects accepted_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>packet cannot be accepted without acceptance_decision accepted</Name>
+    <Expected>Accepted packet status requires acceptance_decision=accepted in the acceptance report.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>ready_for_acceptance packet has acceptance criteria</Name>
+    <Expected>Execution packet with status ready_for_acceptance contains AcceptanceCriteria.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-007" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>project plan links current acceptance report</Name>
+    <Expected>docs/project-plan.md contains a valid local link to the current packet acceptance report.</Expected>
+  </Scenario>
+  <Scenario id="V-PLAN-008" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>artifact registry contains acceptance blocks</Name>
+    <Expected>Artifacts requiring acceptance have acceptance metadata and existing acceptance reports.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-001" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>acceptance-dashboard.md exists</Name>
+    <Expected>docs/acceptance-dashboard.md exists.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-002" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>acceptance-dashboard.yml exists</Name>
+    <Expected>docs/acceptance-dashboard.yml exists.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-003" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>ready packets are listed in acceptance dashboard</Name>
+    <Expected>All ready_for_acceptance packets are listed in docs/acceptance-dashboard.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>accepted_by and decided_by cannot be Codex</Name>
+    <Expected>Acceptance and dashboard metadata reject accepted_by=Codex and decided_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>user-action-dashboard.md exists</Name>
+    <Expected>docs/user-action-dashboard.md exists.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>user-action-dashboard.yml exists</Name>
+    <Expected>docs/user-action-dashboard.yml exists.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-007" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>open questions are listed in user action dashboard</Name>
+    <Expected>All open questions are listed in docs/user-action-dashboard.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-008" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>high priority questions are visible</Name>
+    <Expected>High priority questions are visible in docs/user-action-dashboard.md.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-009" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>accepted artifacts are marked protected</Name>
+    <Expected>Accepted artifacts are marked protected in registry and dashboards.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-010" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>protected artifacts require user approval</Name>
+    <Expected>Protected accepted artifacts cannot be changed without explicit user approval.</Expected>
+  </Scenario>
+  <Scenario id="V-DASH-011" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>accepted artifact modification requires action</Name>
+    <Expected>Change request or requires_user_approval action is required for accepted artifact modification.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-001" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>verification-dashboard.md exists</Name>
+    <Expected>docs/verification-dashboard.md exists.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-002" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>verification-dashboard.yml exists</Name>
+    <Expected>docs/verification-dashboard.yml exists.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-003" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>manual checks cannot be marked passed by Codex</Name>
+    <Expected>Manual checks must not be marked checked or passed with checked_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>checked_by cannot be Codex</Name>
+    <Expected>Verification dashboard rejects checked_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>each check has how_to_check</Name>
+    <Expected>Every verification dashboard check has a how_to_check instruction list.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>each check has expected_result</Name>
+    <Expected>Every verification dashboard check has an expected_result list.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-007" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>dashboard includes checks from monthly test protocol</Name>
+    <Expected>All VT-* check identifiers from the monthly test protocol are present in docs/verification-dashboard.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-VERIFICATION-DASH-008" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>dashboard links checks to artifacts and commands</Name>
+    <Expected>Verification dashboard checks link to relevant artifact paths and command checks where applicable.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-001" module="M-DISSERTATION-SYNC">
+    <Name>required dissertation sync files exist</Name>
+    <Expected>All mandatory files and folders for docs/dissertation/ and thesis/ placeholders exist.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-002" module="M-DISSERTATION-SYNC">
+    <Name>forbidden GESN auto selection claim is registered</Name>
+    <Expected>forbidden-claims.yml contains a prohibition against automatic GESN selection by BIM element.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-003" module="M-DISSERTATION-SYNC">
+    <Name>generated prompts have YAML front matter</Name>
+    <Expected>Every generated prompt in prompt-queue has YAML front matter with prompt_id and status.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-004" module="M-DISSERTATION-SYNC">
+    <Name>docx_update prompt requires accepted patch</Name>
+    <Expected>Prompt validation rejects docx_update prompts without a reference to an accepted markdown patch.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-005" module="M-DISSERTATION-SYNC">
+    <Name>prompts do not contain forbidden claims</Name>
+    <Expected>Prompt validation rejects generated prompts that contain forbidden claims as assertions.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-006" module="M-DISSERTATION-SYNC">
+    <Name>dissertation update cannot be accepted by Codex</Name>
+    <Expected>Validation rejects prompts, queue entries, and acceptance metadata with accepted_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-007" module="M-DISSERTATION-SYNC">
+    <Name>AGENTS forbids direct DOCX editing</Name>
+    <Expected>AGENTS.md forbids direct DOCX editing without explicit user request.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-008" module="M-DISSERTATION-SYNC">
+    <Name>accepted artifacts are protected</Name>
+    <Expected>Accepted artifacts require user approval before material changes.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-009" module="M-DISSERTATION-SYNC">
+    <Name>EP-008 appears in acceptance dashboard</Name>
+    <Expected>EP-008-DISSERTATION-PROMPT-GENERATION is listed in docs/acceptance-dashboard.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-DISS-SYNC-010" module="M-DISSERTATION-SYNC">
+    <Name>EP-008 appears in verification dashboard</Name>
+    <Expected>EP-008 verification checks are listed in docs/verification-dashboard.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-001" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit directory exists</Name>
+    <Expected>docs/audit/ exists with README, audit reports, language policy, audit profile, and audit-findings.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-002" module="M-CODEX-SPEC-AUDIT">
+    <Name>codex spec audit script exists</Name>
+    <Expected>scripts/audit_codex_spec.py exists and updates docs/audit/codex-spec-audit.md and audit-findings.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-003" module="M-CODEX-SPEC-AUDIT">
+    <Name>language audit script exists</Name>
+    <Expected>scripts/audit_language_policy.py exists and updates docs/audit/language-audit-report.md and audit-findings.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-004" module="M-CODEX-SPEC-AUDIT">
+    <Name>AGENTS.md contains Language policy</Name>
+    <Expected>AGENTS.md contains a Language policy section.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-005" module="M-CODEX-SPEC-AUDIT">
+    <Name>AGENTS.md contains Audit discipline</Name>
+    <Expected>AGENTS.md contains an Audit discipline section.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-006" module="M-CODEX-SPEC-AUDIT">
+    <Name>duplicate packet ids are detected</Name>
+    <Expected>audit_codex_spec.py creates a critical finding for duplicate execution packet ids.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-007" module="M-CODEX-SPEC-AUDIT">
+    <Name>direct ModelElement to GESNNorm mapping is critical</Name>
+    <Expected>audit_codex_spec.py treats absence of the forbidden ModelElement -> GESNNorm guardrail as critical.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-008" module="M-CODEX-SPEC-AUDIT">
+    <Name>Codex cannot own user decision fields</Name>
+    <Expected>accepted_by, decided_by, checked_by, and answered_by must not equal Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-009" module="M-CODEX-SPEC-AUDIT">
+    <Name>language audit ignores code blocks and technical identifiers</Name>
+    <Expected>audit_language_policy.py ignores code blocks, inline code, file paths, commands, URLs, enum statuses, and technical identifiers.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-010" module="M-CODEX-SPEC-AUDIT">
+    <Name>user-facing English creates language finding</Name>
+    <Expected>User-facing English text creates AUD-LANG-001 medium or low finding instead of automatic translation.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-011" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit scripts preserve finding statuses and resolutions</Name>
+    <Expected>Existing acknowledged, fixed, accepted_risk, false_positive, blocked, or requires_user_approval statuses are not reset to open by audit scripts.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-012" module="M-CODEX-SPEC-AUDIT">
+    <Name>medium and low language findings do not fail make check</Name>
+    <Expected>Medium/low AUD-LANG-001 findings are recorded but do not fail make check.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-013" module="M-CODEX-SPEC-AUDIT">
+    <Name>accepted protected artifacts are not modified by EP-009</Name>
+    <Expected>EP-009 creates findings or requires_user_approval actions instead of changing accepted/protected artifacts.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-014" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit does not auto-close findings as fixed</Name>
+    <Expected>Audit scripts do not mark findings fixed without actual correction and non-Codex evidence.</Expected>
+  </Scenario>
+  <Scenario id="V-AUDIT-015" module="M-CODEX-SPEC-AUDIT">
+    <Name>EP-009 performs no mass rewrite</Name>
+    <Expected>EP-009 adds audit contour artifacts and small guardrails, but does not mass-rewrite existing documents.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-001" module="M-GIT-WORKFLOW">
+    <Name>Git workflow document exists</Name>
+    <Expected>docs/git-workflow.md exists and describes branch, merge, dirty tree, forbidden file, and mixed EP rules.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-002" module="M-GIT-WORKFLOW">
+    <Name>AGENTS.md contains Git workflow discipline</Name>
+    <Expected>AGENTS.md contains a Git workflow discipline section.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-003" module="M-GIT-WORKFLOW">
+    <Name>validate_git_workflow.py exists</Name>
+    <Expected>scripts/validate_git_workflow.py exists and supports advisory and strict modes.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-004" module="M-GIT-WORKFLOW">
+    <Name>branch naming policy is defined</Name>
+    <Expected>Branch names follow ep-&lt;number&gt;-&lt;short-slug&gt; unless a documented exception exists.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-005" module="M-GIT-WORKFLOW">
+    <Name>merge requires accepted packet</Name>
+    <Expected>Merge is forbidden unless acceptance_decision=accepted, accepted_by is set, and user approval exists.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-006" module="M-GIT-WORKFLOW">
+    <Name>accepted_by = Codex is forbidden</Name>
+    <Expected>Git workflow validation rejects accepted_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-007" module="M-GIT-WORKFLOW">
+    <Name>forbidden files are detected</Name>
+    <Expected>Git workflow validation detects .env, .venv, node_modules, dumps, real DOCX/PDF dissertation files, and other forbidden staged/untracked files.</Expected>
+  </Scenario>
+  <Scenario id="V-GIT-008" module="M-GIT-WORKFLOW">
+    <Name>script does not perform merge, add, or commit</Name>
+    <Expected>validate_git_workflow.py inspects Git state but does not run merge, add, commit, push, or branch deletion commands.</Expected>
+  </Scenario>
 </VerificationPlan>

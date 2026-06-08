@@ -1,0 +1,2930 @@
+registry_version: 1
+updated_at: 2026-06-08
+artifacts:
+  - artifact_id: ART-AGENTS-001
+    name: Agent instructions
+    type: agent_instruction
+    path: AGENTS.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Agent discipline for domain rules, reference governance, and acceptance ownership.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-006
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex must not set accepted.
+  - artifact_id: ART-GRACE-EXECUTION-PACKETS
+    name: GRACE execution packets
+    type: grace_artifact
+    path: docs/grace/execution-packets.xml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+      - EP-002-REFERENCE-GOVERNANCE
+      - EP-003-REFERENCE-VERSIONING
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Execution packet definitions, expected artifacts, and acceptance criteria.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-002
+        - V-PLAN-006
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: EP-007 status is ready_for_acceptance, not accepted.
+  - artifact_id: ART-GRACE-KNOWLEDGE-GRAPH
+    name: GRACE knowledge graph
+    type: grace_artifact
+    path: docs/grace/knowledge-graph.xml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-001-INFRA
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-001
+      - REQ-002
+      - REQ-003
+      - REQ-004
+    status: active
+    description: Domain graph with allowed and forbidden edges.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - REQ-001
+        - REQ-002
+      last_checked_at: 2026-06-05
+      evidence: Manual read before EP-004 changes
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Not modified by EP-004.
+  - artifact_id: ART-GRACE-MODULE-CONTRACTS
+    name: GRACE module contracts
+    type: grace_artifact
+    path: docs/grace/module-contracts.xml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+      - EP-003-REFERENCE-VERSIONING
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-005
+      - REQ-006
+      - REQ-007
+    status: active
+    description: Module contracts for reference governance, versioning, and matching requirements.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-001
+        - V-REF-VERSION-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-reference
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Maintains evidence requirements for matching rules.
+  - artifact_id: ART-GRACE-VERIFICATION-PLAN
+    name: GRACE verification plan
+    type: grace_artifact
+    path: docs/grace/verification-plan.xml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+      - EP-003-REFERENCE-VERSIONING
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-005
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Verification scenarios for reference governance, versioning, and project planning acceptance.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+        - V-PLAN-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Includes V-PLAN, V-DASH, and V-VERIFICATION-DASH scenarios.
+  - artifact_id: ART-GRACE-README
+    name: GRACE README
+    type: grace_artifact
+    path: docs/grace/README.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-009
+    status: active
+    description: Human-readable description of GRACE-light artifact roles.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Supports local governance orientation.
+  - artifact_id: ART-PROJECT-PLAN
+    name: Project plan
+    type: status_report
+    path: docs/project-plan.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Human-readable project plan and packet status summary.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-ARTIFACT-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Human-readable only, not sole source of truth.
+  - artifact_id: ART-ARTIFACT-REGISTRY
+    name: Artifact registry
+    type: configuration
+    path: docs/artifact-registry.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-010
+    status: active
+    description: Source of truth for created project artifacts and acceptance state.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+        - V-PLAN-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Do not register caches, .env, or real large local reference data.
+  - artifact_id: ART-TRACEABILITY-MATRIX
+    name: Traceability matrix
+    type: architecture_note
+    path: docs/traceability-matrix.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-001
+      - REQ-010
+    status: active
+    description: Requirement to module, packet, artifact, verification, and acceptance mapping.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-KNOWLEDGE-GRAPH
+      - ART-GRACE-VERIFICATION-PLAN
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Captures REQ-001 through REQ-010.
+  - artifact_id: ART-DECISION-LOG
+    name: Decision log
+    type: decision_log
+    path: docs/decision-log.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-001
+      - REQ-008
+    status: active
+    description: Project decisions DEC-001 through DEC-009.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-KNOWLEDGE-GRAPH
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: User remains acceptance owner.
+  - artifact_id: ART-STATUS-REPORT
+    name: Status report
+    type: status_report
+    path: docs/status-report.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+    status: active
+    description: Current project snapshot, blockers, risks, and next step.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-PLAN
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Current packet is EP-004.
+  - artifact_id: ART-ACCEPTANCE-README
+    name: Acceptance README
+    type: acceptance_report
+    path: docs/acceptance/README.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+    status: active
+    description: Explains acceptance report usage and ownership.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: User fills acceptance decisions.
+  - artifact_id: ART-ACCEPTANCE-TEMPLATE
+    name: Acceptance template
+    type: acceptance_report
+    path: docs/acceptance/ACCEPTANCE_TEMPLATE.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+    status: active
+    description: Template for future packet acceptance reports.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Decision fields must not be filled by Codex.
+  - artifact_id: ART-ACCEPTANCE-EP-001
+    name: EP-001 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-001-INFRA.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+    related_requirements:
+      - REQ-008
+      - REQ-009
+    status: active
+    description: Acceptance checklist for EP-001 local infrastructure.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Docker runtime remains user-side check when Docker is available.
+  - artifact_id: ART-ACCEPTANCE-EP-002
+    name: EP-002 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-005
+      - REQ-006
+      - REQ-008
+    status: active
+    description: Acceptance checklist for reference governance.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: No real reference data is imported.
+  - artifact_id: ART-ACCEPTANCE-EP-003
+    name: EP-003 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-003-REFERENCE-VERSIONING
+    related_requirements:
+      - REQ-007
+      - REQ-008
+    status: active
+    description: Acceptance checklist for reference versioning scaffolding.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Uses fake fixtures only.
+  - artifact_id: ART-ACCEPTANCE-EP-004
+    name: EP-004 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Acceptance checklist for project planning and acceptance contour.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-003
+        - V-PLAN-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-PLAN
+      - ART-ARTIFACT-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Current packet report, Codex status ready_for_acceptance.
+  - artifact_id: ART-VALIDATE-PROJECT-PLAN
+    name: Project plan validator
+    type: script
+    path: scripts/validate_project_plan.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Validates artifact registry paths, acceptance reports, dashboards, accepted_by/decided_by rules, expected artifacts, and project-plan links.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+        - V-PLAN-002
+        - V-PLAN-004
+        - V-DASH-001
+        - V-DASH-007
+        - V-VERIFICATION-DASH-001
+        - V-VERIFICATION-DASH-005
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ARTIFACT-REGISTRY
+      - ART-GRACE-EXECUTION-PACKETS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Uses standard library and scripts/reference_utils.py; extended by EP-005 and EP-007 for dashboards.
+  - artifact_id: ART-README
+    name: Repository README
+    type: methodology_note
+    path: README.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-008
+      - REQ-009
+    status: active
+    description: Local run, reference data, and planning acceptance workflow instructions.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Documents that only user can accept results.
+  - artifact_id: ART-CHANGELOG
+    name: Changelog
+    type: status_report
+    path: CHANGELOG.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+      - EP-002-REFERENCE-GOVERNANCE
+      - EP-003-REFERENCE-VERSIONING
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-009
+    status: active
+    description: Project change history for first release.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+      last_checked_at: 2026-06-05
+      evidence: file exists
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Version remains 0.1.0 before first commit.
+  - artifact_id: ART-MAKEFILE
+    name: Makefile
+    type: configuration
+    path: Makefile
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-001-INFRA
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_requirements:
+      - REQ-009
+    status: active
+    description: Local project commands including validate-plan.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-PLAN-001
+      last_checked_at: 2026-06-05
+      evidence: make check
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: check includes validate-plan and Docker skip remains explicit.
+  - artifact_id: ART-REFERENCE-POLICY
+    name: Reference data policy
+    type: methodology_note
+    path: docs/07-reference-data-policy.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-005
+      - REQ-006
+    status: active
+    description: No source, no rule policy and reference evidence requirements.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-reference
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not contain real normative data.
+  - artifact_id: ART-SOURCE-MANIFEST
+    name: Source manifest
+    type: reference_manifest
+    path: data/reference/manifests/source-manifest.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-005
+      - REQ-006
+    status: active
+    description: Manifest template and source registry for accepted reference sources.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-001
+        - V-REF-GOV-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-reference
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: sources list is empty until user provides local evidence.
+  - artifact_id: ART-IMPORT-LOG
+    name: Reference import log
+    type: reference_manifest
+    path: data/reference/manifests/import-log.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-005
+    status: active
+    description: Import journal for reference data sources.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-reference
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-SOURCE-MANIFEST
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: No real imports accepted yet.
+  - artifact_id: ART-DATA-QUESTIONS
+    name: Data question registries
+    type: question_registry
+    path: data/questions/data-requirements.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-005
+      - REQ-006
+    status: active
+    description: Structured data requirements for missing reference sources.
+    created_at: 2026-06-04
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-004
+      last_checked_at: 2026-06-05
+      evidence: make generate-data-questions
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-SOURCE-MANIFEST
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Other question registry files live in data/questions/.
+  - artifact_id: ART-REFERENCE-VERSIONING-SCHEMA
+    name: Reference versioning schema
+    type: database_schema
+    path: db/schemas/reference_versioning.sql
+    owner_module: M-REFERENCE-VERSIONING
+    related_packets:
+      - EP-003-REFERENCE-VERSIONING
+    related_requirements:
+      - REQ-007
+    status: active
+    description: Conceptual SQL schema for delta-based reference versioning.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-VERSION-001
+      last_checked_at: 2026-06-05
+      evidence: make compare-reference-fixtures
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Documentation schema, not applied migration.
+  - artifact_id: ART-MATCHING-RULE-DRAFT
+    name: Partition brick draft matching rule
+    type: matching_rule
+    path: rules/matching/partition_brick_120_reinf.yaml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-002-REFERENCE-GOVERNANCE
+    related_requirements:
+      - REQ-001
+      - REQ-002
+      - REQ-005
+      - REQ-006
+    status: draft
+    description: Draft rule with missing evidence and no invented KSI/GESN values.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-GOV-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-reference
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-SOURCE-MANIFEST
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Status remains draft_requires_data in the rule itself.
+  - artifact_id: ART-COMPARE-REFERENCE-RELEASES
+    name: Reference release comparison script
+    type: script
+    path: scripts/compare_reference_releases.py
+    owner_module: M-REFERENCE-VERSIONING
+    related_packets:
+      - EP-003-REFERENCE-VERSIONING
+    related_requirements:
+      - REQ-007
+    status: active
+    description: Compares small JSON/YAML reference fixtures and reports added, changed, deleted, unchanged records.
+    created_at: 2026-06-04
+    updated_at: 2026-06-04
+    verification:
+      status: verified
+      scenarios:
+        - V-REF-VERSION-001
+        - V-REF-VERSION-004
+      last_checked_at: 2026-06-05
+      evidence: make compare-reference-fixtures
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Uses fake fixtures only.
+  - artifact_id: ART-ACCEPTANCE-DASHBOARD-MD
+    name: Acceptance dashboard Markdown
+    type: dashboard
+    path: docs/acceptance-dashboard.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Human-readable single window for packet acceptance status and protected accepted artifacts.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-001
+        - V-DASH-003
+        - V-DASH-009
+      last_checked_at: 2026-06-05
+      evidence: make generate-dashboards && make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-ARTIFACT-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Generated file; user decisions remain in acceptance reports and YAML.
+  - artifact_id: ART-ACCEPTANCE-DASHBOARD-YML
+    name: Acceptance dashboard YAML
+    type: dashboard
+    path: docs/acceptance-dashboard.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Machine-readable acceptance dashboard generated from execution packets, artifact registry, and acceptance reports.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-002
+        - V-DASH-003
+        - V-DASH-004
+      last_checked_at: 2026-06-05
+      evidence: make generate-dashboards && make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-ARTIFACT-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex must not change user acceptance decisions to accepted.
+  - artifact_id: ART-USER-ACTION-DASHBOARD-MD
+    name: User action dashboard Markdown
+    type: dashboard
+    path: docs/user-action-dashboard.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-005
+      - REQ-006
+      - REQ-008
+    status: active
+    description: Human-readable single window for open user questions and actions.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-005
+        - V-DASH-007
+        - V-DASH-008
+      last_checked_at: 2026-06-05
+      evidence: make generate-dashboards && make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-QUESTIONS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Generated file; Codex must not fill answered_by or answered_at for the user.
+  - artifact_id: ART-USER-ACTION-DASHBOARD-YML
+    name: User action dashboard YAML
+    type: dashboard
+    path: docs/user-action-dashboard.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-005
+      - REQ-006
+      - REQ-008
+    status: active
+    description: Machine-readable user action dashboard generated from data/questions/*.yml.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-006
+        - V-DASH-007
+        - V-DASH-011
+      last_checked_at: 2026-06-05
+      evidence: make generate-dashboards && make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-QUESTIONS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Missing question files are warnings, not automatic closures.
+  - artifact_id: ART-GENERATE-ACCEPTANCE-DASHBOARD
+    name: Acceptance dashboard generator
+    type: script
+    path: scripts/generate_acceptance_dashboard.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Generates acceptance dashboard Markdown and YAML from packet, registry, and acceptance sources.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-001
+        - V-DASH-002
+        - V-DASH-003
+      last_checked_at: 2026-06-05
+      evidence: make generate-acceptance-dashboard
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-ARTIFACT-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not mark acceptance decisions as accepted.
+  - artifact_id: ART-GENERATE-USER-ACTION-DASHBOARD
+    name: User action dashboard generator
+    type: script
+    path: scripts/generate_user_action_dashboard.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-005
+      - REQ-006
+      - REQ-008
+    status: active
+    description: Generates user action dashboard Markdown and YAML from data/questions/*.yml.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-005
+        - V-DASH-006
+        - V-DASH-007
+      last_checked_at: 2026-06-05
+      evidence: make generate-user-action-dashboard
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-QUESTIONS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not close questions or fill user response fields.
+  - artifact_id: ART-ACCEPTANCE-EP-005
+    name: EP-005 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    related_requirements:
+      - REQ-008
+      - REQ-009
+      - REQ-010
+    status: active
+    description: Acceptance checklist for dashboards and accepted artifact protection.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DASH-001
+        - V-DASH-004
+        - V-DASH-010
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ACCEPTANCE-DASHBOARD-MD
+      - ART-USER-ACTION-DASHBOARD-MD
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Current packet report, Codex status ready_for_acceptance.
+  - artifact_id: ART-VERIFICATION-DASHBOARD-MD
+    name: Verification dashboard Markdown
+    type: dashboard
+    path: docs/verification-dashboard.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Human-readable manual verification window for test protocol checks.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-001
+        - V-VERIFICATION-DASH-007
+      last_checked_at: 2026-06-05
+      evidence: make generate-verification-dashboard && make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-TEST-PROTOCOL-2026-06
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Generated file; manual checks remain user-owned.
+  - artifact_id: ART-VERIFICATION-DASHBOARD-YML
+    name: Verification dashboard YAML
+    type: dashboard
+    path: docs/verification-dashboard.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Machine-readable verification task registry for manual and command checks.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-002
+        - V-VERIFICATION-DASH-003
+        - V-VERIFICATION-DASH-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-TEST-PROTOCOL-2026-06
+      - ART-GRACE-VERIFICATION-PLAN
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: User_result fields must be filled by Дмитрий, not Codex.
+  - artifact_id: ART-GENERATE-VERIFICATION-DASHBOARD
+    name: Verification dashboard generator
+    type: script
+    path: scripts/generate_verification_dashboard.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Generates verification dashboard Markdown and YAML from verification plan, monthly protocol, acceptance dashboard, and registry.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-001
+        - V-VERIFICATION-DASH-002
+      last_checked_at: 2026-06-05
+      evidence: make generate-verification-dashboard
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-VERIFICATION-PLAN
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Preserves existing user_result fields and never writes checked_by=Codex.
+  - artifact_id: ART-VALIDATE-VERIFICATION-DASHBOARD
+    name: Verification dashboard validator
+    type: script
+    path: scripts/validate_verification_dashboard.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Validates verification-dashboard.yml and manual check ownership rules.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-003
+        - V-VERIFICATION-DASH-004
+        - V-VERIFICATION-DASH-005
+        - V-VERIFICATION-DASH-006
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VERIFICATION-DASHBOARD-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Rejects checked_by=Codex.
+  - artifact_id: ART-MONTHLY-PLAN-2026-06
+    name: Monthly plan 2026-06
+    type: monthly_plan
+    path: docs/monthly/monthly-plan.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-010
+    status: active
+    description: Monthly plan source used by verification dashboard checks VT-EP-006-001..003.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Created because monthly sources were absent in the local repo.
+  - artifact_id: ART-MONTHLY-BFT-2026-06
+    name: Monthly BFT 2026-06
+    type: monthly_document
+    path: docs/monthly/2026-06/01-bft-reference-data-governance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-010
+    status: active
+    description: BFT source used by verification check VT-EP-006-004.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLAN-2026-06
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Contains no invented normative data.
+  - artifact_id: ART-MONTHLY-TZ-2026-06
+    name: Monthly TZ 2026-06
+    type: monthly_document
+    path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-010
+    status: active
+    description: TZ source used by verification check VT-EP-006-005.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLAN-2026-06
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Contains no business implementation or normative data.
+  - artifact_id: ART-MONTHLY-TEST-PROTOCOL-2026-06
+    name: Monthly test protocol 2026-06
+    type: test_protocol
+    path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Monthly test protocol linked to verification dashboard check ids.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-007
+        - V-VERIFICATION-DASH-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLAN-2026-06
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Source protocol for verification dashboard; does not mark checks passed.
+  - artifact_id: ART-MONTHLY-DEFENSE-DASHBOARD-2026-06
+    name: Monthly defense dashboard 2026-06
+    type: dashboard
+    path: docs/monthly/monthly-defense-dashboard.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-010
+    status: active
+    description: Monthly defense summary that points to verification dashboard as the source of check execution facts.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-008
+      last_checked_at: 2026-06-05
+      evidence: make validate-verification
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VERIFICATION-DASHBOARD-MD
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not replace acceptance dashboard.
+  - artifact_id: ART-ACCEPTANCE-EP-007
+    name: EP-007 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+    related_requirements:
+      - REQ-008
+      - REQ-010
+    status: active
+    description: Acceptance checklist for verification dashboard packet.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-VERIFICATION-DASH-001
+        - V-VERIFICATION-DASH-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VERIFICATION-DASHBOARD-MD
+      - ART-VERIFICATION-DASHBOARD-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Current packet report, Codex status ready_for_acceptance.
+  - artifact_id: ART-DISSERTATION-README
+    name: Dissertation synchronization README
+    type: methodology_note
+    path: docs/dissertation/README.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Explains dissertation synchronization workflow, prompt/patch queues, DOCX guardrails, and accepted artifact protection.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not edit DOCX.
+  - artifact_id: ART-DISSERTATION-SYNC-PLAN
+    name: Dissertation sync plan
+    type: methodology_note
+    path: docs/dissertation/dissertation-sync-plan.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Controlled workflow from Tartip packet to impact log, prompt, patch, user acceptance, and explicit DOCX update.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-README
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: DOCX update remains user-triggered only.
+  - artifact_id: ART-DISSERTATION-IMPACT-LOG
+    name: Dissertation impact log
+    type: configuration
+    path: docs/dissertation/dissertation-impact-log.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Structured log for future Tartip changes that affect dissertation sections.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-ARTIFACT-MAP
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Starts empty in EP-008.
+  - artifact_id: ART-DISSERTATION-ARTIFACT-MAP
+    name: Dissertation artifact map
+    type: configuration
+    path: docs/dissertation/dissertation-artifact-map.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Maps dissertation sections to Tartip modules and artifacts.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Sections DISS-INTRO through DISS-APPENDICES are present.
+  - artifact_id: ART-DISSERTATION-SECTION-UPDATE-QUEUE
+    name: Dissertation section update queue
+    type: configuration
+    path: docs/dissertation/section-update-queue.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Queue for future dissertation section update requests.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-006
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-ARTIFACT-MAP
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Starts empty in EP-008.
+  - artifact_id: ART-DISSERTATION-CHANGE-LOG
+    name: Dissertation change log
+    type: status_report
+    path: docs/dissertation/dissertation-change-log.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Human-readable log for accepted dissertation synchronization changes.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: No accepted dissertation text changes are recorded by Codex.
+  - artifact_id: ART-DISSERTATION-BIBLIOGRAPHY-REGISTRY
+    name: Dissertation bibliography registry
+    type: configuration
+    path: docs/dissertation/bibliography-registry.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Empty controlled registry for bibliography governance.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: New sources require citation requests.
+  - artifact_id: ART-DISSERTATION-CITATION-REQUESTS
+    name: Dissertation citation requests
+    type: question_registry
+    path: docs/dissertation/citation-requests.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Empty citation request queue for bibliography changes.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-BIBLIOGRAPHY-REGISTRY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex does not insert bibliography entries directly.
+  - artifact_id: ART-DISSERTATION-TERMINOLOGY-CONTROL
+    name: Dissertation terminology control
+    type: configuration
+    path: docs/dissertation/terminology-control.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Required and forbidden terms for dissertation prompt checks.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Used by prompt templates and future review.
+  - artifact_id: ART-DISSERTATION-EDITOR-PROFILE-MD
+    name: Dissertation editor profile Markdown
+    type: prompt_profile
+    path: docs/dissertation/prompt-profiles/dissertation-editor-profile.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Human-readable dissertation editor profile and DOCX rules.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not claim access to DOCX.
+  - artifact_id: ART-DISSERTATION-EDITOR-PROFILE-YML
+    name: Dissertation editor profile YAML
+    type: prompt_profile
+    path: docs/dissertation/prompt-profiles/dissertation-editor-profile.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Machine-readable dissertation editor profile.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-EDITOR-PROFILE-MD
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Used for generated prompt context.
+  - artifact_id: ART-DISSERTATION-TARTIP-ALIGNMENT
+    name: Tartip dissertation alignment
+    type: prompt_profile
+    path: docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Boundary between dissertation methodology and Tartip implementation.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-005
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-EDITOR-PROFILE-MD
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Prevents treating Codex/GRACE as scientific result.
+  - artifact_id: ART-DISSERTATION-FORBIDDEN-CLAIMS
+    name: Dissertation forbidden claims
+    type: prompt_profile
+    path: docs/dissertation/prompt-profiles/forbidden-claims.yml
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Forbidden claims FC-001 through FC-007 and allowed replacements.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-002
+        - V-DISS-SYNC-005
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Contains the GESN auto-selection prohibition.
+  - artifact_id: ART-DISSERTATION-TEMPLATE-IMPACT
+    name: Dissertation impact analysis prompt template
+    type: prompt_template
+    path: docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Prompt template for execution packet dissertation impact analysis.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-FORBIDDEN-CLAIMS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Template only, not generated prompt.
+  - artifact_id: ART-DISSERTATION-TEMPLATE-SECTION
+    name: Dissertation section update prompt template
+    type: prompt_template
+    path: docs/dissertation/prompt-templates/dissertation-section-update.prompt.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Prompt template for markdown patch preparation.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-003
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-EDITOR-PROFILE-MD
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Produces markdown patch tasks, not DOCX.
+  - artifact_id: ART-DISSERTATION-TEMPLATE-TERMINOLOGY
+    name: Dissertation terminology check prompt template
+    type: prompt_template
+    path: docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Prompt template for terminology review.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-TERMINOLOGY-CONTROL
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not update DOCX directly.
+  - artifact_id: ART-DISSERTATION-TEMPLATE-BIBLIOGRAPHY
+    name: Dissertation bibliography check prompt template
+    type: prompt_template
+    path: docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Prompt template that creates citation requests instead of direct bibliography changes.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-CITATION-REQUESTS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: No bibliography renumbering by Codex.
+  - artifact_id: ART-DISSERTATION-TEMPLATE-DOCX
+    name: Dissertation DOCX update prompt template
+    type: prompt_template
+    path: docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Prompt template for DOCX update only after accepted patch and explicit user request.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-004
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-prompts
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-SECTION-UPDATE-QUEUE
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Template only; no DOCX update executed.
+  - artifact_id: ART-GENERATE-DISSERTATION-PROMPTS
+    name: Dissertation prompt generator
+    type: script
+    path: scripts/generate_dissertation_prompts.py
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Generates pending dissertation prompts from impact log, section update queue, and artifact map.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-003
+      last_checked_at: 2026-06-05
+      evidence: make generate-dissertation-prompts
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-IMPACT-LOG
+      - ART-DISSERTATION-SECTION-UPDATE-QUEUE
+      - ART-DISSERTATION-ARTIFACT-MAP
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not create DOCX.
+  - artifact_id: ART-VALIDATE-DISSERTATION-PROMPTS
+    name: Dissertation prompt validator
+    type: script
+    path: scripts/validate_dissertation_prompts.py
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Validates generated prompt front matter, accepted_by rules, forbidden claims, and DOCX update guardrails.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-003
+        - V-DISS-SYNC-004
+        - V-DISS-SYNC-005
+        - V-DISS-SYNC-006
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-prompts
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-FORBIDDEN-CLAIMS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Rejects accepted_by=Codex.
+  - artifact_id: ART-VALIDATE-DISSERTATION-SYNC
+    name: Dissertation sync validator
+    type: script
+    path: scripts/validate_dissertation_sync.py
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-011
+    status: active
+    description: Validates dissertation contour files, queues, forbidden claims, citation files, DOCX/PDF absence, and acceptance pending state.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-001
+        - V-DISS-SYNC-002
+        - V-DISS-SYNC-006
+        - V-DISS-SYNC-007
+      last_checked_at: 2026-06-05
+      evidence: make validate-dissertation-sync
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-README
+      - ART-DISSERTATION-FORBIDDEN-CLAIMS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Also checks that thesis/ has no DOCX/PDF artifacts.
+  - artifact_id: ART-ACCEPTANCE-EP-008
+    name: EP-008 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+    owner_module: M-DISSERTATION-SYNC
+    related_packets:
+      - EP-008-DISSERTATION-PROMPT-GENERATION
+    related_requirements:
+      - REQ-008
+      - REQ-011
+    status: active
+    description: Acceptance checklist for dissertation prompt generation contour.
+    created_at: 2026-06-05
+    updated_at: 2026-06-05
+    verification:
+      status: verified
+      scenarios:
+        - V-DISS-SYNC-009
+        - V-DISS-SYNC-010
+      last_checked_at: 2026-06-05
+      evidence: make validate-plan
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DISSERTATION-README
+      - ART-VALIDATE-DISSERTATION-SYNC
+      - ART-VALIDATE-DISSERTATION-PROMPTS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex status ready_for_acceptance; user decision remains pending.
+  - artifact_id: ART-AUDIT-README
+    name: Audit README
+    type: documentation
+    path: docs/audit/README.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Human-readable orientation for the Codex audit contour.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: EP-009 audit-first documentation.
+  - artifact_id: ART-AUDIT-CODEX-SPEC-REPORT
+    name: Codex spec audit report
+    type: audit_report
+    path: docs/audit/codex-spec-audit.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Russian user-facing report for Codex specification audit checks.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Generated by scripts/audit_codex_spec.py.
+  - artifact_id: ART-AUDIT-CODEX-SPEC-PROFILE
+    name: Codex spec audit profile
+    type: audit_profile
+    path: docs/audit/codex-spec-audit.yml
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Machine-readable audit profile for Codex guardrails and language policy checks.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Profile version 1.0.
+  - artifact_id: ART-AUDIT-LANGUAGE-POLICY
+    name: Language policy
+    type: policy
+    path: docs/audit/language-policy.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Russian user-facing language policy with technical identifier exceptions.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-003
+        - V-AUDIT-009
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not require mass translation in EP-009.
+  - artifact_id: ART-AUDIT-LANGUAGE-REPORT
+    name: Language audit report
+    type: audit_report
+    path: docs/audit/language-audit-report.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Russian report for user-facing language audit findings.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-010
+        - V-AUDIT-012
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+      - ART-AUDIT-LANGUAGE-POLICY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Generated by scripts/audit_language_policy.py.
+  - artifact_id: ART-AUDIT-FINDINGS
+    name: Audit findings registry
+    type: audit_registry
+    path: docs/audit/audit-findings.yml
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Machine-readable registry of open, acknowledged, fixed, accepted_risk, false_positive, blocked, and requires_user_approval audit findings.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-011
+        - V-AUDIT-014
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-CODEX-SPEC-PROFILE
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Audit scripts must preserve user statuses and resolutions.
+  - artifact_id: ART-AUDIT-CODEX-SPEC-SCRIPT
+    name: Codex spec audit script
+    type: script
+    path: scripts/audit_codex_spec.py
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Performs top-level audit checks for project guardrails and updates Codex spec audit report.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-002
+        - V-AUDIT-006
+        - V-AUDIT-007
+        - V-AUDIT-008
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Critical findings block the audit command.
+  - artifact_id: ART-AUDIT-LANGUAGE-SCRIPT
+    name: Language audit script
+    type: script
+    path: scripts/audit_language_policy.py
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Performs soft language audit and creates language policy findings without automatic translation.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-003
+        - V-AUDIT-009
+        - V-AUDIT-010
+        - V-AUDIT-012
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+      - ART-AUDIT-LANGUAGE-POLICY
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Medium/low language findings do not block make check.
+  - artifact_id: ART-AUDIT-VALIDATOR
+    name: Audit report validator
+    type: script
+    path: scripts/validate_audit_reports.py
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Validates audit files, audit-findings.yml structure, Russian reports, and user status preservation guardrails.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-001
+        - V-AUDIT-011
+        - V-AUDIT-014
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not close findings automatically.
+  - artifact_id: ART-ACCEPTANCE-EP-009
+    name: EP-009 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-009-CODEX-SPEC-AUDIT
+    related_requirements:
+      - REQ-012
+    status: active
+    description: Acceptance checklist for Codex spec audit and language policy contour.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-AUDIT-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-README
+      - ART-AUDIT-FINDINGS
+      - ART-AUDIT-VALIDATOR
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex status ready_for_acceptance; user decision remains pending.
+  - artifact_id: ART-GIT-WORKFLOW-DOC
+    name: Git workflow discipline
+    type: policy
+    path: docs/git-workflow.md
+    owner_module: M-GIT-WORKFLOW
+    related_packets:
+      - EP-011-GIT-WORKFLOW-DISCIPLINE
+    related_requirements:
+      - REQ-013
+    status: active
+    description: Russian user-facing Git workflow policy for branch naming, branch switching, merge readiness, merge prohibitions, and forbidden Git files.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-GIT-001
+        - V-GIT-004
+        - V-GIT-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Documents current main dirty baseline as an exception, not a merge approval.
+  - artifact_id: ART-VALIDATE-GIT-WORKFLOW
+    name: Git workflow validator
+    type: script
+    path: scripts/validate_git_workflow.py
+    owner_module: M-GIT-WORKFLOW
+    related_packets:
+      - EP-011-GIT-WORKFLOW-DISCIPLINE
+    related_requirements:
+      - REQ-013
+    status: active
+    description: Validates current Git state in advisory or strict mode without running git add, commit, merge, push, or branch deletion.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-GIT-003
+        - V-GIT-006
+        - V-GIT-007
+        - V-GIT-008
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GIT-WORKFLOW-DOC
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Advisory mode tolerates warnings; strict mode fails on warnings.
+  - artifact_id: ART-ACCEPTANCE-EP-011
+    name: EP-011 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+    owner_module: M-GIT-WORKFLOW
+    related_packets:
+      - EP-011-GIT-WORKFLOW-DISCIPLINE
+    related_requirements:
+      - REQ-013
+    status: active
+    description: Acceptance checklist for Git workflow discipline.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-GIT-001
+        - V-GIT-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GIT-WORKFLOW-DOC
+      - ART-VALIDATE-GIT-WORKFLOW
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex status ready_for_acceptance; user decision remains pending.

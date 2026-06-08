@@ -1,0 +1,110 @@
+schema_version: 1
+updated_at: 2026-06-05
+sections:
+  - section_id: DISS-INTRO
+    title: "Введение"
+    docx_target: "iteration-28:introduction"
+    related_project_modules:
+      - M-DISSERTATION-SYNC
+      - M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_artifacts:
+      - docs/project-plan.md
+      - docs/status-report.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Обновлять только формулировки цели, задач и ограничений после impact review."
+  - section_id: DISS-CH1-PROBLEM
+    title: "Глава 1. Постановка проблемы"
+    docx_target: "iteration-28:chapter-1-problem"
+    related_project_modules:
+      - M-MATCHING
+      - M-REFERENCE-GOVERNANCE
+    related_artifacts:
+      - docs/grace/knowledge-graph.xml
+      - docs/07-reference-data-policy.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Не переносить инженерную архитектуру как научную новизну."
+  - section_id: DISS-CH2-METHODOLOGY
+    title: "Глава 2. Методика"
+    docx_target: "iteration-28:chapter-2-methodology"
+    related_project_modules:
+      - M-MATCHING
+      - M-REFERENCE-GOVERNANCE
+    related_artifacts:
+      - docs/grace/module-contracts.xml
+      - docs/decision-log.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Методика должна сохранять разделение BIM, КСИ, расчетной единицы и ГЭСН-кандидатов."
+  - section_id: DISS-CH2-CALCULATION-UNIT
+    title: "Глава 2. Расчетная единица"
+    docx_target: "iteration-28:chapter-2-calculation-unit"
+    related_project_modules:
+      - M-MATCHING
+    related_artifacts:
+      - docs/grace/knowledge-graph.xml
+      - AGENTS.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "В Tartip CalculationUnit является нормативно-расчетным шаблоном, а не контейнером всех данных жизненного цикла."
+  - section_id: DISS-CH2-ALGORITHM
+    title: "Глава 2. Алгоритм"
+    docx_target: "iteration-28:chapter-2-algorithm"
+    related_project_modules:
+      - M-MATCHING
+      - M-REFERENCE-VERSIONING
+    related_artifacts:
+      - docs/grace/module-contracts.xml
+      - db/schemas/reference_versioning.sql
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Алгоритм не должен утверждать прямой автоматический выбор нормы по BIM-элементу."
+  - section_id: DISS-CH3-EXPERIMENT
+    title: "Глава 3. Экспериментальная проверка"
+    docx_target: "iteration-28:chapter-3-experiment"
+    related_project_modules:
+      - M-PROJECT-PLANNING-AND-ACCEPTANCE
+      - M-DISSERTATION-SYNC
+    related_artifacts:
+      - docs/verification-dashboard.md
+      - docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Эксперимент подтверждает проверяемость в пределах контрольного набора, но не универсальную эффективность."
+  - section_id: DISS-CH3-REFERENCE-VERSIONING
+    title: "Глава 3. Версионирование справочных данных"
+    docx_target: "iteration-28:chapter-3-reference-versioning"
+    related_project_modules:
+      - M-REFERENCE-VERSIONING
+    related_artifacts:
+      - db/schemas/reference_versioning.sql
+      - scripts/compare_reference_releases.py
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Фиксировать только механизм прослеживаемости версий без подключения реальных нормативных баз."
+  - section_id: DISS-CH3-LIMITATIONS
+    title: "Глава 3. Ограничения"
+    docx_target: "iteration-28:chapter-3-limitations"
+    related_project_modules:
+      - M-DISSERTATION-SYNC
+      - M-REFERENCE-GOVERNANCE
+    related_artifacts:
+      - docs/dissertation/prompt-profiles/forbidden-claims.yml
+      - docs/status-report.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Ограничения должны предотвращать чрезмерные научные выводы."
+  - section_id: DISS-CONCLUSION
+    title: "Заключение"
+    docx_target: "iteration-28:conclusion"
+    related_project_modules:
+      - M-DISSERTATION-SYNC
+    related_artifacts:
+      - docs/dissertation/dissertation-impact-log.yml
+      - docs/dissertation/section-update-queue.yml
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Заключение обновляется только после принятого patch."
+  - section_id: DISS-APPENDICES
+    title: "Приложения"
+    docx_target: "iteration-28:appendices"
+    related_project_modules:
+      - M-DISSERTATION-SYNC
+      - M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_artifacts:
+      - docs/acceptance-dashboard.md
+      - docs/verification-dashboard.md
+    update_policy: prompt_then_patch_then_user_acceptance
+    notes: "Приложения могут ссылаться на проверочные материалы только как на материалы организации разработки."

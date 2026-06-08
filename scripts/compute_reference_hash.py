@@ -16,8 +16,12 @@ def load_payload(path_arg: str) -> object:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Compute a canonical sha256 hash for reference payloads.")
-    parser.add_argument("path", help="JSON/YAML payload path, or '-' to read JSON from stdin.")
+    parser = argparse.ArgumentParser(
+        description="Compute a canonical sha256 hash for reference payloads."
+    )
+    parser.add_argument(
+        "path", help="JSON/YAML payload path, or '-' to read JSON from stdin."
+    )
     args = parser.parse_args()
 
     payload = load_payload(args.path)

@@ -1,0 +1,76 @@
+schema_version: 1
+updated_at: 2026-06-08
+allowed_impact_types:
+  - none
+  - terminology_update
+  - methodology_refinement
+  - architecture_refinement
+  - experiment_update
+  - appendix_update
+  - bibliography_update
+  - figure_update
+  - risk_or_limitation_update
+field_contract:
+  - field: impact_id
+    required: true
+  - field: source_packet
+    required: true
+  - field: source_artifacts
+    required: true
+  - field: affected_sections
+    required: true
+  - field: impact_type
+    required: true
+  - field: summary
+    required: true
+  - field: proposed_action
+    required: true
+  - field: generated_prompts
+    required: false
+  - field: status
+    required: true
+  - field: created_at
+    required: true
+  - field: reviewed_by
+    required: false
+  - field: reviewed_at
+    required: false
+  - field: resolution
+    required: false
+impacts:
+  -
+    impact_id: DISS-IMPACT-EP-009
+    source_packet: EP-009-CODEX-SPEC-AUDIT
+    source_artifacts:
+      - docs/audit/README.md
+      - docs/audit/codex-spec-audit.md
+      - docs/audit/language-policy.md
+      - docs/audit/language-audit-report.md
+      - docs/audit/audit-findings.yml
+    affected_sections: []
+    impact_type: none
+    summary: "EP-009 создает audit contour и language policy для проекта, но не меняет научное содержание диссертации и не требует DOCX update."
+    proposed_action: "Диссертационный prompt не создается; пользователь может рассмотреть language/audit discipline как инженерный guardrail, а не как научный результат."
+    generated_prompts: []
+    status: recorded
+    created_at: 2026-06-08
+    reviewed_by: null
+    reviewed_at: null
+    resolution: null
+  -
+    impact_id: DISS-IMPACT-EP-011
+    source_packet: EP-011-GIT-WORKFLOW-DISCIPLINE
+    source_artifacts:
+      - docs/git-workflow.md
+      - scripts/validate_git_workflow.py
+      - docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+    affected_sections: []
+    impact_type: none
+    summary: "EP-011 создает Git workflow discipline для инженерной организации разработки, но не меняет научное содержание диссертации и не требует DOCX update."
+    proposed_action: "Диссертационный prompt не создается; Git workflow остается инженерным guardrail, а не научным результатом."
+    generated_prompts: []
+    status: recorded
+    created_at: 2026-06-08
+    reviewed_by: null
+    reviewed_at: null
+    resolution: null

@@ -1,0 +1,2476 @@
+schema_version: 1
+updated_at: 2026-06-08
+allowed_statuses:
+  - accepted_risk
+  - acknowledged
+  - blocked
+  - false_positive
+  - fixed
+  - open
+  - requires_user_approval
+findings:
+  -
+    id: AUD-GIT-001-CURRENT-BRANCH-MAIN
+    check_id: AUD-GIT-001
+    severity: medium
+    category: git_workflow
+    file: .git
+    line: null
+    issue: "Текущая ветка main не соответствует EP-011-GIT-WORKFLOW-DISCIPLINE."
+    recommendation: "Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-011-GIT-WORKFLOW-DISCIPLINE
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-011-GIT-WORKFLOW-DISCIPLINE: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-GIT-005-MIXED-EP-SCOPES
+    check_id: AUD-GIT-005
+    severity: medium
+    category: git_workflow
+    file: .git
+    line: null
+    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-008, EP-009, EP-011, governance"
+    recommendation: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-011-GIT-WORKFLOW-DISCIPLINE
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-011-GIT-WORKFLOW-DISCIPLINE нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-02894c6b30
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 242
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-046103457b
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 6
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-0531a641d2
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 291
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-053a6b8772
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 250
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-05865461a1
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 9
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-0bdbfb73bb
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 44
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-0c8a69b73e
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 220
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-1073629074
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 18
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-165dc0dcfb
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 249
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-1845f2ff17
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 13
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-18be776534
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 16
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-1adb9125ff
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 222
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-1d00b7a7a0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 138
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-1d598d67a2
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 142
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-213ab96473
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 145
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-2190ff6f1f
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 213
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-21d58028a1
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 12
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-21f340099c
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 18
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-26aa2148fa
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 295
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-26b5030da0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 280
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-2887db6b5d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 124
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-290432d97d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 217
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-2c8b1c3cd0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 4
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-2d0774e3cd
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 308
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-2ef209afa0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 15
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-2f7be13731
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 92
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-2fa203dcb0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 146
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-334f351859
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 189
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-33ec947dcb
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 279
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-3538e669fe
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 178
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-3a437c1900
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 276
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-3accbe2e53
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 211
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-3c33cf854f
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 160
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-3d1043cdb0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 222
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-420fc75395
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 120
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-428a5d0696
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 182
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-428f46a466
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 181
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-42d34eeba6
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 221
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-43014a6a49
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 214
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-46063a1aa1
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 152
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-4684d071f2
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 8
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-46a84090e8
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 144
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-48c5967d0d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 243
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-492c8d3af4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 203
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-4d02007f97
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 278
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-4e28a472f7
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 216
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-52043032bc
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 240
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-524efa2e77
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 84
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-54b4d342de
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 246
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-55ab6be5d4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 144
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-55e2fe0922
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 182
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-57298e006d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 190
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-575e4ce177
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 135
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-588eb9cec3
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 169
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-5a13f251e2
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 238
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-5b2bdbf96f
+    check_id: AUD-LANG-001
+    severity: low
+    category: language_policy
+    file: README.md
+    line: 273
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-5be83b9284
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 90
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-5c0d387781
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 8
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-5ded1ddcf3
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 148
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-60973b4793
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 215
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-64f19287f7
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 137
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-67f7a2d774
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 210
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-6cac0a0e08
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 249
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-746c97e63f
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 195
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-77e5a1bc1d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 43
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-7860470874
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 155
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-79bce70566
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 161
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-7ca4f919d5
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 143
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-7e40841ba7
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 5
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-7eb754f1ae
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 7
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-7f56ecffda
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 175
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-803a62d012
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 107
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-82d0961d4c
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 154
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-83d2fc4cdd
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 131
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-85b3e58198
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 114
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-8b35b5a9e5
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 145
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-8ce33d1dfa
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 126
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-8d3dba9b73
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 85
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-925ab34e39
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 257
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-9354186bd0
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 316
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-93e5dbd74f
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 7
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-97535cebc2
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 227
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-9dc6abc202
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 178
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-9e587ce4a9
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 14
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a16f76dc5a
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 125
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-a1ead024aa
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 166
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-a224831158
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 139
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a2709939eb
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 206
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-a2bc9d2f57
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 86
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-a4b13299b4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 256
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a555e28898
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 3
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a5d23735e9
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 277
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a6f317f904
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 245
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a742161453
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 84
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-a803666696
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 151
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-ac3d2d992c
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 167
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-ae8cbc2bcd
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 270
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-af4b32a829
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 132
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-b072525bff
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 17
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-b105c347eb
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 303
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-b4e1f94dd4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 119
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-b65ff5ea94
+    check_id: AUD-LANG-001
+    severity: low
+    category: language_policy
+    file: README.md
+    line: 285
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-b8106aae1d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 210
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-b8b05d30d4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 179
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-bb34097547
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 283
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-be5323d191
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 128
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-be6d68b7be
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 247
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-beec7febf7
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 197
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c477da9cc4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 133
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c4abfb9ffc
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 12
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c58ce1595d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 141
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-c7a6416230
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 10
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c8b2ebfbd1
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 5
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c9ad19c14b
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 223
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-c9f69ac928
+    check_id: AUD-LANG-001
+    severity: low
+    category: language_policy
+    file: README.md
+    line: 266
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-ca397ceb94
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 185
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-cd56b75e5f
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 176
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-d2511265c4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 250
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-d2ae43d4ba
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 229
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-d3decab0e5
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 171
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-d5a11eb296
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 305
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-d6414a1b6d
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 204
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-d7249a8e84
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 91
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-d8791d3894
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 174
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-da5d3a0e78
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 126
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-dce9ea0e85
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 173
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-de2e963434
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 120
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-dff75a06c9
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 153
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-e31601b231
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: CHANGELOG.md
+    line: 11
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-e5d826cf78
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 172
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-e7cd196788
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 304
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-eae204bdd5
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 113
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-ec2646f1cd
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 291
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-f21d0a9f29
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 239
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-f29fcf5b70
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 132
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-f42dd2bf25
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 188
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-f7e8228ef4
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 148
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-fb5d7f948c
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 136
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-LANG-001-fd56a3d169
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 127
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-fe351bbc78
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 149
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true
+  -
+    id: AUD-LANG-001-fe7f36e67b
+    check_id: AUD-LANG-001
+    severity: medium
+    category: language_policy
+    file: README.md
+    line: 301
+    issue: "Найден вероятный англоязычный пользовательский фрагмент."
+    recommendation: "Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: true

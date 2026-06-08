@@ -1,0 +1,8 @@
+schema_version: 1
+updated_at: 2026-06-05
+policy:
+  new_sources_require_citation_request: true
+  automatic_bibliography_renumbering_allowed: false
+  codex_may_add_sources_directly: false
+  user_acceptance_required: true
+sources: []

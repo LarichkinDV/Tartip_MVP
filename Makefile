@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check validate-reference compare-reference-fixtures generate-data-questions
+.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-dashboards
 
 up:
 	$(COMPOSE) up --build
@@ -37,17 +37,68 @@ restore:
 
 check:
 	./scripts/check_project.sh
+	$(MAKE) validate-dissertation-sync
+	$(MAKE) validate-dissertation-prompts
+	$(MAKE) generate-acceptance-dashboard
+	$(MAKE) generate-verification-dashboard
+	$(MAKE) audit
+	$(MAKE) generate-user-action-dashboard
+	$(MAKE) validate-plan
+	$(MAKE) validate-verification
 	@if command -v docker >/dev/null 2>&1; then \
 		$(COMPOSE) config --quiet; \
 	else \
 		printf 'Docker is not installed; skipped Docker Compose syntax check.\n'; \
 	fi
 
+validate-plan:
+	$(PYTHON) scripts/validate_project_plan.py
+
 validate-reference:
 	$(PYTHON) scripts/validate_reference_sources.py
+
+validate-verification:
+	$(PYTHON) scripts/validate_verification_dashboard.py
+
+validate-dissertation-prompts:
+	$(PYTHON) scripts/validate_dissertation_prompts.py
+
+validate-dissertation-sync:
+	$(PYTHON) scripts/validate_dissertation_sync.py
+
+validate-git-workflow:
+	$(PYTHON) scripts/validate_git_workflow.py --advisory
+
+validate-git-workflow-strict:
+	$(PYTHON) scripts/validate_git_workflow.py --strict
+
+audit-codex-spec:
+	$(PYTHON) scripts/audit_codex_spec.py
+
+audit-language:
+	$(PYTHON) scripts/audit_language_policy.py
+
+validate-audit:
+	$(PYTHON) scripts/validate_audit_reports.py
+
+audit: audit-codex-spec audit-language validate-audit
 
 compare-reference-fixtures:
 	$(PYTHON) scripts/compare_reference_releases.py --fixture
 
 generate-data-questions:
 	$(PYTHON) scripts/generate_data_questions.py
+
+generate-dissertation-prompts:
+	$(PYTHON) scripts/generate_dissertation_prompts.py
+
+generate-acceptance-dashboard:
+	$(PYTHON) scripts/generate_acceptance_dashboard.py
+
+generate-user-action-dashboard:
+	$(PYTHON) scripts/generate_user_action_dashboard.py
+
+generate-verification-dashboard:
+	$(PYTHON) scripts/generate_verification_dashboard.py
+
+generate-dashboards: generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard

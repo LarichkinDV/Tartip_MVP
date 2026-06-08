@@ -1,0 +1,131 @@
+audit_profile:
+  id: CODEX-SPEC-AUDIT
+  version: "1.0"
+  language_policy: "ru-user-facing"
+  mode: "audit-first-read-mostly"
+  checks:
+    -
+      id: AUD-DOMAIN-001
+      title: "Запрет прямой связи ModelElement -> GESNNorm"
+      severity: critical
+      category: domain_logic
+    -
+      id: AUD-DOMAIN-002
+      title: "КСИ не выбирает ГЭСН напрямую"
+      severity: critical
+      category: domain_logic
+    -
+      id: AUD-DOMAIN-003
+      title: "CalculationUnit не является контейнером фактических данных"
+      severity: critical
+      category: domain_logic
+    -
+      id: AUD-REF-001
+      title: "No source — no rule"
+      severity: critical
+      category: reference_data
+    -
+      id: AUD-REF-002
+      title: "LLM-generated data запрещены как evidence"
+      severity: critical
+      category: reference_data
+    -
+      id: AUD-ACCEPT-001
+      title: "Codex не может ставить accepted"
+      severity: critical
+      category: acceptance
+    -
+      id: AUD-PROTECT-001
+      title: "Accepted artifacts protected"
+      severity: critical
+      category: artifact_protection
+    -
+      id: AUD-PROTECT-002
+      title: "Accepted artifacts должны иметь protection.locked"
+      severity: high
+      category: artifact_protection
+    -
+      id: AUD-PROTECT-003
+      title: "Accepted artifacts должны иметь checksum или finding о его отсутствии"
+      severity: medium
+      category: artifact_protection
+    -
+      id: AUD-DASH-001
+      title: "Acceptance dashboard актуален"
+      severity: high
+      category: dashboards
+    -
+      id: AUD-DASH-002
+      title: "User action dashboard содержит открытые вопросы"
+      severity: high
+      category: dashboards
+    -
+      id: AUD-VERIF-001
+      title: "Manual checks не закрыты Codex"
+      severity: critical
+      category: verification
+    -
+      id: AUD-MONTHLY-001
+      title: "Monthly block содержит 3 задачи по 15 часов"
+      severity: high
+      category: monthly_defense
+    -
+      id: AUD-DISS-001
+      title: "DOCX не редактируется напрямую"
+      severity: critical
+      category: dissertation_sync
+    -
+      id: AUD-DISS-002
+      title: "Codex/GRACE не являются научным результатом"
+      severity: critical
+      category: dissertation_sync
+    -
+      id: AUD-LANG-001
+      title: "Пользовательские артефакты на русском языке"
+      severity: medium
+      category: language_policy
+    -
+      id: AUD-LANG-002
+      title: "Технические идентификаторы не переводятся"
+      severity: critical
+      category: language_policy
+    -
+      id: AUD-AUDIT-001
+      title: "Audit findings сохраняют пользовательские статусы"
+      severity: critical
+      category: audit_integrity
+    -
+      id: AUD-AUDIT-002
+      title: "Medium/low language findings не блокируют make check"
+      severity: medium
+      category: audit_integrity
+    -
+      id: AUD-GIT-001
+      title: "Branch naming follows ep-<number>-<slug>"
+      severity: medium
+      category: git_workflow
+    -
+      id: AUD-GIT-002
+      title: "Merge requires acceptance_decision = accepted"
+      severity: medium
+      category: git_workflow
+    -
+      id: AUD-GIT-003
+      title: "accepted_by cannot be Codex"
+      severity: critical
+      category: git_workflow
+    -
+      id: AUD-GIT-004
+      title: "Forbidden files must not be staged"
+      severity: critical
+      category: git_workflow
+    -
+      id: AUD-GIT-005
+      title: "Mixed EP changes require warning"
+      severity: medium
+      category: git_workflow
+    -
+      id: AUD-GIT-006
+      title: "Codex must not merge into main without explicit user approval"
+      severity: critical
+      category: git_workflow

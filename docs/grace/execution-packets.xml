@@ -50,4 +50,287 @@
       <Item>Do not duplicate unchanged reference records across releases</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-004-PROJECT-PLANNING-AND-ACCEPTANCE" status="ready_for_acceptance">
+    <Name>Project planning and acceptance contour</Name>
+    <Goal>Create a local project planning, artifact registry, traceability, status reporting, and user acceptance workflow.</Goal>
+    <Scope>
+      <Item>Create project plan</Item>
+      <Item>Create artifact registry</Item>
+      <Item>Create traceability matrix</Item>
+      <Item>Create decision log</Item>
+      <Item>Create status report</Item>
+      <Item>Create acceptance reports and template</Item>
+      <Item>Create project plan validation script</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>docs/decision-log.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/acceptance/README.md</Artifact>
+      <Artifact>docs/acceptance/ACCEPTANCE_TEMPLATE.md</Artifact>
+      <Artifact>docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md</Artifact>
+      <Artifact>scripts/validate_project_plan.py</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-004-001">создан project-plan.md.</Criterion>
+      <Criterion id="AC-EP-004-002">создан artifact-registry.yml.</Criterion>
+      <Criterion id="AC-EP-004-003">created artifacts зарегистрированы.</Criterion>
+      <Criterion id="AC-EP-004-004">создан traceability-matrix.md.</Criterion>
+      <Criterion id="AC-EP-004-005">создан decision-log.md.</Criterion>
+      <Criterion id="AC-EP-004-006">создан status-report.md.</Criterion>
+      <Criterion id="AC-EP-004-007">создана папка docs/acceptance/.</Criterion>
+      <Criterion id="AC-EP-004-008">создан acceptance report для EP-004.</Criterion>
+      <Criterion id="AC-EP-004-009">в AGENTS.md добавлена Project planning and acceptance discipline.</Criterion>
+      <Criterion id="AC-EP-004-010">validate_project_plan.py проверяет существование путей из artifact-registry.yml.</Criterion>
+      <Criterion id="AC-EP-004-011">validate_project_plan.py запрещает accepted_by = Codex.</Criterion>
+      <Criterion id="AC-EP-004-012">Codex не ставит accepted, только ready_for_acceptance.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not mark any packet accepted</Item>
+      <Item>Do not invent normative data</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS" status="ready_for_acceptance">
+    <Name>Acceptance and user action dashboards</Name>
+    <Goal>Create local Markdown and YAML dashboards for packet acceptance, user actions, and accepted artifact protection.</Goal>
+    <Scope>
+      <Item>Create acceptance dashboard Markdown and YAML files</Item>
+      <Item>Create user action dashboard Markdown and YAML files</Item>
+      <Item>Create dashboard generation scripts</Item>
+      <Item>Extend project plan validation for dashboards and accepted artifact protection</Item>
+      <Item>Document dashboard and accepted artifact protection discipline</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/acceptance-dashboard.md</Artifact>
+      <Artifact>docs/acceptance-dashboard.yml</Artifact>
+      <Artifact>docs/user-action-dashboard.md</Artifact>
+      <Artifact>docs/user-action-dashboard.yml</Artifact>
+      <Artifact>scripts/generate_acceptance_dashboard.py</Artifact>
+      <Artifact>scripts/generate_user_action_dashboard.py</Artifact>
+      <Artifact>scripts/validate_project_plan.py</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-005-001">создан acceptance-dashboard.md.</Criterion>
+      <Criterion id="AC-EP-005-002">создан acceptance-dashboard.yml.</Criterion>
+      <Criterion id="AC-EP-005-003">создан user-action-dashboard.md.</Criterion>
+      <Criterion id="AC-EP-005-004">создан user-action-dashboard.yml.</Criterion>
+      <Criterion id="AC-EP-005-005">ready_for_acceptance packets отражаются в acceptance dashboard.</Criterion>
+      <Criterion id="AC-EP-005-006">open questions отражаются в user action dashboard.</Criterion>
+      <Criterion id="AC-EP-005-007">Codex не может поставить accepted.</Criterion>
+      <Criterion id="AC-EP-005-008">accepted_by / decided_by не может быть Codex.</Criterion>
+      <Criterion id="AC-EP-005-009">добавлены команды генерации dashboards в Makefile.</Criterion>
+      <Criterion id="AC-EP-005-010">validate_project_plan.py проверяет dashboards.</Criterion>
+      <Criterion id="AC-EP-005-011">accepted artifacts отображаются как protected.</Criterion>
+      <Criterion id="AC-EP-005-012">protected accepted artifacts нельзя изменять без user approval.</Criterion>
+      <Criterion id="AC-EP-005-013">если требуется изменение accepted artifact, создается requires_user_approval action или change request.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not create web UI, frontend dashboard, or backend dashboard endpoints</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not mark any packet accepted</Item>
+      <Item>Do not change accepted artifacts without explicit user approval</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-007-VERIFICATION-DASHBOARD" status="ready_for_acceptance">
+    <Name>Verification dashboard</Name>
+    <Goal>Create a local manual verification window for testing protocol checks without web UI.</Goal>
+    <Scope>
+      <Item>Create verification dashboard Markdown and YAML files</Item>
+      <Item>Create verification dashboard generator</Item>
+      <Item>Create verification dashboard validator</Item>
+      <Item>Connect verification dashboard with monthly test protocol</Item>
+      <Item>Extend project plan validation for verification checks</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/verification-dashboard.md</Artifact>
+      <Artifact>docs/verification-dashboard.yml</Artifact>
+      <Artifact>scripts/generate_verification_dashboard.py</Artifact>
+      <Artifact>scripts/validate_verification_dashboard.py</Artifact>
+      <Artifact>scripts/validate_project_plan.py</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-007-001">создан verification-dashboard.md.</Criterion>
+      <Criterion id="AC-EP-007-002">создан verification-dashboard.yml.</Criterion>
+      <Criterion id="AC-EP-007-003">verification dashboard содержит проверки из протокола тестирования.</Criterion>
+      <Criterion id="AC-EP-007-004">каждая проверка имеет инструкцию how_to_check.</Criterion>
+      <Criterion id="AC-EP-007-005">каждая проверка имеет expected_result.</Criterion>
+      <Criterion id="AC-EP-007-006">manual checks не могут быть отмечены Codex как passed.</Criterion>
+      <Criterion id="AC-EP-007-007">checked_by не может быть Codex.</Criterion>
+      <Criterion id="AC-EP-007-008">добавлена команда make generate-verification-dashboard.</Criterion>
+      <Criterion id="AC-EP-007-009">добавлена команда make validate-verification.</Criterion>
+      <Criterion id="AC-EP-007-010">verification dashboard связан с acceptance dashboard и monthly test protocol.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not create web UI, frontend, or backend endpoints</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not mark manual checks as passed by Codex</Item>
+      <Item>Do not mark any packet accepted</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-008-DISSERTATION-PROMPT-GENERATION" status="ready_for_acceptance">
+    <Name>Dissertation prompt generation contour</Name>
+    <Goal>Create a controlled pipeline from Tartip changes to dissertation impact analysis, generated prompts, markdown patches, user acceptance, and explicit DOCX updates.</Goal>
+    <Scope>
+      <Item>Create dissertation synchronization folders and guardrails</Item>
+      <Item>Create dissertation editor prompt profile and alignment rules</Item>
+      <Item>Create forbidden claims registry</Item>
+      <Item>Create prompt templates for impact, section, terminology, bibliography, and DOCX update checks</Item>
+      <Item>Create prompt generation and validation scripts</Item>
+      <Item>Register artifacts and update dashboards</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/dissertation/README.md</Artifact>
+      <Artifact>docs/dissertation/dissertation-sync-plan.md</Artifact>
+      <Artifact>docs/dissertation/dissertation-impact-log.yml</Artifact>
+      <Artifact>docs/dissertation/dissertation-artifact-map.yml</Artifact>
+      <Artifact>docs/dissertation/section-update-queue.yml</Artifact>
+      <Artifact>docs/dissertation/dissertation-change-log.md</Artifact>
+      <Artifact>docs/dissertation/bibliography-registry.yml</Artifact>
+      <Artifact>docs/dissertation/citation-requests.yml</Artifact>
+      <Artifact>docs/dissertation/terminology-control.yml</Artifact>
+      <Artifact>docs/dissertation/prompt-profiles/dissertation-editor-profile.md</Artifact>
+      <Artifact>docs/dissertation/prompt-profiles/dissertation-editor-profile.yml</Artifact>
+      <Artifact>docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md</Artifact>
+      <Artifact>docs/dissertation/prompt-profiles/forbidden-claims.yml</Artifact>
+      <Artifact>docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md</Artifact>
+      <Artifact>docs/dissertation/prompt-templates/dissertation-section-update.prompt.md</Artifact>
+      <Artifact>docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md</Artifact>
+      <Artifact>docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md</Artifact>
+      <Artifact>docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md</Artifact>
+      <Artifact>scripts/generate_dissertation_prompts.py</Artifact>
+      <Artifact>scripts/validate_dissertation_prompts.py</Artifact>
+      <Artifact>scripts/validate_dissertation_sync.py</Artifact>
+      <Artifact>docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-008-001">создан диссертационный контур docs/dissertation/.</Criterion>
+      <Criterion id="AC-EP-008-002">создан dissertation-editor-profile.md.</Criterion>
+      <Criterion id="AC-EP-008-003">создан dissertation-editor-profile.yml.</Criterion>
+      <Criterion id="AC-EP-008-004">создан tartip-dissertation-alignment.md.</Criterion>
+      <Criterion id="AC-EP-008-005">создан forbidden-claims.yml.</Criterion>
+      <Criterion id="AC-EP-008-006">созданы prompt templates.</Criterion>
+      <Criterion id="AC-EP-008-007">созданы prompt-queue и patches.</Criterion>
+      <Criterion id="AC-EP-008-008">создан generate_dissertation_prompts.py.</Criterion>
+      <Criterion id="AC-EP-008-009">создан validate_dissertation_prompts.py.</Criterion>
+      <Criterion id="AC-EP-008-010">создан validate_dissertation_sync.py.</Criterion>
+      <Criterion id="AC-EP-008-011">AGENTS.md содержит Dissertation synchronization discipline.</Criterion>
+      <Criterion id="AC-EP-008-012">Codex не редактирует DOCX напрямую.</Criterion>
+      <Criterion id="AC-EP-008-013">Codex не создает новую версию DOCX.</Criterion>
+      <Criterion id="AC-EP-008-014">создан acceptance report для EP-008.</Criterion>
+      <Criterion id="AC-EP-008-015">статус EP-008 — ready_for_acceptance, но не accepted.</Criterion>
+      <Criterion id="AC-EP-008-016">accepted artifacts не изменяются без user approval.</Criterion>
+      <Criterion id="AC-EP-008-017">dashboards обновлены и содержат EP-008.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not edit DOCX directly</Item>
+      <Item>Do not create a new DOCX version</Item>
+      <Item>Do not invent sources or bibliography entries</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not mark any packet, prompt, patch, or DOCX update accepted</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-009-CODEX-SPEC-AUDIT" status="ready_for_acceptance">
+    <Name>Codex specification audit and language policy</Name>
+    <Goal>Create an audit-first contour for Codex project rules, artifact protection, dashboards, and Russian user-facing language policy.</Goal>
+    <Scope>
+      <Item>Create docs/audit/ contour</Item>
+      <Item>Create codex spec audit profile and report</Item>
+      <Item>Create language policy and language audit report</Item>
+      <Item>Create audit findings registry</Item>
+      <Item>Create audit scripts and validation script</Item>
+      <Item>Register audit artifacts and update dashboards</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/audit/README.md</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.md</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.yml</Artifact>
+      <Artifact>docs/audit/language-policy.md</Artifact>
+      <Artifact>docs/audit/language-audit-report.md</Artifact>
+      <Artifact>docs/audit/audit-findings.yml</Artifact>
+      <Artifact>scripts/audit_codex_spec.py</Artifact>
+      <Artifact>scripts/audit_language_policy.py</Artifact>
+      <Artifact>scripts/validate_audit_reports.py</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-009-001">создан docs/audit/.</Criterion>
+      <Criterion id="AC-EP-009-002">создан codex-spec-audit.yml.</Criterion>
+      <Criterion id="AC-EP-009-003">создан audit-findings.yml.</Criterion>
+      <Criterion id="AC-EP-009-004">создан language-policy.md.</Criterion>
+      <Criterion id="AC-EP-009-005">создан language-audit-report.md.</Criterion>
+      <Criterion id="AC-EP-009-006">создан audit_codex_spec.py.</Criterion>
+      <Criterion id="AC-EP-009-007">создан audit_language_policy.py.</Criterion>
+      <Criterion id="AC-EP-009-008">создан validate_audit_reports.py.</Criterion>
+      <Criterion id="AC-EP-009-009">AGENTS.md содержит Language policy.</Criterion>
+      <Criterion id="AC-EP-009-010">AGENTS.md содержит Audit discipline.</Criterion>
+      <Criterion id="AC-EP-009-011">аудит проверяет запрет ModelElement -> GESNNorm.</Criterion>
+      <Criterion id="AC-EP-009-012">аудит проверяет accepted_by/decided_by/checked_by/answered_by != Codex.</Criterion>
+      <Criterion id="AC-EP-009-013">аудит проверяет отсутствие duplicate packet ids.</Criterion>
+      <Criterion id="AC-EP-009-014">языковой аудит не переводит технические идентификаторы.</Criterion>
+      <Criterion id="AC-EP-009-015">EP-009 отображается в acceptance dashboard.</Criterion>
+      <Criterion id="AC-EP-009-016">EP-009 не отмечен accepted.</Criterion>
+      <Criterion id="AC-EP-009-017">audit scripts preserve existing user resolutions in audit-findings.yml.</Criterion>
+      <Criterion id="AC-EP-009-018">language audit does not fail on technical identifiers.</Criterion>
+      <Criterion id="AC-EP-009-019">EP-009 does not mass-rewrite existing documents.</Criterion>
+      <Criterion id="AC-EP-009-020">accepted/protected artifacts are not modified.</Criterion>
+      <Criterion id="AC-EP-009-021">medium/low language findings do not block make check.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not create direct ModelElement to GESNNorm mapping</Item>
+      <Item>Do not mass-russify existing documents</Item>
+      <Item>Do not modify accepted/protected artifacts without user approval</Item>
+      <Item>Do not mark any packet accepted</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-011-GIT-WORKFLOW-DISCIPLINE" status="ready_for_acceptance">
+    <Name>Git workflow discipline</Name>
+    <Goal>Create formal rules and validation checks for branch creation, current branch continuation, merge readiness, merge prohibitions, and forbidden Git files.</Goal>
+    <Scope>
+      <Item>Add Git workflow discipline to AGENTS.md</Item>
+      <Item>Create docs/git-workflow.md</Item>
+      <Item>Create validate_git_workflow.py</Item>
+      <Item>Add Makefile validation commands</Item>
+      <Item>Extend Codex spec audit with Git workflow checks</Item>
+      <Item>Register artifacts and update dashboards</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/git-workflow.md</Artifact>
+      <Artifact>scripts/validate_git_workflow.py</Artifact>
+      <Artifact>AGENTS.md</Artifact>
+      <Artifact>Makefile</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.yml</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.md</Artifact>
+      <Artifact>docs/audit/audit-findings.yml</Artifact>
+      <Artifact>scripts/audit_codex_spec.py</Artifact>
+      <Artifact>docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-011-001">AGENTS.md содержит Git workflow discipline.</Criterion>
+      <Criterion id="AC-EP-011-002">docs/git-workflow.md создан.</Criterion>
+      <Criterion id="AC-EP-011-003">validate_git_workflow.py создан.</Criterion>
+      <Criterion id="AC-EP-011-004">branch naming policy описана.</Criterion>
+      <Criterion id="AC-EP-011-005">merge policy описана.</Criterion>
+      <Criterion id="AC-EP-011-006">merge запрещен без acceptance_decision = accepted.</Criterion>
+      <Criterion id="AC-EP-011-007">accepted_by = Codex запрещен.</Criterion>
+      <Criterion id="AC-EP-011-008">forbidden files не должны попадать в Git.</Criterion>
+      <Criterion id="AC-EP-011-009">validate-git-workflow добавлен в Makefile.</Criterion>
+      <Criterion id="AC-EP-011-010">EP-011 не отмечен accepted.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not perform merge</Item>
+      <Item>Do not perform git add, commit, push, or branch deletion</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not mark EP-011 accepted</Item>
+      <Item>Do not add secrets, dumps, real DOCX/PDF, or real normative bases to Git</Item>
+    </NonGoals>
+  </Packet>
 </ExecutionPackets>

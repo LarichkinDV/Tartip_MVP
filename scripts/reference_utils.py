@@ -6,7 +6,9 @@ from pathlib import Path
 from typing import Any
 
 
-SAFE_STRING_CHARS = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-./")
+SAFE_STRING_CHARS = set(
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-./"
+)
 
 
 def parse_scalar(value: str) -> Any:
@@ -62,7 +64,9 @@ def _split_key_value(content: str) -> tuple[str, str] | None:
     return key.strip(), value.strip()
 
 
-def _parse_yaml_block(tokens: list[tuple[int, str]], index: int, indent: int) -> tuple[Any, int]:
+def _parse_yaml_block(
+    tokens: list[tuple[int, str]], index: int, indent: int
+) -> tuple[Any, int]:
     if index >= len(tokens):
         return None, index
     current_indent, content = tokens[index]
@@ -73,7 +77,9 @@ def _parse_yaml_block(tokens: list[tuple[int, str]], index: int, indent: int) ->
     return _parse_yaml_map(tokens, index, current_indent)
 
 
-def _parse_yaml_map(tokens: list[tuple[int, str]], index: int, indent: int) -> tuple[dict[str, Any], int]:
+def _parse_yaml_map(
+    tokens: list[tuple[int, str]], index: int, indent: int
+) -> tuple[dict[str, Any], int]:
     result: dict[str, Any] = {}
     while index < len(tokens):
         current_indent, content = tokens[index]
@@ -97,7 +103,9 @@ def _parse_yaml_map(tokens: list[tuple[int, str]], index: int, indent: int) -> t
     return result, index
 
 
-def _parse_yaml_list(tokens: list[tuple[int, str]], index: int, indent: int) -> tuple[list[Any], int]:
+def _parse_yaml_list(
+    tokens: list[tuple[int, str]], index: int, indent: int
+) -> tuple[list[Any], int]:
     result: list[Any] = []
     while index < len(tokens):
         current_indent, content = tokens[index]
@@ -177,7 +185,9 @@ def records_by_natural_key(data: Any) -> dict[str, dict[str, Any]]:
 def record_payload(record: dict[str, Any]) -> Any:
     if "payload" in record:
         return record["payload"]
-    return {key: value for key, value in record.items() if key not in {"id", "natural_key"}}
+    return {
+        key: value for key, value in record.items() if key not in {"id", "natural_key"}
+    }
 
 
 def format_yaml_scalar(value: Any) -> str:

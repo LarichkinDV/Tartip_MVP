@@ -1,0 +1,28 @@
+monthly_plan:
+  period: 2026-06
+  updated_at: 2026-06-05
+  owner: "Дмитрий"
+  scope: "Reference data governance verification package"
+  total_planned_hours: 45
+  tasks:
+    -
+      task_id: MP-2026-06-001
+      title: "БФТ по reference data governance"
+      deliverable_type: BFT
+      planned_hours: 15
+      artifact: docs/monthly/2026-06/01-bft-reference-data-governance.md
+      status: ready_for_manual_review
+    -
+      task_id: MP-2026-06-002
+      title: "ТЗ по reference data governance"
+      deliverable_type: TZ
+      planned_hours: 15
+      artifact: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
+      status: ready_for_manual_review
+    -
+      task_id: MP-2026-06-003
+      title: "Протокол тестирования reference data governance"
+      deliverable_type: test_protocol
+      planned_hours: 15
+      artifact: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      status: ready_for_manual_review

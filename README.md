@@ -69,6 +69,24 @@ Run project checks:
 make check
 ```
 
+Generate project dashboards:
+
+```sh
+make generate-dashboards
+```
+
+Run Codex audit checks:
+
+```sh
+make audit
+```
+
+Run Git workflow advisory checks:
+
+```sh
+make validate-git-workflow
+```
+
 When Docker is not installed, `make check` still runs repository safety checks and
 prints that the Docker Compose syntax check was skipped. Full stack validation
 requires Docker, but Python, Ruff, pytest, npm, and TypeScript checks can run
@@ -81,9 +99,14 @@ source .venv/bin/activate && make format
 source .venv/bin/activate && make lint
 source .venv/bin/activate && make test
 make check
+make generate-dashboards
+make generate-verification-dashboard
+make validate-verification
 make validate-reference
 make compare-reference-fixtures
 make generate-data-questions
+make audit
+make validate-git-workflow
 ```
 
 ## Database Backups
@@ -149,3 +172,145 @@ make compare-reference-fixtures
 
 The fake fixtures are only for testing versioning mechanics. They are not
 classifier or normative evidence.
+
+## Project Planning And Acceptance Workflow
+
+The project plan is in `docs/project-plan.md`. It is a human-readable summary;
+the actual artifact source of truth is `docs/artifact-registry.yml`.
+
+Execution packets live in `docs/grace/execution-packets.xml`. Each packet should
+be traceable to actual artifacts, verification scenarios, and an acceptance
+report in `docs/acceptance/`.
+
+Codex may prepare a packet as `ready_for_acceptance`, but only the user may set
+an acceptance decision such as `accepted`, `rejected`, or `needs_revision`.
+`accepted_by` must not be `Codex`.
+
+Validate the project planning contour:
+
+```sh
+make validate-plan
+```
+
+## Acceptance And User Action Dashboards
+
+Dashboards are local documentation artifacts only. They do not create web UI,
+frontend routes, or backend endpoints.
+
+Generate both dashboards:
+
+```sh
+make generate-dashboards
+```
+
+Dashboard files:
+
+- `docs/acceptance-dashboard.md`: human-readable acceptance window.
+- `docs/acceptance-dashboard.yml`: machine-readable acceptance state.
+- `docs/user-action-dashboard.md`: human-readable user question and action window.
+- `docs/user-action-dashboard.yml`: machine-readable user action state.
+
+The acceptance dashboard aggregates `docs/grace/execution-packets.xml`,
+`docs/artifact-registry.yml`, `docs/acceptance/*.acceptance.md`, and
+`docs/status-report.md`.
+
+The user action dashboard aggregates `data/questions/*.yml` and
+`docs/audit/audit-findings.yml`. Codex must not fill `answered_by`,
+`answered_at`, `accepted_by`, or `decided_by` for the user.
+
+Accepted artifacts are protected. If an artifact is accepted by the user or
+locked in `docs/artifact-registry.yml`, Codex must create a change request or
+`requires_user_approval` action before any material change.
+
+## Verification Dashboard
+
+The verification dashboard is a local manual testing window. It does not replace
+pytest, `make validate-plan`, `make validate-reference`, `make compare-reference-fixtures`,
+the monthly test protocol, or the acceptance dashboard.
+
+Generate it:
+
+```sh
+make generate-verification-dashboard
+```
+
+Validate it:
+
+```sh
+make validate-verification
+```
+
+Files:
+
+- `docs/verification-dashboard.md`: human-readable manual verification checklist.
+- `docs/verification-dashboard.yml`: machine-readable verification task registry.
+- `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`: monthly test protocol source.
+
+Codex must not mark manual checks as passed, must not set `checked_by: Codex`,
+and must not treat verification as acceptance. The user fills `user_result` in
+`docs/verification-dashboard.yml` after performing checks.
+
+User acceptance flow:
+
+1. Open the relevant `docs/acceptance/<PACKET_ID>.acceptance.md` report.
+2. Review listed artifacts and criteria.
+3. Run the report's verification commands.
+4. Fill `acceptance_decision`, `accepted_by`, `accepted_at`, and `comments`.
+
+## Codex Audit Workflow
+
+`EP-009-CODEX-SPEC-AUDIT` добавляет audit-first/read-mostly контур. Он фиксирует нарушения в `docs/audit/audit-findings.yml`, создает отчеты `docs/audit/codex-spec-audit.md` и `docs/audit/language-audit-report.md`, но не выполняет массовую русификацию и не исправляет accepted/protected artifacts без user approval.
+
+Команды:
+
+```sh
+make audit-codex-spec
+make audit-language
+make validate-audit
+make audit
+```
+
+Medium/low language findings не блокируют `make check`. Critical findings должны блокировать соответствующую audit-команду.
+
+## Git Workflow
+
+Git workflow описан в `docs/git-workflow.md`. Новый execution packet должен выполняться в ветке формата `ep-<number>-<short-slug>`, если задача не read-only и не является продолжением текущей packet-ветки.
+
+Advisory validation:
+
+```sh
+make validate-git-workflow
+```
+
+Strict validation перед merge preparation:
+
+```sh
+make validate-git-workflow-strict
+```
+
+Codex не выполняет `git add`, `git commit`, `git push`, `git merge` или удаление веток в рамках validator. Merge в `main` запрещен без `acceptance_decision = accepted`, заполненного `accepted_by`, успешного `make check`, отсутствия critical/high audit findings и явного user approval.
+
+## Dissertation Synchronization Workflow
+
+Tartip does not edit the dissertation directly. Project changes are first checked for dissertation impact and only then converted into controlled prompts.
+
+Workflow:
+
+1. Tartip execution packet is completed.
+2. Dissertation impact is recorded in `docs/dissertation/dissertation-impact-log.yml`.
+3. A section update entry is recorded in `docs/dissertation/section-update-queue.yml`.
+4. If needed, a prompt is generated in `docs/dissertation/prompt-queue/pending/`.
+5. The user reviews the prompt.
+6. After prompt acceptance, a markdown patch can be prepared in `docs/dissertation/patches/pending/`.
+7. After patch acceptance, DOCX can be updated only by explicit user request.
+8. DOCX update requires render/visual check.
+
+Run dissertation sync checks:
+
+```sh
+make validate-dissertation-sync
+make validate-dissertation-prompts
+make generate-dissertation-prompts
+```
+
+Accepted artifacts are protected. Codex must not mark dissertation prompts, patches, DOCX updates, or acceptance reports as accepted.

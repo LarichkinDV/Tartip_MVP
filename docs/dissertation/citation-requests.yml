@@ -1,0 +1,7 @@
+schema_version: 1
+updated_at: 2026-06-05
+policy:
+  purpose: "Requests for sources before bibliography changes."
+  direct_bibliography_update_allowed: false
+  automatic_numbering_change_allowed: false
+citation_requests: []

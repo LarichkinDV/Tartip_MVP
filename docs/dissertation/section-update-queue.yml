@@ -1,0 +1,38 @@
+schema_version: 1
+updated_at: 2026-06-08
+allowed_statuses:
+  - pending
+  - requires_review
+  - prompt_generated
+  - patch_pending
+  - accepted
+  - rejected
+  - blocked
+field_contract:
+  - field: update_id
+    required: true
+  - field: status
+    required: true
+  - field: priority
+    required: true
+  - field: section_id
+    required: true
+  - field: source_packet
+    required: true
+  - field: reason
+    required: true
+  - field: required_action
+    required: true
+  - field: prompt_id
+    required: false
+  - field: patch_id
+    required: false
+  - field: created_at
+    required: true
+  - field: accepted_by
+    required: false
+  - field: accepted_at
+    required: false
+  - field: comments
+    required: false
+section_updates: []
