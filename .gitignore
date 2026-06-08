@@ -59,3 +59,16 @@ data/reference/normalized/**
 data/reference/reports/**
 !data/reference/reports/**/
 !data/reference/reports/**/.gitkeep
+
+thesis/source/*.docx
+!thesis/source/.gitkeep
+!thesis/source/README.md
+thesis/versions/*.docx
+!thesis/versions/.gitkeep
+!thesis/versions/README.md
+thesis/exports/pdf/*.pdf
+!thesis/exports/pdf/.gitkeep
+!thesis/exports/pdf/README.md
+thesis/exports/rendered-review/*
+!thesis/exports/rendered-review/.gitkeep
+!thesis/exports/rendered-review/README.md
