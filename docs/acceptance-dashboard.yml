@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 9
-    accepted: 1
+    accepted: 2
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 8
+    pending: 7
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -88,13 +88,9 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-001-INFRA-BLOCKER-001
-          text: "Блокеров нет. Docker Desktop установлен, Docker Compose runtime-проверка выполнена."
+        []
       risks:
-        -
-          id: EP-001-INFRA-RISK-001
-          text: "Поведение Docker runtime проверено локально с использованием Docker Desktop."
+        []
       user_decision:
         decision: accepted
         decided_by: "Дмитрий"
@@ -105,7 +101,7 @@ acceptance_dashboard:
       title: "Reference data governance"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       artifacts:
         -
@@ -193,18 +189,19 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-002-REFERENCE-GOVERNANCE-BLOCKER-001
-          text: "Official local reference source files are absent."
+        []
       risks:
         -
           id: EP-002-REFERENCE-GOVERNANCE-RISK-001
-          text: "Rules cannot become active until source evidence exists."
+          text: "Конкретные правила сопоставления не могут переводиться в активный статус до загрузки, регистрации и проверки официальных источников с версией, происхождением и контрольной суммой."
+        -
+          id: EP-002-REFERENCE-GOVERNANCE-RISK-002
+          text: "Официальные локальные источники КСИ/ФСНБ/ГЭСН пока отсутствуют; это ограничивает разработку активных правил сопоставления, но не блокирует приемку контура reference governance."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. Контур управления справочными данными реализован. Проверка make validate-reference выполнена успешно: Reference source validation passed. Команда make generate-data-questions выполнена успешно, новых вопросов не добавлено. Принцип No source — no rule принят: Codex не должен придумывать КСИ, ФСНБ, ГЭСН, единицы измерения, состав работ или нормативные значения. Отсутствие официальных локальных источников не блокирует приемку EP-002, но блокирует перевод конкретных правил сопоставления в активный статус до загрузки и регистрации источников."
     -
       packet_id: EP-003-REFERENCE-VERSIONING
       title: "Delta-based reference versioning"

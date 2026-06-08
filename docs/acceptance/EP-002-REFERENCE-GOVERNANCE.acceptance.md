@@ -47,11 +47,11 @@ make generate-data-questions
 
 ## 7. Блокеры
 
-- Official local reference source files are absent.
 
 ## 8. Риски
 
-- Rules cannot become active until source evidence exists.
+- Конкретные правила сопоставления не могут переводиться в активный статус до загрузки, регистрации и проверки официальных источников с версией, происхождением и контрольной суммой.
+- Официальные локальные источники КСИ/ФСНБ/ГЭСН пока отсутствуют; это ограничивает разработку активных правил сопоставления, но не блокирует приемку контура reference governance.
 
 ## 9. Спорные решения
 
@@ -59,7 +59,7 @@ make generate-data-questions
 
 ## 10. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. Контур управления справочными данными реализован. Проверка make validate-reference выполнена успешно: Reference source validation passed. Команда make generate-data-questions выполнена успешно, новых вопросов не добавлено. Принцип No source — no rule принят: Codex не должен придумывать КСИ, ФСНБ, ГЭСН, единицы измерения, состав работ или нормативные значения. Отсутствие официальных локальных источников не блокирует приемку EP-002, но блокирует перевод конкретных правил сопоставления в активный статус до загрузки и регистрации источников.

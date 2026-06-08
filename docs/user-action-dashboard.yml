@@ -8,7 +8,7 @@ user_action_dashboard:
     - data/questions/import-issues.yml
     - docs/audit/audit-findings.yml
   summary:
-    open: 149
+    open: 150
     high_priority: 4
     blocked: 4
     answered: 0
@@ -102,6 +102,26 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
+      id: AUD-GIT-001-BRANCH-NAME-MISMATCH
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Имя ветки ep-010-language-normalization не соответствует packet EP-011-GIT-WORKFLOW-DISCIPLINE."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Использовать формат ep-011-<short-slug>."
+      target_path: .git
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
       id: AUD-GIT-001-CURRENT-BRANCH-MAIN
       type: audit_finding
       priority: normal
@@ -147,7 +167,7 @@ user_action_dashboard:
       priority: normal
       status: open
       topic: git_workflow
-      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-008, EP-009, EP-011, governance"
+      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
       expected_action: "Review audit finding and decide next action."
       expected_input: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
       target_path: .git

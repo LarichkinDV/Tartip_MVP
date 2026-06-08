@@ -48,11 +48,9 @@ make check
 
 ## 7. Блокеры
 
-- Блокеров нет. Docker Desktop установлен, Docker Compose runtime-проверка выполнена.
 
 ## 8. Риски
 
-- Поведение Docker runtime проверено локально с использованием Docker Desktop.
 
 ## 9. Спорные решения
 
