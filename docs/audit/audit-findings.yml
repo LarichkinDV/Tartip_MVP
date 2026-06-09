@@ -33,7 +33,7 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Текущая ветка main не соответствует EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
+    issue: "Текущая ветка main не соответствует EP-013-POST-ACCEPTANCE-STATE-SYNC."
     recommendation: "Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением."
     status: open
     created_at: 2026-06-08
