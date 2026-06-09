@@ -293,10 +293,31 @@ def validate_acceptance_report() -> list[str]:
         return [f"Missing acceptance report: {rel(ACCEPTANCE_REPORT_PATH)}"]
     text = ACCEPTANCE_REPORT_PATH.read_text(encoding="utf-8")
     errors: list[str] = []
-    if "acceptance_decision: pending" not in text:
-        errors.append("EP-008 acceptance_decision must remain pending")
-    if "accepted_by: Codex" in text:
+    fields: dict[str, str] = {}
+    for line in text.splitlines():
+        if ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        key = key.strip()
+        if key in {"acceptance_decision", "accepted_by", "accepted_at", "comments"}:
+            fields[key] = value.strip()
+
+    decision = fields.get("acceptance_decision", "")
+    accepted_by = fields.get("accepted_by", "")
+    accepted_at = fields.get("accepted_at", "")
+    comments = fields.get("comments", "")
+
+    if decision not in {"pending", "accepted"}:
+        errors.append("EP-008 acceptance_decision must be pending or accepted")
+    if accepted_by == "Codex":
         errors.append("EP-008 accepted_by must not be Codex")
+    if decision == "accepted":
+        if not accepted_by:
+            errors.append("EP-008 accepted acceptance report requires accepted_by")
+        if not accepted_at:
+            errors.append("EP-008 accepted acceptance report requires accepted_at")
+        if not comments:
+            errors.append("EP-008 accepted acceptance report requires comments")
     return errors
 
 

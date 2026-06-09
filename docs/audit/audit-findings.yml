@@ -16,7 +16,7 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Имя ветки ep-007-verification-dashboard не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
+    issue: "Имя ветки ep-008-dissertation-prompt-generation не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
     recommendation: "Использовать формат ep-012-<short-slug>."
     status: open
     created_at: 2026-06-09

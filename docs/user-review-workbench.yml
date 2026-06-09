@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 23155302a8a6c770cccb544100f1e295222841a17fe534b50e3c7c7637ba164f
+      checksum_sha256: 61b3e3f0114d19bbf530f78d8e2b1d6982f870eded818523e2850eae58cbf489
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 12d433e1b8ae78dd3b9331e51b213589cf600de32cc03b435597811edfbcaa27
+      checksum_sha256: 3796e193551c1e3f18033248f117efb53525983fbceae3283db29f8be464ccd3
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 0dce48fa23e54588350c300cfa18d308f8d7240591c7517691d5bf06dc10125a
+      checksum_sha256: 6bdc2020a442be011bff29f759a29954a261594594cca6f25ae772d4ea69225a
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 35
-    ready_for_acceptance: 3
+    active_review_items: 34
+    ready_for_acceptance: 2
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 11
-    accepted_hidden_from_active_queue: 7
+    active_blockers: 9
+    accepted_hidden_from_active_queue: 8
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1209,225 +1209,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-008-DISSERTATION-PROMPT-GENERATION
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
-      title: "Dissertation prompt generation contour"
-      source_file: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
-      source_id: EP-008-DISSERTATION-PROMPT-GENERATION
-      source_checksum_sha256: 55dd3e8a03defa61ac918960f2f11110b1f1c93970a17c6c8ebf1389429f7a84
-      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
-      related_artifacts:
-        -
-          path: docs/dissertation/README.md
-        -
-          path: docs/dissertation/dissertation-sync-plan.md
-        -
-          path: docs/dissertation/dissertation-impact-log.yml
-        -
-          path: docs/dissertation/dissertation-artifact-map.yml
-        -
-          path: docs/dissertation/section-update-queue.yml
-        -
-          path: docs/dissertation/dissertation-change-log.md
-        -
-          path: docs/dissertation/bibliography-registry.yml
-        -
-          path: docs/dissertation/citation-requests.yml
-        -
-          path: docs/dissertation/terminology-control.yml
-        -
-          path: docs/dissertation/prompt-profiles/dissertation-editor-profile.md
-        -
-          path: docs/dissertation/prompt-profiles/dissertation-editor-profile.yml
-        -
-          path: docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md
-        -
-          path: docs/dissertation/prompt-profiles/forbidden-claims.yml
-        -
-          path: docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md
-        -
-          path: docs/dissertation/prompt-templates/dissertation-section-update.prompt.md
-        -
-          path: docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md
-        -
-          path: docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md
-        -
-          path: docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md
-        -
-          path: scripts/generate_dissertation_prompts.py
-        -
-          path: scripts/validate_dissertation_prompts.py
-        -
-          path: scripts/validate_dissertation_sync.py
-        -
-          path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
-      commands:
-        -
-          command: "make validate-dissertation-sync"
-          status: documented
-        -
-          command: "make validate-dissertation-prompts"
-          status: documented
-        -
-          command: "make generate-dissertation-prompts"
-          status: documented
-        -
-          command: "make generate-dashboards"
-          status: documented
-        -
-          command: "make generate-verification-dashboard"
-          status: documented
-        -
-          command: "make validate-verification"
-          status: documented
-        -
-          command: "make validate-plan"
-          status: documented
-        -
-          command: "make check"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make lint"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make test"
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-008-001
-          text: "создан диссертационный контур docs/dissertation/."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-002
-          text: "создан dissertation-editor-profile.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-003
-          text: "создан dissertation-editor-profile.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-004
-          text: "создан tartip-dissertation-alignment.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-005
-          text: "создан forbidden-claims.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-006
-          text: "созданы prompt templates."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-007
-          text: "созданы prompt-queue и patches."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-008
-          text: "создан generate_dissertation_prompts.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-009
-          text: "создан validate_dissertation_prompts.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-010
-          text: "создан validate_dissertation_sync.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-011
-          text: "AGENTS.md содержит Dissertation synchronization discipline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-012
-          text: "Codex не редактирует DOCX напрямую."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-013
-          text: "Codex не создает новую версию DOCX."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-014
-          text: "создан acceptance report для EP-008."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-015
-          text: "статус EP-008 — ready_for_acceptance, но не accepted."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-016
-          text: "accepted artifacts не изменяются без user approval."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-008-017
-          text: "dashboards обновлены и содержат EP-008."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-001
-          text: "DOCX update blocked until an accepted markdown patch and explicit user request exist."
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-002
-          text: "User acceptance decision remains pending until Дмитрий reviews the packet."
-      risks:
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-001
-          text: "Future Tartip packets must update dissertation impact log when they affect the dissertation."
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-002
-          text: "Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly."
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-003
-          text: "If a future update touches accepted/protected artifacts, a requires_user_approval item is required before changes."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: ACCEPTANCE-EP-009-CODEX-SPEC-AUDIT
       type: acceptance
       priority: medium
@@ -2269,6 +2050,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD

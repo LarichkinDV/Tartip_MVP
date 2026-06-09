@@ -7,18 +7,17 @@
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 10 |
-| accepted | 7 |
+| accepted | 8 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 3 |
+| pending | 2 |
 | protected_accepted_artifacts | 0 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | Acceptance criteria and artifacts | docs/dissertation/README.md, docs/dissertation/dissertation-sync-plan.md, docs/dissertation/dissertation-impact-log.yml, docs/dissertation/dissertation-artifact-map.yml, ... | make validate-dissertation-sync, make validate-dissertation-prompts, make generate-dissertation-prompts, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, source .venv/bin/activate && make lint, source .venv/bin/activate && make test | [docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md](docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) |
 | - [ ] требует проверки | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | Acceptance criteria and artifacts | docs/audit/README.md, docs/audit/codex-spec-audit.md, docs/audit/codex-spec-audit.yml, docs/audit/language-policy.md, ... | make audit-codex-spec, make audit-language, make validate-audit, make audit, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, make validate-reference, pytest | [docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md](docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) |
 | - [ ] требует проверки | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Acceptance criteria and artifacts | docs/git-workflow.md, scripts/validate_git_workflow.py, docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | make validate-git-workflow, make audit, make validate-plan, make check | [docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
 
@@ -32,6 +31,7 @@
 | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Project planning and acceptance contour | Дмитрий | 2026-06-08 | Принято. EP-004 принят как контур проектного планирования и приемки: project plan, artifact registry, traceability matrix, decision log, status report, acceptance reports и validate_project_plan.py проверены. Пункт о Docker Desktop переклассифицирован как риск/контекст проверки, а не блокер приемки. | protected |
 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | Дмитрий | 2026-06-08 | Принято. EP-005 принят как контур acceptance dashboard и user action dashboard: markdown/YAML dashboards, генераторы, Makefile targets, проверки validate_project_plan.py, запреты accepted_by/decided_by = Codex и правила защиты accepted artifacts проверены. Блокеры переклассифицированы как риски/контекст проверки. | protected |
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | Дмитрий | 2026-06-08 | Принято. EP-007 принят как контур verification dashboard: markdown/YAML окно ручной проверки, генератор, валидатор, Makefile targets, связь с месячным протоколом тестирования и запрет checked_by = Codex проверены. Ручные verification checks остаются отдельными пользовательскими проверками и не закрываются Codex. | protected |
+| EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | Дмитрий | 2026-06-08 | Принято. EP-008 принят как диссертационный prompt/synchronization contour: docs/dissertation, prompt profiles, forbidden claims, prompt templates, prompt queue, patches, validators and Makefile targets проверены. DOCX/PDF файлы не создавались; прямое редактирование DOCX, создание новой DOCX-версии, добавление источников без citation request и перенос инженерных деталей Tartip в научный результат запрещены. | protected |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | Дмитрий | 2026-06-08 | Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии. | protected |
 
 ## 4. Защищенные принятые артефакты

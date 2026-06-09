@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 10
-    accepted: 7
+    accepted: 8
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 3
+    pending: 2
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -861,7 +861,7 @@ acceptance_dashboard:
       title: "Dissertation prompt generation contour"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       artifacts:
         -
@@ -1032,87 +1032,87 @@ acceptance_dashboard:
           id: AC-EP-008-001
           text: "создан диссертационный контур docs/dissertation/."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-002
           text: "создан dissertation-editor-profile.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-003
           text: "создан dissertation-editor-profile.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-004
           text: "создан tartip-dissertation-alignment.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-005
           text: "создан forbidden-claims.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-006
           text: "созданы prompt templates."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-007
           text: "созданы prompt-queue и patches."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-008
           text: "создан generate_dissertation_prompts.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-009
           text: "создан validate_dissertation_prompts.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-010
           text: "создан validate_dissertation_sync.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-011
           text: "AGENTS.md содержит Dissertation synchronization discipline."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-012
           text: "Codex не редактирует DOCX напрямую."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-013
           text: "Codex не создает новую версию DOCX."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-014
           text: "создан acceptance report для EP-008."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-015
           text: "статус EP-008 — ready_for_acceptance, но не accepted."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-016
           text: "accepted artifacts не изменяются без user approval."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-008-017
           text: "dashboards обновлены и содержат EP-008."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -1123,27 +1123,28 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-001
-          text: "DOCX update blocked until an accepted markdown patch and explicit user request exist."
-        -
-          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-002
-          text: "User acceptance decision remains pending until Дмитрий reviews the packet."
+        []
       risks:
         -
           id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-001
-          text: "Future Tartip packets must update dissertation impact log when they affect the dissertation."
+          text: "DOCX update blocked until an accepted markdown patch and explicit user request exist; this is a scope safeguard of EP-008, not a blocking defect."
         -
           id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-002
-          text: "Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly."
+          text: "User acceptance decision remains pending until Дмитрий reviews the packet; this is normal pre-acceptance state, not a blocking defect."
         -
           id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-003
+          text: "Future Tartip packets must update dissertation impact log when they affect the dissertation."
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-004
+          text: "Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly."
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-005
           text: "If a future update touches accepted/protected artifacts, a requires_user_approval item is required before changes."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. EP-008 принят как диссертационный prompt/synchronization contour: docs/dissertation, prompt profiles, forbidden claims, prompt templates, prompt queue, patches, validators and Makefile targets проверены. DOCX/PDF файлы не создавались; прямое редактирование DOCX, создание новой DOCX-версии, добавление источников без citation request и перенос инженерных деталей Tartip в научный результат запрещены."
     -
       packet_id: EP-009-CODEX-SPEC-AUDIT
       title: "Codex specification audit and language policy"
