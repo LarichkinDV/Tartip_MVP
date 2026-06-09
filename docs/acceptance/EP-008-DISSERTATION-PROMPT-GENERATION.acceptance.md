@@ -87,11 +87,10 @@ source .venv/bin/activate && make test
 
 ## 7. Блокеры
 
-- DOCX update blocked until an accepted markdown patch and explicit user request exist.
-- User acceptance decision remains pending until Дмитрий reviews the packet.
-
 ## 8. Риски
 
+- DOCX update blocked until an accepted markdown patch and explicit user request exist; this is a scope safeguard of EP-008, not a blocking defect.
+- User acceptance decision remains pending until Дмитрий reviews the packet; this is normal pre-acceptance state, not a blocking defect.
 - Future Tartip packets must update dissertation impact log when they affect the dissertation.
 - Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly.
 - If a future update touches accepted/protected artifacts, a requires_user_approval item is required before changes.
@@ -109,7 +108,7 @@ source .venv/bin/activate && make test
 
 ## 11. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-008 принят как диссертационный prompt/synchronization contour: docs/dissertation, prompt profiles, forbidden claims, prompt templates, prompt queue, patches, validators and Makefile targets проверены. DOCX/PDF файлы не создавались; прямое редактирование DOCX, создание новой DOCX-версии, добавление источников без citation request и перенос инженерных деталей Tartip в научный результат запрещены.
