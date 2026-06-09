@@ -1,27 +1,27 @@
 user_review_workbench:
   schema_version: 1
-  generated_at: 2026-06-08
+  generated_at: 2026-06-09
   generated_by: Codex
   mode: active_user_review_queue
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 8504d2c85537efc0fdf2b739c31bd4248e16a74ead0fbe03d601f9307257a252
+      checksum_sha256: a8186f2f62babcd078f13881db4714b9fd6d045e895cb140c9410b3a8cbe9291
       status: present
       warning: ""
     -
       path: docs/verification-dashboard.yml
-      checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       status: present
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 32338f5cb1f384350f02f0d3a18a7f74fdc1a003ef585f2c24d3ffa7aca06965
+      checksum_sha256: d82841d06ca9fd534fb31b26a61d6bfb35d95acdebba7a5edfa07d876a8bfa63
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: eb669884a152a1e291f5ebb77a3d12b5722537ed4f0c968c385237715b9f9aaf
+      checksum_sha256: 3d3d75429327bff98f5806f7af952f9ba099ef00d5e628cef20ef03c69d8eaae
       status: present
       warning: ""
     -
@@ -60,7 +60,7 @@ user_review_workbench:
       title: "Проверить наличие docs/project-plan.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-001
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -111,7 +111,7 @@ user_review_workbench:
       title: "Проверить наличие docs/artifact-registry.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-002
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -162,7 +162,7 @@ user_review_workbench:
       title: "Проверить, что accepted_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-003
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -213,7 +213,7 @@ user_review_workbench:
       title: "Проверить, что open questions отображаются в user-action-dashboard"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-004
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -268,7 +268,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-001
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -317,7 +317,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-002
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -366,7 +366,7 @@ user_review_workbench:
       title: "Проверить, что manual checks не отмечены Codex как passed"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-003
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -417,7 +417,7 @@ user_review_workbench:
       title: "Проверить, что checked_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-004
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -468,7 +468,7 @@ user_review_workbench:
       title: "Проверить, что verification dashboard связан с протоколом тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-005
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -521,7 +521,7 @@ user_review_workbench:
       title: "Проверить наличие docs/dissertation/README.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-001
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -570,7 +570,7 @@ user_review_workbench:
       title: "Проверить наличие forbidden-claims.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-002
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -619,7 +619,7 @@ user_review_workbench:
       title: "Проверить, что acceptance_decision остается pending"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-006
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -670,7 +670,7 @@ user_review_workbench:
       title: "Проверить Language policy в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-004
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -719,7 +719,7 @@ user_review_workbench:
       title: "Проверить Audit discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-005
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -768,7 +768,7 @@ user_review_workbench:
       title: "Проверить preservation audit findings"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-008
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -823,7 +823,7 @@ user_review_workbench:
       title: "Проверить Git workflow discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-002
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -872,7 +872,7 @@ user_review_workbench:
       title: "Проверить branch naming policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-003
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -921,7 +921,7 @@ user_review_workbench:
       title: "Проверить merge policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-004
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -972,7 +972,7 @@ user_review_workbench:
       title: "Проверить, что validator не выполняет Git mutations"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-008
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2320,7 +2320,7 @@ user_review_workbench:
       title: "Проверить, что accepted artifacts отображаются как protected"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-003
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2373,7 +2373,7 @@ user_review_workbench:
       title: "Проверить наличие monthly-plan.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-001
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2422,7 +2422,7 @@ user_review_workbench:
       title: "Проверить, что месячный блок содержит ровно 3 задачи"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-002
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2473,7 +2473,7 @@ user_review_workbench:
       title: "Проверить, что каждая задача имеет 15 человеко-часов"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-003
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2524,7 +2524,7 @@ user_review_workbench:
       title: "Проверить наличие БФТ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-004
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2573,7 +2573,7 @@ user_review_workbench:
       title: "Проверить наличие ТЗ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-005
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2622,7 +2622,7 @@ user_review_workbench:
       title: "Проверить наличие протокола тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-006
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2671,7 +2671,7 @@ user_review_workbench:
       title: "Проверить защиту accepted/protected artifacts"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-007
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -
@@ -2724,7 +2724,7 @@ user_review_workbench:
       title: "Проверить, что EP-009 не mass-rewrite packet"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-010
-      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      source_checksum_sha256: 239f083055383b5abd5551cf2881c10a205c06e346a26d3d9ae5a926eb314323
       acceptance_report: ""
       related_artifacts:
         -

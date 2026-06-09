@@ -1,5 +1,5 @@
 verification_dashboard:
-  updated_at: 2026-06-08
+  updated_at: 2026-06-09
   source_files:
     - docs/grace/verification-plan.xml
     - docs/monthly/2026-06/03-test-protocol-reference-data-governance.md

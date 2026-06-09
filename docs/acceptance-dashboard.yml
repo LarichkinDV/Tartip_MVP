@@ -1,5 +1,5 @@
 acceptance_dashboard:
-  updated_at: 2026-06-08
+  updated_at: 2026-06-09
   source_files:
     - docs/grace/execution-packets.xml
     - docs/artifact-registry.yml
