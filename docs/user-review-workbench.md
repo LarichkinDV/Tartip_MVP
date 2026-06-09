@@ -14,7 +14,7 @@
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Принятые пакеты скрыты из активной очереди | 10 |
+| Принятые пакеты скрыты из активной очереди | 11 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -124,7 +124,13 @@
 7. Запустить `make check`.
 8. Убедиться, что принятый EP исчез из `active_review_items`, но сохранился в acceptance report и dashboards.
 
-## 9. Недавно принятые пакеты
+## 9. Post-acceptance baseline
+
+Accepted packets are hidden from `active_review_items`; acceptance reports remain the source of truth.
+
+Protection flags are deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
+
+## 10. Недавно принятые пакеты
 
 | EP | Дата | Кем | Acceptance report |
 |---|---|---|---|
@@ -138,3 +144,4 @@
 | EP-009-CODEX-SPEC-AUDIT | 2026-06-08 | Дмитрий | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | 2026-06-08 | Дмитрий | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
+| EP-013-POST-ACCEPTANCE-STATE-SYNC | 2026-06-09 | Дмитрий | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |

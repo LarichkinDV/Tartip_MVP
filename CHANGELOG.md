@@ -20,3 +20,6 @@
 - Added `EP-009-CODEX-SPEC-AUDIT` for audit-first Codex specification checks, language policy, audit findings, and audit report validation.
 - Added audit Makefile targets and user-action dashboard integration for audit findings without mass-russifying existing documents.
 - Added `EP-011-GIT-WORKFLOW-DISCIPLINE` for branch naming, dirty working tree handling, merge gates, forbidden Git files, and advisory/strict Git workflow validation.
+- Prepared `EP-013-POST-ACCEPTANCE-STATE-SYNC` to synchronize the accepted baseline after the accepted acceptance cycle.
+- Reflected accepted EP-001, EP-002, EP-003, EP-004, EP-005, EP-007, EP-008, EP-009, EP-011, and EP-012 as the post-acceptance baseline.
+- Added post-acceptance validation scaffolding and follow-up roadmap for artifact protection, verification reconciliation, reference intake, and audit cleanup.

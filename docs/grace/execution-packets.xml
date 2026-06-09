@@ -1,5 +1,5 @@
 <ExecutionPackets version="1.0">
-  <Packet id="EP-001-INFRA" status="planned">
+  <Packet id="EP-001-INFRA" status="accepted">
     <Name>Prepare local infrastructure</Name>
     <Goal>Create a local-first project skeleton for BIM5D Cost-Schedule Matching.</Goal>
     <Scope>
@@ -17,8 +17,25 @@
       <Item>Do not connect real FNSB databases</Item>
       <Item>Do not create direct ModelElement to GESNNorm mapping</Item>
     </NonGoals>
+    <ExpectedArtifacts>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/knowledge-graph.xml</Artifact>
+      <Artifact>docs/grace/README.md</Artifact>
+      <Artifact>docs/acceptance/EP-001-INFRA.acceptance.md</Artifact>
+      <Artifact>README.md</Artifact>
+      <Artifact>CHANGELOG.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-001-001">Local infrastructure skeleton is created.</Criterion>
+      <Criterion id="AC-EP-001-002">Backend and frontend skeletons exist.</Criterion>
+      <Criterion id="AC-EP-001-003">Safety checks and backup scripts exist.</Criterion>
+      <Criterion id="AC-EP-001-004">No BIM/KSI/GESN business logic is implemented.</Criterion>
+      <Criterion id="AC-EP-001-005">Acceptance report records the user decision.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
   </Packet>
-  <Packet id="EP-002-REFERENCE-GOVERNANCE" status="planned">
+  <Packet id="EP-002-REFERENCE-GOVERNANCE" status="accepted">
     <Name>Reference data governance</Name>
     <Goal>Prevent unsupported, invented, or LLM-generated classifier and normative data from becoming evidence for matching rules.</Goal>
     <Scope>
@@ -33,8 +50,29 @@
       <Item>Do not invent KSI or GESN codes</Item>
       <Item>Do not activate matching rules without evidence</Item>
     </NonGoals>
+    <ExpectedArtifacts>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/knowledge-graph.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md</Artifact>
+      <Artifact>CHANGELOG.md</Artifact>
+      <Artifact>docs/07-reference-data-policy.md</Artifact>
+      <Artifact>data/reference/manifests/source-manifest.yml</Artifact>
+      <Artifact>data/reference/manifests/import-log.yml</Artifact>
+      <Artifact>data/questions/data-requirements.yml</Artifact>
+      <Artifact>rules/matching/partition_brick_120_reinf.yaml</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-002-001">Reference source discipline is documented.</Criterion>
+      <Criterion id="AC-EP-002-002">Source manifest and import log exist.</Criterion>
+      <Criterion id="AC-EP-002-003">Missing evidence creates structured user questions.</Criterion>
+      <Criterion id="AC-EP-002-004">No active matching rule is created without evidence.</Criterion>
+      <Criterion id="AC-EP-002-005">Acceptance report records the user decision.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
   </Packet>
-  <Packet id="EP-003-REFERENCE-VERSIONING" status="planned">
+  <Packet id="EP-003-REFERENCE-VERSIONING" status="accepted">
     <Name>Delta-based reference versioning</Name>
     <Goal>Represent reference releases as logical objects and revisions so unchanged records are not duplicated.</Goal>
     <Scope>
@@ -49,8 +87,25 @@
       <Item>Do not create database migrations before database layer is ready</Item>
       <Item>Do not duplicate unchanged reference records across releases</Item>
     </NonGoals>
+    <ExpectedArtifacts>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md</Artifact>
+      <Artifact>CHANGELOG.md</Artifact>
+      <Artifact>db/schemas/reference_versioning.sql</Artifact>
+      <Artifact>scripts/compare_reference_releases.py</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-003-001">Reference versioning schema is documented.</Criterion>
+      <Criterion id="AC-EP-003-002">Release comparison utility exists.</Criterion>
+      <Criterion id="AC-EP-003-003">Fake fixtures demonstrate added, changed, deleted, and unchanged records.</Criterion>
+      <Criterion id="AC-EP-003-004">No real KSI/FSNB/GESN data is imported.</Criterion>
+      <Criterion id="AC-EP-003-005">Acceptance report records the user decision.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
   </Packet>
-  <Packet id="EP-004-PROJECT-PLANNING-AND-ACCEPTANCE" status="ready_for_acceptance">
+  <Packet id="EP-004-PROJECT-PLANNING-AND-ACCEPTANCE" status="accepted">
     <Name>Project planning and acceptance contour</Name>
     <Goal>Create a local project planning, artifact registry, traceability, status reporting, and user acceptance workflow.</Goal>
     <Scope>
@@ -94,7 +149,7 @@
       <Item>Do not invent normative data</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS" status="ready_for_acceptance">
+  <Packet id="EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS" status="accepted">
     <Name>Acceptance and user action dashboards</Name>
     <Goal>Create local Markdown and YAML dashboards for packet acceptance, user actions, and accepted artifact protection.</Goal>
     <Scope>
@@ -136,7 +191,7 @@
       <Item>Do not change accepted artifacts without explicit user approval</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-007-VERIFICATION-DASHBOARD" status="ready_for_acceptance">
+  <Packet id="EP-007-VERIFICATION-DASHBOARD" status="accepted">
     <Name>Verification dashboard</Name>
     <Goal>Create a local manual verification window for testing protocol checks without web UI.</Goal>
     <Scope>
@@ -173,7 +228,7 @@
       <Item>Do not mark any packet accepted</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-008-DISSERTATION-PROMPT-GENERATION" status="ready_for_acceptance">
+  <Packet id="EP-008-DISSERTATION-PROMPT-GENERATION" status="accepted">
     <Name>Dissertation prompt generation contour</Name>
     <Goal>Create a controlled pipeline from Tartip changes to dissertation impact analysis, generated prompts, markdown patches, user acceptance, and explicit DOCX updates.</Goal>
     <Scope>
@@ -236,7 +291,7 @@
       <Item>Do not mark any packet, prompt, patch, or DOCX update accepted</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-009-CODEX-SPEC-AUDIT" status="ready_for_acceptance">
+  <Packet id="EP-009-CODEX-SPEC-AUDIT" status="accepted">
     <Name>Codex specification audit and language policy</Name>
     <Goal>Create an audit-first contour for Codex project rules, artifact protection, dashboards, and Russian user-facing language policy.</Goal>
     <Scope>
@@ -290,7 +345,7 @@
       <Item>Do not mark any packet accepted</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-011-GIT-WORKFLOW-DISCIPLINE" status="ready_for_acceptance">
+  <Packet id="EP-011-GIT-WORKFLOW-DISCIPLINE" status="accepted">
     <Name>Git workflow discipline</Name>
     <Goal>Create formal rules and validation checks for branch creation, current branch continuation, merge readiness, merge prohibitions, and forbidden Git files.</Goal>
     <Scope>
@@ -333,7 +388,7 @@
       <Item>Do not add secrets, dumps, real DOCX/PDF, or real normative bases to Git</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD" status="ready_for_acceptance">
+  <Packet id="EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD" status="accepted">
     <Name>User review workbench and acceptance standard</Name>
     <Goal>Create one active user review workbench and define the empty blockers/risks standard for acceptance reports.</Goal>
     <Scope>
@@ -380,6 +435,51 @@
       <Item>Do not replace acceptance reports as source of truth</Item>
       <Item>Do not change BIM-KSI-GESN domain methodology</Item>
       <Item>Do not run git add, commit, merge, push, or rebase</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-013-POST-ACCEPTANCE-STATE-SYNC" status="accepted">
+    <Name>Post-acceptance state sync</Name>
+    <Goal>Synchronize project registries, dashboards, and status documents after the accepted acceptance cycle.</Goal>
+    <Scope>
+      <Item>Reflect accepted packets from acceptance reports in execution packet statuses</Item>
+      <Item>Update project plan and status report to accepted_baseline with EP-013 as active packet</Item>
+      <Item>Update acceptance dashboard and user review workbench generation for post-acceptance state</Item>
+      <Item>Create post-acceptance state validator</Item>
+      <Item>Document follow-up debt for artifact protection, verification reconciliation, reference intake, and audit cleanup</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/acceptance-dashboard.md</Artifact>
+      <Artifact>docs/acceptance-dashboard.yml</Artifact>
+      <Artifact>docs/user-review-workbench.md</Artifact>
+      <Artifact>docs/user-review-workbench.yml</Artifact>
+      <Artifact>scripts/validate_post_acceptance_state.py</Artifact>
+      <Artifact>docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-013-001">Все accepted acceptance reports отражены как accepted в execution-packets.xml.</Criterion>
+      <Criterion id="AC-EP-013-002">Acceptance dashboard не показывает один и тот же принятый набор EP как ready_for_acceptance и accepted одновременно.</Criterion>
+      <Criterion id="AC-EP-013-003">EP-001..EP-012 отсутствуют в active acceptance queue.</Criterion>
+      <Criterion id="AC-EP-013-004">EP-013 отображается как текущий ready_for_acceptance packet.</Criterion>
+      <Criterion id="AC-EP-013-005">project-plan.md и status-report.md отражают project_state=accepted_baseline.</Criterion>
+      <Criterion id="AC-EP-013-006">Verification checks остаются открытым post-acceptance debt и не закрываются Codex.</Criterion>
+      <Criterion id="AC-EP-013-007">High-priority user actions остаются open.</Criterion>
+      <Criterion id="AC-EP-013-008">Audit finding statuses не меняются EP-013.</Criterion>
+      <Criterion id="AC-EP-013-009">EP-006 orphan/monthly verification scope вынесен в follow-up EP-015.</Criterion>
+      <Criterion id="AC-EP-013-010">Accepted artifact protection flags не включаются массово и вынесены в EP-014.</Criterion>
+      <Criterion id="AC-EP-013-011">validate_post_acceptance_state.py создан и проходит.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not change accepted reports EP-001 through EP-012</Item>
+      <Item>Do not close verification checks or user actions</Item>
+      <Item>Do not change audit finding statuses</Item>
+      <Item>Do not mass-enable protection flags</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not add reference or normative data</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
     </NonGoals>
   </Packet>
 </ExecutionPackets>

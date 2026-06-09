@@ -264,4 +264,49 @@
       <Item>Pseudo blockers and pseudo risks are forbidden.</Item>
     </Invariants>
   </Module>
+  <Module id="M-POST-ACCEPTANCE-STATE-SYNC" status="ready_for_acceptance">
+    <Name>Post-Acceptance State Sync</Name>
+    <Responsibilities>
+      <Item>Reflect accepted user decisions from acceptance reports into execution packet statuses, dashboards, and planning documents.</Item>
+      <Item>Keep accepted reports as the source of truth for user acceptance decisions.</Item>
+      <Item>Keep accepted packets out of active acceptance queues while preserving accepted history.</Item>
+      <Item>Expose post-acceptance debt without closing verification checks, user actions, or audit findings.</Item>
+      <Item>Validate accepted_baseline state through scripts/validate_post_acceptance_state.py.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+      <Item>docs/grace/execution-packets.xml</Item>
+      <Item>docs/acceptance-dashboard.yml</Item>
+      <Item>docs/user-review-workbench.yml</Item>
+      <Item>docs/verification-dashboard.yml</Item>
+      <Item>docs/user-action-dashboard.yml</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/project-plan.md</Item>
+      <Item>docs/status-report.md</Item>
+      <Item>docs/acceptance-dashboard.md</Item>
+      <Item>docs/acceptance-dashboard.yml</Item>
+      <Item>docs/user-review-workbench.md</Item>
+      <Item>docs/user-review-workbench.yml</Item>
+      <Item>docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>changing accepted reports EP-001 through EP-012</Item>
+      <Item>closing verification checks</Item>
+      <Item>closing user actions or data requirements</Item>
+      <Item>changing audit finding statuses</Item>
+      <Item>mass-enabling accepted artifact protection flags</Item>
+      <Item>changing BIM-KSI-GESN domain logic</Item>
+      <Item>adding reference or normative data</Item>
+      <Item>creating or editing DOCX/PDF files</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Accepted packet status must reflect acceptance_decision=accepted and non-empty accepted_by in the acceptance report.</Item>
+      <Item>EP-001 through EP-012 must not appear in active acceptance queue after user acceptance.</Item>
+      <Item>EP-013 remains ready_for_acceptance until the user accepts it.</Item>
+      <Item>Pending verification checks remain post-acceptance debt and do not reopen accepted reports.</Item>
+      <Item>protected_accepted_artifacts=0 remains visible until EP-014 classifies protection flags.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>

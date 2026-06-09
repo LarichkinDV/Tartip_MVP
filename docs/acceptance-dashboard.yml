@@ -6,20 +6,79 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 10
-    accepted: 10
+    ready_for_acceptance: 0
+    accepted: 11
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
     protected_accepted_artifacts: 0
+  post_acceptance_baseline:
+    project_state: accepted_baseline
+    accepted_packets:
+      -
+        packet_id: EP-001-INFRA
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
+      -
+        packet_id: EP-002-REFERENCE-GOVERNANCE
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      -
+        packet_id: EP-003-REFERENCE-VERSIONING
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      -
+        packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      -
+        packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      -
+        packet_id: EP-007-VERIFICATION-DASHBOARD
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      -
+        packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      -
+        packet_id: EP-009-CODEX-SPEC-AUDIT
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      -
+        packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      -
+        packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-08
+        acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      -
+        packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-09
+        acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+    protection_flags_status: deferred_to_EP-014
   warnings:
     []
   items:
     -
       packet_id: EP-001-INFRA
       title: "Prepare local infrastructure"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
@@ -77,7 +136,31 @@ acceptance_dashboard:
           command: "make check"
           status: documented
       acceptance_criteria:
-        []
+        -
+          id: AC-EP-001-001
+          text: "Local infrastructure skeleton is created."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-001-002
+          text: "Backend and frontend skeletons exist."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-001-003
+          text: "Safety checks and backup scripts exist."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-001-004
+          text: "No BIM/KSI/GESN business logic is implemented."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-001-005
+          text: "Acceptance report records the user decision."
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -99,7 +182,7 @@ acceptance_dashboard:
     -
       packet_id: EP-002-REFERENCE-GOVERNANCE
       title: "Reference data governance"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
@@ -178,7 +261,31 @@ acceptance_dashboard:
           command: "make generate-data-questions"
           status: documented
       acceptance_criteria:
-        []
+        -
+          id: AC-EP-002-001
+          text: "Reference source discipline is documented."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-002-002
+          text: "Source manifest and import log exist."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-002-003
+          text: "Missing evidence creates structured user questions."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-002-004
+          text: "No active matching rule is created without evidence."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-002-005
+          text: "Acceptance report records the user decision."
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -205,7 +312,7 @@ acceptance_dashboard:
     -
       packet_id: EP-003-REFERENCE-VERSIONING
       title: "Delta-based reference versioning"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
@@ -260,7 +367,31 @@ acceptance_dashboard:
           command: "source .venv/bin/activate && make test"
           status: documented
       acceptance_criteria:
-        []
+        -
+          id: AC-EP-003-001
+          text: "Reference versioning schema is documented."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-003-002
+          text: "Release comparison utility exists."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-003-003
+          text: "Fake fixtures demonstrate added, changed, deleted, and unchanged records."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-003-004
+          text: "No real KSI/FSNB/GESN data is imported."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-003-005
+          text: "Acceptance report records the user decision."
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -287,7 +418,7 @@ acceptance_dashboard:
     -
       packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
       title: "Project planning and acceptance contour"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
@@ -405,62 +536,62 @@ acceptance_dashboard:
         -
           id: AC-EP-004-001
           text: "создан project-plan.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-002
           text: "создан artifact-registry.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-003
           text: "created artifacts зарегистрированы."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-004
           text: "создан traceability-matrix.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-005
           text: "создан decision-log.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-006
           text: "создан status-report.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-007
           text: "создана папка docs/acceptance/."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-008
           text: "создан acceptance report для EP-004."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-009
           text: "в AGENTS.md добавлена Project planning and acceptance discipline."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-010
           text: "validate_project_plan.py проверяет существование путей из artifact-registry.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-011
           text: "validate_project_plan.py запрещает accepted_by = Codex."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-004-012
           text: "Codex не ставит accepted, только ready_for_acceptance."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -491,7 +622,7 @@ acceptance_dashboard:
     -
       packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       title: "Acceptance and user action dashboards"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
@@ -582,67 +713,67 @@ acceptance_dashboard:
         -
           id: AC-EP-005-001
           text: "создан acceptance-dashboard.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-002
           text: "создан acceptance-dashboard.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-003
           text: "создан user-action-dashboard.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-004
           text: "создан user-action-dashboard.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-005
           text: "ready_for_acceptance packets отражаются в acceptance dashboard."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-006
           text: "open questions отражаются в user action dashboard."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-007
           text: "Codex не может поставить accepted."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-008
           text: "accepted_by / decided_by не может быть Codex."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-009
           text: "добавлены команды генерации dashboards в Makefile."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-010
           text: "validate_project_plan.py проверяет dashboards."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-011
           text: "accepted artifacts отображаются как protected."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-012
           text: "protected accepted artifacts нельзя изменять без user approval."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-005-013
           text: "если требуется изменение accepted artifact, создается requires_user_approval action или change request."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -679,7 +810,7 @@ acceptance_dashboard:
     -
       packet_id: EP-007-VERIFICATION-DASHBOARD
       title: "Verification dashboard"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
@@ -780,52 +911,52 @@ acceptance_dashboard:
         -
           id: AC-EP-007-001
           text: "создан verification-dashboard.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-002
           text: "создан verification-dashboard.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-003
           text: "verification dashboard содержит проверки из протокола тестирования."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-004
           text: "каждая проверка имеет инструкцию how_to_check."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-005
           text: "каждая проверка имеет expected_result."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-006
           text: "manual checks не могут быть отмечены Codex как passed."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-007
           text: "checked_by не может быть Codex."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-008
           text: "добавлена команда make generate-verification-dashboard."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-009
           text: "добавлена команда make validate-verification."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-007-010
           text: "verification dashboard связан с acceptance dashboard и monthly test protocol."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -859,7 +990,7 @@ acceptance_dashboard:
     -
       packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
       title: "Dissertation prompt generation contour"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
@@ -1031,87 +1162,87 @@ acceptance_dashboard:
         -
           id: AC-EP-008-001
           text: "создан диссертационный контур docs/dissertation/."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-002
           text: "создан dissertation-editor-profile.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-003
           text: "создан dissertation-editor-profile.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-004
           text: "создан tartip-dissertation-alignment.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-005
           text: "создан forbidden-claims.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-006
           text: "созданы prompt templates."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-007
           text: "созданы prompt-queue и patches."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-008
           text: "создан generate_dissertation_prompts.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-009
           text: "создан validate_dissertation_prompts.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-010
           text: "создан validate_dissertation_sync.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-011
           text: "AGENTS.md содержит Dissertation synchronization discipline."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-012
           text: "Codex не редактирует DOCX напрямую."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-013
           text: "Codex не создает новую версию DOCX."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-014
           text: "создан acceptance report для EP-008."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-015
           text: "статус EP-008 — ready_for_acceptance, но не accepted."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-016
           text: "accepted artifacts не изменяются без user approval."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-008-017
           text: "dashboards обновлены и содержат EP-008."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -1148,7 +1279,7 @@ acceptance_dashboard:
     -
       packet_id: EP-009-CODEX-SPEC-AUDIT
       title: "Codex specification audit and language policy"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
@@ -1251,107 +1382,107 @@ acceptance_dashboard:
         -
           id: AC-EP-009-001
           text: "создан docs/audit/."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-002
           text: "создан codex-spec-audit.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-003
           text: "создан audit-findings.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-004
           text: "создан language-policy.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-005
           text: "создан language-audit-report.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-006
           text: "создан audit_codex_spec.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-007
           text: "создан audit_language_policy.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-008
           text: "создан validate_audit_reports.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-009
           text: "AGENTS.md содержит Language policy."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-010
           text: "AGENTS.md содержит Audit discipline."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-011
           text: "аудит проверяет запрет ModelElement -> GESNNorm."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-012
           text: "аудит проверяет accepted_by/decided_by/checked_by/answered_by != Codex."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-013
           text: "аудит проверяет отсутствие duplicate packet ids."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-014
           text: "языковой аудит не переводит технические идентификаторы."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-015
           text: "EP-009 отображается в acceptance dashboard."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-016
           text: "EP-009 не отмечен accepted."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-017
           text: "audit scripts preserve existing user resolutions in audit-findings.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-018
           text: "language audit does not fail on technical identifiers."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-019
           text: "EP-009 does not mass-rewrite existing documents."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-020
           text: "accepted/protected artifacts are not modified."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-009-021
           text: "medium/low language findings do not block make check."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -1388,7 +1519,7 @@ acceptance_dashboard:
     -
       packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
       title: "Git workflow discipline"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
@@ -1428,52 +1559,52 @@ acceptance_dashboard:
         -
           id: AC-EP-011-001
           text: "AGENTS.md содержит Git workflow discipline."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-002
           text: "docs/git-workflow.md создан."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-003
           text: "validate_git_workflow.py создан."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-004
           text: "branch naming policy описана."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-005
           text: "merge policy описана."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-006
           text: "merge запрещен без acceptance_decision = accepted."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-007
           text: "accepted_by = Codex запрещен."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-008
           text: "forbidden files не должны попадать в Git."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-009
           text: "validate-git-workflow добавлен в Makefile."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-011-010
           text: "EP-011 не отмечен accepted."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -1510,7 +1641,7 @@ acceptance_dashboard:
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
       title: "User review workbench and acceptance standard"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
       acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
@@ -1607,82 +1738,82 @@ acceptance_dashboard:
         -
           id: AC-EP-012-001
           text: "AGENTS.md содержит стандарт пустых разделов \"Блокеры\" и \"Риски\"."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-002
           text: "ACCEPTANCE_TEMPLATE.md содержит правила заполнения блокеров и рисков."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-003
           text: "создан docs/user-review-workbench.yml."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-004
           text: "создан docs/user-review-workbench.md."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-005
           text: "создан generate_user_review_workbench.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-006
           text: "создан validate_user_review_workbench.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-007
           text: "создан apply_user_review_decisions.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-008
           text: "accepted packets не отображаются в active_review_items."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-009
           text: "pending/ready_for_acceptance packets отображаются в active_review_items."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-010
           text: "решения пользователя из workbench применяются только через apply_user_review_decisions.py."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-011
           text: "Codex не может сам ставить accepted/accepted_by/accepted_at."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-012
           text: "acceptance reports остаются source of truth."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-013
           text: "псевдоблокеры \"Отсутствуют\"/\"Блокеров нет\"/None запрещены."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-014
           text: "EP-010 не выполнялся."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-015
           text: "README.md и CHANGELOG.md не нормализовались."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
         -
           id: AC-EP-012-016
           text: "EP-003–EP-011 не были автоматически приняты."
-          codex_status: ready_for_acceptance
+          codex_status: accepted
           user_status: accepted
       user_checklist:
         -
@@ -1707,3 +1838,157 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-08
         comments: "Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии."
+    -
+      packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
+      title: "Post-acceptance state sync"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+      artifacts:
+        -
+          path: scripts/validate_post_acceptance_state.py
+          status: active
+          type: validator_script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_locked: false
+      verification_commands:
+        -
+          command: "git branch --show-current"
+          status: documented
+        -
+          command: "git status -sb"
+          status: documented
+        -
+          command: "git --no-pager log --oneline --decorate -5"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make lint"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make test"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-plan"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-user-review-workbench"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-verification"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-audit"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-git-workflow"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make check"
+          status: documented
+        -
+          command: "git status --short"
+          status: documented
+        -
+          command: "git --no-pager diff --name-status"
+          status: documented
+        -
+          command: "git --no-pager diff --stat"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-013-001
+          text: "Все accepted acceptance reports отражены как accepted в execution-packets.xml."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-002
+          text: "Acceptance dashboard не показывает один и тот же принятый набор EP как ready_for_acceptance и accepted одновременно."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-003
+          text: "EP-001..EP-012 отсутствуют в active acceptance queue."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-004
+          text: "EP-013 отображается как текущий ready_for_acceptance packet."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-005
+          text: "project-plan.md и status-report.md отражают project_state=accepted_baseline."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-006
+          text: "Verification checks остаются открытым post-acceptance debt и не закрываются Codex."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-007
+          text: "High-priority user actions остаются open."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-008
+          text: "Audit finding statuses не меняются EP-013."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-009
+          text: "EP-006 orphan/monthly verification scope вынесен в follow-up EP-015."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-010
+          text: "Accepted artifact protection flags не включаются массово и вынесены в EP-014."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-013-011
+          text: "validate_post_acceptance_state.py создан и проходит."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-001
+          text: "`make check` запускает audit и user-action dashboard generators; если они создают изменения вне scope EP-013, такие изменения нельзя включать в commit EP-013."
+        -
+          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-002
+          text: "`protected_accepted_artifacts: 0` остается методическим разрывом до EP-014."
+        -
+          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-003
+          text: "44 pending verification checks остаются post-acceptance verification debt до EP-015."
+        -
+          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-004
+          text: "High-priority reference and normative user actions remain open until official or project-authorized sources are provided."
+        -
+          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-005
+          text: "Stale audit findings remain open until EP-017."
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-09
+        comments: "Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017."

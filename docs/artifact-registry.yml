@@ -2455,6 +2455,86 @@ artifacts:
       commit: null
       pull_request: null
     notes: Codex status ready_for_acceptance; user decision remains pending.
+  -
+    artifact_id: ART-VALIDATE-POST-ACCEPTANCE-STATE
+    path: scripts/validate_post_acceptance_state.py
+    type: validator_script
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-013-POST-ACCEPTANCE-STATE-SYNC
+    related_requirements:
+      - REQ-015
+    status: active
+    description: Validates that accepted acceptance reports are reflected in post-acceptance baseline state without closing verification, user action, or audit debt.
+    created_at: 2026-06-09
+    updated_at: 2026-06-09
+    verification:
+      status: pending
+      scenarios:
+        - V-POST-ACCEPTANCE-001
+        - V-POST-ACCEPTANCE-002
+        - V-POST-ACCEPTANCE-003
+        - V-POST-ACCEPTANCE-004
+        - V-POST-ACCEPTANCE-005
+        - V-POST-ACCEPTANCE-006
+        - V-POST-ACCEPTANCE-007
+        - V-POST-ACCEPTANCE-008
+        - V-POST-ACCEPTANCE-009
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ACCEPTANCE-DASHBOARD-YML
+      - ART-USER-REVIEW-WORKBENCH-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: EP-013 validator is read-only and must not close user-owned fields.
+  -
+    artifact_id: ART-ACCEPTANCE-EP-013
+    path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+    type: acceptance_report
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-013-POST-ACCEPTANCE-STATE-SYNC
+    related_requirements:
+      - REQ-015
+    status: active
+    description: Acceptance checklist for post-acceptance state synchronization.
+    created_at: 2026-06-09
+    updated_at: 2026-06-09
+    verification:
+      status: pending
+      scenarios:
+        - V-POST-ACCEPTANCE-001
+        - V-POST-ACCEPTANCE-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-POST-ACCEPTANCE-STATE
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex status ready_for_acceptance; user decision remains pending.
   - artifact_id: ART-AUDIT-README
     name: Audit README
     type: documentation
