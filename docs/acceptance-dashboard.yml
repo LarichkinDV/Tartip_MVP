@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 10
-    accepted: 3
+    accepted: 4
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 7
+    pending: 6
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -207,7 +207,7 @@ acceptance_dashboard:
       title: "Delta-based reference versioning"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
       artifacts:
         -
@@ -271,18 +271,19 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-003-REFERENCE-VERSIONING-BLOCKER-001
-          text: "Database implementation/migrations are not created yet."
+        []
       risks:
         -
           id: EP-003-REFERENCE-VERSIONING-RISK-001
+          text: "Database implementation/migrations are not created yet; current EP is accepted as conceptual schema documentation, hashing utility, release comparison utility and fixture-based verification, not as production database migration implementation."
+        -
+          id: EP-003-REFERENCE-VERSIONING-RISK-002
           text: "Real source import will require parser-specific validation later."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. EP-003 принят как концептуально-проверочный пакет дельтового версионирования справочников: схема, hashing utility, release comparison utility и fixture-based verification проверены. Реализация рабочих DB migrations не входит в scope EP-003 и должна быть вынесена в отдельный execution packet."
     -
       packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
       title: "Project planning and acceptance contour"
