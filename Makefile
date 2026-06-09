@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-dashboards
+.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions
 
 up:
 	$(COMPOSE) up --build
@@ -43,8 +43,10 @@ check:
 	$(MAKE) generate-verification-dashboard
 	$(MAKE) audit
 	$(MAKE) generate-user-action-dashboard
+	$(MAKE) generate-user-review-workbench
 	$(MAKE) validate-plan
 	$(MAKE) validate-verification
+	$(MAKE) validate-user-review-workbench
 	@if command -v docker >/dev/null 2>&1; then \
 		$(COMPOSE) config --quiet; \
 	else \
@@ -71,6 +73,9 @@ validate-git-workflow:
 
 validate-git-workflow-strict:
 	$(PYTHON) scripts/validate_git_workflow.py --strict
+
+validate-user-review-workbench:
+	$(PYTHON) scripts/validate_user_review_workbench.py
 
 audit-codex-spec:
 	$(PYTHON) scripts/audit_codex_spec.py
@@ -101,4 +106,10 @@ generate-user-action-dashboard:
 generate-verification-dashboard:
 	$(PYTHON) scripts/generate_verification_dashboard.py
 
-generate-dashboards: generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard
+generate-user-review-workbench:
+	$(PYTHON) scripts/generate_user_review_workbench.py
+
+generate-dashboards: generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench
+
+apply-user-review-decisions:
+	$(PYTHON) scripts/apply_user_review_decisions.py

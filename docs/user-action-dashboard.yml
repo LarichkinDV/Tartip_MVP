@@ -8,7 +8,7 @@ user_action_dashboard:
     - data/questions/import-issues.yml
     - docs/audit/audit-findings.yml
   summary:
-    open: 150
+    open: 151
     high_priority: 4
     blocked: 4
     answered: 0
@@ -102,26 +102,6 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
-      id: AUD-GIT-001-BRANCH-NAME-MISMATCH
-      type: audit_finding
-      priority: normal
-      status: open
-      topic: git_workflow
-      question: "Имя ветки ep-010-language-normalization не соответствует packet EP-011-GIT-WORKFLOW-DISCIPLINE."
-      expected_action: "Review audit finding and decide next action."
-      expected_input: "Использовать формат ep-011-<short-slug>."
-      target_path: .git
-      blocks:
-        []
-      source_file: docs/audit/audit-findings.yml
-      owner: "Дмитрий"
-      requires_user_approval: false
-      response:
-        decision: ""
-        answered_by: ""
-        answered_at: ""
-        comment: ""
-    -
       id: AUD-GIT-001-CURRENT-BRANCH-MAIN
       type: audit_finding
       priority: normal
@@ -162,12 +142,32 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
+      id: AUD-GIT-002-MERGE-FORBIDDEN-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Merge запрещен для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+      target_path: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
       id: AUD-GIT-005-MIXED-EP-SCOPES
       type: audit_finding
       priority: normal
       status: open
       topic: git_workflow
-      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
+      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance"
       expected_action: "Review audit finding and decide next action."
       expected_input: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
       target_path: .git
@@ -188,6 +188,26 @@ user_action_dashboard:
       status: open
       topic: git_workflow
       question: "Для EP-011-GIT-WORKFLOW-DISCIPLINE нет явного user approval на merge в main."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Получить явное разрешение пользователя после приемки и успешных проверок."
+      target_path: docs/git-workflow.md
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
+      id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main."
       expected_action: "Review audit finding and decide next action."
       expected_input: "Получить явное разрешение пользователя после приемки и успешных проверок."
       target_path: docs/git-workflow.md

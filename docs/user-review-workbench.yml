@@ -1,0 +1,2791 @@
+user_review_workbench:
+  schema_version: 1
+  generated_at: 2026-06-08
+  generated_by: Codex
+  mode: active_user_review_queue
+  source_files:
+    -
+      path: docs/acceptance-dashboard.yml
+      checksum_sha256: 8504d2c85537efc0fdf2b739c31bd4248e16a74ead0fbe03d601f9307257a252
+      status: present
+      warning: ""
+    -
+      path: docs/verification-dashboard.yml
+      checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      status: present
+      warning: ""
+    -
+      path: docs/user-action-dashboard.yml
+      checksum_sha256: 32338f5cb1f384350f02f0d3a18a7f74fdc1a003ef585f2c24d3ffa7aca06965
+      status: present
+      warning: ""
+    -
+      path: docs/audit/audit-findings.yml
+      checksum_sha256: eb669884a152a1e291f5ebb77a3d12b5722537ed4f0c968c385237715b9f9aaf
+      status: present
+      warning: ""
+    -
+      path: docs/artifact-registry.yml
+      checksum_sha256: ef1299658054ad7253e9ef51216c0d5d4f252d6977d1bd74de81d54c5e9f0936
+      status: present
+      warning: ""
+    -
+      path: docs/status-report.md
+      checksum_sha256: 08bec148e75fcf4962c8a3d1cd617eda4341c19c1c39973e57a79833104238a9
+      status: present
+      warning: ""
+    -
+      path: docs/grace/execution-packets.xml
+      checksum_sha256: 4137c9f02b9e393d8a413c78bce2a5297062c599a0e057b87ef72a1db36321dc
+      status: present
+      warning: ""
+  summary:
+    active_review_items: 39
+    ready_for_acceptance: 7
+    needs_revision: 0
+    pending_manual_checks: 28
+    open_user_actions: 4
+    requires_user_approval: 0
+    critical_audit_findings: 0
+    high_audit_findings: 0
+    active_blockers: 20
+    accepted_hidden_from_active_queue: 3
+  active_review_items:
+    -
+      id: VERIFICATION-VT-EP-004-001
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      title: "Проверить наличие docs/project-plan.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-004-001
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/project-plan.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/project-plan.md."
+        -
+          step: "Проверить, что файл существует и содержит текущий execution packet."
+      expected_result:
+        -
+          result: "docs/project-plan.md существует и доступен для ручной проверки."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-004-002
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      title: "Проверить наличие docs/artifact-registry.yml"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-004-002
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/artifact-registry.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/artifact-registry.yml."
+        -
+          step: "Проверить, что реестр содержит созданные артефакты."
+      expected_result:
+        -
+          result: "docs/artifact-registry.yml существует и содержит artifact registry."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-004-003
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      title: "Проверить, что accepted_by не может быть Codex"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-004-003
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: scripts/validate_project_plan.py
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_project_plan.py."
+        -
+          step: "Проверить наличие запрета accepted_by=Codex."
+      expected_result:
+        -
+          result: "Валидация запрещает accepted_by=Codex."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-005-004
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      title: "Проверить, что open questions отображаются в user-action-dashboard"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-005-004
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/user-action-dashboard.md
+        -
+          path: data/questions/data-requirements.yml
+        -
+          path: data/questions/normative-review-questions.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/user-action-dashboard.md."
+        -
+          step: "Сверить open вопросы с data/questions/*.yml."
+      expected_result:
+        -
+          result: "Все open/high priority вопросы видны в user action dashboard."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-007-001
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Проверить наличие verification-dashboard.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-007-001
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/verification-dashboard.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.md."
+      expected_result:
+        -
+          result: "verification-dashboard.md существует и содержит окно ручной проверки."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-007-002
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Проверить наличие verification-dashboard.yml"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-007-002
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/verification-dashboard.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.yml."
+      expected_result:
+        -
+          result: "verification-dashboard.yml существует и содержит checks."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-007-003
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Проверить, что manual checks не отмечены Codex как passed"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-007-003
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/verification-dashboard.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/verification-dashboard.yml."
+        -
+          step: "Проверить manual_* checks и user_result."
+      expected_result:
+        -
+          result: "Manual checks не имеют checked_by: Codex и не закрыты Codex."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-007-004
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Проверить, что checked_by не может быть Codex"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-007-004
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: scripts/validate_verification_dashboard.py
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_verification_dashboard.py."
+        -
+          step: "Проверить запрет checked_by=Codex."
+      expected_result:
+        -
+          result: "Валидатор запрещает checked_by=Codex."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-007-005
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Проверить, что verification dashboard связан с протоколом тестирования"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-007-005
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+        -
+          path: docs/verification-dashboard.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/03-test-protocol-reference-data-governance.md."
+        -
+          step: "Проверить ссылки на docs/verification-dashboard.md и check_id."
+      expected_result:
+        -
+          result: "Протокол тестирования содержит раздел про окно ручной проверки и check_id."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-008-001
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      title: "Проверить наличие docs/dissertation/README.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-008-001
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/dissertation/README.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/dissertation/README.md."
+      expected_result:
+        -
+          result: "docs/dissertation/README.md существует и описывает dissertation sync workflow."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-008-002
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      title: "Проверить наличие forbidden-claims.yml"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-008-002
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/dissertation/prompt-profiles/forbidden-claims.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/dissertation/prompt-profiles/forbidden-claims.yml."
+      expected_result:
+        -
+          result: "forbidden-claims.yml содержит FC-001..FC-007 и запрет автоматического выбора ГЭСН по BIM-элементу."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-008-006
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      title: "Проверить, что acceptance_decision остается pending"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-008-006
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md."
+        -
+          step: "Проверить блок Решение пользователя."
+      expected_result:
+        -
+          result: "acceptance_decision остается pending, accepted_by не заполнен Codex."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-009-004
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      title: "Проверить Language policy в AGENTS.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-009-004
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Language policy."
+      expected_result:
+        -
+          result: "AGENTS.md содержит Language policy с исключениями для technical identifiers."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-009-005
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      title: "Проверить Audit discipline в AGENTS.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-009-005
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Audit discipline."
+      expected_result:
+        -
+          result: "AGENTS.md содержит audit-first/read-mostly discipline и запрет mass rewrite."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-009-008
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      title: "Проверить preservation audit findings"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-009-008
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: scripts/audit_language_policy.py
+        -
+          path: docs/audit/audit-findings.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть scripts/audit_codex_spec.py и scripts/audit_language_policy.py."
+        -
+          step: "Проверить, что merge_findings сохраняет status, resolution, resolved_by и resolved_at."
+      expected_result:
+        -
+          result: "Audit scripts preserve existing user resolutions in audit-findings.yml."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-011-002
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      title: "Проверить Git workflow discipline в AGENTS.md"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-011-002
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: AGENTS.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть AGENTS.md и найти раздел Git workflow discipline."
+      expected_result:
+        -
+          result: "AGENTS.md описывает branch creation, dirty tree, merge gate и forbidden files."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-011-003
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      title: "Проверить branch naming policy"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-011-003
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/git-workflow.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/git-workflow.md."
+      expected_result:
+        -
+          result: "Документ фиксирует формат ep-<number>-<short-slug>."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-011-004
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      title: "Проверить merge policy"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-011-004
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/git-workflow.md
+        -
+          path: AGENTS.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/git-workflow.md и AGENTS.md."
+      expected_result:
+        -
+          result: "Merge в main разрешен только после accepted packet, make check, audit gate и explicit user approval."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-011-008
+      type: manual_verification
+      priority: high
+      status: pending
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      title: "Проверить, что validator не выполняет Git mutations"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-011-008
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: scripts/validate_git_workflow.py
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть scripts/validate_git_workflow.py."
+      expected_result:
+        -
+          result: "Скрипт не вызывает git add, git commit, git merge, git push или удаление веток."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: USER-ACTION-DR-REF-FSNB-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Требуется локальный официальный или проектно разрешенный источник ФСНБ"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-REF-FSNB-001
+      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "активацию правил сопоставления, которым нужен этот тип справочного источника"
+      risks:
+        []
+      required_user_action: "Поместить файл источника в `data/reference/inbox/fsnb/` и указать authority, version, acquisition date и usage note."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-REF-KSI-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Требуется локальный официальный или проектно разрешенный источник КСИ"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-REF-KSI-001
+      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/ksi/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "активацию правил сопоставления, которым нужен этот тип справочного источника"
+      risks:
+        []
+      required_user_action: "Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-REF-WORK-TYPES-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Требуется локальный официальный или проектно разрешенный источник видов работ"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-REF-WORK-TYPES-001
+      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/work_types/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "активацию правил сопоставления, которым нужен этот тип справочного источника"
+      risks:
+        []
+      required_user_action: "Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Требуются официальные evidence references для правила сопоставления"
+      source_file: data/questions/normative-review-questions.yml
+      source_id: NR-RULE-PARTITION-BRICK-120-REINF-001
+      source_checksum_sha256: 3fb6b545d2aaf27f3181c571d88e169296bf7a4039f08272f903a26294069412
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: rules/matching/partition_brick_120_reinf.yaml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "активацию правила"
+      risks:
+        []
+      required_user_action: "Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type."
+      how_to_check:
+        -
+          step: "Открыть data/questions/normative-review-questions.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/normative-review-questions.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: ACCEPTANCE-EP-003-REFERENCE-VERSIONING
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-003-REFERENCE-VERSIONING
+      title: "Delta-based reference versioning"
+      source_file: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      source_id: EP-003-REFERENCE-VERSIONING
+      source_checksum_sha256: 07c198bab0dd6ef0eb978f80c2cbee607bac2d790a36b21f59345379331415ae
+      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      related_artifacts:
+        -
+          path: docs/grace/execution-packets.xml
+        -
+          path: docs/grace/module-contracts.xml
+        -
+          path: docs/grace/verification-plan.xml
+        -
+          path: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+        -
+          path: CHANGELOG.md
+        -
+          path: db/schemas/reference_versioning.sql
+        -
+          path: scripts/compare_reference_releases.py
+      commands:
+        -
+          command: "make compare-reference-fixtures"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make test"
+          status: documented
+      acceptance_criteria:
+        -
+
+      blockers:
+        -
+          id: EP-003-REFERENCE-VERSIONING-BLOCKER-001
+          text: "Database implementation/migrations are not created yet."
+      risks:
+        -
+          id: EP-003-REFERENCE-VERSIONING-RISK-001
+          text: "Real source import will require parser-specific validation later."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      title: "Project planning and acceptance contour"
+      source_file: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      source_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      source_checksum_sha256: be2161ce4ae5813ccf0dd81830cc98e0474d9da7018d4dd1976cec93502f635a
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      related_artifacts:
+        -
+          path: AGENTS.md
+        -
+          path: docs/grace/execution-packets.xml
+        -
+          path: docs/grace/verification-plan.xml
+        -
+          path: docs/grace/README.md
+        -
+          path: docs/project-plan.md
+        -
+          path: docs/artifact-registry.yml
+        -
+          path: docs/traceability-matrix.md
+        -
+          path: docs/decision-log.md
+        -
+          path: docs/status-report.md
+        -
+          path: docs/acceptance/README.md
+        -
+          path: docs/acceptance/ACCEPTANCE_TEMPLATE.md
+        -
+          path: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+        -
+          path: scripts/validate_project_plan.py
+        -
+          path: README.md
+        -
+          path: CHANGELOG.md
+        -
+          path: Makefile
+      commands:
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "make validate-reference"
+          status: documented
+        -
+          command: "source .venv/bin/activate && python -m pytest"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-004-001
+          text: "создан project-plan.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-002
+          text: "создан artifact-registry.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-003
+          text: "created artifacts зарегистрированы."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-004
+          text: "создан traceability-matrix.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-005
+          text: "создан decision-log.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-006
+          text: "создан status-report.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-007
+          text: "создана папка docs/acceptance/."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-008
+          text: "создан acceptance report для EP-004."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-009
+          text: "в AGENTS.md добавлена Project planning and acceptance discipline."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-010
+          text: "validate_project_plan.py проверяет существование путей из artifact-registry.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-011
+          text: "validate_project_plan.py запрещает accepted_by = Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-004-012
+          text: "Codex не ставит accepted, только ready_for_acceptance."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-BLOCKER-001
+          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
+      risks:
+        -
+          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-001
+          text: "Future packets must keep `docs/artifact-registry.yml` current."
+        -
+          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-002
+          text: "Acceptance decisions must be filled by the user only."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      title: "Acceptance and user action dashboards"
+      source_file: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      source_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      source_checksum_sha256: d6ccf86791daa184f194e905773a355ce149d8e9926993b66746234baaf4abb0
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      related_artifacts:
+        -
+          path: docs/grace/execution-packets.xml
+        -
+          path: docs/grace/verification-plan.xml
+        -
+          path: docs/grace/README.md
+        -
+          path: scripts/validate_project_plan.py
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/acceptance-dashboard.yml
+        -
+          path: docs/user-action-dashboard.md
+        -
+          path: docs/user-action-dashboard.yml
+        -
+          path: scripts/generate_acceptance_dashboard.py
+        -
+          path: scripts/generate_user_action_dashboard.py
+        -
+          path: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      commands:
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "make validate-reference"
+          status: documented
+        -
+          command: "source .venv/bin/activate && python -m pytest"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-005-001
+          text: "создан acceptance-dashboard.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-002
+          text: "создан acceptance-dashboard.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-003
+          text: "создан user-action-dashboard.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-004
+          text: "создан user-action-dashboard.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-005
+          text: "ready_for_acceptance packets отражаются в acceptance dashboard."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-006
+          text: "open questions отражаются в user action dashboard."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-007
+          text: "Codex не может поставить accepted."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-008
+          text: "accepted_by / decided_by не может быть Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-009
+          text: "добавлены команды генерации dashboards в Makefile."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-010
+          text: "validate_project_plan.py проверяет dashboards."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-011
+          text: "accepted artifacts отображаются как protected."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-012
+          text: "protected accepted artifacts нельзя изменять без user approval."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-005-013
+          text: "если требуется изменение accepted artifact, создается requires_user_approval action или change request."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-BLOCKER-001
+          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
+        -
+          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-BLOCKER-002
+          text: "User acceptance decision remains pending until Дмитрий reviews the packet."
+      risks:
+        -
+          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-001
+          text: "Dashboard files are generated from source files and must be regenerated after future packet or question updates."
+        -
+          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-002
+          text: "If source files and dashboards diverge, validation must fail or mark the state as requiring review."
+        -
+          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-003
+          text: "Accepted artifacts must not be materially changed without a separate user approval workflow."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-007-VERIFICATION-DASHBOARD
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      title: "Verification dashboard"
+      source_file: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      source_id: EP-007-VERIFICATION-DASHBOARD
+      source_checksum_sha256: db6a18f5cca50f1bce721f8ced36c8d1e8f03f5372b5588eb3046d595ad3880d
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      related_artifacts:
+        -
+          path: docs/grace/execution-packets.xml
+        -
+          path: docs/grace/module-contracts.xml
+        -
+          path: docs/grace/verification-plan.xml
+        -
+          path: docs/grace/README.md
+        -
+          path: scripts/validate_project_plan.py
+        -
+          path: docs/verification-dashboard.md
+        -
+          path: docs/verification-dashboard.yml
+        -
+          path: scripts/generate_verification_dashboard.py
+        -
+          path: scripts/validate_verification_dashboard.py
+        -
+          path: docs/monthly/monthly-plan.yml
+        -
+          path: docs/monthly/2026-06/01-bft-reference-data-governance.md
+        -
+          path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
+        -
+          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+        -
+          path: docs/monthly/monthly-defense-dashboard.md
+        -
+          path: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      commands:
+        []
+      acceptance_criteria:
+        -
+          id: AC-EP-007-001
+          text: "создан verification-dashboard.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-002
+          text: "создан verification-dashboard.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-003
+          text: "verification dashboard содержит проверки из протокола тестирования."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-004
+          text: "каждая проверка имеет инструкцию how_to_check."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-005
+          text: "каждая проверка имеет expected_result."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-006
+          text: "manual checks не могут быть отмечены Codex как passed."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-007
+          text: "checked_by не может быть Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-008
+          text: "добавлена команда make generate-verification-dashboard."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-009
+          text: "добавлена команда make validate-verification."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-007-010
+          text: "verification dashboard связан с acceptance dashboard и monthly test protocol."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-001
+          text: "Открыть `docs/verification-dashboard.md` и проверить полноту чек-листа."
+        -
+          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-002
+          text: "Открыть `docs/verification-dashboard.yml` и убедиться, что ручные проверки не отмечены Codex."
+        -
+          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-003
+          text: "Сверить `VT-*` checks с `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`."
+        -
+          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-004
+          text: "Запустить команды проверки."
+        -
+          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-005
+          text: "Вручную заполнить `user_result` только после фактической проверки."
+      risks:
+        []
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-008-DISSERTATION-PROMPT-GENERATION
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      title: "Dissertation prompt generation contour"
+      source_file: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      source_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      source_checksum_sha256: 55dd3e8a03defa61ac918960f2f11110b1f1c93970a17c6c8ebf1389429f7a84
+      acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      related_artifacts:
+        -
+          path: docs/dissertation/README.md
+        -
+          path: docs/dissertation/dissertation-sync-plan.md
+        -
+          path: docs/dissertation/dissertation-impact-log.yml
+        -
+          path: docs/dissertation/dissertation-artifact-map.yml
+        -
+          path: docs/dissertation/section-update-queue.yml
+        -
+          path: docs/dissertation/dissertation-change-log.md
+        -
+          path: docs/dissertation/bibliography-registry.yml
+        -
+          path: docs/dissertation/citation-requests.yml
+        -
+          path: docs/dissertation/terminology-control.yml
+        -
+          path: docs/dissertation/prompt-profiles/dissertation-editor-profile.md
+        -
+          path: docs/dissertation/prompt-profiles/dissertation-editor-profile.yml
+        -
+          path: docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md
+        -
+          path: docs/dissertation/prompt-profiles/forbidden-claims.yml
+        -
+          path: docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md
+        -
+          path: docs/dissertation/prompt-templates/dissertation-section-update.prompt.md
+        -
+          path: docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md
+        -
+          path: docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md
+        -
+          path: docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md
+        -
+          path: scripts/generate_dissertation_prompts.py
+        -
+          path: scripts/validate_dissertation_prompts.py
+        -
+          path: scripts/validate_dissertation_sync.py
+        -
+          path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      commands:
+        -
+          command: "make validate-dissertation-sync"
+          status: documented
+        -
+          command: "make validate-dissertation-prompts"
+          status: documented
+        -
+          command: "make generate-dissertation-prompts"
+          status: documented
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make generate-verification-dashboard"
+          status: documented
+        -
+          command: "make validate-verification"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make lint"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make test"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-008-001
+          text: "создан диссертационный контур docs/dissertation/."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-002
+          text: "создан dissertation-editor-profile.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-003
+          text: "создан dissertation-editor-profile.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-004
+          text: "создан tartip-dissertation-alignment.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-005
+          text: "создан forbidden-claims.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-006
+          text: "созданы prompt templates."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-007
+          text: "созданы prompt-queue и patches."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-008
+          text: "создан generate_dissertation_prompts.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-009
+          text: "создан validate_dissertation_prompts.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-010
+          text: "создан validate_dissertation_sync.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-011
+          text: "AGENTS.md содержит Dissertation synchronization discipline."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-012
+          text: "Codex не редактирует DOCX напрямую."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-013
+          text: "Codex не создает новую версию DOCX."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-014
+          text: "создан acceptance report для EP-008."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-015
+          text: "статус EP-008 — ready_for_acceptance, но не accepted."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-016
+          text: "accepted artifacts не изменяются без user approval."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-008-017
+          text: "dashboards обновлены и содержат EP-008."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-001
+          text: "DOCX update blocked until an accepted markdown patch and explicit user request exist."
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-BLOCKER-002
+          text: "User acceptance decision remains pending until Дмитрий reviews the packet."
+      risks:
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-001
+          text: "Future Tartip packets must update dissertation impact log when they affect the dissertation."
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-002
+          text: "Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly."
+        -
+          id: EP-008-DISSERTATION-PROMPT-GENERATION-RISK-003
+          text: "If a future update touches accepted/protected artifacts, a requires_user_approval item is required before changes."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-009-CODEX-SPEC-AUDIT
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      title: "Codex specification audit and language policy"
+      source_file: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      source_id: EP-009-CODEX-SPEC-AUDIT
+      source_checksum_sha256: 4c25cfeda185f6cdb14c347183a392cb9af7e1e5082ccaad7945ab5a415b6d45
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      related_artifacts:
+        -
+          path: docs/audit/README.md
+        -
+          path: docs/audit/codex-spec-audit.md
+        -
+          path: docs/audit/codex-spec-audit.yml
+        -
+          path: docs/audit/language-policy.md
+        -
+          path: docs/audit/language-audit-report.md
+        -
+          path: docs/audit/audit-findings.yml
+        -
+          path: scripts/audit_codex_spec.py
+        -
+          path: scripts/audit_language_policy.py
+        -
+          path: scripts/validate_audit_reports.py
+        -
+          path: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      commands:
+        -
+          command: "make audit-codex-spec"
+          status: documented
+        -
+          command: "make audit-language"
+          status: documented
+        -
+          command: "make validate-audit"
+          status: documented
+        -
+          command: "make audit"
+          status: documented
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make generate-verification-dashboard"
+          status: documented
+        -
+          command: "make validate-verification"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "make validate-reference"
+          status: documented
+        -
+          command: pytest
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-009-001
+          text: "создан docs/audit/."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-002
+          text: "создан codex-spec-audit.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-003
+          text: "создан audit-findings.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-004
+          text: "создан language-policy.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-005
+          text: "создан language-audit-report.md."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-006
+          text: "создан audit_codex_spec.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-007
+          text: "создан audit_language_policy.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-008
+          text: "создан validate_audit_reports.py."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-009
+          text: "AGENTS.md содержит Language policy."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-010
+          text: "AGENTS.md содержит Audit discipline."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-011
+          text: "аудит проверяет запрет ModelElement -> GESNNorm."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-012
+          text: "аудит проверяет accepted_by/decided_by/checked_by/answered_by != Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-013
+          text: "аудит проверяет отсутствие duplicate packet ids."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-014
+          text: "языковой аудит не переводит технические идентификаторы."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-015
+          text: "EP-009 отображается в acceptance dashboard."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-016
+          text: "EP-009 не отмечен accepted."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-017
+          text: "audit scripts preserve existing user resolutions in audit-findings.yml."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-018
+          text: "language audit does not fail on technical identifiers."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-019
+          text: "EP-009 does not mass-rewrite existing documents."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-020
+          text: "accepted/protected artifacts are not modified."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-009-021
+          text: "medium/low language findings do not block make check."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-001
+          text: "User acceptance decision remains pending until Дмитрий reviews the audit contour."
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-002
+          text: "Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents."
+      risks:
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-RISK-001
+          text: "Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation."
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-RISK-002
+          text: "If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first."
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-RISK-003
+          text: "Audit heuristics for language detection may produce false positives and require user review."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: ACCEPTANCE-EP-011-GIT-WORKFLOW-DISCIPLINE
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      title: "Git workflow discipline"
+      source_file: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      source_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      source_checksum_sha256: 07d5e1811eaeda322155c1efc891d32e289187747e7ca8c1742131d9040d91fa
+      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      related_artifacts:
+        -
+          path: docs/git-workflow.md
+        -
+          path: scripts/validate_git_workflow.py
+        -
+          path: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      commands:
+        -
+          command: "make validate-git-workflow"
+          status: documented
+        -
+          command: "make audit"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-011-001
+          text: "AGENTS.md содержит Git workflow discipline."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-002
+          text: "docs/git-workflow.md создан."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-003
+          text: "validate_git_workflow.py создан."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-004
+          text: "branch naming policy описана."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-005
+          text: "merge policy описана."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-006
+          text: "merge запрещен без acceptance_decision = accepted."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-007
+          text: "accepted_by = Codex запрещен."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-008
+          text: "forbidden files не должны попадать в Git."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-009
+          text: "validate-git-workflow добавлен в Makefile."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-011-010
+          text: "EP-011 не отмечен accepted."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-001
+          text: "Current working tree already contains pre-existing uncommitted changes from earlier packets on `main`."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-002
+          text: "EP-011 acceptance decision remains pending until Дмитрий reviews the packet."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-003
+          text: "Merge is forbidden until user acceptance and explicit merge approval exist."
+      risks:
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-001
+          text: "Existing dirty baseline makes branch creation/switching unsafe without user approval."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-002
+          text: "Advisory validator intentionally reports warnings for current baseline without failing."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-003
+          text: "Strict validator is expected to fail while branch mismatch, mixed EP scopes, or merge blockers remain."
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
+      id: VERIFICATION-VT-EP-005-003
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      title: "Проверить, что accepted artifacts отображаются как protected"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-005-003
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/acceptance-dashboard.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance-dashboard.md."
+        -
+          step: "Проверить раздел защищенных принятых артефактов."
+      expected_result:
+        -
+          result: "Accepted artifacts отображаются как protected или явно указано, что accepted artifacts отсутствуют."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-001
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить наличие monthly-plan.yml"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-001
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+      expected_result:
+        -
+          result: "monthly-plan.yml существует и описывает блок 2026-06."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-002
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить, что месячный блок содержит ровно 3 задачи"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-002
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+        -
+          step: "Посчитать задачи в monthly_plan.tasks."
+      expected_result:
+        -
+          result: "В блоке 2026-06 указано ровно 3 задачи."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-003
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить, что каждая задача имеет 15 человеко-часов"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-003
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/monthly-plan.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/monthly-plan.yml."
+        -
+          step: "Проверить planned_hours у каждой задачи."
+      expected_result:
+        -
+          result: "Каждая из 3 задач имеет planned_hours: 15."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-004
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить наличие БФТ"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-004
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/2026-06/01-bft-reference-data-governance.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/01-bft-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Документ БФТ существует и не содержит нормативных данных, придуманных Codex."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-005
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить наличие ТЗ"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-005
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/02-technical-task-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Документ ТЗ существует и фиксирует задачи проверки без изменения доменной методики."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-006-006
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      title: "Проверить наличие протокола тестирования"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-006-006
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/monthly/2026-06/03-test-protocol-reference-data-governance.md."
+      expected_result:
+        -
+          result: "Протокол тестирования существует и связан с verification dashboard."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-008-007
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-008-DISSERTATION-PROMPT-GENERATION
+      title: "Проверить защиту accepted/protected artifacts"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-008-007
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/acceptance-dashboard.md
+        -
+          path: docs/artifact-registry.yml
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Открыть docs/acceptance-dashboard.md."
+        -
+          step: "Проверить раздел защищенных принятых артефактов."
+      expected_result:
+        -
+          result: "Accepted/protected artifacts не изменены без user approval или явно указано, что таких артефактов нет."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+    -
+      id: VERIFICATION-VT-EP-009-010
+      type: manual_verification
+      priority: medium
+      status: pending
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      title: "Проверить, что EP-009 не mass-rewrite packet"
+      source_file: docs/verification-dashboard.yml
+      source_id: VT-EP-009-010
+      source_checksum_sha256: c0b146000c8aa37f276c82b2fad73621281ba2fc0ff3f10bea263ba8cb9e987f
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: docs/audit/README.md
+        -
+          path: docs/audit/language-audit-report.md
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Выполнить ручную проверку и заполнить user_result в verification dashboard."
+      how_to_check:
+        -
+          step: "Проверить git diff."
+        -
+          step: "Убедиться, что изменения ограничены audit contour, scripts, GRACE registration, dashboards, plans, README и CHANGELOG."
+      expected_result:
+        -
+          result: "EP-009 не выполняет массовую русификацию существующих документов."
+      target_decision_file: docs/verification-dashboard.yml
+      target_fields_to_fill:
+        -
+          field: user_result.checked
+        -
+          field: user_result.checked_by
+        -
+          field: user_result.checked_at
+        -
+          field: user_result.result
+        -
+          field: user_result.comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script применяет только acceptance decisions."
+  recently_accepted:
+    -
+      packet_id: EP-001-INFRA
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-002-REFERENCE-GOVERNANCE
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      hidden_from_active_queue: true
+  warnings:
+    []

@@ -248,7 +248,7 @@ If required evidence is missing, create a structured record in `data/questions/`
    - actual artifacts are registered;
    - verification commands were run or the blocking reason is documented;
    - acceptance report is created;
-   - unresolved risks and blockers are listed.
+   - нерешенные риски и блокеры перечисляются только при их фактическом наличии; если блокеров или рисков нет, соответствующие разделы остаются пустыми.
 
 6. The user is the only acceptance owner.
 
@@ -261,6 +261,33 @@ If required evidence is missing, create a structured record in `data/questions/`
    - verification is neither executed nor documented.
 
 8. If Codex is unsure, it must set `review_required` or `ready_for_acceptance`, not `accepted`.
+
+### Acceptance blockers and risks format
+
+1. Разделы `## 7. Блокеры` и `## 8. Риски` обязательны в каждом acceptance report.
+
+2. Если блокеров нет, раздел `## 7. Блокеры` должен оставаться пустым.
+
+3. Если рисков нет, раздел `## 8. Риски` должен оставаться пустым.
+
+4. Запрещено писать в пустых разделах:
+   - `Отсутствуют`;
+   - `Нет`;
+   - `Блокеров нет`;
+   - `Рисков нет`;
+   - `None`;
+   - `No blockers`;
+   - `No risks`.
+
+5. Любая строка списка в разделе `## 7. Блокеры` считается реальным блокером.
+
+6. Любая строка списка в разделе `## 8. Риски` считается реальным риском.
+
+7. Если ограничение не блокирует приемку пакета, его нельзя помещать в раздел `## 7. Блокеры`. Такое ограничение фиксируется либо в разделе `## 8. Риски`, либо в `comments` решения пользователя, либо выносится в отдельный future execution packet.
+
+8. Если пакет принят, но acceptance dashboard показывает псевдоблокер вида `Блокеров нет`, `Отсутствуют`, `None` или аналогичный текст, исходный acceptance report требует нормализации.
+
+9. Codex не должен создавать псевдоблокеры или псевдориски для заполнения пустых разделов.
 
 ## Dashboard discipline
 
@@ -289,6 +316,57 @@ If required evidence is missing, create a structured record in `data/questions/`
    - `needs_revision`.
 
 6. If dashboard data conflicts with source files, Codex must not close the task. It must set `review_required` or `blocked` and describe the discrepancy in the dashboard.
+
+## User review workbench discipline
+
+1. `docs/user-review-workbench.md` и `docs/user-review-workbench.yml` являются единым активным окном пользовательской проверки.
+
+2. User review workbench не заменяет source of truth.
+
+3. Source of truth остаются:
+   - `docs/acceptance/<PACKET_ID>.acceptance.md` для решений по приемке EP;
+   - `docs/acceptance-dashboard.yml` для сводки приемки;
+   - `docs/verification-dashboard.yml` для ручных проверок;
+   - `docs/user-action-dashboard.yml` для вопросов и действий пользователя;
+   - `docs/audit/audit-findings.yml` для audit findings;
+   - `docs/artifact-registry.yml` для артефактов;
+   - `docs/grace/execution-packets.xml` для execution packets.
+
+4. User review workbench показывает только активные элементы, требующие реакции пользователя:
+   - пакеты `ready_for_acceptance`;
+   - пакеты `needs_revision`;
+   - pending manual checks;
+   - open user actions;
+   - requires_user_approval;
+   - critical/high audit findings;
+   - active blockers.
+
+5. Accepted packets не должны отображаться в `active_review_items`.
+
+6. Accepted packets должны сохраняться в истории:
+   - acceptance reports;
+   - acceptance dashboard;
+   - artifact registry;
+   - status report;
+   - Git history.
+
+7. Пользователь может заполнить решение в `docs/user-review-workbench.yml`, но это решение становится source-of-truth только после применения через `scripts/apply_user_review_decisions.py`.
+
+8. `scripts/apply_user_review_decisions.py` переносит пользовательские решения из workbench в профильные source files.
+
+9. Codex не имеет права сам заполнять:
+   - `acceptance_decision: accepted`;
+   - `accepted_by`;
+   - `accepted_at`;
+   - `checked_by`;
+   - `answered_by`;
+   - `decided_by`.
+
+10. Codex не имеет права удалять acceptance reports или историю принятых пакетов.
+
+11. Если workbench конфликтует с source files, source files имеют приоритет, а workbench должен показать warning.
+
+12. Если source file изменился после генерации workbench, пользовательское решение из workbench нельзя применять без повторной генерации.
 
 ## Accepted artifact protection
 

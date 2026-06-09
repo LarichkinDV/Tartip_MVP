@@ -333,4 +333,53 @@
       <Item>Do not add secrets, dumps, real DOCX/PDF, or real normative bases to Git</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD" status="ready_for_acceptance">
+    <Name>User review workbench and acceptance standard</Name>
+    <Goal>Create one active user review workbench and define the empty blockers/risks standard for acceptance reports.</Goal>
+    <Scope>
+      <Item>Add acceptance blockers and risks format to AGENTS.md</Item>
+      <Item>Add user review workbench discipline to AGENTS.md</Item>
+      <Item>Update acceptance report template with empty blockers/risks rules</Item>
+      <Item>Create user review workbench Markdown and YAML files</Item>
+      <Item>Create generator, validator, and safe decision application scripts</Item>
+      <Item>Register artifacts and update project planning files</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>AGENTS.md</Artifact>
+      <Artifact>docs/acceptance/ACCEPTANCE_TEMPLATE.md</Artifact>
+      <Artifact>docs/user-review-workbench.md</Artifact>
+      <Artifact>docs/user-review-workbench.yml</Artifact>
+      <Artifact>scripts/generate_user_review_workbench.py</Artifact>
+      <Artifact>scripts/validate_user_review_workbench.py</Artifact>
+      <Artifact>scripts/apply_user_review_decisions.py</Artifact>
+      <Artifact>docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-012-001">AGENTS.md содержит стандарт пустых разделов "Блокеры" и "Риски".</Criterion>
+      <Criterion id="AC-EP-012-002">ACCEPTANCE_TEMPLATE.md содержит правила заполнения блокеров и рисков.</Criterion>
+      <Criterion id="AC-EP-012-003">создан docs/user-review-workbench.yml.</Criterion>
+      <Criterion id="AC-EP-012-004">создан docs/user-review-workbench.md.</Criterion>
+      <Criterion id="AC-EP-012-005">создан generate_user_review_workbench.py.</Criterion>
+      <Criterion id="AC-EP-012-006">создан validate_user_review_workbench.py.</Criterion>
+      <Criterion id="AC-EP-012-007">создан apply_user_review_decisions.py.</Criterion>
+      <Criterion id="AC-EP-012-008">accepted packets не отображаются в active_review_items.</Criterion>
+      <Criterion id="AC-EP-012-009">pending/ready_for_acceptance packets отображаются в active_review_items.</Criterion>
+      <Criterion id="AC-EP-012-010">решения пользователя из workbench применяются только через apply_user_review_decisions.py.</Criterion>
+      <Criterion id="AC-EP-012-011">Codex не может сам ставить accepted/accepted_by/accepted_at.</Criterion>
+      <Criterion id="AC-EP-012-012">acceptance reports остаются source of truth.</Criterion>
+      <Criterion id="AC-EP-012-013">псевдоблокеры "Отсутствуют"/"Блокеров нет"/None запрещены.</Criterion>
+      <Criterion id="AC-EP-012-014">EP-010 не выполнялся.</Criterion>
+      <Criterion id="AC-EP-012-015">README.md и CHANGELOG.md не нормализовались.</Criterion>
+      <Criterion id="AC-EP-012-016">EP-003–EP-011 не были автоматически приняты.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not execute EP-010-LANGUAGE-NORMALIZATION</Item>
+      <Item>Do not normalize README.md or CHANGELOG.md</Item>
+      <Item>Do not automatically accept EP-003 through EP-011</Item>
+      <Item>Do not replace acceptance reports as source of truth</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not run git add, commit, merge, push, or rebase</Item>
+    </NonGoals>
+  </Packet>
 </ExecutionPackets>

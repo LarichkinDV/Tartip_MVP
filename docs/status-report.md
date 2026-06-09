@@ -6,7 +6,7 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-011-GIT-WORKFLOW-DISCIPLINE`
+`EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD`
 
 ## 3. Текущий статус
 
@@ -46,6 +46,11 @@
 - Выполнены `make validate-git-workflow`, `make audit`, `make validate-plan`, `make check` для EP-011.
 - Выполнены targeted `ruff format` и `ruff check` для EP-011 Python scripts.
 - Выполнена Python syntax check для EP-011 scripts с bytecode cache в `/tmp/tartip_pycache`.
+- Добавлен стандарт пустых разделов `Блокеры` и `Риски` для acceptance reports.
+- Создан контур `docs/user-review-workbench.md` и `docs/user-review-workbench.yml`.
+- Добавлены `scripts/generate_user_review_workbench.py`, `scripts/validate_user_review_workbench.py`, `scripts/apply_user_review_decisions.py`.
+- Добавлены команды `make generate-user-review-workbench`, `make validate-user-review-workbench`, `make apply-user-review-decisions`.
+- EP-012 добавлен в GRACE execution packets, module contracts и verification plan.
 
 ## 5. В работе
 
@@ -53,6 +58,7 @@
 - Пользовательская приемка `EP-008-DISSERTATION-PROMPT-GENERATION`.
 - Пользовательская приемка `EP-009-CODEX-SPEC-AUDIT`.
 - Пользовательская приемка `EP-011-GIT-WORKFLOW-DISCIPLINE`.
+- Пользовательская приемка `EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD`.
 - Ручное выполнение проверок из `docs/verification-dashboard.yml` пользователем.
 
 ## 6. Готово к приемке
@@ -66,6 +72,7 @@
 - [EP-008-DISSERTATION-PROMPT-GENERATION](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md)
 - [EP-009-CODEX-SPEC-AUDIT](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
 - [EP-011-GIT-WORKFLOW-DISCIPLINE](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
+- [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 
 ## 7. Блокеры
 
@@ -88,10 +95,12 @@
 - Medium/low language findings must remain non-blocking for `make check` in EP-009.
 - Git workflow strict validation will fail until current dirty baseline is split or explicitly approved.
 - Git workflow advisory validation passes but reports current `main` branch, mixed EP scopes, and forbidden merge while acceptance is pending.
+- User review workbench is an aggregate active queue; acceptance reports remain the source of truth.
+- `apply_user_review_decisions.py` must refuse stale checksums, active blockers, empty user fields, and `accepted_by = Codex`.
 
 ## 9. Следующий шаг
 
-User reviews the EP-011 acceptance report, Git workflow document, advisory validator warnings, generated dashboards, and manually confirms acceptance decision if the contour is acceptable.
+User reviews the EP-012 acceptance report, user review workbench, acceptance report empty blockers/risks standard, and safe decision application workflow.
 
 ## 10. Acceptance Reports
 
@@ -104,3 +113,4 @@ User reviews the EP-011 acceptance report, Git workflow document, advisory valid
 - [EP-008 acceptance](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md)
 - [EP-009 acceptance](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
 - [EP-011 acceptance](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
+- [EP-012 acceptance](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)

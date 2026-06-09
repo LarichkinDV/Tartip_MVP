@@ -225,4 +225,43 @@
       <Item>Strict mode may fail on warnings before merge preparation.</Item>
     </Invariants>
   </Module>
+  <Module id="M-USER-REVIEW-WORKBENCH" status="ready_for_acceptance">
+    <Name>User Review Workbench</Name>
+    <Responsibilities>
+      <Item>Aggregate active user review items into one Markdown and YAML workbench.</Item>
+      <Item>Show ready_for_acceptance packets, pending manual checks, open user actions, requires_user_approval items, critical/high audit findings, and active blockers.</Item>
+      <Item>Hide accepted packets from active_review_items while preserving accepted history.</Item>
+      <Item>Validate source_file, source_checksum_sha256, target decision files, and user-owned fields.</Item>
+      <Item>Apply explicit user acceptance decisions to acceptance reports only through a safe script.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/acceptance-dashboard.yml</Item>
+      <Item>docs/verification-dashboard.yml</Item>
+      <Item>docs/user-action-dashboard.yml</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/grace/execution-packets.xml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/user-review-workbench.yml</Item>
+      <Item>docs/user-review-workbench.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>replacing acceptance reports as source of truth</Item>
+      <Item>accepting packets on behalf of the user</Item>
+      <Item>deleting accepted history</Item>
+      <Item>hiding active blockers</Item>
+      <Item>applying stale decisions</Item>
+      <Item>changing README.md or CHANGELOG.md for language normalization</Item>
+      <Item>executing EP-010-LANGUAGE-NORMALIZATION</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Accepted packets must not appear in active_review_items.</Item>
+      <Item>Accepted packets may appear only in recently_accepted for reference.</Item>
+      <Item>Acceptance reports remain source of truth for acceptance decisions.</Item>
+      <Item>accepted_by, checked_by, answered_by, and decided_by must not be Codex.</Item>
+      <Item>Stale source checksums block decision application.</Item>
+      <Item>Pseudo blockers and pseudo risks are forbidden.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>
