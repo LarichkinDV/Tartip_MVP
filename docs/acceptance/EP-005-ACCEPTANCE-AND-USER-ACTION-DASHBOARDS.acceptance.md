@@ -74,11 +74,10 @@ source .venv/bin/activate && python -m pytest
 
 ## 7. Блокеры
 
-- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
-- User acceptance decision remains pending until Дмитрий reviews the packet.
-
 ## 8. Риски
 
+- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
+- User acceptance decision remains pending until Дмитрий reviews the packet; this is normal pre-acceptance state, not a blocking defect.
 - Dashboard files are generated from source files and must be regenerated after future packet or question updates.
 - If source files and dashboards diverge, validation must fail or mark the state as requiring review.
 - Accepted artifacts must not be materially changed without a separate user approval workflow.
@@ -104,7 +103,7 @@ If an accepted artifact requires a change:
 
 ## 11. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-005 принят как контур acceptance dashboard и user action dashboard: markdown/YAML dashboards, генераторы, Makefile targets, проверки validate_project_plan.py, запреты accepted_by/decided_by = Codex и правила защиты accepted artifacts проверены. Блокеры переклассифицированы как риски/контекст проверки.
