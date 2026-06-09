@@ -44,10 +44,9 @@ source .venv/bin/activate && make test
 
 ## 7. Блокеры
 
-- Database implementation/migrations are not created yet.
-
 ## 8. Риски
 
+- Database implementation/migrations are not created yet; current EP is accepted as conceptual schema documentation, hashing utility, release comparison utility and fixture-based verification, not as production database migration implementation.
 - Real source import will require parser-specific validation later.
 
 ## 9. Спорные решения
@@ -56,7 +55,7 @@ source .venv/bin/activate && make test
 
 ## 10. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-003 принят как концептуально-проверочный пакет дельтового версионирования справочников: схема, hashing utility, release comparison utility и fixture-based verification проверены. Реализация рабочих DB migrations не входит в scope EP-003 и должна быть вынесена в отдельный execution packet.

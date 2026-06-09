@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: a8186f2f62babcd078f13881db4714b9fd6d045e895cb140c9410b3a8cbe9291
+      checksum_sha256: 79c56624d1eadd93a4857293abd023d766ec027600021eec5045211fab5168b1
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: d82841d06ca9fd534fb31b26a61d6bfb35d95acdebba7a5edfa07d876a8bfa63
+      checksum_sha256: 2daa3c63d281ad9df911937ccda897edf4bca9c17adb3b2a2c9537f742ccaf17
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 3d3d75429327bff98f5806f7af952f9ba099ef00d5e628cef20ef03c69d8eaae
+      checksum_sha256: 1fc7d6474c05973256c6f5e8fe8d45831704755ff9f016d42c04b081b7445c9d
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 39
-    ready_for_acceptance: 7
+    active_review_items: 38
+    ready_for_acceptance: 6
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 20
-    accepted_hidden_from_active_queue: 3
+    active_blockers: 19
+    accepted_hidden_from_active_queue: 4
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1208,79 +1208,6 @@ user_review_workbench:
       apply_policy:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
-    -
-      id: ACCEPTANCE-EP-003-REFERENCE-VERSIONING
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-003-REFERENCE-VERSIONING
-      title: "Delta-based reference versioning"
-      source_file: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
-      source_id: EP-003-REFERENCE-VERSIONING
-      source_checksum_sha256: 07c198bab0dd6ef0eb978f80c2cbee607bac2d790a36b21f59345379331415ae
-      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
-      related_artifacts:
-        -
-          path: docs/grace/execution-packets.xml
-        -
-          path: docs/grace/module-contracts.xml
-        -
-          path: docs/grace/verification-plan.xml
-        -
-          path: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
-        -
-          path: CHANGELOG.md
-        -
-          path: db/schemas/reference_versioning.sql
-        -
-          path: scripts/compare_reference_releases.py
-      commands:
-        -
-          command: "make compare-reference-fixtures"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make test"
-          status: documented
-      acceptance_criteria:
-        -
-
-      blockers:
-        -
-          id: EP-003-REFERENCE-VERSIONING-BLOCKER-001
-          text: "Database implementation/migrations are not created yet."
-      risks:
-        -
-          id: EP-003-REFERENCE-VERSIONING-RISK-001
-          text: "Real source import will require parser-specific validation later."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
     -
       id: ACCEPTANCE-EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
       type: acceptance
@@ -2780,6 +2707,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-003-REFERENCE-VERSIONING
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
