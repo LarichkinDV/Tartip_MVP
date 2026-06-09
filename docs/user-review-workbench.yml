@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 79c56624d1eadd93a4857293abd023d766ec027600021eec5045211fab5168b1
+      checksum_sha256: 3ce221eec4ef23d139ec1f9c6a707269767598ca454410a43972c74e336c33b9
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 2daa3c63d281ad9df911937ccda897edf4bca9c17adb3b2a2c9537f742ccaf17
+      checksum_sha256: 37f635cc2e9bfc9263c04cff0f77267cdec3818ebf187644fec83f1f52bf6b26
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 1fc7d6474c05973256c6f5e8fe8d45831704755ff9f016d42c04b081b7445c9d
+      checksum_sha256: bc76f89fd67f53adb5e93386b5eb2c5f956db8480e85dd36f8650ebbed317e23
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 38
-    ready_for_acceptance: 6
+    active_review_items: 37
+    ready_for_acceptance: 5
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 19
-    accepted_hidden_from_active_queue: 4
+    active_blockers: 18
+    accepted_hidden_from_active_queue: 5
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1208,164 +1208,6 @@ user_review_workbench:
       apply_policy:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
-    -
-      id: ACCEPTANCE-EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
-      title: "Project planning and acceptance contour"
-      source_file: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
-      source_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
-      source_checksum_sha256: be2161ce4ae5813ccf0dd81830cc98e0474d9da7018d4dd1976cec93502f635a
-      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
-      related_artifacts:
-        -
-          path: AGENTS.md
-        -
-          path: docs/grace/execution-packets.xml
-        -
-          path: docs/grace/verification-plan.xml
-        -
-          path: docs/grace/README.md
-        -
-          path: docs/project-plan.md
-        -
-          path: docs/artifact-registry.yml
-        -
-          path: docs/traceability-matrix.md
-        -
-          path: docs/decision-log.md
-        -
-          path: docs/status-report.md
-        -
-          path: docs/acceptance/README.md
-        -
-          path: docs/acceptance/ACCEPTANCE_TEMPLATE.md
-        -
-          path: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
-        -
-          path: scripts/validate_project_plan.py
-        -
-          path: README.md
-        -
-          path: CHANGELOG.md
-        -
-          path: Makefile
-      commands:
-        -
-          command: "make validate-plan"
-          status: documented
-        -
-          command: "make check"
-          status: documented
-        -
-          command: "make validate-reference"
-          status: documented
-        -
-          command: "source .venv/bin/activate && python -m pytest"
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-004-001
-          text: "создан project-plan.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-002
-          text: "создан artifact-registry.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-003
-          text: "created artifacts зарегистрированы."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-004
-          text: "создан traceability-matrix.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-005
-          text: "создан decision-log.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-006
-          text: "создан status-report.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-007
-          text: "создана папка docs/acceptance/."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-008
-          text: "создан acceptance report для EP-004."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-009
-          text: "в AGENTS.md добавлена Project planning and acceptance discipline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-010
-          text: "validate_project_plan.py проверяет существование путей из artifact-registry.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-011
-          text: "validate_project_plan.py запрещает accepted_by = Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-004-012
-          text: "Codex не ставит accepted, только ready_for_acceptance."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-BLOCKER-001
-          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
-      risks:
-        -
-          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-001
-          text: "Future packets must keep `docs/artifact-registry.yml` current."
-        -
-          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-002
-          text: "Acceptance decisions must be filled by the user only."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
     -
       id: ACCEPTANCE-EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       type: acceptance
@@ -2713,6 +2555,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD

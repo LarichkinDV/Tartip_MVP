@@ -107,7 +107,7 @@ user_action_dashboard:
       priority: normal
       status: open
       topic: git_workflow
-      question: "Имя ветки ep-003-reference-versioning-acceptance не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
+      question: "Имя ветки ep-004-project-planning-and-acceptance не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
       expected_action: "Review audit finding and decide next action."
       expected_input: "Использовать формат ep-012-<short-slug>."
       target_path: .git
@@ -187,7 +187,7 @@ user_action_dashboard:
       priority: normal
       status: open
       topic: git_workflow
-      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007"
+      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
       expected_action: "Review audit finding and decide next action."
       expected_input: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
       target_path: .git
