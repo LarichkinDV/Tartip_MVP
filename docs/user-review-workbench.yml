@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 785d3fac4bce3d7f71363b7f5cc2e0540c0290d964f5ea19cb5b0d926350d85f
+      checksum_sha256: 23155302a8a6c770cccb544100f1e295222841a17fe534b50e3c7c7637ba164f
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 9fffcd77a9b1ff021045a02d4eab971fadf2acf815edb28b505588b5134fd164
+      checksum_sha256: 12d433e1b8ae78dd3b9331e51b213589cf600de32cc03b435597811edfbcaa27
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 79d47cfedb3de82c90f1bf250e53d1eed9c877e11dc8a89bb2b9cde582a07333
+      checksum_sha256: 0dce48fa23e54588350c300cfa18d308f8d7240591c7517691d5bf06dc10125a
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 36
-    ready_for_acceptance: 4
+    active_review_items: 35
+    ready_for_acceptance: 3
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 16
-    accepted_hidden_from_active_queue: 6
+    active_blockers: 11
+    accepted_hidden_from_active_queue: 7
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1209,148 +1209,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-007-VERIFICATION-DASHBOARD
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-007-VERIFICATION-DASHBOARD
-      title: "Verification dashboard"
-      source_file: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
-      source_id: EP-007-VERIFICATION-DASHBOARD
-      source_checksum_sha256: db6a18f5cca50f1bce721f8ced36c8d1e8f03f5372b5588eb3046d595ad3880d
-      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
-      related_artifacts:
-        -
-          path: docs/grace/execution-packets.xml
-        -
-          path: docs/grace/module-contracts.xml
-        -
-          path: docs/grace/verification-plan.xml
-        -
-          path: docs/grace/README.md
-        -
-          path: scripts/validate_project_plan.py
-        -
-          path: docs/verification-dashboard.md
-        -
-          path: docs/verification-dashboard.yml
-        -
-          path: scripts/generate_verification_dashboard.py
-        -
-          path: scripts/validate_verification_dashboard.py
-        -
-          path: docs/monthly/monthly-plan.yml
-        -
-          path: docs/monthly/2026-06/01-bft-reference-data-governance.md
-        -
-          path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
-        -
-          path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-        -
-          path: docs/monthly/monthly-defense-dashboard.md
-        -
-          path: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-007-001
-          text: "создан verification-dashboard.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-002
-          text: "создан verification-dashboard.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-003
-          text: "verification dashboard содержит проверки из протокола тестирования."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-004
-          text: "каждая проверка имеет инструкцию how_to_check."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-005
-          text: "каждая проверка имеет expected_result."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-006
-          text: "manual checks не могут быть отмечены Codex как passed."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-007
-          text: "checked_by не может быть Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-008
-          text: "добавлена команда make generate-verification-dashboard."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-009
-          text: "добавлена команда make validate-verification."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-007-010
-          text: "verification dashboard связан с acceptance dashboard и monthly test protocol."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-001
-          text: "Открыть `docs/verification-dashboard.md` и проверить полноту чек-листа."
-        -
-          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-002
-          text: "Открыть `docs/verification-dashboard.yml` и убедиться, что ручные проверки не отмечены Codex."
-        -
-          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-003
-          text: "Сверить `VT-*` checks с `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`."
-        -
-          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-004
-          text: "Запустить команды проверки."
-        -
-          id: EP-007-VERIFICATION-DASHBOARD-BLOCKER-005
-          text: "Вручную заполнить `user_result` только после фактической проверки."
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: ACCEPTANCE-EP-008-DISSERTATION-PROMPT-GENERATION
       type: acceptance
       priority: medium
@@ -2405,6 +2263,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-007-VERIFICATION-DASHBOARD
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD

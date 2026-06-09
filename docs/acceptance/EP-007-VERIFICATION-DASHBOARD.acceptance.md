@@ -60,7 +60,16 @@ source .venv/bin/activate && python -m pytest
 | AC-EP-007-009 | добавлена команда make validate-verification. | ready_for_acceptance | pending |
 | AC-EP-007-010 | verification dashboard связан с acceptance dashboard и monthly test protocol. | ready_for_acceptance | pending |
 
-## 7. Что нужно проверить пользователю
+## 7. Блокеры
+
+## 8. Риски
+
+- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
+- User manual verification remains pending until Дмитрий fills `user_result`; this is normal pre-acceptance state for manual checks, not a blocking defect for accepting the dashboard contour.
+- Verification dashboard must be regenerated after changes to monthly protocol, verification plan, acceptance dashboard, project plan, or verification scripts.
+- Passing verification checks does not mean packet acceptance; acceptance remains a separate user decision.
+
+## 9. Что нужно проверить пользователю
 
 - Открыть `docs/verification-dashboard.md` и проверить полноту чек-листа.
 - Открыть `docs/verification-dashboard.yml` и убедиться, что ручные проверки не отмечены Codex.
@@ -68,7 +77,7 @@ source .venv/bin/activate && python -m pytest
 - Запустить команды проверки.
 - Вручную заполнить `user_result` только после фактической проверки.
 
-## 8. Как вручную отмечать проверки выполненными
+## 10. Как вручную отмечать проверки выполненными
 
 1. Найти проверку в `docs/verification-dashboard.yml`.
 2. Заполнить `checked: true`.
@@ -78,23 +87,13 @@ source .venv/bin/activate && python -m pytest
 6. Добавить `comments` при необходимости.
 7. Запустить `make validate-verification`.
 
-## 9. Почему Codex не ставит галки
+## 11. Почему Codex не ставит галки
 
 Проверка работоспособности требует пользовательского подтверждения. Codex может подготовить чек-лист и выполнить автоматические команды, но не может закрывать manual checks, не может указывать `checked_by: Codex` и не может превращать проверку в acceptance decision.
 
-## 10. Блокеры
-
-- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
-- User manual verification remains pending until Дмитрий fills `user_result`.
-
-## 11. Риски
-
-- Verification dashboard must be regenerated after changes to monthly protocol, verification plan, acceptance dashboard, project plan, or verification scripts.
-- Passing verification checks does not mean packet acceptance; acceptance remains a separate user decision.
-
 ## 12. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-007 принят как контур verification dashboard: markdown/YAML окно ручной проверки, генератор, валидатор, Makefile targets, связь с месячным протоколом тестирования и запрет checked_by = Codex проверены. Ручные verification checks остаются отдельными пользовательскими проверками и не закрываются Codex.
