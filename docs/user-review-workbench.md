@@ -6,15 +6,15 @@
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 34 |
-| Пакеты готовы к приемке | 2 |
+| Активные элементы проверки | 33 |
+| Пакеты готовы к приемке | 1 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
 | Critical audit findings | 0 |
 | High audit findings | 0 |
-| Активные блокеры | 9 |
-| Принятые пакеты скрыты из активной очереди | 8 |
+| Активные блокеры | 7 |
+| Принятые пакеты скрыты из активной очереди | 9 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -43,7 +43,6 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
-| medium | acceptance | ACCEPTANCE-EP-009-CODEX-SPEC-AUDIT | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | acceptance | ACCEPTANCE-EP-011-GIT-WORKFLOW-DISCIPLINE | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | manual_verification | VERIFICATION-VT-EP-005-003 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Проверить, что accepted artifacts отображаются как protected | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-001 | EP-006-MONTHLY-PLANNING-AND-DEFENSE | Проверить наличие monthly-plan.yml | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
@@ -59,7 +58,6 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | make audit-codex-spec, make audit-language, make validate-audit, make audit, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, make validate-reference, pytest | User acceptance decision remains pending until Дмитрий reviews the audit contour.; Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents. | Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation.; If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first.; Audit heuristics for language detection may produce false positives and require user review. | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | make validate-git-workflow, make audit, make validate-plan, make check | Current working tree already contains pre-existing uncommitted changes from earlier packets on `main`.; EP-011 acceptance decision remains pending until Дмитрий reviews the packet.; Merge is forbidden until user acceptance and explicit merge approval exist. | Existing dirty baseline makes branch creation/switching unsafe without user approval.; Advisory validator intentionally reports warnings for current baseline without failing.; Strict validator is expected to fail while branch mismatch, mixed EP scopes, or merge blockers remain. | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md |
 
 ## 4. Ручные проверки
@@ -138,4 +136,5 @@
 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | 2026-06-08 | Дмитрий | docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md |
 | EP-007-VERIFICATION-DASHBOARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md |
 | EP-008-DISSERTATION-PROMPT-GENERATION | 2026-06-08 | Дмитрий | docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md |
+| EP-009-CODEX-SPEC-AUDIT | 2026-06-08 | Дмитрий | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
