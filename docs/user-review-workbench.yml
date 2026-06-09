@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 376e69ed913a1699e1c0dc31c332bd34568477cd90dc9456ca78125ed6fdc469
+      checksum_sha256: 2fc4e00a558736f950b5151bc63a71662b21fc32d0a02e7b8c79b5999b72a75a
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: fc77773170415ab38fec4d032835d6e4f8647e92e8d0dc7d7e216fd443a977e5
+      checksum_sha256: 81c3154c2f4cae3a0c02bc3199ddc482f964f5c8965408239efb7f636a0f098b
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 77a5beeefb0d29ee48d7fe69d015a9ebd0534b0b0a34f8b1a53c2921a925517f
+      checksum_sha256: bada09b27682f9d4c48f4f3168e47b0b82f1922307650bfa99cca268ed21d943
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 7
-    accepted_hidden_from_active_queue: 9
+    active_blockers: 4
+    accepted_hidden_from_active_queue: 10
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1209,137 +1209,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-011-GIT-WORKFLOW-DISCIPLINE
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
-      title: "Git workflow discipline"
-      source_file: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
-      source_id: EP-011-GIT-WORKFLOW-DISCIPLINE
-      source_checksum_sha256: 07d5e1811eaeda322155c1efc891d32e289187747e7ca8c1742131d9040d91fa
-      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
-      related_artifacts:
-        -
-          path: docs/git-workflow.md
-        -
-          path: scripts/validate_git_workflow.py
-        -
-          path: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
-      commands:
-        -
-          command: "make validate-git-workflow"
-          status: documented
-        -
-          command: "make audit"
-          status: documented
-        -
-          command: "make validate-plan"
-          status: documented
-        -
-          command: "make check"
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-011-001
-          text: "AGENTS.md содержит Git workflow discipline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-002
-          text: "docs/git-workflow.md создан."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-003
-          text: "validate_git_workflow.py создан."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-004
-          text: "branch naming policy описана."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-005
-          text: "merge policy описана."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-006
-          text: "merge запрещен без acceptance_decision = accepted."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-007
-          text: "accepted_by = Codex запрещен."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-008
-          text: "forbidden files не должны попадать в Git."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-009
-          text: "validate-git-workflow добавлен в Makefile."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-011-010
-          text: "EP-011 не отмечен accepted."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-001
-          text: "Current working tree already contains pre-existing uncommitted changes from earlier packets on `main`."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-002
-          text: "EP-011 acceptance decision remains pending until Дмитрий reviews the packet."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-003
-          text: "Merge is forbidden until user acceptance and explicit merge approval exist."
-      risks:
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-001
-          text: "Existing dirty baseline makes branch creation/switching unsafe without user approval."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-002
-          text: "Advisory validator intentionally reports warnings for current baseline without failing."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-003
-          text: "Strict validator is expected to fail while branch mismatch, mixed EP scopes, or merge blockers remain."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -1844,6 +1713,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD

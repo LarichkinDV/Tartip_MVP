@@ -7,18 +7,18 @@
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 10 |
-| accepted | 9 |
+| accepted | 10 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 1 |
+| pending | 0 |
 | protected_accepted_artifacts | 0 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Acceptance criteria and artifacts | docs/git-workflow.md, scripts/validate_git_workflow.py, docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | make validate-git-workflow, make audit, make validate-plan, make check | [docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
+| - | - | - | - | - | - | - |
 
 ## 3. Принятые задачи
 
@@ -32,6 +32,7 @@
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | Дмитрий | 2026-06-08 | Принято. EP-007 принят как контур verification dashboard: markdown/YAML окно ручной проверки, генератор, валидатор, Makefile targets, связь с месячным протоколом тестирования и запрет checked_by = Codex проверены. Ручные verification checks остаются отдельными пользовательскими проверками и не закрываются Codex. | protected |
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | Дмитрий | 2026-06-08 | Принято. EP-008 принят как диссертационный prompt/synchronization contour: docs/dissertation, prompt profiles, forbidden claims, prompt templates, prompt queue, patches, validators and Makefile targets проверены. DOCX/PDF файлы не создавались; прямое редактирование DOCX, создание новой DOCX-версии, добавление источников без citation request и перенос инженерных деталей Tartip в научный результат запрещены. | protected |
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | Дмитрий | 2026-06-08 | Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами. | protected |
+| EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Дмитрий | 2026-06-08 | Принято. EP-011 принят как контур Git workflow discipline: docs/git-workflow.md, validate_git_workflow.py, Makefile targets, audit checks, branch/merge policy, запреты accepted_by=Codex и forbidden files проверены. Advisory warnings являются ожидаемым диагностическим поведением валидатора и не блокируют приемку. Merge остается допустимым только после пользовательской приемки, make check и явного решения пользователя. | protected |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | Дмитрий | 2026-06-08 | Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии. | protected |
 
 ## 4. Защищенные принятые артефакты
