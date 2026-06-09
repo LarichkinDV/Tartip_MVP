@@ -63,10 +63,9 @@ source .venv/bin/activate && python -m pytest
 
 ## 7. Блокеры
 
-- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
-
 ## 8. Риски
 
+- Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.
 - Future packets must keep `docs/artifact-registry.yml` current.
 - Acceptance decisions must be filled by the user only.
 
@@ -77,7 +76,7 @@ source .venv/bin/activate && python -m pytest
 
 ## 10. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-004 принят как контур проектного планирования и приемки: project plan, artifact registry, traceability matrix, decision log, status report, acceptance reports и validate_project_plan.py проверены. Пункт о Docker Desktop переклассифицирован как риск/контекст проверки, а не блокер приемки.

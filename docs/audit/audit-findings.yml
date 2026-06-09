@@ -16,7 +16,7 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Имя ветки ep-003-reference-versioning-acceptance не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
+    issue: "Имя ветки ep-004-project-planning-and-acceptance не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
     recommendation: "Использовать формат ep-012-<short-slug>."
     status: open
     created_at: 2026-06-09
@@ -84,7 +84,7 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007"
+    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
     recommendation: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
     status: open
     created_at: 2026-06-08

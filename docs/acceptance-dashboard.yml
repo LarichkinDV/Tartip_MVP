@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 10
-    accepted: 4
+    accepted: 5
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 6
+    pending: 5
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -289,7 +289,7 @@ acceptance_dashboard:
       title: "Project planning and acceptance contour"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       artifacts:
         -
@@ -406,62 +406,62 @@ acceptance_dashboard:
           id: AC-EP-004-001
           text: "создан project-plan.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-002
           text: "создан artifact-registry.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-003
           text: "created artifacts зарегистрированы."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-004
           text: "создан traceability-matrix.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-005
           text: "создан decision-log.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-006
           text: "создан status-report.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-007
           text: "создана папка docs/acceptance/."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-008
           text: "создан acceptance report для EP-004."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-009
           text: "в AGENTS.md добавлена Project planning and acceptance discipline."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-010
           text: "validate_project_plan.py проверяет существование путей из artifact-registry.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-011
           text: "validate_project_plan.py запрещает accepted_by = Codex."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-004-012
           text: "Codex не ставит accepted, только ready_for_acceptance."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -472,21 +472,22 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-BLOCKER-001
-          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
+        []
       risks:
         -
           id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-001
-          text: "Future packets must keep `docs/artifact-registry.yml` current."
+          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
         -
           id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-002
+          text: "Future packets must keep `docs/artifact-registry.yml` current."
+        -
+          id: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE-RISK-003
           text: "Acceptance decisions must be filled by the user only."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. EP-004 принят как контур проектного планирования и приемки: project plan, artifact registry, traceability matrix, decision log, status report, acceptance reports и validate_project_plan.py проверены. Пункт о Docker Desktop переклассифицирован как риск/контекст проверки, а не блокер приемки."
     -
       packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       title: "Acceptance and user action dashboards"

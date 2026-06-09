@@ -6,15 +6,15 @@
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 38 |
-| Пакеты готовы к приемке | 6 |
+| Активные элементы проверки | 37 |
+| Пакеты готовы к приемке | 5 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
 | Critical audit findings | 0 |
 | High audit findings | 0 |
-| Активные блокеры | 19 |
-| Принятые пакеты скрыты из активной очереди | 4 |
+| Активные блокеры | 18 |
+| Принятые пакеты скрыты из активной очереди | 5 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -43,7 +43,6 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
-| medium | acceptance | ACCEPTANCE-EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Project planning and acceptance contour | docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | acceptance | ACCEPTANCE-EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | acceptance | ACCEPTANCE-EP-007-VERIFICATION-DASHBOARD | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | acceptance | ACCEPTANCE-EP-008-DISSERTATION-PROMPT-GENERATION | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
@@ -63,7 +62,6 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Project planning and acceptance contour | make validate-plan, make check, make validate-reference, source .venv/bin/activate && python -m pytest | Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно. | Future packets must keep `docs/artifact-registry.yml` current.; Acceptance decisions must be filled by the user only. | docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md |
 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | make generate-dashboards, make validate-plan, make check, make validate-reference, source .venv/bin/activate && python -m pytest | Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно.; User acceptance decision remains pending until Дмитрий reviews the packet. | Dashboard files are generated from source files and must be regenerated after future packet or question updates.; If source files and dashboards diverge, validation must fail or mark the state as requiring review.; Accepted artifacts must not be materially changed without a separate user approval workflow. | docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md |
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | - | Открыть `docs/verification-dashboard.md` и проверить полноту чек-листа.; Открыть `docs/verification-dashboard.yml` и убедиться, что ручные проверки не отмечены Codex.; Сверить `VT-*` checks с `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`.; Запустить команды проверки.; Вручную заполнить `user_result` только после фактической проверки. | - | docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md |
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | make validate-dissertation-sync, make validate-dissertation-prompts, make generate-dissertation-prompts, make generate-dashboards, make generate-verification-dashboard, make validate-verification, make validate-plan, make check, source .venv/bin/activate && make lint, source .venv/bin/activate && make test | DOCX update blocked until an accepted markdown patch and explicit user request exist.; User acceptance decision remains pending until Дмитрий reviews the packet. | Future Tartip packets must update dissertation impact log when they affect the dissertation.; Prompt generation must not invent sources, strengthen scientific conclusions, or create bibliography entries directly.; If a future update touches accepted/protected artifacts, a requires_user_approval item is required before changes. | docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md |
@@ -142,4 +140,5 @@
 | EP-001-INFRA | 2026-06-08 | Дмитрий | docs/acceptance/EP-001-INFRA.acceptance.md |
 | EP-002-REFERENCE-GOVERNANCE | 2026-06-08 | Дмитрий | docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md |
 | EP-003-REFERENCE-VERSIONING | 2026-06-08 | Дмитрий | docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md |
+| EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | 2026-06-08 | Дмитрий | docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
