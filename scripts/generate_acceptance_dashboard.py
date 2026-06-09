@@ -191,13 +191,16 @@ def build_dashboard() -> dict[str, Any]:
             packet_id, ACCEPTANCE_DIR / f"{packet_id}.acceptance.md"
         )
         report = parse_acceptance_report(report_path)
+        decision = report.get("acceptance_decision", "pending") or "pending"
+        accepted_by = str(report.get("accepted_by") or "")
         status = report.get("codex_status") or (packet or {}).get(
             "status", "review_required"
         )
+        if decision == "accepted" and accepted_by:
+            status = "accepted"
         if report.get("warning"):
             warnings.append(f"{packet_id}: {report['warning']}")
             status = "review_required"
-        decision = report.get("acceptance_decision", "pending") or "pending"
         owner = (packet or {}).get("acceptance_owner", "Дмитрий")
         packet_artifacts = [
             artifact_summary(item) for item in artifacts_by_packet.get(packet_id, [])
@@ -277,6 +280,16 @@ def build_dashboard() -> dict[str, Any]:
             is_accepted_artifact(artifact) for artifact in artifacts
         ),
     }
+    accepted_packets = [
+        {
+            "packet_id": item["packet_id"],
+            "accepted_by": item["user_decision"].get("decided_by") or "",
+            "accepted_at": item["user_decision"].get("decided_at") or "",
+            "acceptance_report": item["acceptance_report"],
+        }
+        for item in items
+        if item["acceptance_decision"] == "accepted"
+    ]
     return {
         "acceptance_dashboard": {
             "updated_at": date.today().isoformat(),
@@ -287,6 +300,11 @@ def build_dashboard() -> dict[str, Any]:
                 "docs/status-report.md",
             ],
             "summary": summary,
+            "post_acceptance_baseline": {
+                "project_state": "accepted_baseline",
+                "accepted_packets": accepted_packets,
+                "protection_flags_status": "deferred_to_EP-014",
+            },
             "warnings": warnings,
             "items": items,
         }
@@ -372,7 +390,7 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
         for item in accepted_items:
             decision = item["user_decision"]
             lines.append(
-                f"| {md_escape(item['packet_id'])} | {md_escape(item['title'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | {md_escape(decision.get('comments'))} | protected |"
+                f"| {md_escape(item['packet_id'])} | {md_escape(item['title'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | {md_escape(decision.get('comments'))} | deferred_to_EP-014 |"
             )
     else:
         lines.append("| - | - | - | - | - | - |")
@@ -397,7 +415,7 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
                 f"| {md_escape(artifact.get('path'))} | {md_escape(item['packet_id'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | Изменение требует user approval и новой ревизии |"
             )
     else:
-        lines.append("| - | - | - | - | Нет accepted artifacts |")
+        lines.append("| - | - | - | - | Protection flags deferred to EP-014 |")
     lines.extend(
         [
             "",

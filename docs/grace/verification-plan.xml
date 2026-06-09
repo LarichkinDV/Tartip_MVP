@@ -311,4 +311,40 @@
     <Name>EP-010 was not executed</Name>
     <Expected>README.md and CHANGELOG.md language normalization is not performed by EP-012.</Expected>
   </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-001" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>accepted reports are reflected in execution packets</Name>
+    <Expected>Every acceptance report with acceptance_decision=accepted and non-empty accepted_by has accepted status in docs/grace/execution-packets.xml.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-002" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>accepted baseline is visible in planning documents</Name>
+    <Expected>docs/project-plan.md and docs/status-report.md contain project_state=accepted_baseline and active_execution_packet=EP-013-POST-ACCEPTANCE-STATE-SYNC.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-003" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>accepted packets are not active acceptance items</Name>
+    <Expected>EP-001 through EP-012 do not appear as active acceptance items in docs/user-review-workbench.yml.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-004" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>EP-013 is current ready packet</Name>
+    <Expected>EP-013-POST-ACCEPTANCE-STATE-SYNC appears as ready_for_acceptance in dashboards and workbench until user acceptance.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-005" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>verification checks stay open</Name>
+    <Expected>EP-013 does not close pending verification checks or mark manual checks passed by Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-006" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>user actions stay open</Name>
+    <Expected>High-priority reference and normative user actions remain open until the user provides evidence.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-007" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>audit statuses are not changed</Name>
+    <Expected>EP-013 does not mass-close audit findings or introduce audit cleanup statuses.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-008" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>EP-006 orphan scope is documented</Name>
+    <Expected>EP-006-MONTHLY-PLANNING-AND-DEFENSE is documented as follow-up scope for EP-015, not created retroactively.</Expected>
+  </Scenario>
+  <Scenario id="V-POST-ACCEPTANCE-009" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>accepted artifact protection is deferred</Name>
+    <Expected>protected_accepted_artifacts=0 remains visible and accepted artifact protection classification is deferred to EP-014.</Expected>
+  </Scenario>
 </VerificationPlan>

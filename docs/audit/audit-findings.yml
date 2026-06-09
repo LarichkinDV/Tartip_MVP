@@ -78,6 +78,23 @@ findings:
     last_seen_at: 2026-06-09
     current_detected: false
   -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-013-POST-ACCEPTANCE-STATE-SYNC
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-013-POST-ACCEPTANCE-STATE-SYNC: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-09
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-09
+    current_detected: false
+  -
     id: AUD-GIT-005-MIXED-EP-SCOPES
     check_id: AUD-GIT-005
     severity: medium
@@ -122,6 +139,23 @@ findings:
     recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
     status: open
     created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-09
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-09
     resolved_by: null
     resolved_at: null
     resolution: null

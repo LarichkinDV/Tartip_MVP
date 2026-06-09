@@ -8,7 +8,7 @@ user_action_dashboard:
     - data/questions/import-issues.yml
     - docs/audit/audit-findings.yml
   summary:
-    open: 152
+    open: 154
     high_priority: 4
     blocked: 4
     answered: 0
@@ -182,6 +182,26 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
+      id: AUD-GIT-002-MERGE-FORBIDDEN-EP-013-POST-ACCEPTANCE-STATE-SYNC
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Merge запрещен для EP-013-POST-ACCEPTANCE-STATE-SYNC: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+      target_path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
       id: AUD-GIT-005-MIXED-EP-SCOPES
       type: audit_finding
       priority: normal
@@ -228,6 +248,26 @@ user_action_dashboard:
       status: open
       topic: git_workflow
       question: "Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Получить явное разрешение пользователя после приемки и успешных проверок."
+      target_path: docs/git-workflow.md
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
+      id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main."
       expected_action: "Review audit finding and decide next action."
       expected_input: "Получить явное разрешение пользователя после приемки и успешных проверок."
       target_path: docs/git-workflow.md
