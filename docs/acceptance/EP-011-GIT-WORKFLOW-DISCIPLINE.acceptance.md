@@ -79,25 +79,29 @@ No `git add`, `git commit`, `git push`, `git merge`, branch switch, or branch de
 
 ## 7. Блокеры
 
-- Current working tree already contains pre-existing uncommitted changes from earlier packets on `main`.
-- EP-011 acceptance decision remains pending until Дмитрий reviews the packet.
-- Merge is forbidden until user acceptance and explicit merge approval exist.
-
 ## 8. Риски
 
-- Existing dirty baseline makes branch creation/switching unsafe without user approval.
-- Advisory validator intentionally reports warnings for current baseline without failing.
-- Strict validator is expected to fail while branch mismatch, mixed EP scopes, or merge blockers remain.
+- EP-011 acceptance decision remains pending until Дмитрий reviews the packet; this is normal pre-acceptance state, not a blocking defect.
+- Merge is forbidden until user acceptance and explicit merge approval exist; this is the expected Git workflow gate, not a defect of EP-011.
+- Advisory validator intentionally reports warnings for branch mismatch, stale ready_for_acceptance metadata, mixed EP scopes or merge blockers without failing.
+- Strict validator is expected to fail while branch mismatch, mixed EP scopes, merge blockers, missing `make check` evidence or pending acceptance remain.
+- Future workflow normalization may be required so accepted packets are not still reported as `ready_for_acceptance` by advisory Git audit.
 
 ## 9. Git state
 
-- Current branch before EP-011 changes: `main`.
-- New branch created: no.
-- Branch switched: no.
-- `git add` performed: no.
-- `git commit` performed: no.
-- `git push` performed: no.
-- `git merge` performed: no.
+- Current branch before EP-011 acceptance: `main`.
+- Acceptance branch created: `ep-011-git-workflow-discipline-acceptance`.
+- Branch switched for acceptance: yes.
+- Working tree before EP-011 acceptance checks: clean.
+- `make validate-git-workflow` performed: yes, passed with advisory warnings.
+- `python3 scripts/validate_git_workflow.py --advisory --check-passed` performed: yes, passed with advisory warnings.
+- `make audit` performed: yes, passed.
+- `make validate-plan` performed: yes, passed.
+- `make check` performed: yes, passed.
+- `git add` performed before acceptance decision: no.
+- `git commit` performed before acceptance decision: no.
+- `git push` performed before acceptance decision: no.
+- `git merge` performed before acceptance decision: no.
 
 ## 10. Accepted/protected artifacts
 
@@ -107,7 +111,7 @@ No `git add`, `git commit`, `git push`, `git merge`, branch switch, or branch de
 
 ## 11. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-011 принят как контур Git workflow discipline: docs/git-workflow.md, validate_git_workflow.py, Makefile targets, audit checks, branch/merge policy, запреты accepted_by=Codex и forbidden files проверены. Advisory warnings являются ожидаемым диагностическим поведением валидатора и не блокируют приемку. Merge остается допустимым только после пользовательской приемки, make check и явного решения пользователя.

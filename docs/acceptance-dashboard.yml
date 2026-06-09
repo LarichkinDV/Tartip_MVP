@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 10
-    accepted: 9
+    accepted: 10
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
+    pending: 0
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -1390,7 +1390,7 @@ acceptance_dashboard:
       title: "Git workflow discipline"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
       artifacts:
         -
@@ -1429,52 +1429,52 @@ acceptance_dashboard:
           id: AC-EP-011-001
           text: "AGENTS.md содержит Git workflow discipline."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-002
           text: "docs/git-workflow.md создан."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-003
           text: "validate_git_workflow.py создан."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-004
           text: "branch naming policy описана."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-005
           text: "merge policy описана."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-006
           text: "merge запрещен без acceptance_decision = accepted."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-007
           text: "accepted_by = Codex запрещен."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-008
           text: "forbidden files не должны попадать в Git."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-009
           text: "validate-git-workflow добавлен в Makefile."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-011-010
           text: "EP-011 не отмечен accepted."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -1485,30 +1485,28 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-001
-          text: "Current working tree already contains pre-existing uncommitted changes from earlier packets on `main`."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-002
-          text: "EP-011 acceptance decision remains pending until Дмитрий reviews the packet."
-        -
-          id: EP-011-GIT-WORKFLOW-DISCIPLINE-BLOCKER-003
-          text: "Merge is forbidden until user acceptance and explicit merge approval exist."
+        []
       risks:
         -
           id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-001
-          text: "Existing dirty baseline makes branch creation/switching unsafe without user approval."
+          text: "EP-011 acceptance decision remains pending until Дмитрий reviews the packet; this is normal pre-acceptance state, not a blocking defect."
         -
           id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-002
-          text: "Advisory validator intentionally reports warnings for current baseline without failing."
+          text: "Merge is forbidden until user acceptance and explicit merge approval exist; this is the expected Git workflow gate, not a defect of EP-011."
         -
           id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-003
-          text: "Strict validator is expected to fail while branch mismatch, mixed EP scopes, or merge blockers remain."
+          text: "Advisory validator intentionally reports warnings for branch mismatch, stale ready_for_acceptance metadata, mixed EP scopes or merge blockers without failing."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-004
+          text: "Strict validator is expected to fail while branch mismatch, mixed EP scopes, merge blockers, missing `make check` evidence or pending acceptance remain."
+        -
+          id: EP-011-GIT-WORKFLOW-DISCIPLINE-RISK-005
+          text: "Future workflow normalization may be required so accepted packets are not still reported as `ready_for_acceptance` by advisory Git audit."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. EP-011 принят как контур Git workflow discipline: docs/git-workflow.md, validate_git_workflow.py, Makefile targets, audit checks, branch/merge policy, запреты accepted_by=Codex и forbidden files проверены. Advisory warnings являются ожидаемым диагностическим поведением валидатора и не блокируют приемку. Merge остается допустимым только после пользовательской приемки, make check и явного решения пользователя."
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
       title: "User review workbench and acceptance standard"
