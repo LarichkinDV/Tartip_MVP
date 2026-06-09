@@ -107,7 +107,7 @@ user_action_dashboard:
       priority: normal
       status: open
       topic: git_workflow
-      question: "Имя ветки ep-005-acceptance-and-user-action-dashboards не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
+      question: "Имя ветки ep-007-verification-dashboard не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD."
       expected_action: "Review audit finding and decide next action."
       expected_input: "Использовать формат ep-012-<short-slug>."
       target_path: .git

@@ -55,7 +55,7 @@
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-005-acceptance-and-user-action-dashboards не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD. | Использовать формат ep-012-<short-slug>. | open |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-007-verification-dashboard не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD. | Использовать формат ep-012-<short-slug>. | open |
 | AUD-GIT-001-CURRENT-BRANCH-MAIN | medium | AUD-GIT-001 | .git | Текущая ветка main не соответствует EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-011-GIT-WORKFLOW-DISCIPLINE | medium | AUD-GIT-002 | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | Merge запрещен для EP-011-GIT-WORKFLOW-DISCIPLINE: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | medium | AUD-GIT-002 | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md | Merge запрещен для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
