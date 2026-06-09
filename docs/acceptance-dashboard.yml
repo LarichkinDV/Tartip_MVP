@@ -7,11 +7,11 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 10
-    accepted: 8
+    accepted: 9
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 2
+    pending: 1
     protected_accepted_artifacts: 0
   warnings:
     []
@@ -1150,7 +1150,7 @@ acceptance_dashboard:
       title: "Codex specification audit and language policy"
       status: ready_for_acceptance
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       artifacts:
         -
@@ -1252,107 +1252,107 @@ acceptance_dashboard:
           id: AC-EP-009-001
           text: "создан docs/audit/."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-002
           text: "создан codex-spec-audit.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-003
           text: "создан audit-findings.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-004
           text: "создан language-policy.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-005
           text: "создан language-audit-report.md."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-006
           text: "создан audit_codex_spec.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-007
           text: "создан audit_language_policy.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-008
           text: "создан validate_audit_reports.py."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-009
           text: "AGENTS.md содержит Language policy."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-010
           text: "AGENTS.md содержит Audit discipline."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-011
           text: "аудит проверяет запрет ModelElement -> GESNNorm."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-012
           text: "аудит проверяет accepted_by/decided_by/checked_by/answered_by != Codex."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-013
           text: "аудит проверяет отсутствие duplicate packet ids."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-014
           text: "языковой аудит не переводит технические идентификаторы."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-015
           text: "EP-009 отображается в acceptance dashboard."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-016
           text: "EP-009 не отмечен accepted."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-017
           text: "audit scripts preserve existing user resolutions in audit-findings.yml."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-018
           text: "language audit does not fail on technical identifiers."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-019
           text: "EP-009 does not mass-rewrite existing documents."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-020
           text: "accepted/protected artifacts are not modified."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
         -
           id: AC-EP-009-021
           text: "medium/low language findings do not block make check."
           codex_status: ready_for_acceptance
-          user_status: pending
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -1363,27 +1363,28 @@ acceptance_dashboard:
         -
           item: "Fill user decision fields manually."
       blockers:
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-001
-          text: "User acceptance decision remains pending until Дмитрий reviews the audit contour."
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-002
-          text: "Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents."
+        []
       risks:
         -
           id: EP-009-CODEX-SPEC-AUDIT-RISK-001
-          text: "Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation."
+          text: "User acceptance decision remains pending until Дмитрий reviews the audit contour; this is normal pre-acceptance state, not a blocking defect."
         -
           id: EP-009-CODEX-SPEC-AUDIT-RISK-002
-          text: "If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first."
+          text: "Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents."
         -
           id: EP-009-CODEX-SPEC-AUDIT-RISK-003
+          text: "Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation."
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-RISK-004
+          text: "If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first."
+        -
+          id: EP-009-CODEX-SPEC-AUDIT-RISK-005
           text: "Audit heuristics for language detection may produce false positives and require user review."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами."
     -
       packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
       title: "Git workflow discipline"

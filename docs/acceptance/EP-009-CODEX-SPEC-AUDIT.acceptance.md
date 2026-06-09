@@ -88,11 +88,10 @@ pytest
 
 ## 7. Блокеры
 
-- User acceptance decision remains pending until Дмитрий reviews the audit contour.
-- Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents.
-
 ## 8. Риски
 
+- User acceptance decision remains pending until Дмитрий reviews the audit contour; this is normal pre-acceptance state, not a blocking defect.
+- Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents.
 - Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation.
 - If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first.
 - Audit heuristics for language detection may produce false positives and require user review.
@@ -100,12 +99,13 @@ pytest
 ## 9. Findings
 
 - Findings are generated in `docs/audit/audit-findings.yml`.
-- Текущие findings после проверки EP-009: critical 0, high 0, medium 79, low 1.
-- Все текущие findings относятся к `AUD-LANG-001` language policy.
-- Findings по доменной логике: 0.
-- Findings, требующие user approval: 0.
+- Текущие findings после проверки EP-009: critical 0, high 0, medium 145, low 3.
+- Активные critical/high findings: 0.
+- Findings по доменной логике, блокирующие приемку: 0.
+- Findings, требующие user approval для изменения accepted/protected artifacts: 0.
+- Текущие medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля; они не блокируют `make check` в EP-009.
 - Critical findings must be resolved or acknowledged by the user before relying on the audit as a blocking gate.
-- Medium/low language findings do not block `make check` in EP-009.
+- Medium/low findings do not block `make check` in EP-009.
 
 ## 10. Accepted/protected artifacts
 
@@ -121,7 +121,7 @@ pytest
 
 ## 12. Решение пользователя
 
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-08
+comments: Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами.

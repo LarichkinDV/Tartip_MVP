@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 61b3e3f0114d19bbf530f78d8e2b1d6982f870eded818523e2850eae58cbf489
+      checksum_sha256: 376e69ed913a1699e1c0dc31c332bd34568477cd90dc9456ca78125ed6fdc469
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 3796e193551c1e3f18033248f117efb53525983fbceae3283db29f8be464ccd3
+      checksum_sha256: fc77773170415ab38fec4d032835d6e4f8647e92e8d0dc7d7e216fd443a977e5
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 6bdc2020a442be011bff29f759a29954a261594594cca6f25ae772d4ea69225a
+      checksum_sha256: 77a5beeefb0d29ee48d7fe69d015a9ebd0534b0b0a34f8b1a53c2921a925517f
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 34
-    ready_for_acceptance: 2
+    active_review_items: 33
+    ready_for_acceptance: 1
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 9
-    accepted_hidden_from_active_queue: 8
+    active_blockers: 7
+    accepted_hidden_from_active_queue: 9
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1209,224 +1209,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-009-CODEX-SPEC-AUDIT
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-009-CODEX-SPEC-AUDIT
-      title: "Codex specification audit and language policy"
-      source_file: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
-      source_id: EP-009-CODEX-SPEC-AUDIT
-      source_checksum_sha256: 4c25cfeda185f6cdb14c347183a392cb9af7e1e5082ccaad7945ab5a415b6d45
-      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
-      related_artifacts:
-        -
-          path: docs/audit/README.md
-        -
-          path: docs/audit/codex-spec-audit.md
-        -
-          path: docs/audit/codex-spec-audit.yml
-        -
-          path: docs/audit/language-policy.md
-        -
-          path: docs/audit/language-audit-report.md
-        -
-          path: docs/audit/audit-findings.yml
-        -
-          path: scripts/audit_codex_spec.py
-        -
-          path: scripts/audit_language_policy.py
-        -
-          path: scripts/validate_audit_reports.py
-        -
-          path: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
-      commands:
-        -
-          command: "make audit-codex-spec"
-          status: documented
-        -
-          command: "make audit-language"
-          status: documented
-        -
-          command: "make validate-audit"
-          status: documented
-        -
-          command: "make audit"
-          status: documented
-        -
-          command: "make generate-dashboards"
-          status: documented
-        -
-          command: "make generate-verification-dashboard"
-          status: documented
-        -
-          command: "make validate-verification"
-          status: documented
-        -
-          command: "make validate-plan"
-          status: documented
-        -
-          command: "make check"
-          status: documented
-        -
-          command: "make validate-reference"
-          status: documented
-        -
-          command: pytest
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-009-001
-          text: "создан docs/audit/."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-002
-          text: "создан codex-spec-audit.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-003
-          text: "создан audit-findings.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-004
-          text: "создан language-policy.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-005
-          text: "создан language-audit-report.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-006
-          text: "создан audit_codex_spec.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-007
-          text: "создан audit_language_policy.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-008
-          text: "создан validate_audit_reports.py."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-009
-          text: "AGENTS.md содержит Language policy."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-010
-          text: "AGENTS.md содержит Audit discipline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-011
-          text: "аудит проверяет запрет ModelElement -> GESNNorm."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-012
-          text: "аудит проверяет accepted_by/decided_by/checked_by/answered_by != Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-013
-          text: "аудит проверяет отсутствие duplicate packet ids."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-014
-          text: "языковой аудит не переводит технические идентификаторы."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-015
-          text: "EP-009 отображается в acceptance dashboard."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-016
-          text: "EP-009 не отмечен accepted."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-017
-          text: "audit scripts preserve existing user resolutions in audit-findings.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-018
-          text: "language audit does not fail on technical identifiers."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-019
-          text: "EP-009 does not mass-rewrite existing documents."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-020
-          text: "accepted/protected artifacts are not modified."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-009-021
-          text: "medium/low language findings do not block make check."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-001
-          text: "User acceptance decision remains pending until Дмитрий reviews the audit contour."
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-BLOCKER-002
-          text: "Future fixes for language findings require a separate follow-up packet; EP-009 intentionally does not mass-russify existing documents."
-      risks:
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-RISK-001
-          text: "Existing user-facing documents contain English text; EP-009 records this as language findings instead of mass translation."
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-RISK-002
-          text: "If a future packet changes accepted/protected artifacts, it must create a change request or requires_user_approval action first."
-        -
-          id: EP-009-CODEX-SPEC-AUDIT-RISK-003
-          text: "Audit heuristics for language detection may produce false positives and require user review."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: ACCEPTANCE-EP-011-GIT-WORKFLOW-DISCIPLINE
       type: acceptance
       priority: medium
@@ -2056,6 +1838,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-009-CODEX-SPEC-AUDIT
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
