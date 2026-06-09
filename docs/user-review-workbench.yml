@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 9e17aa156cf744c067cf596b823906ef5aa43ec1db5d37fca9c289902f298e7e
+      checksum_sha256: fcd659fc8d6b7e9844e77d0f151e6b66bec1b4c712dc6bde075d21679ba29e3e
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 2e12219b045a026433d9edd44abc72543034ca71d51f48ec424ce8e10289e52e
+      checksum_sha256: 41ed33e3105e425055b1bb985a338a99586988c5dec3e1ca077be20f54ec7d69
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 3a4239b9a7562db0108eb7ffe265ec20df183f125a15e994e26562fb7cd5d065
+      checksum_sha256: 1fc60398df15a6100200b10fd98b140538da2a8327ad933312d29ac762d456db
       status: present
       warning: ""
     -
@@ -40,8 +40,8 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -49,7 +49,7 @@ user_review_workbench:
     critical_audit_findings: 0
     high_audit_findings: 0
     active_blockers: 4
-    accepted_hidden_from_active_queue: 10
+    accepted_hidden_from_active_queue: 11
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -112,6 +112,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-08
         acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-09
+        acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: deferred_to_EP-014
     verification_debt_status: deferred_to_EP-015
@@ -1276,171 +1282,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-013-POST-ACCEPTANCE-STATE-SYNC
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
-      title: "Post-acceptance state sync"
-      source_file: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
-      source_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
-      source_checksum_sha256: e266867785277ac4f7c87f264608aa9e01a04dc49bffe116fbf22e9e9c0e6f13
-      acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
-      related_artifacts:
-        -
-          path: scripts/validate_post_acceptance_state.py
-        -
-          path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
-      commands:
-        -
-          command: "git branch --show-current"
-          status: documented
-        -
-          command: "git status -sb"
-          status: documented
-        -
-          command: "git --no-pager log --oneline --decorate -5"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make lint"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make test"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-plan"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-user-review-workbench"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-verification"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-audit"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-git-workflow"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make validate-post-acceptance-state"
-          status: documented
-        -
-          command: "source .venv/bin/activate && make check"
-          status: documented
-        -
-          command: "git status --short"
-          status: documented
-        -
-          command: "git --no-pager diff --name-status"
-          status: documented
-        -
-          command: "git --no-pager diff --stat"
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-013-001
-          text: "Все accepted acceptance reports отражены как accepted в execution-packets.xml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-002
-          text: "Acceptance dashboard не показывает один и тот же принятый набор EP как ready_for_acceptance и accepted одновременно."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-003
-          text: "EP-001..EP-012 отсутствуют в active acceptance queue."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-004
-          text: "EP-013 отображается как текущий ready_for_acceptance packet."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-005
-          text: "project-plan.md и status-report.md отражают project_state=accepted_baseline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-006
-          text: "Verification checks остаются открытым post-acceptance debt и не закрываются Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-007
-          text: "High-priority user actions остаются open."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-008
-          text: "Audit finding statuses не меняются EP-013."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-009
-          text: "EP-006 orphan/monthly verification scope вынесен в follow-up EP-015."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-010
-          text: "Accepted artifact protection flags не включаются массово и вынесены в EP-014."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-013-011
-          text: "validate_post_acceptance_state.py создан и проходит."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        -
-          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-001
-          text: "`make check` запускает audit и user-action dashboard generators; если они создают изменения вне scope EP-013, такие изменения нельзя включать в commit EP-013."
-        -
-          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-002
-          text: "`protected_accepted_artifacts: 0` остается методическим разрывом до EP-014."
-        -
-          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-003
-          text: "44 pending verification checks остаются post-acceptance verification debt до EP-015."
-        -
-          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-004
-          text: "High-priority reference and normative user actions remain open until official or project-authorized sources are provided."
-        -
-          id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-005
-          text: "Stale audit findings remain open until EP-017."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -1957,6 +1798,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-09
+      acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []

@@ -6,12 +6,12 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 10
+    ready_for_acceptance: 0
+    accepted: 11
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
+    pending: 0
     protected_accepted_artifacts: 0
   post_acceptance_baseline:
     project_state: accepted_baseline
@@ -66,6 +66,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-08
         acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      -
+        packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-09
+        acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
     protection_flags_status: deferred_to_EP-014
   warnings:
     []
@@ -1836,9 +1841,9 @@ acceptance_dashboard:
     -
       packet_id: EP-013-POST-ACCEPTANCE-STATE-SYNC
       title: "Post-acceptance state sync"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
       artifacts:
         -
@@ -1903,58 +1908,58 @@ acceptance_dashboard:
         -
           id: AC-EP-013-001
           text: "Все accepted acceptance reports отражены как accepted в execution-packets.xml."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-002
           text: "Acceptance dashboard не показывает один и тот же принятый набор EP как ready_for_acceptance и accepted одновременно."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-003
           text: "EP-001..EP-012 отсутствуют в active acceptance queue."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-004
           text: "EP-013 отображается как текущий ready_for_acceptance packet."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-005
           text: "project-plan.md и status-report.md отражают project_state=accepted_baseline."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-006
           text: "Verification checks остаются открытым post-acceptance debt и не закрываются Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-007
           text: "High-priority user actions остаются open."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-008
           text: "Audit finding statuses не меняются EP-013."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-009
           text: "EP-006 orphan/monthly verification scope вынесен в follow-up EP-015."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-010
           text: "Accepted artifact protection flags не включаются массово и вынесены в EP-014."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-013-011
           text: "validate_post_acceptance_state.py создан и проходит."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -1983,7 +1988,7 @@ acceptance_dashboard:
           id: EP-013-POST-ACCEPTANCE-STATE-SYNC-RISK-005
           text: "Stale audit findings remain open until EP-017."
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-09
+        comments: "Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017."

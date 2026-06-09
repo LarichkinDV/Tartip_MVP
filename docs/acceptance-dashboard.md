@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 1 |
-| accepted | 10 |
+| ready_for_acceptance | 0 |
+| accepted | 11 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 1 |
+| pending | 0 |
 | protected_accepted_artifacts | 0 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | Acceptance criteria and artifacts | scripts/validate_post_acceptance_state.py, docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md | git branch --show-current, git status -sb, git --no-pager log --oneline --decorate -5, source .venv/bin/activate && make lint, source .venv/bin/activate && make test, source .venv/bin/activate && make validate-plan, source .venv/bin/activate && make validate-user-review-workbench, source .venv/bin/activate && make validate-verification, source .venv/bin/activate && make validate-audit, source .venv/bin/activate && make validate-git-workflow, source .venv/bin/activate && make validate-post-acceptance-state, source .venv/bin/activate && make check, git status --short, git --no-pager diff --name-status, git --no-pager diff --stat | [docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md](docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) |
+| - | - | - | - | - | - | - |
 
 ## 3. Принятые задачи
 
@@ -34,6 +34,7 @@
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | Дмитрий | 2026-06-08 | Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами. | deferred_to_EP-014 |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Дмитрий | 2026-06-08 | Принято. EP-011 принят как контур Git workflow discipline: docs/git-workflow.md, validate_git_workflow.py, Makefile targets, audit checks, branch/merge policy, запреты accepted_by=Codex и forbidden files проверены. Advisory warnings являются ожидаемым диагностическим поведением валидатора и не блокируют приемку. Merge остается допустимым только после пользовательской приемки, make check и явного решения пользователя. | deferred_to_EP-014 |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | Дмитрий | 2026-06-08 | Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии. | deferred_to_EP-014 |
+| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | Дмитрий | 2026-06-09 | Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017. | deferred_to_EP-014 |
 
 ## 4. Защищенные принятые артефакты
 

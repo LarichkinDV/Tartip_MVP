@@ -6,15 +6,15 @@
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 33 |
-| Пакеты готовы к приемке | 1 |
+| Активные элементы проверки | 32 |
+| Пакеты готовы к приемке | 0 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Принятые пакеты скрыты из активной очереди | 10 |
+| Принятые пакеты скрыты из активной очереди | 11 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -43,7 +43,6 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
-| medium | acceptance | ACCEPTANCE-EP-013-POST-ACCEPTANCE-STATE-SYNC | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | manual_verification | VERIFICATION-VT-EP-005-003 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Проверить, что accepted artifacts отображаются как protected | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-001 | EP-006-MONTHLY-PLANNING-AND-DEFENSE | Проверить наличие monthly-plan.yml | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-002 | EP-006-MONTHLY-PLANNING-AND-DEFENSE | Проверить, что месячный блок содержит ровно 3 задачи | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
@@ -58,7 +57,7 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | git branch --show-current, git status -sb, git --no-pager log --oneline --decorate -5, source .venv/bin/activate && make lint, source .venv/bin/activate && make test, source .venv/bin/activate && make validate-plan, source .venv/bin/activate && make validate-user-review-workbench, source .venv/bin/activate && make validate-verification, source .venv/bin/activate && make validate-audit, source .venv/bin/activate && make validate-git-workflow, source .venv/bin/activate && make validate-post-acceptance-state, source .venv/bin/activate && make check, git status --short, git --no-pager diff --name-status, git --no-pager diff --stat | - | `make check` запускает audit и user-action dashboard generators; если они создают изменения вне scope EP-013, такие изменения нельзя включать в commit EP-013.; `protected_accepted_artifacts: 0` остается методическим разрывом до EP-014.; 44 pending verification checks остаются post-acceptance verification debt до EP-015.; High-priority reference and normative user actions remain open until official or project-authorized sources are provided.; Stale audit findings remain open until EP-017. | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
+| - | - | - | - | - | - |
 
 ## 4. Ручные проверки
 
@@ -145,3 +144,4 @@ Protection flags are deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
 | EP-009-CODEX-SPEC-AUDIT | 2026-06-08 | Дмитрий | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | 2026-06-08 | Дмитрий | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
+| EP-013-POST-ACCEPTANCE-STATE-SYNC | 2026-06-09 | Дмитрий | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
