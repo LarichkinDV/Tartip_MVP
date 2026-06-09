@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 3ce221eec4ef23d139ec1f9c6a707269767598ca454410a43972c74e336c33b9
+      checksum_sha256: 785d3fac4bce3d7f71363b7f5cc2e0540c0290d964f5ea19cb5b0d926350d85f
       status: present
       warning: ""
     -
@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 37f635cc2e9bfc9263c04cff0f77267cdec3818ebf187644fec83f1f52bf6b26
+      checksum_sha256: 9fffcd77a9b1ff021045a02d4eab971fadf2acf815edb28b505588b5134fd164
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: bc76f89fd67f53adb5e93386b5eb2c5f956db8480e85dd36f8650ebbed317e23
+      checksum_sha256: 79d47cfedb3de82c90f1bf250e53d1eed9c877e11dc8a89bb2b9cde582a07333
       status: present
       warning: ""
     -
@@ -40,16 +40,16 @@ user_review_workbench:
       status: present
       warning: ""
   summary:
-    active_review_items: 37
-    ready_for_acceptance: 5
+    active_review_items: 36
+    ready_for_acceptance: 4
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 18
-    accepted_hidden_from_active_queue: 5
+    active_blockers: 16
+    accepted_hidden_from_active_queue: 6
   active_review_items:
     -
       id: VERIFICATION-VT-EP-004-001
@@ -1208,168 +1208,6 @@ user_review_workbench:
       apply_policy:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
-    -
-      id: ACCEPTANCE-EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
-      title: "Acceptance and user action dashboards"
-      source_file: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
-      source_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
-      source_checksum_sha256: d6ccf86791daa184f194e905773a355ce149d8e9926993b66746234baaf4abb0
-      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
-      related_artifacts:
-        -
-          path: docs/grace/execution-packets.xml
-        -
-          path: docs/grace/verification-plan.xml
-        -
-          path: docs/grace/README.md
-        -
-          path: scripts/validate_project_plan.py
-        -
-          path: docs/acceptance-dashboard.md
-        -
-          path: docs/acceptance-dashboard.yml
-        -
-          path: docs/user-action-dashboard.md
-        -
-          path: docs/user-action-dashboard.yml
-        -
-          path: scripts/generate_acceptance_dashboard.py
-        -
-          path: scripts/generate_user_action_dashboard.py
-        -
-          path: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
-      commands:
-        -
-          command: "make generate-dashboards"
-          status: documented
-        -
-          command: "make validate-plan"
-          status: documented
-        -
-          command: "make check"
-          status: documented
-        -
-          command: "make validate-reference"
-          status: documented
-        -
-          command: "source .venv/bin/activate && python -m pytest"
-          status: documented
-      acceptance_criteria:
-        -
-          id: AC-EP-005-001
-          text: "создан acceptance-dashboard.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-002
-          text: "создан acceptance-dashboard.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-003
-          text: "создан user-action-dashboard.md."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-004
-          text: "создан user-action-dashboard.yml."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-005
-          text: "ready_for_acceptance packets отражаются в acceptance dashboard."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-006
-          text: "open questions отражаются в user action dashboard."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-007
-          text: "Codex не может поставить accepted."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-008
-          text: "accepted_by / decided_by не может быть Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-009
-          text: "добавлены команды генерации dashboards в Makefile."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-010
-          text: "validate_project_plan.py проверяет dashboards."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-011
-          text: "accepted artifacts отображаются как protected."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-012
-          text: "protected accepted artifacts нельзя изменять без user approval."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-005-013
-          text: "если требуется изменение accepted artifact, создается requires_user_approval action или change request."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        -
-          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-BLOCKER-001
-          text: "Docker Desktop установлен. Docker-зависимые проверки больше не пропускаются по причине отсутствия Docker; общая проверка `make check` выполнена успешно."
-        -
-          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-BLOCKER-002
-          text: "User acceptance decision remains pending until Дмитрий reviews the packet."
-      risks:
-        -
-          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-001
-          text: "Dashboard files are generated from source files and must be regenerated after future packet or question updates."
-        -
-          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-002
-          text: "If source files and dashboards diverge, validation must fail or mark the state as requiring review."
-        -
-          id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS-RISK-003
-          text: "Accepted artifacts must not be materially changed without a separate user approval workflow."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
     -
       id: ACCEPTANCE-EP-007-VERIFICATION-DASHBOARD
       type: acceptance
@@ -2561,6 +2399,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-08
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-08
+      acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
