@@ -6,8 +6,8 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 9
-    accepted: 2
+    ready_for_acceptance: 10
+    accepted: 3
     needs_revision: 0
     rejected: 0
     blocked: 0
@@ -1507,3 +1507,203 @@ acceptance_dashboard:
         decided_by: ""
         decided_at: ""
         comments: ""
+    -
+      packet_id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      title: "User review workbench and acceptance standard"
+      status: ready_for_acceptance
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      artifacts:
+        -
+          path: docs/user-review-workbench.yml
+          status: active
+          type: dashboard
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/user-review-workbench.md
+          status: active
+          type: dashboard
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/generate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/validate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/apply_user_review_decisions.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_locked: false
+      verification_commands:
+        -
+          command: "git branch --show-current"
+          status: documented
+        -
+          command: "git status --short"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make generate-user-review-workbench"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-user-review-workbench"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make generate-dashboards"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-plan"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-verification"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make validate-reference"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make compare-reference-fixtures"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make lint"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make test"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make check"
+          status: documented
+        -
+          command: "source .venv/bin/activate && make audit"
+          status: documented
+        -
+          command: "env PYTHONPYCACHEPREFIX=/tmp/tartip_pycache .venv/bin/python -m py_compile scripts/generate_user_review_workbench.py scripts/validate_user_review_workbench.py scripts/apply_user_review_decisions.py"
+          status: documented
+        -
+          command: "python3 -c \"from pathlib import Path; import yaml; root=yaml.safe_load(Path('docs/user-review-workbench.yml').read_text(encoding='utf-8'))['user_review_workbench']; active={i.get('packet_id') for i in root.get('active_review_items', []) if i.get('type')=='acceptance'}; accepted={i.get('packet_id') for i in root.get('recently_accepted', [])}; hidden={'EP-001'+'-INFRA','EP-002'+'-REFERENCE-GOVERNANCE'}; expected={'EP-003'+'-REFERENCE-VERSIONING','EP-004'+'-PROJECT-PLANNING-AND-ACCEPTANCE','EP-005'+'-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS','EP-007'+'-VERIFICATION-DASHBOARD','EP-008'+'-DISSERTATION-PROMPT-GENERATION','EP-009'+'-CODEX-SPEC-AUDIT','EP-011'+'-GIT-WORKFLOW-DISCIPLINE','EP-012'+'-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD'}; assert not hidden & active; assert hidden <= accepted; assert expected <= active; print('workbench packet visibility passed')\""
+          status: documented
+        -
+          command: "python3 -c \"from pathlib import Path; bad=[('text: '+chr(34)+'Блокеров'+' нет'),('text: '+chr(34)+'Рисков'+' нет'),('text: '+chr(34)+'Отсутствуют.'),('No '+'blockers'),('No '+'risks')]; files=[Path('docs/user-review-workbench.yml'),Path('docs/acceptance-dashboard.yml')]; hits=[f'{p}:{i}:{b}' for p in files for i,line in enumerate(p.read_text(encoding='utf-8').splitlines(),1) for b in bad if b in line]; print('\\n'.join(hits)); raise SystemExit(1 if hits else 0)\""
+          status: documented
+        -
+          command: "rg -n \"^acceptance_decision: pending$\" docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-012-001
+          text: "AGENTS.md содержит стандарт пустых разделов \"Блокеры\" и \"Риски\"."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-002
+          text: "ACCEPTANCE_TEMPLATE.md содержит правила заполнения блокеров и рисков."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-003
+          text: "создан docs/user-review-workbench.yml."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-004
+          text: "создан docs/user-review-workbench.md."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-005
+          text: "создан generate_user_review_workbench.py."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-006
+          text: "создан validate_user_review_workbench.py."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-007
+          text: "создан apply_user_review_decisions.py."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-008
+          text: "accepted packets не отображаются в active_review_items."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-009
+          text: "pending/ready_for_acceptance packets отображаются в active_review_items."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-010
+          text: "решения пользователя из workbench применяются только через apply_user_review_decisions.py."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-011
+          text: "Codex не может сам ставить accepted/accepted_by/accepted_at."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-012
+          text: "acceptance reports остаются source of truth."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-013
+          text: "псевдоблокеры \"Отсутствуют\"/\"Блокеров нет\"/None запрещены."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-014
+          text: "EP-010 не выполнялся."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-015
+          text: "README.md и CHANGELOG.md не нормализовались."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+        -
+          id: AC-EP-012-016
+          text: "EP-003–EP-011 не были автоматически приняты."
+          codex_status: ready_for_acceptance
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD-RISK-001
+          text: "`scripts/apply_user_review_decisions.py` в первой версии применяет только acceptance decisions; manual verification, user actions и audit findings остаются для ручного обновления в профильных source files."
+        -
+          id: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD-RISK-002
+          text: "`make check` может штатно регенерировать dashboard или audit артефакты; такие изменения нужно просматривать перед commit."
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-08
+        comments: "Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии."

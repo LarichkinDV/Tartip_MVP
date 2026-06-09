@@ -271,4 +271,44 @@
     <Name>script does not perform merge, add, or commit</Name>
     <Expected>validate_git_workflow.py inspects Git state but does not run merge, add, commit, push, or branch deletion commands.</Expected>
   </Scenario>
+  <Scenario id="V-USER-WORKBENCH-001" module="M-USER-REVIEW-WORKBENCH">
+    <Name>user-review-workbench.yml exists</Name>
+    <Expected>docs/user-review-workbench.yml exists and is generated from source files.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-002" module="M-USER-REVIEW-WORKBENCH">
+    <Name>user-review-workbench.md exists</Name>
+    <Expected>docs/user-review-workbench.md exists and provides one active user review window.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-003" module="M-USER-REVIEW-WORKBENCH">
+    <Name>accepted packets are hidden from active_review_items</Name>
+    <Expected>Accepted packets are absent from active_review_items and appear only in recently_accepted.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-004" module="M-USER-REVIEW-WORKBENCH">
+    <Name>ready_for_acceptance packets are present in active_review_items</Name>
+    <Expected>All non-accepted ready_for_acceptance packets from acceptance-dashboard.yml are active review items.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-005" module="M-USER-REVIEW-WORKBENCH">
+    <Name>source_file and source_checksum_sha256 are present</Name>
+    <Expected>Every active review item has source_file and source_checksum_sha256 or a documented warning.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-006" module="M-USER-REVIEW-WORKBENCH">
+    <Name>apply_user_review_decisions refuses accepted_by = Codex</Name>
+    <Expected>Decision application rejects accepted_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-007" module="M-USER-REVIEW-WORKBENCH">
+    <Name>apply_user_review_decisions refuses stale source checksums</Name>
+    <Expected>Decision application refuses to update an acceptance report when source_checksum_sha256 is stale.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-008" module="M-USER-REVIEW-WORKBENCH">
+    <Name>pseudo blockers and risks are rejected</Name>
+    <Expected>Workbench validation rejects pseudo values such as Блокеров нет, Рисков нет, Отсутствуют, None, No blockers, and No risks in active blockers or risks.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-009" module="M-USER-REVIEW-WORKBENCH">
+    <Name>acceptance reports remain source of truth</Name>
+    <Expected>Workbench decisions are not source of truth until scripts/apply_user_review_decisions.py writes them to acceptance reports.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-WORKBENCH-010" module="M-USER-REVIEW-WORKBENCH">
+    <Name>EP-010 was not executed</Name>
+    <Expected>README.md and CHANGELOG.md language normalization is not performed by EP-012.</Expected>
+  </Scenario>
 </VerificationPlan>

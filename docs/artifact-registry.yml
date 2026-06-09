@@ -2928,3 +2928,228 @@ artifacts:
       commit: null
       pull_request: null
     notes: Codex status ready_for_acceptance; user decision remains pending.
+  - artifact_id: ART-USER-REVIEW-WORKBENCH-YML
+    name: User review workbench YAML
+    type: dashboard
+    path: docs/user-review-workbench.yml
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Machine-readable active user review queue generated from acceptance, verification, user-action, audit, registry, status, and GRACE source files.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-001
+        - V-USER-WORKBENCH-003
+        - V-USER-WORKBENCH-004
+        - V-USER-WORKBENCH-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ACCEPTANCE-DASHBOARD-YML
+      - ART-USER-ACTION-DASHBOARD-YML
+      - ART-VERIFICATION-DASHBOARD-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Workbench is not source of truth; user decisions apply only through scripts/apply_user_review_decisions.py.
+  - artifact_id: ART-USER-REVIEW-WORKBENCH-MD
+    name: User review workbench Markdown
+    type: dashboard
+    path: docs/user-review-workbench.md
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Human-readable active user review window for current acceptance, manual verification, user actions, approvals, and high-priority audit findings.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-USER-REVIEW-WORKBENCH-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Accepted packets are hidden from the active queue and shown only as recently accepted.
+  - artifact_id: ART-GENERATE-USER-REVIEW-WORKBENCH
+    name: User review workbench generator
+    type: script
+    path: scripts/generate_user_review_workbench.py
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Generates docs/user-review-workbench.yml and docs/user-review-workbench.md without changing source files.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-001
+        - V-USER-WORKBENCH-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on: []
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not set accepted and does not replace acceptance reports as source of truth.
+  - artifact_id: ART-VALIDATE-USER-REVIEW-WORKBENCH
+    name: User review workbench validator
+    type: script
+    path: scripts/validate_user_review_workbench.py
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Validates active queue completeness, source checksums, user-owned fields, and pseudo blockers/risks.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-003
+        - V-USER-WORKBENCH-004
+        - V-USER-WORKBENCH-005
+        - V-USER-WORKBENCH-008
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-USER-REVIEW-WORKBENCH-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Critical inconsistencies fail validation; language warnings do not block make check.
+  - artifact_id: ART-APPLY-USER-REVIEW-DECISIONS
+    name: User review decision applier
+    type: script
+    path: scripts/apply_user_review_decisions.py
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Applies explicit user acceptance decisions from the workbench to acceptance reports after checksum and ownership checks.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-006
+        - V-USER-WORKBENCH-007
+        - V-USER-WORKBENCH-009
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-USER-REVIEW-WORKBENCH-YML
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Does not apply manual verification, audit finding, or user action decisions in the first version.
+  - artifact_id: ART-ACCEPTANCE-EP-012
+    name: EP-012 acceptance report
+    type: acceptance_report
+    path: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+    owner_module: M-USER-REVIEW-WORKBENCH
+    related_packets:
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    related_requirements:
+      - REQ-014
+    status: active
+    description: Acceptance checklist for user review workbench and acceptance blockers/risks standard.
+    created_at: 2026-06-08
+    updated_at: 2026-06-08
+    verification:
+      status: pending
+      scenarios:
+        - V-USER-WORKBENCH-001
+        - V-USER-WORKBENCH-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: Дмитрий
+      status: pending
+      acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-USER-REVIEW-WORKBENCH-YML
+      - ART-USER-REVIEW-WORKBENCH-MD
+      - ART-GENERATE-USER-REVIEW-WORKBENCH
+      - ART-VALIDATE-USER-REVIEW-WORKBENCH
+      - ART-APPLY-USER-REVIEW-DECISIONS
+    supersedes: []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: Codex status ready_for_acceptance; user decision remains pending.

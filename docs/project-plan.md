@@ -12,11 +12,11 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Current Stage
 
-Project foundation, governance contour, dashboard-based acceptance coordination, manual verification tracking, dissertation synchronization prompt generation, Codex specification audit contour, and Git workflow discipline.
+Project foundation, governance contour, dashboard-based acceptance coordination, manual verification tracking, dissertation synchronization prompt generation, Codex specification audit contour, Git workflow discipline, and user review workbench.
 
 ## 4. Current Execution Packet
 
-`EP-011-GIT-WORKFLOW-DISCIPLINE`
+`EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD`
 
 ## 5. Stage Table
 
@@ -31,6 +31,7 @@ Project foundation, governance contour, dashboard-based acceptance coordination,
 | Dissertation Sync | Impact log, prompt profiles, prompt templates, prompt queues, patch queues, and DOCX guardrails | ready_for_acceptance | [dissertation README](dissertation/README.md), [forbidden claims](dissertation/prompt-profiles/forbidden-claims.yml), [EP-008 acceptance](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) |
 | Codex Spec Audit | Audit-first/read-mostly checks, language policy, audit findings, and audit reports | ready_for_acceptance | [audit README](audit/README.md), [audit findings](audit/audit-findings.yml), [EP-009 acceptance](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) |
 | Git Workflow | Branch naming, dirty tree handling, merge gates, and forbidden Git files | ready_for_acceptance | [git workflow](git-workflow.md), [git workflow validator](../scripts/validate_git_workflow.py), [EP-011 acceptance](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
+| User Review Workbench | Active user review queue, safe decision application, and empty blockers/risks standard | ready_for_acceptance | [user review workbench](user-review-workbench.md), [workbench generator](../scripts/generate_user_review_workbench.py), [EP-012 acceptance](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) |
 
 ## 6. Execution Packets
 
@@ -45,6 +46,7 @@ Project foundation, governance contour, dashboard-based acceptance coordination,
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | ready_for_acceptance | [EP-008 report](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) | User reviews dissertation sync guardrails, prompt profiles, templates, and DOCX restrictions. |
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | ready_for_acceptance | [EP-009 report](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) | User reviews audit findings, language policy, and audit scripts. |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | ready_for_acceptance | [EP-011 report](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) | User reviews branch/merge policy and advisory/strict validator behavior. |
+| EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | ready_for_acceptance | [EP-012 report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) | User reviews the active review queue and safe decision application workflow. |
 
 ## 7. Status Values
 
@@ -65,6 +67,7 @@ Codex may set `ready_for_acceptance`; only the user may set `accepted`, `needs_r
 - [Codex audit contour](audit/README.md)
 - [Audit findings](audit/audit-findings.yml)
 - [Git workflow discipline](git-workflow.md)
+- [User review workbench](user-review-workbench.md)
 - [Monthly test protocol](monthly/2026-06/03-test-protocol-reference-data-governance.md)
 - [GRACE execution packets](grace/execution-packets.xml)
 - [GRACE verification plan](grace/verification-plan.xml)
@@ -81,6 +84,7 @@ Codex may set `ready_for_acceptance`; only the user may set `accepted`, `needs_r
 - [EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md)
 - [EP-009-CODEX-SPEC-AUDIT.acceptance.md](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
 - [EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
+- [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 
 ## 10. Blockers
 
@@ -90,8 +94,8 @@ Codex may set `ready_for_acceptance`; only the user may set `accepted`, `needs_r
 - Manual verification results remain pending until Дмитрий fills `user_result` in `docs/verification-dashboard.yml`.
 - DOCX update is blocked until an accepted markdown patch and explicit user request exist.
 - Existing language findings remain open until the user selects a follow-up correction strategy.
-- Current `main` branch has pre-existing dirty working tree, so branch switching/merge preparation requires user approval.
+- EP-012 must not apply user decisions until source checksums match and `accepted_by` is not Codex.
 
 ## 11. Next Step
 
-User reviews [EP-011 acceptance report](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md), checks [Git workflow discipline](git-workflow.md), runs Git workflow validation commands, and decides how to split the current dirty baseline before any branch or merge operation.
+User reviews [EP-012 acceptance report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md), checks [user review workbench](user-review-workbench.md), and decides whether the workbench can be used to prepare future acceptance decisions.

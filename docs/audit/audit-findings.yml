@@ -44,13 +44,30 @@ findings:
     last_seen_at: 2026-06-08
     current_detected: false
   -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
     id: AUD-GIT-005-MIXED-EP-SCOPES
     check_id: AUD-GIT-005
     severity: medium
     category: git_workflow
     file: .git
     line: null
-    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-008, EP-009, EP-011, governance"
+    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance"
     recommendation: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
     status: open
     created_at: 2026-06-08
@@ -68,6 +85,23 @@ findings:
     file: docs/git-workflow.md
     line: null
     issue: "Для EP-011-GIT-WORKFLOW-DISCIPLINE нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-08
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main."
     recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
     status: open
     created_at: 2026-06-08
