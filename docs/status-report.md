@@ -6,13 +6,14 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-013-POST-ACCEPTANCE-STATE-SYNC`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
 project_state: accepted_baseline
-active_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
+active_execution_packet: none
+last_accepted_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
 next_recommended_packet: EP-014-ACCEPTED-ARTIFACT-PROTECTION
 previous_active_execution_packet: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
 ```
@@ -34,6 +35,7 @@ post_acceptance_baseline:
     - EP-009-CODEX-SPEC-AUDIT
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    - EP-013-POST-ACCEPTANCE-STATE-SYNC
 ```
 
 ## 5. Выполнено
@@ -45,19 +47,16 @@ post_acceptance_baseline:
 - Созданы acceptance reports для EP-001, EP-002, EP-003, EP-004, EP-005, EP-007, EP-008, EP-009, EP-011 и EP-012.
 - Добавлены [acceptance dashboard](acceptance-dashboard.md), [user action dashboard](user-action-dashboard.md), [verification dashboard](verification-dashboard.md) и [user review workbench](user-review-workbench.md).
 - Созданы reference governance, reference versioning, dissertation sync, audit, Git workflow и user review workbench контуры.
-- Все acceptance reports текущего цикла приняты пользователем Дмитрием 2026-06-08.
+- Acceptance reports EP-001..EP-012 приняты пользователем Дмитрием 2026-06-08.
 - EP-012 был последним активным пакетом до закрытия acceptance queue.
-- EP-013 начат для синхронизации post-acceptance состояния.
+- EP-013 принят пользователем Дмитрием 2026-06-09 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-- `EP-013-POST-ACCEPTANCE-STATE-SYNC`.
-- Синхронизация `accepted`-состояния из acceptance reports в `docs/grace/execution-packets.xml`, dashboards, workbench, project plan и status report.
-- Создание `scripts/validate_post_acceptance_state.py`.
+Активного execution packet нет.
 
 ## 7. Готово к приемке
 
-- [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 
 ## 8. Принятый Baseline
 
@@ -71,6 +70,7 @@ post_acceptance_baseline:
 - [EP-009-CODEX-SPEC-AUDIT](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
 - [EP-011-GIT-WORKFLOW-DISCIPLINE](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
+- [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 
 ## 9. Follow-Up Debt
 
@@ -100,4 +100,4 @@ post_acceptance_baseline:
 
 ## 14. Следующий шаг
 
-User reviews [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [acceptance dashboard](acceptance-dashboard.md), and [user review workbench](user-review-workbench.md). After EP-013 acceptance, set `active_execution_packet: none`, keep `project_state: accepted_baseline`, and start `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
+EP-013 принят пользователем. Сохраняется `project_state: accepted_baseline`, `active_execution_packet: none`; следующий рекомендуемый пакет - `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.

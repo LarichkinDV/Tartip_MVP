@@ -12,18 +12,19 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `EP-013-POST-ACCEPTANCE-STATE-SYNC`.
+Last accepted execution packet: `EP-013-POST-ACCEPTANCE-STATE-SYNC`.
 
 ```yaml
 project_state: accepted_baseline
-active_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
+active_execution_packet: none
+last_accepted_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
 next_recommended_packet: EP-014-ACCEPTED-ARTIFACT-PROTECTION
 previous_active_execution_packet: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
 ```
 
 ## 4. Current Stage
 
-Post-acceptance state synchronization after the first accepted baseline. The previous acceptance cycle is closed by user decisions in `docs/acceptance/*.acceptance.md`; EP-013 reflects those decisions in project registries, dashboards, and status documents.
+Post-acceptance state synchronization after the first accepted baseline is complete. The acceptance cycle is closed by user decisions in `docs/acceptance/*.acceptance.md`; EP-013 reflects those decisions in project registries, dashboards, and status documents.
 
 ## 5. Post-Acceptance Baseline
 
@@ -42,6 +43,7 @@ post_acceptance_baseline:
     - EP-009-CODEX-SPEC-AUDIT
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    - EP-013-POST-ACCEPTANCE-STATE-SYNC
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -60,7 +62,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | Codex Spec Audit | Audit-first/read-mostly checks, language policy, audit findings, and audit reports | accepted | [audit README](audit/README.md), [audit findings](audit/audit-findings.yml), [EP-009 acceptance](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) |
 | Git Workflow | Branch naming, dirty tree handling, merge gates, and forbidden Git files | accepted | [git workflow](git-workflow.md), [git workflow validator](../scripts/validate_git_workflow.py), [EP-011 acceptance](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
 | User Review Workbench | Active user review queue, safe decision application, and empty blockers/risks standard | accepted | [user review workbench](user-review-workbench.md), [workbench generator](../scripts/generate_user_review_workbench.py), [EP-012 acceptance](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) |
-| Post-Acceptance State Sync | Accepted baseline synchronization, follow-up debt visibility, and validation | ready_for_acceptance | [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [post-acceptance validator](../scripts/validate_post_acceptance_state.py) |
+| Post-Acceptance State Sync | Accepted baseline synchronization, follow-up debt visibility, and validation | accepted | [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [post-acceptance validator](../scripts/validate_post_acceptance_state.py) |
 
 ## 7. Execution Packets
 
@@ -76,7 +78,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | accepted | [EP-009 report](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) | Stale audit finding cleanup is deferred to EP-017. |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | accepted | [EP-011 report](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) | Merge still requires explicit user approval after checks. |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | accepted | [EP-012 report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) | Workbench remains the active review window. |
-| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | ready_for_acceptance | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | User reviews synchronized accepted baseline. |
+| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Active packet is closed; EP-014 is next. |
 
 ## 8. Status Values
 
@@ -141,4 +143,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` in EP-013 is a synchronizat
 
 ## 15. Next Step
 
-User reviews [EP-013 acceptance report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [acceptance dashboard](acceptance-dashboard.md), and [user review workbench](user-review-workbench.md). After EP-013 acceptance, the project should move to `active_execution_packet: none`, keep `project_state: accepted_baseline`, and start `EP-014-ACCEPTED-ARTIFACT-PROTECTION` as the next recommended package.
+EP-013 is accepted by the user. The project remains in `project_state: accepted_baseline`, `active_execution_packet: none`, and `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is the next recommended package.

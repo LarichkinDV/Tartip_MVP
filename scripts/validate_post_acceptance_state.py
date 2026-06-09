@@ -23,7 +23,8 @@ AUDIT_FINDINGS_PATH = PROJECT_ROOT / "docs" / "audit" / "audit-findings.yml"
 
 CURRENT_PACKET = "EP-013-POST-ACCEPTANCE-STATE-SYNC"
 PREVIOUS_PACKET = "EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD"
-EXPECTED_ACCEPTED_PACKETS = {
+PRE_ACCEPTANCE_CURRENT_STATUSES = {"pending", "ready_for_acceptance"}
+BASELINE_ACCEPTED_PACKETS = {
     "EP-001-INFRA",
     "EP-002-REFERENCE-GOVERNANCE",
     "EP-003-REFERENCE-VERSIONING",
@@ -35,6 +36,7 @@ EXPECTED_ACCEPTED_PACKETS = {
     "EP-011-GIT-WORKFLOW-DISCIPLINE",
     PREVIOUS_PACKET,
 }
+POST_ACCEPTANCE_ACCEPTED_PACKETS = BASELINE_ACCEPTED_PACKETS | {CURRENT_PACKET}
 HIGH_PRIORITY_ACTIONS = {
     "DR-REF-KSI-001",
     "DR-REF-FSNB-001",
@@ -112,26 +114,65 @@ def packet_statuses() -> dict[str, str]:
     }
 
 
-def validate_execution_packets(errors: list[str], accepted: set[str]) -> None:
-    statuses = packet_statuses()
+def detect_acceptance_mode(
+    errors: list[str],
+    accepted: set[str],
+    statuses: dict[str, str],
+) -> str:
+    current_status = statuses.get(CURRENT_PACKET, "")
+    if CURRENT_PACKET in accepted:
+        if current_status != "accepted":
+            errors.append(
+                f"{CURRENT_PACKET}: accepted report requires execution packet status accepted"
+            )
+        return "post_acceptance"
+
+    if current_status not in PRE_ACCEPTANCE_CURRENT_STATUSES:
+        errors.append(
+            f"{CURRENT_PACKET}: pre-acceptance status must be pending or ready_for_acceptance"
+        )
+    return "pre_acceptance"
+
+
+def expected_accepted_packets(mode: str) -> set[str]:
+    if mode == "post_acceptance":
+        return POST_ACCEPTANCE_ACCEPTED_PACKETS
+    return BASELINE_ACCEPTED_PACKETS
+
+
+def validate_execution_packets(
+    errors: list[str],
+    accepted: set[str],
+    statuses: dict[str, str],
+    mode: str,
+) -> None:
     for packet_id in sorted(accepted):
         if statuses.get(packet_id) != "accepted":
             errors.append(
                 f"{packet_id}: accepted acceptance report is not reflected as accepted in execution-packets.xml"
             )
-    if statuses.get(CURRENT_PACKET) != "ready_for_acceptance":
-        errors.append(f"{CURRENT_PACKET}: expected status ready_for_acceptance")
+    if mode == "pre_acceptance":
+        if statuses.get(CURRENT_PACKET) not in PRE_ACCEPTANCE_CURRENT_STATUSES:
+            errors.append(
+                f"{CURRENT_PACKET}: expected pre-acceptance status pending or ready_for_acceptance"
+            )
+    elif statuses.get(CURRENT_PACKET) != "accepted":
+        errors.append(f"{CURRENT_PACKET}: expected post-acceptance status accepted")
 
 
-def validate_planning_documents(errors: list[str], accepted: set[str]) -> None:
+def validate_planning_documents(
+    errors: list[str],
+    accepted: set[str],
+    mode: str,
+) -> None:
+    expected_packets = expected_accepted_packets(mode)
     for path in [PROJECT_PLAN_PATH, STATUS_REPORT_PATH]:
         if not path.exists():
             errors.append(f"Missing planning document: {rel(path)}")
             continue
         text = path.read_text(encoding="utf-8")
-        for needle in [
+        common_needles = [
             "project_state: accepted_baseline",
-            f"active_execution_packet: {CURRENT_PACKET}",
             "next_recommended_packet: EP-014-ACCEPTED-ARTIFACT-PROTECTION",
             f"previous_active_execution_packet: {PREVIOUS_PACKET}",
             "EP-014-ACCEPTED-ARTIFACT-PROTECTION",
@@ -139,26 +180,52 @@ def validate_planning_documents(errors: list[str], accepted: set[str]) -> None:
             "EP-016-REFERENCE-INTAKE-PREPARATION",
             "EP-017-AUDIT-FINDINGS-CLEANUP",
             "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
-        ]:
+        ]
+        if mode == "post_acceptance":
+            mode_needles = [
+                "active_execution_packet: none",
+                f"last_accepted_execution_packet: {CURRENT_PACKET}",
+            ]
+        else:
+            mode_needles = [
+                f"active_execution_packet: {CURRENT_PACKET}",
+            ]
+        for needle in common_needles + mode_needles:
             if needle not in text:
                 errors.append(f"{rel(path)} missing post-acceptance marker: {needle}")
+        if (
+            mode == "post_acceptance"
+            and f"active_execution_packet: {CURRENT_PACKET}" in text
+        ):
+            errors.append(f"{rel(path)} still lists EP-013 as active packet")
         current_section = re.search(
             r"## \d+\. (?:Current Execution Packet|Текущий Execution Packet)\n\n`([^`]+)`",
             text,
         )
         if current_section and current_section.group(1) == PREVIOUS_PACKET:
             errors.append(f"{rel(path)} still lists EP-012 as current active packet")
-        for packet_id in sorted(EXPECTED_ACCEPTED_PACKETS):
+        if (
+            mode == "post_acceptance"
+            and current_section
+            and current_section.group(1) != "none"
+        ):
+            errors.append(f"{rel(path)} current execution packet must be none")
+        for packet_id in sorted(expected_packets):
             if packet_id not in text:
                 errors.append(
                     f"{rel(path)} baseline missing accepted packet {packet_id}"
                 )
-        if not accepted >= EXPECTED_ACCEPTED_PACKETS:
-            missing = ", ".join(sorted(EXPECTED_ACCEPTED_PACKETS - accepted))
+        if not accepted >= expected_packets:
+            missing = ", ".join(sorted(expected_packets - accepted))
             errors.append(f"acceptance reports missing accepted packets: {missing}")
 
 
-def validate_acceptance_dashboard(errors: list[str], accepted: set[str]) -> None:
+def validate_acceptance_dashboard(
+    errors: list[str],
+    accepted: set[str],
+    mode: str,
+) -> None:
+    expected_packets = expected_accepted_packets(mode)
     dashboard = load_root(ACCEPTANCE_DASHBOARD_PATH, "acceptance_dashboard")
     if not dashboard:
         errors.append("Missing or invalid docs/acceptance-dashboard.yml")
@@ -166,9 +233,10 @@ def validate_acceptance_dashboard(errors: list[str], accepted: set[str]) -> None
     summary = (
         dashboard.get("summary") if isinstance(dashboard.get("summary"), dict) else {}
     )
-    if summary.get("ready_for_acceptance") != 1:
+    expected_ready = 0 if mode == "post_acceptance" else 1
+    if summary.get("ready_for_acceptance") != expected_ready:
         errors.append(
-            "acceptance dashboard must show exactly one ready_for_acceptance item: EP-013"
+            "acceptance dashboard ready_for_acceptance count does not match EP-013 mode"
         )
     if summary.get("accepted") != len(accepted):
         errors.append(
@@ -187,9 +255,9 @@ def validate_acceptance_dashboard(errors: list[str], accepted: set[str]) -> None
         for item in baseline.get("accepted_packets", [])
         if isinstance(item, dict)
     }
-    if not EXPECTED_ACCEPTED_PACKETS <= baseline_packets:
+    if not expected_packets <= baseline_packets:
         errors.append(
-            "acceptance dashboard post_acceptance_baseline misses accepted EP-001..EP-012"
+            "acceptance dashboard post_acceptance_baseline misses expected accepted packets"
         )
     if baseline.get("protection_flags_status") != "deferred_to_EP-014":
         errors.append("acceptance dashboard must defer protection flags to EP-014")
@@ -212,13 +280,17 @@ def validate_acceptance_dashboard(errors: list[str], accepted: set[str]) -> None
     ep013 = item_by_packet.get(CURRENT_PACKET)
     if not ep013:
         errors.append(f"{CURRENT_PACKET} missing from acceptance dashboard")
-    elif ep013.get("status") != "ready_for_acceptance":
-        errors.append(
-            f"{CURRENT_PACKET}: dashboard status must be ready_for_acceptance"
-        )
+    elif mode == "post_acceptance":
+        if ep013.get("status") != "accepted":
+            errors.append(f"{CURRENT_PACKET}: dashboard status must be accepted")
+        if ep013.get("acceptance_decision") != "accepted":
+            errors.append(f"{CURRENT_PACKET}: dashboard decision must be accepted")
+    elif ep013.get("status") not in PRE_ACCEPTANCE_CURRENT_STATUSES:
+        errors.append(f"{CURRENT_PACKET}: dashboard status must be pending or ready")
 
 
-def validate_workbench(errors: list[str]) -> None:
+def validate_workbench(errors: list[str], mode: str) -> None:
+    expected_packets = expected_accepted_packets(mode)
     workbench = load_root(WORKBENCH_PATH, "user_review_workbench")
     if not workbench:
         errors.append("Missing or invalid docs/user-review-workbench.yml")
@@ -233,15 +305,20 @@ def validate_workbench(errors: list[str]) -> None:
         for item in active
         if item.get("type") == "acceptance"
     }
-    unexpected = sorted(EXPECTED_ACCEPTED_PACKETS & active_acceptance)
+    unexpected = sorted(expected_packets & active_acceptance)
     if unexpected:
         errors.append(
             "accepted packets must not be active acceptance items: "
             + ", ".join(unexpected)
         )
-    if CURRENT_PACKET not in active_acceptance:
+    if mode == "pre_acceptance" and CURRENT_PACKET not in active_acceptance:
         errors.append(
             "EP-013 must be active acceptance item while ready_for_acceptance"
+        )
+    if mode == "post_acceptance" and active_acceptance:
+        errors.append(
+            "active acceptance queue must be empty after EP-013 acceptance: "
+            + ", ".join(sorted(active_acceptance))
         )
 
     recent = {
@@ -249,8 +326,8 @@ def validate_workbench(errors: list[str]) -> None:
         for item in workbench.get("recently_accepted", [])
         if isinstance(item, dict)
     }
-    if not EXPECTED_ACCEPTED_PACKETS <= recent:
-        errors.append("workbench recently_accepted misses accepted EP-001..EP-012")
+    if not expected_packets <= recent:
+        errors.append("workbench recently_accepted misses expected accepted packets")
 
     baseline = (
         workbench.get("post_acceptance_baseline")
@@ -262,9 +339,9 @@ def validate_workbench(errors: list[str]) -> None:
         for item in baseline.get("accepted_packets", [])
         if isinstance(item, dict)
     }
-    if not EXPECTED_ACCEPTED_PACKETS <= baseline_packets:
+    if not expected_packets <= baseline_packets:
         errors.append(
-            "workbench post_acceptance_baseline misses accepted EP-001..EP-012"
+            "workbench post_acceptance_baseline misses expected accepted packets"
         )
     if baseline.get("protection_flags_status") != "deferred_to_EP-014":
         errors.append("workbench must defer protection flags to EP-014")
@@ -363,16 +440,20 @@ def validate_audit_statuses(errors: list[str]) -> None:
 def main() -> int:
     errors: list[str] = []
     accepted = accepted_reports()
-    if EXPECTED_ACCEPTED_PACKETS - accepted:
-        missing = ", ".join(sorted(EXPECTED_ACCEPTED_PACKETS - accepted))
+    statuses = packet_statuses()
+    mode = detect_acceptance_mode(errors, accepted, statuses)
+    expected_packets = expected_accepted_packets(mode)
+    if BASELINE_ACCEPTED_PACKETS - accepted:
+        missing = ", ".join(sorted(BASELINE_ACCEPTED_PACKETS - accepted))
         errors.append(f"expected accepted reports are not accepted: {missing}")
-    if CURRENT_PACKET in accepted:
-        errors.append("EP-013 must remain pending until user acceptance")
+    if expected_packets - accepted:
+        missing = ", ".join(sorted(expected_packets - accepted))
+        errors.append(f"expected accepted reports are not accepted in {mode}: {missing}")
 
-    validate_execution_packets(errors, accepted)
-    validate_planning_documents(errors, accepted)
-    validate_acceptance_dashboard(errors, accepted)
-    validate_workbench(errors)
+    validate_execution_packets(errors, accepted, statuses, mode)
+    validate_planning_documents(errors, accepted, mode)
+    validate_acceptance_dashboard(errors, accepted, mode)
+    validate_workbench(errors, mode)
     validate_verification_debt(errors)
     validate_user_actions(errors)
     validate_audit_statuses(errors)

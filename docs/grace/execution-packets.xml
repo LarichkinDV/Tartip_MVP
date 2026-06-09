@@ -437,7 +437,7 @@
       <Item>Do not run git add, commit, merge, push, or rebase</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-013-POST-ACCEPTANCE-STATE-SYNC" status="ready_for_acceptance">
+  <Packet id="EP-013-POST-ACCEPTANCE-STATE-SYNC" status="accepted">
     <Name>Post-acceptance state sync</Name>
     <Goal>Synchronize project registries, dashboards, and status documents after the accepted acceptance cycle.</Goal>
     <Scope>

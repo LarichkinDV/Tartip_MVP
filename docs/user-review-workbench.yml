@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 41ed33e3105e425055b1bb985a338a99586988c5dec3e1ca077be20f54ec7d69
+      checksum_sha256: cc909b843c3c2c05bd3e2297413aa8c2e2c5e59ddf4dfb6deeb62dd3b0f0d21a
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 1fc60398df15a6100200b10fd98b140538da2a8327ad933312d29ac762d456db
+      checksum_sha256: 005f3028437fb87a6bfa2683e18cbf0b323f076657ad10fe895a88da9825eee4
       status: present
       warning: ""
     -
@@ -31,12 +31,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: 46ed8dc615705660463067b02c55c7295be5aa4b34560445dad3cb2b4eafff61
+      checksum_sha256: 4aa318d0c3ee5f6c5e5d6b90c9d8ff7aaf2a25c5693aee4f13724546ba9749b9
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: 8af72e469f504a234c2550383d9b24a504a6514265b1c38a8694e4570b85f1f2
+      checksum_sha256: 33e3b5bd4141acdd8ba03e20c32fc8b140edfb5b5061a299196792a98dfa2fbb
       status: present
       warning: ""
   summary:
