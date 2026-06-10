@@ -28,6 +28,10 @@ FORBIDDEN_CLAIMS_PATH = (
     PROJECT_ROOT / "docs" / "dissertation" / "prompt-profiles" / "forbidden-claims.yml"
 )
 BRANCH_RE = re.compile(r"^ep-\d{3}-[a-z0-9][a-z0-9-]*$")
+BRANCH_PACKET_RE = re.compile(r"^ep-(?P<number>\d{3})-")
+BRANCH_MISMATCH_ISSUE_RE = re.compile(
+    r"Имя ветки (?P<branch>\S+) не соответствует packet (?P<packet>EP-\d{3}-[A-Z0-9-]+)\."
+)
 FORBIDDEN_GIT_PATTERNS = [
     ".env",
     ".env.*",
@@ -118,6 +122,8 @@ def merge_findings(generated: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for item in existing:
         item_id = str(item.get("id") or "")
         if item_id not in generated_ids:
+            if obsolete_finding(item):
+                continue
             item["current_detected"] = False
             merged.append(item)
 
@@ -742,6 +748,60 @@ def packet_status(packet_id: str) -> str:
     return ""
 
 
+def packet_id_for_branch(branch: str) -> str:
+    match = BRANCH_PACKET_RE.match(branch)
+    if not match or not PACKETS_PATH.exists():
+        return ""
+    prefix = f"EP-{match.group('number')}-"
+    root = ET.parse(PACKETS_PATH).getroot()
+    for packet in root.findall("Packet"):
+        packet_id = packet.attrib.get("id", "")
+        if packet_id.startswith(prefix):
+            return packet_id
+    return ""
+
+
+def packet_has_user_acceptance(packet_id: str) -> bool:
+    acceptance = packet_acceptance(packet_id)
+    accepted_by = acceptance.get("accepted_by", "").strip()
+    return (
+        packet_status(packet_id) == "accepted"
+        and acceptance.get("acceptance_decision", "").strip() == "accepted"
+        and bool(accepted_by)
+        and accepted_by != "Codex"
+    )
+
+
+def obsolete_merge_forbidden_finding(finding_id: str) -> bool:
+    prefix = "AUD-GIT-002-MERGE-FORBIDDEN-"
+    if not finding_id.startswith(prefix):
+        return False
+    packet_id = finding_id[len(prefix) :]
+    return packet_has_user_acceptance(packet_id)
+
+
+def obsolete_branch_mismatch_finding(item: dict[str, Any]) -> bool:
+    if str(item.get("id") or "") != "AUD-GIT-001-BRANCH-NAME-MISMATCH":
+        return False
+    issue = str(item.get("issue") or "")
+    match = BRANCH_MISMATCH_ISSUE_RE.search(issue)
+    if not match:
+        return False
+    stale_branch = match.group("branch")
+    _code, current_branch, _stderr = run_git(["branch", "--show-current"])
+    if not current_branch or current_branch == stale_branch:
+        return False
+    branch_packet_id = packet_id_for_branch(stale_branch)
+    return bool(branch_packet_id) and packet_has_user_acceptance(branch_packet_id)
+
+
+def obsolete_finding(item: dict[str, Any]) -> bool:
+    item_id = str(item.get("id") or "")
+    return obsolete_merge_forbidden_finding(item_id) or obsolete_branch_mismatch_finding(
+        item
+    )
+
+
 def parse_git_status() -> list[tuple[str, str]]:
     code, stdout, _stderr = run_git(["status", "--porcelain"])
     if code != 0:
@@ -908,7 +968,7 @@ def check_git_workflow() -> list[dict[str, Any]]:
                 "Очистить user-owned field через отдельное пользовательское решение.",
             )
         )
-    if status != "accepted" or decision != "accepted" or not accepted_by:
+    if not packet_has_user_acceptance(packet_id):
         findings.append(
             finding(
                 f"AUD-GIT-002-MERGE-FORBIDDEN-{packet_id}",

@@ -6,7 +6,7 @@
 
 | Категория | Количество |
 |---|---:|
-| open | 158 |
+| open | 153 |
 | high_priority | 4 |
 | blocked | 4 |
 | answered | 0 |
@@ -64,14 +64,9 @@
 
 | ID | Finding | Recommendation | File |
 |---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | Имя ветки ep-014-user-review-decision-cli-safety не соответствует packet EP-018-ACCEPTED-ARTIFACT-PROTECTION. | Использовать формат ep-018-<short-slug>. | .git |
-| AUD-GIT-001-CURRENT-BRANCH-MAIN | Текущая ветка main не соответствует EP-013-POST-ACCEPTANCE-STATE-SYNC. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | .git |
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-011-GIT-WORKFLOW-DISCIPLINE | Merge запрещен для EP-011-GIT-WORKFLOW-DISCIPLINE: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md |
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | Merge запрещен для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-013-POST-ACCEPTANCE-STATE-SYNC | Merge запрещен для EP-013-POST-ACCEPTANCE-STATE-SYNC: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Merge запрещен для EP-014-USER-REVIEW-DECISION-CLI-SAFETY: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md |
+| AUD-GIT-001-CURRENT-BRANCH-MAIN | Текущая ветка main не соответствует EP-018-ACCEPTED-ARTIFACT-PROTECTION. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | .git |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-018-ACCEPTED-ARTIFACT-PROTECTION | Merge запрещен для EP-018-ACCEPTED-ARTIFACT-PROTECTION: status=-, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md |
-| AUD-GIT-005-MIXED-EP-SCOPES | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | .git |
+| AUD-GIT-005-MIXED-EP-SCOPES | Working tree содержит изменения нескольких EP scopes: EP-005, EP-009 | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | .git |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-011-GIT-WORKFLOW-DISCIPLINE | Для EP-011-GIT-WORKFLOW-DISCIPLINE нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC | Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
