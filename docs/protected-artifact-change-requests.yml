@@ -18,8 +18,8 @@ protected_artifact_change_requests:
         -
           command: "make check"
       user_approval:
-        decision:
-        approved_by:
-        approved_at:
-        comments:
-      status: requires_user_approval
+        decision: approved
+        approved_by: Дмитрий
+        approved_at: 2026-06-10
+        comments: "Разрешаю EP-010-LANGUAGE-NORMALIZATION изменить README.md и CHANGELOG.md в пределах языковой нормализации человекочитаемого текста без изменения команд, путей, технических идентификаторов, enum-статусов, кодовых блоков и предметной методики."
+      status: approved
