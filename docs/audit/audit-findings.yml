@@ -10,6 +10,23 @@ allowed_statuses:
   - requires_user_approval
 findings:
   -
+    id: AUD-GIT-001-BRANCH-NAME-MISMATCH
+    check_id: AUD-GIT-001
+    severity: medium
+    category: git_workflow
+    file: .git
+    line: null
+    issue: "Имя ветки ep-018-accepted-artifact-protection не соответствует packet EP-010-LANGUAGE-NORMALIZATION."
+    recommendation: "Использовать формат ep-010-<short-slug>."
+    status: open
+    created_at: 2026-06-10
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-10
+    current_detected: false
+  -
     id: AUD-GIT-001-CURRENT-BRANCH-MAIN
     check_id: AUD-GIT-001
     severity: medium
@@ -27,13 +44,13 @@ findings:
     last_seen_at: 2026-06-10
     current_detected: false
   -
-    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-010-LANGUAGE-NORMALIZATION
     check_id: AUD-GIT-002
     severity: medium
     category: git_workflow
-    file: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+    file: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
     line: null
-    issue: "Merge запрещен для EP-018-ACCEPTED-ARTIFACT-PROTECTION: status=-, acceptance_decision=pending, accepted_by=empty."
+    issue: "Merge запрещен для EP-010-LANGUAGE-NORMALIZATION: status=-, acceptance_decision=pending, accepted_by=empty."
     recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
     status: open
     created_at: 2026-06-10
@@ -50,10 +67,27 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
+    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance"
     recommendation: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
     status: open
     created_at: 2026-06-08
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-10
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-010-LANGUAGE-NORMALIZATION нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-10
     resolved_by: null
     resolved_at: null
     resolution: null

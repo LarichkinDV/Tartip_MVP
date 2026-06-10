@@ -584,7 +584,7 @@ def build_workbench() -> dict[str, Any]:
             "post_acceptance_baseline": {
                 "project_state": "accepted_baseline",
                 "accepted_packets": accepted_items,
-                "protection_flags_status": "deferred_to_EP-018",
+                "protection_flags_status": "classified_by_EP-018",
                 "protection_packet": PROTECTION_PACKET,
                 "verification_debt_status": "deferred_to_EP-015",
                 "reference_intake_status": "deferred_to_EP-016",

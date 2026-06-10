@@ -542,4 +542,58 @@
       <Item>Do not run git add, commit, merge, push, or rebase</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-018-ACCEPTED-ARTIFACT-PROTECTION" status="accepted">
+    <Name>Accepted artifact protection</Name>
+    <Goal>Classify accepted source/manual artifacts and introduce protection metadata so future packets, generators, and mass edits cannot overwrite accepted results without explicit user approval.</Goal>
+    <Scope>
+      <Item>Classify accepted acceptance reports as protected source-of-truth artifacts in docs/artifact-registry.yml</Item>
+      <Item>Classify generated dashboards, workbench files, and generated audit reports as regenerable derived artifacts</Item>
+      <Item>Add protected artifact change request registry</Item>
+      <Item>Add validation for accepted artifact protection discipline</Item>
+      <Item>Connect protection validation to make check</Item>
+      <Item>Document that EP-010-LANGUAGE-NORMALIZATION cannot modify protected accepted artifacts without approved change request</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>AGENTS.md</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/protected-artifact-change-requests.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>docs/decision-log.md</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md</Artifact>
+      <Artifact>scripts/validate_accepted_artifact_protection.py</Artifact>
+      <Artifact>scripts/validate_project_plan.py</Artifact>
+      <Artifact>scripts/validate_post_acceptance_state.py</Artifact>
+      <Artifact>scripts/generate_acceptance_dashboard.py</Artifact>
+      <Artifact>scripts/generate_user_review_workbench.py</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-018-001">Accepted acceptance reports are classified as protected in artifact registry.</Criterion>
+      <Criterion id="AC-EP-018-002">Generated dashboards are classified as not_protected_generated.</Criterion>
+      <Criterion id="AC-EP-018-003">Protected artifacts require explicit user approval for future changes.</Criterion>
+      <Criterion id="AC-EP-018-004">Change request mechanism exists.</Criterion>
+      <Criterion id="AC-EP-018-005">Validator checks protection discipline.</Criterion>
+      <Criterion id="AC-EP-018-006">make check includes protection validation.</Criterion>
+      <Criterion id="AC-EP-018-007">EP-010 cannot change protected accepted artifacts without approved change request.</Criterion>
+      <Criterion id="AC-EP-018-008">Accepted reports EP-001 through EP-014 were not modified.</Criterion>
+      <Criterion id="AC-EP-018-009">Generated dashboards remain regenerable and are not hard-locked.</Criterion>
+      <Criterion id="AC-EP-018-010">User-owned fields are not modified by Codex.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not change acceptance reports EP-001 through EP-014</Item>
+      <Item>Do not change acceptance_decision, accepted_by, accepted_at, or comments</Item>
+      <Item>Do not execute EP-010-LANGUAGE-NORMALIZATION</Item>
+      <Item>Do not hard-lock generated dashboards</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not add reference or normative data</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, or rebase</Item>
+    </NonGoals>
+  </Packet>
 </ExecutionPackets>

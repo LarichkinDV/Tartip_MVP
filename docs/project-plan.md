@@ -17,16 +17,16 @@ Current execution packet: `none`.
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
-next_recommended_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
-previous_active_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+last_accepted_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+next_recommended_packet: BASELINE-TAG-BEFORE-EP-010
+previous_active_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
 ## 4. Current Stage
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-014 принят пользователем 2026-06-10. Active acceptance queue должна быть пустой до старта следующего execution packet; следующий рекомендуемый пакет остается `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. Следующий рекомендуемый шаг — baseline/tag перед EP-010; сам `EP-010-LANGUAGE-NORMALIZATION` не должен стартовать до approval по `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION`.
 
 ## 5. Post-Acceptance Baseline
 
@@ -47,6 +47,7 @@ post_acceptance_baseline:
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
     - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+    - EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -71,6 +72,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | User Review Workbench | Active user review queue, safe decision application, and empty blockers/risks standard | accepted | [user review workbench](user-review-workbench.md), [workbench generator](../scripts/generate_user_review_workbench.py), [EP-012 acceptance](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) |
 | Post-Acceptance State Sync | Accepted baseline synchronization, follow-up debt visibility, and validation | accepted | [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [post-acceptance validator](../scripts/validate_post_acceptance_state.py) |
 | User Review Decision CLI Safety | Explicit dry-run/apply decision CLI, non-writing dry-run, atomic apply guardrails | accepted | [EP-014 acceptance](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md), [decision apply script](../scripts/apply_user_review_decisions.py) |
+| Accepted Artifact Protection | Protected source/manual artifact classification, generated artifact metadata, and change request guardrails | accepted | [EP-018 acceptance](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md), [protection validator](../scripts/validate_accepted_artifact_protection.py), [change requests](protected-artifact-change-requests.yml) |
 
 ## 7. Execution Packets
 
@@ -88,6 +90,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | accepted | [EP-012 report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) | Workbench remains the active review window. |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Completed; EP-014 accepted after CLI safety review. |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | accepted | [EP-014 report](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md) | Completed; next recommended packet is EP-018 accepted artifact protection. |
+| EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; next step is baseline/tag before EP-010, while CR-EP-010 remains requires_user_approval. |
 
 ## 8. Status Values
 
@@ -128,17 +131,18 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 - [EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
+- [EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
 - `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`: reconcile pending verification checks and the `EP-006-MONTHLY-PLANNING-AND-DEFENSE` orphan monthly scope.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: prepare intake of official or project-authorized KSI, FSNB/GESN, and work type sources.
 - `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit findings without mass-russification and without changing accepted/protected artifacts.
-- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts without locking generated dashboards.
+- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards remain derived artifacts.
 
 ## 12. Open Follow-Up Debt
 
-- `protected_accepted_artifacts: 0` remains visible and is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
+- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` remains `requires_user_approval`; EP-010 must not start until the change request is approved.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - `EP-006-MONTHLY-PLANNING-AND-DEFENSE` appears in the verification dashboard but has no corresponding accepted execution packet and no acceptance report; EP-015 must reclassify these checks as monthly-scope checks such as `MONTHLY-2026-06`, or create a future correctly registered package.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
@@ -153,4 +157,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-
 
 ## 15. Next Step
 
-EP-014 is accepted and synchronized into the post-acceptance baseline. The next recommended packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
+EP-018 is accepted and synchronized into the post-acceptance baseline. Recommended next step: create a baseline/tag before EP-010; start EP-010 only after `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` is approved by the user.

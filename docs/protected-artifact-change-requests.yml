@@ -1,0 +1,25 @@
+protected_artifact_change_requests:
+  schema_version: 1
+  requests:
+    -
+      id: CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION
+      protected_artifact: README.md
+      protected_artifacts:
+        - README.md
+        - CHANGELOG.md
+      requested_by: Дмитрий
+      reason: "EP-010 должен выполнить языковую нормализацию пользовательских человекочитаемых фрагментов README.md и CHANGELOG.md."
+      impact_analysis: "Изменения допускаются только для человекочитаемого текста; технические идентификаторы, команды, пути, enum-статусы и кодовые блоки не должны переводиться механически."
+      affected_execution_packet: EP-010-LANGUAGE-NORMALIZATION
+      proposed_change_summary: "Языковая нормализация README.md и CHANGELOG.md в рамках отдельного EP-010 после пользовательского approval."
+      verification_commands:
+        -
+          command: "git diff -- README.md CHANGELOG.md"
+        -
+          command: "make check"
+      user_approval:
+        decision:
+        approved_by:
+        approved_at:
+        comments:
+      status: requires_user_approval

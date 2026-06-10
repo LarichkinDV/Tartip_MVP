@@ -368,25 +368,37 @@ If required evidence is missing, create a structured record in `data/questions/`
 
 12. Если source file изменился после генерации workbench, пользовательское решение из workbench нельзя применять без повторной генерации.
 
-## Accepted artifact protection
+## Accepted artifact protection discipline
 
-1. Accepted artifacts are protected.
+1. Accepted source/manual artifacts are protected after user acceptance.
 
-2. Codex must not delete, rename, overwrite, or materially modify accepted artifacts without explicit user approval.
+2. A protected accepted artifact must not be modified, normalized, reformatted, regenerated, or overwritten without explicit user approval.
 
-3. Any change to accepted artifacts requires:
-   - a new change request;
-   - reason;
+3. Generated dashboards and derived reports are not hard-locked as protected source artifacts, but their generators must not alter source-of-truth user decisions.
+
+4. If a future packet needs to change a protected accepted artifact, it must create a change request with:
+   - protected artifact path;
+   - reason for change;
    - impact analysis;
-   - affected artifacts;
-   - user approval;
-   - repeat acceptance if changed.
+   - affected EP;
+   - user approval field;
+   - verification commands;
+   - rollback note.
 
-4. Codex must prefer a new revision over overwriting an accepted artifact.
+5. Codex must not silently change:
+   - `acceptance_decision`;
+   - `accepted_by`;
+   - `accepted_at`;
+   - `comments`;
+   - `checked_by`;
+   - `answered_by`;
+   - `decided_by`.
 
-5. `accepted_by` cannot be `Codex`.
+6. EP-010-LANGUAGE-NORMALIZATION must not modify protected accepted artifacts unless a separate approved change request exists.
 
-6. `decided_by` cannot be `Codex`.
+7. Accepted acceptance reports are historical records. They must not be rewritten to improve style, language, formatting, or terminology after acceptance without explicit user approval.
+
+8. Protection applies to source/manual accepted artifacts, not to generated dashboards that are recreated from source-of-truth files.
 
 ## Verification dashboard discipline
 

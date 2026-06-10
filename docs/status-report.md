@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
-next_recommended_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
-previous_active_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+last_accepted_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+next_recommended_packet: BASELINE-TAG-BEFORE-EP-010
+previous_active_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -37,6 +37,7 @@ post_acceptance_baseline:
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
     - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+    - EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
 ## 5. Выполнено
@@ -52,6 +53,7 @@ post_acceptance_baseline:
 - EP-012 был последним активным пакетом до закрытия acceptance queue.
 - EP-013 принят пользователем Дмитрием 2026-06-09 и синхронизирован как post-acceptance состояние.
 - EP-014 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
+- EP-018 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
@@ -75,19 +77,20 @@ post_acceptance_baseline:
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 - [EP-014-USER-REVIEW-DECISION-CLI-SAFETY](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
+- [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 
 ## 9. Follow-Up Debt
 
 - `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`: reconcile pending verification checks and the `EP-006-MONTHLY-PLANNING-AND-DEFENSE` orphan monthly scope.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: prepare intake of official or project-authorized KSI, FSNB/GESN, and work type sources.
 - `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit findings without mass-russification and without changing accepted/protected artifacts.
-- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts. Generated dashboards/workbench must remain derived artifacts rather than hard-locked source artifacts.
+- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
 
 ## 11. Риски
 
-- `protected_accepted_artifacts: 0` remains visible until EP-018 introduces a protection classification.
+- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` remains `requires_user_approval`; EP-010 must not start until the change request is approved.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
@@ -108,4 +111,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-014 принят и синхронизирован. Следующий рекомендуемый пакет - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
+EP-018 принят и синхронизирован. Следующий рекомендуемый шаг - baseline/tag before EP-010; `EP-010-LANGUAGE-NORMALIZATION` можно начинать только после approval по `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION`.

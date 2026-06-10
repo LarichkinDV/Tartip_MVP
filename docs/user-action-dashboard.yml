@@ -8,7 +8,7 @@ user_action_dashboard:
     - data/questions/import-issues.yml
     - docs/audit/audit-findings.yml
   summary:
-    open: 153
+    open: 155
     high_priority: 4
     blocked: 4
     answered: 0
@@ -102,6 +102,26 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
+      id: AUD-GIT-001-BRANCH-NAME-MISMATCH
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Имя ветки ep-018-accepted-artifact-protection не соответствует packet EP-010-LANGUAGE-NORMALIZATION."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Использовать формат ep-010-<short-slug>."
+      target_path: .git
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
       id: AUD-GIT-001-CURRENT-BRANCH-MAIN
       type: audit_finding
       priority: normal
@@ -122,15 +142,15 @@ user_action_dashboard:
         answered_at: ""
         comment: ""
     -
-      id: AUD-GIT-002-MERGE-FORBIDDEN-EP-018-ACCEPTED-ARTIFACT-PROTECTION
+      id: AUD-GIT-002-MERGE-FORBIDDEN-EP-010-LANGUAGE-NORMALIZATION
       type: audit_finding
       priority: normal
       status: open
       topic: git_workflow
-      question: "Merge запрещен для EP-018-ACCEPTED-ARTIFACT-PROTECTION: status=-, acceptance_decision=pending, accepted_by=empty."
+      question: "Merge запрещен для EP-010-LANGUAGE-NORMALIZATION: status=-, acceptance_decision=pending, accepted_by=empty."
       expected_action: "Review audit finding and decide next action."
       expected_input: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
-      target_path: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      target_path: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
       blocks:
         []
       source_file: docs/audit/audit-findings.yml
@@ -147,10 +167,30 @@ user_action_dashboard:
       priority: normal
       status: open
       topic: git_workflow
-      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-009"
+      question: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance"
       expected_action: "Review audit finding and decide next action."
       expected_input: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
       target_path: .git
+      blocks:
+        []
+      source_file: docs/audit/audit-findings.yml
+      owner: "Дмитрий"
+      requires_user_approval: false
+      response:
+        decision: ""
+        answered_by: ""
+        answered_at: ""
+        comment: ""
+    -
+      id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION
+      type: audit_finding
+      priority: normal
+      status: open
+      topic: git_workflow
+      question: "Для EP-010-LANGUAGE-NORMALIZATION нет явного user approval на merge в main."
+      expected_action: "Review audit finding and decide next action."
+      expected_input: "Получить явное разрешение пользователя после приемки и успешных проверок."
+      target_path: docs/git-workflow.md
       blocks:
         []
       source_file: docs/audit/audit-findings.yml

@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions
+.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions
 
 up:
 	$(COMPOSE) up --build
@@ -48,6 +48,7 @@ check:
 	$(MAKE) validate-verification
 	$(MAKE) validate-user-review-workbench
 	$(MAKE) validate-post-acceptance-state
+	$(MAKE) validate-accepted-artifact-protection
 	@if command -v docker >/dev/null 2>&1; then \
 		$(COMPOSE) config --quiet; \
 	else \
@@ -80,6 +81,9 @@ validate-user-review-workbench:
 
 validate-post-acceptance-state:
 	$(PYTHON) scripts/validate_post_acceptance_state.py
+
+validate-accepted-artifact-protection:
+	$(PYTHON) scripts/validate_accepted_artifact_protection.py
 
 audit-codex-spec:
 	$(PYTHON) scripts/audit_codex_spec.py

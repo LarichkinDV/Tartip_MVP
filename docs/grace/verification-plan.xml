@@ -379,4 +379,36 @@
     <Name>accepted artifact protection label uses EP-018</Name>
     <Expected>Generated acceptance and workbench artifacts use EP-018-ACCEPTED-ARTIFACT-PROTECTION for accepted artifact protection debt instead of the legacy EP-014 deferral label.</Expected>
   </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-001" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>accepted acceptance reports are protected</Name>
+    <Expected>Every acceptance report with acceptance_decision=accepted is registered in docs/artifact-registry.yml with protection_status=protected.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-002" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>generated dashboards are not hard-locked</Name>
+    <Expected>Generated dashboards, workbench files, and generated audit reports are classified as not_protected_generated and declare generator, derived_from, and regeneration_command.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-003" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>protected artifacts require user approval</Name>
+    <Expected>Protected artifacts have change_requires_user_approval=true and cannot be changed without an approved protected artifact change request.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-004" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>change request registry exists</Name>
+    <Expected>docs/protected-artifact-change-requests.yml exists with schema_version=1 and allowed request statuses.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-005" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>protection validator is connected to make check</Name>
+    <Expected>make validate-accepted-artifact-protection runs scripts/validate_accepted_artifact_protection.py and make check includes that target.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-006" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>EP-010 cannot change protected accepted artifacts</Name>
+    <Expected>Validation fails if EP-010-LANGUAGE-NORMALIZATION targets a protected accepted artifact without an approved change request.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-007" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>accepted reports remain unchanged during EP-018</Name>
+    <Expected>git diff for accepted reports EP-001 through EP-014 is empty after EP-018 implementation.</Expected>
+  </Scenario>
+  <Scenario id="V-ACCEPTED-PROTECTION-008" module="M-ACCEPTED-ARTIFACT-PROTECTION">
+    <Name>user-owned fields are not changed by Codex</Name>
+    <Expected>acceptance_decision, accepted_by, accepted_at, comments, checked_by, answered_by, and decided_by are not set to Codex or silently modified by EP-018.</Expected>
+  </Scenario>
 </VerificationPlan>

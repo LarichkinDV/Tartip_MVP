@@ -7,12 +7,12 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 12
+    accepted: 13
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
-    protected_accepted_artifacts: 0
+    protected_accepted_artifacts: 29
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -76,9 +76,14 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-10
         acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
-    protection_flags_status: deferred_to_EP-018
+      -
+        packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-10
+        acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+    protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
-    planning_note: "Historical EP-014 accepted artifact protection references are superseded by EP-018-ACCEPTED-ARTIFACT-PROTECTION."
+    planning_note: "Accepted source/manual artifacts are classified by EP-018-ACCEPTED-ARTIFACT-PROTECTION; generated dashboards remain regenerable."
   warnings:
     []
   items:
@@ -95,42 +100,63 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/knowledge-graph.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/README.md
           status: active
           type: grace_artifact
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-001-INFRA.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: README.md
           status: active
           type: methodology_note
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: CHANGELOG.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: Makefile
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: code
+          change_requires_user_approval: false
           protection_locked: false
       verification_commands:
         -
@@ -199,66 +225,99 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/knowledge-graph.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/module-contracts.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: CHANGELOG.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/07-reference-data-policy.md
           status: active
           type: methodology_note
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_policy
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: data/reference/manifests/source-manifest.yml
           status: active
           type: reference_manifest
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: reference_data
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: data/reference/manifests/import-log.yml
           status: active
           type: reference_manifest
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: reference_data
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: data/questions/data-requirements.yml
           status: active
           type: question_registry
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: rules/matching/partition_brick_120_reinf.yaml
           status: draft
           type: matching_rule
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
       verification_commands:
         -
@@ -329,42 +388,63 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/module-contracts.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: CHANGELOG.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: db/schemas/reference_versioning.sql
           status: active
           type: database_schema
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/compare_reference_releases.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
       verification_commands:
         -
@@ -435,96 +515,144 @@ acceptance_dashboard:
           status: active
           type: agent_instruction
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_policy
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/execution-packets.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/README.md
           status: active
           type: grace_artifact
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/project-plan.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/artifact-registry.yml
           status: active
           type: configuration
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_registry
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/traceability-matrix.md
           status: active
           type: architecture_note
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/decision-log.md
           status: active
           type: decision_log
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/status-report.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/README.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/ACCEPTANCE_TEMPLATE.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: scripts/validate_project_plan.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: README.md
           status: active
           type: methodology_note
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: CHANGELOG.md
           status: active
           type: status_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: Makefile
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: code
+          change_requires_user_approval: false
           protection_locked: false
       verification_commands:
         -
@@ -639,67 +767,100 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/README.md
           status: active
           type: grace_artifact
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_project_plan.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance-dashboard.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance-dashboard.yml
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/user-action-dashboard.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/user-action-dashboard.yml
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_acceptance_dashboard.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_user_action_dashboard.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "make generate-dashboards"
@@ -827,91 +988,136 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/module-contracts.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/README.md
           status: active
           type: grace_artifact
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_project_plan.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/verification-dashboard.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/verification-dashboard.yml
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_verification_dashboard.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_verification_dashboard.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/monthly/monthly-plan.yml
           status: active
           type: monthly_plan
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/monthly/2026-06/01-bft-reference-data-governance.md
           status: active
           type: monthly_document
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
           status: active
           type: monthly_document
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
           status: active
           type: test_protocol
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/monthly/monthly-defense-dashboard.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         []
       acceptance_criteria:
@@ -1007,133 +1213,199 @@ acceptance_dashboard:
           status: active
           type: methodology_note
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/dissertation-sync-plan.md
           status: active
           type: methodology_note
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/dissertation-impact-log.yml
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/dissertation-artifact-map.yml
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/section-update-queue.yml
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/dissertation-change-log.md
           status: active
           type: status_report
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/bibliography-registry.yml
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/citation-requests.yml
           status: active
           type: question_registry
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/terminology-control.yml
           status: active
           type: configuration
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-profiles/dissertation-editor-profile.md
           status: active
           type: prompt_profile
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-profiles/dissertation-editor-profile.yml
           status: active
           type: prompt_profile
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md
           status: active
           type: prompt_profile
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-profiles/forbidden-claims.yml
           status: active
           type: prompt_profile
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md
           status: active
           type: prompt_template
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-templates/dissertation-section-update.prompt.md
           status: active
           type: prompt_template
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md
           status: active
           type: prompt_template
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md
           status: active
           type: prompt_template
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md
           status: active
           type: prompt_template
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_dissertation_prompts.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_dissertation_prompts.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_dissertation_sync.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "make validate-dissertation-sync"
@@ -1296,61 +1568,91 @@ acceptance_dashboard:
           status: active
           type: documentation
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/audit/codex-spec-audit.md
           status: active
           type: audit_report
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_audit
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/audit/codex-spec-audit.yml
           status: active
           type: audit_profile
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/audit/language-policy.md
           status: active
           type: policy
           acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/audit/language-audit-report.md
           status: active
           type: audit_report
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_audit
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/audit/audit-findings.yml
           status: active
           type: audit_registry
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_audit
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/audit_codex_spec.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/audit_language_policy.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_audit_reports.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "make audit-codex-spec"
@@ -1536,19 +1838,28 @@ acceptance_dashboard:
           status: active
           type: policy
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_policy
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: scripts/validate_git_workflow.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "make validate-git-workflow"
@@ -1658,37 +1969,55 @@ acceptance_dashboard:
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_workbench
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/user-review-workbench.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_workbench
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_user_review_workbench.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_user_review_workbench.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/apply_user_review_decisions.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "git branch --show-current"
@@ -1858,13 +2187,19 @@ acceptance_dashboard:
           status: active
           type: validator_script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "git branch --show-current"
@@ -2012,79 +2347,118 @@ acceptance_dashboard:
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/module-contracts.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/grace/verification-plan.xml
           status: active
           type: grace_artifact
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: README.md
           status: active
           type: methodology_note
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance-dashboard.md
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_dashboard
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_acceptance_dashboard.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_post_acceptance_state.py
           status: active
           type: validator_script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/user-review-workbench.yml
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_workbench
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/user-review-workbench.yml
           status: active
           type: dashboard
           acceptance_status: pending
+          protection_status: not_protected_generated
+          source_category: generated_workbench
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/generate_user_review_workbench.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/validate_user_review_workbench.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: scripts/apply_user_review_decisions.py
           status: active
           type: script
           acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
           protection_locked: false
         -
           path: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_locked: false
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         -
           command: "git rev-parse --show-toplevel"
@@ -2255,3 +2629,269 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-10
         comments: "Принято. Проверено: make apply-user-review-decisions-dry-run и python3 scripts/apply_user_review_decisions.py --dry-run выполняются в non-writing режиме; сравнение git status до и после dry-run не выявило изменений. Режим --apply отделен от dry-run и защищен проверками обязательных user-owned полей, stale checksum, active blockers, запрета accepted_by = Codex и запрета перезаписи уже accepted reports. Manual verification и user_action решения в текущей версии не применяются автоматически. Accepted decisions EP-001–EP-013 не изменены. Planning decision DEC-EP-014-001 зафиксирован; перенос EP-014-ACCEPTED-ARTIFACT-PROTECTION на EP-018 подтвержден."
+    -
+      packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+      title: "Accepted artifact protection"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      artifacts:
+        -
+          path: AGENTS.md
+          status: active
+          type: agent_instruction
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_policy
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/grace/execution-packets.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/grace/module-contracts.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/grace/verification-plan.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_grace
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/project-plan.md
+          status: active
+          type: status_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/artifact-registry.yml
+          status: active
+          type: configuration
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_registry
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/traceability-matrix.md
+          status: active
+          type: architecture_note
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/decision-log.md
+          status: active
+          type: decision_log
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/status-report.md
+          status: active
+          type: status_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: scripts/validate_project_plan.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: Makefile
+          status: active
+          type: configuration
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: code
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/generate_acceptance_dashboard.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/validate_post_acceptance_state.py
+          status: active
+          type: validator_script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/generate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/validate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/protected-artifact-change-requests.yml
+          status: active
+          type: governance_registry
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/validate_accepted_artifact_protection.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        -
+          command: "make validate-accepted-artifact-protection"
+          status: documented
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "git diff -- docs/acceptance/EP-001-*.acceptance.md docs/acceptance/EP-002-*.acceptance.md docs/acceptance/EP-003-*.acceptance.md docs/acceptance/EP-004-*.acceptance.md docs/acceptance/EP-005-*.acceptance.md docs/acceptance/EP-007-*.acceptance.md docs/acceptance/EP-008-*.acceptance.md docs/acceptance/EP-009-*.acceptance.md docs/acceptance/EP-011-*.acceptance.md docs/acceptance/EP-012-*.acceptance.md docs/acceptance/EP-013-*.acceptance.md docs/acceptance/EP-014-*.acceptance.md"
+          status: documented
+        -
+          command: "git diff -- README.md CHANGELOG.md"
+          status: documented
+        -
+          command: "git status --short | grep -E \"\\.env|\\.venv|node_modules|\\.sql|\\.dump|\\.backup|thesis/source/.*\\.docx|thesis/versions/.*\\.docx|thesis/exports/pdf/.*\\.pdf\""
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-018-001
+          text: "Accepted acceptance reports are classified as protected in artifact registry."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-002
+          text: "Generated dashboards are classified as not_protected_generated."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-003
+          text: "Protected artifacts require explicit user approval for future changes."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-004
+          text: "Change request mechanism exists."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-005
+          text: "Validator checks protection discipline."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-006
+          text: "make check includes protection validation."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-007
+          text: "EP-010 cannot change protected accepted artifacts without approved change request."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-008
+          text: "Accepted reports EP-001 through EP-014 were not modified."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-009
+          text: "Generated dashboards remain regenerable and are not hard-locked."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-018-010
+          text: "User-owned fields are not modified by Codex."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-018-ACCEPTED-ARTIFACT-PROTECTION-RISK-001
+          text: "`README.md` и `CHANGELOG.md` классифицированы как protected; EP-010 потребует отдельного approval по `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION`."
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-10
+        comments: "Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся."

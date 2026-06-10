@@ -33,3 +33,25 @@
   - `docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md`
 - Acceptance impact: EP-014 остается `ready_for_acceptance`; пользовательское решение остается `pending`.
 - User approval: пользователь должен проверить и принять это решение при приемке EP-014.
+
+## DEC-EP-018-001 — Accepted Artifact Protection Classification
+
+- Decision ID: DEC-EP-018-001
+- Дата: 2026-06-10
+- Тип решения: governance / accepted artifact protection
+- Решение: accepted source/manual artifacts классифицируются как protected в `docs/artifact-registry.yml`.
+- Разделение: generated dashboards, generated workbench и generated audit reports не hard-lock; они классифицируются как derived/generated artifacts с `generator`, `derived_from` и `regeneration_command`.
+- Change request: будущие изменения protected accepted artifacts требуют записи в `docs/protected-artifact-change-requests.yml` и explicit user approval.
+- EP-010 guard: `EP-010-LANGUAGE-NORMALIZATION` не может менять protected accepted artifacts без approved change request.
+- Affected artifacts:
+  - `AGENTS.md`
+  - `docs/artifact-registry.yml`
+  - `docs/protected-artifact-change-requests.yml`
+  - `docs/grace/execution-packets.xml`
+  - `docs/grace/module-contracts.xml`
+  - `docs/grace/verification-plan.xml`
+  - `scripts/validate_accepted_artifact_protection.py`
+  - `Makefile`
+  - `docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md`
+- Acceptance impact: EP-018 получает статус `ready_for_acceptance`; пользовательское решение остается `pending`.
+- User approval: пользователь должен проверить classification/protection metadata и принять или отклонить EP-018.

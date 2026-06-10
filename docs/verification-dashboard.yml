@@ -15,7 +15,7 @@ verification_dashboard:
     not_applicable: 0
   warnings:
     []
-  verification_scenarios_count: 95
+  verification_scenarios_count: 103
   checks:
     -
       check_id: VT-EP-004-001

@@ -1,44 +1,63 @@
 registry_version: 1
-updated_at: 2026-06-08
+updated_at: 2026-06-10
 artifacts:
-  - artifact_id: ART-AGENTS-001
-    name: Agent instructions
+  -
+    artifact_id: ART-AGENTS-001
+    name: "Agent instructions"
     type: agent_instruction
     path: AGENTS.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-008
       - REQ-009
       - REQ-010
     status: active
-    description: Agent discipline for domain rules, reference governance, and acceptance ownership.
+    description: "Agent discipline for domain rules, reference governance, and acceptance ownership."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-006
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex must not set accepted.
-  - artifact_id: ART-GRACE-EXECUTION-PACKETS
-    name: GRACE execution packets
+    notes: "Codex must not set accepted."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_policy
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GRACE-EXECUTION-PACKETS
+    name: "GRACE execution packets"
     type: grace_artifact
     path: docs/grace/execution-packets.xml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -50,37 +69,55 @@ artifacts:
       - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       - EP-007-VERIFICATION-DASHBOARD
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-009
       - REQ-010
     status: active
-    description: Execution packet definitions, expected artifacts, and acceptance criteria.
+    description: "Execution packet definitions, expected artifacts, and acceptance criteria."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-002
         - V-PLAN-006
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: EP-007 status is ready_for_acceptance, not accepted.
-  - artifact_id: ART-GRACE-KNOWLEDGE-GRAPH
-    name: GRACE knowledge graph
+    notes: "EP-007 status is ready_for_acceptance, not accepted."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_grace
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GRACE-KNOWLEDGE-GRAPH
+    name: "GRACE knowledge graph"
     type: grace_artifact
     path: docs/grace/knowledge-graph.xml
     owner_module: M-MATCHING
@@ -93,7 +130,7 @@ artifacts:
       - REQ-003
       - REQ-004
     status: active
-    description: Domain graph with allowed and forbidden edges.
+    description: "Domain graph with allowed and forbidden edges."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -102,24 +139,41 @@ artifacts:
         - REQ-001
         - REQ-002
       last_checked_at: 2026-06-05
-      evidence: Manual read before EP-004 changes
+      evidence: "Manual read before EP-004 changes"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Not modified by EP-004.
-  - artifact_id: ART-GRACE-MODULE-CONTRACTS
-    name: GRACE module contracts
+    notes: "Not modified by EP-004."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_grace
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GRACE-MODULE-CONTRACTS
+    name: "GRACE module contracts"
     type: grace_artifact
     path: docs/grace/module-contracts.xml
     owner_module: M-REFERENCE-GOVERNANCE
@@ -128,38 +182,56 @@ artifacts:
       - EP-003-REFERENCE-VERSIONING
       - EP-007-VERIFICATION-DASHBOARD
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-005
       - REQ-006
       - REQ-007
     status: active
-    description: Module contracts for reference governance, versioning, and matching requirements.
+    description: "Module contracts for reference governance, versioning, and matching requirements."
     created_at: 2026-06-04
-    updated_at: 2026-06-04
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-REF-GOV-001
         - V-REF-VERSION-001
       last_checked_at: 2026-06-05
-      evidence: make validate-reference
+      evidence: "make validate-reference"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Maintains evidence requirements for matching rules.
-  - artifact_id: ART-GRACE-VERIFICATION-PLAN
-    name: GRACE verification plan
+    notes: "Maintains evidence requirements for matching rules."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_grace
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GRACE-VERIFICATION-PLAN
+    name: "GRACE verification plan"
     type: grace_artifact
     path: docs/grace/verification-plan.xml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -170,39 +242,57 @@ artifacts:
       - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       - EP-007-VERIFICATION-DASHBOARD
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-005
       - REQ-008
       - REQ-009
       - REQ-010
     status: active
-    description: Verification scenarios for reference governance, versioning, and project planning acceptance.
+    description: "Verification scenarios for reference governance, versioning, and project planning acceptance."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
         - V-PLAN-008
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Includes V-PLAN, V-DASH, and V-VERIFICATION-DASH scenarios.
-  - artifact_id: ART-GRACE-README
-    name: GRACE README
+    notes: "Includes V-PLAN, V-DASH, and V-VERIFICATION-DASH scenarios."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_grace
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GRACE-README
+    name: "GRACE README"
     type: grace_artifact
     path: docs/grace/README.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -214,7 +304,7 @@ artifacts:
     related_requirements:
       - REQ-009
     status: active
-    description: Human-readable description of GRACE-light artifact roles.
+    description: "Human-readable description of GRACE-light artifact roles."
     created_at: 2026-06-04
     updated_at: 2026-06-05
     verification:
@@ -222,46 +312,64 @@ artifacts:
       scenarios:
         - V-PLAN-007
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Supports local governance orientation.
-  - artifact_id: ART-PROJECT-PLAN
-    name: Project plan
+    notes: "Supports local governance orientation."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-PROJECT-PLAN
+    name: "Project plan"
     type: status_report
     path: docs/project-plan.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-008
       - REQ-009
       - REQ-010
     status: active
-    description: Human-readable project plan and packet status summary.
+    description: "Human-readable project plan and packet status summary."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-007
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -270,70 +378,105 @@ artifacts:
     depends_on:
       - ART-GRACE-EXECUTION-PACKETS
       - ART-ARTIFACT-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Human-readable only, not sole source of truth.
-  - artifact_id: ART-ARTIFACT-REGISTRY
-    name: Artifact registry
+    notes: "Human-readable only, not sole source of truth."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ARTIFACT-REGISTRY
+    name: "Artifact registry"
     type: configuration
     path: docs/artifact-registry.yml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-010
     status: active
-    description: Source of truth for created project artifacts and acceptance state.
+    description: "Source of truth for created project artifacts and acceptance state."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
         - V-PLAN-008
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Do not register caches, .env, or real large local reference data.
-  - artifact_id: ART-TRACEABILITY-MATRIX
-    name: Traceability matrix
+    notes: "Do not register caches, .env, or real large local reference data."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_registry
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-TRACEABILITY-MATRIX
+    name: "Traceability matrix"
     type: architecture_note
     path: docs/traceability-matrix.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-001
       - REQ-010
     status: active
-    description: Requirement to module, packet, artifact, verification, and acceptance mapping.
+    description: "Requirement to module, packet, artifact, verification, and acceptance mapping."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -342,35 +485,52 @@ artifacts:
     depends_on:
       - ART-GRACE-KNOWLEDGE-GRAPH
       - ART-GRACE-VERIFICATION-PLAN
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Captures REQ-001 through REQ-010.
-  - artifact_id: ART-DECISION-LOG
-    name: Decision log
+    notes: "Captures REQ-001 through REQ-010."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-DECISION-LOG
+    name: "Decision log"
     type: decision_log
     path: docs/decision-log.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-001
       - REQ-008
     status: active
-    description: Project decisions DEC-001 through DEC-009.
+    description: "Project decisions DEC-001 through DEC-009."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -378,35 +538,52 @@ artifacts:
       comments: null
     depends_on:
       - ART-GRACE-KNOWLEDGE-GRAPH
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: User remains acceptance owner.
-  - artifact_id: ART-STATUS-REPORT
-    name: Status report
+    notes: "User remains acceptance owner."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-STATUS-REPORT
+    name: "Status report"
     type: status_report
     path: docs/status-report.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-008
       - REQ-009
     status: active
-    description: Current project snapshot, blockers, risks, and next step.
+    description: "Current project snapshot, blockers, risks, and next step."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-007
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -414,14 +591,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-PROJECT-PLAN
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Current packet is EP-004.
-  - artifact_id: ART-ACCEPTANCE-README
-    name: Acceptance README
+    notes: "Current packet is EP-004."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-README
+    name: "Acceptance README"
     type: acceptance_report
     path: docs/acceptance/README.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -431,7 +624,7 @@ artifacts:
       - REQ-008
       - REQ-009
     status: active
-    description: Explains acceptance report usage and ownership.
+    description: "Explains acceptance report usage and ownership."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -439,24 +632,41 @@ artifacts:
       scenarios:
         - V-PLAN-003
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: User fills acceptance decisions.
-  - artifact_id: ART-ACCEPTANCE-TEMPLATE
-    name: Acceptance template
+    notes: "User fills acceptance decisions."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_acceptance
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-TEMPLATE
+    name: "Acceptance template"
     type: acceptance_report
     path: docs/acceptance/ACCEPTANCE_TEMPLATE.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -466,7 +676,7 @@ artifacts:
       - REQ-008
       - REQ-009
     status: active
-    description: Template for future packet acceptance reports.
+    description: "Template for future packet acceptance reports."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -474,24 +684,41 @@ artifacts:
       scenarios:
         - V-PLAN-003
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Decision fields must not be filled by Codex.
-  - artifact_id: ART-ACCEPTANCE-EP-001
-    name: EP-001 acceptance report
+    notes: "Decision fields must not be filled by Codex."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_acceptance
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-001
+    name: "EP-001 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-001-INFRA.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -501,7 +728,7 @@ artifacts:
       - REQ-008
       - REQ-009
     status: active
-    description: Acceptance checklist for EP-001 local infrastructure.
+    description: "Acceptance checklist for EP-001 local infrastructure."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -509,24 +736,41 @@ artifacts:
       scenarios:
         - V-PLAN-003
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-001-INFRA.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Docker runtime remains user-side check when Docker is available.
-  - artifact_id: ART-ACCEPTANCE-EP-002
-    name: EP-002 acceptance report
+    notes: "Docker runtime remains user-side check when Docker is available."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-001-INFRA
+      user_decision_source: docs/acceptance/EP-001-INFRA.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-002
+    name: "EP-002 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -537,7 +781,7 @@ artifacts:
       - REQ-006
       - REQ-008
     status: active
-    description: Acceptance checklist for reference governance.
+    description: "Acceptance checklist for reference governance."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -545,24 +789,41 @@ artifacts:
       scenarios:
         - V-PLAN-003
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: No real reference data is imported.
-  - artifact_id: ART-ACCEPTANCE-EP-003
-    name: EP-003 acceptance report
+    notes: "No real reference data is imported."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-002-REFERENCE-GOVERNANCE
+      user_decision_source: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-003
+    name: "EP-003 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -572,7 +833,7 @@ artifacts:
       - REQ-007
       - REQ-008
     status: active
-    description: Acceptance checklist for reference versioning scaffolding.
+    description: "Acceptance checklist for reference versioning scaffolding."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -580,24 +841,41 @@ artifacts:
       scenarios:
         - V-PLAN-003
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Uses fake fixtures only.
-  - artifact_id: ART-ACCEPTANCE-EP-004
-    name: EP-004 acceptance report
+    notes: "Uses fake fixtures only."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-003-REFERENCE-VERSIONING
+      user_decision_source: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-004
+    name: "EP-004 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -608,7 +886,7 @@ artifacts:
       - REQ-009
       - REQ-010
     status: active
-    description: Acceptance checklist for project planning and acceptance contour.
+    description: "Acceptance checklist for project planning and acceptance contour."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -617,10 +895,10 @@ artifacts:
         - V-PLAN-003
         - V-PLAN-004
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -629,14 +907,30 @@ artifacts:
     depends_on:
       - ART-PROJECT-PLAN
       - ART-ARTIFACT-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Current packet report, Codex status ready_for_acceptance.
-  - artifact_id: ART-VALIDATE-PROJECT-PLAN
-    name: Project plan validator
+    notes: "Current packet report, Codex status ready_for_acceptance."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      user_decision_source: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-VALIDATE-PROJECT-PLAN
+    name: "Project plan validator"
     type: script
     path: scripts/validate_project_plan.py
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -644,14 +938,15 @@ artifacts:
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
       - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       - EP-007-VERIFICATION-DASHBOARD
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-008
       - REQ-009
       - REQ-010
     status: active
-    description: Validates artifact registry paths, acceptance reports, dashboards, accepted_by/decided_by rules, expected artifacts, and project-plan links.
+    description: "Validates artifact registry paths, acceptance reports, dashboards, accepted_by/decided_by rules, expected artifacts, and project-plan links."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
@@ -663,10 +958,10 @@ artifacts:
         - V-VERIFICATION-DASH-001
         - V-VERIFICATION-DASH-005
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
@@ -675,14 +970,30 @@ artifacts:
     depends_on:
       - ART-ARTIFACT-REGISTRY
       - ART-GRACE-EXECUTION-PACKETS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Uses standard library and scripts/reference_utils.py; extended by EP-005 and EP-007 for dashboards.
-  - artifact_id: ART-README
-    name: Repository README
+    notes: "Uses standard library and scripts/reference_utils.py; extended by EP-005 and EP-007 for dashboards."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-README
+    name: "Repository README"
     type: methodology_note
     path: README.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -694,7 +1005,7 @@ artifacts:
       - REQ-008
       - REQ-009
     status: active
-    description: Local run, reference data, and planning acceptance workflow instructions.
+    description: "Local run, reference data, and planning acceptance workflow instructions."
     created_at: 2026-06-04
     updated_at: 2026-06-05
     verification:
@@ -702,23 +1013,40 @@ artifacts:
       scenarios:
         - V-PLAN-007
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Documents that only user can accept results.
-  - artifact_id: ART-CHANGELOG
+    notes: "Documents that only user can accept results."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-CHANGELOG
     name: Changelog
     type: status_report
     path: CHANGELOG.md
@@ -731,7 +1059,7 @@ artifacts:
     related_requirements:
       - REQ-009
     status: active
-    description: Project change history for first release.
+    description: "Project change history for first release."
     created_at: 2026-06-04
     updated_at: 2026-06-05
     verification:
@@ -739,23 +1067,40 @@ artifacts:
       scenarios:
         - V-PLAN-001
       last_checked_at: 2026-06-05
-      evidence: file exists
+      evidence: "file exists"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Version remains 0.1.0 before first commit.
-  - artifact_id: ART-MAKEFILE
+    notes: "Version remains 0.1.0 before first commit."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_manual
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-MAKEFILE
     name: Makefile
     type: configuration
     path: Makefile
@@ -763,35 +1108,53 @@ artifacts:
     related_packets:
       - EP-001-INFRA
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-009
     status: active
-    description: Local project commands including validate-plan.
+    description: "Local project commands including validate-plan."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
       last_checked_at: 2026-06-05
-      evidence: make check
+      evidence: "make check"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: check includes validate-plan and Docker skip remains explicit.
-  - artifact_id: ART-REFERENCE-POLICY
-    name: Reference data policy
+    notes: "check includes validate-plan and Docker skip remains explicit."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: code
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-POLICY
+    name: "Reference data policy"
     type: methodology_note
     path: docs/07-reference-data-policy.md
     owner_module: M-REFERENCE-GOVERNANCE
@@ -801,7 +1164,7 @@ artifacts:
       - REQ-005
       - REQ-006
     status: active
-    description: No source, no rule policy and reference evidence requirements.
+    description: "No source, no rule policy and reference evidence requirements."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -809,24 +1172,41 @@ artifacts:
       scenarios:
         - V-REF-GOV-001
       last_checked_at: 2026-06-05
-      evidence: make validate-reference
+      evidence: "make validate-reference"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not contain real normative data.
-  - artifact_id: ART-SOURCE-MANIFEST
-    name: Source manifest
+    notes: "Does not contain real normative data."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_policy
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-SOURCE-MANIFEST
+    name: "Source manifest"
     type: reference_manifest
     path: data/reference/manifests/source-manifest.yml
     owner_module: M-REFERENCE-GOVERNANCE
@@ -836,7 +1216,7 @@ artifacts:
       - REQ-005
       - REQ-006
     status: active
-    description: Manifest template and source registry for accepted reference sources.
+    description: "Manifest template and source registry for accepted reference sources."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -845,24 +1225,41 @@ artifacts:
         - V-REF-GOV-001
         - V-REF-GOV-004
       last_checked_at: 2026-06-05
-      evidence: make validate-reference
+      evidence: "make validate-reference"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: sources list is empty until user provides local evidence.
-  - artifact_id: ART-IMPORT-LOG
-    name: Reference import log
+    notes: "sources list is empty until user provides local evidence."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-IMPORT-LOG
+    name: "Reference import log"
     type: reference_manifest
     path: data/reference/manifests/import-log.yml
     owner_module: M-REFERENCE-GOVERNANCE
@@ -871,7 +1268,7 @@ artifacts:
     related_requirements:
       - REQ-005
     status: active
-    description: Import journal for reference data sources.
+    description: "Import journal for reference data sources."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -879,10 +1276,10 @@ artifacts:
       scenarios:
         - V-REF-GOV-004
       last_checked_at: 2026-06-05
-      evidence: make validate-reference
+      evidence: "make validate-reference"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
@@ -890,14 +1287,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-SOURCE-MANIFEST
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: No real imports accepted yet.
-  - artifact_id: ART-DATA-QUESTIONS
-    name: Data question registries
+    notes: "No real imports accepted yet."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-QUESTIONS
+    name: "Data question registries"
     type: question_registry
     path: data/questions/data-requirements.yml
     owner_module: M-REFERENCE-GOVERNANCE
@@ -907,7 +1320,7 @@ artifacts:
       - REQ-005
       - REQ-006
     status: active
-    description: Structured data requirements for missing reference sources.
+    description: "Structured data requirements for missing reference sources."
     created_at: 2026-06-04
     updated_at: 2026-06-05
     verification:
@@ -915,10 +1328,10 @@ artifacts:
       scenarios:
         - V-REF-GOV-004
       last_checked_at: 2026-06-05
-      evidence: make generate-data-questions
+      evidence: "make generate-data-questions"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
@@ -926,14 +1339,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-SOURCE-MANIFEST
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Other question registry files live in data/questions/.
-  - artifact_id: ART-REFERENCE-VERSIONING-SCHEMA
-    name: Reference versioning schema
+    notes: "Other question registry files live in data/questions/."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-VERSIONING-SCHEMA
+    name: "Reference versioning schema"
     type: database_schema
     path: db/schemas/reference_versioning.sql
     owner_module: M-REFERENCE-VERSIONING
@@ -942,7 +1371,7 @@ artifacts:
     related_requirements:
       - REQ-007
     status: active
-    description: Conceptual SQL schema for delta-based reference versioning.
+    description: "Conceptual SQL schema for delta-based reference versioning."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -950,24 +1379,41 @@ artifacts:
       scenarios:
         - V-REF-VERSION-001
       last_checked_at: 2026-06-05
-      evidence: make compare-reference-fixtures
+      evidence: "make compare-reference-fixtures"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Documentation schema, not applied migration.
-  - artifact_id: ART-MATCHING-RULE-DRAFT
-    name: Partition brick draft matching rule
+    notes: "Documentation schema, not applied migration."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-RULE-DRAFT
+    name: "Partition brick draft matching rule"
     type: matching_rule
     path: rules/matching/partition_brick_120_reinf.yaml
     owner_module: M-MATCHING
@@ -979,7 +1425,7 @@ artifacts:
       - REQ-005
       - REQ-006
     status: draft
-    description: Draft rule with missing evidence and no invented KSI/GESN values.
+    description: "Draft rule with missing evidence and no invented KSI/GESN values."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -987,10 +1433,10 @@ artifacts:
       scenarios:
         - V-REF-GOV-003
       last_checked_at: 2026-06-05
-      evidence: make validate-reference
+      evidence: "make validate-reference"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
       accepted_at: null
@@ -998,14 +1444,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-SOURCE-MANIFEST
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Status remains draft_requires_data in the rule itself.
-  - artifact_id: ART-COMPARE-REFERENCE-RELEASES
-    name: Reference release comparison script
+    notes: "Status remains draft_requires_data in the rule itself."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-COMPARE-REFERENCE-RELEASES
+    name: "Reference release comparison script"
     type: script
     path: scripts/compare_reference_releases.py
     owner_module: M-REFERENCE-VERSIONING
@@ -1014,7 +1476,7 @@ artifacts:
     related_requirements:
       - REQ-007
     status: active
-    description: Compares small JSON/YAML reference fixtures and reports added, changed, deleted, unchanged records.
+    description: "Compares small JSON/YAML reference fixtures and reports added, changed, deleted, unchanged records."
     created_at: 2026-06-04
     updated_at: 2026-06-04
     verification:
@@ -1023,24 +1485,41 @@ artifacts:
         - V-REF-VERSION-001
         - V-REF-VERSION-004
       last_checked_at: 2026-06-05
-      evidence: make compare-reference-fixtures
+      evidence: "make compare-reference-fixtures"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Uses fake fixtures only.
-  - artifact_id: ART-ACCEPTANCE-DASHBOARD-MD
-    name: Acceptance dashboard Markdown
+    notes: "Uses fake fixtures only."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-DASHBOARD-MD
+    name: "Acceptance dashboard Markdown"
     type: dashboard
     path: docs/acceptance-dashboard.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1052,7 +1531,7 @@ artifacts:
       - REQ-009
       - REQ-010
     status: active
-    description: Human-readable single window for packet acceptance status and protected accepted artifacts.
+    description: "Human-readable single window for packet acceptance status and protected accepted artifacts."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1062,10 +1541,10 @@ artifacts:
         - V-DASH-003
         - V-DASH-009
       last_checked_at: 2026-06-05
-      evidence: make generate-dashboards && make validate-plan
+      evidence: "make generate-dashboards && make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1074,14 +1553,32 @@ artifacts:
     depends_on:
       - ART-GRACE-EXECUTION-PACKETS
       - ART-ARTIFACT-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Generated file; user decisions remain in acceptance reports and YAML.
-  - artifact_id: ART-ACCEPTANCE-DASHBOARD-YML
-    name: Acceptance dashboard YAML
+    notes: "Generated file; user decisions remain in acceptance reports and YAML."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_acceptance_dashboard.py
+      derived_from:
+        - docs/grace/execution-packets.xml
+        - docs/artifact-registry.yml
+        - docs/acceptance/
+      regeneration_command: "make generate-acceptance-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-DASHBOARD-YML
+    name: "Acceptance dashboard YAML"
     type: dashboard
     path: docs/acceptance-dashboard.yml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1092,7 +1589,7 @@ artifacts:
       - REQ-009
       - REQ-010
     status: active
-    description: Machine-readable acceptance dashboard generated from execution packets, artifact registry, and acceptance reports.
+    description: "Machine-readable acceptance dashboard generated from execution packets, artifact registry, and acceptance reports."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1102,10 +1599,10 @@ artifacts:
         - V-DASH-003
         - V-DASH-004
       last_checked_at: 2026-06-05
-      evidence: make generate-dashboards && make validate-plan
+      evidence: "make generate-dashboards && make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1114,14 +1611,32 @@ artifacts:
     depends_on:
       - ART-GRACE-EXECUTION-PACKETS
       - ART-ARTIFACT-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex must not change user acceptance decisions to accepted.
-  - artifact_id: ART-USER-ACTION-DASHBOARD-MD
-    name: User action dashboard Markdown
+    notes: "Codex must not change user acceptance decisions to accepted."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_acceptance_dashboard.py
+      derived_from:
+        - docs/grace/execution-packets.xml
+        - docs/artifact-registry.yml
+        - docs/acceptance/
+      regeneration_command: "make generate-acceptance-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-USER-ACTION-DASHBOARD-MD
+    name: "User action dashboard Markdown"
     type: dashboard
     path: docs/user-action-dashboard.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1132,7 +1647,7 @@ artifacts:
       - REQ-006
       - REQ-008
     status: active
-    description: Human-readable single window for open user questions and actions.
+    description: "Human-readable single window for open user questions and actions."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1142,10 +1657,10 @@ artifacts:
         - V-DASH-007
         - V-DASH-008
       last_checked_at: 2026-06-05
-      evidence: make generate-dashboards && make validate-plan
+      evidence: "make generate-dashboards && make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1153,14 +1668,31 @@ artifacts:
       comments: null
     depends_on:
       - ART-DATA-QUESTIONS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Generated file; Codex must not fill answered_by or answered_at for the user.
-  - artifact_id: ART-USER-ACTION-DASHBOARD-YML
-    name: User action dashboard YAML
+    notes: "Generated file; Codex must not fill answered_by or answered_at for the user."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_user_action_dashboard.py
+      derived_from:
+        - data/questions/
+        - docs/audit/audit-findings.yml
+      regeneration_command: "make generate-user-action-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-USER-ACTION-DASHBOARD-YML
+    name: "User action dashboard YAML"
     type: dashboard
     path: docs/user-action-dashboard.yml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1171,7 +1703,7 @@ artifacts:
       - REQ-006
       - REQ-008
     status: active
-    description: Machine-readable user action dashboard generated from data/questions/*.yml.
+    description: "Machine-readable user action dashboard generated from data/questions/*.yml."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1181,10 +1713,10 @@ artifacts:
         - V-DASH-007
         - V-DASH-011
       last_checked_at: 2026-06-05
-      evidence: make generate-dashboards && make validate-plan
+      evidence: "make generate-dashboards && make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1192,28 +1724,46 @@ artifacts:
       comments: null
     depends_on:
       - ART-DATA-QUESTIONS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Missing question files are warnings, not automatic closures.
-  - artifact_id: ART-GENERATE-ACCEPTANCE-DASHBOARD
-    name: Acceptance dashboard generator
+    notes: "Missing question files are warnings, not automatic closures."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_user_action_dashboard.py
+      derived_from:
+        - data/questions/
+        - docs/audit/audit-findings.yml
+      regeneration_command: "make generate-user-action-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-GENERATE-ACCEPTANCE-DASHBOARD
+    name: "Acceptance dashboard generator"
     type: script
     path: scripts/generate_acceptance_dashboard.py
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-008
       - REQ-009
       - REQ-010
     status: active
-    description: Generates acceptance dashboard Markdown and YAML from packet, registry, and acceptance sources.
+    description: "Generates acceptance dashboard Markdown and YAML from packet, registry, and acceptance sources."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
@@ -1222,10 +1772,10 @@ artifacts:
         - V-DASH-003
         - V-USER-DECISION-CLI-008
       last_checked_at: 2026-06-05
-      evidence: make generate-acceptance-dashboard
+      evidence: "make generate-acceptance-dashboard"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1234,14 +1784,30 @@ artifacts:
     depends_on:
       - ART-GRACE-EXECUTION-PACKETS
       - ART-ARTIFACT-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not mark acceptance decisions as accepted.
-  - artifact_id: ART-GENERATE-USER-ACTION-DASHBOARD
-    name: User action dashboard generator
+    notes: "Does not mark acceptance decisions as accepted."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-GENERATE-USER-ACTION-DASHBOARD
+    name: "User action dashboard generator"
     type: script
     path: scripts/generate_user_action_dashboard.py
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1252,7 +1818,7 @@ artifacts:
       - REQ-006
       - REQ-008
     status: active
-    description: Generates user action dashboard Markdown and YAML from data/questions/*.yml.
+    description: "Generates user action dashboard Markdown and YAML from data/questions/*.yml."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1262,10 +1828,10 @@ artifacts:
         - V-DASH-006
         - V-DASH-007
       last_checked_at: 2026-06-05
-      evidence: make generate-user-action-dashboard
+      evidence: "make generate-user-action-dashboard"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1273,14 +1839,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DATA-QUESTIONS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not close questions or fill user response fields.
-  - artifact_id: ART-ACCEPTANCE-EP-005
-    name: EP-005 acceptance report
+    notes: "Does not close questions or fill user response fields."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-005
+    name: "EP-005 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1291,7 +1873,7 @@ artifacts:
       - REQ-009
       - REQ-010
     status: active
-    description: Acceptance checklist for dashboards and accepted artifact protection.
+    description: "Acceptance checklist for dashboards and accepted artifact protection."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1301,10 +1883,10 @@ artifacts:
         - V-DASH-004
         - V-DASH-010
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
       accepted_at: null
@@ -1313,14 +1895,30 @@ artifacts:
     depends_on:
       - ART-ACCEPTANCE-DASHBOARD-MD
       - ART-USER-ACTION-DASHBOARD-MD
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Current packet report, Codex status ready_for_acceptance.
-  - artifact_id: ART-VERIFICATION-DASHBOARD-MD
-    name: Verification dashboard Markdown
+    notes: "Current packet report, Codex status ready_for_acceptance."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      user_decision_source: docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-VERIFICATION-DASHBOARD-MD
+    name: "Verification dashboard Markdown"
     type: dashboard
     path: docs/verification-dashboard.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1330,7 +1928,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Human-readable manual verification window for test protocol checks.
+    description: "Human-readable manual verification window for test protocol checks."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1339,10 +1937,10 @@ artifacts:
         - V-VERIFICATION-DASH-001
         - V-VERIFICATION-DASH-007
       last_checked_at: 2026-06-05
-      evidence: make generate-verification-dashboard && make validate-verification
+      evidence: "make generate-verification-dashboard && make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1350,14 +1948,31 @@ artifacts:
       comments: null
     depends_on:
       - ART-MONTHLY-TEST-PROTOCOL-2026-06
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Generated file; manual checks remain user-owned.
-  - artifact_id: ART-VERIFICATION-DASHBOARD-YML
-    name: Verification dashboard YAML
+    notes: "Generated file; manual checks remain user-owned."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_verification_dashboard.py
+      derived_from:
+        - docs/grace/verification-plan.xml
+        - docs/monthly/
+      regeneration_command: "make generate-verification-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-VERIFICATION-DASHBOARD-YML
+    name: "Verification dashboard YAML"
     type: dashboard
     path: docs/verification-dashboard.yml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1367,7 +1982,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Machine-readable verification task registry for manual and command checks.
+    description: "Machine-readable verification task registry for manual and command checks."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1377,10 +1992,10 @@ artifacts:
         - V-VERIFICATION-DASH-003
         - V-VERIFICATION-DASH-004
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1389,14 +2004,31 @@ artifacts:
     depends_on:
       - ART-MONTHLY-TEST-PROTOCOL-2026-06
       - ART-GRACE-VERIFICATION-PLAN
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: User_result fields must be filled by Дмитрий, not Codex.
-  - artifact_id: ART-GENERATE-VERIFICATION-DASHBOARD
-    name: Verification dashboard generator
+    notes: "User_result fields must be filled by Дмитрий, not Codex."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_dashboard
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_verification_dashboard.py
+      derived_from:
+        - docs/grace/verification-plan.xml
+        - docs/monthly/
+      regeneration_command: "make generate-verification-dashboard"
+      protected_since: null
+  -
+    artifact_id: ART-GENERATE-VERIFICATION-DASHBOARD
+    name: "Verification dashboard generator"
     type: script
     path: scripts/generate_verification_dashboard.py
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1406,7 +2038,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Generates verification dashboard Markdown and YAML from verification plan, monthly protocol, acceptance dashboard, and registry.
+    description: "Generates verification dashboard Markdown and YAML from verification plan, monthly protocol, acceptance dashboard, and registry."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1415,10 +2047,10 @@ artifacts:
         - V-VERIFICATION-DASH-001
         - V-VERIFICATION-DASH-002
       last_checked_at: 2026-06-05
-      evidence: make generate-verification-dashboard
+      evidence: "make generate-verification-dashboard"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1426,14 +2058,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-GRACE-VERIFICATION-PLAN
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Preserves existing user_result fields and never writes checked_by=Codex.
-  - artifact_id: ART-VALIDATE-VERIFICATION-DASHBOARD
-    name: Verification dashboard validator
+    notes: "Preserves existing user_result fields and never writes checked_by=Codex."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-VERIFICATION-DASHBOARD
+    name: "Verification dashboard validator"
     type: script
     path: scripts/validate_verification_dashboard.py
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1443,7 +2091,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Validates verification-dashboard.yml and manual check ownership rules.
+    description: "Validates verification-dashboard.yml and manual check ownership rules."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1454,10 +2102,10 @@ artifacts:
         - V-VERIFICATION-DASH-005
         - V-VERIFICATION-DASH-006
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1465,14 +2113,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-VERIFICATION-DASHBOARD-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Rejects checked_by=Codex.
-  - artifact_id: ART-MONTHLY-PLAN-2026-06
-    name: Monthly plan 2026-06
+    notes: "Rejects checked_by=Codex."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-PLAN-2026-06
+    name: "Monthly plan 2026-06"
     type: monthly_plan
     path: docs/monthly/monthly-plan.yml
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1481,7 +2145,7 @@ artifacts:
     related_requirements:
       - REQ-010
     status: active
-    description: Monthly plan source used by verification dashboard checks VT-EP-006-001..003.
+    description: "Monthly plan source used by verification dashboard checks VT-EP-006-001..003."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1489,24 +2153,41 @@ artifacts:
       scenarios:
         - V-VERIFICATION-DASH-007
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Created because monthly sources were absent in the local repo.
-  - artifact_id: ART-MONTHLY-BFT-2026-06
-    name: Monthly BFT 2026-06
+    notes: "Created because monthly sources were absent in the local repo."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-BFT-2026-06
+    name: "Monthly BFT 2026-06"
     type: monthly_document
     path: docs/monthly/2026-06/01-bft-reference-data-governance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1515,7 +2196,7 @@ artifacts:
     related_requirements:
       - REQ-010
     status: active
-    description: BFT source used by verification check VT-EP-006-004.
+    description: "BFT source used by verification check VT-EP-006-004."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1523,10 +2204,10 @@ artifacts:
       scenarios:
         - V-VERIFICATION-DASH-008
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1534,14 +2215,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-MONTHLY-PLAN-2026-06
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Contains no invented normative data.
-  - artifact_id: ART-MONTHLY-TZ-2026-06
-    name: Monthly TZ 2026-06
+    notes: "Contains no invented normative data."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-TZ-2026-06
+    name: "Monthly TZ 2026-06"
     type: monthly_document
     path: docs/monthly/2026-06/02-technical-task-reference-data-governance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1550,7 +2247,7 @@ artifacts:
     related_requirements:
       - REQ-010
     status: active
-    description: TZ source used by verification check VT-EP-006-005.
+    description: "TZ source used by verification check VT-EP-006-005."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1558,10 +2255,10 @@ artifacts:
       scenarios:
         - V-VERIFICATION-DASH-008
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1569,14 +2266,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-MONTHLY-PLAN-2026-06
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Contains no business implementation or normative data.
-  - artifact_id: ART-MONTHLY-TEST-PROTOCOL-2026-06
-    name: Monthly test protocol 2026-06
+    notes: "Contains no business implementation or normative data."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-TEST-PROTOCOL-2026-06
+    name: "Monthly test protocol 2026-06"
     type: test_protocol
     path: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1586,7 +2299,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Monthly test protocol linked to verification dashboard check ids.
+    description: "Monthly test protocol linked to verification dashboard check ids."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1595,10 +2308,10 @@ artifacts:
         - V-VERIFICATION-DASH-007
         - V-VERIFICATION-DASH-008
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1606,14 +2319,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-MONTHLY-PLAN-2026-06
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Source protocol for verification dashboard; does not mark checks passed.
-  - artifact_id: ART-MONTHLY-DEFENSE-DASHBOARD-2026-06
-    name: Monthly defense dashboard 2026-06
+    notes: "Source protocol for verification dashboard; does not mark checks passed."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-DEFENSE-DASHBOARD-2026-06
+    name: "Monthly defense dashboard 2026-06"
     type: dashboard
     path: docs/monthly/monthly-defense-dashboard.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1622,7 +2351,7 @@ artifacts:
     related_requirements:
       - REQ-010
     status: active
-    description: Monthly defense summary that points to verification dashboard as the source of check execution facts.
+    description: "Monthly defense summary that points to verification dashboard as the source of check execution facts."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1630,10 +2359,10 @@ artifacts:
       scenarios:
         - V-VERIFICATION-DASH-008
       last_checked_at: 2026-06-05
-      evidence: make validate-verification
+      evidence: "make validate-verification"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1641,14 +2370,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-VERIFICATION-DASHBOARD-MD
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not replace acceptance dashboard.
-  - artifact_id: ART-ACCEPTANCE-EP-007
-    name: EP-007 acceptance report
+    notes: "Does not replace acceptance dashboard."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-007
+    name: "EP-007 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
@@ -1658,7 +2403,7 @@ artifacts:
       - REQ-008
       - REQ-010
     status: active
-    description: Acceptance checklist for verification dashboard packet.
+    description: "Acceptance checklist for verification dashboard packet."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1667,10 +2412,10 @@ artifacts:
         - V-VERIFICATION-DASH-001
         - V-VERIFICATION-DASH-004
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
       accepted_at: null
@@ -1679,14 +2424,30 @@ artifacts:
     depends_on:
       - ART-VERIFICATION-DASHBOARD-MD
       - ART-VERIFICATION-DASHBOARD-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Current packet report, Codex status ready_for_acceptance.
-  - artifact_id: ART-DISSERTATION-README
-    name: Dissertation synchronization README
+    notes: "Current packet report, Codex status ready_for_acceptance."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-007-VERIFICATION-DASHBOARD
+      user_decision_source: docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-DISSERTATION-README
+    name: "Dissertation synchronization README"
     type: methodology_note
     path: docs/dissertation/README.md
     owner_module: M-DISSERTATION-SYNC
@@ -1695,7 +2456,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Explains dissertation synchronization workflow, prompt/patch queues, DOCX guardrails, and accepted artifact protection.
+    description: "Explains dissertation synchronization workflow, prompt/patch queues, DOCX guardrails, and accepted artifact protection."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1703,24 +2464,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not edit DOCX.
-  - artifact_id: ART-DISSERTATION-SYNC-PLAN
-    name: Dissertation sync plan
+    notes: "Does not edit DOCX."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-SYNC-PLAN
+    name: "Dissertation sync plan"
     type: methodology_note
     path: docs/dissertation/dissertation-sync-plan.md
     owner_module: M-DISSERTATION-SYNC
@@ -1729,7 +2507,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Controlled workflow from Tartip packet to impact log, prompt, patch, user acceptance, and explicit DOCX update.
+    description: "Controlled workflow from Tartip packet to impact log, prompt, patch, user acceptance, and explicit DOCX update."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1737,10 +2515,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -1748,14 +2526,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-README
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: DOCX update remains user-triggered only.
-  - artifact_id: ART-DISSERTATION-IMPACT-LOG
-    name: Dissertation impact log
+    notes: "DOCX update remains user-triggered only."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-IMPACT-LOG
+    name: "Dissertation impact log"
     type: configuration
     path: docs/dissertation/dissertation-impact-log.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1764,7 +2558,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Structured log for future Tartip changes that affect dissertation sections.
+    description: "Structured log for future Tartip changes that affect dissertation sections."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1772,10 +2566,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -1783,14 +2577,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-ARTIFACT-MAP
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Starts empty in EP-008.
-  - artifact_id: ART-DISSERTATION-ARTIFACT-MAP
-    name: Dissertation artifact map
+    notes: "Starts empty in EP-008."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-ARTIFACT-MAP
+    name: "Dissertation artifact map"
     type: configuration
     path: docs/dissertation/dissertation-artifact-map.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1799,7 +2609,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Maps dissertation sections to Tartip modules and artifacts.
+    description: "Maps dissertation sections to Tartip modules and artifacts."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1807,24 +2617,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Sections DISS-INTRO through DISS-APPENDICES are present.
-  - artifact_id: ART-DISSERTATION-SECTION-UPDATE-QUEUE
-    name: Dissertation section update queue
+    notes: "Sections DISS-INTRO through DISS-APPENDICES are present."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-SECTION-UPDATE-QUEUE
+    name: "Dissertation section update queue"
     type: configuration
     path: docs/dissertation/section-update-queue.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1833,7 +2660,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Queue for future dissertation section update requests.
+    description: "Queue for future dissertation section update requests."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1841,10 +2668,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-006
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -1852,14 +2679,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-ARTIFACT-MAP
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Starts empty in EP-008.
-  - artifact_id: ART-DISSERTATION-CHANGE-LOG
-    name: Dissertation change log
+    notes: "Starts empty in EP-008."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-CHANGE-LOG
+    name: "Dissertation change log"
     type: status_report
     path: docs/dissertation/dissertation-change-log.md
     owner_module: M-DISSERTATION-SYNC
@@ -1868,7 +2711,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Human-readable log for accepted dissertation synchronization changes.
+    description: "Human-readable log for accepted dissertation synchronization changes."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1876,24 +2719,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: No accepted dissertation text changes are recorded by Codex.
-  - artifact_id: ART-DISSERTATION-BIBLIOGRAPHY-REGISTRY
-    name: Dissertation bibliography registry
+    notes: "No accepted dissertation text changes are recorded by Codex."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-BIBLIOGRAPHY-REGISTRY
+    name: "Dissertation bibliography registry"
     type: configuration
     path: docs/dissertation/bibliography-registry.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1902,7 +2762,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Empty controlled registry for bibliography governance.
+    description: "Empty controlled registry for bibliography governance."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1910,24 +2770,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: New sources require citation requests.
-  - artifact_id: ART-DISSERTATION-CITATION-REQUESTS
-    name: Dissertation citation requests
+    notes: "New sources require citation requests."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-CITATION-REQUESTS
+    name: "Dissertation citation requests"
     type: question_registry
     path: docs/dissertation/citation-requests.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1936,7 +2813,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Empty citation request queue for bibliography changes.
+    description: "Empty citation request queue for bibliography changes."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1944,10 +2821,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -1955,14 +2832,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-BIBLIOGRAPHY-REGISTRY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex does not insert bibliography entries directly.
-  - artifact_id: ART-DISSERTATION-TERMINOLOGY-CONTROL
-    name: Dissertation terminology control
+    notes: "Codex does not insert bibliography entries directly."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TERMINOLOGY-CONTROL
+    name: "Dissertation terminology control"
     type: configuration
     path: docs/dissertation/terminology-control.yml
     owner_module: M-DISSERTATION-SYNC
@@ -1971,7 +2864,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Required and forbidden terms for dissertation prompt checks.
+    description: "Required and forbidden terms for dissertation prompt checks."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -1979,24 +2872,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Used by prompt templates and future review.
-  - artifact_id: ART-DISSERTATION-EDITOR-PROFILE-MD
-    name: Dissertation editor profile Markdown
+    notes: "Used by prompt templates and future review."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-EDITOR-PROFILE-MD
+    name: "Dissertation editor profile Markdown"
     type: prompt_profile
     path: docs/dissertation/prompt-profiles/dissertation-editor-profile.md
     owner_module: M-DISSERTATION-SYNC
@@ -2005,7 +2915,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Human-readable dissertation editor profile and DOCX rules.
+    description: "Human-readable dissertation editor profile and DOCX rules."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2013,24 +2923,41 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-007
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not claim access to DOCX.
-  - artifact_id: ART-DISSERTATION-EDITOR-PROFILE-YML
-    name: Dissertation editor profile YAML
+    notes: "Does not claim access to DOCX."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-EDITOR-PROFILE-YML
+    name: "Dissertation editor profile YAML"
     type: prompt_profile
     path: docs/dissertation/prompt-profiles/dissertation-editor-profile.yml
     owner_module: M-DISSERTATION-SYNC
@@ -2039,7 +2966,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Machine-readable dissertation editor profile.
+    description: "Machine-readable dissertation editor profile."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2047,10 +2974,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2058,14 +2985,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-EDITOR-PROFILE-MD
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Used for generated prompt context.
-  - artifact_id: ART-DISSERTATION-TARTIP-ALIGNMENT
-    name: Tartip dissertation alignment
+    notes: "Used for generated prompt context."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TARTIP-ALIGNMENT
+    name: "Tartip dissertation alignment"
     type: prompt_profile
     path: docs/dissertation/prompt-profiles/tartip-dissertation-alignment.md
     owner_module: M-DISSERTATION-SYNC
@@ -2074,7 +3017,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Boundary between dissertation methodology and Tartip implementation.
+    description: "Boundary between dissertation methodology and Tartip implementation."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2082,10 +3025,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-005
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2093,14 +3036,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-EDITOR-PROFILE-MD
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Prevents treating Codex/GRACE as scientific result.
-  - artifact_id: ART-DISSERTATION-FORBIDDEN-CLAIMS
-    name: Dissertation forbidden claims
+    notes: "Prevents treating Codex/GRACE as scientific result."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-FORBIDDEN-CLAIMS
+    name: "Dissertation forbidden claims"
     type: prompt_profile
     path: docs/dissertation/prompt-profiles/forbidden-claims.yml
     owner_module: M-DISSERTATION-SYNC
@@ -2109,7 +3068,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Forbidden claims FC-001 through FC-007 and allowed replacements.
+    description: "Forbidden claims FC-001 through FC-007 and allowed replacements."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2118,24 +3077,41 @@ artifacts:
         - V-DISS-SYNC-002
         - V-DISS-SYNC-005
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Contains the GESN auto-selection prohibition.
-  - artifact_id: ART-DISSERTATION-TEMPLATE-IMPACT
-    name: Dissertation impact analysis prompt template
+    notes: "Contains the GESN auto-selection prohibition."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TEMPLATE-IMPACT
+    name: "Dissertation impact analysis prompt template"
     type: prompt_template
     path: docs/dissertation/prompt-templates/dissertation-impact-analysis.prompt.md
     owner_module: M-DISSERTATION-SYNC
@@ -2144,7 +3120,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Prompt template for execution packet dissertation impact analysis.
+    description: "Prompt template for execution packet dissertation impact analysis."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2152,10 +3128,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2163,14 +3139,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-FORBIDDEN-CLAIMS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Template only, not generated prompt.
-  - artifact_id: ART-DISSERTATION-TEMPLATE-SECTION
-    name: Dissertation section update prompt template
+    notes: "Template only, not generated prompt."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TEMPLATE-SECTION
+    name: "Dissertation section update prompt template"
     type: prompt_template
     path: docs/dissertation/prompt-templates/dissertation-section-update.prompt.md
     owner_module: M-DISSERTATION-SYNC
@@ -2179,7 +3171,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Prompt template for markdown patch preparation.
+    description: "Prompt template for markdown patch preparation."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2187,10 +3179,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-003
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2198,14 +3190,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-EDITOR-PROFILE-MD
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Produces markdown patch tasks, not DOCX.
-  - artifact_id: ART-DISSERTATION-TEMPLATE-TERMINOLOGY
-    name: Dissertation terminology check prompt template
+    notes: "Produces markdown patch tasks, not DOCX."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TEMPLATE-TERMINOLOGY
+    name: "Dissertation terminology check prompt template"
     type: prompt_template
     path: docs/dissertation/prompt-templates/dissertation-terminology-check.prompt.md
     owner_module: M-DISSERTATION-SYNC
@@ -2214,7 +3222,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Prompt template for terminology review.
+    description: "Prompt template for terminology review."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2222,10 +3230,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2233,14 +3241,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-TERMINOLOGY-CONTROL
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not update DOCX directly.
-  - artifact_id: ART-DISSERTATION-TEMPLATE-BIBLIOGRAPHY
-    name: Dissertation bibliography check prompt template
+    notes: "Does not update DOCX directly."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TEMPLATE-BIBLIOGRAPHY
+    name: "Dissertation bibliography check prompt template"
     type: prompt_template
     path: docs/dissertation/prompt-templates/dissertation-bibliography-check.prompt.md
     owner_module: M-DISSERTATION-SYNC
@@ -2249,7 +3273,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Prompt template that creates citation requests instead of direct bibliography changes.
+    description: "Prompt template that creates citation requests instead of direct bibliography changes."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2257,10 +3281,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-001
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2268,14 +3292,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-CITATION-REQUESTS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: No bibliography renumbering by Codex.
-  - artifact_id: ART-DISSERTATION-TEMPLATE-DOCX
-    name: Dissertation DOCX update prompt template
+    notes: "No bibliography renumbering by Codex."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DISSERTATION-TEMPLATE-DOCX
+    name: "Dissertation DOCX update prompt template"
     type: prompt_template
     path: docs/dissertation/prompt-templates/dissertation-docx-update.prompt.md
     owner_module: M-DISSERTATION-SYNC
@@ -2284,7 +3324,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Prompt template for DOCX update only after accepted patch and explicit user request.
+    description: "Prompt template for DOCX update only after accepted patch and explicit user request."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2292,10 +3332,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-004
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-prompts
+      evidence: "make validate-dissertation-prompts"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2303,14 +3343,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-SECTION-UPDATE-QUEUE
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Template only; no DOCX update executed.
-  - artifact_id: ART-GENERATE-DISSERTATION-PROMPTS
-    name: Dissertation prompt generator
+    notes: "Template only; no DOCX update executed."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-GENERATE-DISSERTATION-PROMPTS
+    name: "Dissertation prompt generator"
     type: script
     path: scripts/generate_dissertation_prompts.py
     owner_module: M-DISSERTATION-SYNC
@@ -2319,7 +3375,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Generates pending dissertation prompts from impact log, section update queue, and artifact map.
+    description: "Generates pending dissertation prompts from impact log, section update queue, and artifact map."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2327,10 +3383,10 @@ artifacts:
       scenarios:
         - V-DISS-SYNC-003
       last_checked_at: 2026-06-05
-      evidence: make generate-dissertation-prompts
+      evidence: "make generate-dissertation-prompts"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2340,14 +3396,30 @@ artifacts:
       - ART-DISSERTATION-IMPACT-LOG
       - ART-DISSERTATION-SECTION-UPDATE-QUEUE
       - ART-DISSERTATION-ARTIFACT-MAP
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not create DOCX.
-  - artifact_id: ART-VALIDATE-DISSERTATION-PROMPTS
-    name: Dissertation prompt validator
+    notes: "Does not create DOCX."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-DISSERTATION-PROMPTS
+    name: "Dissertation prompt validator"
     type: script
     path: scripts/validate_dissertation_prompts.py
     owner_module: M-DISSERTATION-SYNC
@@ -2356,7 +3428,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Validates generated prompt front matter, accepted_by rules, forbidden claims, and DOCX update guardrails.
+    description: "Validates generated prompt front matter, accepted_by rules, forbidden claims, and DOCX update guardrails."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2367,10 +3439,10 @@ artifacts:
         - V-DISS-SYNC-005
         - V-DISS-SYNC-006
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-prompts
+      evidence: "make validate-dissertation-prompts"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2378,14 +3450,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-DISSERTATION-FORBIDDEN-CLAIMS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Rejects accepted_by=Codex.
-  - artifact_id: ART-VALIDATE-DISSERTATION-SYNC
-    name: Dissertation sync validator
+    notes: "Rejects accepted_by=Codex."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-DISSERTATION-SYNC
+    name: "Dissertation sync validator"
     type: script
     path: scripts/validate_dissertation_sync.py
     owner_module: M-DISSERTATION-SYNC
@@ -2394,7 +3482,7 @@ artifacts:
     related_requirements:
       - REQ-011
     status: active
-    description: Validates dissertation contour files, queues, forbidden claims, citation files, DOCX/PDF absence, and acceptance pending state.
+    description: "Validates dissertation contour files, queues, forbidden claims, citation files, DOCX/PDF absence, and acceptance pending state."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2405,10 +3493,10 @@ artifacts:
         - V-DISS-SYNC-006
         - V-DISS-SYNC-007
       last_checked_at: 2026-06-05
-      evidence: make validate-dissertation-sync
+      evidence: "make validate-dissertation-sync"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2417,14 +3505,30 @@ artifacts:
     depends_on:
       - ART-DISSERTATION-README
       - ART-DISSERTATION-FORBIDDEN-CLAIMS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Also checks that thesis/ has no DOCX/PDF artifacts.
-  - artifact_id: ART-ACCEPTANCE-EP-008
-    name: EP-008 acceptance report
+    notes: "Also checks that thesis/ has no DOCX/PDF artifacts."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-008
+    name: "EP-008 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
     owner_module: M-DISSERTATION-SYNC
@@ -2434,7 +3538,7 @@ artifacts:
       - REQ-008
       - REQ-011
     status: active
-    description: Acceptance checklist for dissertation prompt generation contour.
+    description: "Acceptance checklist for dissertation prompt generation contour."
     created_at: 2026-06-05
     updated_at: 2026-06-05
     verification:
@@ -2443,10 +3547,10 @@ artifacts:
         - V-DISS-SYNC-009
         - V-DISS-SYNC-010
       last_checked_at: 2026-06-05
-      evidence: make validate-plan
+      evidence: "make validate-plan"
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
       accepted_at: null
@@ -2456,12 +3560,27 @@ artifacts:
       - ART-DISSERTATION-README
       - ART-VALIDATE-DISSERTATION-SYNC
       - ART-VALIDATE-DISSERTATION-PROMPTS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex status ready_for_acceptance; user decision remains pending.
+    notes: "User decision accepted; report is protected after EP-018 post-acceptance sync."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-008-DISSERTATION-PROMPT-GENERATION
+      user_decision_source: docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
   -
     artifact_id: ART-VALIDATE-POST-ACCEPTANCE-STATE
     path: scripts/validate_post_acceptance_state.py
@@ -2470,12 +3589,13 @@ artifacts:
     related_packets:
       - EP-013-POST-ACCEPTANCE-STATE-SYNC
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-015
     status: active
-    description: Validates that accepted acceptance reports are reflected in post-acceptance baseline state without closing verification, user action, or audit debt.
+    description: "Validates that accepted acceptance reports are reflected in post-acceptance baseline state without closing verification, user action, or audit debt."
     created_at: 2026-06-09
-    updated_at: 2026-06-09
+    updated_at: 2026-06-10
     verification:
       status: pending
       scenarios:
@@ -2492,7 +3612,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
       accepted_at: null
@@ -2501,12 +3621,27 @@ artifacts:
     depends_on:
       - ART-ACCEPTANCE-DASHBOARD-YML
       - ART-USER-REVIEW-WORKBENCH-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: EP-013 validator is read-only and must not close user-owned fields.
+    notes: "EP-013 validator is read-only and must not close user-owned fields."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
   -
     artifact_id: ART-ACCEPTANCE-EP-013
     path: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
@@ -2517,7 +3652,7 @@ artifacts:
     related_requirements:
       - REQ-015
     status: active
-    description: Acceptance checklist for post-acceptance state synchronization.
+    description: "Acceptance checklist for post-acceptance state synchronization."
     created_at: 2026-06-09
     updated_at: 2026-06-09
     verification:
@@ -2529,7 +3664,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
       accepted_at: null
@@ -2537,14 +3672,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-VALIDATE-POST-ACCEPTANCE-STATE
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex status ready_for_acceptance; user decision remains pending.
-  - artifact_id: ART-AUDIT-README
-    name: Audit README
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-013-POST-ACCEPTANCE-STATE-SYNC
+      user_decision_source: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-AUDIT-README
+    name: "Audit README"
     type: documentation
     path: docs/audit/README.md
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2553,7 +3704,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Human-readable orientation for the Codex audit contour.
+    description: "Human-readable orientation for the Codex audit contour."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2564,21 +3715,38 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: EP-009 audit-first documentation.
-  - artifact_id: ART-AUDIT-CODEX-SPEC-REPORT
-    name: Codex spec audit report
+    notes: "EP-009 audit-first documentation."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-CODEX-SPEC-REPORT
+    name: "Codex spec audit report"
     type: audit_report
     path: docs/audit/codex-spec-audit.md
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2587,7 +3755,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Russian user-facing report for Codex specification audit checks.
+    description: "Russian user-facing report for Codex specification audit checks."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2598,7 +3766,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2606,14 +3774,33 @@ artifacts:
       comments: null
     depends_on:
       - ART-AUDIT-FINDINGS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Generated by scripts/audit_codex_spec.py.
-  - artifact_id: ART-AUDIT-CODEX-SPEC-PROFILE
-    name: Codex spec audit profile
+    notes: "Generated by scripts/audit_codex_spec.py."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_audit
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/audit_codex_spec.py
+      derived_from:
+        - AGENTS.md
+        - docs/grace/
+        - docs/artifact-registry.yml
+        - "docs/*-dashboard.yml"
+      regeneration_command: "make audit-codex-spec"
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-CODEX-SPEC-PROFILE
+    name: "Codex spec audit profile"
     type: audit_profile
     path: docs/audit/codex-spec-audit.yml
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2622,7 +3809,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Machine-readable audit profile for Codex guardrails and language policy checks.
+    description: "Machine-readable audit profile for Codex guardrails and language policy checks."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2633,21 +3820,38 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Profile version 1.0.
-  - artifact_id: ART-AUDIT-LANGUAGE-POLICY
-    name: Language policy
+    notes: "Profile version 1.0."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-LANGUAGE-POLICY
+    name: "Language policy"
     type: policy
     path: docs/audit/language-policy.md
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2656,7 +3860,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Russian user-facing language policy with technical identifier exceptions.
+    description: "Russian user-facing language policy with technical identifier exceptions."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2668,21 +3872,38 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not require mass translation in EP-009.
-  - artifact_id: ART-AUDIT-LANGUAGE-REPORT
-    name: Language audit report
+    notes: "Does not require mass translation in EP-009."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-LANGUAGE-REPORT
+    name: "Language audit report"
     type: audit_report
     path: docs/audit/language-audit-report.md
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2691,7 +3912,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Russian report for user-facing language audit findings.
+    description: "Russian report for user-facing language audit findings."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2703,7 +3924,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2712,14 +3933,33 @@ artifacts:
     depends_on:
       - ART-AUDIT-FINDINGS
       - ART-AUDIT-LANGUAGE-POLICY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Generated by scripts/audit_language_policy.py.
-  - artifact_id: ART-AUDIT-FINDINGS
-    name: Audit findings registry
+    notes: "Generated by scripts/audit_language_policy.py."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_audit
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/audit_language_policy.py
+      derived_from:
+        - AGENTS.md
+        - README.md
+        - CHANGELOG.md
+        - docs/
+      regeneration_command: "make audit-language"
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-FINDINGS
+    name: "Audit findings registry"
     type: audit_registry
     path: docs/audit/audit-findings.yml
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2728,7 +3968,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Machine-readable registry of open, acknowledged, fixed, accepted_risk, false_positive, blocked, and requires_user_approval audit findings.
+    description: "Machine-readable registry of open, acknowledged, fixed, accepted_risk, false_positive, blocked, and requires_user_approval audit findings."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2740,7 +3980,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2748,14 +3988,33 @@ artifacts:
       comments: null
     depends_on:
       - ART-AUDIT-CODEX-SPEC-PROFILE
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Audit scripts must preserve user statuses and resolutions.
-  - artifact_id: ART-AUDIT-CODEX-SPEC-SCRIPT
-    name: Codex spec audit script
+    notes: "Audit scripts must preserve user statuses and resolutions."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_audit
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/audit_codex_spec.py
+      derived_from:
+        - AGENTS.md
+        - docs/grace/
+        - docs/artifact-registry.yml
+        - "docs/*-dashboard.yml"
+      regeneration_command: "make audit"
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-CODEX-SPEC-SCRIPT
+    name: "Codex spec audit script"
     type: script
     path: scripts/audit_codex_spec.py
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2764,7 +4023,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Performs top-level audit checks for project guardrails and updates Codex spec audit report.
+    description: "Performs top-level audit checks for project guardrails and updates Codex spec audit report."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2778,7 +4037,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2786,14 +4045,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-AUDIT-FINDINGS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Critical findings block the audit command.
-  - artifact_id: ART-AUDIT-LANGUAGE-SCRIPT
-    name: Language audit script
+    notes: "Critical findings block the audit command."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-LANGUAGE-SCRIPT
+    name: "Language audit script"
     type: script
     path: scripts/audit_language_policy.py
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2802,7 +4077,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Performs soft language audit and creates language policy findings without automatic translation.
+    description: "Performs soft language audit and creates language policy findings without automatic translation."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2816,7 +4091,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2825,14 +4100,30 @@ artifacts:
     depends_on:
       - ART-AUDIT-FINDINGS
       - ART-AUDIT-LANGUAGE-POLICY
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Medium/low language findings do not block make check.
-  - artifact_id: ART-AUDIT-VALIDATOR
-    name: Audit report validator
+    notes: "Medium/low language findings do not block make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-AUDIT-VALIDATOR
+    name: "Audit report validator"
     type: script
     path: scripts/validate_audit_reports.py
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2841,7 +4132,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Validates audit files, audit-findings.yml structure, Russian reports, and user status preservation guardrails.
+    description: "Validates audit files, audit-findings.yml structure, Russian reports, and user status preservation guardrails."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2854,7 +4145,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2862,14 +4153,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-AUDIT-FINDINGS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not close findings automatically.
-  - artifact_id: ART-ACCEPTANCE-EP-009
-    name: EP-009 acceptance report
+    notes: "Does not close findings automatically."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-009
+    name: "EP-009 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
     owner_module: M-CODEX-SPEC-AUDIT
@@ -2878,7 +4185,7 @@ artifacts:
     related_requirements:
       - REQ-012
     status: active
-    description: Acceptance checklist for Codex spec audit and language policy contour.
+    description: "Acceptance checklist for Codex spec audit and language policy contour."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2889,7 +4196,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
       accepted_at: null
@@ -2899,14 +4206,30 @@ artifacts:
       - ART-AUDIT-README
       - ART-AUDIT-FINDINGS
       - ART-AUDIT-VALIDATOR
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex status ready_for_acceptance; user decision remains pending.
-  - artifact_id: ART-GIT-WORKFLOW-DOC
-    name: Git workflow discipline
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-009-CODEX-SPEC-AUDIT
+      user_decision_source: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-GIT-WORKFLOW-DOC
+    name: "Git workflow discipline"
     type: policy
     path: docs/git-workflow.md
     owner_module: M-GIT-WORKFLOW
@@ -2915,7 +4238,7 @@ artifacts:
     related_requirements:
       - REQ-013
     status: active
-    description: Russian user-facing Git workflow policy for branch naming, branch switching, merge readiness, merge prohibitions, and forbidden Git files.
+    description: "Russian user-facing Git workflow policy for branch naming, branch switching, merge readiness, merge prohibitions, and forbidden Git files."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2928,21 +4251,38 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Documents current main dirty baseline as an exception, not a merge approval.
-  - artifact_id: ART-VALIDATE-GIT-WORKFLOW
-    name: Git workflow validator
+    notes: "Documents current main dirty baseline as an exception, not a merge approval."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
+      source_category: source_policy
+      accepted_in: accepted_baseline_through_EP-014
+      user_decision_source: "docs/acceptance/*.acceptance.md"
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-VALIDATE-GIT-WORKFLOW
+    name: "Git workflow validator"
     type: script
     path: scripts/validate_git_workflow.py
     owner_module: M-GIT-WORKFLOW
@@ -2951,7 +4291,7 @@ artifacts:
     related_requirements:
       - REQ-013
     status: active
-    description: Validates current Git state in advisory or strict mode without running git add, commit, merge, push, or branch deletion.
+    description: "Validates current Git state in advisory or strict mode without running git add, commit, merge, push, or branch deletion."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -2965,7 +4305,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
       accepted_at: null
@@ -2973,14 +4313,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-GIT-WORKFLOW-DOC
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Advisory mode tolerates warnings; strict mode fails on warnings.
-  - artifact_id: ART-ACCEPTANCE-EP-011
-    name: EP-011 acceptance report
+    notes: "Advisory mode tolerates warnings; strict mode fails on warnings."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-011
+    name: "EP-011 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
     owner_module: M-GIT-WORKFLOW
@@ -2989,7 +4345,7 @@ artifacts:
     related_requirements:
       - REQ-013
     status: active
-    description: Acceptance checklist for Git workflow discipline.
+    description: "Acceptance checklist for Git workflow discipline."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -3001,7 +4357,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
       accepted_at: null
@@ -3010,14 +4366,30 @@ artifacts:
     depends_on:
       - ART-GIT-WORKFLOW-DOC
       - ART-VALIDATE-GIT-WORKFLOW
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex status ready_for_acceptance; user decision remains pending.
-  - artifact_id: ART-USER-REVIEW-WORKBENCH-YML
-    name: User review workbench YAML
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-011-GIT-WORKFLOW-DISCIPLINE
+      user_decision_source: docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-USER-REVIEW-WORKBENCH-YML
+    name: "User review workbench YAML"
     type: dashboard
     path: docs/user-review-workbench.yml
     owner_module: M-USER-REVIEW-WORKBENCH
@@ -3028,7 +4400,7 @@ artifacts:
     related_requirements:
       - REQ-014
     status: active
-    description: Machine-readable active user review queue generated from acceptance, verification, user-action, audit, registry, status, and GRACE source files.
+    description: "Machine-readable active user review queue generated from acceptance, verification, user-action, audit, registry, status, and GRACE source files."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -3042,7 +4414,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
@@ -3052,14 +4424,34 @@ artifacts:
       - ART-ACCEPTANCE-DASHBOARD-YML
       - ART-USER-ACTION-DASHBOARD-YML
       - ART-VERIFICATION-DASHBOARD-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Workbench is not source of truth; user decisions apply only through scripts/apply_user_review_decisions.py.
-  - artifact_id: ART-USER-REVIEW-WORKBENCH-MD
-    name: User review workbench Markdown
+    notes: "Workbench is not source of truth; user decisions apply only through scripts/apply_user_review_decisions.py."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_workbench
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_user_review_workbench.py
+      derived_from:
+        - docs/acceptance-dashboard.yml
+        - docs/verification-dashboard.yml
+        - docs/user-action-dashboard.yml
+        - docs/audit/audit-findings.yml
+        - docs/artifact-registry.yml
+      regeneration_command: "make generate-user-review-workbench"
+      protected_since: null
+  -
+    artifact_id: ART-USER-REVIEW-WORKBENCH-MD
+    name: "User review workbench Markdown"
     type: dashboard
     path: docs/user-review-workbench.md
     owner_module: M-USER-REVIEW-WORKBENCH
@@ -3068,7 +4460,7 @@ artifacts:
     related_requirements:
       - REQ-014
     status: active
-    description: Human-readable active user review window for current acceptance, manual verification, user actions, approvals, and high-priority audit findings.
+    description: "Human-readable active user review window for current acceptance, manual verification, user actions, approvals, and high-priority audit findings."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -3079,7 +4471,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
@@ -3087,26 +4479,47 @@ artifacts:
       comments: null
     depends_on:
       - ART-USER-REVIEW-WORKBENCH-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Accepted packets are hidden from the active queue and shown only as recently accepted.
-  - artifact_id: ART-GENERATE-USER-REVIEW-WORKBENCH
-    name: User review workbench generator
+    notes: "Accepted packets are hidden from the active queue and shown only as recently accepted."
+    protection:
+      protection_status: not_protected_generated
+      protection_reason: "Generated artifact can be regenerated from source-of-truth inputs."
+      source_category: generated_workbench
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - regenerate_from_source
+      generator: scripts/generate_user_review_workbench.py
+      derived_from:
+        - docs/acceptance-dashboard.yml
+        - docs/verification-dashboard.yml
+        - docs/user-action-dashboard.yml
+        - docs/audit/audit-findings.yml
+        - docs/artifact-registry.yml
+      regeneration_command: "make generate-user-review-workbench"
+      protected_since: null
+  -
+    artifact_id: ART-GENERATE-USER-REVIEW-WORKBENCH
+    name: "User review workbench generator"
     type: script
     path: scripts/generate_user_review_workbench.py
     owner_module: M-USER-REVIEW-WORKBENCH
     related_packets:
       - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-014
     status: active
-    description: Generates docs/user-review-workbench.yml and docs/user-review-workbench.md without changing source files.
+    description: "Generates docs/user-review-workbench.yml and docs/user-review-workbench.md without changing source files."
     created_at: 2026-06-08
-    updated_at: 2026-06-08
+    updated_at: 2026-06-10
     verification:
       status: pending
       scenarios:
@@ -3118,33 +4531,51 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
       accepted_by: null
       comments: null
-    depends_on: []
-    supersedes: []
+    depends_on:
+      []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Does not set accepted and does not replace acceptance reports as source of truth.
-  - artifact_id: ART-VALIDATE-USER-REVIEW-WORKBENCH
-    name: User review workbench validator
+    notes: "Does not set accepted and does not replace acceptance reports as source of truth."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-USER-REVIEW-WORKBENCH
+    name: "User review workbench validator"
     type: script
     path: scripts/validate_user_review_workbench.py
     owner_module: M-USER-REVIEW-WORKBENCH
     related_packets:
       - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     related_requirements:
       - REQ-014
     status: active
-    description: Validates active queue completeness, source checksums, user-owned fields, and pseudo blockers/risks.
+    description: "Validates active queue completeness, source checksums, user-owned fields, and pseudo blockers/risks."
     created_at: 2026-06-08
-    updated_at: 2026-06-08
+    updated_at: 2026-06-10
     verification:
       status: pending
       scenarios:
@@ -3160,7 +4591,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
@@ -3168,14 +4599,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-USER-REVIEW-WORKBENCH-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Critical inconsistencies fail validation; language warnings do not block make check.
-  - artifact_id: ART-APPLY-USER-REVIEW-DECISIONS
-    name: User review decision applier
+    notes: "Critical inconsistencies fail validation; language warnings do not block make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-APPLY-USER-REVIEW-DECISIONS
+    name: "User review decision applier"
     type: script
     path: scripts/apply_user_review_decisions.py
     owner_module: M-USER-REVIEW-WORKBENCH
@@ -3185,7 +4632,7 @@ artifacts:
     related_requirements:
       - REQ-014
     status: active
-    description: Applies explicit user acceptance decisions from the workbench to acceptance reports after checksum and ownership checks.
+    description: "Applies explicit user acceptance decisions from the workbench to acceptance reports after checksum and ownership checks."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -3203,7 +4650,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
@@ -3211,14 +4658,30 @@ artifacts:
       comments: null
     depends_on:
       - ART-USER-REVIEW-WORKBENCH-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Supports explicit --dry-run and --apply; dry-run/default does not write, and apply uses guarded atomic writes for acceptance items only.
-  - artifact_id: ART-ACCEPTANCE-EP-014-USER-REVIEW-DECISION-CLI-SAFETY
-    name: EP-014 acceptance report
+    notes: "Supports explicit --dry-run and --apply; dry-run/default does not write, and apply uses guarded atomic writes for acceptance items only."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+    name: "EP-014 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
     owner_module: M-USER-REVIEW-DECISION-CLI-SAFETY
@@ -3227,7 +4690,7 @@ artifacts:
     related_requirements:
       - REQ-014
     status: active
-    description: Acceptance report for the user review decision CLI safety packet.
+    description: "Acceptance report for the user review decision CLI safety packet."
     created_at: 2026-06-09
     updated_at: 2026-06-09
     verification:
@@ -3245,7 +4708,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
       accepted_at: null
@@ -3255,14 +4718,30 @@ artifacts:
       - ART-APPLY-USER-REVIEW-DECISIONS
       - ART-VALIDATE-USER-REVIEW-WORKBENCH
       - ART-USER-REVIEW-WORKBENCH-YML
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: User acceptance is recorded in the EP-014 acceptance report; accepted artifact protection classification remains deferred to EP-018.
-  - artifact_id: ART-ACCEPTANCE-EP-012
-    name: EP-012 acceptance report
+    notes: "User acceptance is recorded in the EP-014 acceptance report; accepted artifact protection classification remains deferred to EP-018."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      user_decision_source: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-012
+    name: "EP-012 acceptance report"
     type: acceptance_report
     path: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
     owner_module: M-USER-REVIEW-WORKBENCH
@@ -3271,7 +4750,7 @@ artifacts:
     related_requirements:
       - REQ-014
     status: active
-    description: Acceptance checklist for user review workbench and acceptance blockers/risks standard.
+    description: "Acceptance checklist for user review workbench and acceptance blockers/risks standard."
     created_at: 2026-06-08
     updated_at: 2026-06-08
     verification:
@@ -3283,7 +4762,7 @@ artifacts:
       evidence: null
     acceptance:
       required: true
-      owner: Дмитрий
+      owner: "Дмитрий"
       status: pending
       acceptance_report: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
       accepted_at: null
@@ -3295,9 +4774,178 @@ artifacts:
       - ART-GENERATE-USER-REVIEW-WORKBENCH
       - ART-VALIDATE-USER-REVIEW-WORKBENCH
       - ART-APPLY-USER-REVIEW-DECISIONS
-    supersedes: []
+    supersedes:
+      []
     git:
       branch: null
       commit: null
       pull_request: null
-    notes: Codex status ready_for_acceptance; user decision remains pending.
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      user_decision_source: docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+  -
+    artifact_id: ART-PROTECTED-ARTIFACT-CHANGE-REQUESTS
+    name: "Protected artifact change requests"
+    type: governance_registry
+    path: docs/protected-artifact-change-requests.yml
+    owner_module: M-ACCEPTED-ARTIFACT-PROTECTION
+    related_packets:
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    related_requirements:
+      - REQ-016
+    status: active
+    description: "Registry for explicit user approval before changing protected accepted artifacts."
+    created_at: 2026-06-10
+    updated_at: 2026-06-10
+    verification:
+      status: verified
+      scenarios:
+        - V-ACCEPTED-PROTECTION-004
+      last_checked_at: 2026-06-10
+      evidence: "make validate-accepted-artifact-protection"
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ARTIFACT-REGISTRY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "No approved requests exist at EP-018 creation time."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Artifact is registered but not classified as protected accepted source in EP-018."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-ACCEPTED-ARTIFACT-PROTECTION
+    name: "Accepted artifact protection validator"
+    type: script
+    path: scripts/validate_accepted_artifact_protection.py
+    owner_module: M-ACCEPTED-ARTIFACT-PROTECTION
+    related_packets:
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    related_requirements:
+      - REQ-016
+    status: active
+    description: "Validates protection metadata, generated artifact classification, and change request discipline."
+    created_at: 2026-06-10
+    updated_at: 2026-06-10
+    verification:
+      status: verified
+      scenarios:
+        - V-ACCEPTED-PROTECTION-005
+      last_checked_at: 2026-06-10
+      evidence: "make validate-accepted-artifact-protection"
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ARTIFACT-REGISTRY
+      - ART-PROTECTED-ARTIFACT-CHANGE-REQUESTS
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Fails on critical protection discipline violations."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    name: "EP-018 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+    owner_module: M-ACCEPTED-ARTIFACT-PROTECTION
+    related_packets:
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    related_requirements:
+      - REQ-016
+    status: active
+    description: "Acceptance report for accepted artifact protection classification."
+    created_at: 2026-06-10
+    updated_at: 2026-06-10
+    verification:
+      status: verified
+      scenarios:
+        - V-ACCEPTED-PROTECTION-001
+      last_checked_at: 2026-06-10
+      evidence: "make check"
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-ARTIFACT-REGISTRY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-018 acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+      user_decision_source: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10

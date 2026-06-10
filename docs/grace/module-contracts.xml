@@ -351,4 +351,43 @@
       <Item>Accepted reports remain source of truth after user-owned apply.</Item>
     </Invariants>
   </Module>
+  <Module id="M-ACCEPTED-ARTIFACT-PROTECTION" status="ready_for_acceptance">
+    <Name>Accepted Artifact Protection</Name>
+    <Responsibilities>
+      <Item>Classify accepted source/manual artifacts in docs/artifact-registry.yml.</Item>
+      <Item>Classify generated dashboards, workbench files, and audit reports as derived artifacts.</Item>
+      <Item>Validate that protected accepted artifacts require explicit user approval before future changes.</Item>
+      <Item>Maintain docs/protected-artifact-change-requests.yml as the registry for approved protected artifact changes.</Item>
+      <Item>Prevent EP-010-LANGUAGE-NORMALIZATION from modifying protected accepted artifacts without approved change request.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/artifact-registry.yml</Item>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+      <Item>docs/grace/execution-packets.xml</Item>
+      <Item>docs/protected-artifact-change-requests.yml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/artifact-registry.yml protection metadata</Item>
+      <Item>docs/protected-artifact-change-requests.yml</Item>
+      <Item>scripts/validate_accepted_artifact_protection.py</Item>
+      <Item>docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>changing acceptance reports EP-001 through EP-014</Item>
+      <Item>changing acceptance_decision, accepted_by, accepted_at, comments, checked_by, answered_by, or decided_by</Item>
+      <Item>executing EP-010-LANGUAGE-NORMALIZATION</Item>
+      <Item>hard-locking generated dashboards or derived reports</Item>
+      <Item>changing BIM-KSI-GESN domain logic</Item>
+      <Item>adding reference or normative data</Item>
+      <Item>creating or editing DOCX/PDF files</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Accepted acceptance reports must have protection_status=protected.</Item>
+      <Item>Protected artifacts must have change_requires_user_approval=true.</Item>
+      <Item>Generated dashboards must not have protection_status=protected.</Item>
+      <Item>Generated artifacts must declare generator, derived_from, and regeneration_command.</Item>
+      <Item>Approved protected artifact changes require an approved change request before modification.</Item>
+      <Item>accepted_by, decided_by, checked_by, and answered_by must not be Codex.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>

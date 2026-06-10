@@ -14,7 +14,7 @@
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Принятые пакеты скрыты из активной очереди | 12 |
+| Принятые пакеты скрыты из активной очереди | 13 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -149,3 +149,4 @@ Accepted artifact protection is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | 2026-06-09 | Дмитрий | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | 2026-06-10 | Дмитрий | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md |
+| EP-018-ACCEPTED-ARTIFACT-PROTECTION | 2026-06-10 | Дмитрий | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md |

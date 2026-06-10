@@ -88,6 +88,7 @@ def is_accepted_artifact(artifact: dict[str, Any]) -> bool:
         acceptance.get("status") == "accepted"
         or artifact.get("status") == "accepted"
         or (artifact.get("status") == "verified" and acceptance.get("accepted_by"))
+        or protection.get("protection_status") == "protected"
         or protection.get("locked") is True
     )
 
@@ -139,9 +140,19 @@ def validate_registry(artifacts: list[dict[str, Any]]) -> list[str]:
                 errors.append(
                     f"{artifact_id}: accepted artifact has missing path: {path_value}"
                 )
-            if protection.get("locked") is not True:
+            if not (
+                protection.get("locked") is True
+                or protection.get("protection_status") == "protected"
+            ):
                 errors.append(
-                    f"{artifact_id}: accepted artifact requires protection.locked=true"
+                    f"{artifact_id}: accepted artifact requires protection_status=protected"
+                )
+            if (
+                protection.get("protection_status") == "protected"
+                and protection.get("change_requires_user_approval") is not True
+            ):
+                errors.append(
+                    f"{artifact_id}: protected artifact requires change_requires_user_approval=true"
                 )
             if acceptance.get("accepted_by") == "Codex":
                 errors.append(

@@ -7,12 +7,12 @@
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 0 |
-| accepted | 12 |
+| accepted | 13 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
 | pending | 0 |
-| protected_accepted_artifacts | 0 |
+| protected_accepted_artifacts | 29 |
 
 ## 2. Требуют приемки
 
@@ -36,12 +36,70 @@
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | Дмитрий | 2026-06-08 | Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии. | accepted/protected |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | Дмитрий | 2026-06-09 | Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017. | accepted/protected |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | Дмитрий | 2026-06-10 | Принято. Проверено: make apply-user-review-decisions-dry-run и python3 scripts/apply_user_review_decisions.py --dry-run выполняются в non-writing режиме; сравнение git status до и после dry-run не выявило изменений. Режим --apply отделен от dry-run и защищен проверками обязательных user-owned полей, stale checksum, active blockers, запрета accepted_by = Codex и запрета перезаписи уже accepted reports. Manual verification и user_action решения в текущей версии не применяются автоматически. Accepted decisions EP-001–EP-013 не изменены. Planning decision DEC-EP-014-001 зафиксирован; перенос EP-014-ACCEPTED-ARTIFACT-PROTECTION на EP-018 подтвержден. | accepted/protected |
+| EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | Дмитрий | 2026-06-10 | Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
 
 | Артефакт | Пакет | Принял | Дата | Политика изменения |
 |---|---|---|---|---|
-| - | - | - | - | Protection flags deferred to EP-018-ACCEPTED-ARTIFACT-PROTECTION |
+| docs/grace/execution-packets.xml | EP-001-INFRA | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/knowledge-graph.xml | EP-001-INFRA | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-001-INFRA.acceptance.md | EP-001-INFRA | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| README.md | EP-001-INFRA | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| CHANGELOG.md | EP-001-INFRA | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/knowledge-graph.xml | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/module-contracts.xml | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| CHANGELOG.md | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/07-reference-data-policy.md | EP-002-REFERENCE-GOVERNANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-003-REFERENCE-VERSIONING | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/module-contracts.xml | EP-003-REFERENCE-VERSIONING | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-003-REFERENCE-VERSIONING | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md | EP-003-REFERENCE-VERSIONING | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| CHANGELOG.md | EP-003-REFERENCE-VERSIONING | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| AGENTS.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/project-plan.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/artifact-registry.yml | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/traceability-matrix.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/decision-log.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/status-report.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/README.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/ACCEPTANCE_TEMPLATE.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| README.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| CHANGELOG.md | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-007-VERIFICATION-DASHBOARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/module-contracts.xml | EP-007-VERIFICATION-DASHBOARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-007-VERIFICATION-DASHBOARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md | EP-007-VERIFICATION-DASHBOARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md | EP-008-DISSERTATION-PROMPT-GENERATION | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md | EP-009-CODEX-SPEC-AUDIT | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/git-workflow.md | EP-011-GIT-WORKFLOW-DISCIPLINE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | EP-011-GIT-WORKFLOW-DISCIPLINE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md | EP-013-POST-ACCEPTANCE-STATE-SYNC | Дмитрий | 2026-06-09 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/grace/module-contracts.xml | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| README.md | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| AGENTS.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/grace/execution-packets.xml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/grace/module-contracts.xml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/grace/verification-plan.xml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/project-plan.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/artifact-registry.yml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/traceability-matrix.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/decision-log.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/status-report.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 

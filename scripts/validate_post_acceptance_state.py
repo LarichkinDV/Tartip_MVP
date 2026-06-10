@@ -21,10 +21,10 @@ VERIFICATION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "verification-dashboard.ym
 USER_ACTION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "user-action-dashboard.yml"
 AUDIT_FINDINGS_PATH = PROJECT_ROOT / "docs" / "audit" / "audit-findings.yml"
 
-CURRENT_PACKET = "EP-013-POST-ACCEPTANCE-STATE-SYNC"
-PREVIOUS_PACKET = "EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD"
-CURRENT_READY_PACKET = "EP-014-USER-REVIEW-DECISION-CLI-SAFETY"
-NEXT_RECOMMENDED_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
+CURRENT_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
+PREVIOUS_PACKET = "EP-014-USER-REVIEW-DECISION-CLI-SAFETY"
+CURRENT_READY_PACKET = "EP-010-LANGUAGE-NORMALIZATION"
+NEXT_RECOMMENDED_PACKET = "BASELINE-TAG-BEFORE-EP-010"
 PREVIOUS_ACTIVE_PACKET_AFTER_BASELINE = CURRENT_PACKET
 PRE_ACCEPTANCE_CURRENT_STATUSES = {"pending", "ready_for_acceptance"}
 BASELINE_ACCEPTED_PACKETS = {
@@ -37,12 +37,15 @@ BASELINE_ACCEPTED_PACKETS = {
     "EP-008-DISSERTATION-PROMPT-GENERATION",
     "EP-009-CODEX-SPEC-AUDIT",
     "EP-011-GIT-WORKFLOW-DISCIPLINE",
+    "EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD",
+    "EP-013-POST-ACCEPTANCE-STATE-SYNC",
     PREVIOUS_PACKET,
 }
 POST_ACCEPTANCE_ACCEPTED_PACKETS = BASELINE_ACCEPTED_PACKETS | {CURRENT_PACKET}
-ALLOWED_READY_PACKETS_AFTER_BASELINE = {CURRENT_READY_PACKET}
+ALLOWED_READY_PACKETS_AFTER_BASELINE: set[str] = set()
 ALLOWED_PROTECTION_DEFERRALS = {
     "deferred_to_EP-018",
+    "classified_by_EP-018",
 }
 HIGH_PRIORITY_ACTIONS = {
     "DR-REF-KSI-001",
@@ -178,6 +181,8 @@ def last_accepted_packet(accepted: set[str]) -> str:
 def previous_active_packet(accepted: set[str], allowed_ready: set[str]) -> str:
     if allowed_ready:
         return PREVIOUS_ACTIVE_PACKET_AFTER_BASELINE
+    if CURRENT_PACKET in accepted:
+        return CURRENT_PACKET
     if CURRENT_READY_PACKET in accepted:
         return CURRENT_READY_PACKET
     return PREVIOUS_PACKET
@@ -260,13 +265,15 @@ def validate_planning_documents(
             text,
             re.MULTILINE,
         ):
-            errors.append(f"{rel(path)} still lists EP-013 as active packet")
+            errors.append(
+                f"{rel(path)} still lists EP-018 as active packet after acceptance"
+            )
         current_section = re.search(
             r"## \d+\. (?:Current Execution Packet|Текущий Execution Packet)\n\n`([^`]+)`",
             text,
         )
         if current_section and current_section.group(1) == PREVIOUS_PACKET:
-            errors.append(f"{rel(path)} still lists EP-012 as current active packet")
+            errors.append(f"{rel(path)} still lists EP-014 as current active packet")
         if (
             mode == "post_acceptance"
             and current_section
@@ -310,8 +317,9 @@ def validate_acceptance_dashboard(
         errors.append(
             "acceptance dashboard accepted count does not match accepted reports"
         )
-    if summary.get("protected_accepted_artifacts") != 0:
-        errors.append("EP-013 must not mask protected_accepted_artifacts=0")
+    protected_count = int(summary.get("protected_accepted_artifacts") or 0)
+    if protected_count < len(accepted):
+        errors.append("accepted artifact protection count is lower than accepted reports")
 
     baseline = (
         dashboard.get("post_acceptance_baseline")
@@ -392,11 +400,11 @@ def validate_workbench(errors: list[str], statuses: dict[str, str], mode: str) -
         )
     if mode == "pre_acceptance" and CURRENT_PACKET not in active_acceptance:
         errors.append(
-            "EP-013 must be active acceptance item while ready_for_acceptance"
+            "EP-018 must be active acceptance item while ready_for_acceptance"
         )
     if mode == "post_acceptance" and active_acceptance - allowed_ready:
         errors.append(
-            "active acceptance queue contains non-allowed packets after EP-013 acceptance: "
+            "active acceptance queue contains non-allowed packets after accepted baseline: "
             + ", ".join(sorted(active_acceptance - allowed_ready))
         )
     missing_ready = allowed_ready - active_acceptance
@@ -518,7 +526,7 @@ def validate_audit_statuses(errors: list[str]) -> None:
             errors.append(f"{item.get('id')}: resolved_by must not be Codex")
     if open_count < 100:
         errors.append(
-            "audit findings appear to be mass-closed; EP-013 must leave audit debt open"
+            "audit findings appear to be mass-closed; post-acceptance baseline must leave audit debt open"
         )
 
 

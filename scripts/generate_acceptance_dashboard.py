@@ -15,7 +15,7 @@ REGISTRY_PATH = PROJECT_ROOT / "docs" / "artifact-registry.yml"
 ACCEPTANCE_DIR = PROJECT_ROOT / "docs" / "acceptance"
 YAML_PATH = PROJECT_ROOT / "docs" / "acceptance-dashboard.yml"
 MARKDOWN_PATH = PROJECT_ROOT / "docs" / "acceptance-dashboard.md"
-PROTECTION_FLAGS_STATUS = "deferred_to_EP-018"
+PROTECTION_FLAGS_STATUS = "classified_by_EP-018"
 PROTECTION_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
 ACCEPTED_PACKET_PROTECTION_STATUS = "accepted/protected"
 
@@ -146,6 +146,7 @@ def is_accepted_artifact(artifact: dict[str, Any]) -> bool:
         acceptance.get("status") == "accepted"
         or artifact.get("status") == "accepted"
         or (artifact.get("status") == "verified" and acceptance.get("accepted_by"))
+        or protection.get("protection_status") == "protected"
         or protection.get("locked") is True
     )
 
@@ -162,12 +163,22 @@ def artifact_summary(artifact: dict[str, Any]) -> dict[str, Any]:
         else {}
     )
     protected = is_accepted_artifact(artifact)
+    protection_status = protection.get("protection_status")
     return {
         "path": artifact.get("path"),
         "status": artifact.get("status"),
         "type": artifact.get("type"),
         "acceptance_status": acceptance.get("status", "pending"),
-        "protection_locked": bool(protected or protection.get("locked") is True),
+        "protection_status": protection_status,
+        "source_category": protection.get("source_category"),
+        "change_requires_user_approval": protection.get(
+            "change_requires_user_approval"
+        ),
+        "protection_locked": bool(
+            protected
+            or protection_status == "protected"
+            or protection.get("locked") is True
+        ),
     }
 
 
@@ -309,8 +320,8 @@ def build_dashboard() -> dict[str, Any]:
                 "protection_flags_status": PROTECTION_FLAGS_STATUS,
                 "protection_packet": PROTECTION_PACKET,
                 "planning_note": (
-                    "Historical EP-014 accepted artifact protection references "
-                    f"are superseded by {PROTECTION_PACKET}."
+                    "Accepted source/manual artifacts are classified by "
+                    f"{PROTECTION_PACKET}; generated dashboards remain regenerable."
                 ),
             },
             "warnings": warnings,
