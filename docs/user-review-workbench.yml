@@ -16,12 +16,12 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 8aa9439b734590b2dc094cec2cb2e3ddc440ef40833390bc5a396828d21de76f
+      checksum_sha256: d1ff2ae37ace8b81749f3e4c9aa97b0f9646e5f046351511624f77adf522c708
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 447ebfcedef30bba49730b0a0ed20d3175e847a76f5ae801dd7fef19ab73f6e9
+      checksum_sha256: dee30133d039750d9d40dcd18c42b4e90babfaf2cb38c5529db9762d9fb9cc34
       status: present
       warning: ""
     -

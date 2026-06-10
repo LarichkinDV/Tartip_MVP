@@ -10,30 +10,13 @@ allowed_statuses:
   - requires_user_approval
 findings:
   -
-    id: AUD-GIT-001-BRANCH-NAME-MISMATCH
-    check_id: AUD-GIT-001
-    severity: medium
-    category: git_workflow
-    file: .git
-    line: null
-    issue: "Имя ветки ep-018-accepted-artifact-protection не соответствует packet EP-010-LANGUAGE-NORMALIZATION."
-    recommendation: "Использовать формат ep-010-<short-slug>."
-    status: open
-    created_at: 2026-06-10
-    resolved_by: null
-    resolved_at: null
-    resolution: null
-    preserve_user_resolution: true
-    last_seen_at: 2026-06-10
-    current_detected: false
-  -
     id: AUD-GIT-001-CURRENT-BRANCH-MAIN
     check_id: AUD-GIT-001
     severity: medium
     category: git_workflow
     file: .git
     line: null
-    issue: "Текущая ветка main не соответствует EP-018-ACCEPTED-ARTIFACT-PROTECTION."
+    issue: "Текущая ветка main не соответствует EP-010-LANGUAGE-NORMALIZATION."
     recommendation: "Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением."
     status: open
     created_at: 2026-06-08

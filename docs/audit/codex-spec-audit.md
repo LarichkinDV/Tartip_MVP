@@ -8,7 +8,7 @@
 |---|---:|
 | critical | 0 |
 | high | 0 |
-| medium | 148 |
+| medium | 147 |
 | low | 3 |
 
 Активных critical findings: 0
@@ -55,8 +55,7 @@
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-018-accepted-artifact-protection не соответствует packet EP-010-LANGUAGE-NORMALIZATION. | Использовать формат ep-010-<short-slug>. | open |
-| AUD-GIT-001-CURRENT-BRANCH-MAIN | medium | AUD-GIT-001 | .git | Текущая ветка main не соответствует EP-018-ACCEPTED-ARTIFACT-PROTECTION. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | open |
+| AUD-GIT-001-CURRENT-BRANCH-MAIN | medium | AUD-GIT-001 | .git | Текущая ветка main не соответствует EP-010-LANGUAGE-NORMALIZATION. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-010-LANGUAGE-NORMALIZATION | medium | AUD-GIT-002 | docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md | Merge запрещен для EP-010-LANGUAGE-NORMALIZATION: status=-, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-010-LANGUAGE-NORMALIZATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
