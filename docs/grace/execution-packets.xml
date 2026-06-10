@@ -345,6 +345,62 @@
       <Item>Do not mark any packet accepted</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-010-LANGUAGE-NORMALIZATION" status="accepted">
+    <Name>Language normalization</Name>
+    <Goal>Нормализовать пользовательские человекочитаемые фрагменты README.md и CHANGELOG.md на русский язык без механического перевода технических идентификаторов, команд, путей, enum-статусов, кодовых блоков и предметной методики.</Goal>
+    <Scope>
+      <Item>Проверить approved change request CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION перед изменением protected artifacts</Item>
+      <Item>Нормализовать пользовательский текст README.md</Item>
+      <Item>Нормализовать пользовательский текст CHANGELOG.md</Item>
+      <Item>Обновить language audit findings по README.md и CHANGELOG.md</Item>
+      <Item>Создать acceptance report для EP-010</Item>
+      <Item>Обновить project plan, status report и generated dashboards</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>README.md</Artifact>
+      <Artifact>CHANGELOG.md</Artifact>
+      <Artifact>docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md</Artifact>
+      <Artifact>docs/audit/audit-findings.yml</Artifact>
+      <Artifact>docs/audit/language-audit-report.md</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.md</Artifact>
+      <Artifact>docs/acceptance-dashboard.md</Artifact>
+      <Artifact>docs/acceptance-dashboard.yml</Artifact>
+      <Artifact>docs/user-action-dashboard.md</Artifact>
+      <Artifact>docs/user-action-dashboard.yml</Artifact>
+      <Artifact>docs/verification-dashboard.md</Artifact>
+      <Artifact>docs/verification-dashboard.yml</Artifact>
+      <Artifact>docs/user-review-workbench.md</Artifact>
+      <Artifact>docs/user-review-workbench.yml</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-010-001">README.md проверен, пользовательские англоязычные фрагменты в scope переведены на русский язык.</Criterion>
+      <Criterion id="AC-EP-010-002">CHANGELOG.md проверен, пользовательские англоязычные фрагменты в scope переведены на русский язык.</Criterion>
+      <Criterion id="AC-EP-010-003">Технические идентификаторы, команды, пути, enum-статусы и кодовые блоки не переведены механически.</Criterion>
+      <Criterion id="AC-EP-010-004">AUD-LANG-001 findings по README.md и CHANGELOG.md обновлены.</Criterion>
+      <Criterion id="AC-EP-010-005">Остальные language findings не закрыты без исправления или обоснованного false_positive.</Criterion>
+      <Criterion id="AC-EP-010-006">AGENTS.md и ACCEPTANCE_TEMPLATE.md не изменялись.</Criterion>
+      <Criterion id="AC-EP-010-007">EP-012, EP-014 и EP-018 не выполнялись повторно.</Criterion>
+      <Criterion id="AC-EP-010-008">EP-003–EP-009 и EP-011 не принимаются автоматически.</Criterion>
+      <Criterion id="AC-EP-010-009">DOCX/PDF диссертации не изменялись.</Criterion>
+      <Criterion id="AC-EP-010-010">Нормативные данные не создавались и не изменялись.</Criterion>
+      <Criterion id="AC-EP-010-011">make audit-language, make validate-audit, make audit, make validate-plan и make check выполнены или указана причина невыполнения.</Criterion>
+      <Criterion id="AC-EP-010-012">EP-010 имеет статус ready_for_acceptance, но не accepted.</Criterion>
+      <Criterion id="AC-EP-010-013">git add/commit/merge/push/rebase не выполнялись.</Criterion>
+      <Criterion id="AC-EP-010-014">CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION был approved до изменения README.md и CHANGELOG.md.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Не выполнять EP-012, EP-014 или EP-018 повторно</Item>
+      <Item>Не менять acceptance decisions чужих EP</Item>
+      <Item>Не менять accepted_by, accepted_at, comments или другие user-owned fields</Item>
+      <Item>Не менять AGENTS.md или docs/acceptance/ACCEPTANCE_TEMPLATE.md</Item>
+      <Item>Не переводить технические идентификаторы, команды, enum-статусы, пути и кодовые блоки</Item>
+      <Item>Не менять BIM-KSI-GESN domain methodology</Item>
+      <Item>Не создавать нормативные данные</Item>
+      <Item>Не создавать и не редактировать DOCX/PDF файлы</Item>
+      <Item>Не выполнять git add, commit, merge, push или rebase</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-011-GIT-WORKFLOW-DISCIPLINE" status="accepted">
     <Name>Git workflow discipline</Name>
     <Goal>Create formal rules and validation checks for branch creation, current branch continuation, merge readiness, merge prohibitions, and forbidden Git files.</Goal>

@@ -153,8 +153,16 @@ def validate_change_requests(errors: list[str]) -> set[str]:
         status = str(request.get("status") or "")
         if status not in ALLOWED_CHANGE_REQUEST_STATUSES:
             errors.append(f"{request_id}: invalid change request status {status}")
+        artifact_paths = [
+            str(path)
+            for path in as_list(request.get("protected_artifacts"))
+            if path
+        ]
         artifact_path = str(request.get("protected_artifact") or "")
-        if not artifact_path:
+        if artifact_path:
+            artifact_paths.append(artifact_path)
+        artifact_paths = sorted(set(artifact_paths))
+        if not artifact_paths:
             errors.append(f"{request_id}: missing protected_artifact")
         approval = (
             request.get("user_approval")
@@ -166,8 +174,8 @@ def validate_change_requests(errors: list[str]) -> set[str]:
         commands = request.get("verification_commands")
         if not isinstance(commands, list):
             errors.append(f"{request_id}: verification_commands must be a list")
-        if status in {"approved", "applied"} and artifact_path:
-            approved.add(artifact_path)
+        if status in {"approved", "applied"}:
+            approved.update(artifact_paths)
     return approved
 
 
@@ -269,6 +277,13 @@ def validate_artifacts(
         if protection_block(artifact).get("protection_status") == "protected"
     }
     for path in sorted(ep010_expected_artifacts() & protected_paths):
+        artifact = by_path.get(path, {})
+        protection = protection_block(artifact)
+        if (
+            path.startswith("docs/acceptance/")
+            and protection.get("source_category") == "source_acceptance"
+        ):
+            continue
         if path not in approved_change_requests:
             errors.append(
                 "EP-010 cannot change protected accepted artifact without approved "

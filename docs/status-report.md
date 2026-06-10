@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
-next_recommended_packet: BASELINE-TAG-BEFORE-EP-010
-previous_active_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+last_accepted_execution_packet: EP-010-LANGUAGE-NORMALIZATION
+next_recommended_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+previous_active_execution_packet: EP-010-LANGUAGE-NORMALIZATION
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -33,6 +33,7 @@ post_acceptance_baseline:
     - EP-007-VERIFICATION-DASHBOARD
     - EP-008-DISSERTATION-PROMPT-GENERATION
     - EP-009-CODEX-SPEC-AUDIT
+    - EP-010-LANGUAGE-NORMALIZATION
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
@@ -54,6 +55,9 @@ post_acceptance_baseline:
 - EP-013 принят пользователем Дмитрием 2026-06-09 и синхронизирован как post-acceptance состояние.
 - EP-014 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
 - EP-018 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
+- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем Дмитрием 2026-06-10.
+- EP-010 нормализовал пользовательские фрагменты README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики.
+- EP-010 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
@@ -61,7 +65,7 @@ post_acceptance_baseline:
 
 ## 7. Готово к приемке
 
-Активных execution packets, готовых к приемке, нет.
+Готовых к приемке execution packets сейчас нет.
 
 ## 8. Принятый Baseline
 
@@ -73,6 +77,7 @@ post_acceptance_baseline:
 - [EP-007-VERIFICATION-DASHBOARD](acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md)
 - [EP-008-DISSERTATION-PROMPT-GENERATION](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md)
 - [EP-009-CODEX-SPEC-AUDIT](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
+- [EP-010-LANGUAGE-NORMALIZATION](acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md)
 - [EP-011-GIT-WORKFLOW-DISCIPLINE](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
@@ -90,7 +95,7 @@ post_acceptance_baseline:
 
 ## 11. Риски
 
-- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` remains `requires_user_approval`; EP-010 must not start until the change request is approved.
+- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved и использован для EP-010; не расширять его на другие protected artifacts.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
@@ -111,4 +116,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-018 принят и синхронизирован. Следующий рекомендуемый шаг - baseline/tag before EP-010; `EP-010-LANGUAGE-NORMALIZATION` можно начинать только после approval по `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION`.
+EP-010 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`.

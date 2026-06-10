@@ -17,16 +17,16 @@ Current execution packet: `none`.
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
-next_recommended_packet: BASELINE-TAG-BEFORE-EP-010
-previous_active_execution_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+last_accepted_execution_packet: EP-010-LANGUAGE-NORMALIZATION
+next_recommended_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+previous_active_execution_packet: EP-010-LANGUAGE-NORMALIZATION
 ```
 
 ## 4. Current Stage
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. Следующий рекомендуемый шаг — baseline/tag перед EP-010; сам `EP-010-LANGUAGE-NORMALIZATION` не должен стартовать до approval по `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION`.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики.
 
 ## 5. Post-Acceptance Baseline
 
@@ -43,6 +43,7 @@ post_acceptance_baseline:
     - EP-007-VERIFICATION-DASHBOARD
     - EP-008-DISSERTATION-PROMPT-GENERATION
     - EP-009-CODEX-SPEC-AUDIT
+    - EP-010-LANGUAGE-NORMALIZATION
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
@@ -73,6 +74,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | Post-Acceptance State Sync | Accepted baseline synchronization, follow-up debt visibility, and validation | accepted | [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [post-acceptance validator](../scripts/validate_post_acceptance_state.py) |
 | User Review Decision CLI Safety | Explicit dry-run/apply decision CLI, non-writing dry-run, atomic apply guardrails | accepted | [EP-014 acceptance](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md), [decision apply script](../scripts/apply_user_review_decisions.py) |
 | Accepted Artifact Protection | Protected source/manual artifact classification, generated artifact metadata, and change request guardrails | accepted | [EP-018 acceptance](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md), [protection validator](../scripts/validate_accepted_artifact_protection.py), [change requests](protected-artifact-change-requests.yml) |
+| Language Normalization | Нормализация пользовательских фрагментов README.md и CHANGELOG.md по approved CR | accepted | [EP-010 acceptance](acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md), [README.md](../README.md), [CHANGELOG.md](../CHANGELOG.md) |
 
 ## 7. Execution Packets
 
@@ -86,11 +88,12 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | accepted | [EP-007 report](acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md) | Pending verification checks remain post-acceptance debt for EP-015. |
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | accepted | [EP-008 report](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) | DOCX/PDF updates still require explicit user request. |
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | accepted | [EP-009 report](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) | Stale audit finding cleanup is deferred to EP-017. |
+| EP-010-LANGUAGE-NORMALIZATION | Language normalization | accepted | [EP-010 report](acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md) | Completed; next recommended packet is EP-015 verification dashboard reconciliation. |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | accepted | [EP-011 report](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) | Merge still requires explicit user approval after checks. |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | accepted | [EP-012 report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) | Workbench remains the active review window. |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Completed; EP-014 accepted after CLI safety review. |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | accepted | [EP-014 report](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md) | Completed; next recommended packet is EP-018 accepted artifact protection. |
-| EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; next step is baseline/tag before EP-010, while CR-EP-010 remains requires_user_approval. |
+| EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; EP-010 used the approved change request for README.md and CHANGELOG.md. |
 
 ## 8. Status Values
 
@@ -127,6 +130,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-
 - [EP-007-VERIFICATION-DASHBOARD.acceptance.md](acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md)
 - [EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md)
 - [EP-009-CODEX-SPEC-AUDIT.acceptance.md](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md)
+- [EP-010-LANGUAGE-NORMALIZATION.acceptance.md](acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md)
 - [EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
@@ -142,7 +146,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-
 
 ## 12. Open Follow-Up Debt
 
-- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` remains `requires_user_approval`; EP-010 must not start until the change request is approved.
+- `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем 2026-06-10 и использован только для языковой нормализации README.md и CHANGELOG.md.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - `EP-006-MONTHLY-PLANNING-AND-DEFENSE` appears in the verification dashboard but has no corresponding accepted execution packet and no acceptance report; EP-015 must reclassify these checks as monthly-scope checks such as `MONTHLY-2026-06`, or create a future correctly registered package.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
@@ -157,4 +161,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-
 
 ## 15. Next Step
 
-EP-018 is accepted and synchronized into the post-acceptance baseline. Recommended next step: create a baseline/tag before EP-010; start EP-010 only after `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` is approved by the user.
+EP-010 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`.

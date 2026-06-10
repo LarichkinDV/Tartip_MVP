@@ -1,98 +1,99 @@
 # Tartip
 
-`Tartip` is a local-first project skeleton for BIM5D cost-schedule matching.
-The current scope is infrastructure only: Docker Compose, FastAPI backend,
-Vite React frontend, PostgreSQL, Adminer, backup scripts, and CI checks.
+`Tartip` — локальный каркас проекта для BIM5D cost-schedule matching.
+Текущий контур включает инфраструктуру: `Docker Compose`, backend на `FastAPI`,
+frontend на `Vite` / `React`, `PostgreSQL`, `Adminer`, скрипты резервного
+копирования и проверки CI.
 
-Business matching logic for BIM, KSI, GESN, BoQ, work packages, actual records,
-and plan-fact comparisons is intentionally not implemented in `EP-001-INFRA`.
+Бизнес-логика сопоставления BIM, KSI, GESN, ВОР, пакетов работ, фактических
+записей и план-фактного сравнения намеренно не реализована в `EP-001-INFRA`.
 
-## Local Run
+## Локальный запуск
 
-Create a local environment file from the example:
+Создать локальный файл окружения из примера:
 
 ```sh
 cp .env.example .env
 ```
 
-Start the local stack:
+Запустить локальный стек:
 
 ```sh
 make up
 ```
 
-Useful URLs:
+Полезные адреса:
 
-- Backend health endpoint: http://localhost:8000/health
-- Backend OpenAPI docs: http://localhost:8000/docs
+- Backend `/health`: http://localhost:8000/health
+- Backend `OpenAPI`: http://localhost:8000/docs
 - Frontend: http://localhost:5173
 - Adminer: http://localhost:8080
 
-Stop the stack:
+Остановить стек:
 
 ```sh
 make down
 ```
 
-View logs:
+Посмотреть логи:
 
 ```sh
 make logs
 ```
 
-The first Docker run can pull public base images and package dependencies.
-Run it only when network access is acceptable.
+Первый запуск Docker может загрузить публичные базовые образы и зависимости
+пакетов. Выполняйте его только тогда, когда сетевой доступ допустим.
 
-## Development Commands
+## Команды разработки
 
-Run backend tests:
+Запустить backend-тесты:
 
 ```sh
 make test
 ```
 
-Run linting:
+Запустить linting:
 
 ```sh
 make lint
 ```
 
-Run formatting:
+Запустить форматирование:
 
 ```sh
 make format
 ```
 
-Run project checks:
+Запустить проектные проверки:
 
 ```sh
 make check
 ```
 
-Generate project dashboards:
+Сгенерировать проектные dashboards:
 
 ```sh
 make generate-dashboards
 ```
 
-Run Codex audit checks:
+Запустить audit-проверки Codex:
 
 ```sh
 make audit
 ```
 
-Run Git workflow advisory checks:
+Запустить advisory-проверки Git workflow:
 
 ```sh
 make validate-git-workflow
 ```
 
-When Docker is not installed, `make check` still runs repository safety checks and
-prints that the Docker Compose syntax check was skipped. Full stack validation
-requires Docker, but Python, Ruff, pytest, npm, and TypeScript checks can run
-locally from `.venv` and `frontend/node_modules`.
+Если Docker не установлен, `make check` все равно выполняет проверки безопасности
+репозитория и сообщает, что синтаксическая проверка `Docker Compose` пропущена.
+Полная проверка стека требует Docker, но проверки Python, Ruff, pytest, npm и
+TypeScript могут выполняться локально из `.venv` и `frontend/node_modules`.
 
-Dockerless verification checklist:
+Проверки без Docker:
 
 ```sh
 source .venv/bin/activate && make format
@@ -109,157 +110,164 @@ make audit
 make validate-git-workflow
 ```
 
-## Database Backups
+## Резервные копии базы данных
 
-Create a PostgreSQL custom-format backup in the mounted `backups/` directory:
+Создать резервную копию `PostgreSQL` в формате custom в смонтированном каталоге
+`backups/`:
 
 ```sh
 make backup
 ```
 
-Restore from a backup file:
+Восстановить базу из файла резервной копии:
 
 ```sh
 CONFIRM_RESTORE=1 BACKUP_FILE=backups/tartip_YYYYMMDD_HHMMSS.dump make restore
 ```
 
-Do not commit `.env` files or unencrypted database dumps. `scripts/check_project.sh`
-checks these safety rules.
+Не добавляйте в Git файлы `.env` и незашифрованные дампы базы данных.
+`scripts/check_project.sh` проверяет эти правила безопасности.
 
-## Reference Data Workflow
+## Процесс работы со справочными данными
 
-Reference governance follows the project rule: `No source — no rule`.
-Codex does not download external KSI/FSNB/GESN data and does not invent classifier
-codes, norm codes, norm units, work composition, resources, coefficients, or normative values.
+Reference governance следует правилу проекта: `No source — no rule`.
+Codex не загружает внешние данные KSI/FSNB/GESN и не придумывает коды
+классификаторов, коды норм, единицы норм, состав работ, ресурсы, коэффициенты
+или нормативные значения.
 
-User-provided source files go into the `inbox` layer first:
+Файлы источников от пользователя сначала помещаются в слой `inbox`:
 
-- KSI files: `data/reference/inbox/ksi/`
-- FSNB/GESN files: `data/reference/inbox/fsnb/`
-- Project work type dictionaries: `data/reference/inbox/work_types/`
+- KSI-файлы: `data/reference/inbox/ksi/`
+- FSNB/GESN-файлы: `data/reference/inbox/fsnb/`
+- Проектные справочники видов работ: `data/reference/inbox/work_types/`
 
-Lifecycle layers:
+Слои жизненного цикла:
 
-- `data/reference/inbox/`: user placed an original local file.
-- `data/reference/quarantine/`: file detected but not accepted as a source.
-- `data/reference/raw/`: immutable accepted copy with checksum.
-- `data/reference/staging/`: parsed temporary records.
-- `data/reference/normalized/`: normalized lookup-ready records.
-- `data/reference/manifests/`: source manifest and import log.
-- `data/reference/reports/`: validation, import, and comparison reports.
+- `data/reference/inbox/`: пользователь поместил исходный локальный файл.
+- `data/reference/quarantine/`: файл обнаружен, но не принят как источник.
+- `data/reference/raw/`: неизменяемая принятая копия с checksum.
+- `data/reference/staging/`: временные записи после разбора.
+- `data/reference/normalized/`: нормализованные записи для поиска.
+- `data/reference/manifests/`: манифест источников и журнал импорта.
+- `data/reference/reports/`: отчеты проверки, импорта и сравнения.
 
-Files in `inbox` are not trusted evidence. A source can be used only after it is
-accepted into `raw`, receives `checksum_sha256`, and is registered in
-`data/reference/manifests/source-manifest.yml` with allowed source authority.
+Файлы в `inbox` не являются доверенным evidence. Источник можно использовать
+только после приемки в `raw`, получения `checksum_sha256` и регистрации в
+`data/reference/manifests/source-manifest.yml` с допустимым authority.
 
-Validate reference sources and matching rule evidence:
+Проверить источники и evidence для правил сопоставления:
 
 ```sh
 make validate-reference
 ```
 
-Generate structured data questions for missing sources or evidence:
+Сгенерировать структурированные вопросы по отсутствующим источникам или evidence:
 
 ```sh
 make generate-data-questions
 ```
 
-Run fake delta-versioning fixtures:
+Запустить fixtures для проверки дельтового версионирования:
 
 ```sh
 make compare-reference-fixtures
 ```
 
-The fake fixtures are only for testing versioning mechanics. They are not
-classifier or normative evidence.
+Тестовые fixtures нужны только для проверки механики версионирования. Они не
+являются classifier или normative evidence.
 
-## Project Planning And Acceptance Workflow
+## Процесс проектного планирования и приемки
 
-The project plan is in `docs/project-plan.md`. It is a human-readable summary;
-the actual artifact source of truth is `docs/artifact-registry.yml`.
+План проекта находится в `docs/project-plan.md`. Это человекочитаемая сводка;
+источник истины по артефактам — `docs/artifact-registry.yml`.
 
-Execution packets live in `docs/grace/execution-packets.xml`. Each packet should
-be traceable to actual artifacts, verification scenarios, and an acceptance
-report in `docs/acceptance/`.
+Execution packets находятся в `docs/grace/execution-packets.xml`. Каждый пакет
+должен быть связан с фактическими артефактами, verification scenarios и
+acceptance report в `docs/acceptance/`.
 
-Codex may prepare a packet as `ready_for_acceptance`, but only the user may set
-an acceptance decision such as `accepted`, `rejected`, or `needs_revision`.
-`accepted_by` must not be `Codex`.
+Codex может подготовить пакет в статусе `ready_for_acceptance`, но только
+пользователь может выставить acceptance decision, например `accepted`,
+`rejected` или `needs_revision`. Поле `accepted_by` не должно быть `Codex`.
 
-Validate the project planning contour:
+Проверить контур проектного планирования:
 
 ```sh
 make validate-plan
 ```
 
-## Acceptance And User Action Dashboards
+## Сводки приемки и действий пользователя
 
-Dashboards are local documentation artifacts only. They do not create web UI,
-frontend routes, or backend endpoints.
+Сводки являются только локальными документационными артефактами. Они не создают
+web UI, frontend routes или backend endpoints.
 
-Generate both dashboards:
+Сгенерировать обе сводки:
 
 ```sh
 make generate-dashboards
 ```
 
-Dashboard files:
+Файлы сводок:
 
-- `docs/acceptance-dashboard.md`: human-readable acceptance window.
-- `docs/acceptance-dashboard.yml`: machine-readable acceptance state.
-- `docs/user-action-dashboard.md`: human-readable user question and action window.
-- `docs/user-action-dashboard.yml`: machine-readable user action state.
+- `docs/acceptance-dashboard.md`: человекочитаемое окно приемки.
+- `docs/acceptance-dashboard.yml`: машинно-читаемое состояние приемки.
+- `docs/user-action-dashboard.md`: человекочитаемое окно вопросов и действий пользователя.
+- `docs/user-action-dashboard.yml`: машинно-читаемое состояние действий пользователя.
 
-The acceptance dashboard aggregates `docs/grace/execution-packets.xml`,
-`docs/artifact-registry.yml`, `docs/acceptance/*.acceptance.md`, and
+Сводка приемки агрегирует `docs/grace/execution-packets.xml`,
+`docs/artifact-registry.yml`, `docs/acceptance/*.acceptance.md` и
 `docs/status-report.md`.
 
-The user action dashboard aggregates `data/questions/*.yml` and
-`docs/audit/audit-findings.yml`. Codex must not fill `answered_by`,
-`answered_at`, `accepted_by`, or `decided_by` for the user.
+Сводка действий пользователя агрегирует `data/questions/*.yml` и
+`docs/audit/audit-findings.yml`. Codex не должен заполнять `answered_by`,
+`answered_at`, `accepted_by` или `decided_by` за пользователя.
 
-Accepted artifacts are protected. If an artifact is accepted by the user or
-locked in `docs/artifact-registry.yml`, Codex must create a change request or
-`requires_user_approval` action before any material change.
+Принятые артефакты защищены. Если артефакт принят пользователем или заблокирован
+в `docs/artifact-registry.yml`, Codex должен создать `change request` или
+`requires_user_approval` до любого существенного изменения.
 
-## Verification Dashboard
+## Сводка проверок
 
-The verification dashboard is a local manual testing window. It does not replace
-pytest, `make validate-plan`, `make validate-reference`, `make compare-reference-fixtures`,
-the monthly test protocol, or the acceptance dashboard.
+Сводка проверок — локальное окно ручной проверки. Она не заменяет pytest,
+`make validate-plan`, `make validate-reference`, `make compare-reference-fixtures`,
+monthly test protocol или сводку приемки.
 
-Generate it:
+Сгенерировать dashboard:
 
 ```sh
 make generate-verification-dashboard
 ```
 
-Validate it:
+Проверить dashboard:
 
 ```sh
 make validate-verification
 ```
 
-Files:
+Файлы:
 
-- `docs/verification-dashboard.md`: human-readable manual verification checklist.
-- `docs/verification-dashboard.yml`: machine-readable verification task registry.
-- `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`: monthly test protocol source.
+- `docs/verification-dashboard.md`: человекочитаемый checklist ручной проверки.
+- `docs/verification-dashboard.yml`: машинно-читаемый реестр verification tasks.
+- `docs/monthly/2026-06/03-test-protocol-reference-data-governance.md`: источник monthly test protocol.
 
-Codex must not mark manual checks as passed, must not set `checked_by: Codex`,
-and must not treat verification as acceptance. The user fills `user_result` in
-`docs/verification-dashboard.yml` after performing checks.
+Codex не должен отмечать manual checks как passed, не должен выставлять
+`checked_by: Codex` и не должен считать verification приемкой. Пользователь
+заполняет `user_result` в `docs/verification-dashboard.yml` после выполнения
+проверок.
 
-User acceptance flow:
+Процесс пользовательской приемки:
 
-1. Open the relevant `docs/acceptance/<PACKET_ID>.acceptance.md` report.
-2. Review listed artifacts and criteria.
-3. Run the report's verification commands.
-4. Fill `acceptance_decision`, `accepted_by`, `accepted_at`, and `comments`.
+1. Открыть нужный отчет `docs/acceptance/<PACKET_ID>.acceptance.md`.
+2. Проверить перечисленные артефакты и критерии.
+3. Запустить команды проверки из отчета.
+4. Заполнить `acceptance_decision`, `accepted_by`, `accepted_at` и `comments`.
 
-## Codex Audit Workflow
+## Процесс Codex audit
 
-`EP-009-CODEX-SPEC-AUDIT` добавляет audit-first/read-mostly контур. Он фиксирует нарушения в `docs/audit/audit-findings.yml`, создает отчеты `docs/audit/codex-spec-audit.md` и `docs/audit/language-audit-report.md`, но не выполняет массовую русификацию и не исправляет accepted/protected artifacts без user approval.
+`EP-009-CODEX-SPEC-AUDIT` добавляет контур audit-first/read-mostly. Он фиксирует
+нарушения в `docs/audit/audit-findings.yml`, создает отчеты
+`docs/audit/codex-spec-audit.md` и `docs/audit/language-audit-report.md`, но не
+выполняет массовую русификацию и не исправляет accepted/protected artifacts без
+user approval.
 
 Команды:
 
@@ -270,11 +278,14 @@ make validate-audit
 make audit
 ```
 
-Medium/low language findings не блокируют `make check`. Critical findings должны блокировать соответствующую audit-команду.
+Находки `medium`/`low` из `language audit` не блокируют `make check`.
+Находки `critical` должны блокировать соответствующую audit-команду.
 
-## Git Workflow
+## Git workflow
 
-Git workflow описан в `docs/git-workflow.md`. Новый execution packet должен выполняться в ветке формата `ep-<number>-<short-slug>`, если задача не read-only и не является продолжением текущей packet-ветки.
+`Git workflow` описан в `docs/git-workflow.md`. Новый `execution packet` должен
+выполняться в ветке формата `ep-<number>-<short-slug>`, если задача не
+`read-only` и не является продолжением текущей packet-ветки.
 
 Advisory validation:
 
@@ -282,30 +293,35 @@ Advisory validation:
 make validate-git-workflow
 ```
 
-Strict validation перед merge preparation:
+Strict validation перед подготовкой merge:
 
 ```sh
 make validate-git-workflow-strict
 ```
 
-Codex не выполняет `git add`, `git commit`, `git push`, `git merge` или удаление веток в рамках validator. Merge в `main` запрещен без `acceptance_decision = accepted`, заполненного `accepted_by`, успешного `make check`, отсутствия critical/high audit findings и явного user approval.
+Codex не выполняет `git add`, `git commit`, `git push`, `git merge` или удаление
+веток в рамках validator. Merge в `main` запрещен без `acceptance_decision =
+accepted`, заполненного `accepted_by`, успешного `make check`, отсутствия
+находок `critical`/`high` и явного user approval.
 
-## Dissertation Synchronization Workflow
+## Процесс синхронизации диссертации
 
-Tartip does not edit the dissertation directly. Project changes are first checked for dissertation impact and only then converted into controlled prompts.
+Tartip не редактирует диссертацию напрямую. Изменения проекта сначала
+проверяются на влияние на диссертацию и только затем превращаются в
+контролируемые prompts.
 
-Workflow:
+Процесс:
 
-1. Tartip execution packet is completed.
-2. Dissertation impact is recorded in `docs/dissertation/dissertation-impact-log.yml`.
-3. A section update entry is recorded in `docs/dissertation/section-update-queue.yml`.
-4. If needed, a prompt is generated in `docs/dissertation/prompt-queue/pending/`.
-5. The user reviews the prompt.
-6. After prompt acceptance, a markdown patch can be prepared in `docs/dissertation/patches/pending/`.
-7. After patch acceptance, DOCX can be updated only by explicit user request.
-8. DOCX update requires render/visual check.
+1. `Execution packet` Tartip завершен.
+2. Влияние на диссертацию записано в `docs/dissertation/dissertation-impact-log.yml`.
+3. Запись для обновления раздела внесена в `docs/dissertation/section-update-queue.yml`.
+4. При необходимости prompt создается в `docs/dissertation/prompt-queue/pending/`.
+5. Пользователь проверяет prompt.
+6. После приемки prompt может быть подготовлен markdown patch в `docs/dissertation/patches/pending/`.
+7. После приемки patch DOCX можно обновлять только по явной команде пользователя.
+8. DOCX update требует render/visual check.
 
-Run dissertation sync checks:
+Запустить проверки синхронизации диссертации:
 
 ```sh
 make validate-dissertation-sync
@@ -313,4 +329,5 @@ make validate-dissertation-prompts
 make generate-dissertation-prompts
 ```
 
-Accepted artifacts are protected. Codex must not mark dissertation prompts, patches, DOCX updates, or acceptance reports as accepted.
+Принятые артефакты защищены. Codex не должен отмечать `dissertation prompts`,
+`patches`, `DOCX updates` или `acceptance reports` как `accepted`.

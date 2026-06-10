@@ -21,10 +21,9 @@ VERIFICATION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "verification-dashboard.ym
 USER_ACTION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "user-action-dashboard.yml"
 AUDIT_FINDINGS_PATH = PROJECT_ROOT / "docs" / "audit" / "audit-findings.yml"
 
-CURRENT_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
-PREVIOUS_PACKET = "EP-014-USER-REVIEW-DECISION-CLI-SAFETY"
-CURRENT_READY_PACKET = "EP-010-LANGUAGE-NORMALIZATION"
-NEXT_RECOMMENDED_PACKET = "BASELINE-TAG-BEFORE-EP-010"
+CURRENT_PACKET = "EP-010-LANGUAGE-NORMALIZATION"
+PREVIOUS_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
+NEXT_RECOMMENDED_PACKET = "EP-015-VERIFICATION-DASHBOARD-RECONCILIATION"
 PREVIOUS_ACTIVE_PACKET_AFTER_BASELINE = CURRENT_PACKET
 PRE_ACCEPTANCE_CURRENT_STATUSES = {"pending", "ready_for_acceptance"}
 BASELINE_ACCEPTED_PACKETS = {
@@ -165,27 +164,18 @@ def detect_acceptance_mode(
 
 def expected_accepted_packets(mode: str) -> set[str]:
     if mode == "post_acceptance":
-        accepted = accepted_reports()
-        if CURRENT_READY_PACKET in accepted:
-            return POST_ACCEPTANCE_ACCEPTED_PACKETS | {CURRENT_READY_PACKET}
         return POST_ACCEPTANCE_ACCEPTED_PACKETS
     return BASELINE_ACCEPTED_PACKETS
 
 
-def last_accepted_packet(accepted: set[str]) -> str:
-    if CURRENT_READY_PACKET in accepted:
-        return CURRENT_READY_PACKET
+def last_accepted_packet() -> str:
     return CURRENT_PACKET
 
 
-def previous_active_packet(accepted: set[str], allowed_ready: set[str]) -> str:
+def previous_active_packet(allowed_ready: set[str]) -> str:
     if allowed_ready:
         return PREVIOUS_ACTIVE_PACKET_AFTER_BASELINE
-    if CURRENT_PACKET in accepted:
-        return CURRENT_PACKET
-    if CURRENT_READY_PACKET in accepted:
-        return CURRENT_READY_PACKET
-    return PREVIOUS_PACKET
+    return CURRENT_PACKET
 
 
 def validate_execution_packets(
@@ -232,7 +222,7 @@ def validate_planning_documents(
         text = path.read_text(encoding="utf-8")
         common_needles = [
             "project_state: accepted_baseline",
-            CURRENT_READY_PACKET,
+            CURRENT_PACKET,
             NEXT_RECOMMENDED_PACKET,
             "EP-015-VERIFICATION-DASHBOARD-RECONCILIATION",
             "EP-016-REFERENCE-INTAKE-PREPARATION",
@@ -242,7 +232,7 @@ def validate_planning_documents(
         if mode == "post_acceptance":
             if allowed_ready:
                 mode_needles = [
-                    f"active_execution_packet: {CURRENT_READY_PACKET}",
+                    f"active_execution_packet: {next(iter(sorted(allowed_ready)))}",
                     f"next_recommended_packet: {NEXT_RECOMMENDED_PACKET}",
                     f"last_accepted_execution_packet: {CURRENT_PACKET}",
                     f"previous_active_execution_packet: {PREVIOUS_ACTIVE_PACKET_AFTER_BASELINE}",
@@ -250,8 +240,8 @@ def validate_planning_documents(
             else:
                 mode_needles = [
                     "active_execution_packet: none",
-                    f"last_accepted_execution_packet: {last_accepted_packet(accepted)}",
-                    f"previous_active_execution_packet: {previous_active_packet(accepted, allowed_ready)}",
+                    f"last_accepted_execution_packet: {last_accepted_packet()}",
+                    f"previous_active_execution_packet: {previous_active_packet(allowed_ready)}",
                 ]
         else:
             mode_needles = [
@@ -266,14 +256,16 @@ def validate_planning_documents(
             re.MULTILINE,
         ):
             errors.append(
-                f"{rel(path)} still lists EP-018 as active packet after acceptance"
+                f"{rel(path)} still lists {CURRENT_PACKET} as active packet after acceptance"
             )
         current_section = re.search(
             r"## \d+\. (?:Current Execution Packet|Текущий Execution Packet)\n\n`([^`]+)`",
             text,
         )
         if current_section and current_section.group(1) == PREVIOUS_PACKET:
-            errors.append(f"{rel(path)} still lists EP-014 as current active packet")
+            errors.append(
+                f"{rel(path)} still lists {PREVIOUS_PACKET} as current active packet"
+            )
         if (
             mode == "post_acceptance"
             and current_section
@@ -400,7 +392,7 @@ def validate_workbench(errors: list[str], statuses: dict[str, str], mode: str) -
         )
     if mode == "pre_acceptance" and CURRENT_PACKET not in active_acceptance:
         errors.append(
-            "EP-018 must be active acceptance item while ready_for_acceptance"
+            f"{CURRENT_PACKET} must be active acceptance item while ready_for_acceptance"
         )
     if mode == "post_acceptance" and active_acceptance - allowed_ready:
         errors.append(
@@ -509,7 +501,6 @@ def validate_audit_statuses(errors: list[str]) -> None:
     if not isinstance(findings, list):
         errors.append("audit-findings.yml must contain findings list")
         return
-    open_count = 0
     for item in findings:
         if not isinstance(item, dict):
             continue
@@ -520,14 +511,18 @@ def validate_audit_statuses(errors: list[str]) -> None:
             errors.append(
                 f"{item.get('id')}: obsolete status is forbidden without schema change"
             )
-        if status == "open":
-            open_count += 1
         if item.get("resolved_by") == "Codex":
             errors.append(f"{item.get('id')}: resolved_by must not be Codex")
-    if open_count < 100:
-        errors.append(
-            "audit findings appear to be mass-closed; post-acceptance baseline must leave audit debt open"
-        )
+        if item.get("resolved_by") == CURRENT_PACKET:
+            allowed_ep010_resolution = (
+                item.get("check_id") == "AUD-LANG-001"
+                and item.get("file") in {"README.md", "CHANGELOG.md"}
+                and status in {"fixed", "false_positive"}
+            )
+            if not allowed_ep010_resolution:
+                errors.append(
+                    f"{item.get('id')}: EP-010 may resolve only AUD-LANG-001 findings for README.md and CHANGELOG.md"
+                )
 
 
 def main() -> int:

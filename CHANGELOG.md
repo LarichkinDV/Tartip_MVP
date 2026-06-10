@@ -2,24 +2,24 @@
 
 ## 0.1.0 - 2026-06-04
 
-- Added `EP-001-INFRA` local infrastructure skeleton.
-- Added Dockerless verification checklist for local checks when Docker is unavailable.
-- Added GRACE-light artifacts for execution packets, module contracts, verification scenarios, and the knowledge graph.
-- Added backend and frontend skeletons with FastAPI, pytest, Vite, React, and TypeScript.
-- Added reference governance scaffolding for source manifests, import logs, question registries, and `No source — no rule` policy.
-- Added reference versioning scaffolding with documented delta schemas, canonical hashing, comparison utility, and fake fixtures.
-- Added safety checks and backup scripts for local project hygiene and database backup/restore workflows.
-- Added project planning contour, artifact registry, traceability matrix, decision log, status report, and acceptance reports.
-- Added acceptance owner discipline and `scripts/validate_project_plan.py` with `make validate-plan`.
-- Added `EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS` for local acceptance and user action dashboards.
-- Added accepted artifact protection discipline, dashboard generators, `make generate-dashboards`, and dashboard validation checks.
-- Added `EP-007-VERIFICATION-DASHBOARD` for local manual verification tracking without web UI.
-- Added monthly test protocol scaffolding, verification dashboard generator/validator, and `make validate-verification`.
-- Added `EP-008-DISSERTATION-PROMPT-GENERATION` for dissertation impact logging, prompt generation, forbidden claim checks, and DOCX update guardrails.
-- Added dissertation prompt profiles, prompt templates, prompt/patch queues, and validation commands without creating DOCX/PDF dissertation files.
-- Added `EP-009-CODEX-SPEC-AUDIT` for audit-first Codex specification checks, language policy, audit findings, and audit report validation.
-- Added audit Makefile targets and user-action dashboard integration for audit findings without mass-russifying existing documents.
-- Added `EP-011-GIT-WORKFLOW-DISCIPLINE` for branch naming, dirty working tree handling, merge gates, forbidden Git files, and advisory/strict Git workflow validation.
-- Prepared `EP-013-POST-ACCEPTANCE-STATE-SYNC` to synchronize the accepted baseline after the accepted acceptance cycle.
-- Reflected accepted EP-001, EP-002, EP-003, EP-004, EP-005, EP-007, EP-008, EP-009, EP-011, and EP-012 as the post-acceptance baseline.
-- Added post-acceptance validation scaffolding and follow-up roadmap for artifact protection, verification reconciliation, reference intake, and audit cleanup.
+- Добавлен локальный инфраструктурный каркас `EP-001-INFRA`.
+- Добавлен checklist проверок без Docker для локального окружения, где Docker недоступен.
+- Добавлены артефакты `GRACE-light` для `execution packets`, `module contracts`, `verification scenarios` и `knowledge graph`.
+- Добавлены backend и frontend skeletons с `FastAPI`, pytest, `Vite`, `React` и `TypeScript`.
+- Добавлен каркас `reference governance` для `source manifests`, `import logs`, `question registries` и политики `No source — no rule`.
+- Добавлен каркас `reference versioning` с описанными `delta schemas`, `canonical hashing`, `comparison utility` и `fake fixtures`.
+- Добавлены `safety checks` и `backup scripts` для локальной гигиены проекта и сценариев `backup/restore` базы данных.
+- Добавлен контур проектного планирования: `artifact registry`, `traceability matrix`, `decision log`, `status report` и `acceptance reports`.
+- Добавлена дисциплина acceptance owner и `scripts/validate_project_plan.py` с `make validate-plan`.
+- Добавлен `EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS` для локальных `acceptance` и `user action dashboards`.
+- Добавлены правила `accepted artifact protection`, генераторы dashboards, `make generate-dashboards` и проверки dashboards.
+- Добавлен `EP-007-VERIFICATION-DASHBOARD` для локального отслеживания manual verification без web UI.
+- Добавлены каркас `monthly test protocol`, `generator/validator` для `verification dashboard` и `make validate-verification`.
+- Добавлен `EP-008-DISSERTATION-PROMPT-GENERATION` для учета влияния на диссертацию, `prompt generation`, `forbidden claim checks` и `DOCX update guardrails`.
+- Добавлены `dissertation prompt profiles`, `prompt templates`, `prompt/patch queues` и `validation commands` без создания DOCX/PDF файлов диссертации.
+- Добавлен `EP-009-CODEX-SPEC-AUDIT` для `audit-first` проверок спецификации Codex, `language policy`, `audit findings` и `audit report validation`.
+- Добавлены `audit Makefile targets` и интеграция `user-action dashboard` для `audit findings` без массовой русификации существующих документов.
+- Добавлен `EP-011-GIT-WORKFLOW-DISCIPLINE` для `branch naming`, контроля `dirty working tree`, `merge gates`, `forbidden Git files` и `advisory/strict Git workflow validation`.
+- Подготовлен `EP-013-POST-ACCEPTANCE-STATE-SYNC` для синхронизации accepted baseline после цикла приемки.
+- EP-001, EP-002, EP-003, EP-004, EP-005, EP-007, EP-008, EP-009, EP-011 и EP-012 отражены как post-acceptance baseline.
+- Добавлены каркас `post-acceptance validation` и `follow-up roadmap` для `artifact protection`, `verification reconciliation`, `reference intake` и `audit cleanup`.

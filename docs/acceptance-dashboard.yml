@@ -7,12 +7,12 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 13
+    accepted: 14
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
-    protected_accepted_artifacts: 29
+    protected_accepted_artifacts: 30
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -56,6 +56,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-08
         acceptance_report: docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md
+      -
+        packet_id: EP-010-LANGUAGE-NORMALIZATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-10
+        acceptance_report: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
       -
         packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
         accepted_by: "Дмитрий"
@@ -1825,6 +1830,202 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-08
         comments: "Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами."
+    -
+      packet_id: EP-010-LANGUAGE-NORMALIZATION
+      title: "Language normalization"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
+      artifacts:
+        -
+          path: README.md
+          status: active
+          type: methodology_note
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: CHANGELOG.md
+          status: active
+          type: status_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_manual
+          change_requires_user_approval: true
+          protection_locked: true
+        -
+          path: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        -
+          command: "git rev-parse --show-toplevel"
+          status: documented
+        -
+          command: "git branch --show-current"
+          status: documented
+        -
+          command: "git status --short"
+          status: documented
+        -
+          command: "git log --oneline --decorate -5"
+          status: documented
+        -
+          command: "git rev-parse HEAD"
+          status: documented
+        -
+          command: "git rev-parse baseline-before-ep-010-language-normalization"
+          status: documented
+        -
+          command: "grep -n \"CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION\\|status:\\|decision:\\|approved_by:\\|approved_at:\" docs/protected-artifact-change-requests.yml"
+          status: documented
+        -
+          command: "make audit-language"
+          status: documented
+        -
+          command: "make validate-audit"
+          status: documented
+        -
+          command: "make audit"
+          status: documented
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make validate-accepted-artifact-protection"
+          status: documented
+        -
+          command: "make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+        -
+          command: "make validate-reference"
+          status: documented
+        -
+          command: "make validate-verification"
+          status: documented
+        -
+          command: "make lint"
+          status: documented
+        -
+          command: "make test"
+          status: documented
+        -
+          command: "git diff -- AGENTS.md docs/acceptance/ACCEPTANCE_TEMPLATE.md"
+          status: documented
+        -
+          command: "git diff -- docs/acceptance/EP-001-*.acceptance.md docs/acceptance/EP-002-*.acceptance.md docs/acceptance/EP-003-*.acceptance.md docs/acceptance/EP-004-*.acceptance.md docs/acceptance/EP-005-*.acceptance.md docs/acceptance/EP-007-*.acceptance.md docs/acceptance/EP-008-*.acceptance.md docs/acceptance/EP-009-*.acceptance.md docs/acceptance/EP-011-*.acceptance.md docs/acceptance/EP-012-*.acceptance.md docs/acceptance/EP-013-*.acceptance.md docs/acceptance/EP-014-*.acceptance.md docs/acceptance/EP-018-*.acceptance.md"
+          status: documented
+        -
+          command: "git diff -- docs/protected-artifact-change-requests.yml"
+          status: documented
+        -
+          command: "git status --short | grep -E \"\\.env|\\.venv|node_modules|\\.sql|\\.dump|\\.backup|thesis/source/.*\\.docx|thesis/versions/.*\\.docx|thesis/exports/pdf/.*\\.pdf\""
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-010-001
+          text: "README.md проверен, пользовательские англоязычные фрагменты в scope переведены на русский язык."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-002
+          text: "CHANGELOG.md проверен, пользовательские англоязычные фрагменты в scope переведены на русский язык."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-003
+          text: "Технические идентификаторы, команды, пути, enum-статусы и кодовые блоки не переведены механически."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-004
+          text: "AUD-LANG-001 findings по README.md и CHANGELOG.md обновлены."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-005
+          text: "Остальные language findings не закрыты без исправления или обоснованного false_positive."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-006
+          text: "AGENTS.md и ACCEPTANCE_TEMPLATE.md не изменялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-007
+          text: "EP-012, EP-014 и EP-018 не выполнялись повторно."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-008
+          text: "EP-003–EP-009 и EP-011 не принимаются автоматически."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-009
+          text: "DOCX/PDF диссертации не изменялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-010
+          text: "Нормативные данные не создавались и не изменялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-011
+          text: "make audit-language, make validate-audit, make audit, make validate-plan и make check выполнены или указана причина невыполнения."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-012
+          text: "EP-010 имеет статус ready_for_acceptance, но не accepted."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-013
+          text: "git add/commit/merge/push/rebase не выполнялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-010-014
+          text: "CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION был approved до изменения README.md и CHANGELOG.md."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-010-LANGUAGE-NORMALIZATION-RISK-001
+          text: "Находки `language audit` вне `README.md` и `CHANGELOG.md` остаются `open` и должны обрабатываться отдельными follow-up пакетами без массовой русификации accepted/protected artifacts."
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-10
+        comments: "Принято. Проверено: README.md и CHANGELOG.md нормализованы на русский язык в пределах approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION; технические идентификаторы, команды, пути, enum-статусы, кодовые блоки и предметная методика не изменены; AUD-LANG-001 findings по README.md и CHANGELOG.md закрыты; AGENTS.md и ACCEPTANCE_TEMPLATE.md не изменялись; accepted reports других EP не изменялись; DOCX/PDF и нормативные данные не изменялись; проверки make audit-language, make validate-audit, make audit, make generate-dashboards, make validate-plan, make validate-accepted-artifact-protection, make validate-post-acceptance-state и make check выполнены успешно."
     -
       packet_id: EP-011-GIT-WORKFLOW-DISCIPLINE
       title: "Git workflow discipline"

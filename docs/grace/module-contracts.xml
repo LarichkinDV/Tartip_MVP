@@ -351,6 +351,46 @@
       <Item>Accepted reports remain source of truth after user-owned apply.</Item>
     </Invariants>
   </Module>
+  <Module id="M-LANGUAGE-NORMALIZATION" status="ready_for_acceptance">
+    <Name>Language Normalization</Name>
+    <Responsibilities>
+      <Item>Проверять approved change request перед изменением protected artifacts README.md и CHANGELOG.md.</Item>
+      <Item>Нормализовать пользовательский человекочитаемый текст README.md и CHANGELOG.md на русский язык.</Item>
+      <Item>Сохранять технические идентификаторы, команды, пути, enum-статусы, кодовые блоки и названия технологий без механического перевода.</Item>
+      <Item>Обновлять AUD-LANG-001 findings только после фактической правки или обоснованного false_positive.</Item>
+      <Item>Регистрировать EP-010 как ready_for_acceptance без пользовательской приемки от имени Codex.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>README.md</Item>
+      <Item>CHANGELOG.md</Item>
+      <Item>docs/protected-artifact-change-requests.yml</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+      <Item>docs/audit/language-audit-report.md</Item>
+    </Inputs>
+    <Outputs>
+      <Item>README.md</Item>
+      <Item>CHANGELOG.md</Item>
+      <Item>docs/audit/audit-findings.yml</Item>
+      <Item>docs/audit/language-audit-report.md</Item>
+      <Item>docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>Не менять AGENTS.md или docs/acceptance/ACCEPTANCE_TEMPLATE.md</Item>
+      <Item>Не менять acceptance decisions других execution packets</Item>
+      <Item>Не заполнять accepted_by, decided_by, checked_by или answered_by за пользователя</Item>
+      <Item>Не переводить технические идентификаторы, команды, пути, enum-статусы или кодовые блоки механически</Item>
+      <Item>Не менять BIM-KSI-GESN domain methodology</Item>
+      <Item>Не добавлять reference или normative data</Item>
+      <Item>Не создавать и не редактировать DOCX/PDF файлы</Item>
+      <Item>Не выполнять git add, commit, merge, push или rebase</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>README.md и CHANGELOG.md могут изменяться только при approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION.</Item>
+      <Item>EP-010 остается ready_for_acceptance до пользовательского acceptance decision.</Item>
+      <Item>accepted_by не должен быть Codex.</Item>
+      <Item>Language findings вне README.md и CHANGELOG.md остаются open, если они не исправлены отдельно или не обоснованы как false_positive.</Item>
+    </Invariants>
+  </Module>
   <Module id="M-ACCEPTED-ARTIFACT-PROTECTION" status="ready_for_acceptance">
     <Name>Accepted Artifact Protection</Name>
     <Responsibilities>

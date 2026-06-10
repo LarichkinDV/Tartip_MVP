@@ -7,12 +7,12 @@
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 0 |
-| accepted | 13 |
+| accepted | 14 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
 | pending | 0 |
-| protected_accepted_artifacts | 29 |
+| protected_accepted_artifacts | 30 |
 
 ## 2. Требуют приемки
 
@@ -32,6 +32,7 @@
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | Дмитрий | 2026-06-08 | Принято. EP-007 принят как контур verification dashboard: markdown/YAML окно ручной проверки, генератор, валидатор, Makefile targets, связь с месячным протоколом тестирования и запрет checked_by = Codex проверены. Ручные verification checks остаются отдельными пользовательскими проверками и не закрываются Codex. | accepted/protected |
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | Дмитрий | 2026-06-08 | Принято. EP-008 принят как диссертационный prompt/synchronization contour: docs/dissertation, prompt profiles, forbidden claims, prompt templates, prompt queue, patches, validators and Makefile targets проверены. DOCX/PDF файлы не создавались; прямое редактирование DOCX, создание новой DOCX-версии, добавление источников без citation request и перенос инженерных деталей Tartip в научный результат запрещены. | accepted/protected |
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | Дмитрий | 2026-06-08 | Принято. EP-009 принят как audit contour и language policy: docs/audit, codex-spec audit, language audit, audit findings registry, validation scripts, Makefile targets и правила AGENTS.md проверены. Активных critical/high findings нет. Medium/low findings фиксируют риски аудита, языковой политики и workflow-контроля и не блокируют make check. Массовая русификация и исправление findings должны выполняться отдельными follow-up пакетами. | accepted/protected |
+| EP-010-LANGUAGE-NORMALIZATION | Language normalization | Дмитрий | 2026-06-10 | Принято. Проверено: README.md и CHANGELOG.md нормализованы на русский язык в пределах approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION; технические идентификаторы, команды, пути, enum-статусы, кодовые блоки и предметная методика не изменены; AUD-LANG-001 findings по README.md и CHANGELOG.md закрыты; AGENTS.md и ACCEPTANCE_TEMPLATE.md не изменялись; accepted reports других EP не изменялись; DOCX/PDF и нормативные данные не изменялись; проверки make audit-language, make validate-audit, make audit, make generate-dashboards, make validate-plan, make validate-accepted-artifact-protection, make validate-post-acceptance-state и make check выполнены успешно. | accepted/protected |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | Дмитрий | 2026-06-08 | Принято. EP-011 принят как контур Git workflow discipline: docs/git-workflow.md, validate_git_workflow.py, Makefile targets, audit checks, branch/merge policy, запреты accepted_by=Codex и forbidden files проверены. Advisory warnings являются ожидаемым диагностическим поведением валидатора и не блокируют приемку. Merge остается допустимым только после пользовательской приемки, make check и явного решения пользователя. | accepted/protected |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | Дмитрий | 2026-06-08 | Принято. Единое активное окно проверки пользователем, стандарт пустых разделов блокеров/рисков и apply-скрипт для acceptance decisions проверены. EP-012 принят с учетом зафиксированных рисков первой версии. | accepted/protected |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | Дмитрий | 2026-06-09 | Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017. | accepted/protected |
@@ -81,6 +82,9 @@
 | docs/acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md | EP-007-VERIFICATION-DASHBOARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md | EP-008-DISSERTATION-PROMPT-GENERATION | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md | EP-009-CODEX-SPEC-AUDIT | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
+| README.md | EP-010-LANGUAGE-NORMALIZATION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| CHANGELOG.md | EP-010-LANGUAGE-NORMALIZATION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md | EP-010-LANGUAGE-NORMALIZATION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/git-workflow.md | EP-011-GIT-WORKFLOW-DISCIPLINE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | EP-011-GIT-WORKFLOW-DISCIPLINE | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | Дмитрий | 2026-06-08 | Изменение требует user approval и новой ревизии |

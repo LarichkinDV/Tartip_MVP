@@ -379,6 +379,26 @@
     <Name>accepted artifact protection label uses EP-018</Name>
     <Expected>Generated acceptance and workbench artifacts use EP-018-ACCEPTED-ARTIFACT-PROTECTION for accepted artifact protection debt instead of the legacy EP-014 deferral label.</Expected>
   </Scenario>
+  <Scenario id="V-LANGUAGE-NORMALIZATION-001" module="M-LANGUAGE-NORMALIZATION">
+    <Name>approved CR gate проверен</Name>
+    <Expected>README.md и CHANGELOG.md изменяются в EP-010 только после approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION с approved_by не Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-LANGUAGE-NORMALIZATION-002" module="M-LANGUAGE-NORMALIZATION">
+    <Name>нормализация README</Name>
+    <Expected>Пользовательские англоязычные фрагменты README.md переведены на русский язык, а команды, пути, enum-статусы и кодовые блоки сохранены.</Expected>
+  </Scenario>
+  <Scenario id="V-LANGUAGE-NORMALIZATION-003" module="M-LANGUAGE-NORMALIZATION">
+    <Name>нормализация CHANGELOG</Name>
+    <Expected>Пользовательские англоязычные фрагменты CHANGELOG.md переведены на русский язык, а technical identifiers сохранены.</Expected>
+  </Scenario>
+  <Scenario id="V-LANGUAGE-NORMALIZATION-004" module="M-LANGUAGE-NORMALIZATION">
+    <Name>language audit обновлен</Name>
+    <Expected>AUD-LANG-001 findings по README.md и CHANGELOG.md обновлены через make audit-language, остальные findings не закрыты без исправления или обоснованного false_positive.</Expected>
+  </Scenario>
+  <Scenario id="V-LANGUAGE-NORMALIZATION-005" module="M-LANGUAGE-NORMALIZATION">
+    <Name>EP-010 не принят автоматически</Name>
+    <Expected>EP-010-LANGUAGE-NORMALIZATION остается ready_for_acceptance; acceptance_decision остается pending до пользовательской приемки.</Expected>
+  </Scenario>
   <Scenario id="V-ACCEPTED-PROTECTION-001" module="M-ACCEPTED-ARTIFACT-PROTECTION">
     <Name>accepted acceptance reports are protected</Name>
     <Expected>Every acceptance report with acceptance_decision=accepted is registered in docs/artifact-registry.yml with protection_status=protected.</Expected>

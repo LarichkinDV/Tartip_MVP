@@ -22,7 +22,7 @@ artifacts:
       status: verified
       scenarios:
         - V-PLAN-006
-      last_checked_at: 2026-06-05
+      last_checked_at: 2026-06-10
       evidence: "make validate-plan"
     acceptance:
       required: true
@@ -82,7 +82,7 @@ artifacts:
       scenarios:
         - V-PLAN-002
         - V-PLAN-006
-      last_checked_at: 2026-06-05
+      last_checked_at: 2026-06-10
       evidence: "make validate-plan"
     acceptance:
       required: true
@@ -1001,19 +1001,22 @@ artifacts:
       - EP-001-INFRA
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
       - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-010-LANGUAGE-NORMALIZATION
     related_requirements:
       - REQ-008
       - REQ-009
     status: active
-    description: "Local run, reference data, and planning acceptance workflow instructions."
+    description: "Инструкции локального запуска, работы со справочными данными, проектного планирования и приемки."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-007
+        - V-LANGUAGE-NORMALIZATION-001
+        - V-LANGUAGE-NORMALIZATION-002
       last_checked_at: 2026-06-05
-      evidence: "make validate-plan"
+      evidence: "make audit-language"
     acceptance:
       required: true
       owner: "Дмитрий"
@@ -1030,7 +1033,7 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "Documents that only user can accept results."
+    notes: "Языковая нормализация выполнена в EP-010 по approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION."
     protection:
       protection_status: protected
       protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
@@ -1056,18 +1059,21 @@ artifacts:
       - EP-002-REFERENCE-GOVERNANCE
       - EP-003-REFERENCE-VERSIONING
       - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-010-LANGUAGE-NORMALIZATION
     related_requirements:
       - REQ-009
     status: active
-    description: "Project change history for first release."
+    description: "История изменений проекта для первого релиза."
     created_at: 2026-06-04
-    updated_at: 2026-06-05
+    updated_at: 2026-06-10
     verification:
       status: verified
       scenarios:
         - V-PLAN-001
+        - V-LANGUAGE-NORMALIZATION-001
+        - V-LANGUAGE-NORMALIZATION-003
       last_checked_at: 2026-06-05
-      evidence: "file exists"
+      evidence: "make audit-language"
     acceptance:
       required: true
       owner: "Дмитрий"
@@ -1084,7 +1090,7 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "Version remains 0.1.0 before first commit."
+    notes: "Языковая нормализация выполнена в EP-010 по approved CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION; версия остается 0.1.0."
     protection:
       protection_status: protected
       protection_reason: "Accepted source/manual governance artifact records project rules or accepted decisions."
@@ -4949,3 +4955,63 @@ artifacts:
         []
       regeneration_command: null
       protected_since: 2026-06-10
+  -
+    artifact_id: ART-ACCEPTANCE-EP-010-LANGUAGE-NORMALIZATION
+    name: "EP-010 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
+    owner_module: M-LANGUAGE-NORMALIZATION
+    related_packets:
+      - EP-010-LANGUAGE-NORMALIZATION
+    related_requirements:
+      - REQ-012
+      - REQ-016
+    status: active
+    description: "Acceptance report для языковой нормализации README.md и CHANGELOG.md."
+    created_at: 2026-06-10
+    updated_at: 2026-06-10
+    verification:
+      status: pending
+      scenarios:
+        - V-LANGUAGE-NORMALIZATION-001
+        - V-LANGUAGE-NORMALIZATION-002
+        - V-LANGUAGE-NORMALIZATION-003
+        - V-LANGUAGE-NORMALIZATION-004
+        - V-LANGUAGE-NORMALIZATION-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-README
+      - ART-CHANGELOG
+      - ART-AUDIT-FINDINGS
+      - ART-AUDIT-LANGUAGE-REPORT
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-010 принят пользователем 2026-06-10; acceptance report является защищенным историческим source artifact."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-010 acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-010-LANGUAGE-NORMALIZATION
+      user_decision_source: docs/acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-10
+      protected_since: null
