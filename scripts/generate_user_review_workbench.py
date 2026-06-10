@@ -19,6 +19,7 @@ STATUS_REPORT_PATH = PROJECT_ROOT / "docs" / "status-report.md"
 PACKETS_PATH = PROJECT_ROOT / "docs" / "grace" / "execution-packets.xml"
 YAML_PATH = PROJECT_ROOT / "docs" / "user-review-workbench.yml"
 MARKDOWN_PATH = PROJECT_ROOT / "docs" / "user-review-workbench.md"
+PROTECTION_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
 
 SOURCE_PATHS = [
     ACCEPTANCE_DASHBOARD_PATH,
@@ -583,11 +584,38 @@ def build_workbench() -> dict[str, Any]:
             "post_acceptance_baseline": {
                 "project_state": "accepted_baseline",
                 "accepted_packets": accepted_items,
-                "protection_flags_status": "deferred_to_EP-014",
+                "protection_flags_status": "deferred_to_EP-018",
+                "protection_packet": PROTECTION_PACKET,
                 "verification_debt_status": "deferred_to_EP-015",
                 "reference_intake_status": "deferred_to_EP-016",
                 "audit_cleanup_status": "deferred_to_EP-017",
             },
+            "decision_application_flow": [
+                {
+                    "step": 1,
+                    "command": "make apply-user-review-decisions-dry-run",
+                    "required": True,
+                    "purpose": "Сначала выполнить dry-run и получить planned changes, affected files, reasons и diff.",
+                },
+                {
+                    "step": 2,
+                    "command": "",
+                    "required": True,
+                    "purpose": "Проверить affected files и убедиться, что не меняются чужие acceptance reports.",
+                },
+                {
+                    "step": 3,
+                    "command": "",
+                    "required": True,
+                    "purpose": "Проверить, что Codex не заполняет user-owned поля: accepted_by, accepted_at, checked_by, answered_by, decided_by.",
+                },
+                {
+                    "step": 4,
+                    "command": "make apply-user-review-decisions",
+                    "required": True,
+                    "purpose": "Выполнять apply только после просмотра dry-run diff и подтверждения безопасного scope.",
+                },
+            ],
             "active_review_items": active_items,
             "recently_accepted": accepted_items,
             "warnings": warnings,
@@ -754,17 +782,20 @@ def write_markdown(workbench: dict[str, Any]) -> None:
             "1. Выполнить команды проверки, указанные для EP.",
             "2. Проверить blockers и risks.",
             "3. Заполнить `user_decision` в `docs/user-review-workbench.yml`.",
-            "4. Запустить `make apply-user-review-decisions`.",
-            "5. Запустить `make generate-dashboards`.",
-            "6. Запустить `make validate-plan`.",
-            "7. Запустить `make check`.",
-            "8. Убедиться, что принятый EP исчез из `active_review_items`, но сохранился в acceptance report и dashboards.",
+            "4. Запустить `make apply-user-review-decisions-dry-run`.",
+            "5. Проверить dry-run diff, список affected files и reasons.",
+            "6. Убедиться, что dry-run не меняет чужие acceptance reports и Codex не заполняет user-owned поля.",
+            "7. Только после просмотра dry-run diff запустить `make apply-user-review-decisions`.",
+            "8. Запустить `make generate-dashboards`.",
+            "9. Запустить `make validate-plan`.",
+            "10. Запустить `make check`.",
+            "11. Убедиться, что принятый EP исчез из `active_review_items`, но сохранился в acceptance report и dashboards.",
             "",
             "## 9. Post-acceptance baseline",
             "",
             "Accepted packets are hidden from `active_review_items`; acceptance reports remain the source of truth.",
             "",
-            "Protection flags are deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.",
+            f"Accepted artifact protection is deferred to `{PROTECTION_PACKET}`.",
             "",
             "## 10. Недавно принятые пакеты",
             "",

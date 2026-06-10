@@ -1,5 +1,5 @@
 verification_dashboard:
-  updated_at: 2026-06-09
+  updated_at: 2026-06-10
   source_files:
     - docs/grace/verification-plan.xml
     - docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
@@ -15,7 +15,7 @@ verification_dashboard:
     not_applicable: 0
   warnings:
     []
-  verification_scenarios_count: 87
+  verification_scenarios_count: 95
   checks:
     -
       check_id: VT-EP-004-001

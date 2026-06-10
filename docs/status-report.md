@@ -2,7 +2,7 @@
 
 ## 1. Дата обновления
 
-2026-06-09
+2026-06-10
 
 ## 2. Текущий Execution Packet
 
@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
-next_recommended_packet: EP-014-ACCEPTED-ARTIFACT-PROTECTION
-previous_active_execution_packet: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+last_accepted_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+next_recommended_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+previous_active_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -36,6 +36,7 @@ post_acceptance_baseline:
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
+    - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
 ```
 
 ## 5. Выполнено
@@ -50,13 +51,15 @@ post_acceptance_baseline:
 - Acceptance reports EP-001..EP-012 приняты пользователем Дмитрием 2026-06-08.
 - EP-012 был последним активным пакетом до закрытия acceptance queue.
 - EP-013 принят пользователем Дмитрием 2026-06-09 и синхронизирован как post-acceptance состояние.
+- EP-014 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-Активного execution packet нет.
+Активный execution packet отсутствует.
 
 ## 7. Готово к приемке
 
+Активных execution packets, готовых к приемке, нет.
 
 ## 8. Принятый Baseline
 
@@ -71,19 +74,20 @@ post_acceptance_baseline:
 - [EP-011-GIT-WORKFLOW-DISCIPLINE](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
+- [EP-014-USER-REVIEW-DECISION-CLI-SAFETY](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
 
 ## 9. Follow-Up Debt
 
-- `EP-014-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts. Generated dashboards/workbench must remain derived artifacts rather than hard-locked source artifacts.
 - `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`: reconcile pending verification checks and the `EP-006-MONTHLY-PLANNING-AND-DEFENSE` orphan monthly scope.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: prepare intake of official or project-authorized KSI, FSNB/GESN, and work type sources.
 - `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit findings without mass-russification and without changing accepted/protected artifacts.
+- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts. Generated dashboards/workbench must remain derived artifacts rather than hard-locked source artifacts.
 
 ## 10. Блокеры
 
 ## 11. Риски
 
-- `protected_accepted_artifacts: 0` remains visible until EP-014 introduces a protection classification.
+- `protected_accepted_artifacts: 0` remains visible until EP-018 introduces a protection classification.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
@@ -94,10 +98,14 @@ post_acceptance_baseline:
 
 `EP-006-MONTHLY-PLANNING-AND-DEFENSE` appears in the verification dashboard but has no corresponding accepted execution packet and no acceptance report. EP-013 documents this as follow-up debt only. EP-015 must reclassify these checks as monthly-scope checks such as `MONTHLY-2026-06`, or create a future correctly registered package.
 
-## 13. Preflight Note
+## 13. Planning Decision
+
+`EP-014-USER-REVIEW-DECISION-CLI-SAFETY` uses the active EP-014 number to close the workbench decision CLI safety gap before further user decision automation. The previously recommended `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is moved to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`; `EP-015`, `EP-016`, and `EP-017` keep their planned meanings.
+
+## 14. Preflight Note
 
 `git pull --ff-only` did not complete because GitHub was unreachable over the network. This is not treated as an EP-013 blocker because local `main` and local `origin/main` both pointed to `c3a747707335e85fd4786688af3852a799da5bde`, the working tree was clean, and `/Users/larichkindv/Tartip` and `/Users/larichkindv/Documents/Tartip` resolve to the same repository path.
 
-## 14. Следующий шаг
+## 15. Следующий шаг
 
-EP-013 принят пользователем. Сохраняется `project_state: accepted_baseline`, `active_execution_packet: none`; следующий рекомендуемый пакет - `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
+EP-014 принят и синхронизирован. Следующий рекомендуемый пакет - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.

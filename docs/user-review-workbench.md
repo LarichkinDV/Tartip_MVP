@@ -1,6 +1,6 @@
 # Единое активное окно проверки пользователем
 
-Дата обновления: 2026-06-09
+Дата обновления: 2026-06-10
 
 ## 1. Сводка
 
@@ -14,7 +14,7 @@
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Принятые пакеты скрыты из активной очереди | 11 |
+| Принятые пакеты скрыты из активной очереди | 12 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -118,17 +118,20 @@
 1. Выполнить команды проверки, указанные для EP.
 2. Проверить blockers и risks.
 3. Заполнить `user_decision` в `docs/user-review-workbench.yml`.
-4. Запустить `make apply-user-review-decisions`.
-5. Запустить `make generate-dashboards`.
-6. Запустить `make validate-plan`.
-7. Запустить `make check`.
-8. Убедиться, что принятый EP исчез из `active_review_items`, но сохранился в acceptance report и dashboards.
+4. Запустить `make apply-user-review-decisions-dry-run`.
+5. Проверить dry-run diff, список affected files и reasons.
+6. Убедиться, что dry-run не меняет чужие acceptance reports и Codex не заполняет user-owned поля.
+7. Только после просмотра dry-run diff запустить `make apply-user-review-decisions`.
+8. Запустить `make generate-dashboards`.
+9. Запустить `make validate-plan`.
+10. Запустить `make check`.
+11. Убедиться, что принятый EP исчез из `active_review_items`, но сохранился в acceptance report и dashboards.
 
 ## 9. Post-acceptance baseline
 
 Accepted packets are hidden from `active_review_items`; acceptance reports remain the source of truth.
 
-Protection flags are deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
+Accepted artifact protection is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 
 ## 10. Недавно принятые пакеты
 
@@ -145,3 +148,4 @@ Protection flags are deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
 | EP-011-GIT-WORKFLOW-DISCIPLINE | 2026-06-08 | Дмитрий | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | 2026-06-08 | Дмитрий | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md |
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | 2026-06-09 | Дмитрий | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
+| EP-014-USER-REVIEW-DECISION-CLI-SAFETY | 2026-06-10 | Дмитрий | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md |

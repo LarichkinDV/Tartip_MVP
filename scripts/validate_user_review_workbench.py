@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,10 @@ ACCEPTANCE_DASHBOARD = PROJECT_ROOT / "docs" / "acceptance-dashboard.yml"
 VERIFICATION_DASHBOARD = PROJECT_ROOT / "docs" / "verification-dashboard.yml"
 USER_ACTION_DASHBOARD = PROJECT_ROOT / "docs" / "user-action-dashboard.yml"
 AUDIT_FINDINGS = PROJECT_ROOT / "docs" / "audit" / "audit-findings.yml"
+MAKEFILE = PROJECT_ROOT / "Makefile"
+APPLY_SCRIPT = PROJECT_ROOT / "scripts" / "apply_user_review_decisions.py"
+DRY_RUN_TARGET = "make apply-user-review-decisions-dry-run"
+APPLY_TARGET = "make apply-user-review-decisions"
 
 ACTIVE_ACCEPTANCE_STATUSES = {
     "ready_for_acceptance",
@@ -240,6 +245,107 @@ def validate_user_owned_fields(value: Any, path: str = "workbench") -> list[str]
     return errors
 
 
+def git_status_short() -> str:
+    result = subprocess.run(
+        ["git", "status", "--short"],
+        cwd=PROJECT_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    return result.stdout if result.returncode == 0 else f"<git error {result.stderr}>"
+
+
+def validate_decision_cli_safety() -> list[str]:
+    errors: list[str] = []
+    makefile_text = MAKEFILE.read_text(encoding="utf-8") if MAKEFILE.exists() else ""
+    for target in [
+        "apply-user-review-decisions-dry-run:",
+        "apply-user-review-decisions:",
+    ]:
+        if target not in makefile_text:
+            errors.append(f"Makefile missing target: {target.removesuffix(':')}")
+    help_result = subprocess.run(
+        [sys.executable, str(APPLY_SCRIPT), "--help"],
+        cwd=PROJECT_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    help_text = help_result.stdout + help_result.stderr
+    if help_result.returncode != 0:
+        errors.append("apply_user_review_decisions.py --help failed")
+    for flag in ["--dry-run", "--apply"]:
+        if flag not in help_text:
+            errors.append(f"apply_user_review_decisions.py missing CLI flag {flag}")
+
+    before = git_status_short()
+    dry_run = subprocess.run(
+        [sys.executable, str(APPLY_SCRIPT), "--dry-run"],
+        cwd=PROJECT_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    after = git_status_short()
+    if dry_run.returncode != 0:
+        errors.append(
+            "apply_user_review_decisions.py --dry-run failed: "
+            + (dry_run.stderr.strip() or dry_run.stdout.strip())
+        )
+    if before != after:
+        errors.append(
+            "apply_user_review_decisions.py --dry-run changed the working tree"
+        )
+    return errors
+
+
+def validate_decision_application_flow(workbench: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    flow = workbench.get("decision_application_flow")
+    if not isinstance(flow, list) or not flow:
+        return ["workbench missing decision_application_flow"]
+
+    commands = [str(step.get("command") or "") for step in flow if isinstance(step, dict)]
+    purposes = " ".join(
+        str(step.get("purpose") or "") for step in flow if isinstance(step, dict)
+    )
+    if DRY_RUN_TARGET not in commands:
+        errors.append(f"decision_application_flow missing {DRY_RUN_TARGET}")
+    if APPLY_TARGET not in commands:
+        errors.append(f"decision_application_flow missing {APPLY_TARGET}")
+    if DRY_RUN_TARGET in commands and APPLY_TARGET in commands:
+        if commands.index(DRY_RUN_TARGET) > commands.index(APPLY_TARGET):
+            errors.append("decision_application_flow must run dry-run before apply")
+    for needle in [
+        "affected files",
+        "acceptance reports",
+        "Codex",
+        "user-owned",
+    ]:
+        if needle not in purposes:
+            errors.append(f"decision_application_flow missing guardrail: {needle}")
+
+    md_text = WORKBENCH_MD.read_text(encoding="utf-8") if WORKBENCH_MD.exists() else ""
+    dry_run_pos = md_text.find(f"`{DRY_RUN_TARGET}`")
+    apply_pos = md_text.find(f"`{APPLY_TARGET}`")
+    if dry_run_pos == -1:
+        errors.append(f"docs/user-review-workbench.md missing {DRY_RUN_TARGET}")
+    if apply_pos == -1:
+        errors.append(f"docs/user-review-workbench.md missing {APPLY_TARGET}")
+    if dry_run_pos != -1 and apply_pos != -1 and dry_run_pos > apply_pos:
+        errors.append("docs/user-review-workbench.md must list dry-run before apply")
+    for needle in [
+        "affected files",
+        "чужие acceptance reports",
+        "Codex",
+        "user-owned поля",
+    ]:
+        if needle not in md_text:
+            errors.append(f"docs/user-review-workbench.md missing guardrail: {needle}")
+    return errors
+
+
 def validate_language(workbench: dict[str, Any]) -> list[str]:
     warnings: list[str] = []
     for item in active_items(workbench):
@@ -274,6 +380,8 @@ def main() -> int:
     errors.extend(validate_expected_items(workbench))
     errors.extend(validate_active_item_shape(workbench))
     errors.extend(validate_user_owned_fields(workbench))
+    errors.extend(validate_decision_application_flow(workbench))
+    errors.extend(validate_decision_cli_safety())
 
     warnings = validate_language(workbench)
     for warning in warnings:

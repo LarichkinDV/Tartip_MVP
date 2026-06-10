@@ -468,7 +468,7 @@
       <Criterion id="AC-EP-013-007">High-priority user actions остаются open.</Criterion>
       <Criterion id="AC-EP-013-008">Audit finding statuses не меняются EP-013.</Criterion>
       <Criterion id="AC-EP-013-009">EP-006 orphan/monthly verification scope вынесен в follow-up EP-015.</Criterion>
-      <Criterion id="AC-EP-013-010">Accepted artifact protection flags не включаются массово и вынесены в EP-014.</Criterion>
+      <Criterion id="AC-EP-013-010">Accepted artifact protection flags не включаются массово и вынесены в future protection packet.</Criterion>
       <Criterion id="AC-EP-013-011">validate_post_acceptance_state.py создан и проходит.</Criterion>
     </AcceptanceCriteria>
     <AcceptanceOwner>Дмитрий</AcceptanceOwner>
@@ -480,6 +480,66 @@
       <Item>Do not change BIM-KSI-GESN domain methodology</Item>
       <Item>Do not add reference or normative data</Item>
       <Item>Do not create or edit DOCX/PDF files</Item>
+    </NonGoals>
+  </Packet>
+  <Packet id="EP-014-USER-REVIEW-DECISION-CLI-SAFETY" status="accepted">
+    <Name>User review decision CLI safety</Name>
+    <Goal>Close the safety gap between the user review workbench rules and scripts/apply_user_review_decisions.py by requiring explicit dry-run/apply modes and guarded writes.</Goal>
+    <Scope>
+      <Item>Add explicit --dry-run and --apply modes to scripts/apply_user_review_decisions.py</Item>
+      <Item>Make dry-run the non-writing default behavior</Item>
+      <Item>Show planned changes, affected files, reasons, and diffs before any write</Item>
+      <Item>Apply only explicit user-owned acceptance decisions with stale-checksum and accepted-report protections</Item>
+      <Item>Add Makefile dry-run/apply targets and validator checks</Item>
+      <Item>Document the EP-014 numbering decision and move accepted artifact protection to the next free planned packet number</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>scripts/apply_user_review_decisions.py</Artifact>
+      <Artifact>scripts/validate_user_review_workbench.py</Artifact>
+      <Artifact>scripts/validate_post_acceptance_state.py</Artifact>
+      <Artifact>Makefile</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-014-001">scripts/apply_user_review_decisions.py supports --dry-run.</Criterion>
+      <Criterion id="AC-EP-014-002">scripts/apply_user_review_decisions.py supports --apply.</Criterion>
+      <Criterion id="AC-EP-014-003">Running without --apply does not modify files.</Criterion>
+      <Criterion id="AC-EP-014-004">Dry-run prints planned changes, affected files, reasons, and diffs.</Criterion>
+      <Criterion id="AC-EP-014-005">Apply writes only explicitly filled user acceptance decisions.</Criterion>
+      <Criterion id="AC-EP-014-006">accepted_by=Codex is rejected.</Criterion>
+      <Criterion id="AC-EP-014-007">accepted_by, accepted_at, and comments are required.</Criterion>
+      <Criterion id="AC-EP-014-008">Stale source_checksum_sha256 blocks apply.</Criterion>
+      <Criterion id="AC-EP-014-009">Already accepted reports are not overwritten without explicit user approval.</Criterion>
+      <Criterion id="AC-EP-014-010">Items with active blockers are not applied.</Criterion>
+      <Criterion id="AC-EP-014-011">Only type=acceptance items can be applied.</Criterion>
+      <Criterion id="AC-EP-014-012">Manual verification, user action, audit finding, and requires_user_approval items are warning-only.</Criterion>
+      <Criterion id="AC-EP-014-013">Writes are atomic.</Criterion>
+      <Criterion id="AC-EP-014-014">Acceptance criteria, blockers, risks, artifacts, and unrelated sections are not changed by apply.</Criterion>
+      <Criterion id="AC-EP-014-015">EP-001 through EP-013 acceptance decisions are not changed.</Criterion>
+      <Criterion id="AC-EP-014-016">EP-010 is not executed.</Criterion>
+      <Criterion id="AC-EP-014-017">Generated user review workbench instructions require dry-run before apply.</Criterion>
+      <Criterion id="AC-EP-014-018">Makefile contains apply-user-review-decisions-dry-run target.</Criterion>
+      <Criterion id="AC-EP-014-019">Dry-run mode does not write files.</Criterion>
+      <Criterion id="AC-EP-014-020">Legacy EP-014 accepted artifact protection labels are superseded by EP-018 in generated artifacts.</Criterion>
+      <Criterion id="AC-EP-014-021">GitHub push, merge, archive export, and release publication are not performed by EP-014.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not repeat EP-012</Item>
+      <Item>Do not change acceptance decisions EP-001 through EP-013</Item>
+      <Item>Do not mark EP-014 accepted</Item>
+      <Item>Do not change accepted or protected artifacts without explicit user approval</Item>
+      <Item>Do not change README.md or CHANGELOG.md</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not add reference or normative data</Item>
+      <Item>Do not execute EP-010-LANGUAGE-NORMALIZATION</Item>
+      <Item>Do not run git add, commit, merge, push, or rebase</Item>
     </NonGoals>
   </Packet>
 </ExecutionPackets>

@@ -306,7 +306,49 @@
       <Item>EP-001 through EP-012 must not appear in active acceptance queue after user acceptance.</Item>
       <Item>EP-013 remains ready_for_acceptance until the user accepts it.</Item>
       <Item>Pending verification checks remain post-acceptance debt and do not reopen accepted reports.</Item>
-      <Item>protected_accepted_artifacts=0 remains visible until EP-014 classifies protection flags.</Item>
+      <Item>protected_accepted_artifacts=0 remains visible until a future protection packet classifies protection flags.</Item>
+    </Invariants>
+  </Module>
+  <Module id="M-USER-REVIEW-DECISION-CLI-SAFETY" status="ready_for_acceptance">
+    <Name>User Review Decision CLI Safety</Name>
+    <Responsibilities>
+      <Item>Require explicit --dry-run and --apply modes for scripts/apply_user_review_decisions.py.</Item>
+      <Item>Keep dry-run and default execution non-writing.</Item>
+      <Item>Show planned changes, affected files, reasons, and diffs before any write.</Item>
+      <Item>Generate workbench instructions that require dry-run review before apply.</Item>
+      <Item>Apply only explicitly filled user acceptance decisions from docs/user-review-workbench.yml.</Item>
+      <Item>Reject stale source checksums, accepted_by=Codex, empty user fields, active blockers, and already accepted report overwrites.</Item>
+      <Item>Use atomic writes when applying accepted user decisions.</Item>
+      <Item>Keep accepted artifact protection planning references on EP-018, not EP-014.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/user-review-workbench.yml</Item>
+      <Item>docs/acceptance/*.acceptance.md</Item>
+    </Inputs>
+    <Outputs>
+      <Item>scripts/apply_user_review_decisions.py</Item>
+      <Item>scripts/validate_user_review_workbench.py</Item>
+      <Item>Makefile</Item>
+      <Item>docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>applying decisions without --apply</Item>
+      <Item>accepting packets on behalf of Codex</Item>
+      <Item>overwriting already accepted reports without explicit user approval</Item>
+      <Item>applying manual verification, user action, audit finding, or requires_user_approval items</Item>
+      <Item>changing acceptance criteria, blockers, risks, artifacts, or unrelated sections</Item>
+      <Item>changing acceptance decisions EP-001 through EP-013</Item>
+      <Item>executing EP-010-LANGUAGE-NORMALIZATION</Item>
+      <Item>changing BIM-KSI-GESN domain logic</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Default execution is equivalent to dry-run and must not modify files.</Item>
+      <Item>--dry-run must not change git status --short.</Item>
+      <Item>--apply requires acceptance_decision=accepted, accepted_by, accepted_at, and comments.</Item>
+      <Item>Generated workbench flow must list dry-run before apply.</Item>
+      <Item>accepted_by must not be Codex.</Item>
+      <Item>Stale source_checksum_sha256 blocks apply.</Item>
+      <Item>Accepted reports remain source of truth after user-owned apply.</Item>
     </Invariants>
   </Module>
 </ModuleContracts>

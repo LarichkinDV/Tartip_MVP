@@ -1,5 +1,5 @@
 acceptance_dashboard:
-  updated_at: 2026-06-09
+  updated_at: 2026-06-10
   source_files:
     - docs/grace/execution-packets.xml
     - docs/artifact-registry.yml
@@ -7,7 +7,7 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 11
+    accepted: 12
     needs_revision: 0
     rejected: 0
     blocked: 0
@@ -71,7 +71,14 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-09
         acceptance_report: docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md
-    protection_flags_status: deferred_to_EP-014
+      -
+        packet_id: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-10
+        acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+    protection_flags_status: deferred_to_EP-018
+    protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    planning_note: "Historical EP-014 accepted artifact protection references are superseded by EP-018-ACCEPTED-ARTIFACT-PROTECTION."
   warnings:
     []
   items:
@@ -1952,7 +1959,7 @@ acceptance_dashboard:
           user_status: accepted
         -
           id: AC-EP-013-010
-          text: "Accepted artifact protection flags не включаются массово и вынесены в EP-014."
+          text: "Accepted artifact protection flags не включаются массово и вынесены в future protection packet."
           codex_status: accepted
           user_status: accepted
         -
@@ -1992,3 +1999,259 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-09
         comments: "Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017."
+    -
+      packet_id: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      title: "User review decision CLI safety"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+      artifacts:
+        -
+          path: docs/grace/execution-packets.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/grace/module-contracts.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/grace/verification-plan.xml
+          status: active
+          type: grace_artifact
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: README.md
+          status: active
+          type: methodology_note
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/acceptance-dashboard.md
+          status: active
+          type: dashboard
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/generate_acceptance_dashboard.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/validate_post_acceptance_state.py
+          status: active
+          type: validator_script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/user-review-workbench.yml
+          status: active
+          type: dashboard
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/user-review-workbench.yml
+          status: active
+          type: dashboard
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/generate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/validate_user_review_workbench.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: scripts/apply_user_review_decisions.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_locked: false
+      verification_commands:
+        -
+          command: "git rev-parse --show-toplevel"
+          status: documented
+        -
+          command: "git branch --show-current"
+          status: documented
+        -
+          command: "git status --short"
+          status: documented
+        -
+          command: "git log --oneline --decorate -8"
+          status: documented
+        -
+          command: "python3 scripts/apply_user_review_decisions.py --dry-run"
+          status: documented
+        -
+          command: "make apply-user-review-decisions-dry-run"
+          status: documented
+        -
+          command: "git status --short"
+          status: documented
+        -
+          command: "git --no-pager diff --name-status"
+          status: documented
+        -
+          command: "make validate-user-review-workbench"
+          status: documented
+        -
+          command: "make generate-dashboards"
+          status: documented
+        -
+          command: "make validate-plan"
+          status: documented
+        -
+          command: "make validate-verification"
+          status: documented
+        -
+          command: "make validate-audit"
+          status: documented
+        -
+          command: "make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-014-001
+          text: "scripts/apply_user_review_decisions.py supports --dry-run."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-002
+          text: "scripts/apply_user_review_decisions.py supports --apply."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-003
+          text: "Running without --apply does not modify files."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-004
+          text: "Dry-run prints planned changes, affected files, reasons, and diffs."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-005
+          text: "Apply writes only explicitly filled user acceptance decisions."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-006
+          text: "accepted_by=Codex is rejected."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-007
+          text: "accepted_by, accepted_at, and comments are required."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-008
+          text: "Stale source_checksum_sha256 blocks apply."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-009
+          text: "Already accepted reports are not overwritten without explicit user approval."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-010
+          text: "Items with active blockers are not applied."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-011
+          text: "Only type=acceptance items can be applied."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-012
+          text: "Manual verification, user action, audit finding, and requires_user_approval items are warning-only."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-013
+          text: "Writes are atomic."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-014
+          text: "Acceptance criteria, blockers, risks, artifacts, and unrelated sections are not changed by apply."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-015
+          text: "EP-001 through EP-013 acceptance decisions are not changed."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-016
+          text: "EP-010 is not executed."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-017
+          text: "Generated user review workbench instructions require dry-run before apply."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-018
+          text: "Makefile contains apply-user-review-decisions-dry-run target."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-019
+          text: "Dry-run mode does not write files."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-020
+          text: "Legacy EP-014 accepted artifact protection labels are superseded by EP-018 in generated artifacts."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-014-021
+          text: "GitHub push, merge, archive export, and release publication are not performed by EP-014."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        []
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-10
+        comments: "Принято. Проверено: make apply-user-review-decisions-dry-run и python3 scripts/apply_user_review_decisions.py --dry-run выполняются в non-writing режиме; сравнение git status до и после dry-run не выявило изменений. Режим --apply отделен от dry-run и защищен проверками обязательных user-owned полей, stale checksum, active blockers, запрета accepted_by = Codex и запрета перезаписи уже accepted reports. Manual verification и user_action решения в текущей версии не применяются автоматически. Accepted decisions EP-001–EP-013 не изменены. Planning decision DEC-EP-014-001 зафиксирован; перенос EP-014-ACCEPTED-ARTIFACT-PROTECTION на EP-018 подтвержден."

@@ -15,6 +15,9 @@ REGISTRY_PATH = PROJECT_ROOT / "docs" / "artifact-registry.yml"
 ACCEPTANCE_DIR = PROJECT_ROOT / "docs" / "acceptance"
 YAML_PATH = PROJECT_ROOT / "docs" / "acceptance-dashboard.yml"
 MARKDOWN_PATH = PROJECT_ROOT / "docs" / "acceptance-dashboard.md"
+PROTECTION_FLAGS_STATUS = "deferred_to_EP-018"
+PROTECTION_PACKET = "EP-018-ACCEPTED-ARTIFACT-PROTECTION"
+ACCEPTED_PACKET_PROTECTION_STATUS = "accepted/protected"
 
 
 def rel(path: Path) -> str:
@@ -303,7 +306,12 @@ def build_dashboard() -> dict[str, Any]:
             "post_acceptance_baseline": {
                 "project_state": "accepted_baseline",
                 "accepted_packets": accepted_packets,
-                "protection_flags_status": "deferred_to_EP-014",
+                "protection_flags_status": PROTECTION_FLAGS_STATUS,
+                "protection_packet": PROTECTION_PACKET,
+                "planning_note": (
+                    "Historical EP-014 accepted artifact protection references "
+                    f"are superseded by {PROTECTION_PACKET}."
+                ),
             },
             "warnings": warnings,
             "items": items,
@@ -390,7 +398,7 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
         for item in accepted_items:
             decision = item["user_decision"]
             lines.append(
-                f"| {md_escape(item['packet_id'])} | {md_escape(item['title'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | {md_escape(decision.get('comments'))} | deferred_to_EP-014 |"
+                f"| {md_escape(item['packet_id'])} | {md_escape(item['title'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | {md_escape(decision.get('comments'))} | {ACCEPTED_PACKET_PROTECTION_STATUS} |"
             )
     else:
         lines.append("| - | - | - | - | - | - |")
@@ -415,7 +423,18 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
                 f"| {md_escape(artifact.get('path'))} | {md_escape(item['packet_id'])} | {md_escape(decision.get('decided_by'))} | {md_escape(decision.get('decided_at'))} | Изменение требует user approval и новой ревизии |"
             )
     else:
-        lines.append("| - | - | - | - | Protection flags deferred to EP-014 |")
+        lines.append(
+            f"| - | - | - | - | Protection flags deferred to {PROTECTION_PACKET} |"
+        )
+    lines.extend(
+        [
+            "",
+            (
+                "Historical accepted comments may mention earlier EP-014 protection planning; "
+                f"the current accepted artifact protection packet is `{PROTECTION_PACKET}`."
+            ),
+        ]
+    )
     lines.extend(
         [
             "",

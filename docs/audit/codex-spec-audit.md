@@ -1,6 +1,6 @@
 # Codex Spec Audit
 
-Дата обновления: 2026-06-09
+Дата обновления: 2026-06-10
 
 ## 1. Сводка
 
@@ -8,7 +8,7 @@
 |---|---:|
 | critical | 0 |
 | high | 0 |
-| medium | 147 |
+| medium | 151 |
 | low | 3 |
 
 Активных critical findings: 0
@@ -55,15 +55,19 @@
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-011-git-workflow-discipline-acceptance не соответствует packet EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD. | Использовать формат ep-012-<short-slug>. | open |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-014-user-review-decision-cli-safety не соответствует packet EP-018-ACCEPTED-ARTIFACT-PROTECTION. | Использовать формат ep-018-<short-slug>. | open |
 | AUD-GIT-001-CURRENT-BRANCH-MAIN | medium | AUD-GIT-001 | .git | Текущая ветка main не соответствует EP-013-POST-ACCEPTANCE-STATE-SYNC. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-011-GIT-WORKFLOW-DISCIPLINE | medium | AUD-GIT-002 | docs/acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md | Merge запрещен для EP-011-GIT-WORKFLOW-DISCIPLINE: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | medium | AUD-GIT-002 | docs/acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md | Merge запрещен для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-002-MERGE-FORBIDDEN-EP-013-POST-ACCEPTANCE-STATE-SYNC | medium | AUD-GIT-002 | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md | Merge запрещен для EP-013-POST-ACCEPTANCE-STATE-SYNC: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
-| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-014-USER-REVIEW-DECISION-CLI-SAFETY | medium | AUD-GIT-002 | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md | Merge запрещен для EP-014-USER-REVIEW-DECISION-CLI-SAFETY: status=ready_for_acceptance, acceptance_decision=accepted, accepted_by=set. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-018-ACCEPTED-ARTIFACT-PROTECTION | medium | AUD-GIT-002 | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md | Merge запрещен для EP-018-ACCEPTED-ARTIFACT-PROTECTION: status=-, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-011-GIT-WORKFLOW-DISCIPLINE | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-011-GIT-WORKFLOW-DISCIPLINE нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-014-USER-REVIEW-DECISION-CLI-SAFETY | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-014-USER-REVIEW-DECISION-CLI-SAFETY нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-018-ACCEPTED-ARTIFACT-PROTECTION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-018-ACCEPTED-ARTIFACT-PROTECTION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-LANG-001-02894c6b30 | medium | AUD-LANG-001 | README.md | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | open |
 | AUD-LANG-001-046103457b | medium | AUD-LANG-001 | CHANGELOG.md | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | open |
 | AUD-LANG-001-0531a641d2 | medium | AUD-LANG-001 | README.md | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | open |

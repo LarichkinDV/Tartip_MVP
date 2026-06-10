@@ -345,6 +345,38 @@
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-009" module="M-POST-ACCEPTANCE-STATE-SYNC">
     <Name>accepted artifact protection is deferred</Name>
-    <Expected>protected_accepted_artifacts=0 remains visible and accepted artifact protection classification is deferred to EP-014.</Expected>
+    <Expected>protected_accepted_artifacts=0 remains visible and accepted artifact protection classification is deferred after EP-014-USER-REVIEW-DECISION-CLI-SAFETY to the next free planned protection packet.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-001" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>dry-run mode is non-writing</Name>
+    <Expected>python3 scripts/apply_user_review_decisions.py --dry-run exits successfully and does not change git status --short.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-002" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>apply mode is explicit</Name>
+    <Expected>scripts/apply_user_review_decisions.py exposes --apply, and files are modified only in --apply mode after all safety checks pass.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-003" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>user-owned fields are required</Name>
+    <Expected>Apply rejects empty accepted_by, accepted_at, comments, accepted_by=Codex, and non-accepted decisions.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-004" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>stale checksum blocks apply</Name>
+    <Expected>Apply refuses to update target_decision_file when source_checksum_sha256 does not match the current file.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-005" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>already accepted reports are protected</Name>
+    <Expected>Apply refuses to overwrite an already accepted report without explicit user approval.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-006" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>post-acceptance validator allows only registered current ready packet</Name>
+    <Expected>validate_post_acceptance_state.py allows EP-014-USER-REVIEW-DECISION-CLI-SAFETY as the only ready_for_acceptance packet after EP-013 acceptance and rejects any other active acceptance item.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-007" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>generated workbench requires dry-run before apply</Name>
+    <Expected>docs/user-review-workbench.md and docs/user-review-workbench.yml require make apply-user-review-decisions-dry-run before make apply-user-review-decisions and document affected files, acceptance report, and user-owned field checks.</Expected>
+  </Scenario>
+  <Scenario id="V-USER-DECISION-CLI-008" module="M-USER-REVIEW-DECISION-CLI-SAFETY">
+    <Name>accepted artifact protection label uses EP-018</Name>
+    <Expected>Generated acceptance and workbench artifacts use EP-018-ACCEPTED-ARTIFACT-PROTECTION for accepted artifact protection debt instead of the legacy EP-014 deferral label.</Expected>
   </Scenario>
 </VerificationPlan>

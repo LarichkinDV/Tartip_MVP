@@ -14,3 +14,22 @@
 | DEC-010 | Синхронизация с диссертацией идет через impact log, prompt и markdown patch. | active | Tartip не должен редактировать DOCX напрямую или переносить инженерные детали как научный результат без пользовательского решения. | REQ-011 |
 | DEC-011 | EP-009 работает как audit-first/read-mostly packet. | active | Аудит должен сначала фиксировать findings, сохранять пользовательские статусы и не выполнять массовую русификацию или исправление accepted/protected artifacts без user approval. | REQ-012 |
 | DEC-012 | Git workflow связывает ветку с execution packet и запрещает merge без user acceptance. | active | Codex может валидировать Git state и готовить инструкции, но не выполняет merge в main без accepted packet, passed checks и явного user approval. | REQ-013 |
+
+## DEC-EP-014-001 — Planning / Execution Packet Ordering
+
+- Decision ID: DEC-EP-014-001
+- Дата: 2026-06-10
+- Тип решения: planning / execution packet ordering
+- Решение: текущий EP-014 используется для `EP-014-USER-REVIEW-DECISION-CLI-SAFETY`.
+- Перенос: ранее планировавшийся `EP-014-ACCEPTED-ARTIFACT-PROTECTION` переносится на `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
+- Причина: перед дальнейшей автоматизацией пользовательских решений необходимо закрыть safety gap в `scripts/apply_user_review_decisions.py`: явный `--dry-run`, защищенный `--apply`, запрет неявной записи и защита user-owned полей.
+- Impact: `EP-015`, `EP-016` и `EP-017` сохраняют свои назначения; пакет защиты accepted artifacts переносится на `EP-018`.
+- Affected artifacts:
+  - `docs/project-plan.md`
+  - `docs/status-report.md`
+  - `docs/grace/execution-packets.xml`
+  - `docs/artifact-registry.yml`
+  - `docs/traceability-matrix.md`
+  - `docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md`
+- Acceptance impact: EP-014 остается `ready_for_acceptance`; пользовательское решение остается `pending`.
+- User approval: пользователь должен проверить и принять это решение при приемке EP-014.

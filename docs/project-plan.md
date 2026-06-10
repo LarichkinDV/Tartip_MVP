@@ -12,19 +12,21 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Last accepted execution packet: `EP-013-POST-ACCEPTANCE-STATE-SYNC`.
+Current execution packet: `none`.
 
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-013-POST-ACCEPTANCE-STATE-SYNC
-next_recommended_packet: EP-014-ACCEPTED-ARTIFACT-PROTECTION
-previous_active_execution_packet: EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+last_accepted_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+next_recommended_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
+previous_active_execution_packet: EP-014-USER-REVIEW-DECISION-CLI-SAFETY
 ```
 
 ## 4. Current Stage
 
-Post-acceptance state synchronization after the first accepted baseline is complete. The acceptance cycle is closed by user decisions in `docs/acceptance/*.acceptance.md`; EP-013 reflects those decisions in project registries, dashboards, and status documents.
+The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
+
+EP-014 принят пользователем 2026-06-10. Active acceptance queue должна быть пустой до старта следующего execution packet; следующий рекомендуемый пакет остается `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 
 ## 5. Post-Acceptance Baseline
 
@@ -44,9 +46,14 @@ post_acceptance_baseline:
     - EP-011-GIT-WORKFLOW-DISCIPLINE
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
+    - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
+
+## 5.1. Planning Decision
+
+`EP-014-USER-REVIEW-DECISION-CLI-SAFETY` uses the next execution packet number because it is the current safety correction required before further user decision automation. The previously recommended `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is moved to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`, preserving the already planned follow-up order for `EP-015`, `EP-016`, and `EP-017`.
 
 ## 6. Stage Table
 
@@ -63,28 +70,30 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | Git Workflow | Branch naming, dirty tree handling, merge gates, and forbidden Git files | accepted | [git workflow](git-workflow.md), [git workflow validator](../scripts/validate_git_workflow.py), [EP-011 acceptance](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) |
 | User Review Workbench | Active user review queue, safe decision application, and empty blockers/risks standard | accepted | [user review workbench](user-review-workbench.md), [workbench generator](../scripts/generate_user_review_workbench.py), [EP-012 acceptance](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) |
 | Post-Acceptance State Sync | Accepted baseline synchronization, follow-up debt visibility, and validation | accepted | [EP-013 acceptance](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md), [post-acceptance validator](../scripts/validate_post_acceptance_state.py) |
+| User Review Decision CLI Safety | Explicit dry-run/apply decision CLI, non-writing dry-run, atomic apply guardrails | accepted | [EP-014 acceptance](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md), [decision apply script](../scripts/apply_user_review_decisions.py) |
 
 ## 7. Execution Packets
 
 | Packet | Name | Status | Acceptance Report | Next Step |
 |---|---|---|---|---|
-| EP-001-INFRA | Prepare local infrastructure | accepted | [EP-001 report](acceptance/EP-001-INFRA.acceptance.md) | Protected artifact classification is deferred to EP-014. |
+| EP-001-INFRA | Prepare local infrastructure | accepted | [EP-001 report](acceptance/EP-001-INFRA.acceptance.md) | Protected artifact classification is deferred to EP-018. |
 | EP-002-REFERENCE-GOVERNANCE | Reference data governance | accepted | [EP-002 report](acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md) | Reference intake is deferred to EP-016. |
 | EP-003-REFERENCE-VERSIONING | Delta-based reference versioning | accepted | [EP-003 report](acceptance/EP-003-REFERENCE-VERSIONING.acceptance.md) | Real source import waits for EP-016 and later parser work. |
 | EP-004-PROJECT-PLANNING-AND-ACCEPTANCE | Project planning and acceptance contour | accepted | [EP-004 report](acceptance/EP-004-PROJECT-PLANNING-AND-ACCEPTANCE.acceptance.md) | Post-acceptance state is synchronized in EP-013. |
-| EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | accepted | [EP-005 report](acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md) | Protection flags are deferred to EP-014. |
+| EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Acceptance and user action dashboards | accepted | [EP-005 report](acceptance/EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS.acceptance.md) | Protection flags are deferred to EP-018. |
 | EP-007-VERIFICATION-DASHBOARD | Verification dashboard | accepted | [EP-007 report](acceptance/EP-007-VERIFICATION-DASHBOARD.acceptance.md) | Pending verification checks remain post-acceptance debt for EP-015. |
 | EP-008-DISSERTATION-PROMPT-GENERATION | Dissertation prompt generation contour | accepted | [EP-008 report](acceptance/EP-008-DISSERTATION-PROMPT-GENERATION.acceptance.md) | DOCX/PDF updates still require explicit user request. |
 | EP-009-CODEX-SPEC-AUDIT | Codex specification audit and language policy | accepted | [EP-009 report](acceptance/EP-009-CODEX-SPEC-AUDIT.acceptance.md) | Stale audit finding cleanup is deferred to EP-017. |
 | EP-011-GIT-WORKFLOW-DISCIPLINE | Git workflow discipline | accepted | [EP-011 report](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md) | Merge still requires explicit user approval after checks. |
 | EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | User review workbench and acceptance standard | accepted | [EP-012 report](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md) | Workbench remains the active review window. |
-| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Active packet is closed; EP-014 is next. |
+| EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Completed; EP-014 accepted after CLI safety review. |
+| EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | accepted | [EP-014 report](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md) | Completed; next recommended packet is EP-018 accepted artifact protection. |
 
 ## 8. Status Values
 
 Allowed packet statuses: `planned`, `in_progress`, `ready_for_acceptance`, `accepted`, `needs_revision`, `rejected`, `blocked`, `deprecated`.
 
-Codex may prepare `ready_for_acceptance`; `accepted` in EP-013 is a synchronization of existing user decisions from acceptance reports, not a new Codex acceptance action.
+Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013 and EP-014 are synchronization of existing user decisions from acceptance reports, not new Codex acceptance actions.
 
 ## 9. Main Artifacts
 
@@ -118,17 +127,18 @@ Codex may prepare `ready_for_acceptance`; `accepted` in EP-013 is a synchronizat
 - [EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md](acceptance/EP-011-GIT-WORKFLOW-DISCIPLINE.acceptance.md)
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
+- [EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
-- `EP-014-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts without locking generated dashboards.
 - `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`: reconcile pending verification checks and the `EP-006-MONTHLY-PLANNING-AND-DEFENSE` orphan monthly scope.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: prepare intake of official or project-authorized KSI, FSNB/GESN, and work type sources.
 - `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit findings without mass-russification and without changing accepted/protected artifacts.
+- `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: classify accepted artifacts and introduce protection flags for source/manual artifacts without locking generated dashboards.
 
 ## 12. Open Follow-Up Debt
 
-- `protected_accepted_artifacts: 0` remains visible and is deferred to `EP-014-ACCEPTED-ARTIFACT-PROTECTION`.
+- `protected_accepted_artifacts: 0` remains visible and is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - `EP-006-MONTHLY-PLANNING-AND-DEFENSE` appears in the verification dashboard but has no corresponding accepted execution packet and no acceptance report; EP-015 must reclassify these checks as monthly-scope checks such as `MONTHLY-2026-06`, or create a future correctly registered package.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
@@ -143,4 +153,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` in EP-013 is a synchronizat
 
 ## 15. Next Step
 
-EP-013 is accepted by the user. The project remains in `project_state: accepted_baseline`, `active_execution_packet: none`, and `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is the next recommended package.
+EP-014 is accepted and synchronized into the post-acceptance baseline. The next recommended packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.

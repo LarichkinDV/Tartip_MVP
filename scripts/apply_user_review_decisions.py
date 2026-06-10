@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
+import difflib
 import hashlib
+import os
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +16,12 @@ from reference_utils import load_data
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 WORKBENCH_PATH = PROJECT_ROOT / "docs" / "user-review-workbench.yml"
 DECISION_KEYS = {"acceptance_decision", "accepted_by", "accepted_at", "comments"}
+SUPPORTED_NON_ACCEPTANCE_TYPES = {
+    "manual_verification",
+    "user_action",
+    "audit_finding",
+    "requires_user_approval",
+}
 
 
 def rel(path: Path) -> str:
@@ -54,7 +64,7 @@ def parse_decision(path: Path) -> dict[str, str]:
     return values
 
 
-def replace_decision(path: Path, decision: dict[str, str]) -> None:
+def decision_text(path: Path, decision: dict[str, str]) -> str:
     lines = path.read_text(encoding="utf-8").splitlines()
     seen: set[str] = set()
     new_lines: list[str] = []
@@ -72,7 +82,36 @@ def replace_decision(path: Path, decision: dict[str, str]) -> None:
     for key in ["acceptance_decision", "accepted_by", "accepted_at", "comments"]:
         if key not in seen:
             new_lines.append(f"{key}: {decision[key]}")
-    path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
+    return "\n".join(new_lines) + "\n"
+
+
+def atomic_write(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        dir=path.parent,
+        text=True,
+    )
+    tmp_path = Path(tmp_name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as file:
+            file.write(text)
+        os.replace(tmp_path, path)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
+
+
+def unified_diff(path: Path, old_text: str, new_text: str) -> str:
+    return "".join(
+        difflib.unified_diff(
+            old_text.splitlines(keepends=True),
+            new_text.splitlines(keepends=True),
+            fromfile=f"a/{rel(path)}",
+            tofile=f"b/{rel(path)}",
+        )
+    )
 
 
 def valid_user_decision(item: dict[str, Any]) -> tuple[dict[str, str] | None, str]:
@@ -102,62 +141,121 @@ def valid_user_decision(item: dict[str, Any]) -> tuple[dict[str, str] | None, st
     return values, ""
 
 
-def apply_item(item: dict[str, Any]) -> tuple[str | None, str]:
+def planned_item_change(item: dict[str, Any]) -> tuple[str | None, str, str]:
     item_id = str(item.get("id") or "<missing id>")
-    if item.get("type") != "acceptance":
-        return None, f"{item_id}: skipped; only acceptance items are supported"
+    item_type = str(item.get("type") or "")
+    if item_type != "acceptance":
+        if item_type in SUPPORTED_NON_ACCEPTANCE_TYPES:
+            return (
+                None,
+                f"{item_id}: skipped; {item_type} decisions are warning-only in this version",
+                "",
+            )
+        return None, f"{item_id}: skipped; unsupported item type: {item_type}", ""
     decision, reason = valid_user_decision(item)
     if decision is None:
-        return None, f"{item_id}: skipped; {reason}"
+        return None, f"{item_id}: skipped; {reason}", ""
     target = str(item.get("target_decision_file") or "")
     if not target:
-        return None, f"{item_id}: skipped; target_decision_file is missing"
+        return None, f"{item_id}: skipped; target_decision_file is missing", ""
     target_path = PROJECT_ROOT / target
     if not target_path.exists():
-        return None, f"{item_id}: skipped; target file does not exist: {target}"
+        return None, f"{item_id}: skipped; target file does not exist: {target}", ""
     expected_checksum = str(item.get("source_checksum_sha256") or "")
     if not expected_checksum:
-        return None, f"{item_id}: skipped; source checksum is missing"
+        return None, f"{item_id}: skipped; source checksum is missing", ""
     current_checksum = checksum(target_path)
     if current_checksum != expected_checksum:
-        return None, f"{item_id}: skipped; stale source checksum for {target}"
+        return None, f"{item_id}: skipped; stale source checksum for {target}", ""
     current_decision = parse_decision(target_path)
-    if (
-        current_decision.get("acceptance_decision") == "accepted"
-        and current_decision != decision
-    ):
+    if current_decision.get("acceptance_decision") == "accepted":
         return (
             None,
-            f"{item_id}: skipped; acceptance report is already accepted with another decision",
+            f"{item_id}: skipped; acceptance report is already accepted and cannot be overwritten without explicit user approval",
+            "",
         )
-    replace_decision(target_path, decision)
-    return rel(target_path), f"{item_id}: applied to {target}"
+    old_text = target_path.read_text(encoding="utf-8")
+    new_text = decision_text(target_path, decision)
+    if old_text == new_text:
+        return None, f"{item_id}: skipped; no decision diff for {target}", ""
+    return (
+        rel(target_path),
+        f"{item_id}: planned change for {target}",
+        unified_diff(target_path, old_text, new_text),
+    )
 
 
-def main() -> int:
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Safely apply user acceptance decisions from docs/user-review-workbench.yml."
+        )
+    )
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show planned changes without writing files. This is the default mode.",
+    )
+    mode.add_argument(
+        "--apply",
+        action="store_true",
+        help="Apply planned acceptance decisions after all safety checks pass.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv if argv is not None else sys.argv[1:])
+    apply_changes = bool(args.apply)
+    mode = "apply" if apply_changes else "dry-run"
     if not WORKBENCH_PATH.exists():
         print(f"ERROR: missing {rel(WORKBENCH_PATH)}", file=sys.stderr)
         return 1
     workbench = load_workbench()
     items = workbench.get("active_review_items", [])
-    changed: list[str] = []
+    planned: list[tuple[str, str]] = []
+    affected: list[str] = []
     messages: list[str] = []
     for item in items if isinstance(items, list) else []:
         if not isinstance(item, dict):
             continue
-        path, message = apply_item(item)
+        path, message, diff = planned_item_change(item)
         messages.append(message)
         if path:
-            changed.append(path)
+            affected.append(path)
+            planned.append((path, diff))
+    print(f"Mode: {mode}")
     for message in messages:
-        prefix = "APPLIED" if ": applied " in message else "WARNING"
+        prefix = "PLAN" if ": planned " in message else "WARNING"
         print(f"{prefix}: {message}")
-    if changed:
-        print("Changed acceptance reports:")
-        for path in sorted(set(changed)):
+    if affected:
+        print("Affected files:")
+        for path in sorted(set(affected)):
             print(f"- {path}")
+        print("Planned diffs:")
+        for _path, diff in planned:
+            print(diff, end="" if diff.endswith("\n") else "\n")
     else:
-        print("No acceptance reports changed.")
+        print("No acceptance report changes planned.")
+    if apply_changes and planned:
+        for path, _diff in planned:
+            target_path = PROJECT_ROOT / path
+            item = next(
+                item
+                for item in items
+                if isinstance(item, dict)
+                and str(item.get("target_decision_file") or "") == path
+            )
+            decision, _reason = valid_user_decision(item)
+            if decision is None:
+                raise RuntimeError(f"decision disappeared before apply: {path}")
+            atomic_write(target_path, decision_text(target_path, decision))
+        print("Applied acceptance reports:")
+        for path in sorted(set(affected)):
+            print(f"- {path}")
+    elif not apply_changes:
+        print("Dry run only; no files were modified.")
     return 0
 
 
