@@ -2,7 +2,7 @@
 
 ## 1. Дата обновления
 
-2026-06-10
+2026-06-11
 
 ## 2. Текущий Execution Packet
 
@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-010-LANGUAGE-NORMALIZATION
-next_recommended_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
-previous_active_execution_packet: EP-010-LANGUAGE-NORMALIZATION
+last_accepted_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+last_completed_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+next_recommended_packet: EP-017-AUDIT-FINDINGS-CLEANUP
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -38,6 +38,7 @@ post_acceptance_baseline:
     - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
     - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+    - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
@@ -58,14 +59,17 @@ post_acceptance_baseline:
 - `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем Дмитрием 2026-06-10.
 - EP-010 нормализовал пользовательские фрагменты README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики.
 - EP-010 принят пользователем Дмитрием 2026-06-10 и синхронизирован как post-acceptance состояние.
+- Создан `docs/project-state.yml` как machine-readable source-of-truth текущего состояния проекта.
+- EP-006 monthly checks реклассифицируются как monthly scope `MONTHLY-2026-06`, а не ordinary execution packet.
+- EP-015 принят пользователем Дмитрием 2026-06-11 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-Активный execution packet отсутствует.
+Нет активного execution packet. Следующий рекомендуемый пакет: `EP-017-AUDIT-FINDINGS-CLEANUP`.
 
 ## 7. Готово к приемке
 
-Готовых к приемке execution packets сейчас нет.
+Нет пакетов в статусе `ready_for_acceptance`.
 
 ## 8. Принятый Baseline
 
@@ -82,13 +86,14 @@ post_acceptance_baseline:
 - [EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD](acceptance/EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD.acceptance.md)
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 - [EP-014-USER-REVIEW-DECISION-CLI-SAFETY](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
+- [EP-015-VERIFICATION-DASHBOARD-RECONCILIATION](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md)
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 
 ## 9. Follow-Up Debt
 
-- `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`: reconcile pending verification checks and the `EP-006-MONTHLY-PLANNING-AND-DEFENSE` orphan monthly scope.
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: prepare intake of official or project-authorized KSI, FSNB/GESN, and work type sources.
-- `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit findings without mass-russification and without changing accepted/protected artifacts.
+- `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit/workbench noise without mass-russification and without changing accepted/protected artifacts.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: deferred until audit/workbench noise and Codex context costs are reduced.
+- `EP-019-CODEX-CONTEXT-COMPACTION`: deferred until after EP-017 to compact reading policy on top of cleaned audit/workbench.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -104,7 +109,7 @@ post_acceptance_baseline:
 
 ## 12. EP-006 Orphan Scope
 
-`EP-006-MONTHLY-PLANNING-AND-DEFENSE` appears in the verification dashboard but has no corresponding accepted execution packet and no acceptance report. EP-013 documents this as follow-up debt only. EP-015 must reclassify these checks as monthly-scope checks such as `MONTHLY-2026-06`, or create a future correctly registered package.
+`EP-006-MONTHLY-PLANNING-AND-DEFENSE` is represented as monthly scope `MONTHLY-2026-06`, not as an accepted/current execution packet.
 
 ## 13. Planning Decision
 
@@ -116,4 +121,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-010 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION`.
+EP-015 принят пользователем и синхронизирован в `accepted_baseline`. Следующий рекомендуемый пакет: `EP-017-AUDIT-FINDINGS-CLEANUP`.

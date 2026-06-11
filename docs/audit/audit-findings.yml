@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-10
+updated_at: 2026-06-11
 allowed_statuses:
   - accepted_risk
   - acknowledged
@@ -2917,6 +2917,23 @@ findings:
     last_seen_at: 2026-06-10
     current_detected: false
   -
+    id: AUD-GIT-001-BRANCH-NAME-MISMATCH
+    check_id: AUD-GIT-001
+    severity: medium
+    category: git_workflow
+    file: .git
+    line: null
+    issue: "Имя ветки ep-015-verification-dashboard-reconciliation не соответствует packet EP-017-AUDIT-FINDINGS-CLEANUP."
+    recommendation: "Использовать формат ep-017-<short-slug>."
+    status: open
+    created_at: 2026-06-11
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-11
+    current_detected: false
+  -
     id: AUD-GIT-001-CURRENT-BRANCH-MAIN
     check_id: AUD-GIT-001
     severity: medium
@@ -2948,7 +2965,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: false
   -
     id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION
@@ -3036,6 +3053,23 @@ findings:
     last_seen_at: 2026-06-10
     current_detected: false
   -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-015-VERIFICATION-DASHBOARD-RECONCILIATION нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-11
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-11
+    current_detected: false
+  -
     id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-018-ACCEPTED-ARTIFACT-PROTECTION
     check_id: AUD-GIT-006
     severity: medium
@@ -3084,7 +3118,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-046103457b
@@ -3152,7 +3186,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0584d60530
@@ -3203,7 +3237,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0b144b99ab
@@ -3220,7 +3254,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0b2052d5df
@@ -3237,7 +3271,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0b243217e0
@@ -3254,7 +3288,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0ba615d854
@@ -3271,7 +3305,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-0bdbfb73bb
@@ -3322,7 +3356,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1073629074
@@ -3356,7 +3390,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-160edcdf15
@@ -3373,7 +3407,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-165dc0dcfb
@@ -3407,7 +3441,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1845f2ff17
@@ -3458,7 +3492,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1adb9125ff
@@ -3492,7 +3526,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1c6c2352c8
@@ -3509,7 +3543,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1c9d128591
@@ -3526,7 +3560,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1ca0c9ad14
@@ -3543,7 +3577,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-1d00b7a7a0
@@ -3594,7 +3628,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-213ab96473
@@ -3679,7 +3713,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-26aa2148fa
@@ -3730,7 +3764,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-284b1971ac
@@ -3747,7 +3781,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-2863e088cc
@@ -3764,7 +3798,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-2887db6b5d
@@ -3849,7 +3883,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-2c8b1c3cd0
@@ -3951,7 +3985,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-334f351859
@@ -4019,7 +4053,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-3a437c1900
@@ -4138,7 +4172,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-408cae52d8
@@ -4155,7 +4189,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-41919a1d3c
@@ -4410,7 +4444,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-4d02007f97
@@ -4444,7 +4478,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-4e190036af
@@ -4461,7 +4495,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-4e28a472f7
@@ -4529,7 +4563,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-54b4d342de
@@ -4563,7 +4597,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-55ab6be5d4
@@ -4699,7 +4733,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-5a13f251e2
@@ -4869,7 +4903,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-65902480da
@@ -4886,7 +4920,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-662bc1efaa
@@ -4903,7 +4937,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-664f61b6bc
@@ -4920,7 +4954,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-67f7a2d774
@@ -4954,7 +4988,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-6bb98b1a0c
@@ -5039,7 +5073,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-746c97e63f
@@ -5073,7 +5107,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-77e5a1bc1d
@@ -5277,7 +5311,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-854308b939
@@ -5328,7 +5362,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-85c871c337
@@ -5345,7 +5379,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-88016cdc2a
@@ -5362,7 +5396,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-891fe56c1e
@@ -5379,7 +5413,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-8a200b7ffb
@@ -5532,7 +5566,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-968c5d281c
@@ -5549,7 +5583,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-96f06d57c4
@@ -5566,7 +5600,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-97535cebc2
@@ -5617,7 +5651,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-9dc6abc202
@@ -5668,7 +5702,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a000dddb0f
@@ -5685,7 +5719,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a149677283
@@ -5702,7 +5736,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a16f76dc5a
@@ -5855,7 +5889,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a5d23735e9
@@ -5889,7 +5923,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a6f317f904
@@ -5940,7 +5974,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-a803666696
@@ -5974,7 +6008,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-aad7f3cfe0
@@ -5991,7 +6025,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-ac3d2d992c
@@ -6025,7 +6059,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-ae8cbc2bcd
@@ -6076,7 +6110,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b072525bff
@@ -6127,7 +6161,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b373e0c497
@@ -6161,7 +6195,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b4e1f94dd4
@@ -6195,7 +6229,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b5e844dc84
@@ -6212,7 +6246,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b642e7aab6
@@ -6263,7 +6297,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b8106aae1d
@@ -6297,7 +6331,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-b8b05d30d4
@@ -6399,7 +6433,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-c477da9cc4
@@ -6484,7 +6518,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-c882327c71
@@ -6501,7 +6535,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-c8b2ebfbd1
@@ -6586,7 +6620,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-cd56b75e5f
@@ -6671,7 +6705,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-d4913be05c
@@ -6705,7 +6739,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-d4dd8fec13
@@ -6722,7 +6756,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-d5a11eb296
@@ -6841,7 +6875,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-dce9ea0e85
@@ -6892,7 +6926,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-dff75a06c9
@@ -6943,7 +6977,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-e5d826cf78
@@ -7045,7 +7079,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-f19dc9a207
@@ -7062,7 +7096,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-f21d0a9f29
@@ -7147,7 +7181,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-f5f7163b46
@@ -7164,7 +7198,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-f6f33f110c
@@ -7215,7 +7249,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-fb5d7f948c
@@ -7266,7 +7300,7 @@ findings:
     resolved_at: null
     resolution: null
     preserve_user_resolution: true
-    last_seen_at: 2026-06-10
+    last_seen_at: 2026-06-11
     current_detected: true
   -
     id: AUD-LANG-001-fe351bbc78

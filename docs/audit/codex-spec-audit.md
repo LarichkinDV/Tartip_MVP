@@ -1,6 +1,6 @@
 # Codex Spec Audit
 
-Дата обновления: 2026-06-10
+Дата обновления: 2026-06-11
 
 ## 1. Сводка
 
@@ -8,7 +8,7 @@
 |---|---:|
 | critical | 171 |
 | high | 0 |
-| medium | 243 |
+| medium | 245 |
 | low | 16 |
 
 Активных critical findings: 0
@@ -226,6 +226,7 @@
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-941 | critical | AUD-ACCEPT-001 | docs/user-action-dashboard.yml | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | open |
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-961 | critical | AUD-ACCEPT-001 | docs/user-action-dashboard.yml | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | open |
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-981 | critical | AUD-ACCEPT-001 | docs/user-action-dashboard.yml | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | open |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-015-verification-dashboard-reconciliation не соответствует packet EP-017-AUDIT-FINDINGS-CLEANUP. | Использовать формат ep-017-<short-slug>. | open |
 | AUD-GIT-001-CURRENT-BRANCH-MAIN | medium | AUD-GIT-001 | .git | Текущая ветка main не соответствует EP-010-LANGUAGE-NORMALIZATION. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | open |
 | AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-010-LANGUAGE-NORMALIZATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
@@ -233,6 +234,7 @@
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-014-USER-REVIEW-DECISION-CLI-SAFETY | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-014-USER-REVIEW-DECISION-CLI-SAFETY нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-015-VERIFICATION-DASHBOARD-RECONCILIATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-018-ACCEPTED-ARTIFACT-PROTECTION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-018-ACCEPTED-ARTIFACT-PROTECTION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 | AUD-LANG-001-0403b9742d | medium | AUD-LANG-001 | docs/07-reference-data-policy.md | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | open |
 | AUD-LANG-001-0584b2a838 | medium | AUD-LANG-001 | docs/07-reference-data-policy.md | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | open |

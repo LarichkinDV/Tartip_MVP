@@ -40,6 +40,8 @@ MANUAL_TYPES = {
     "manual_normative_review",
     "manual_acceptance_review",
 }
+MONTHLY_SCOPE_ID = "MONTHLY-2026-06"
+LEGACY_MONTHLY_PACKET = "EP-006-MONTHLY-PLANNING-AND-DEFENSE"
 
 
 def rel(path: Path) -> str:
@@ -117,11 +119,14 @@ def base_check(
     expected_result: list[str],
     artifacts: list[str],
     commands: list[str] | None = None,
+    scope_type: str = "",
+    scope_id: str = "",
+    legacy_related_packet: str = "",
 ) -> dict[str, Any]:
     status = (
         "requires_user_action" if check_type == "manual_normative_review" else "pending"
     )
-    return {
+    check = {
         "check_id": check_id,
         "title": title,
         "source_protocol": rel(PROTOCOL_PATH),
@@ -143,6 +148,13 @@ def base_check(
             "comments": "",
         },
     }
+    if scope_type:
+        check["scope_type"] = scope_type
+    if scope_id:
+        check["scope_id"] = scope_id
+    if legacy_related_packet:
+        check["legacy_related_packet"] = legacy_related_packet
+    return check
 
 
 def required_checks() -> list[dict[str, Any]]:
@@ -274,7 +286,7 @@ def required_checks() -> list[dict[str, Any]]:
         base_check(
             "VT-EP-006-001",
             "Проверить наличие monthly-plan.yml",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-001",
             "manual_document_review",
@@ -282,11 +294,14 @@ def required_checks() -> list[dict[str, Any]]:
             ["Открыть docs/monthly/monthly-plan.yml."],
             ["monthly-plan.yml существует и описывает блок 2026-06."],
             ["docs/monthly/monthly-plan.yml"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-006-002",
             "Проверить, что месячный блок содержит ровно 3 задачи",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-002",
             "manual_document_review",
@@ -297,11 +312,14 @@ def required_checks() -> list[dict[str, Any]]:
             ],
             ["В блоке 2026-06 указано ровно 3 задачи."],
             ["docs/monthly/monthly-plan.yml"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-006-003",
             "Проверить, что каждая задача имеет 15 человеко-часов",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-003",
             "manual_document_review",
@@ -312,11 +330,14 @@ def required_checks() -> list[dict[str, Any]]:
             ],
             ["Каждая из 3 задач имеет planned_hours: 15."],
             ["docs/monthly/monthly-plan.yml"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-006-004",
             "Проверить наличие БФТ",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-004",
             "manual_document_review",
@@ -326,11 +347,14 @@ def required_checks() -> list[dict[str, Any]]:
                 "Документ БФТ существует и не содержит нормативных данных, придуманных Codex."
             ],
             ["docs/monthly/2026-06/01-bft-reference-data-governance.md"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-006-005",
             "Проверить наличие ТЗ",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-005",
             "manual_document_review",
@@ -342,11 +366,14 @@ def required_checks() -> list[dict[str, Any]]:
                 "Документ ТЗ существует и фиксирует задачи проверки без изменения доменной методики."
             ],
             ["docs/monthly/2026-06/02-technical-task-reference-data-governance.md"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-006-006",
             "Проверить наличие протокола тестирования",
-            "EP-006-MONTHLY-PLANNING-AND-DEFENSE",
+            "",
             "REQ-010",
             "AC-EP-006-006",
             "manual_document_review",
@@ -356,6 +383,9 @@ def required_checks() -> list[dict[str, Any]]:
             ],
             ["Протокол тестирования существует и связан с verification dashboard."],
             ["docs/monthly/2026-06/03-test-protocol-reference-data-governance.md"],
+            scope_type="monthly_block",
+            scope_id=MONTHLY_SCOPE_ID,
+            legacy_related_packet=LEGACY_MONTHLY_PACKET,
         ),
         base_check(
             "VT-EP-007-001",

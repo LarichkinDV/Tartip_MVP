@@ -1,42 +1,42 @@
 user_review_workbench:
   schema_version: 1
-  generated_at: 2026-06-10
+  generated_at: 2026-06-11
   generated_by: Codex
   mode: active_user_review_queue
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 232385a83987a8eaa803c079db45bebd01af1fa769f66e7c723da92e17a1f7ea
+      checksum_sha256: 1b1ff4ff5642c4914ceadfe9e773b1d27f5bc7f4000f529da9b703fc73bfb2a3
       status: present
       warning: ""
     -
       path: docs/verification-dashboard.yml
-      checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       status: present
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 280a882b2c4bbc9454bc95759017eed39973250fa5afba9ae14b343dc6014662
+      checksum_sha256: e5934fad400e0af3e4ce7586f3329e2af85d09bcc88ae80b713a1bb12dea04e9
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       status: present
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: cfb41c641b909a5a8ca137ef3b027a4c8b6bc3d203ed39ece5a30dcbce5f67f3
+      checksum_sha256: ae500ebbb647397626b01047a4d7ea1c557d4e0c3aea95f829b9fa911206609d
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: 9b59e168860c44d1f058970d44a709765be5b4addaaf6050826f0821fe26abf0
+      checksum_sha256: 2ad085feea0ea65ffd446301d5d1663c5458442d13872bd123d6ddd77e3b799b
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: ff27f95c1a7e49f3e593766bb680616eb12df965674435513388896bca8ad9e9
+      checksum_sha256: 39990bf749feebb8fe98d19acc40f9ed003d8835141c38dc20dc2419f7eaf46e
       status: present
       warning: ""
   summary:
@@ -49,7 +49,7 @@ user_review_workbench:
     critical_audit_findings: 171
     high_audit_findings: 0
     active_blockers: 175
-    accepted_hidden_from_active_queue: 14
+    accepted_hidden_from_active_queue: 15
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -132,6 +132,12 @@ user_review_workbench:
         acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
         hidden_from_active_queue: true
       -
+        packet_id: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-11
+        acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+        hidden_from_active_queue: true
+      -
         packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-10
@@ -173,7 +179,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1001
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -222,7 +228,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1041
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -271,7 +277,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1061
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -320,7 +326,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1141
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -369,7 +375,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1161
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -418,7 +424,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1181
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -467,7 +473,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1201
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -516,7 +522,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1241
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -565,7 +571,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1261
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -614,7 +620,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1281
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -663,7 +669,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1301
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -712,7 +718,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1321
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -761,7 +767,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1361
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -810,7 +816,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1381
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -859,7 +865,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1401
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -908,7 +914,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1441
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -957,7 +963,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1461
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1006,7 +1012,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1481
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1055,7 +1061,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1501
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1104,7 +1110,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1521
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1153,7 +1159,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1541
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1202,7 +1208,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1601
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1251,7 +1257,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1621
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1300,7 +1306,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1641
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1349,7 +1355,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1661
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1398,7 +1404,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1681
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1447,7 +1453,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1701
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1496,7 +1502,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1721
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1545,7 +1551,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1741
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1594,7 +1600,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1761
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1643,7 +1649,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1781
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1692,7 +1698,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1801
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1741,7 +1747,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1821
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1790,7 +1796,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1841
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1839,7 +1845,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1861
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1888,7 +1894,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1901
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1937,7 +1943,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1961
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -1986,7 +1992,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-1981
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2035,7 +2041,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2001
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2084,7 +2090,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2041
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2133,7 +2139,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2081
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2182,7 +2188,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2101
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2231,7 +2237,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2121
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2280,7 +2286,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2141
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2329,7 +2335,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2161
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2378,7 +2384,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2181
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2427,7 +2433,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2201
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2476,7 +2482,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2241
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2525,7 +2531,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2261
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2574,7 +2580,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2281
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2623,7 +2629,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2301
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2672,7 +2678,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2321
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2721,7 +2727,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2341
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2770,7 +2776,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2361
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2819,7 +2825,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2381
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2868,7 +2874,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2401
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2917,7 +2923,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2501
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -2966,7 +2972,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2541
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3015,7 +3021,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2561
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3064,7 +3070,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2581
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3113,7 +3119,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2601
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3162,7 +3168,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2641
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3211,7 +3217,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2681
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3260,7 +3266,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2701
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3309,7 +3315,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2721
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3358,7 +3364,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2741
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3407,7 +3413,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2761
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3456,7 +3462,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2781
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3505,7 +3511,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2801
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3554,7 +3560,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2821
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3603,7 +3609,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2841
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3652,7 +3658,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2861
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3701,7 +3707,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2881
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3750,7 +3756,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2921
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3799,7 +3805,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-2941
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3848,7 +3854,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-301
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3897,7 +3903,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3041
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3946,7 +3952,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3061
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -3995,7 +4001,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3081
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4044,7 +4050,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3101
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4093,7 +4099,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3121
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4142,7 +4148,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3141
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4191,7 +4197,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3161
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4240,7 +4246,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3181
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4289,7 +4295,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3261
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4338,7 +4344,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3281
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4387,7 +4393,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3321
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4436,7 +4442,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3341
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4485,7 +4491,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-341
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4534,7 +4540,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3421
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4583,7 +4589,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3441
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4632,7 +4638,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3461
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4681,7 +4687,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3481
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4730,7 +4736,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3501
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4779,7 +4785,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3521
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4828,7 +4834,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3541
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4877,7 +4883,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3561
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4926,7 +4932,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3601
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -4975,7 +4981,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-361
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5024,7 +5030,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3641
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5073,7 +5079,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3661
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5122,7 +5128,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3701
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5171,7 +5177,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3761
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5220,7 +5226,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3801
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5269,7 +5275,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-381
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5318,7 +5324,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3821
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5367,7 +5373,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3861
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5416,7 +5422,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3881
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5465,7 +5471,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3921
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5514,7 +5520,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-3961
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5563,7 +5569,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4021
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5612,7 +5618,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4041
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5661,7 +5667,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4081
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5710,7 +5716,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4121
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5759,7 +5765,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4141
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5808,7 +5814,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4161
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5857,7 +5863,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4181
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5906,7 +5912,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4201
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -5955,7 +5961,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-421
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6004,7 +6010,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4241
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6053,7 +6059,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4261
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6102,7 +6108,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4281
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6151,7 +6157,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4301
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6200,7 +6206,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4361
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6249,7 +6255,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4381
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6298,7 +6304,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4401
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6347,7 +6353,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-441
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6396,7 +6402,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4421
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6445,7 +6451,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4461
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6494,7 +6500,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4481
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6543,7 +6549,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4501
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6592,7 +6598,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4521
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6641,7 +6647,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4561
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6690,7 +6696,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4621
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6739,7 +6745,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4641
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6788,7 +6794,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4661
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6837,7 +6843,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4681
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6886,7 +6892,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4701
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6935,7 +6941,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4721
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -6984,7 +6990,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4761
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7033,7 +7039,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4781
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7082,7 +7088,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4821
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7131,7 +7137,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4841
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7180,7 +7186,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4881
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7229,7 +7235,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4901
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7278,7 +7284,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4921
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7327,7 +7333,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4941
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7376,7 +7382,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-4961
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7425,7 +7431,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5021
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7474,7 +7480,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5041
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7523,7 +7529,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5061
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7572,7 +7578,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5081
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7621,7 +7627,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5141
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7670,7 +7676,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5161
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7719,7 +7725,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5201
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7768,7 +7774,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5221
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7817,7 +7823,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5261
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7866,7 +7872,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5281
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7915,7 +7921,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-5301
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -7964,7 +7970,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-561
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8013,7 +8019,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-581
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8062,7 +8068,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-621
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8111,7 +8117,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-681
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8160,7 +8166,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-721
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8209,7 +8215,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-741
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8258,7 +8264,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-781
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8307,7 +8313,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-881
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8356,7 +8362,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-901
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8405,7 +8411,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-941
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8454,7 +8460,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-961
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8503,7 +8509,7 @@ user_review_workbench:
       title: "Поле answered_by установлено в Codex."
       source_file: docs/audit/audit-findings.yml
       source_id: AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-981
-      source_checksum_sha256: b9de3d43a12471abe7add82c089a4fd2e7e83c612a80d5f4e9de7afd1c1f0e27
+      source_checksum_sha256: e92c4c77f6607b72bc83fd33a248bffe4c20093c6ef2993b6ad66e5904a79030
       acceptance_report: ""
       related_artifacts:
         -
@@ -8552,7 +8558,7 @@ user_review_workbench:
       title: "Проверить наличие docs/project-plan.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-001
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8603,7 +8609,7 @@ user_review_workbench:
       title: "Проверить наличие docs/artifact-registry.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-002
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8654,7 +8660,7 @@ user_review_workbench:
       title: "Проверить, что accepted_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-003
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8705,7 +8711,7 @@ user_review_workbench:
       title: "Проверить, что open questions отображаются в user-action-dashboard"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-004
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8760,7 +8766,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-001
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8809,7 +8815,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-002
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8858,7 +8864,7 @@ user_review_workbench:
       title: "Проверить, что manual checks не отмечены Codex как passed"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-003
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8909,7 +8915,7 @@ user_review_workbench:
       title: "Проверить, что checked_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-004
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -8960,7 +8966,7 @@ user_review_workbench:
       title: "Проверить, что verification dashboard связан с протоколом тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-005
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9013,7 +9019,7 @@ user_review_workbench:
       title: "Проверить наличие docs/dissertation/README.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-001
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9062,7 +9068,7 @@ user_review_workbench:
       title: "Проверить наличие forbidden-claims.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-002
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9111,7 +9117,7 @@ user_review_workbench:
       title: "Проверить, что acceptance_decision остается pending"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-006
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9162,7 +9168,7 @@ user_review_workbench:
       title: "Проверить Language policy в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-004
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9211,7 +9217,7 @@ user_review_workbench:
       title: "Проверить Audit discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-005
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9260,7 +9266,7 @@ user_review_workbench:
       title: "Проверить preservation audit findings"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-008
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9315,7 +9321,7 @@ user_review_workbench:
       title: "Проверить Git workflow discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-002
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9364,7 +9370,7 @@ user_review_workbench:
       title: "Проверить branch naming policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-003
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9413,7 +9419,7 @@ user_review_workbench:
       title: "Проверить merge policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-004
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9464,7 +9470,7 @@ user_review_workbench:
       title: "Проверить, что validator не выполняет Git mutations"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-008
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9709,7 +9715,7 @@ user_review_workbench:
       title: "Проверить, что accepted artifacts отображаются как protected"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-003
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9758,11 +9764,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить наличие monthly-plan.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-001
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9807,11 +9813,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить, что месячный блок содержит ровно 3 задачи"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-002
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9858,11 +9864,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить, что каждая задача имеет 15 человеко-часов"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-003
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9909,11 +9915,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить наличие БФТ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-004
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -9958,11 +9964,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить наличие ТЗ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-005
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -10007,11 +10013,11 @@ user_review_workbench:
       type: manual_verification
       priority: medium
       status: pending
-      packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      packet_id: ""
       title: "Проверить наличие протокола тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-006
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -10060,7 +10066,7 @@ user_review_workbench:
       title: "Проверить защиту accepted/protected artifacts"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-007
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -10113,7 +10119,7 @@ user_review_workbench:
       title: "Проверить, что EP-009 не mass-rewrite packet"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-010
-      source_checksum_sha256: 1beaba382d788f9d0391c8fc10d3e9157ef6a9c26b340c2d7c7a6745adc2f3f7
+      source_checksum_sha256: 78f6e077c71e6a4abeadd73fbe0db1816635a4e5e7b0afaa9d1725d2b5cc5699
       acceptance_report: ""
       related_artifacts:
         -
@@ -10235,6 +10241,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-10
       acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-11
+      acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION

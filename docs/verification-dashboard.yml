@@ -1,5 +1,5 @@
 verification_dashboard:
-  updated_at: 2026-06-10
+  updated_at: 2026-06-11
   source_files:
     - docs/grace/verification-plan.xml
     - docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
@@ -15,7 +15,7 @@ verification_dashboard:
     not_applicable: 0
   warnings:
     []
-  verification_scenarios_count: 108
+  verification_scenarios_count: 114
   checks:
     -
       check_id: VT-EP-004-001
@@ -260,7 +260,7 @@ verification_dashboard:
       check_id: VT-EP-006-001
       title: "Проверить наличие monthly-plan.yml"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-001
       check_type: manual_document_review
@@ -283,11 +283,14 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-006-002
       title: "Проверить, что месячный блок содержит ровно 3 задачи"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-002
       check_type: manual_document_review
@@ -312,11 +315,14 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-006-003
       title: "Проверить, что каждая задача имеет 15 человеко-часов"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-003
       check_type: manual_document_review
@@ -341,11 +347,14 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-006-004
       title: "Проверить наличие БФТ"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-004
       check_type: manual_document_review
@@ -368,11 +377,14 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-006-005
       title: "Проверить наличие ТЗ"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-005
       check_type: manual_document_review
@@ -395,11 +407,14 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-006-006
       title: "Проверить наличие протокола тестирования"
       source_protocol: docs/monthly/2026-06/03-test-protocol-reference-data-governance.md
-      related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      related_packet: ""
       related_requirement: REQ-010
       related_acceptance_criterion: AC-EP-006-006
       check_type: manual_document_review
@@ -422,6 +437,9 @@ verification_dashboard:
         checked_at: ""
         result: ""
         comments: ""
+      scope_type: monthly_block
+      scope_id: MONTHLY-2026-06
+      legacy_related_packet: EP-006-MONTHLY-PLANNING-AND-DEFENSE
     -
       check_id: VT-EP-007-001
       title: "Проверить наличие verification-dashboard.md"

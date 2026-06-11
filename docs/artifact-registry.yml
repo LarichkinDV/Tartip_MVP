@@ -613,6 +613,61 @@ artifacts:
       regeneration_command: null
       protected_since: 2026-06-10
   -
+    artifact_id: ART-PROJECT-STATE
+    name: "Project state"
+    type: status_report
+    path: docs/project-state.yml
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    related_requirements:
+      - REQ-015
+      - REQ-018
+    status: active
+    description: "Machine-readable source-of-truth for project state, active packet, accepted baseline, next packet, and monthly scopes."
+    created_at: 2026-06-11
+    updated_at: 2026-06-11
+    verification:
+      status: pending
+      scenarios:
+        - V-EP-015-001
+        - V-EP-015-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-ACCEPTANCE-DASHBOARD-YML
+      - ART-VERIFICATION-DASHBOARD-YML
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-015 source of truth for active_execution_packet and next_recommended_packet; does not accept packets by itself."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Project state is active EP-015 source artifact and becomes protected only after user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
     artifact_id: ART-ACCEPTANCE-README
     name: "Acceptance README"
     type: acceptance_report
@@ -5015,3 +5070,63 @@ artifacts:
       regeneration_command: null
       protected_since: 2026-06-10
       protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    name: "EP-015 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    related_requirements:
+      - REQ-015
+      - REQ-018
+    status: active
+    description: "Acceptance report for project-state and verification dashboard reconciliation."
+    created_at: 2026-06-11
+    updated_at: 2026-06-11
+    verification:
+      status: pending
+      scenarios:
+        - V-EP-015-001
+        - V-EP-015-002
+        - V-EP-015-003
+        - V-EP-015-004
+        - V-EP-015-005
+        - V-EP-015-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-STATE
+      - ART-VALIDATE-POST-ACCEPTANCE-STATE
+      - ART-GENERATE-VERIFICATION-DASHBOARD
+      - ART-VALIDATE-VERIFICATION-DASHBOARD
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-015 принят пользователем 2026-06-11; acceptance report является защищенным историческим source artifact."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-015 acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+      user_decision_source: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-11

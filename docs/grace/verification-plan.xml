@@ -317,15 +317,15 @@
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-002" module="M-POST-ACCEPTANCE-STATE-SYNC">
     <Name>accepted baseline is visible in planning documents</Name>
-    <Expected>docs/project-plan.md and docs/status-report.md contain project_state=accepted_baseline and active_execution_packet=EP-013-POST-ACCEPTANCE-STATE-SYNC.</Expected>
+    <Expected>docs/project-state.yml, docs/project-plan.md, and docs/status-report.md contain the current state_mode, active_execution_packet, last accepted packet, and next recommended packet.</Expected>
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-003" module="M-POST-ACCEPTANCE-STATE-SYNC">
     <Name>accepted packets are not active acceptance items</Name>
     <Expected>EP-001 through EP-012 do not appear as active acceptance items in docs/user-review-workbench.yml.</Expected>
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-004" module="M-POST-ACCEPTANCE-STATE-SYNC">
-    <Name>EP-013 is current ready packet</Name>
-    <Expected>EP-013-POST-ACCEPTANCE-STATE-SYNC appears as ready_for_acceptance in dashboards and workbench until user acceptance.</Expected>
+    <Name>project-state controls current ready packet</Name>
+    <Expected>The active ready_for_acceptance packet is read from docs/project-state.yml and appears in dashboards and workbench until user acceptance.</Expected>
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-005" module="M-POST-ACCEPTANCE-STATE-SYNC">
     <Name>verification checks stay open</Name>
@@ -340,8 +340,8 @@
     <Expected>EP-013 does not mass-close audit findings or introduce audit cleanup statuses.</Expected>
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-008" module="M-POST-ACCEPTANCE-STATE-SYNC">
-    <Name>EP-006 orphan scope is documented</Name>
-    <Expected>EP-006-MONTHLY-PLANNING-AND-DEFENSE is documented as follow-up scope for EP-015, not created retroactively.</Expected>
+    <Name>EP-006 monthly scope is not an execution packet</Name>
+    <Expected>EP-006-MONTHLY-PLANNING-AND-DEFENSE monthly checks are represented as MONTHLY-2026-06 monthly scope checks, not as an accepted or active execution packet.</Expected>
   </Scenario>
   <Scenario id="V-POST-ACCEPTANCE-009" module="M-POST-ACCEPTANCE-STATE-SYNC">
     <Name>accepted artifact protection is deferred</Name>
@@ -398,6 +398,30 @@
   <Scenario id="V-LANGUAGE-NORMALIZATION-005" module="M-LANGUAGE-NORMALIZATION">
     <Name>EP-010 не принят автоматически</Name>
     <Expected>EP-010-LANGUAGE-NORMALIZATION остается ready_for_acceptance; acceptance_decision остается pending до пользовательской приемки.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-001" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>project-state.yml exists and is complete</Name>
+    <Expected>docs/project-state.yml exists and contains schema_version, state_mode, active_execution_packet, last_accepted_execution_packet, last_completed_execution_packet, next_recommended_packet, accepted_packets, and monthly_scopes.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-002" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>post-acceptance validator reads project-state</Name>
+    <Expected>scripts/validate_post_acceptance_state.py validates accepted packets and active packet state from docs/project-state.yml instead of hardcoded current packet constants.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-003" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit reads active packet from project-state</Name>
+    <Expected>scripts/audit_codex_spec.py determines active_execution_packet and next_recommended_packet from docs/project-state.yml instead of arbitrary Markdown regex matching.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>monthly checks use monthly scope</Name>
+    <Expected>Verification dashboard checks formerly associated with EP-006 use scope_type=monthly_block and scope_id=MONTHLY-2026-06 without related_packet=EP-006-MONTHLY-PLANNING-AND-DEFENSE.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>make verify is read-only</Name>
+    <Expected>make verify runs validation commands without regenerating dashboards, audit files, or other snapshots and does not change git status --short.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-015-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>make check remains compatible</Name>
+    <Expected>make check keeps the existing workflow including generation and audit targets, while make verify is the preferred read-only verification entrypoint.</Expected>
   </Scenario>
   <Scenario id="V-ACCEPTED-PROTECTION-001" module="M-ACCEPTED-ARTIFACT-PROTECTION">
     <Name>accepted acceptance reports are protected</Name>

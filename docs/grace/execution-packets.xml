@@ -598,6 +598,66 @@
       <Item>Do not run git add, commit, merge, push, or rebase</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-015-VERIFICATION-DASHBOARD-RECONCILIATION" status="accepted">
+    <Name>Verification dashboard reconciliation</Name>
+    <Goal>Стабилизировать machine-readable состояние проекта и verification dashboard после EP-010 без audit/workbench cleanup и без изменения Codex reading policy.</Goal>
+    <Scope>
+      <Item>Создать docs/project-state.yml как machine-readable source-of-truth текущего состояния проекта</Item>
+      <Item>Перевести validate_post_acceptance_state.py на чтение docs/project-state.yml</Item>
+      <Item>Перевести определение active/next packet в audit_codex_spec.py на docs/project-state.yml</Item>
+      <Item>Реклассифицировать EP-006 monthly checks как monthly scope MONTHLY-2026-06</Item>
+      <Item>Добавить read-only make verify entrypoint</Item>
+      <Item>Сохранить make check совместимым с текущим workflow</Item>
+      <Item>Создать acceptance report для EP-015</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>scripts/validate_post_acceptance_state.py</Artifact>
+      <Artifact>scripts/audit_codex_spec.py</Artifact>
+      <Artifact>scripts/generate_verification_dashboard.py</Artifact>
+      <Artifact>scripts/validate_verification_dashboard.py</Artifact>
+      <Artifact>Makefile</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>docs/verification-dashboard.md</Artifact>
+      <Artifact>docs/verification-dashboard.yml</Artifact>
+      <Artifact>docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-015-001">docs/project-state.yml создан и содержит schema_version, state_mode, active_execution_packet, last_accepted_execution_packet, last_completed_execution_packet, next_recommended_packet, accepted_packets и monthly_scopes.</Criterion>
+      <Criterion id="AC-EP-015-002">accepted_packets в docs/project-state.yml сверяются с accepted acceptance reports и execution-packets.xml.</Criterion>
+      <Criterion id="AC-EP-015-003">validate_post_acceptance_state.py читает docs/project-state.yml вместо hardcoded current packet constants.</Criterion>
+      <Criterion id="AC-EP-015-004">audit_codex_spec.py определяет active/next packet из docs/project-state.yml, а не через arbitrary Markdown regex.</Criterion>
+      <Criterion id="AC-EP-015-005">EP-006 monthly checks представлены как scope_type=monthly_block, scope_id=MONTHLY-2026-06 и не имитируют accepted execution packet.</Criterion>
+      <Criterion id="AC-EP-015-006">make verify добавлен как read-only проверочный entrypoint.</Criterion>
+      <Criterion id="AC-EP-015-007">make check остается совместимым с текущим workflow.</Criterion>
+      <Criterion id="AC-EP-015-008">EP-015 имеет статус ready_for_acceptance, но не accepted.</Criterion>
+      <Criterion id="AC-EP-015-009">Accepted reports других EP не изменялись.</Criterion>
+      <Criterion id="AC-EP-015-010">README.md, CHANGELOG.md и AGENTS.md не изменялись.</Criterion>
+      <Criterion id="AC-EP-015-011">User-owned поля не заполнялись Codex.</Criterion>
+      <Criterion id="AC-EP-015-012">BIM-КСИ-ГЭСН методика и нормативные данные не изменялись.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not perform audit findings cleanup</Item>
+      <Item>Do not group stale audit findings</Item>
+      <Item>Do not clean user-review-workbench</Item>
+      <Item>Do not create validate-links</Item>
+      <Item>Do not create codex-working-context.md</Item>
+      <Item>Do not change AGENTS.md</Item>
+      <Item>Do not change README.md</Item>
+      <Item>Do not change CHANGELOG.md</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not change KSI/FSNB/GESN normative data</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not fill user-owned fields on behalf of Codex</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-018-ACCEPTED-ARTIFACT-PROTECTION" status="accepted">
     <Name>Accepted artifact protection</Name>
     <Goal>Classify accepted source/manual artifacts and introduce protection metadata so future packets, generators, and mass edits cannot overwrite accepted results without explicit user approval.</Goal>

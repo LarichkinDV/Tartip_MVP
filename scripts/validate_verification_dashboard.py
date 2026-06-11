@@ -40,6 +40,9 @@ ALLOWED_TYPES = {
 MANUAL_TYPES = {
     check_type for check_type in ALLOWED_TYPES if check_type.startswith("manual_")
 }
+ALLOWED_SCOPE_TYPES = {"monthly_block"}
+MONTHLY_SCOPE_ID = "MONTHLY-2026-06"
+LEGACY_MONTHLY_PACKET = "EP-006-MONTHLY-PLANNING-AND-DEFENSE"
 
 
 def rel(path: Path) -> str:
@@ -125,6 +128,20 @@ def validate_check(check: dict[str, Any]) -> list[str]:
         errors.append(f"{check_id}: unsupported check_type={check_type}")
     if status and status not in ALLOWED_STATUSES:
         errors.append(f"{check_id}: unsupported status={status}")
+    scope_type = str(check.get("scope_type") or "")
+    scope_id = str(check.get("scope_id") or "")
+    related_packet = str(check.get("related_packet") or "")
+    if scope_type and scope_type not in ALLOWED_SCOPE_TYPES:
+        errors.append(f"{check_id}: unsupported scope_type={scope_type}")
+    if scope_type == "monthly_block":
+        if scope_id != MONTHLY_SCOPE_ID:
+            errors.append(f"{check_id}: monthly_block requires scope_id={MONTHLY_SCOPE_ID}")
+        if related_packet:
+            errors.append(f"{check_id}: monthly_block must not use related_packet={related_packet}")
+        if check.get("legacy_related_packet") != LEGACY_MONTHLY_PACKET:
+            errors.append(f"{check_id}: monthly_block must preserve legacy_related_packet={LEGACY_MONTHLY_PACKET}")
+    elif related_packet == LEGACY_MONTHLY_PACKET:
+        errors.append(f"{check_id}: legacy monthly packet must be represented as monthly_block scope")
     if not as_list(check.get("how_to_check")):
         errors.append(f"{check_id}: missing how_to_check")
     if not as_list(check.get("expected_result")):

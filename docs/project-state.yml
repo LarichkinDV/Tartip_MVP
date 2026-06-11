@@ -1,0 +1,37 @@
+project_state:
+  schema_version: 1
+  updated_at: 2026-06-11
+  state_mode: accepted_baseline
+  active_execution_packet: none
+  last_accepted_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+  last_completed_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+  next_recommended_packet: EP-017-AUDIT-FINDINGS-CLEANUP
+  deferred_follow_up_packets:
+    -
+      packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+      reason: "Deferred until audit/workbench noise and Codex context costs are reduced."
+    -
+      packet_id: EP-019-CODEX-CONTEXT-COMPACTION
+      reason: "Run after EP-017 to compact reading policy on top of cleaned audit/workbench."
+  accepted_packets:
+    - EP-001-INFRA
+    - EP-002-REFERENCE-GOVERNANCE
+    - EP-003-REFERENCE-VERSIONING
+    - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+    - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+    - EP-007-VERIFICATION-DASHBOARD
+    - EP-008-DISSERTATION-PROMPT-GENERATION
+    - EP-009-CODEX-SPEC-AUDIT
+    - EP-010-LANGUAGE-NORMALIZATION
+    - EP-011-GIT-WORKFLOW-DISCIPLINE
+    - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+    - EP-013-POST-ACCEPTANCE-STATE-SYNC
+    - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+    - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+  monthly_scopes:
+    -
+      scope_id: MONTHLY-2026-06
+      replaces_orphan_packet_id: EP-006-MONTHLY-PLANNING-AND-DEFENSE
+      status: pending_verification
+      note: "Monthly defense checks are monthly scope checks, not accepted execution packet checks."

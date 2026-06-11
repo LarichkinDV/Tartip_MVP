@@ -23,6 +23,7 @@ REGISTRY_PATH = PROJECT_ROOT / "docs" / "artifact-registry.yml"
 ACCEPTANCE_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "acceptance-dashboard.yml"
 USER_ACTION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "user-action-dashboard.yml"
 VERIFICATION_DASHBOARD_PATH = PROJECT_ROOT / "docs" / "verification-dashboard.yml"
+PROJECT_STATE_PATH = PROJECT_ROOT / "docs" / "project-state.yml"
 MONTHLY_PLAN_PATH = PROJECT_ROOT / "docs" / "monthly" / "monthly-plan.yml"
 FORBIDDEN_CLAIMS_PATH = (
     PROJECT_ROOT / "docs" / "dissertation" / "prompt-profiles" / "forbidden-claims.yml"
@@ -703,14 +704,29 @@ def run_git(args: list[str]) -> tuple[int, str, str]:
     return result.returncode, result.stdout.strip(), result.stderr.strip()
 
 
+def project_state() -> dict[str, Any]:
+    if not PROJECT_STATE_PATH.exists():
+        return {}
+    data = load_data(PROJECT_STATE_PATH)
+    state = data.get("project_state", {}) if isinstance(data, dict) else {}
+    return state if isinstance(state, dict) else {}
+
+
+def normalized_packet_id(value: Any) -> str:
+    text = str(value or "").strip()
+    return "" if text in {"", "none", "null", "None", "~"} else text
+
+
+def active_packet_id() -> str:
+    return normalized_packet_id(project_state().get("active_execution_packet"))
+
+
+def advisory_packet_id() -> str:
+    return normalized_packet_id(project_state().get("next_recommended_packet"))
+
+
 def current_packet_id() -> str:
-    project_plan = PROJECT_ROOT / "docs" / "project-plan.md"
-    if project_plan.exists():
-        text = project_plan.read_text(encoding="utf-8")
-        match = re.search(r"`(EP-\d{3}-[A-Z0-9-]+)`", text)
-        if match:
-            return match.group(1)
-    return "EP-011-GIT-WORKFLOW-DISCIPLINE"
+    return active_packet_id() or advisory_packet_id()
 
 
 def packet_number(packet_id: str) -> str:
@@ -870,7 +886,8 @@ def ep_scope(path: str) -> str:
 def check_git_workflow() -> list[dict[str, Any]]:
     findings: list[dict[str, Any]] = []
     code, branch, stderr = run_git(["branch", "--show-current"])
-    packet_id = current_packet_id()
+    active_packet = active_packet_id()
+    packet_id = active_packet or advisory_packet_id()
     number = packet_number(packet_id)
     if code != 0 or not branch:
         findings.append(
@@ -885,7 +902,7 @@ def check_git_workflow() -> list[dict[str, Any]]:
                 "Проверить Git state вручную перед созданием ветки или merge.",
             )
         )
-    elif branch == "main":
+    elif packet_id and branch == "main":
         findings.append(
             finding(
                 "AUD-GIT-001-CURRENT-BRANCH-MAIN",
@@ -898,7 +915,7 @@ def check_git_workflow() -> list[dict[str, Any]]:
                 "Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением.",
             )
         )
-    elif not (
+    elif packet_id and not (
         number and branch.startswith(f"ep-{number}-") and BRANCH_RE.match(branch)
     ):
         findings.append(
@@ -951,48 +968,49 @@ def check_git_workflow() -> list[dict[str, Any]]:
             )
         )
 
-    status = packet_status(packet_id)
-    acceptance = packet_acceptance(packet_id)
-    decision = acceptance.get("acceptance_decision", "pending")
-    accepted_by = acceptance.get("accepted_by", "")
-    if accepted_by == "Codex":
-        findings.append(
-            finding(
-                f"AUD-GIT-003-ACCEPTED-BY-CODEX-{packet_id}",
-                "AUD-GIT-003",
-                "critical",
-                "git_workflow",
-                f"docs/acceptance/{packet_id}.acceptance.md",
-                None,
-                f"{packet_id} содержит accepted_by=Codex.",
-                "Очистить user-owned field через отдельное пользовательское решение.",
+    if active_packet:
+        status = packet_status(active_packet)
+        acceptance = packet_acceptance(active_packet)
+        decision = acceptance.get("acceptance_decision", "pending")
+        accepted_by = acceptance.get("accepted_by", "")
+        if accepted_by == "Codex":
+            findings.append(
+                finding(
+                    f"AUD-GIT-003-ACCEPTED-BY-CODEX-{active_packet}",
+                    "AUD-GIT-003",
+                    "critical",
+                    "git_workflow",
+                    f"docs/acceptance/{active_packet}.acceptance.md",
+                    None,
+                    f"{active_packet} содержит accepted_by=Codex.",
+                    "Очистить user-owned field через отдельное пользовательское решение.",
+                )
             )
-        )
-    if not packet_has_user_acceptance(packet_id):
-        findings.append(
-            finding(
-                f"AUD-GIT-002-MERGE-FORBIDDEN-{packet_id}",
-                "AUD-GIT-002",
-                "medium",
-                "git_workflow",
-                f"docs/acceptance/{packet_id}.acceptance.md",
-                None,
-                f"Merge запрещен для {packet_id}: status={status or '-'}, acceptance_decision={decision}, accepted_by={'set' if accepted_by else 'empty'}.",
-                "Не готовить merge, пока пользователь не поставит accepted и accepted_by.",
+        if not packet_has_user_acceptance(active_packet):
+            findings.append(
+                finding(
+                    f"AUD-GIT-002-MERGE-FORBIDDEN-{active_packet}",
+                    "AUD-GIT-002",
+                    "medium",
+                    "git_workflow",
+                    f"docs/acceptance/{active_packet}.acceptance.md",
+                    None,
+                    f"Merge запрещен для {active_packet}: status={status or '-'}, acceptance_decision={decision}, accepted_by={'set' if accepted_by else 'empty'}.",
+                    "Не готовить merge, пока пользователь не поставит accepted и accepted_by.",
+                )
             )
-        )
-        findings.append(
-            finding(
-                f"AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-{packet_id}",
-                "AUD-GIT-006",
-                "medium",
-                "git_workflow",
-                "docs/git-workflow.md",
-                None,
-                f"Для {packet_id} нет явного user approval на merge в main.",
-                "Получить явное разрешение пользователя после приемки и успешных проверок.",
+            findings.append(
+                finding(
+                    f"AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-{active_packet}",
+                    "AUD-GIT-006",
+                    "medium",
+                    "git_workflow",
+                    "docs/git-workflow.md",
+                    None,
+                    f"Для {active_packet} нет явного user approval на merge в main.",
+                    "Получить явное разрешение пользователя после приемки и успешных проверок.",
+                )
             )
-        )
     return findings
 
 

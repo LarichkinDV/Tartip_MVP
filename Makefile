@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions
+.PHONY: up down logs test lint format backup restore check regenerate verify validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions
 
 up:
 	$(COMPOSE) up --build
@@ -54,6 +54,21 @@ check:
 	else \
 		printf 'Docker is not installed; skipped Docker Compose syntax check.\n'; \
 	fi
+
+regenerate:
+	$(MAKE) generate-dashboards
+	$(MAKE) audit
+
+verify:
+	./scripts/check_project.sh
+	$(MAKE) validate-dissertation-sync
+	$(MAKE) validate-dissertation-prompts
+	$(MAKE) validate-plan
+	$(MAKE) validate-verification
+	$(MAKE) validate-user-review-workbench
+	$(MAKE) validate-post-acceptance-state
+	$(MAKE) validate-accepted-artifact-protection
+	$(MAKE) validate-audit
 
 validate-plan:
 	$(PYTHON) scripts/validate_project_plan.py

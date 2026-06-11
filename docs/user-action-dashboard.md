@@ -1,12 +1,12 @@
 # Вопросы и действия для пользователя
 
-Дата обновления: 2026-06-10
+Дата обновления: 2026-06-11
 
 ## 1. Сводка
 
 | Категория | Количество |
 |---|---:|
-| open | 263 |
+| open | 265 |
 | high_priority | 175 |
 | blocked | 175 |
 | answered | 171 |
@@ -406,6 +406,7 @@
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-941 | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | docs/user-action-dashboard.yml |
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-961 | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | docs/user-action-dashboard.yml |
 | AUD-ACCEPT-CODEX-USER-FIELD-docs-user-action-dashboard.yml-981 | Поле answered_by установлено в Codex. | Заменить только после user-owned correction; Codex не может быть владельцем решения. | docs/user-action-dashboard.yml |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | Имя ветки ep-015-verification-dashboard-reconciliation не соответствует packet EP-017-AUDIT-FINDINGS-CLEANUP. | Использовать формат ep-017-<short-slug>. | .git |
 | AUD-GIT-001-CURRENT-BRANCH-MAIN | Текущая ветка main не соответствует EP-010-LANGUAGE-NORMALIZATION. | Создавать новую packet-ветку для новых EP; текущий dirty baseline требует user approval перед переключением. | .git |
 | AUD-GIT-005-MIXED-EP-SCOPES | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | .git |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-010-LANGUAGE-NORMALIZATION | Для EP-010-LANGUAGE-NORMALIZATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
@@ -413,6 +414,7 @@
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD | Для EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-013-POST-ACCEPTANCE-STATE-SYNC | Для EP-013-POST-ACCEPTANCE-STATE-SYNC нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Для EP-014-USER-REVIEW-DECISION-CLI-SAFETY нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Для EP-015-VERIFICATION-DASHBOARD-RECONCILIATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-018-ACCEPTED-ARTIFACT-PROTECTION | Для EP-018-ACCEPTED-ARTIFACT-PROTECTION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | docs/git-workflow.md |
 | AUD-LANG-001-02894c6b30 | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | README.md |
 | AUD-LANG-001-0403b9742d | Найден вероятный англоязычный пользовательский фрагмент. | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. | docs/07-reference-data-policy.md |

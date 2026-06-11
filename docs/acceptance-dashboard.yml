@@ -1,5 +1,5 @@
 acceptance_dashboard:
-  updated_at: 2026-06-10
+  updated_at: 2026-06-11
   source_files:
     - docs/grace/execution-packets.xml
     - docs/artifact-registry.yml
@@ -7,12 +7,12 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 14
+    accepted: 15
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
-    protected_accepted_artifacts: 30
+    protected_accepted_artifacts: 31
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -81,6 +81,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-10
         acceptance_report: docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md
+      -
+        packet_id: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-11
+        acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
       -
         packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
         accepted_by: "Дмитрий"
@@ -2830,6 +2835,133 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-10
         comments: "Принято. Проверено: make apply-user-review-decisions-dry-run и python3 scripts/apply_user_review_decisions.py --dry-run выполняются в non-writing режиме; сравнение git status до и после dry-run не выявило изменений. Режим --apply отделен от dry-run и защищен проверками обязательных user-owned полей, stale checksum, active blockers, запрета accepted_by = Codex и запрета перезаписи уже accepted reports. Manual verification и user_action решения в текущей версии не применяются автоматически. Accepted decisions EP-001–EP-013 не изменены. Planning decision DEC-EP-014-001 зафиксирован; перенос EP-014-ACCEPTED-ARTIFACT-PROTECTION на EP-018 подтвержден."
+    -
+      packet_id: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+      title: "Verification dashboard reconciliation"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      artifacts:
+        -
+          path: docs/project-state.yml
+          status: active
+          type: status_report
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        -
+          command: "python3 -m py_compile scripts/validate_post_acceptance_state.py scripts/audit_codex_spec.py scripts/generate_verification_dashboard.py scripts/validate_verification_dashboard.py"
+          status: documented
+        -
+          command: "make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "make validate-verification"
+          status: documented
+        -
+          command: "make validate-user-review-workbench"
+          status: documented
+        -
+          command: "make validate-accepted-artifact-protection"
+          status: documented
+        -
+          command: "make verify"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-015-001
+          text: "docs/project-state.yml создан и содержит schema_version, state_mode, active_execution_packet, last_accepted_execution_packet, last_completed_execution_packet, next_recommended_packet, accepted_packets и monthly_scopes."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-002
+          text: "accepted_packets в docs/project-state.yml сверяются с accepted acceptance reports и execution-packets.xml."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-003
+          text: "validate_post_acceptance_state.py читает docs/project-state.yml вместо hardcoded current packet constants."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-004
+          text: "audit_codex_spec.py определяет active/next packet из docs/project-state.yml, а не через arbitrary Markdown regex."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-005
+          text: "EP-006 monthly checks представлены как scope_type=monthly_block, scope_id=MONTHLY-2026-06 и не имитируют accepted execution packet."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-006
+          text: "make verify добавлен как read-only проверочный entrypoint."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-007
+          text: "make check остается совместимым с текущим workflow."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-008
+          text: "EP-015 имеет статус ready_for_acceptance, но не accepted."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-009
+          text: "Accepted reports других EP не изменялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-010
+          text: "README.md, CHANGELOG.md и AGENTS.md не изменялись."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-011
+          text: "User-owned поля не заполнялись Codex."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-015-012
+          text: "BIM-КСИ-ГЭСН методика и нормативные данные не изменялись."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        []
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-11
+        comments: "Принято. Проверено: project-state.yml создан; EP-015 зарегистрирован как ready_for_acceptance; EP-006 реклассифицирован как monthly scope MONTHLY-2026-06; make verify проходит и является read-only; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; user-owned поля Codex не заполнял; предметная методика BIM–КСИ–ГЭСН не изменялась."
     -
       packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
       title: "Accepted artifact protection"
