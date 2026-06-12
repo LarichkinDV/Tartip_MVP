@@ -1,5 +1,5 @@
 acceptance_dashboard:
-  updated_at: 2026-06-11
+  updated_at: 2026-06-12
   source_files:
     - docs/grace/execution-packets.xml
     - docs/artifact-registry.yml
@@ -7,12 +7,12 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 15
+    accepted: 16
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
-    protected_accepted_artifacts: 31
+    protected_accepted_artifacts: 32
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -86,6 +86,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-11
         acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      -
+        packet_id: EP-017-AUDIT-FINDINGS-CLEANUP
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-12
+        acceptance_report: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
       -
         packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
         accepted_by: "Дмитрий"
@@ -2962,6 +2967,139 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-11
         comments: "Принято. Проверено: project-state.yml создан; EP-015 зарегистрирован как ready_for_acceptance; EP-006 реклассифицирован как monthly scope MONTHLY-2026-06; make verify проходит и является read-only; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; user-owned поля Codex не заполнял; предметная методика BIM–КСИ–ГЭСН не изменялась."
+    -
+      packet_id: EP-017-AUDIT-FINDINGS-CLEANUP
+      title: "Audit findings cleanup"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+      artifacts:
+        -
+          path: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        -
+          command: "make regenerate"
+          status: documented
+        -
+          command: "python3 -m py_compile scripts/audit_codex_spec.py scripts/generate_user_action_dashboard.py scripts/generate_user_review_workbench.py scripts/validate_user_review_workbench.py"
+          status: documented
+        -
+          command: "make validate-user-review-workbench"
+          status: documented
+        -
+          command: "make validate-post-acceptance-state"
+          status: documented
+        -
+          command: "make validate-accepted-artifact-protection"
+          status: documented
+        -
+          command: "make verify"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-017-001
+          text: "EP-015 was accepted and synchronized before EP-017 started."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-002
+          text: "docs/project-state.yml points to EP-017 as active packet and is ready_for_acceptance after successful checks."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-003
+          text: "EP-017 is registered as ready_for_acceptance and is not accepted."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-004
+          text: "current_detected=false findings are absent from active_review_items and urgent user actions."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-005
+          text: "current_detected=false findings are not counted as active blockers."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-006
+          text: "Historical audit findings remain in docs/audit/audit-findings.yml."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-007
+          text: "Grouped historical audit finding representation is generated deterministically."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-008
+          text: "Workbench Markdown displays a compact top-N active audit view and grouped historical summary."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-009
+          text: "User-action dashboard does not show stale historical findings as active user actions."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-010
+          text: "Audit report separates active findings from historical/stale finding groups."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-011
+          text: "Codex did not set resolved_by=Codex or user-owned fields."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-012
+          text: "Accepted reports of other EP were not changed."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-013
+          text: "README.md, CHANGELOG.md and AGENTS.md were not changed."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-014
+          text: "BIM-KSI-GESN methodology and normative data were not changed."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-017-015
+          text: "make verify is read-only."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        []
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-12
+        comments: "Принято. Проверено: stale audit findings с current_detected=false не попадают в active review/action windows; audit history сохранена; findings не удалялись; status/resolution fields не менялись; resolved_by: Codex не выставлялся; workbench и user-action dashboard больше не показывают stale findings как active blockers; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись."
     -
       packet_id: EP-018-ACCEPTED-ARTIFACT-PROTECTION
       title: "Accepted artifact protection"

@@ -423,6 +423,38 @@
     <Name>make check remains compatible</Name>
     <Expected>make check keeps the existing workflow including generation and audit targets, while make verify is the preferred read-only verification entrypoint.</Expected>
   </Scenario>
+  <Scenario id="V-EP-017-001" module="M-CODEX-SPEC-AUDIT">
+    <Name>stale findings are historical only</Name>
+    <Expected>Findings with current_detected=false remain in docs/audit/audit-findings.yml but are not included in active review/action windows or active blocker counts.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-002" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit finding groups are generated</Name>
+    <Expected>Generated audit/workbench/action artifacts include deterministic audit_finding_groups with total, current, historical and active_blocking counts.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-003" module="M-USER-REVIEW-WORKBENCH">
+    <Name>workbench markdown is compact</Name>
+    <Expected>docs/user-review-workbench.md shows no more than 20 active critical/high audit findings and no more than 10 grouped historical finding groups.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>user action dashboard hides stale audit actions</Name>
+    <Expected>docs/user-action-dashboard.yml excludes current_detected=false audit findings from urgent/open user actions while preserving real user actions and current findings.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-005" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit report separates active and historical findings</Name>
+    <Expected>docs/audit/codex-spec-audit.md reports current findings separately from historical/stale finding groups and counts active critical findings only from current findings.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-006" module="M-USER-REVIEW-WORKBENCH">
+    <Name>workbench validator rejects stale active findings</Name>
+    <Expected>scripts/validate_user_review_workbench.py fails if current_detected=false appears in active_review_items or if grouped historical counts are inconsistent.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-007" module="M-CODEX-SPEC-AUDIT">
+    <Name>audit statuses are preserved</Name>
+    <Expected>EP-017 does not delete findings, does not mark stale findings fixed, and does not set resolved_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-EP-017-008" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>make verify remains read-only after EP-017</Name>
+    <Expected>make verify does not change git status --short after EP-017 generator and dashboard updates.</Expected>
+  </Scenario>
   <Scenario id="V-ACCEPTED-PROTECTION-001" module="M-ACCEPTED-ARTIFACT-PROTECTION">
     <Name>accepted acceptance reports are protected</Name>
     <Expected>Every acceptance report with acceptance_decision=accepted is registered in docs/artifact-registry.yml with protection_status=protected.</Expected>

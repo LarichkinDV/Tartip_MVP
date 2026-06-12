@@ -29,6 +29,7 @@ ACTIVE_ACCEPTANCE_STATUSES = {
 }
 ACTIVE_CHECK_STATUSES = {"pending", "in_progress", "blocked", "requires_user_action"}
 ACTIVE_ACTION_STATUSES = {"open", "pending", "blocked", "requires_user_approval"}
+ACTIVE_AUDIT_STATUSES = {"open", "pending", "blocked", "requires_user_approval"}
 PSEUDO_EMPTY_VALUES = {
     "отсутствуют",
     "нет",
@@ -93,6 +94,20 @@ def recently_accepted(workbench: dict[str, Any]) -> list[dict[str, Any]]:
 
 def active_item_ids(workbench: dict[str, Any]) -> set[str]:
     return {str(item.get("id")) for item in active_items(workbench)}
+
+
+def is_current_finding(finding: dict[str, Any]) -> bool:
+    return finding.get("current_detected") is not False
+
+
+def active_audit_finding(finding: dict[str, Any]) -> bool:
+    status = str(finding.get("status") or "")
+    severity = str(finding.get("severity") or "")
+    return (
+        is_current_finding(finding)
+        and status in ACTIVE_AUDIT_STATUSES
+        and (severity in {"critical", "high"} or status == "requires_user_approval")
+    )
 
 
 def validate_required_files() -> list[str]:
@@ -163,11 +178,7 @@ def expected_audit_ids() -> set[str]:
     for finding in findings if isinstance(findings, list) else []:
         if not isinstance(finding, dict):
             continue
-        status = str(finding.get("status") or "")
-        severity = str(finding.get("severity") or "")
-        if status in ACTIVE_ACTION_STATUSES and (
-            severity in {"critical", "high"} or status == "requires_user_approval"
-        ):
+        if active_audit_finding(finding):
             expected.add(f"AUDIT-{finding.get('id')}")
     return expected
 
@@ -207,6 +218,8 @@ def validate_active_item_shape(workbench: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     for item in active_items(workbench):
         item_id = item.get("id", "<missing id>")
+        if item.get("current_detected") is False:
+            errors.append(f"{item_id}: current_detected=false must not be active")
         if not item.get("source_file"):
             errors.append(f"{item_id}: missing source_file")
         if not item.get("source_checksum_sha256"):
@@ -226,6 +239,48 @@ def validate_active_item_shape(workbench: dict[str, Any]) -> list[str]:
                 text = value.get("text") if isinstance(value, dict) else value
                 if pseudo_text(text):
                     errors.append(f"{item_id}: pseudo value in {section}: {text}")
+    return errors
+
+
+def validate_audit_finding_groups(workbench: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    groups = workbench.get("audit_finding_groups", [])
+    if not isinstance(groups, list):
+        return ["workbench audit_finding_groups must be a list"]
+    required = {
+        "group_id",
+        "severity",
+        "category",
+        "total_count",
+        "current_detected_count",
+        "historical_count",
+        "active_blocking",
+        "source_file",
+        "recommendation",
+    }
+    seen: set[str] = set()
+    for group in groups:
+        if not isinstance(group, dict):
+            errors.append("audit_finding_groups entries must be mappings")
+            continue
+        group_id = str(group.get("group_id") or "")
+        if not group_id:
+            errors.append("audit_finding_group missing group_id")
+        if group_id in seen:
+            errors.append(f"duplicate audit_finding_group: {group_id}")
+        seen.add(group_id)
+        missing = sorted(required - set(group))
+        if missing:
+            errors.append(f"{group_id}: missing fields: {', '.join(missing)}")
+        current_count = int(group.get("current_detected_count") or 0)
+        historical_count = int(group.get("historical_count") or 0)
+        total_count = int(group.get("total_count") or 0)
+        if total_count != current_count + historical_count:
+            errors.append(f"{group_id}: total_count must equal current + historical")
+        if current_count == 0 and group.get("active_blocking") is True:
+            errors.append(f"{group_id}: historical-only group must not be active_blocking")
+    if "AUD-ACCEPT-CODEX-USER-FIELD" not in seen:
+        errors.append("audit_finding_groups missing AUD-ACCEPT-CODEX-USER-FIELD")
     return errors
 
 
@@ -379,6 +434,7 @@ def main() -> int:
 
     errors.extend(validate_expected_items(workbench))
     errors.extend(validate_active_item_shape(workbench))
+    errors.extend(validate_audit_finding_groups(workbench))
     errors.extend(validate_user_owned_fields(workbench))
     errors.extend(validate_decision_application_flow(workbench))
     errors.extend(validate_decision_cli_safety())

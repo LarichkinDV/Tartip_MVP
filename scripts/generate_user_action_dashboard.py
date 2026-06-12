@@ -19,6 +19,7 @@ QUESTION_FILES = [
 AUDIT_FINDINGS_PATH = PROJECT_ROOT / "docs" / "audit" / "audit-findings.yml"
 YAML_PATH = PROJECT_ROOT / "docs" / "user-action-dashboard.yml"
 MARKDOWN_PATH = PROJECT_ROOT / "docs" / "user-action-dashboard.md"
+ACTIVE_AUDIT_STATUSES = {"open", "pending", "blocked", "requires_user_approval"}
 
 
 def rel(path: Path) -> str:
@@ -60,6 +61,67 @@ def audit_priority(severity: Any) -> str:
     if severity_text == "medium":
         return "normal"
     return "low"
+
+
+def is_current_finding(item: dict[str, Any]) -> bool:
+    return item.get("current_detected") is not False
+
+
+def active_audit_finding(item: dict[str, Any]) -> bool:
+    status = str(item.get("status") or "")
+    severity = str(item.get("severity") or "")
+    return (
+        is_current_finding(item)
+        and status in ACTIVE_AUDIT_STATUSES
+        and (severity in {"critical", "high"} or status == "requires_user_approval")
+    )
+
+
+def finding_group_id(item: dict[str, Any]) -> str:
+    finding_id = str(item.get("id") or "")
+    if finding_id.startswith("AUD-ACCEPT-CODEX-USER-FIELD-"):
+        return "AUD-ACCEPT-CODEX-USER-FIELD"
+    if finding_id.startswith("AUD-LANG-001-"):
+        return "AUD-LANG-001"
+    return str(item.get("check_id") or finding_id or "AUD-UNKNOWN")
+
+
+def audit_finding_groups(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in findings:
+        grouped.setdefault(finding_group_id(item), []).append(item)
+    result: list[dict[str, Any]] = []
+    for group_id in sorted(grouped):
+        items = sorted(grouped[group_id], key=lambda value: str(value.get("id") or ""))
+        current = [item for item in items if is_current_finding(item)]
+        historical = [item for item in items if not is_current_finding(item)]
+        first = items[0] if items else {}
+        result.append(
+            {
+                "group_id": group_id,
+                "severity": first.get("severity") or "",
+                "category": first.get("category") or "",
+                "total_count": len(items),
+                "current_detected_count": len(current),
+                "historical_count": len(historical),
+                "active_blocking": any(active_audit_finding(item) for item in items),
+                "source_file": rel(AUDIT_FINDINGS_PATH),
+                "recommendation": (
+                    "Historical findings are preserved but hidden from active action windows while current_detected=false."
+                    if items and not current
+                    else str(first.get("recommendation") or "")
+                ),
+            }
+        )
+    return result
+
+
+def read_audit_findings() -> list[dict[str, Any]]:
+    if not AUDIT_FINDINGS_PATH.exists():
+        return []
+    data = load_data(AUDIT_FINDINGS_PATH)
+    findings = data.get("findings", []) if isinstance(data, dict) else []
+    return [item for item in findings if isinstance(item, dict)] if isinstance(findings, list) else []
 
 
 def read_actions() -> tuple[list[dict[str, Any]], list[str]]:
@@ -112,8 +174,7 @@ def read_actions() -> tuple[list[dict[str, Any]], list[str]]:
                 }
             )
     if AUDIT_FINDINGS_PATH.exists():
-        data = load_data(AUDIT_FINDINGS_PATH)
-        findings = data.get("findings", []) if isinstance(data, dict) else []
+        findings = read_audit_findings()
         if not isinstance(findings, list):
             warnings.append(
                 f"Audit findings source has no findings list: {rel(AUDIT_FINDINGS_PATH)}"
@@ -121,6 +182,8 @@ def read_actions() -> tuple[list[dict[str, Any]], list[str]]:
         else:
             for item in findings:
                 if not isinstance(item, dict):
+                    continue
+                if not active_audit_finding(item):
                     continue
                 status = str(item.get("status") or "open")
                 action_type = (
@@ -162,6 +225,7 @@ def read_actions() -> tuple[list[dict[str, Any]], list[str]]:
 
 def build_dashboard() -> dict[str, Any]:
     actions, warnings = read_actions()
+    audit_groups = audit_finding_groups(read_audit_findings())
     summary = {
         "open": sum(action["status"] == "open" for action in actions),
         "high_priority": sum(action.get("priority") == "high" for action in actions),
@@ -176,6 +240,10 @@ def build_dashboard() -> dict[str, Any]:
         "requires_user_approval": sum(
             action.get("requires_user_approval") for action in actions
         ),
+        "audit_finding_groups": len(audit_groups),
+        "historical_audit_finding_groups": sum(
+            group.get("historical_count", 0) > 0 for group in audit_groups
+        ),
     }
     return {
         "user_action_dashboard": {
@@ -184,6 +252,7 @@ def build_dashboard() -> dict[str, Any]:
             + ([rel(AUDIT_FINDINGS_PATH)] if AUDIT_FINDINGS_PATH.exists() else []),
             "summary": summary,
             "warnings": warnings,
+            "audit_finding_groups": audit_groups,
             "actions": actions,
         }
     }
@@ -225,6 +294,8 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
         "answered",
         "closed",
         "requires_user_approval",
+        "audit_finding_groups",
+        "historical_audit_finding_groups",
     ]:
         lines.append(f"| {key} | {summary[key]} |")
     lines.extend(
@@ -343,13 +414,31 @@ def write_markdown(dashboard: dict[str, Any]) -> None:
                 for a in typed
             ]
         lines.extend(rows_or_empty(rows, columns))
+    groups = data.get("audit_finding_groups") or []
+    historical_groups = [group for group in groups if group.get("historical_count")]
+    lines.extend(
+        [
+            "",
+            "## 11. Historical audit finding groups",
+            "",
+            "| Group | Severity | Total | Current | Historical | Active blocking | Recommendation |",
+            "|---|---|---:|---:|---:|---|---|",
+        ]
+    )
+    if historical_groups:
+        for group in historical_groups[:10]:
+            lines.append(
+                f"| {md(group.get('group_id'))} | {md(group.get('severity'))} | {md(group.get('total_count'))} | {md(group.get('current_detected_count'))} | {md(group.get('historical_count'))} | {md(group.get('active_blocking'))} | {md(group.get('recommendation'))} |"
+            )
+    else:
+        lines.append("| - | - | - | - | - | - | - |")
     closed = [
         action for action in actions if action.get("status") in {"closed", "resolved"}
     ]
     lines.extend(
         [
             "",
-            "## 11. Закрытые вопросы",
+            "## 12. Закрытые вопросы",
             "",
             "| ID | Решение | Дата | Кем принято |",
             "|---|---|---|---|",

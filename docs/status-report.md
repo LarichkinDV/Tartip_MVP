@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
-last_completed_execution_packet: EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
-next_recommended_packet: EP-017-AUDIT-FINDINGS-CLEANUP
+last_accepted_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
+last_completed_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
+next_recommended_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -39,6 +39,7 @@ post_acceptance_baseline:
     - EP-013-POST-ACCEPTANCE-STATE-SYNC
     - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
     - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+    - EP-017-AUDIT-FINDINGS-CLEANUP
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
 ```
 
@@ -62,14 +63,14 @@ post_acceptance_baseline:
 - Создан `docs/project-state.yml` как machine-readable source-of-truth текущего состояния проекта.
 - EP-006 monthly checks реклассифицируются как monthly scope `MONTHLY-2026-06`, а не ordinary execution packet.
 - EP-015 принят пользователем Дмитрием 2026-06-11 и синхронизирован как post-acceptance состояние.
+- EP-017 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-Нет активного execution packet. Следующий рекомендуемый пакет: `EP-017-AUDIT-FINDINGS-CLEANUP`.
+Активный execution packet отсутствует; следующий рекомендуемый пакет: `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`.
 
 ## 7. Готово к приемке
 
-Нет пакетов в статусе `ready_for_acceptance`.
 
 ## 8. Принятый Baseline
 
@@ -87,13 +88,14 @@ post_acceptance_baseline:
 - [EP-013-POST-ACCEPTANCE-STATE-SYNC](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md)
 - [EP-014-USER-REVIEW-DECISION-CLI-SAFETY](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md)
 - [EP-015-VERIFICATION-DASHBOARD-RECONCILIATION](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md)
+- [EP-017-AUDIT-FINDINGS-CLEANUP](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md)
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 
 ## 9. Follow-Up Debt
 
-- `EP-017-AUDIT-FINDINGS-CLEANUP`: clean stale audit/workbench noise without mass-russification and without changing accepted/protected artifacts.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: deferred until audit/workbench noise and Codex context costs are reduced.
-- `EP-019-CODEX-CONTEXT-COMPACTION`: deferred until after EP-017 to compact reading policy on top of cleaned audit/workbench.
+- `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: next recommended packet after EP-017 post-acceptance sync.
+- `EP-019-CODEX-CONTEXT-COMPACTION`: deferred until after EP-021 to compact reading policy on top of synchronized post-acceptance state.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -104,8 +106,9 @@ post_acceptance_baseline:
 - Pending verification checks are post-acceptance verification debt and do not reopen already accepted acceptance reports.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
-- Audit finding statuses remain unchanged in EP-013; stale findings require EP-017.
-- Critical/high audit findings remain blocking gates; medium/low findings are advisory.
+- EP-017 не закрывает audit findings как fixed и не меняет user-owned resolution fields.
+- Current critical/high audit findings remain blocking gates; historical `current_detected: false` findings remain audit history.
+- EP-019 remains deferred until EP-021 post-acceptance sync automation is completed.
 
 ## 12. EP-006 Orphan Scope
 
@@ -121,4 +124,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-015 принят пользователем и синхронизирован в `accepted_baseline`. Следующий рекомендуемый пакет: `EP-017-AUDIT-FINDINGS-CLEANUP`.
+EP-017 синхронизирован в post-acceptance baseline после пользовательской приемки. Следующий рекомендуемый пакет: `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`.

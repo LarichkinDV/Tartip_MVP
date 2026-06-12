@@ -626,7 +626,7 @@ artifacts:
     status: active
     description: "Machine-readable source-of-truth for project state, active packet, accepted baseline, next packet, and monthly scopes."
     created_at: 2026-06-11
-    updated_at: 2026-06-11
+    updated_at: 2026-06-12
     verification:
       status: pending
       scenarios:
@@ -5130,3 +5130,65 @@ artifacts:
         []
       regeneration_command: null
       protected_since: 2026-06-11
+  -
+    artifact_id: ART-ACCEPTANCE-EP-017-AUDIT-FINDINGS-CLEANUP
+    name: "EP-017 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+    owner_module: M-CODEX-SPEC-AUDIT
+    related_packets:
+      - EP-017-AUDIT-FINDINGS-CLEANUP
+    related_requirements:
+      - REQ-012
+      - REQ-014
+    status: active
+    description: "Acceptance report for audit findings and workbench cleanup."
+    created_at: 2026-06-11
+    updated_at: 2026-06-11
+    verification:
+      status: pending
+      scenarios:
+        - V-EP-017-001
+        - V-EP-017-002
+        - V-EP-017-003
+        - V-EP-017-004
+        - V-EP-017-005
+        - V-EP-017-006
+        - V-EP-017-007
+        - V-EP-017-008
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-AUDIT-FINDINGS
+      - ART-AUDIT-CODEX-SPEC-REPORT
+      - ART-USER-ACTION-DASHBOARD-YML
+      - ART-USER-REVIEW-WORKBENCH-YML
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-017 принят пользователем 2026-06-12; acceptance report является защищенным историческим source artifact."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-017 acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-017-AUDIT-FINDINGS-CLEANUP
+      user_decision_source: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-12

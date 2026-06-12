@@ -658,6 +658,67 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-017-AUDIT-FINDINGS-CLEANUP" status="accepted">
+    <Name>Audit findings cleanup</Name>
+    <Goal>Сократить шум в audit findings, user-action-dashboard и user-review-workbench без удаления истории и без закрытия findings от имени Codex.</Goal>
+    <Scope>
+      <Item>Фильтровать findings с current_detected=false из active review/action windows</Item>
+      <Item>Сохранять stale findings как historical audit history</Item>
+      <Item>Добавить deterministic audit_finding_groups для однотипных historical findings</Item>
+      <Item>Ограничить Markdown workbench top-N представлением active critical/high findings</Item>
+      <Item>Разделить active и historical findings в codex spec audit report</Item>
+      <Item>Создать acceptance report для EP-017</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>scripts/audit_codex_spec.py</Artifact>
+      <Artifact>scripts/generate_user_action_dashboard.py</Artifact>
+      <Artifact>scripts/generate_user_review_workbench.py</Artifact>
+      <Artifact>scripts/validate_user_review_workbench.py</Artifact>
+      <Artifact>docs/audit/audit-findings.yml</Artifact>
+      <Artifact>docs/audit/codex-spec-audit.md</Artifact>
+      <Artifact>docs/user-action-dashboard.md</Artifact>
+      <Artifact>docs/user-action-dashboard.yml</Artifact>
+      <Artifact>docs/user-review-workbench.md</Artifact>
+      <Artifact>docs/user-review-workbench.yml</Artifact>
+      <Artifact>docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-017-001">EP-015 was accepted and synchronized before EP-017 started.</Criterion>
+      <Criterion id="AC-EP-017-002">docs/project-state.yml points to EP-017 as active packet and is ready_for_acceptance after successful checks.</Criterion>
+      <Criterion id="AC-EP-017-003">EP-017 is registered as ready_for_acceptance and is not accepted.</Criterion>
+      <Criterion id="AC-EP-017-004">current_detected=false findings are absent from active_review_items and urgent user actions.</Criterion>
+      <Criterion id="AC-EP-017-005">current_detected=false findings are not counted as active blockers.</Criterion>
+      <Criterion id="AC-EP-017-006">Historical audit findings remain in docs/audit/audit-findings.yml.</Criterion>
+      <Criterion id="AC-EP-017-007">Grouped historical audit finding representation is generated deterministically.</Criterion>
+      <Criterion id="AC-EP-017-008">Workbench Markdown displays a compact top-N active audit view and grouped historical summary.</Criterion>
+      <Criterion id="AC-EP-017-009">User-action dashboard does not show stale historical findings as active user actions.</Criterion>
+      <Criterion id="AC-EP-017-010">Audit report separates active findings from historical/stale finding groups.</Criterion>
+      <Criterion id="AC-EP-017-011">Codex did not set resolved_by=Codex or user-owned fields.</Criterion>
+      <Criterion id="AC-EP-017-012">Accepted reports of other EP were not changed.</Criterion>
+      <Criterion id="AC-EP-017-013">README.md, CHANGELOG.md and AGENTS.md were not changed.</Criterion>
+      <Criterion id="AC-EP-017-014">BIM-KSI-GESN methodology and normative data were not changed.</Criterion>
+      <Criterion id="AC-EP-017-015">make verify is read-only.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not delete audit history</Item>
+      <Item>Do not close stale findings as fixed</Item>
+      <Item>Do not set resolved_by to Codex</Item>
+      <Item>Do not change user-owned decisions</Item>
+      <Item>Do not change README.md, CHANGELOG.md or AGENTS.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-018-ACCEPTED-ARTIFACT-PROTECTION" status="accepted">
     <Name>Accepted artifact protection</Name>
     <Goal>Classify accepted source/manual artifacts and introduce protection metadata so future packets, generators, and mass edits cannot overwrite accepted results without explicit user approval.</Goal>

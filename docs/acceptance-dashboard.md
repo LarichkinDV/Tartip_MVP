@@ -1,18 +1,18 @@
 # Единое окно приемки проекта Tartip
 
-Дата обновления: 2026-06-11
+Дата обновления: 2026-06-12
 
 ## 1. Сводка
 
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 0 |
-| accepted | 15 |
+| accepted | 16 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
 | pending | 0 |
-| protected_accepted_artifacts | 31 |
+| protected_accepted_artifacts | 32 |
 
 ## 2. Требуют приемки
 
@@ -38,6 +38,7 @@
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | Дмитрий | 2026-06-09 | Принято. EP-013 принят как пакет синхронизации post-acceptance состояния: принятые EP отражены как accepted, устранен разрыв ready_for_acceptance/accepted, active acceptance queue для EP-001–EP-012 пуста, project_state=accepted_baseline зафиксирован. Verification checks, user actions, data requirements и audit findings оставлены открытыми follow-up. Protection flags вынесены в EP-014, verification reconciliation — в EP-015, reference intake — в EP-016, audit cleanup — в EP-017. | accepted/protected |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | Дмитрий | 2026-06-10 | Принято. Проверено: make apply-user-review-decisions-dry-run и python3 scripts/apply_user_review_decisions.py --dry-run выполняются в non-writing режиме; сравнение git status до и после dry-run не выявило изменений. Режим --apply отделен от dry-run и защищен проверками обязательных user-owned полей, stale checksum, active blockers, запрета accepted_by = Codex и запрета перезаписи уже accepted reports. Manual verification и user_action решения в текущей версии не применяются автоматически. Accepted decisions EP-001–EP-013 не изменены. Planning decision DEC-EP-014-001 зафиксирован; перенос EP-014-ACCEPTED-ARTIFACT-PROTECTION на EP-018 подтвержден. | accepted/protected |
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Verification dashboard reconciliation | Дмитрий | 2026-06-11 | Принято. Проверено: project-state.yml создан; EP-015 зарегистрирован как ready_for_acceptance; EP-006 реклассифицирован как monthly scope MONTHLY-2026-06; make verify проходит и является read-only; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; user-owned поля Codex не заполнял; предметная методика BIM–КСИ–ГЭСН не изменялась. | accepted/protected |
+| EP-017-AUDIT-FINDINGS-CLEANUP | Audit findings cleanup | Дмитрий | 2026-06-12 | Принято. Проверено: stale audit findings с current_detected=false не попадают в active review/action windows; audit history сохранена; findings не удалялись; status/resolution fields не менялись; resolved_by: Codex не выставлялся; workbench и user-action dashboard больше не показывают stale findings как active blockers; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись. | accepted/protected |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | Дмитрий | 2026-06-10 | Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
@@ -96,6 +97,7 @@
 | README.md | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Дмитрий | 2026-06-11 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md | EP-017-AUDIT-FINDINGS-CLEANUP | Дмитрий | 2026-06-12 | Изменение требует user approval и новой ревизии |
 | AGENTS.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/grace/execution-packets.xml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/grace/module-contracts.xml | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |

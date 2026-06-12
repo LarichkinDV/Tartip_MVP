@@ -123,8 +123,6 @@ def merge_findings(generated: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for item in existing:
         item_id = str(item.get("id") or "")
         if item_id not in generated_ids:
-            if obsolete_finding(item):
-                continue
             item["current_detected"] = False
             merged.append(item)
 
@@ -155,6 +153,7 @@ def merge_findings(generated: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "schema_version": 1,
             "updated_at": TODAY,
             "allowed_statuses": sorted(ALLOWED_STATUSES),
+            "audit_finding_groups": audit_finding_groups(merged),
             "findings": merged,
         },
     )
@@ -1077,24 +1076,87 @@ def severity_counts(findings: list[dict[str, Any]]) -> dict[str, int]:
     }
 
 
+def is_current_finding(item: dict[str, Any]) -> bool:
+    return item.get("current_detected") is not False
+
+
+def active_audit_finding(item: dict[str, Any]) -> bool:
+    return is_current_finding(item) and item.get("status") in BLOCKING_STATUSES
+
+
 def active_blocking_critical(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [
         item
         for item in findings
         if item.get("severity") == "critical"
-        and item.get("status") in BLOCKING_STATUSES
-        and item.get("current_detected") is not False
+        and active_audit_finding(item)
     ]
 
 
+def finding_group_id(item: dict[str, Any]) -> str:
+    finding_id = str(item.get("id") or "")
+    if finding_id.startswith("AUD-ACCEPT-CODEX-USER-FIELD-"):
+        return "AUD-ACCEPT-CODEX-USER-FIELD"
+    if finding_id.startswith("AUD-LANG-001-"):
+        return "AUD-LANG-001"
+    return str(item.get("check_id") or finding_id or "AUD-UNKNOWN")
+
+
+def audit_finding_groups(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in findings:
+        grouped.setdefault(finding_group_id(item), []).append(item)
+
+    result: list[dict[str, Any]] = []
+    for group_id in sorted(grouped):
+        items = sorted(grouped[group_id], key=lambda value: str(value.get("id") or ""))
+        current = [item for item in items if is_current_finding(item)]
+        historical = [item for item in items if not is_current_finding(item)]
+        first = items[0] if items else {}
+        all_historical = bool(items) and not current
+        result.append(
+            {
+                "group_id": group_id,
+                "severity": first.get("severity") or "",
+                "category": first.get("category") or "",
+                "total_count": len(items),
+                "current_detected_count": len(current),
+                "historical_count": len(historical),
+                "active_blocking": any(
+                    active_audit_finding(item)
+                    and item.get("severity") in {"critical", "high"}
+                    for item in items
+                ),
+                "source_file": rel(FINDINGS_PATH),
+                "recommendation": (
+                    "Historical findings are preserved but hidden from active_review_items while current_detected=false."
+                    if all_historical
+                    else str(first.get("recommendation") or "")
+                ),
+                "example_ids": [
+                    str(item.get("id") or "") for item in items[:5] if item.get("id")
+                ],
+            }
+        )
+    return result
+
+
 def write_report(findings: list[dict[str, Any]]) -> None:
+    current_findings = [item for item in findings if is_current_finding(item)]
+    historical_findings = [item for item in findings if not is_current_finding(item)]
     counts = severity_counts(findings)
+    current_counts = severity_counts(current_findings)
     critical = active_blocking_critical(findings)
+    groups = audit_finding_groups(findings)
+    historical_groups = [group for group in groups if group.get("historical_count")]
     user_required = [
         item
-        for item in findings
+        for item in current_findings
         if item.get("status") == "requires_user_approval"
-        or item.get("severity") in {"critical", "high"}
+        or (
+            item.get("status") in BLOCKING_STATUSES
+            and item.get("severity") in {"critical", "high"}
+        )
     ]
     lines = [
         "# Codex Spec Audit",
@@ -1103,14 +1165,20 @@ def write_report(findings: list[dict[str, Any]]) -> None:
         "",
         "## 1. Сводка",
         "",
-        "| Severity | Количество |",
-        "|---|---:|",
+        "| Severity | Всего | Current | Historical |",
+        "|---|---:|---:|---:|",
     ]
     for severity in ["critical", "high", "medium", "low"]:
-        lines.append(f"| {severity} | {counts[severity]} |")
+        historical_count = counts[severity] - current_counts[severity]
+        lines.append(
+            f"| {severity} | {counts[severity]} | {current_counts[severity]} | {historical_count} |"
+        )
     lines.extend(
         [
             "",
+            f"Всего findings: {len(findings)}",
+            f"Current findings: {len(current_findings)}",
+            f"Historical/stale findings: {len(historical_findings)}",
             f"Активных critical findings: {len(critical)}",
             "",
             "## 2. Проверка доменной логики",
@@ -1151,14 +1219,14 @@ def write_report(findings: list[dict[str, Any]]) -> None:
             "- Проверены branch naming, forbidden staged/untracked files, merge acceptance gates и mixed EP scopes.",
             "- Advisory findings по текущему dirty baseline не блокируют `make check`.",
             "",
-            "## 9. Открытые findings",
+            "## 9. Active findings",
             "",
             "| ID | Severity | Check | File | Issue | Recommendation | Status |",
             "|---|---|---|---|---|---|---|",
         ]
     )
     open_findings = [
-        item for item in findings if item.get("status") in BLOCKING_STATUSES
+        item for item in current_findings if item.get("status") in BLOCKING_STATUSES
     ]
     if open_findings:
         for item in open_findings:
@@ -1182,7 +1250,23 @@ def write_report(findings: list[dict[str, Any]]) -> None:
     lines.extend(
         [
             "",
-            "## 11. Findings, требующие решения пользователя",
+            "## 11. Historical/stale finding groups (`audit_finding_groups`)",
+            "",
+            "| Group | Severity | Category | Total | Current | Historical | Active blocking | Recommendation |",
+            "|---|---|---|---:|---:|---:|---|---|",
+        ]
+    )
+    if historical_groups:
+        for group in historical_groups:
+            lines.append(
+                f"| {group.get('group_id')} | {group.get('severity')} | {group.get('category')} | {group.get('total_count')} | {group.get('current_detected_count')} | {group.get('historical_count')} | {group.get('active_blocking')} | {group.get('recommendation')} |"
+            )
+    else:
+        lines.append("| - | - | - | - | - | - | - | - |")
+    lines.extend(
+        [
+            "",
+            "## 12. Findings, требующие решения пользователя",
             "",
         ]
     )
@@ -1194,7 +1278,7 @@ def write_report(findings: list[dict[str, Any]]) -> None:
     lines.extend(
         [
             "",
-            "## 12. Команды проверки",
+            "## 13. Команды проверки",
             "",
             "```sh",
             "make audit-codex-spec",
@@ -1205,12 +1289,13 @@ def write_report(findings: list[dict[str, Any]]) -> None:
             "make check",
             "```",
             "",
-            "## 13. Что не исправлялось автоматически",
+            "## 14. Что не исправлялось автоматически",
             "",
             "- Не выполнялась массовая русификация.",
             "- Не переписывались существующие документы вне audit-контура.",
             "- Не менялись accepted/protected artifacts без user approval.",
             "- Findings не закрывались как `fixed` автоматически.",
+            "- Historical findings с `current_detected: false` сохранялись как история и не считались active blockers.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

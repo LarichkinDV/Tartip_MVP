@@ -38,6 +38,7 @@ ACTIVE_ACCEPTANCE_STATUSES = {
 }
 ACTIVE_ACTION_STATUSES = {"open", "pending", "blocked", "requires_user_approval"}
 ACTIVE_CHECK_STATUSES = {"pending", "in_progress", "blocked", "requires_user_action"}
+ACTIVE_AUDIT_STATUSES = {"open", "pending", "blocked", "requires_user_approval"}
 PSEUDO_EMPTY_VALUES = {
     "отсутствуют",
     "нет",
@@ -48,6 +49,8 @@ PSEUDO_EMPTY_VALUES = {
     "no risks",
 }
 PRIORITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS = 20
+MAX_MARKDOWN_HISTORICAL_GROUPS = 10
 
 
 def rel(path: Path) -> str:
@@ -134,6 +137,63 @@ def priority(value: Any, default: str = "medium") -> str:
     if raw in {"normal", "средний"}:
         return "medium"
     return default
+
+
+def is_current_finding(finding: dict[str, Any]) -> bool:
+    return finding.get("current_detected") is not False
+
+
+def active_audit_finding(finding: dict[str, Any]) -> bool:
+    status = str(finding.get("status") or "")
+    severity = str(finding.get("severity") or "")
+    return (
+        is_current_finding(finding)
+        and status in ACTIVE_AUDIT_STATUSES
+        and (severity in {"critical", "high"} or status == "requires_user_approval")
+    )
+
+
+def finding_group_id(finding: dict[str, Any]) -> str:
+    finding_id = str(finding.get("id") or "")
+    if finding_id.startswith("AUD-ACCEPT-CODEX-USER-FIELD-"):
+        return "AUD-ACCEPT-CODEX-USER-FIELD"
+    if finding_id.startswith("AUD-LANG-001-"):
+        return "AUD-LANG-001"
+    return str(finding.get("check_id") or finding_id or "AUD-UNKNOWN")
+
+
+def audit_finding_groups(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for finding in findings:
+        grouped.setdefault(finding_group_id(finding), []).append(finding)
+
+    result: list[dict[str, Any]] = []
+    for group_id in sorted(grouped):
+        items = sorted(grouped[group_id], key=lambda item: str(item.get("id") or ""))
+        current = [item for item in items if is_current_finding(item)]
+        historical = [item for item in items if not is_current_finding(item)]
+        first = items[0] if items else {}
+        result.append(
+            {
+                "group_id": group_id,
+                "severity": first.get("severity") or "",
+                "category": first.get("category") or "",
+                "total_count": len(items),
+                "current_detected_count": len(current),
+                "historical_count": len(historical),
+                "active_blocking": any(active_audit_finding(item) for item in items),
+                "source_file": rel(AUDIT_FINDINGS_PATH),
+                "recommendation": (
+                    "Historical findings are preserved but hidden from active_review_items while current_detected=false."
+                    if items and not current
+                    else str(first.get("recommendation") or "")
+                ),
+                "example_ids": [
+                    str(item.get("id") or "") for item in items[:5] if item.get("id")
+                ],
+            }
+        )
+    return result
 
 
 def command_list(values: Any) -> list[dict[str, str]]:
@@ -395,6 +455,7 @@ def audit_finding_item(finding: dict[str, Any]) -> dict[str, Any]:
         "title": finding.get("issue") or finding_id,
         "source_file": source_file,
         "source_id": finding_id,
+        "current_detected": is_current_finding(finding),
         "source_checksum_sha256": checksum(AUDIT_FINDINGS_PATH),
         "acceptance_report": "",
         "related_artifacts": [{"path": str(finding.get("file"))}]
@@ -503,20 +564,19 @@ def read_user_actions() -> list[dict[str, Any]]:
     return active
 
 
-def read_audit_findings() -> list[dict[str, Any]]:
+def load_audit_findings() -> list[dict[str, Any]]:
     if not AUDIT_FINDINGS_PATH.exists():
         return []
     data = load_data(AUDIT_FINDINGS_PATH)
     findings = data.get("findings", []) if isinstance(data, dict) else []
+    return [finding for finding in findings if isinstance(finding, dict)] if isinstance(findings, list) else []
+
+
+def read_audit_findings() -> list[dict[str, Any]]:
+    findings = load_audit_findings()
     active: list[dict[str, Any]] = []
-    for finding in findings if isinstance(findings, list) else []:
-        if not isinstance(finding, dict):
-            continue
-        status = str(finding.get("status") or "")
-        severity = str(finding.get("severity") or "")
-        if status not in ACTIVE_ACTION_STATUSES:
-            continue
-        if severity in {"critical", "high"} or status == "requires_user_approval":
+    for finding in findings:
+        if active_audit_finding(finding):
             active.append(audit_finding_item(finding))
     return active
 
@@ -541,8 +601,12 @@ def build_workbench() -> dict[str, Any]:
     manual_items = read_manual_checks()
     user_action_items = read_user_actions()
     audit_items = read_audit_findings()
+    audit_groups = audit_finding_groups(load_audit_findings())
     active_items = sort_items(
         acceptance_items + manual_items + user_action_items + audit_items
+    )
+    historical_audit_findings = sum(
+        int(group.get("historical_count") or 0) for group in audit_groups
     )
 
     summary = {
@@ -571,6 +635,8 @@ def build_workbench() -> dict[str, Any]:
         "active_blockers": sum(
             len(item.get("blockers") or []) for item in active_items
         ),
+        "audit_finding_groups": len(audit_groups),
+        "historical_audit_findings": historical_audit_findings,
         "accepted_hidden_from_active_queue": len(accepted_items),
     }
     return {
@@ -616,6 +682,7 @@ def build_workbench() -> dict[str, Any]:
                     "purpose": "Выполнять apply только после просмотра dry-run diff и подтверждения безопасного scope.",
                 },
             ],
+            "audit_finding_groups": audit_groups,
             "active_review_items": active_items,
             "recently_accepted": accepted_items,
             "warnings": warnings,
@@ -649,6 +716,10 @@ def write_markdown(workbench: dict[str, Any]) -> None:
     data = workbench["user_review_workbench"]
     items = data["active_review_items"]
     summary = data["summary"]
+    audit_items = [item for item in items if item.get("type") == "audit_finding"]
+    display_items = [
+        item for item in items if item.get("type") != "audit_finding"
+    ] + audit_items[:MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS]
     lines = [
         "# Единое активное окно проверки пользователем",
         "",
@@ -666,6 +737,8 @@ def write_markdown(workbench: dict[str, Any]) -> None:
         f"| Critical audit findings | {summary['critical_audit_findings']} |",
         f"| High audit findings | {summary['high_audit_findings']} |",
         f"| Активные блокеры | {summary['active_blockers']} |",
+        f"| Historical audit findings | {summary['historical_audit_findings']} |",
+        f"| Audit finding groups | {summary['audit_finding_groups']} |",
         f"| Принятые пакеты скрыты из активной очереди | {summary['accepted_hidden_from_active_queue']} |",
         "",
         "## 2. Что требует моего решения сейчас",
@@ -673,10 +746,14 @@ def write_markdown(workbench: dict[str, Any]) -> None:
         "| Приоритет | Тип | ID | EP | Что проверить | Где источник | Действие |",
         "|---|---|---|---|---|---|---|",
     ]
-    if items:
-        for item in items:
+    if display_items:
+        for item in display_items:
             lines.append(
                 f"| {md(item.get('priority'))} | {md(item.get('type'))} | {md(item.get('id'))} | {md(item.get('packet_id'))} | {md(item.get('title'))} | {md(item.get('source_file'))} | {md(item.get('required_user_action'))} |"
+            )
+        if len(audit_items) > MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS:
+            lines.append(
+                f"| - | audit_finding | - | - | Показаны первые {MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS} active critical/high findings из {len(audit_items)}. Подробности см. в `docs/user-review-workbench.yml`. | docs/user-review-workbench.yml | Открыть YAML для полного списка. |"
             )
     else:
         lines.append("| - | - | - | - | - | - | - |")
@@ -755,7 +832,6 @@ def write_markdown(workbench: dict[str, Any]) -> None:
     else:
         lines.append("| - | - | - | - |")
 
-    audit_items = [item for item in items if item.get("type") == "audit_finding"]
     lines.extend(
         [
             "",
@@ -766,13 +842,36 @@ def write_markdown(workbench: dict[str, Any]) -> None:
         ]
     )
     if audit_items:
-        for item in audit_items:
+        for item in audit_items[:MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS]:
             artifact = item.get("related_artifacts") or [{}]
             lines.append(
                 f"| {md(item.get('source_id'))} | {md(item.get('priority'))} | {md(artifact[0].get('path'))} | {md(item.get('title'))} | {md(item.get('required_user_action'))} |"
             )
+        if len(audit_items) > MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS:
+            lines.append(
+                f"| - | - | docs/user-review-workbench.yml | Показаны первые {MAX_MARKDOWN_ACTIVE_AUDIT_FINDINGS} active findings из {len(audit_items)}. | Открыть подробный YAML. |"
+            )
     else:
         lines.append("| - | - | - | - | - |")
+
+    groups = data.get("audit_finding_groups") or []
+    historical_groups = [group for group in groups if group.get("historical_count")]
+    lines.extend(
+        [
+            "",
+            "## 7.1. Grouped historical audit findings",
+            "",
+            "| Group | Severity | Total | Current | Historical | Active blocking | Recommendation |",
+            "|---|---|---:|---:|---:|---|---|",
+        ]
+    )
+    if historical_groups:
+        for group in historical_groups[:MAX_MARKDOWN_HISTORICAL_GROUPS]:
+            lines.append(
+                f"| {md(group.get('group_id'))} | {md(group.get('severity'))} | {md(group.get('total_count'))} | {md(group.get('current_detected_count'))} | {md(group.get('historical_count'))} | {md(group.get('active_blocking'))} | {md(group.get('recommendation'))} |"
+            )
+    else:
+        lines.append("| - | - | - | - | - | - | - |")
 
     lines.extend(
         [
