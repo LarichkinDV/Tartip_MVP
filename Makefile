@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check regenerate verify validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions
+.PHONY: up down logs test lint format backup restore check regenerate verify validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions sync-accepted-packet-dry-run sync-accepted-packet
 
 up:
 	$(COMPOSE) up --build
@@ -139,3 +139,19 @@ apply-user-review-decisions-dry-run:
 
 apply-user-review-decisions:
 	$(PYTHON) scripts/apply_user_review_decisions.py --apply
+
+sync-accepted-packet-dry-run:
+	@if [ -z "$(PACKET)" ]; then \
+		printf 'PACKET is required. Example: make sync-accepted-packet-dry-run PACKET=EP-017-AUDIT-FINDINGS-CLEANUP\n' >&2; \
+		exit 2; \
+	fi
+	$(PYTHON) scripts/sync_accepted_packet.py $(PACKET) --dry-run
+
+sync-accepted-packet:
+	@if [ -z "$(PACKET)" ]; then \
+		printf 'PACKET is required. Example: make sync-accepted-packet PACKET=EP-017-AUDIT-FINDINGS-CLEANUP\n' >&2; \
+		exit 2; \
+	fi
+	$(PYTHON) scripts/sync_accepted_packet.py $(PACKET) --apply
+	$(MAKE) generate-dashboards
+	$(MAKE) verify

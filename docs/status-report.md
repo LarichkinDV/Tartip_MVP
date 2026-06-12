@@ -2,7 +2,7 @@
 
 ## 1. Дата обновления
 
-2026-06-11
+2026-06-12
 
 ## 2. Текущий Execution Packet
 
@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
-last_completed_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
-next_recommended_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+last_accepted_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+last_completed_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+next_recommended_packet: EP-019-CODEX-CONTEXT-COMPACTION
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -41,6 +41,7 @@ post_acceptance_baseline:
     - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
     - EP-017-AUDIT-FINDINGS-CLEANUP
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
 ```
 
 ## 5. Выполнено
@@ -64,10 +65,12 @@ post_acceptance_baseline:
 - EP-006 monthly checks реклассифицируются как monthly scope `MONTHLY-2026-06`, а не ordinary execution packet.
 - EP-015 принят пользователем Дмитрием 2026-06-11 и синхронизирован как post-acceptance состояние.
 - EP-017 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
+- Создана автоматизация post-acceptance sync для уже принятых пользователем пакетов.
+- EP-021 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-Активный execution packet отсутствует; следующий рекомендуемый пакет: `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`.
+Активный execution packet отсутствует. Следующий рекомендуемый пакет: `EP-019-CODEX-CONTEXT-COMPACTION`.
 
 ## 7. Готово к приемке
 
@@ -90,12 +93,13 @@ post_acceptance_baseline:
 - [EP-015-VERIFICATION-DASHBOARD-RECONCILIATION](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md)
 - [EP-017-AUDIT-FINDINGS-CLEANUP](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md)
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
+- [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
 
 ## 9. Follow-Up Debt
 
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: deferred until audit/workbench noise and Codex context costs are reduced.
-- `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: next recommended packet after EP-017 post-acceptance sync.
-- `EP-019-CODEX-CONTEXT-COMPACTION`: deferred until after EP-021 to compact reading policy on top of synchronized post-acceptance state.
+- `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
+- `EP-019-CODEX-CONTEXT-COMPACTION`: next recommended packet.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -108,7 +112,7 @@ post_acceptance_baseline:
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
 - EP-017 не закрывает audit findings как fixed и не меняет user-owned resolution fields.
 - Current critical/high audit findings remain blocking gates; historical `current_detected: false` findings remain audit history.
-- EP-019 remains deferred until EP-021 post-acceptance sync automation is completed.
+- EP-019 is the next recommended packet after EP-021 post-acceptance sync automation acceptance.
 
 ## 12. EP-006 Orphan Scope
 
@@ -124,4 +128,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-017 синхронизирован в post-acceptance baseline после пользовательской приемки. Следующий рекомендуемый пакет: `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`.
+EP-021 синхронизирован как принятое post-acceptance состояние. Следующий рекомендуемый пакет: `EP-019-CODEX-CONTEXT-COMPACTION`.

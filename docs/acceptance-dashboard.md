@@ -7,12 +7,12 @@
 | Статус | Количество |
 |---|---:|
 | ready_for_acceptance | 0 |
-| accepted | 16 |
+| accepted | 17 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
 | pending | 0 |
-| protected_accepted_artifacts | 32 |
+| protected_accepted_artifacts | 33 |
 
 ## 2. Требуют приемки
 
@@ -40,6 +40,7 @@
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Verification dashboard reconciliation | Дмитрий | 2026-06-11 | Принято. Проверено: project-state.yml создан; EP-015 зарегистрирован как ready_for_acceptance; EP-006 реклассифицирован как monthly scope MONTHLY-2026-06; make verify проходит и является read-only; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; user-owned поля Codex не заполнял; предметная методика BIM–КСИ–ГЭСН не изменялась. | accepted/protected |
 | EP-017-AUDIT-FINDINGS-CLEANUP | Audit findings cleanup | Дмитрий | 2026-06-12 | Принято. Проверено: stale audit findings с current_detected=false не попадают в active review/action windows; audit history сохранена; findings не удалялись; status/resolution fields не менялись; resolved_by: Codex не выставлялся; workbench и user-action dashboard больше не показывают stale findings как active blockers; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись. | accepted/protected |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | Дмитрий | 2026-06-10 | Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся. | accepted/protected |
+| EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | Дмитрий | 2026-06-12 | Принято. Проверено: создан scripts/sync_accepted_packet.py; добавлены make sync-accepted-packet-dry-run и make sync-accepted-packet; dry-run не пишет файлы; apply синхронизирует только уже принятое пользователем решение; accepted_by: Codex запрещен; acceptance_decision=pending отклоняется; accepted_at обязателен; повторный apply идемпотентен; acceptance report user-owned поля скрипт не изменяет; тесты tests/test_sync_accepted_packet.py проходят; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись; EP-019 не начат. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
 
@@ -108,6 +109,7 @@
 | docs/decision-log.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/status-report.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Дмитрий | 2026-06-12 | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 

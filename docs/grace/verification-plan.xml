@@ -487,4 +487,32 @@
     <Name>user-owned fields are not changed by Codex</Name>
     <Expected>acceptance_decision, accepted_by, accepted_at, comments, checked_by, answered_by, and decided_by are not set to Codex or silently modified by EP-018.</Expected>
   </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-001" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>dry-run does not write files</Name>
+    <Expected>python3 scripts/sync_accepted_packet.py PACKET --dry-run exits successfully and does not modify project files.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-002" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>apply requires acceptance_decision accepted</Name>
+    <Expected>scripts/sync_accepted_packet.py rejects sync when the packet acceptance report does not contain acceptance_decision=accepted.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-003" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>accepted_by Codex is rejected</Name>
+    <Expected>scripts/sync_accepted_packet.py rejects accepted_by=Codex and does not write files.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-004" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>apply updates execution packets and project state</Name>
+    <Expected>--apply sets the packet status to accepted in docs/grace/execution-packets.xml and adds the packet to docs/project-state.yml accepted_packets on fixture data.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-005" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>apply does not modify acceptance report user-owned fields</Name>
+    <Expected>--apply reads acceptance_decision, accepted_by, accepted_at and comments without modifying the acceptance report.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-006" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>repeated apply is idempotent</Name>
+    <Expected>Repeated --apply on already synchronized fixture data exits successfully and produces no file changes.</Expected>
+  </Scenario>
+  <Scenario id="V-SYNC-ACCEPTED-PACKET-007" module="M-POST-ACCEPTANCE-STATE-SYNC">
+    <Name>unrelated acceptance reports are unchanged</Name>
+    <Expected>--apply does not modify acceptance reports other than reading the target packet report.</Expected>
+  </Scenario>
 </VerificationPlan>

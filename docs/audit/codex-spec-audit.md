@@ -8,12 +8,12 @@
 |---|---:|---:|---:|
 | critical | 171 | 0 | 171 |
 | high | 0 | 0 | 0 |
-| medium | 247 | 2 | 245 |
+| medium | 249 | 2 | 247 |
 | low | 16 | 0 | 16 |
 
-Всего findings: 434
+Всего findings: 436
 Current findings: 2
-Historical/stale findings: 432
+Historical/stale findings: 434
 Активных critical findings: 0
 
 ## 2. Проверка доменной логики
@@ -58,7 +58,7 @@ Historical/stale findings: 432
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-017-audit-findings-cleanup не соответствует packet EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION. | Использовать формат ep-021-<short-slug>. | open |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-021-post-acceptance-sync-automation не соответствует packet EP-019-CODEX-CONTEXT-COMPACTION. | Использовать формат ep-019-<short-slug>. | open |
 | AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
 
 ## 10. Critical findings
@@ -70,9 +70,9 @@ Historical/stale findings: 432
 | Group | Severity | Category | Total | Current | Historical | Active blocking | Recommendation |
 |---|---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | acceptance | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-001 | medium | git_workflow | 2 | 1 | 1 | False | Использовать формат ep-021-<short-slug>. |
-| AUD-GIT-002 | medium | git_workflow | 1 | 0 | 1 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-006 | medium | git_workflow | 8 | 0 | 8 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-001 | medium | git_workflow | 2 | 1 | 1 | False | Использовать формат ep-019-<short-slug>. |
+| AUD-GIT-002 | medium | git_workflow | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-006 | medium | git_workflow | 9 | 0 | 9 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-LANG-001 | medium | language_policy | 251 | 0 | 251 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 
 ## 12. Findings, требующие решения пользователя

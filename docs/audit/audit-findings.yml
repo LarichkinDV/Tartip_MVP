@@ -42,14 +42,15 @@ audit_finding_groups:
     group_id: AUD-GIT-002
     severity: medium
     category: git_workflow
-    total_count: 1
+    total_count: 2
     current_detected_count: 0
-    historical_count: 1
+    historical_count: 2
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
     example_ids:
       - AUD-GIT-002-MERGE-FORBIDDEN-EP-017-AUDIT-FINDINGS-CLEANUP
+      - AUD-GIT-002-MERGE-FORBIDDEN-EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
   -
     group_id: AUD-GIT-005
     severity: medium
@@ -66,9 +67,9 @@ audit_finding_groups:
     group_id: AUD-GIT-006
     severity: medium
     category: git_workflow
-    total_count: 8
+    total_count: 9
     current_detected_count: 0
-    historical_count: 8
+    historical_count: 9
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -3009,8 +3010,8 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Имя ветки ep-017-audit-findings-cleanup не соответствует packet EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION."
-    recommendation: "Использовать формат ep-021-<short-slug>."
+    issue: "Имя ветки ep-021-post-acceptance-sync-automation не соответствует packet EP-019-CODEX-CONTEXT-COMPACTION."
+    recommendation: "Использовать формат ep-019-<short-slug>."
     status: open
     created_at: 2026-06-11
     resolved_by: null
@@ -3052,6 +3053,23 @@ findings:
     resolution: null
     preserve_user_resolution: true
     last_seen_at: 2026-06-11
+    current_detected: false
+  -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-12
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-12
     current_detected: false
   -
     id: AUD-GIT-005-MIXED-EP-SCOPES
@@ -3205,6 +3223,23 @@ findings:
     resolution: null
     preserve_user_resolution: true
     last_seen_at: 2026-06-10
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-12
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-12
     current_detected: false
   -
     id: AUD-LANG-001-02894c6b30

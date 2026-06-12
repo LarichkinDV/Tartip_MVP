@@ -43,9 +43,9 @@ user_action_dashboard:
       group_id: AUD-GIT-002
       severity: medium
       category: git_workflow
-      total_count: 1
+      total_count: 2
       current_detected_count: 0
-      historical_count: 1
+      historical_count: 2
       active_blocking: false
       source_file: docs/audit/audit-findings.yml
       recommendation: "Historical findings are preserved but hidden from active action windows while current_detected=false."
@@ -63,9 +63,9 @@ user_action_dashboard:
       group_id: AUD-GIT-006
       severity: medium
       category: git_workflow
-      total_count: 8
+      total_count: 9
       current_detected_count: 0
-      historical_count: 8
+      historical_count: 9
       active_blocking: false
       source_file: docs/audit/audit-findings.yml
       recommendation: "Historical findings are preserved but hidden from active action windows while current_detected=false."

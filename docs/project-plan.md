@@ -17,16 +17,16 @@ Current execution packet: `none`.
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
-last_completed_execution_packet: EP-017-AUDIT-FINDINGS-CLEANUP
-next_recommended_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+last_accepted_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+last_completed_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+next_recommended_packet: EP-019-CODEX-CONTEXT-COMPACTION
 ```
 
 ## 4. Current Stage
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex.
 
 ## 5. Post-Acceptance Baseline
 
@@ -51,6 +51,7 @@ post_acceptance_baseline:
     - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
     - EP-017-AUDIT-FINDINGS-CLEANUP
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -79,6 +80,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | Language Normalization | Нормализация пользовательских фрагментов README.md и CHANGELOG.md по approved CR | accepted | [EP-010 acceptance](acceptance/EP-010-LANGUAGE-NORMALIZATION.acceptance.md), [README.md](../README.md), [CHANGELOG.md](../CHANGELOG.md) |
 | Verification Dashboard Reconciliation | Machine-readable project state, monthly scope model, and read-only verification entrypoint | accepted | [project-state.yml](project-state.yml), [verification dashboard](verification-dashboard.md), [EP-015 acceptance](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md) |
 | Audit Findings Cleanup | Active/historical audit finding filtering, grouped stale findings, compact workbench/action windows | accepted | [audit findings](audit/audit-findings.yml), [user review workbench](user-review-workbench.md), [EP-017 acceptance](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md) |
+| Post-Acceptance Sync Automation | Safe CLI automation for synchronizing already accepted packets without changing user-owned fields | accepted | [sync script](../scripts/sync_accepted_packet.py), [sync tests](../tests/test_sync_accepted_packet.py), [EP-021 acceptance](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) |
 
 ## 7. Execution Packets
 
@@ -100,12 +102,13 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Verification dashboard reconciliation | accepted | [EP-015 report](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md) | Completed; next recommended packet is EP-017 audit findings cleanup. |
 | EP-017-AUDIT-FINDINGS-CLEANUP | Audit findings cleanup | accepted | [EP-017 report](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md) | Completed; next recommended packet is EP-021 post-acceptance sync automation. |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; EP-010 used the approved change request for README.md and CHANGELOG.md. |
+| EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | accepted | [EP-021 report](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) | Completed; next recommended packet is EP-019 context compaction. |
 
 ## 8. Status Values
 
 Allowed packet statuses: `planned`, `in_progress`, `ready_for_acceptance`, `accepted`, `needs_revision`, `rejected`, `blocked`, `deprecated`.
 
-Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014, EP-015 and EP-017 are synchronization of existing user decisions from acceptance reports, not new Codex acceptance actions.
+Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014, EP-015, EP-017 and EP-021 are synchronization of existing user decisions from acceptance reports, not new Codex acceptance actions.
 
 ## 9. Main Artifacts
 
@@ -144,12 +147,13 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - [EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md)
 - [EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md)
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
+- [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: deferred until audit/workbench noise and Codex context costs are reduced.
-- `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: next recommended packet after EP-017 post-acceptance sync.
-- `EP-019-CODEX-CONTEXT-COMPACTION`: deferred until after EP-021 to compact reading policy on top of synchronized post-acceptance state.
+- `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
+- `EP-019-CODEX-CONTEXT-COMPACTION`: next recommended packet.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards remain derived artifacts.
 
 ## 12. Open Follow-Up Debt
@@ -159,7 +163,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - `EP-006-MONTHLY-PLANNING-AND-DEFENSE` is represented as monthly scope `MONTHLY-2026-06`, not as an accepted/current execution packet.
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Audit history remains open; EP-017 filters stale findings from active windows without closing findings as fixed.
-- EP-019 remains deferred until EP-021 post-acceptance sync automation is completed.
+- EP-019 is the next recommended packet after EP-021 post-acceptance sync automation acceptance.
 
 ## 13. Blockers
 
@@ -170,4 +174,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 
 ## 15. Next Step
 
-EP-017 синхронизирован в post-acceptance baseline после пользовательской приемки. Следующий рекомендуемый пакет: `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`.
+EP-021 синхронизирован как принятое post-acceptance состояние. Следующий рекомендуемый пакет: `EP-019-CODEX-CONTEXT-COMPACTION`.

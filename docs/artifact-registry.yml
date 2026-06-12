@@ -1,5 +1,5 @@
 registry_version: 1
-updated_at: 2026-06-10
+updated_at: 2026-06-12
 artifacts:
   -
     artifact_id: ART-AGENTS-001
@@ -5184,6 +5184,179 @@ artifacts:
       source_category: source_acceptance
       accepted_in: EP-017-AUDIT-FINDINGS-CLEANUP
       user_decision_source: docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: 2026-06-12
+  -
+    artifact_id: ART-SYNC-ACCEPTED-PACKET
+    name: "Accepted packet sync CLI"
+    type: script
+    path: scripts/sync_accepted_packet.py
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    related_requirements:
+      - REQ-020
+    status: active
+    description: "CLI for synchronizing project state after a user-owned packet acceptance decision."
+    created_at: 2026-06-12
+    updated_at: 2026-06-12
+    verification:
+      status: pending
+      scenarios:
+        - V-SYNC-ACCEPTED-PACKET-001
+        - V-SYNC-ACCEPTED-PACKET-002
+        - V-SYNC-ACCEPTED-PACKET-003
+        - V-SYNC-ACCEPTED-PACKET-004
+        - V-SYNC-ACCEPTED-PACKET-005
+        - V-SYNC-ACCEPTED-PACKET-006
+        - V-SYNC-ACCEPTED-PACKET-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-STATE
+      - ART-GRACE-EXECUTION-PACKETS
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Script synchronizes already accepted packets; it does not set user-owned acceptance fields."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Code artifact is changed through execution packets and tests, not protected as an accepted source record."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-SYNC-ACCEPTED-PACKET
+    name: "Accepted packet sync tests"
+    type: test
+    path: tests/test_sync_accepted_packet.py
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    related_requirements:
+      - REQ-020
+    status: active
+    description: "Fixture tests for dry-run, apply, validation, idempotency, and user-owned field safety."
+    created_at: 2026-06-12
+    updated_at: 2026-06-12
+    verification:
+      status: pending
+      scenarios:
+        - V-SYNC-ACCEPTED-PACKET-001
+        - V-SYNC-ACCEPTED-PACKET-002
+        - V-SYNC-ACCEPTED-PACKET-003
+        - V-SYNC-ACCEPTED-PACKET-004
+        - V-SYNC-ACCEPTED-PACKET-005
+        - V-SYNC-ACCEPTED-PACKET-006
+        - V-SYNC-ACCEPTED-PACKET-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-SYNC-ACCEPTED-PACKET
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests use temporary fixture files and do not mutate production acceptance reports."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test artifact is changed through execution packets and is not protected as an accepted source record."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    name: "EP-021 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+    owner_module: M-POST-ACCEPTANCE-STATE-SYNC
+    related_packets:
+      - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    related_requirements:
+      - REQ-020
+    status: active
+    description: "Acceptance report for post-acceptance sync automation."
+    created_at: 2026-06-12
+    updated_at: 2026-06-12
+    verification:
+      status: pending
+      scenarios:
+        - V-SYNC-ACCEPTED-PACKET-001
+        - V-SYNC-ACCEPTED-PACKET-002
+        - V-SYNC-ACCEPTED-PACKET-003
+        - V-SYNC-ACCEPTED-PACKET-004
+        - V-SYNC-ACCEPTED-PACKET-005
+        - V-SYNC-ACCEPTED-PACKET-006
+        - V-SYNC-ACCEPTED-PACKET-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-SYNC-ACCEPTED-PACKET
+      - ART-TEST-SYNC-ACCEPTED-PACKET
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-021 принят пользователем 2026-06-12; acceptance report является защищенным историческим source artifact."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-021 acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+      user_decision_source: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
       change_requires_user_approval: true
       allowed_update_modes:
         - approved_change_request_only
