@@ -7,12 +7,12 @@ acceptance_dashboard:
     - docs/status-report.md
   summary:
     ready_for_acceptance: 0
-    accepted: 17
+    accepted: 18
     needs_revision: 0
     rejected: 0
     blocked: 0
     pending: 0
-    protected_accepted_artifacts: 33
+    protected_accepted_artifacts: 34
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -96,6 +96,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-10
         acceptance_report: docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md
+      -
+        packet_id: EP-019-CODEX-CONTEXT-COMPACTION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-12
+        acceptance_report: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
       -
         packet_id: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
         accepted_by: "Дмитрий"
@@ -3371,6 +3376,187 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-10
         comments: "Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся."
+    -
+      packet_id: EP-019-CODEX-CONTEXT-COMPACTION
+      title: "Codex context compaction"
+      status: accepted
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: accepted
+      acceptance_report: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+      artifacts:
+        -
+          path: docs/codex-working-context.md
+          status: active
+          type: governance_context
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        -
+          command: "wc -l docs/codex-working-context.md"
+          status: documented
+        -
+          command: "grep -n \"audit-findings.yml\\|user-review-workbench.yml\\|artifact-registry.yml\\|make verify\\|make regenerate\\|make check\" docs/codex-working-context.md"
+          status: documented
+        -
+          command: "grep -n \"Current Project State\\|Mandatory Domain Invariants\\|Generated Files\\|Files To Read Selectively Only\\|What To Read By Task Type\" docs/codex-working-context.md || true"
+          status: documented
+        -
+          command: "python3 -m py_compile scripts/*.py"
+          status: documented
+        -
+          command: "make verify"
+          status: documented
+        -
+          command: "make check"
+          status: documented
+      acceptance_criteria:
+        -
+          id: AC-EP-019-001
+          text: "Baseline перед EP-019 проверен."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-002
+          text: "docs/project-state.yml обновлен на active EP-019."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-003
+          text: "state_mode переведен в ready_for_acceptance после успешных проверок."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-004
+          text: "EP-019 зарегистрирован в docs/grace/execution-packets.xml со status ready_for_acceptance."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-005
+          text: "EP-019 не accepted."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-006
+          text: "Создан docs/codex-working-context.md."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-007
+          text: "docs/codex-working-context.md не превышает 250 строк."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-008
+          text: "В файле перечислены source-of-truth files."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-009
+          text: "В файле перечислены generated files."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-010
+          text: "В файле перечислены files selective-only."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-011
+          text: "В файле зафиксированы обязательные BIM-КСИ-ГЭСН invariants."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-012
+          text: "В файле зафиксированы acceptance/user-owned field rules."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-013
+          text: "В файле зафиксированы protected artifact rules."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-014
+          text: "В файле указано, что make verify read-only."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-015
+          text: "В файле указано, что make regenerate writing."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-016
+          text: "docs/codex-working-context.md зарегистрирован в artifact-registry.yml как source governance/context artifact."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-017
+          text: "AGENTS.md не изменен без prior approved CR."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-018
+          text: "Если AGENTS.md не изменен, acceptance report фиксирует, что docs/codex-working-context.md пока не заменяет mandatory reading policy на уровне AGENTS.md."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-019
+          text: "docs/01-methodology.md и docs/02-domain-model.md не изменены без prior approved CR."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-020
+          text: "README.md и CHANGELOG.md не изменены."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-021
+          text: "Accepted reports других EP не изменены."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-022
+          text: "Предметная методика не изменена."
+          codex_status: accepted
+          user_status: accepted
+        -
+          id: AC-EP-019-023
+          text: "Проверки выполнены и отражены в отчете."
+          codex_status: accepted
+          user_status: accepted
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-019-CODEX-CONTEXT-COMPACTION-RISK-001
+          text: "`docs/codex-working-context.md` создан как рекомендованный компактный рабочий контекст, но mandatory reading policy в `AGENTS.md` не изменена из-за отсутствия prior approved CR."
+      user_decision:
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-12
+        comments: "Принято. Проверено: создан docs/codex-working-context.md; файл приведен к русскоязычному человекочитаемому виду с сохранением технических идентификаторов; объем файла 201 строка, лимит 250 соблюден; source-of-truth files, generated files и selective-only files разделены; обязательные BIM-КСИ-ГЭСН инварианты, acceptance discipline и protected artifact discipline зафиксированы; AGENTS.md не изменялся без approved CR; риск того, что working context пока не закреплен как mandatory reading в AGENTS.md, принят как управляемый; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись."
     -
       packet_id: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
       title: "Post-acceptance sync automation"

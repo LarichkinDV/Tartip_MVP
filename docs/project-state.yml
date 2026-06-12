@@ -3,13 +3,10 @@ project_state:
   updated_at: 2026-06-12
   state_mode: accepted_baseline
   active_execution_packet: none
-  last_accepted_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
-  last_completed_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
-  next_recommended_packet: EP-019-CODEX-CONTEXT-COMPACTION
-  deferred_follow_up_packets:
-    -
-      packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
-      reason: "Deferred until audit/workbench noise and Codex context costs are reduced."
+  last_accepted_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
+  last_completed_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
+  next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+  deferred_follow_up_packets: []
   accepted_packets:
     - EP-001-INFRA
     - EP-002-REFERENCE-GOVERNANCE
@@ -28,6 +25,7 @@ project_state:
     - EP-017-AUDIT-FINDINGS-CLEANUP
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    - EP-019-CODEX-CONTEXT-COMPACTION
   monthly_scopes:
     -
       scope_id: MONTHLY-2026-06

@@ -42,6 +42,15 @@ SYNC_REL_PATHS = {
     "docs/verification-dashboard.md",
     "docs/verification-dashboard.yml",
 }
+INCIDENTAL_GENERATED_REL_PATHS = {
+    "docs/audit/audit-findings.yml",
+    "docs/audit/codex-spec-audit.md",
+    "docs/audit/language-audit-report.md",
+}
+SYNC_TOOL_MAINTENANCE_REL_PATHS = {
+    "scripts/sync_accepted_packet.py",
+    "tests/test_sync_accepted_packet.py",
+}
 
 
 @dataclass(frozen=True)
@@ -271,7 +280,7 @@ def update_current_packet_text(text: str, packet_id: str, next_packet: str) -> s
     updated = add_baseline_packet(updated, packet_id)
     updated = re.sub(
         rf"(\| {re.escape(packet_id)} \| [^|\n]+ \| )[^|\n]+(\|)",
-        rf"\g<1>accepted\g<2>",
+        rf"\g<1>accepted \g<2>",
         updated,
     )
     return updated
@@ -489,7 +498,13 @@ def validate_working_tree_for_apply(
     changed_paths = git_changed_paths(root)
     if not changed_paths:
         return
-    allowed = set(expected_artifacts) | set(SYNC_REL_PATHS) | change_paths
+    allowed = (
+        set(expected_artifacts)
+        | set(SYNC_REL_PATHS)
+        | set(INCIDENTAL_GENERATED_REL_PATHS)
+        | set(SYNC_TOOL_MAINTENANCE_REL_PATHS)
+        | change_paths
+    )
     allowed.add(f"docs/acceptance/{packet_id}.acceptance.md")
     unexpected = sorted(path for path in changed_paths if path not in allowed)
     if unexpected:

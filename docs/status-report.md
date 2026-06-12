@@ -13,9 +13,9 @@
 ```yaml
 project_state: accepted_baseline
 active_execution_packet: none
-last_accepted_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
-last_completed_execution_packet: EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
-next_recommended_packet: EP-019-CODEX-CONTEXT-COMPACTION
+last_accepted_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
+last_completed_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
+next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -42,6 +42,7 @@ post_acceptance_baseline:
     - EP-017-AUDIT-FINDINGS-CLEANUP
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    - EP-019-CODEX-CONTEXT-COMPACTION
 ```
 
 ## 5. Выполнено
@@ -67,10 +68,11 @@ post_acceptance_baseline:
 - EP-017 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 - Создана автоматизация post-acceptance sync для уже принятых пользователем пакетов.
 - EP-021 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
+- EP-019 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 
 ## 6. В работе
 
-Активный execution packet отсутствует. Следующий рекомендуемый пакет: `EP-019-CODEX-CONTEXT-COMPACTION`.
+Активных in-progress работ нет. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован в post-acceptance baseline.
 
 ## 7. Готово к приемке
 
@@ -93,13 +95,14 @@ post_acceptance_baseline:
 - [EP-015-VERIFICATION-DASHBOARD-RECONCILIATION](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md)
 - [EP-017-AUDIT-FINDINGS-CLEANUP](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md)
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
+- [EP-019-CODEX-CONTEXT-COMPACTION](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md)
 - [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
 
 ## 9. Follow-Up Debt
 
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: deferred until audit/workbench noise and Codex context costs are reduced.
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
-- `EP-019-CODEX-CONTEXT-COMPACTION`: next recommended packet.
+- `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: next recommended packet after EP-019 acceptance.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -112,7 +115,7 @@ post_acceptance_baseline:
 - Without official or project-authorized evidence, active KSI/FSNB/GESN normative rules remain prohibited.
 - EP-017 не закрывает audit findings как fixed и не меняет user-owned resolution fields.
 - Current critical/high audit findings remain blocking gates; historical `current_detected: false` findings remain audit history.
-- EP-019 is the next recommended packet after EP-021 post-acceptance sync automation acceptance.
+- EP-019 creates a recommended compact working context, but `AGENTS.md` mandatory reading policy is unchanged until a separate approved protected artifact change request allows editing `AGENTS.md`.
 
 ## 12. EP-006 Orphan Scope
 
@@ -128,4 +131,4 @@ post_acceptance_baseline:
 
 ## 15. Следующий шаг
 
-EP-021 синхронизирован как принятое post-acceptance состояние. Следующий рекомендуемый пакет: `EP-019-CODEX-CONTEXT-COMPACTION`.
+EP-019 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-016-REFERENCE-INTAKE-PREPARATION`.

@@ -1,12 +1,24 @@
 from __future__ import annotations
 
+import importlib.util
 import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = PROJECT_ROOT / "scripts" / "sync_accepted_packet.py"
+SCRIPTS_DIR = PROJECT_ROOT / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+SPEC = importlib.util.spec_from_file_location("sync_accepted_packet", SCRIPT)
+assert SPEC is not None
+assert SPEC.loader is not None
+sync_accepted_packet = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = sync_accepted_packet
+SPEC.loader.exec_module(sync_accepted_packet)
 PACKET = "EP-100-SAMPLE"
 NEXT_PACKET = "EP-101-NEXT"
 
@@ -427,3 +439,97 @@ def test_does_not_touch_unrelated_acceptance_reports(tmp_path: Path) -> None:
 
     assert result.returncode == 0, result.stderr
     assert previous_report.read_text(encoding="utf-8") == before
+
+
+def test_generated_audit_files_do_not_block_sync_guard(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        sync_accepted_packet,
+        "git_changed_paths",
+        lambda root: {
+            "docs/audit/audit-findings.yml",
+            "docs/audit/codex-spec-audit.md",
+            "docs/audit/language-audit-report.md",
+        },
+    )
+
+    sync_accepted_packet.validate_working_tree_for_apply(
+        tmp_path,
+        PACKET,
+        set(),
+        set(),
+    )
+
+
+def test_sync_tool_maintenance_files_do_not_block_sync_guard(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        sync_accepted_packet,
+        "git_changed_paths",
+        lambda root: {
+            "scripts/sync_accepted_packet.py",
+            "tests/test_sync_accepted_packet.py",
+        },
+    )
+
+    sync_accepted_packet.validate_working_tree_for_apply(
+        tmp_path,
+        PACKET,
+        set(),
+        set(),
+    )
+
+
+@pytest.mark.parametrize("path", ["README.md", "AGENTS.md", "CHANGELOG.md"])
+def test_protected_manual_files_still_block_sync_guard(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    path: str,
+) -> None:
+    monkeypatch.setattr(
+        sync_accepted_packet,
+        "git_changed_paths",
+        lambda root: {path},
+    )
+
+    with pytest.raises(sync_accepted_packet.SyncError) as exc_info:
+        sync_accepted_packet.validate_working_tree_for_apply(
+            tmp_path,
+            PACKET,
+            set(),
+            set(),
+        )
+
+    assert "working tree contains unexpected changes outside sync scope" in str(
+        exc_info.value
+    )
+    assert path in str(exc_info.value)
+
+
+def test_unrelated_acceptance_report_still_blocks_sync_guard(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    path = "docs/acceptance/EP-099-PREVIOUS.acceptance.md"
+    monkeypatch.setattr(
+        sync_accepted_packet,
+        "git_changed_paths",
+        lambda root: {path},
+    )
+
+    with pytest.raises(sync_accepted_packet.SyncError) as exc_info:
+        sync_accepted_packet.validate_working_tree_for_apply(
+            tmp_path,
+            PACKET,
+            set(),
+            set(),
+        )
+
+    assert "working tree contains unexpected changes outside sync scope" in str(
+        exc_info.value
+    )
+    assert path in str(exc_info.value)

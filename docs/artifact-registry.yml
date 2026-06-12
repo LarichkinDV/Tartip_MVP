@@ -5365,3 +5365,119 @@ artifacts:
         []
       regeneration_command: null
       protected_since: 2026-06-12
+  -
+    artifact_id: ART-CODEX-WORKING-CONTEXT
+    name: "Codex working context"
+    type: governance_context
+    path: docs/codex-working-context.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-019-CODEX-CONTEXT-COMPACTION
+    related_requirements:
+      - REQ-021
+    status: active
+    description: "Compact working context for Codex that points to source-of-truth files and avoids full reads of generated snapshots by default."
+    created_at: 2026-06-12
+    updated_at: 2026-06-12
+    verification:
+      status: pending
+      scenarios:
+        - V-CODEX-CONTEXT-001
+        - V-CODEX-CONTEXT-002
+        - V-CODEX-CONTEXT-003
+        - V-CODEX-CONTEXT-004
+        - V-CODEX-CONTEXT-005
+        - V-CODEX-CONTEXT-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-STATE
+      - ART-GRACE-EXECUTION-PACKETS
+      - ART-GRACE-KNOWLEDGE-GRAPH
+      - ART-GRACE-MODULE-CONTRACTS
+      - ART-GRACE-VERIFICATION-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Recommended compact context; not mandatory at AGENTS.md level until a prior approved CR allows changing AGENTS.md."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source governance artifact remains editable within EP-019 until user acceptance; after acceptance it should become protected."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-019-CODEX-CONTEXT-COMPACTION
+    name: "EP-019 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-019-CODEX-CONTEXT-COMPACTION
+    related_requirements:
+      - REQ-021
+    status: active
+    description: "Acceptance report for Codex context compaction."
+    created_at: 2026-06-12
+    updated_at: 2026-06-12
+    verification:
+      status: pending
+      scenarios:
+        - V-CODEX-CONTEXT-001
+        - V-CODEX-CONTEXT-002
+        - V-CODEX-CONTEXT-003
+        - V-CODEX-CONTEXT-004
+        - V-CODEX-CONTEXT-005
+        - V-CODEX-CONTEXT-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-CODEX-WORKING-CONTEXT
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-019-CODEX-CONTEXT-COMPACTION accepted by user; protected historical source artifact."
+    protection:
+      protection_status: protected
+      protection_reason: "Accepted EP-019-CODEX-CONTEXT-COMPACTION acceptance report is a historical user decision record."
+      source_category: source_acceptance
+      accepted_in: EP-019-CODEX-CONTEXT-COMPACTION
+      user_decision_source: docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md
+      change_requires_user_approval: true
+      allowed_update_modes:
+        - approved_change_request_only
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null

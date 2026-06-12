@@ -14,9 +14,9 @@
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Historical audit findings | 356 |
+| Historical audit findings | 358 |
 | Audit finding groups | 6 |
-| Принятые пакеты скрыты из активной очереди | 17 |
+| Принятые пакеты скрыты из активной очереди | 18 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -121,9 +121,9 @@
 |---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-001 | medium | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-002 | medium | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-002 | medium | 3 | 0 | 3 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-005 | medium | 1 | 0 | 1 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-006 | medium | 9 | 0 | 9 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-006 | medium | 10 | 0 | 10 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-LANG-001 | medium | 251 | 80 | 171 | False | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. |
 
 ## 8. Как принять EP через единое окно
@@ -166,4 +166,5 @@ Accepted artifact protection is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | 2026-06-11 | Дмитрий | docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md |
 | EP-017-AUDIT-FINDINGS-CLEANUP | 2026-06-12 | Дмитрий | docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | 2026-06-10 | Дмитрий | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md |
+| EP-019-CODEX-CONTEXT-COMPACTION | 2026-06-12 | Дмитрий | docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md |
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | 2026-06-12 | Дмитрий | docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md |
