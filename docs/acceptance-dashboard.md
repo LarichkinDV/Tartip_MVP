@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 0 |
+| ready_for_acceptance | 1 |
 | accepted | 22 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 0 |
+| pending | 1 |
 | protected_accepted_artifacts | 38 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - | - | - | - | - | - | - |
+| - [ ] требует проверки | EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Data contribution and anonymization layer | Acceptance criteria and artifacts | docs/data-contribution/README.md, docs/data-contribution/data-contribution-workflow.md, docs/data-contribution/anonymization-pipeline.md, docs/data-contribution/reidentification-risk-policy.md, ... | - | [docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md](docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md) |
 
 ## 3. Принятые задачи
 

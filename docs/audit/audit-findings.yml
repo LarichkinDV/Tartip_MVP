@@ -42,9 +42,9 @@ audit_finding_groups:
     group_id: AUD-GIT-002
     severity: medium
     category: git_workflow
-    total_count: 7
+    total_count: 8
     current_detected_count: 0
-    historical_count: 7
+    historical_count: 8
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -70,9 +70,9 @@ audit_finding_groups:
     group_id: AUD-GIT-006
     severity: medium
     category: git_workflow
-    total_count: 14
+    total_count: 15
     current_detected_count: 0
-    historical_count: 14
+    historical_count: 15
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -3160,6 +3160,23 @@ findings:
     last_seen_at: 2026-06-13
     current_detected: false
   -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-13
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-13
+    current_detected: false
+  -
     id: AUD-GIT-005-MIXED-EP-SCOPES
     check_id: AUD-GIT-005
     severity: medium
@@ -3405,6 +3422,23 @@ findings:
     file: docs/git-workflow.md
     line: null
     issue: "Для EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-13
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-13
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER нет явного user approval на merge в main."
     recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
     status: open
     created_at: 2026-06-13

@@ -1155,4 +1155,81 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER" status="ready_for_acceptance">
+    <Name>Data contribution and anonymization layer</Name>
+    <Goal>Создать schema-first/documentation-first контур добровольной передачи, обезличивания, обобщения, агрегации и будущих signal candidates без сбора реальных данных.</Goal>
+    <Scope>
+      <Item>Создать docs/data-contribution с workflow, anonymization pipeline, re-identification risk policy и commercial aggregate policy</Item>
+      <Item>Создать YAML-схемы consent, raw purchase event, anonymized purchase signal и commercial price aggregate</Item>
+      <Item>Создать только synthetic examples для raw event и aggregate</Item>
+      <Item>Создать scripts/validate_data_contribution.py и tests/test_validate_data_contribution.py</Item>
+      <Item>Создать monthly artifacts для 2026-08 data contribution contour</Item>
+      <Item>Подключить validate-data-contribution к make verify и make check</Item>
+      <Item>Обновить governance files и dashboards для EP-024</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-024</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/data-contribution/README.md</Artifact>
+      <Artifact>docs/data-contribution/data-contribution-workflow.md</Artifact>
+      <Artifact>docs/data-contribution/anonymization-pipeline.md</Artifact>
+      <Artifact>docs/data-contribution/reidentification-risk-policy.md</Artifact>
+      <Artifact>docs/data-contribution/commercial-aggregate-policy.md</Artifact>
+      <Artifact>schemas/data-contribution/data-contribution-consent.schema.yml</Artifact>
+      <Artifact>schemas/data-contribution/raw-purchase-event.schema.yml</Artifact>
+      <Artifact>schemas/data-contribution/anonymized-purchase-signal.schema.yml</Artifact>
+      <Artifact>schemas/data-contribution/commercial-price-aggregate.schema.yml</Artifact>
+      <Artifact>examples/data-contribution/rebar-d12-synthetic.raw.example.yml</Artifact>
+      <Artifact>examples/data-contribution/rebar-d12-synthetic-aggregate.example.yml</Artifact>
+      <Artifact>scripts/validate_data_contribution.py</Artifact>
+      <Artifact>tests/test_validate_data_contribution.py</Artifact>
+      <Artifact>docs/monthly/2026-08/monthly-plan.yml</Artifact>
+      <Artifact>docs/monthly/2026-08/01-business-functional-requirements.md</Artifact>
+      <Artifact>docs/monthly/2026-08/02-technical-specification.md</Artifact>
+      <Artifact>docs/monthly/2026-08/03-test-protocol-data-contribution.md</Artifact>
+      <Artifact>docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-024-001">Strict baseline после EP-016 acceptance совпал перед стартом EP-024.</Criterion>
+      <Criterion id="AC-EP-024-002">Создан docs/data-contribution контур с workflow, anonymization pipeline, risk policy и aggregate policy.</Criterion>
+      <Criterion id="AC-EP-024-003">Созданы YAML-схемы consent, raw event, anonymized signal и commercial aggregate.</Criterion>
+      <Criterion id="AC-EP-024-004">Созданы только synthetic examples без реальных customer или employer данных.</Criterion>
+      <Criterion id="AC-EP-024-005">Default-off flags telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed и commercial_use_allowed установлены false.</Criterion>
+      <Criterion id="AC-EP-024-006">Validator запрещает commercial use для raw event с customer references.</Criterion>
+      <Criterion id="AC-EP-024-007">Validator запрещает AI training для raw event с supplier references.</Criterion>
+      <Criterion id="AC-EP-024-008">Validator запрещает external upload для raw event.</Criterion>
+      <Criterion id="AC-EP-024-009">Validator запрещает direct identifiers в anonymized signal.</Criterion>
+      <Criterion id="AC-EP-024-010">Validator проверяет aggregate thresholds и reidentification_risk low.</Criterion>
+      <Criterion id="AC-EP-024-011">Создан monthly block 2026-08 с тремя задачами по 15 часов.</Criterion>
+      <Criterion id="AC-EP-024-012">make verify и make check проходят.</Criterion>
+      <Criterion id="AC-EP-024-013">README.md, CHANGELOG.md и AGENTS.md не изменены.</Criterion>
+      <Criterion id="AC-EP-024-014">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-024-015">BIM-КСИ-ГЭСН методика не изменена.</Criterion>
+      <Criterion id="AC-EP-024-016">Нормативные данные и active matching rules не добавлены.</Criterion>
+      <Criterion id="AC-EP-024-017">User-owned fields не заполнены Codex.</Criterion>
+      <Criterion id="AC-EP-024-018">EP-024 остается ready_for_acceptance и не добавлен в accepted_packets.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not collect real customer data</Item>
+      <Item>Do not enable telemetry, dataset contribution, external upload, AI training, or commercial use by default</Item>
+      <Item>Do not treat product use as consent</Item>
+      <Item>Do not create real external dataset</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not add reference or normative data</Item>
+      <Item>Do not create active matching rules</Item>
+      <Item>Do not change README.md, CHANGELOG.md, or AGENTS.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
 </ExecutionPackets>

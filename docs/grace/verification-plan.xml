@@ -639,4 +639,32 @@
     <Name>month 01 documents preserve legal and data boundaries</Name>
     <Expected>Monthly documents state that customer data stays local by default and no automatic data transfer, normative matching, or dataset contribution is introduced.</Expected>
   </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-001" module="M-DATA-CONTRIBUTION">
+    <Name>data contribution source artifacts exist</Name>
+    <Expected>docs/data-contribution, schemas/data-contribution, examples/data-contribution, and docs/monthly/2026-08 artifacts exist for EP-024.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-002" module="M-DATA-CONTRIBUTION">
+    <Name>default-off flags are enforced</Name>
+    <Expected>telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed, and commercial_use_allowed default to false in consent, raw, and monthly artifacts.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-003" module="M-DATA-CONTRIBUTION">
+    <Name>raw event remains local-first</Name>
+    <Expected>Raw event with customer or supplier references cannot enable commercial use, AI training, or external upload.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-004" module="M-DATA-CONTRIBUTION">
+    <Name>anonymized signal excludes direct identifiers</Name>
+    <Expected>Anonymized signal validation rejects customer, supplier, contact, contract, invoice, and official registration identifiers.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-005" module="M-DATA-CONTRIBUTION">
+    <Name>commercial aggregate thresholds are enforced</Name>
+    <Expected>Commercial aggregate requires observations_count &gt;= 10, independent_customers_count &gt;= 5, independent_suppliers_count &gt;= 5, and reidentification_risk low.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-006" module="M-DATA-CONTRIBUTION">
+    <Name>synthetic examples do not carry real customer data rights</Name>
+    <Expected>Synthetic examples use source_status synthetic, example_only true, derived_from_real_customer_data false, and do not create future rights to real customer data.</Expected>
+  </Scenario>
+  <Scenario id="V-DATA-CONTRIBUTION-007" module="M-DATA-CONTRIBUTION">
+    <Name>EP-024 validator and tests are connected</Name>
+    <Expected>scripts/validate_data_contribution.py and tests/test_validate_data_contribution.py validate EP-024 artifacts, and make verify/check include validate-data-contribution.</Expected>
+  </Scenario>
 </VerificationPlan>

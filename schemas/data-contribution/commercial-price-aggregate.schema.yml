@@ -1,0 +1,35 @@
+schema_id: commercial-price-aggregate
+schema_version: 1
+title: Commercial price aggregate schema
+status: draft
+required_fields:
+  - aggregate_id
+  - market_zone
+  - period_bucket
+  - material_class
+  - diameter_mm
+  - length_bucket_m
+  - median_price_rub
+  - p25_price_rub
+  - p75_price_rub
+  - observations_count
+  - independent_customers_count
+  - independent_suppliers_count
+  - reidentification_risk
+  - commercial_use_allowed
+  - ai_training_allowed
+  - data_classification
+  - source_status
+  - example_only
+  - derived_from_real_customer_data
+  - aggregate_approved
+minimum_thresholds:
+  observations_count: 10
+  independent_customers_count: 5
+  independent_suppliers_count: 5
+allowed_source_status:
+  - synthetic
+  - approved_aggregate
+notes:
+  - "Exact dates and exact settlement values are not allowed in commercial aggregate."
+  - "commercial_use_allowed requires approved synthetic or future approved aggregate status."

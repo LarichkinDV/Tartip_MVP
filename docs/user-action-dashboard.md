@@ -80,9 +80,9 @@
 |---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-GIT-001 | medium | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
-| AUD-GIT-002 | medium | 7 | 0 | 7 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
+| AUD-GIT-002 | medium | 8 | 0 | 8 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-GIT-005 | medium | 1 | 0 | 1 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
-| AUD-GIT-006 | medium | 14 | 0 | 14 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
+| AUD-GIT-006 | medium | 15 | 0 | 15 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-LANG-001 | medium | 251 | 80 | 171 | False | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. |
 
 ## 12. Закрытые вопросы

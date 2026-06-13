@@ -1,0 +1,32 @@
+schema_id: data-contribution-consent
+schema_version: 1
+title: Data contribution consent schema
+status: draft
+default_flags:
+  telemetry_enabled: false
+  dataset_contribution_enabled: false
+  external_upload_enabled: false
+  ai_training_allowed: false
+  commercial_use_allowed: false
+required_fields:
+  - consent_id
+  - consent_status
+  - consent_scope
+  - source_status
+  - telemetry_enabled
+  - dataset_contribution_enabled
+  - external_upload_enabled
+  - ai_training_allowed
+  - commercial_use_allowed
+consent_status_values:
+  - not_requested
+  - requires_user_approval
+  - approved
+  - rejected
+source_status_values:
+  - synthetic
+  - approved_aggregate
+  - requires_user_approval
+notes:
+  - "Product use is not consent to data contribution."
+  - "User-owned approval fields must not be filled by Codex."

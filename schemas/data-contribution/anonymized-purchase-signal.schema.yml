@@ -1,0 +1,34 @@
+schema_id: anonymized-purchase-signal
+schema_version: 1
+title: Anonymized purchase signal schema
+status: draft
+required_fields:
+  - signal_id
+  - material_class
+  - diameter_mm
+  - length_bucket_m
+  - price_bucket_rub
+  - period_bucket
+  - market_zone
+  - source_status
+  - reidentification_risk
+  - derived_from_real_customer_data
+  - telemetry_enabled
+  - dataset_contribution_enabled
+  - external_upload_enabled
+  - ai_training_allowed
+  - commercial_use_allowed
+default_flags:
+  telemetry_enabled: false
+  dataset_contribution_enabled: false
+  external_upload_enabled: false
+  ai_training_allowed: false
+  commercial_use_allowed: false
+allowed_risk_values:
+  - low
+  - medium
+  - high
+  - blocked
+notes:
+  - "Signal schema accepts only generalized fields."
+  - "Future workflow must prove removal of customer-specific and supplier-specific identifiers."

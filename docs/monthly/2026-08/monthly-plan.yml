@@ -1,0 +1,38 @@
+monthly_plan:
+  schema_version: 1
+  month: 2026-08
+  title: "Контур добровольной передачи обезличенных и агрегированных данных"
+  status: ready_for_acceptance
+  related_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+  planned_total_hours: 45
+  tasks:
+    -
+      task_id: MONTHLY-2026-08-T01
+      title: "Бизнес-функциональные требования data contribution contour"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-08/01-business-functional-requirements.md
+      owner: "Дмитрий"
+      status: planned
+    -
+      task_id: MONTHLY-2026-08-T02
+      title: "Техническая спецификация anonymization and aggregation contour"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-08/02-technical-specification.md
+      owner: "Дмитрий"
+      status: planned
+    -
+      task_id: MONTHLY-2026-08-T03
+      title: "Протокол проверки data contribution safety gates"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-08/03-test-protocol-data-contribution.md
+      owner: "Дмитрий"
+      status: planned
+  default_flags:
+    telemetry_enabled: false
+    dataset_contribution_enabled: false
+    external_upload_enabled: false
+    ai_training_allowed: false
+    commercial_use_allowed: false
+  notes:
+    - "Месячный блок описывает только schema-first/documentation-first контур."
+    - "Реальные customer data, external datasets и active matching rules не входят в scope."

@@ -345,6 +345,956 @@ artifacts:
       regeneration_command: null
       protected_since: null
   -
+    artifact_id: ART-DATA-CONTRIBUTION-README
+    name: "Data contribution README"
+    type: documentation
+    path: docs/data-contribution/README.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Overview of the schema-first data contribution and anonymization contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "New source document for EP-024; no real customer data is added."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-WORKFLOW
+    name: "Data contribution workflow"
+    type: documentation
+    path: docs/data-contribution/data-contribution-workflow.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Workflow from raw customer data to consent checks, anonymization, aggregation, and future approval gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Workflow is documentation-only and does not enable runtime collection."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-ANONYMIZATION-PIPELINE
+    name: "Anonymization pipeline"
+    type: documentation
+    path: docs/data-contribution/anonymization-pipeline.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Pipeline for removal, pseudonymization, generalization, aggregation, and risk checks."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-004
+        - V-DATA-CONTRIBUTION-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-WORKFLOW
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Pipeline remains policy/documentation only in EP-024."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-RISK-POLICY
+    name: "Re-identification risk policy"
+    type: documentation
+    path: docs/data-contribution/reidentification-risk-policy.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Policy for low/medium/high/blocked re-identification risk gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-ANONYMIZATION-PIPELINE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Commercial aggregate requires low risk."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-COMMERCIAL-AGGREGATE-POLICY
+    name: "Commercial aggregate policy"
+    type: documentation
+    path: docs/data-contribution/commercial-aggregate-policy.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Policy for synthetic or future approved commercial aggregate candidates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-005
+        - V-DATA-CONTRIBUTION-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-RISK-POLICY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Policy does not create commercial dataset rights."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-CONSENT-SCHEMA
+    name: "Data contribution consent schema"
+    type: schema
+    path: schemas/data-contribution/data-contribution-consent.schema.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "YAML schema for default-off consent and approval model."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Consent schema keeps all contribution flags default-off."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution schema remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-RAW-PURCHASE-SCHEMA
+    name: "Raw purchase event schema"
+    type: schema
+    path: schemas/data-contribution/raw-purchase-event.schema.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "YAML schema for synthetic raw purchase event examples."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-002
+        - V-DATA-CONTRIBUTION-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-CONSENT-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Raw event remains local-first and does not grant external use rights."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution schema remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-ANONYMIZED-SIGNAL-SCHEMA
+    name: "Anonymized purchase signal schema"
+    type: schema
+    path: schemas/data-contribution/anonymized-purchase-signal.schema.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "YAML schema for generalized purchase signal candidates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-004
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-ANONYMIZATION-PIPELINE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Signal schema accepts only generalized fields."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution schema remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-COMMERCIAL-PRICE-AGGREGATE-SCHEMA
+    name: "Commercial price aggregate schema"
+    type: schema
+    path: schemas/data-contribution/commercial-price-aggregate.schema.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "YAML schema for synthetic or future approved commercial price aggregate candidates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-COMMERCIAL-AGGREGATE-POLICY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Aggregate schema enforces minimum threshold fields."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New data contribution schema remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-RAW-SYNTHETIC-EXAMPLE
+    name: "Synthetic raw rebar D12 example"
+    type: example_data
+    path: examples/data-contribution/rebar-d12-synthetic.raw.example.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Synthetic raw example with default-off flags and no real customer data."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-003
+        - V-DATA-CONTRIBUTION-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-RAW-PURCHASE-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Synthetic example only; derived_from_real_customer_data=false."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New synthetic example remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-CONTRIBUTION-AGGREGATE-SYNTHETIC-EXAMPLE
+    name: "Synthetic aggregate rebar D12 example"
+    type: example_data
+    path: examples/data-contribution/rebar-d12-synthetic-aggregate.example.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Synthetic aggregate example that satisfies low-risk threshold gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-005
+        - V-DATA-CONTRIBUTION-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-COMMERCIAL-PRICE-AGGREGATE-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Synthetic aggregate example only; not derived from real customer data."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New synthetic example remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-DATA-CONTRIBUTION
+    name: "Data contribution validator"
+    type: script
+    path: scripts/validate_data_contribution.py
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Validator for EP-024 data contribution schemas, examples, monthly artifacts, and safety gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-002
+        - V-DATA-CONTRIBUTION-003
+        - V-DATA-CONTRIBUTION-004
+        - V-DATA-CONTRIBUTION-005
+        - V-DATA-CONTRIBUTION-006
+        - V-DATA-CONTRIBUTION-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-CONSENT-SCHEMA
+      - ART-DATA-CONTRIBUTION-RAW-SYNTHETIC-EXAMPLE
+      - ART-DATA-CONTRIBUTION-AGGREGATE-SYNTHETIC-EXAMPLE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Validator is connected to make validate-data-contribution, make verify, and make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Validation script remains modifiable by future execution packets."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-VALIDATE-DATA-CONTRIBUTION
+    name: "Data contribution validator tests"
+    type: test
+    path: tests/test_validate_data_contribution.py
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Regression tests for EP-024 data contribution safety gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-DATA-CONTRIBUTION
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests cover raw event, anonymized signal, aggregate thresholds, default flags, and project fixture validation."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test file remains modifiable by future execution packets."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-08-PLAN
+    name: "Monthly plan 2026-08"
+    type: monthly_plan
+    path: docs/monthly/2026-08/monthly-plan.yml
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "August 2026 monthly plan for voluntary data contribution and anonymization contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Monthly block has three tasks with planned_hours=15."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-08-BFT-DATA-CONTRIBUTION
+    name: "August 2026 data contribution BFT"
+    type: monthly_document
+    path: docs/monthly/2026-08/01-business-functional-requirements.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Business functional requirements for data contribution contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-08-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer-facing monthly source document for August data contribution contour."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-08-TZ-DATA-CONTRIBUTION
+    name: "August 2026 data contribution TZ"
+    type: monthly_document
+    path: docs/monthly/2026-08/02-technical-specification.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Technical specification for data contribution schema-first contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-08-PLAN
+      - ART-VALIDATE-DATA-CONTRIBUTION
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Technical specification does not introduce APIs, connectors, telemetry hooks, or database tables."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-08-TEST-PROTOCOL-DATA-CONTRIBUTION
+    name: "August 2026 data contribution test protocol"
+    type: monthly_test_protocol
+    path: docs/monthly/2026-08/03-test-protocol-data-contribution.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Manual and automated test protocol for data contribution safety gates."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-08-PLAN
+      - ART-VALIDATE-DATA-CONTRIBUTION
+      - ART-TEST-VALIDATE-DATA-CONTRIBUTION
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Manual review fields remain user-owned and pending."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-024 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    name: "EP-024 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+    owner_module: M-DATA-CONTRIBUTION
+    related_packets:
+      - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    related_requirements:
+      - REQ-025
+    status: active
+    description: "Acceptance report for EP-024 data contribution and anonymization layer."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-DATA-CONTRIBUTION-001
+        - V-DATA-CONTRIBUTION-002
+        - V-DATA-CONTRIBUTION-003
+        - V-DATA-CONTRIBUTION-004
+        - V-DATA-CONTRIBUTION-005
+        - V-DATA-CONTRIBUTION-006
+        - V-DATA-CONTRIBUTION-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-DATA-CONTRIBUTION-README
+      - ART-DATA-CONTRIBUTION-CONSENT-SCHEMA
+      - ART-DATA-CONTRIBUTION-RAW-SYNTHETIC-EXAMPLE
+      - ART-DATA-CONTRIBUTION-AGGREGATE-SYNTHETIC-EXAMPLE
+      - ART-VALIDATE-DATA-CONTRIBUTION
+      - ART-TEST-VALIDATE-DATA-CONTRIBUTION
+      - ART-MONTHLY-2026-08-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-024 remains ready_for_acceptance until user decision."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Pending EP-024 acceptance report is not protected until user acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
     artifact_id: ART-REFERENCE-INTAKE-README
     name: "Reference intake README"
     type: documentation

@@ -472,4 +472,40 @@
       <Item>accepted_by, decided_by, checked_by, and answered_by must not be Codex.</Item>
     </Invariants>
   </Module>
+  <Module id="M-DATA-CONTRIBUTION" status="ready_for_acceptance">
+    <Name>Data Contribution And Anonymization Layer</Name>
+    <Responsibilities>
+      <Item>Maintain schema-first and documentation-first artifacts for voluntary data contribution, anonymization, generalization, aggregation, and future signal candidates.</Item>
+      <Item>Keep telemetry, dataset contribution, external upload, AI training, and commercial use disabled by default.</Item>
+      <Item>Validate synthetic raw examples, anonymized signal schemas, commercial aggregate thresholds, and monthly planning documents for EP-024.</Item>
+      <Item>Preserve local-first customer data boundaries and require explicit future approval before real customer data processing.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/data-contribution/*.md</Item>
+      <Item>schemas/data-contribution/*.schema.yml</Item>
+      <Item>examples/data-contribution/*.example.yml</Item>
+      <Item>docs/monthly/2026-08/*</Item>
+    </Inputs>
+    <Outputs>
+      <Item>scripts/validate_data_contribution.py</Item>
+      <Item>tests/test_validate_data_contribution.py</Item>
+      <Item>docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>collecting, importing, or adding real customer data</Item>
+      <Item>enabling telemetry, dataset contribution, external upload, AI training, or commercial use by default</Item>
+      <Item>treating product use as consent to data contribution</Item>
+      <Item>creating active matching rules or normative data imports</Item>
+      <Item>changing BIM-KSI-GESN domain methodology</Item>
+      <Item>changing accepted reports of other execution packets</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed, and commercial_use_allowed default to false.</Item>
+      <Item>Raw event with customer_ref or customer_name cannot be commercial_use_allowed.</Item>
+      <Item>Raw event with supplier_ref or supplier_name cannot be ai_training_allowed.</Item>
+      <Item>Anonymized signal must not contain direct customer, supplier, contact, contract, or invoice identifiers.</Item>
+      <Item>Commercial aggregate requires observations_count greater than or equal to 10, independent_customers_count greater than or equal to 5, independent_suppliers_count greater than or equal to 5, and reidentification_risk low.</Item>
+      <Item>accepted_by, decided_by, checked_by, and answered_by must not be Codex.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>

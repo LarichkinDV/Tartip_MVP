@@ -1,0 +1,35 @@
+schema_id: raw-purchase-event
+schema_version: 1
+title: Raw purchase event schema
+status: draft
+required_fields:
+  - event_id
+  - customer_ref
+  - supplier_ref
+  - material_class
+  - diameter_mm
+  - length_m
+  - price_rub
+  - currency
+  - period_bucket
+  - data_classification
+  - source_status
+  - example_only
+  - derived_from_real_customer_data
+  - telemetry_enabled
+  - dataset_contribution_enabled
+  - external_upload_enabled
+  - ai_training_allowed
+  - commercial_use_allowed
+default_flags:
+  telemetry_enabled: false
+  dataset_contribution_enabled: false
+  external_upload_enabled: false
+  ai_training_allowed: false
+  commercial_use_allowed: false
+allowed_source_status:
+  - synthetic
+  - requires_user_approval
+notes:
+  - "Raw event is local-first and cannot be externally used by default."
+  - "Synthetic examples do not grant future customer data rights."
