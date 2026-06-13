@@ -832,7 +832,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING" status="ready_for_acceptance">
+  <Packet id="EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING" status="accepted">
     <Name>Customer-facing MVP roadmap and monthly planning</Name>
     <Goal>Создать безопасную customer-facing рамку и структуру месячного планирования для прикладного прототипа ТАРТИП.</Goal>
     <Scope>

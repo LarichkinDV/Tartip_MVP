@@ -1,10 +1,10 @@
 project_state:
   schema_version: 1
   updated_at: 2026-06-13
-  state_mode: ready_for_acceptance
-  active_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-  last_accepted_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
-  last_completed_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
+  state_mode: accepted_baseline
+  active_execution_packet: none
+  last_accepted_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+  last_completed_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
   next_recommended_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
   deferred_follow_up_packets:
     -
@@ -29,6 +29,7 @@ project_state:
     - EP-018-ACCEPTED-ARTIFACT-PROTECTION
     - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
     - EP-019-CODEX-CONTEXT-COMPACTION
+    - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
   monthly_scopes:
     -
       scope_id: MONTHLY-2026-06

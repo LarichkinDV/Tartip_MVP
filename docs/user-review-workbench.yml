@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: f91c57f53fce6a0474f1fe9e351a3908e4a75ee23497d92c429db6b3044f2483
+      checksum_sha256: 514c25e4d18df4c5e72b777771932582452a000f4ca7f4f3b8f7ea5cd5e7f906
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: fbafb2d67b00bc447d3cf51d01db96b12218016c9989972cdca0cf798ed92249
+      checksum_sha256: fb685c9c836e91ae156ef1596642a55156d61f5a9e91dbcb3c06e84d4a49766e
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: 9fa7543bbb7baaa665e47dfa0e412989618b13f12dabf0f5d994756155e4512e
+      checksum_sha256: 74e9ec9dc8516222cc765e194bd8a10f8b4406a96ce07ef083a63aef624e86a1
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: 1bd70600b67393061983a34b06d0dc499a9f2ca87706f196b3fec5ef6bc2f74d
+      checksum_sha256: 50ac42d2f93128b8c801a08bef6552334bf613e9cade7aef74a4aa69601d0335
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 4
     audit_finding_groups: 6
     historical_audit_findings: 360
-    accepted_hidden_from_active_queue: 18
+    accepted_hidden_from_active_queue: 19
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -162,6 +162,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-12
         acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
@@ -1437,151 +1443,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-      title: "Customer-facing MVP roadmap and monthly planning"
-      source_file: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
-      source_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-      source_checksum_sha256: 5892c1f7e87b2f20bb7cf98547797395e4ffbee8b85786eabc884ac26d7932fb
-      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
-      related_artifacts:
-        -
-          path: docs/monthly/README.md
-        -
-          path: docs/roadmap/2026-customer-facing-mvp-roadmap.md
-        -
-          path: docs/monthly/2026-06/monthly-plan.yml
-        -
-          path: scripts/validate_monthly_planning.py
-        -
-          path: tests/test_validate_monthly_planning.py
-        -
-          path: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-022A-001
-          text: "Strict baseline после EP-019 совпал перед стартом EP-022A."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-002
-          text: "Создана политика месячного планирования."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-003
-          text: "Создана customer-facing дорожная карта 2026."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-004
-          text: "Создан monthly-plan.yml для 2026-06."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-005
-          text: "Создан monthly planning validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-006
-          text: "Созданы tests monthly planning validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-007
-          text: "Planning override перед EP-016 зафиксирован только во внутренних governance-файлах."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-008
-          text: "Planning override не размещен в customer-facing roadmap."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-009
-          text: "Месячные блоки названы как прикладные контуры для Заказчика."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-010
-          text: "В customer-facing roadmap нет forbidden customer-facing terms."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-011
-          text: "БФТ/ТЗ/протоколы определены как итоговые документы, а prompt templates — как supporting artifacts."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-012
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-013
-          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-014
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-015
-          text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-016
-          text: "Реальные данные работодателя или Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022A-017
-          text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -2146,6 +2007,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-12
       acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-13
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []

@@ -105,10 +105,10 @@ make check
 ## 9. User-owned решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-13
+comments: Принято. Проверено: создана customer-facing дорожная карта 2026; создана политика месячного планирования; создан monthly-plan.yml на июнь 2026; создан валидатор monthly planning и тесты; planning override по EP-016 зафиксирован только во внутренних governance-файлах; roadmap не содержит planning override и запрещенные customer-facing формулировки; protected/manual artifacts не изменены; accepted reports других EP не изменены; реальные данные работодателя/Заказчика не добавлены; user-owned поля Codex не заполнял; make verify и make check прошли.
 ```
 
 ## 10. Protected Artifact Discipline

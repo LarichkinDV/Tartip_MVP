@@ -5793,16 +5793,16 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    notes: "EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING accepted by user; protected historical source artifact."
     protection:
-      protection_status: not_protected_pending
-      protection_reason: "Acceptance report is pending user acceptance and remains editable only within EP-022A until acceptance."
+      protection_status: protected
+      protection_reason: "Accepted EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING acceptance report is a historical user decision record."
       source_category: source_acceptance
-      accepted_in: null
-      user_decision_source: null
-      change_requires_user_approval: false
+      accepted_in: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+      user_decision_source: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      change_requires_user_approval: true
       allowed_update_modes:
-        - execution_packet_change
+        - approved_change_request_only
       generator: null
       derived_from:
         []

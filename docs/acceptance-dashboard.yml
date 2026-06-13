@@ -6,13 +6,13 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 18
+    ready_for_acceptance: 0
+    accepted: 19
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
-    protected_accepted_artifacts: 34
+    pending: 0
+    protected_accepted_artifacts: 35
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -106,6 +106,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-12
         acceptance_report: docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md
+      -
+        packet_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
     planning_note: "Accepted source/manual artifacts are classified by EP-018-ACCEPTED-ARTIFACT-PROTECTION; generated dashboards remain regenerable."
@@ -3764,9 +3769,9 @@ acceptance_dashboard:
     -
       packet_id: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
       title: "Customer-facing MVP roadmap and monthly planning"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
       artifacts:
         -
@@ -3819,98 +3824,98 @@ acceptance_dashboard:
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_status: not_protected_pending
+          protection_status: protected
           source_category: source_acceptance
-          change_requires_user_approval: false
-          protection_locked: false
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         []
       acceptance_criteria:
         -
           id: AC-EP-022A-001
           text: "Strict baseline после EP-019 совпал перед стартом EP-022A."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-002
           text: "Создана политика месячного планирования."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-003
           text: "Создана customer-facing дорожная карта 2026."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-004
           text: "Создан monthly-plan.yml для 2026-06."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-005
           text: "Создан monthly planning validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-006
           text: "Созданы tests monthly planning validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-007
           text: "Planning override перед EP-016 зафиксирован только во внутренних governance-файлах."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-008
           text: "Planning override не размещен в customer-facing roadmap."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-009
           text: "Месячные блоки названы как прикладные контуры для Заказчика."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-010
           text: "В customer-facing roadmap нет forbidden customer-facing terms."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-011
           text: "БФТ/ТЗ/протоколы определены как итоговые документы, а prompt templates — как supporting artifacts."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-012
           text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-013
           text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-014
           text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-015
           text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-016
           text: "Реальные данные работодателя или Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-022A-017
           text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -3925,7 +3930,7 @@ acceptance_dashboard:
       risks:
         []
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-13
+        comments: "Принято. Проверено: создана customer-facing дорожная карта 2026; создана политика месячного планирования; создан monthly-plan.yml на июнь 2026; создан валидатор monthly planning и тесты; planning override по EP-016 зафиксирован только во внутренних governance-файлах; roadmap не содержит planning override и запрещенные customer-facing формулировки; protected/manual artifacts не изменены; accepted reports других EP не изменены; реальные данные работодателя/Заказчика не добавлены; user-owned поля Codex не заполнял; make verify и make check прошли."

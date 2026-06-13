@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 1 |
-| accepted | 18 |
+| ready_for_acceptance | 0 |
+| accepted | 19 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 1 |
-| protected_accepted_artifacts | 34 |
+| pending | 0 |
+| protected_accepted_artifacts | 35 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | Acceptance criteria and artifacts | docs/monthly/README.md, docs/roadmap/2026-customer-facing-mvp-roadmap.md, docs/monthly/2026-06/monthly-plan.yml, scripts/validate_monthly_planning.py, ... | - | [docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md](docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) |
+| - | - | - | - | - | - | - |
 
 ## 3. Принятые задачи
 
@@ -42,6 +42,7 @@
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | Дмитрий | 2026-06-10 | Принято. Проверено: accepted artifacts классифицированы; accepted reports EP-001–EP-014 не изменены; generated dashboards не hard-lock; protection validator проходит; change request для будущей русификации README.md и CHANGELOG.md создан как CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION со статусом requires_user_approval; EP-010 не выполнялся. | accepted/protected |
 | EP-019-CODEX-CONTEXT-COMPACTION | Codex context compaction | Дмитрий | 2026-06-12 | Принято. Проверено: создан docs/codex-working-context.md; файл приведен к русскоязычному человекочитаемому виду с сохранением технических идентификаторов; объем файла 201 строка, лимит 250 соблюден; source-of-truth files, generated files и selective-only files разделены; обязательные BIM-КСИ-ГЭСН инварианты, acceptance discipline и protected artifact discipline зафиксированы; AGENTS.md не изменялся без approved CR; риск того, что working context пока не закреплен как mandatory reading в AGENTS.md, принят как управляемый; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись. | accepted/protected |
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | Дмитрий | 2026-06-12 | Принято. Проверено: создан scripts/sync_accepted_packet.py; добавлены make sync-accepted-packet-dry-run и make sync-accepted-packet; dry-run не пишет файлы; apply синхронизирует только уже принятое пользователем решение; accepted_by: Codex запрещен; acceptance_decision=pending отклоняется; accepted_at обязателен; повторный apply идемпотентен; acceptance report user-owned поля скрипт не изменяет; тесты tests/test_sync_accepted_packet.py проходят; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись; EP-019 не начат. | accepted/protected |
+| EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | Дмитрий | 2026-06-13 | Принято. Проверено: создана customer-facing дорожная карта 2026; создана политика месячного планирования; создан monthly-plan.yml на июнь 2026; создан валидатор monthly planning и тесты; planning override по EP-016 зафиксирован только во внутренних governance-файлах; roadmap не содержит planning override и запрещенные customer-facing формулировки; protected/manual artifacts не изменены; accepted reports других EP не изменены; реальные данные работодателя/Заказчика не добавлены; user-owned поля Codex не заполнял; make verify и make check прошли. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
 
@@ -112,6 +113,7 @@
 | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Дмитрий | 2026-06-10 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md | EP-019-CODEX-CONTEXT-COMPACTION | Дмитрий | 2026-06-12 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Дмитрий | 2026-06-12 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 
