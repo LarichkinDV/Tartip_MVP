@@ -1155,7 +1155,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER" status="ready_for_acceptance">
+  <Packet id="EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER" status="accepted">
     <Name>Data contribution and anonymization layer</Name>
     <Goal>Создать schema-first/documentation-first контур добровольной передачи, обезличивания, обобщения, агрегации и будущих signal candidates без сбора реальных данных.</Goal>
     <Scope>

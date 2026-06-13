@@ -6,13 +6,13 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 22
+    ready_for_acceptance: 0
+    accepted: 23
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
-    protected_accepted_artifacts: 38
+    pending: 0
+    protected_accepted_artifacts: 39
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -126,6 +126,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      -
+        packet_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
     planning_note: "Accepted source/manual artifacts are classified by EP-018-ACCEPTED-ARTIFACT-PROTECTION; generated dashboards remain regenerable."
@@ -4566,9 +4571,9 @@ acceptance_dashboard:
     -
       packet_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
       title: "Data contribution and anonymization layer"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
       artifacts:
         -
@@ -4729,103 +4734,103 @@ acceptance_dashboard:
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_status: not_protected_pending
+          protection_status: protected
           source_category: source_acceptance
-          change_requires_user_approval: false
-          protection_locked: false
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         []
       acceptance_criteria:
         -
           id: AC-EP-024-001
           text: "Strict baseline после EP-016 acceptance совпал перед стартом EP-024."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-002
           text: "Создан docs/data-contribution контур с workflow, anonymization pipeline, risk policy и aggregate policy."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-003
           text: "Созданы YAML-схемы consent, raw event, anonymized signal и commercial aggregate."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-004
           text: "Созданы только synthetic examples без реальных customer или employer данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-005
           text: "Default-off flags telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed и commercial_use_allowed установлены false."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-006
           text: "Validator запрещает commercial use для raw event с customer references."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-007
           text: "Validator запрещает AI training для raw event с supplier references."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-008
           text: "Validator запрещает external upload для raw event."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-009
           text: "Validator запрещает direct identifiers в anonymized signal."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-010
           text: "Validator проверяет aggregate thresholds и reidentification_risk low."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-011
           text: "Создан monthly block 2026-08 с тремя задачами по 15 часов."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-012
           text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-013
           text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-014
           text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-015
           text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-016
           text: "Нормативные данные и active matching rules не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-017
           text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-024-018
           text: "EP-024 остается ready_for_acceptance и не добавлен в accepted_packets."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -4840,7 +4845,7 @@ acceptance_dashboard:
       risks:
         []
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-13
+        comments: "Принято. Проверено: создан schema-first/documentation-first контур добровольной передачи, обезличивания и агрегации данных; реальные данные работодателя/Заказчика не добавлены; телеметрия, dataset contribution, external upload, AI training и commercial use отключены по умолчанию; examples являются synthetic-only; commercial_use_allowed=true допускается только для synthetic approved aggregate; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; user-owned поля Codex не заполнял; make verify и make check прошли."

@@ -6,15 +6,15 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-last_accepted_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
-last_completed_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 next_recommended_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
 deferred_follow_up_packets: []
 ```
@@ -48,6 +48,7 @@ post_acceptance_baseline:
     - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
     - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
     - EP-016-REFERENCE-INTAKE-PREPARATION
+    - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 ```
 
 ## 5. Выполнено

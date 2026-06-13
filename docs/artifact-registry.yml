@@ -1279,16 +1279,16 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "EP-024 remains ready_for_acceptance until user decision."
+    notes: "EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER accepted by user; protected historical source artifact."
     protection:
-      protection_status: not_protected_pending
-      protection_reason: "Pending EP-024 acceptance report is not protected until user acceptance."
+      protection_status: protected
+      protection_reason: "Accepted EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER acceptance report is a historical user decision record."
       source_category: source_acceptance
-      accepted_in: null
-      user_decision_source: null
-      change_requires_user_approval: false
+      accepted_in: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+      user_decision_source: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      change_requires_user_approval: true
       allowed_update_modes:
-        - execution_packet_change
+        - approved_change_request_only
       generator: null
       derived_from:
         []

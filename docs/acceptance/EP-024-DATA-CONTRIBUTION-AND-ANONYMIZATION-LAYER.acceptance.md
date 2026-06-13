@@ -7,10 +7,10 @@ ready_for_acceptance
 ## 2. Пользовательское решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-13
+comments: Принято. Проверено: создан schema-first/documentation-first контур добровольной передачи, обезличивания и агрегации данных; реальные данные работодателя/Заказчика не добавлены; телеметрия, dataset contribution, external upload, AI training и commercial use отключены по умолчанию; examples являются synthetic-only; commercial_use_allowed=true допускается только для synthetic approved aggregate; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; user-owned поля Codex не заполнял; make verify и make check прошли.
 ```
 
 ## 3. Strict Baseline Result

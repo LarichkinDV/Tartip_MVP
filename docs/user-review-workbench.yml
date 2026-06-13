@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 381a5c06cc0e41a14702e337bdd29442d32e663f1e8eb5863e469aeb517335cb
+      checksum_sha256: 31ee8cf8807d4f704f365cc73a933deebdc1e7bc1597b80b59db2383565e5461
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: dde2d705620be92ba037629bc7992faf08a84fdebf5c72bd70a8fcbb355b33b1
+      checksum_sha256: 1ccdeae04e6cb64288d3529f9785432e12b4447f68fe414a97e39ccc3043ce46
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: a9d1df1d9f1408f38f9c80ae8decdfbc2c0f87db3797cc671da46463d5326c68
+      checksum_sha256: 974954ee3494d849e3ca988e9c907a911bdfa0ace1c4b356923c833a1471d4e9
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: 1816e9a767acce7aea164ddeb4383038b2eabd139581a72a527fe6cf8c1ca738
+      checksum_sha256: 0a43c6e0d2d396ee35637981dcb6d117f9e39b56e6c3e4cec3280159785c8e54
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 4
     audit_finding_groups: 6
     historical_audit_findings: 368
-    accepted_hidden_from_active_queue: 22
+    accepted_hidden_from_active_queue: 23
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -186,6 +186,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
@@ -1462,180 +1468,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-      title: "Data contribution and anonymization layer"
-      source_file: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
-      source_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-      source_checksum_sha256: 3d4ec1fd49717afe0aa823157cc65313a08f3a4a2cbab26204b07f1d9eaf8234
-      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
-      related_artifacts:
-        -
-          path: docs/data-contribution/README.md
-        -
-          path: docs/data-contribution/data-contribution-workflow.md
-        -
-          path: docs/data-contribution/anonymization-pipeline.md
-        -
-          path: docs/data-contribution/reidentification-risk-policy.md
-        -
-          path: docs/data-contribution/commercial-aggregate-policy.md
-        -
-          path: schemas/data-contribution/data-contribution-consent.schema.yml
-        -
-          path: schemas/data-contribution/raw-purchase-event.schema.yml
-        -
-          path: schemas/data-contribution/anonymized-purchase-signal.schema.yml
-        -
-          path: schemas/data-contribution/commercial-price-aggregate.schema.yml
-        -
-          path: examples/data-contribution/rebar-d12-synthetic.raw.example.yml
-        -
-          path: examples/data-contribution/rebar-d12-synthetic-aggregate.example.yml
-        -
-          path: scripts/validate_data_contribution.py
-        -
-          path: tests/test_validate_data_contribution.py
-        -
-          path: docs/monthly/2026-08/monthly-plan.yml
-        -
-          path: docs/monthly/2026-08/01-business-functional-requirements.md
-        -
-          path: docs/monthly/2026-08/02-technical-specification.md
-        -
-          path: docs/monthly/2026-08/03-test-protocol-data-contribution.md
-        -
-          path: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-024-001
-          text: "Strict baseline после EP-016 acceptance совпал перед стартом EP-024."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-002
-          text: "Создан docs/data-contribution контур с workflow, anonymization pipeline, risk policy и aggregate policy."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-003
-          text: "Созданы YAML-схемы consent, raw event, anonymized signal и commercial aggregate."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-004
-          text: "Созданы только synthetic examples без реальных customer или employer данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-005
-          text: "Default-off flags telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed и commercial_use_allowed установлены false."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-006
-          text: "Validator запрещает commercial use для raw event с customer references."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-007
-          text: "Validator запрещает AI training для raw event с supplier references."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-008
-          text: "Validator запрещает external upload для raw event."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-009
-          text: "Validator запрещает direct identifiers в anonymized signal."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-010
-          text: "Validator проверяет aggregate thresholds и reidentification_risk low."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-011
-          text: "Создан monthly block 2026-08 с тремя задачами по 15 часов."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-012
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-013
-          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-014
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-015
-          text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-016
-          text: "Нормативные данные и active matching rules не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-017
-          text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-024-018
-          text: "EP-024 остается ready_for_acceptance и не добавлен в accepted_packets."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -2224,6 +2056,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-13
       acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-13
+      acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []
