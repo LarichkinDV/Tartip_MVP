@@ -6,8 +6,8 @@
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 33 |
-| Пакеты готовы к приемке | 1 |
+| Активные элементы проверки | 32 |
+| Пакеты готовы к приемке | 0 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
@@ -16,7 +16,7 @@
 | Активные блокеры | 4 |
 | Historical audit findings | 364 |
 | Audit finding groups | 6 |
-| Принятые пакеты скрыты из активной очереди | 20 |
+| Принятые пакеты скрыты из активной очереди | 21 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -45,7 +45,6 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
-| medium | acceptance | ACCEPTANCE-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | manual_verification | VERIFICATION-VT-EP-005-003 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Проверить, что accepted artifacts отображаются как protected | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-001 | - | Проверить наличие monthly-plan.yml | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-002 | - | Проверить, что месячный блок содержит ровно 3 задачи | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
@@ -60,7 +59,7 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | - | - | - | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md |
+| - | - | - | - | - | - |
 
 ## 4. Ручные проверки
 
@@ -171,3 +170,4 @@ Accepted artifact protection is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | 2026-06-12 | Дмитрий | docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md |
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | 2026-06-13 | Дмитрий | docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md |
 | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | 2026-06-13 | Дмитрий | docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md |
+| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | 2026-06-13 | Дмитрий | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md |

@@ -6,13 +6,13 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 20
+    ready_for_acceptance: 0
+    accepted: 21
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
-    protected_accepted_artifacts: 36
+    pending: 0
+    protected_accepted_artifacts: 37
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -116,6 +116,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      -
+        packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
     planning_note: "Accepted source/manual artifacts are classified by EP-018-ACCEPTED-ARTIFACT-PROTECTION; generated dashboards remain regenerable."
@@ -4139,9 +4144,9 @@ acceptance_dashboard:
     -
       packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
       title: "Month 01 infrastructure customer documents"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
       artifacts:
         -
@@ -4185,88 +4190,88 @@ acceptance_dashboard:
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_status: not_protected_pending
+          protection_status: protected
           source_category: source_acceptance
-          change_requires_user_approval: false
-          protection_locked: false
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         []
       acceptance_criteria:
         -
           id: AC-EP-023-001
           text: "Создан БФТ."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-002
           text: "Создано ТЗ."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-003
           text: "Создан протокол испытаний."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-004
           text: "Создан presentation outline."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-005
           text: "Документы customer-facing и не выглядят как запрещенная продуктовая презентация."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-006
           text: "В документах есть разделы о правовом режиме исходных материалов и данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-007
           text: "Не заявлено, что реализован нормативный matching."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-008
           text: "Не заявлено, что данные Заказчика автоматически становятся частью Tartip dataset."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-009
           text: "Не заявлено, что пользователь разработал промышленный программный продукт."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-010
           text: "User-owned поля не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-011
           text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-012
           text: "Реальные данные работодателя/Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-013
           text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-014
           text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-023-015
           text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -4281,7 +4286,7 @@ acceptance_dashboard:
       risks:
         []
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-13
+        comments: "Принято. Проверено: созданы БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты для инфраструктурного контура прикладного прототипа; документы оформлены как customer-facing source artifacts, а не prompts; не заявлена промышленная готовность продукта; не выполнялся импорт реальных нормативных источников; не создавались active КСИ/ГЭСН rules; не заявлена автоматическая передача данных Заказчика; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли."

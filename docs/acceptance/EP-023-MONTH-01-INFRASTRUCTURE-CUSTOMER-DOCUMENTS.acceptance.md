@@ -97,10 +97,10 @@ make check
 ## 9. User-owned решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-13
+comments: Принято. Проверено: созданы БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты для инфраструктурного контура прикладного прототипа; документы оформлены как customer-facing source artifacts, а не prompts; не заявлена промышленная готовность продукта; не выполнялся импорт реальных нормативных источников; не создавались active КСИ/ГЭСН rules; не заявлена автоматическая передача данных Заказчика; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли.
 ```
 
 ## 10. Protected Artifact Discipline

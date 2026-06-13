@@ -1113,16 +1113,16 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "EP-023 remains ready_for_acceptance until the user manually accepts it."
+    notes: "EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS accepted by user; protected historical source artifact."
     protection:
-      protection_status: not_protected_pending
-      protection_reason: "New acceptance report remains editable within EP-023 until user acceptance."
+      protection_status: protected
+      protection_reason: "Accepted EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS acceptance report is a historical user decision record."
       source_category: source_acceptance
-      accepted_in: null
-      user_decision_source: null
-      change_requires_user_approval: false
+      accepted_in: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+      user_decision_source: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      change_requires_user_approval: true
       allowed_update_modes:
-        - execution_packet_change
+        - approved_change_request_only
       generator: null
       derived_from:
         []

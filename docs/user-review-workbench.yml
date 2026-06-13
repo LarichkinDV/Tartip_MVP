@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 3b933984aa9eac07600d29cbf95b1d268d8ec69e9584d9b282208e46e77da254
+      checksum_sha256: d488fb3e504f8e7bccdcde9263f63b434ef3492cafc7a4e084da518529c21f0b
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: 119e4f4f0380b38a2dc8ae0f115294ca44d430135d64283b562c6a9ff5832d23
+      checksum_sha256: abf5ae225bf67a5ce32ffb04dc4f012f8ec54c36befa79e02673862b09b1488c
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: c5aa016f214f89be25ea499e023f1bcd4a3cf63acf270367d0916a3329778d6b
+      checksum_sha256: 97097fcacfe62ac9a4f75d549e08c344a7dec053f461e01077fbaf1bc7f53c87
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: 57531fabd2deb0a434640f30a5639dd8e68fe373f3194abe02d7074d1f825cd8
+      checksum_sha256: 7da354bfe2f0c35749d28036de3e316b267d78ae635d35b1629bfa5f57ae13cc
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 4
     audit_finding_groups: 6
     historical_audit_findings: 364
-    accepted_hidden_from_active_queue: 20
+    accepted_hidden_from_active_queue: 21
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -174,6 +174,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
@@ -1450,139 +1456,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-      title: "Month 01 infrastructure customer documents"
-      source_file: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
-      source_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-      source_checksum_sha256: ada9e3a7dfcc6e37f1b6e7ef3c48e3d8513c42f91eb78d6949ced154c9e81ae8
-      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
-      related_artifacts:
-        -
-          path: docs/monthly/2026-06/01-business-functional-requirements.md
-        -
-          path: docs/monthly/2026-06/02-technical-specification.md
-        -
-          path: docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md
-        -
-          path: docs/monthly/2026-06/presentation-outline.md
-        -
-          path: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-023-001
-          text: "Создан БФТ."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-002
-          text: "Создано ТЗ."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-003
-          text: "Создан протокол испытаний."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-004
-          text: "Создан presentation outline."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-005
-          text: "Документы customer-facing и не выглядят как запрещенная продуктовая презентация."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-006
-          text: "В документах есть разделы о правовом режиме исходных материалов и данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-007
-          text: "Не заявлено, что реализован нормативный matching."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-008
-          text: "Не заявлено, что данные Заказчика автоматически становятся частью Tartip dataset."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-009
-          text: "Не заявлено, что пользователь разработал промышленный программный продукт."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-010
-          text: "User-owned поля не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-011
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-012
-          text: "Реальные данные работодателя/Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-013
-          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-014
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-023-015
-          text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -2159,6 +2032,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-13
       acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-13
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []

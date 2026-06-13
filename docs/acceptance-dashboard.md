@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 1 |
-| accepted | 20 |
+| ready_for_acceptance | 0 |
+| accepted | 21 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 1 |
-| protected_accepted_artifacts | 36 |
+| pending | 0 |
+| protected_accepted_artifacts | 37 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | Acceptance criteria and artifacts | docs/monthly/2026-06/01-business-functional-requirements.md, docs/monthly/2026-06/02-technical-specification.md, docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md, docs/monthly/2026-06/presentation-outline.md, ... | - | [docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md](docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) |
+| - | - | - | - | - | - | - |
 
 ## 3. Принятые задачи
 
@@ -44,6 +44,7 @@
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | Дмитрий | 2026-06-12 | Принято. Проверено: создан scripts/sync_accepted_packet.py; добавлены make sync-accepted-packet-dry-run и make sync-accepted-packet; dry-run не пишет файлы; apply синхронизирует только уже принятое пользователем решение; accepted_by: Codex запрещен; acceptance_decision=pending отклоняется; accepted_at обязателен; повторный apply идемпотентен; acceptance report user-owned поля скрипт не изменяет; тесты tests/test_sync_accepted_packet.py проходят; make verify и make check проходят; README.md, CHANGELOG.md, AGENTS.md и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменялись; EP-019 не начат. | accepted/protected |
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | Дмитрий | 2026-06-13 | Принято. Проверено: создана customer-facing дорожная карта 2026; создана политика месячного планирования; создан monthly-plan.yml на июнь 2026; создан валидатор monthly planning и тесты; planning override по EP-016 зафиксирован только во внутренних governance-файлах; roadmap не содержит planning override и запрещенные customer-facing формулировки; protected/manual artifacts не изменены; accepted reports других EP не изменены; реальные данные работодателя/Заказчика не добавлены; user-owned поля Codex не заполнял; make verify и make check прошли. | accepted/protected |
 | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | Дмитрий | 2026-06-13 | Принято. Проверено: созданы внутренние policy notes по IP, deliverables, границам данных Заказчика, opt-in data contribution, обезличиванию, агрегации и code/data separation; документы явно не являются юридическим заключением, договором, пользовательским соглашением, политикой обработки персональных данных или согласием Заказчика; зафиксированы local-first data boundary, default-off flags, запрет автоматической передачи данных, re-identification risk warning и разграничение code license/data use consent; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли. | accepted/protected |
+| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | Дмитрий | 2026-06-13 | Принято. Проверено: созданы БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты для инфраструктурного контура прикладного прототипа; документы оформлены как customer-facing source artifacts, а не prompts; не заявлена промышленная готовность продукта; не выполнялся импорт реальных нормативных источников; не создавались active КСИ/ГЭСН rules; не заявлена автоматическая передача данных Заказчика; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
 
@@ -116,6 +117,7 @@
 | docs/acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Дмитрий | 2026-06-12 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 

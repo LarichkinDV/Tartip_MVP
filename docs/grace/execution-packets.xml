@@ -955,7 +955,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS" status="ready_for_acceptance">
+  <Packet id="EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS" status="accepted">
     <Name>Month 01 infrastructure customer documents</Name>
     <Goal>Создать первый комплект customer-facing документов месяца: БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты.</Goal>
     <Scope>

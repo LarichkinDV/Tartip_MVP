@@ -6,15 +6,15 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+last_completed_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 deferred_follow_up_packets:
   -
@@ -49,6 +49,7 @@ post_acceptance_baseline:
     - EP-019-CODEX-CONTEXT-COMPACTION
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
     - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 ```
 
 ## 5. Выполнено

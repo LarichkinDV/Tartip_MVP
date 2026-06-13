@@ -12,13 +12,13 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`.
+Current execution packet: `none`.
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+last_completed_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 deferred_follow_up_packets:
   -
@@ -59,6 +59,7 @@ post_acceptance_baseline:
     - EP-019-CODEX-CONTEXT-COMPACTION
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
     - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -119,7 +120,7 @@ User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is tem
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | accepted | [EP-021 report](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) | Completed; next recommended packet is EP-019 context compaction. |
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | accepted | [EP-022A report](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) | Completed; next recommended packet is EP-022B legal/data boundary policy notes. |
 | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | accepted | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | Completed; next recommended packet is EP-023 month 01 customer documents. |
-| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | ready_for_acceptance | [EP-023 report](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) | User reviews BFT, TZ, test protocol, presentation outline and verification results. |
+| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | accepted | [EP-023 report](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) | User reviews BFT, TZ, test protocol, presentation outline and verification results. |
 
 ## 8. Status Values
 
