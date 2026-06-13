@@ -1,6 +1,6 @@
 # Codex Spec Audit
 
-Дата обновления: 2026-06-12
+Дата обновления: 2026-06-13
 
 ## 1. Сводка
 
@@ -8,11 +8,11 @@
 |---|---:|---:|---:|
 | critical | 171 | 0 | 171 |
 | high | 0 | 0 | 0 |
-| medium | 251 | 2 | 249 |
+| medium | 253 | 4 | 249 |
 | low | 16 | 0 | 16 |
 
-Всего findings: 438
-Current findings: 2
+Всего findings: 440
+Current findings: 4
 Historical/stale findings: 436
 Активных critical findings: 0
 
@@ -58,8 +58,10 @@ Historical/stale findings: 436
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-019-codex-context-compaction не соответствует packet EP-016-REFERENCE-INTAKE-PREPARATION. | Использовать формат ep-016-<short-slug>. | open |
-| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
+| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-022a-customer-facing-mvp-roadmap-and-monthly-planning не соответствует packet EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING. | Использовать формат ep-<number>-<short-slug>. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | medium | AUD-GIT-002 | docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md | Merge запрещен для EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 
 ## 10. Critical findings
 
@@ -70,9 +72,9 @@ Historical/stale findings: 436
 | Group | Severity | Category | Total | Current | Historical | Active blocking | Recommendation |
 |---|---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | acceptance | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-001 | medium | git_workflow | 2 | 1 | 1 | False | Использовать формат ep-016-<short-slug>. |
-| AUD-GIT-002 | medium | git_workflow | 3 | 0 | 3 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-006 | medium | git_workflow | 10 | 0 | 10 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-001 | medium | git_workflow | 2 | 1 | 1 | False | Использовать формат ep-<number>-<short-slug>. |
+| AUD-GIT-002 | medium | git_workflow | 4 | 1 | 3 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
+| AUD-GIT-006 | medium | git_workflow | 11 | 1 | 10 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
 | AUD-LANG-001 | medium | language_policy | 251 | 0 | 251 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 
 ## 12. Findings, требующие решения пользователя

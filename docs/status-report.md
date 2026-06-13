@@ -2,20 +2,24 @@
 
 ## 1. Дата обновления
 
-2026-06-12
+2026-06-13
 
 ## 2. Текущий Execution Packet
 
-`none`
+`EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
 last_accepted_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
 last_completed_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
-next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+next_recommended_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+deferred_follow_up_packets:
+  -
+    packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+    reason: "Temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared."
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -69,13 +73,15 @@ post_acceptance_baseline:
 - Создана автоматизация post-acceptance sync для уже принятых пользователем пакетов.
 - EP-021 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 - EP-019 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
+- EP-022A подготовил customer-facing roadmap 2026, monthly planning policy, monthly-plan.yml для 2026-06 и validator monthly planning.
 
 ## 6. В работе
 
-Активных in-progress работ нет. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован в post-acceptance baseline.
+Активных in-progress работ нет. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` подготовлен к пользовательской приемке.
 
 ## 7. Готово к приемке
 
+- [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
 
 ## 8. Принятый Baseline
 
@@ -102,7 +108,8 @@ post_acceptance_baseline:
 
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: next recommended packet after EP-019 acceptance.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared.
+- `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`: next recommended packet after EP-022A.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -116,6 +123,7 @@ post_acceptance_baseline:
 - EP-017 не закрывает audit findings как fixed и не меняет user-owned resolution fields.
 - Current critical/high audit findings remain blocking gates; historical `current_detected: false` findings remain audit history.
 - EP-019 creates a recommended compact working context, but `AGENTS.md` mandatory reading policy is unchanged until a separate approved protected artifact change request allows editing `AGENTS.md`.
+- EP-022A does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the explicit monthly planning scope.
 
 ## 12. EP-006 Orphan Scope
 
@@ -125,10 +133,12 @@ post_acceptance_baseline:
 
 `EP-014-USER-REVIEW-DECISION-CLI-SAFETY` uses the active EP-014 number to close the workbench decision CLI safety gap before further user decision automation. The previously recommended `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is moved to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`; `EP-015`, `EP-016`, and `EP-017` keep their planned meanings.
 
+User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is temporarily deferred while customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared. This override is recorded only in internal governance files and is not part of the customer-facing roadmap.
+
 ## 14. Preflight Note
 
 `git pull --ff-only` did not complete because GitHub was unreachable over the network. This is not treated as an EP-013 blocker because local `main` and local `origin/main` both pointed to `c3a747707335e85fd4786688af3852a799da5bde`, the working tree was clean, and `/Users/larichkindv/Tartip` and `/Users/larichkindv/Documents/Tartip` resolve to the same repository path.
 
 ## 15. Следующий шаг
 
-EP-019 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-016-REFERENCE-INTAKE-PREPARATION`.
+EP-022A подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-022A: `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`.

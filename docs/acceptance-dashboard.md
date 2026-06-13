@@ -1,24 +1,24 @@
 # Единое окно приемки проекта Tartip
 
-Дата обновления: 2026-06-12
+Дата обновления: 2026-06-13
 
 ## 1. Сводка
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 0 |
+| ready_for_acceptance | 1 |
 | accepted | 18 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 0 |
+| pending | 1 |
 | protected_accepted_artifacts | 34 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - | - | - | - | - | - | - |
+| - [ ] требует проверки | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | Acceptance criteria and artifacts | docs/monthly/README.md, docs/roadmap/2026-customer-facing-mvp-roadmap.md, docs/monthly/2026-06/monthly-plan.yml, scripts/validate_monthly_planning.py, ... | - | [docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md](docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) |
 
 ## 3. Принятые задачи
 

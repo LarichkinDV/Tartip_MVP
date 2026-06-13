@@ -539,4 +539,28 @@
     <Name>protected source files are not changed without prior approved CR</Name>
     <Expected>EP-019 does not change AGENTS.md, README.md, CHANGELOG.md, docs/01-methodology.md, or docs/02-domain-model.md without a prior approved protected artifact change request.</Expected>
   </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-001" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>monthly planning source files exist</Name>
+    <Expected>docs/monthly/README.md, docs/roadmap/2026-customer-facing-mvp-roadmap.md, and docs/monthly/2026-06/monthly-plan.yml exist.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-002" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>monthly block has three 15-hour tasks</Name>
+    <Expected>docs/monthly/2026-06/monthly-plan.yml contains exactly three tasks, each with planned_hours=15, and planned_total_hours=45.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-003" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>monthly deliverables include BFT TZ and test protocol</Name>
+    <Expected>Monthly deliverables include БФТ, ТЗ, and протокол испытаний, and deliverable paths are not prompt templates.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>customer-facing roadmap avoids forbidden framing</Name>
+    <Expected>docs/roadmap/2026-customer-facing-mvp-roadmap.md does not use forbidden customer-facing terms such as SaaS, open-core, DaaS, freemium, bottom-up adoption, commercial data layer, or отраслевой стандарт.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>planning override is not in customer-facing roadmap</Name>
+    <Expected>Planning override before EP-016 is recorded only in internal governance files and does not appear in the customer-facing roadmap.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-PLANNING-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>monthly planning validator is connected</Name>
+    <Expected>scripts/validate_monthly_planning.py and tests/test_validate_monthly_planning.py validate the monthly planning artifacts, and make verify/check include validate-monthly-planning.</Expected>
+  </Scenario>
 </VerificationPlan>

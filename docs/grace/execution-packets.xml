@@ -832,6 +832,65 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING" status="ready_for_acceptance">
+    <Name>Customer-facing MVP roadmap and monthly planning</Name>
+    <Goal>Создать безопасную customer-facing рамку и структуру месячного планирования для прикладного прототипа ТАРТИП.</Goal>
+    <Scope>
+      <Item>Создать customer-facing roadmap на 2026 год для прикладного прототипа ТАРТИП</Item>
+      <Item>Создать политику месячного планирования</Item>
+      <Item>Создать machine-readable monthly plan для 2026-06</Item>
+      <Item>Создать валидатор monthly planning и тесты</Item>
+      <Item>Зафиксировать planning override перед EP-016 только во внутренних governance-файлах</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-022A</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/monthly/README.md</Artifact>
+      <Artifact>docs/roadmap/2026-customer-facing-mvp-roadmap.md</Artifact>
+      <Artifact>docs/monthly/2026-06/monthly-plan.yml</Artifact>
+      <Artifact>scripts/validate_monthly_planning.py</Artifact>
+      <Artifact>tests/test_validate_monthly_planning.py</Artifact>
+      <Artifact>docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-022A-001">Strict baseline после EP-019 совпал перед стартом EP-022A.</Criterion>
+      <Criterion id="AC-EP-022A-002">Создана политика месячного планирования.</Criterion>
+      <Criterion id="AC-EP-022A-003">Создана customer-facing дорожная карта 2026.</Criterion>
+      <Criterion id="AC-EP-022A-004">Создан monthly-plan.yml для 2026-06.</Criterion>
+      <Criterion id="AC-EP-022A-005">Создан monthly planning validator.</Criterion>
+      <Criterion id="AC-EP-022A-006">Созданы tests monthly planning validator.</Criterion>
+      <Criterion id="AC-EP-022A-007">Planning override перед EP-016 зафиксирован только во внутренних governance-файлах.</Criterion>
+      <Criterion id="AC-EP-022A-008">Planning override не размещен в customer-facing roadmap.</Criterion>
+      <Criterion id="AC-EP-022A-009">Месячные блоки названы как прикладные контуры для Заказчика.</Criterion>
+      <Criterion id="AC-EP-022A-010">В customer-facing roadmap нет forbidden customer-facing terms.</Criterion>
+      <Criterion id="AC-EP-022A-011">БФТ/ТЗ/протоколы определены как итоговые документы, а prompt templates — как supporting artifacts.</Criterion>
+      <Criterion id="AC-EP-022A-012">make verify и make check проходят.</Criterion>
+      <Criterion id="AC-EP-022A-013">README.md, CHANGELOG.md и AGENTS.md не изменены.</Criterion>
+      <Criterion id="AC-EP-022A-014">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-022A-015">BIM-КСИ-ГЭСН методика не изменена.</Criterion>
+      <Criterion id="AC-EP-022A-016">Реальные данные работодателя или Заказчика не добавлены.</Criterion>
+      <Criterion id="AC-EP-022A-017">User-owned fields не заполнены Codex.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not implement product functionality</Item>
+      <Item>Do not create legal/data policy notes</Item>
+      <Item>Do not create data contribution layer</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not add real employer or customer data</Item>
+      <Item>Do not change README.md, CHANGELOG.md, or AGENTS.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION" status="accepted">
     <Name>Post-acceptance sync automation</Name>
     <Goal>Создать безопасную автоматизацию синхронизации проектного состояния после пользовательской приемки execution packet.</Goal>

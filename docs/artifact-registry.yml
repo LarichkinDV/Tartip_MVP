@@ -5481,3 +5481,330 @@ artifacts:
         []
       regeneration_command: null
       protected_since: null
+  -
+    artifact_id: ART-MONTHLY-PLANNING-README
+    name: "Monthly planning policy"
+    type: governance_policy
+    path: docs/monthly/README.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Policy for monthly planning blocks, BFT/TZ/test protocol deliverables, and customer-facing monthly documents."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-001
+        - V-MONTHLY-PLANNING-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-PROJECT-STATE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Monthly planning policy prepared for EP-022A; CHANGELOG.md is not changed by this packet."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly planning source artifact remains editable within EP-022A until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-CUSTOMER-FACING-MVP-ROADMAP-2026
+    name: "2026 customer-facing MVP roadmap"
+    type: roadmap
+    path: docs/roadmap/2026-customer-facing-mvp-roadmap.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Customer-facing roadmap for 2026 monthly applied prototype contours and deliverables."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-001
+        - V-MONTHLY-PLANNING-004
+        - V-MONTHLY-PLANNING-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLANNING-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Roadmap is customer-facing and does not contain the internal EP-016 planning override."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New customer-facing roadmap remains editable within EP-022A until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-06-PLAN
+    name: "Monthly plan 2026-06"
+    type: monthly_plan
+    path: docs/monthly/2026-06/monthly-plan.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Machine-readable June 2026 monthly plan with three 15-hour tasks and three planned deliverables."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-001
+        - V-MONTHLY-PLANNING-002
+        - V-MONTHLY-PLANNING-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLANNING-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "June 2026 monthly plan for customer-facing MVP planning."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly planning source artifact remains editable within EP-022A until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-MONTHLY-PLANNING
+    name: "Monthly planning validator"
+    type: script
+    path: scripts/validate_monthly_planning.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Validator for monthly planning policy, customer-facing roadmap, and June 2026 monthly plan."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-001
+        - V-MONTHLY-PLANNING-002
+        - V-MONTHLY-PLANNING-003
+        - V-MONTHLY-PLANNING-004
+        - V-MONTHLY-PLANNING-005
+        - V-MONTHLY-PLANNING-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLANNING-README
+      - ART-CUSTOMER-FACING-MVP-ROADMAP-2026
+      - ART-MONTHLY-2026-06-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Validator is connected to make validate-monthly-planning, make verify, and make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Validation script remains modifiable by future execution packets."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-VALIDATE-MONTHLY-PLANNING
+    name: "Monthly planning validator tests"
+    type: test
+    path: tests/test_validate_monthly_planning.py
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Regression tests for monthly planning validation rules."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-MONTHLY-PLANNING
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests cover valid monthly plan, invalid task count/hours, missing BFT deliverable, prompt deliverable paths, forbidden roadmap terms, and planning override leakage."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test file remains modifiable by future execution packets."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    name: "EP-022A acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    related_requirements:
+      - REQ-022A
+    status: active
+    description: "Acceptance report for EP-022A customer-facing MVP roadmap and monthly planning."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-PLANNING-001
+        - V-MONTHLY-PLANNING-002
+        - V-MONTHLY-PLANNING-003
+        - V-MONTHLY-PLANNING-004
+        - V-MONTHLY-PLANNING-005
+        - V-MONTHLY-PLANNING-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-PLANNING-README
+      - ART-CUSTOMER-FACING-MVP-ROADMAP-2026
+      - ART-MONTHLY-2026-06-PLAN
+      - ART-VALIDATE-MONTHLY-PLANNING
+      - ART-TEST-VALIDATE-MONTHLY-PLANNING
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Codex status ready_for_acceptance; user decision remains pending."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Acceptance report is pending user acceptance and remains editable only within EP-022A until acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null

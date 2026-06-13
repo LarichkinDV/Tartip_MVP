@@ -1,6 +1,6 @@
 # Вопросы и действия для пользователя
 
-Дата обновления: 2026-06-12
+Дата обновления: 2026-06-13
 
 ## 1. Сводка
 
@@ -80,9 +80,9 @@
 |---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-GIT-001 | medium | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
-| AUD-GIT-002 | medium | 3 | 0 | 3 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
+| AUD-GIT-002 | medium | 4 | 0 | 4 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-GIT-005 | medium | 1 | 0 | 1 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
-| AUD-GIT-006 | medium | 10 | 0 | 10 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
+| AUD-GIT-006 | medium | 11 | 0 | 11 | False | Historical findings are preserved but hidden from active action windows while current_detected=false. |
 | AUD-LANG-001 | medium | 251 | 80 | 171 | False | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. |
 
 ## 12. Закрытые вопросы

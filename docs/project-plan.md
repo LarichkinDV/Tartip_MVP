@@ -12,21 +12,25 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `none`.
+Current execution packet: `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING`.
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
 last_accepted_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
 last_completed_execution_packet: EP-019-CODEX-CONTEXT-COMPACTION
-next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+next_recommended_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+deferred_follow_up_packets:
+  -
+    packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+    reason: "Temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared."
 ```
 
 ## 4. Current Stage
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` выполняется поверх принятого EP-021 и создает компактный рабочий контекст без изменения `AGENTS.md`, README.md, CHANGELOG.md или предметной методики.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован как compact context baseline. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` подготовлен к приемке как customer-facing/monthly planning packet без изменения `AGENTS.md`, README.md, CHANGELOG.md или предметной методики.
 
 ## 5. Post-Acceptance Baseline
 
@@ -61,6 +65,8 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 
 `EP-014-USER-REVIEW-DECISION-CLI-SAFETY` uses the next execution packet number because it is the current safety correction required before further user decision automation. The previously recommended `EP-014-ACCEPTED-ARTIFACT-PROTECTION` is moved to `EP-018-ACCEPTED-ARTIFACT-PROTECTION`, preserving the already planned follow-up order for `EP-015`, `EP-016`, and `EP-017`.
 
+User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is temporarily deferred while customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared. This override is recorded only in internal governance files and is not part of the customer-facing roadmap.
+
 ## 6. Stage Table
 
 | Stage | Scope | Status | Main Artifacts |
@@ -83,6 +89,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | Audit Findings Cleanup | Active/historical audit finding filtering, grouped stale findings, compact workbench/action windows | accepted | [audit findings](audit/audit-findings.yml), [user review workbench](user-review-workbench.md), [EP-017 acceptance](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md) |
 | Post-Acceptance Sync Automation | Safe CLI automation for synchronizing already accepted packets without changing user-owned fields | accepted | [sync script](../scripts/sync_accepted_packet.py), [sync tests](../tests/test_sync_accepted_packet.py), [EP-021 acceptance](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) |
 | Codex Context Compaction | Compact startup context, source/generated/selective file classes, preserved acceptance and protection discipline | accepted | [Codex working context](codex-working-context.md), [EP-019 acceptance](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) |
+| Customer-Facing MVP Roadmap And Monthly Planning | Customer-facing 2026 roadmap, monthly planning policy, June 2026 monthly plan, and validator | ready_for_acceptance | [roadmap](roadmap/2026-customer-facing-mvp-roadmap.md), [monthly planning README](monthly/README.md), [EP-022A acceptance](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) |
 
 ## 7. Execution Packets
 
@@ -106,6 +113,7 @@ EP-012 was the previous active packet before the acceptance queue was closed. EP
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; EP-010 used the approved change request for README.md and CHANGELOG.md. |
 | EP-019-CODEX-CONTEXT-COMPACTION | Codex context compaction | accepted | [EP-019 report](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) | Completed; next recommended packet is EP-016 reference intake preparation. |
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | accepted | [EP-021 report](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) | Completed; next recommended packet is EP-019 context compaction. |
+| EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | ready_for_acceptance | [EP-022A report](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) | User reviews customer-facing roadmap and monthly planning artifacts. |
 
 ## 8. Status Values
 
@@ -152,10 +160,12 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 - [EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md)
 - [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
+- [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: next recommended packet after EP-019 acceptance.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared.
+- `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`: next recommended packet after EP-022A.
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards remain derived artifacts.
@@ -168,6 +178,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - High-priority reference and normative user actions remain open until official or project-authorized local sources are provided.
 - Audit history remains open; EP-017 filters stale findings from active windows without closing findings as fixed.
 - EP-019 creates a recommended compact working context, but `AGENTS.md` mandatory reading policy is unchanged until a separate approved protected artifact change request allows editing `AGENTS.md`.
+- EP-022A does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the explicit monthly planning scope.
 
 ## 13. Blockers
 
@@ -178,4 +189,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 
 ## 15. Next Step
 
-EP-019 принят пользователем и синхронизирован в post-acceptance baseline. Следующий рекомендуемый пакет: `EP-016-REFERENCE-INTAKE-PREPARATION`.
+EP-022A подготовлен в статусе `ready_for_acceptance`. Пользователь проверяет customer-facing roadmap, monthly planning policy, monthly-plan.yml и результаты проверок. Следующий рекомендуемый пакет после приемки EP-022A: `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`.

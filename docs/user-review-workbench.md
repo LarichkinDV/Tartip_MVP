@@ -1,20 +1,20 @@
 # Единое активное окно проверки пользователем
 
-Дата обновления: 2026-06-12
+Дата обновления: 2026-06-13
 
 ## 1. Сводка
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 32 |
-| Пакеты готовы к приемке | 0 |
+| Активные элементы проверки | 33 |
+| Пакеты готовы к приемке | 1 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
 | Critical audit findings | 0 |
 | High audit findings | 0 |
 | Активные блокеры | 4 |
-| Historical audit findings | 358 |
+| Historical audit findings | 360 |
 | Audit finding groups | 6 |
 | Принятые пакеты скрыты из активной очереди | 18 |
 
@@ -45,6 +45,7 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
+| medium | acceptance | ACCEPTANCE-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | manual_verification | VERIFICATION-VT-EP-005-003 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Проверить, что accepted artifacts отображаются как protected | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-001 | - | Проверить наличие monthly-plan.yml | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-002 | - | Проверить, что месячный блок содержит ровно 3 задачи | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
@@ -59,7 +60,7 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| - | - | - | - | - | - |
+| EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | - | - | - | docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md |
 
 ## 4. Ручные проверки
 
@@ -121,9 +122,9 @@
 |---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-001 | medium | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-002 | medium | 3 | 0 | 3 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-002 | medium | 4 | 0 | 4 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-005 | medium | 1 | 0 | 1 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-006 | medium | 10 | 0 | 10 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-006 | medium | 11 | 0 | 11 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-LANG-001 | medium | 251 | 80 | 171 | False | Проверить вручную и при необходимости перевести в отдельном follow-up пакете без изменения технических идентификаторов. |
 
 ## 8. Как принять EP через единое окно

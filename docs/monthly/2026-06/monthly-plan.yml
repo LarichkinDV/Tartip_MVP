@@ -1,0 +1,51 @@
+month: 2026-06
+block_title: "Инфраструктурный контур разработки и приемки"
+customer_facing_title: "Документы для рассмотрения решения о разработке прикладного прототипа"
+status: ready_for_documentation
+planned_total_hours: 45
+tasks:
+  -
+    task_id: M2026-06-T1
+    title: "Инфраструктура репозитория и контур разработки"
+    planned_hours: 15
+    related_packets:
+      - EP-001-INFRA
+      - EP-011-GIT-WORKFLOW-DISCIPLINE
+      - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
+    expected_document_section: "БФТ"
+  -
+    task_id: M2026-06-T2
+    title: "Контур управления артефактами, приемкой и проверками"
+    planned_hours: 15
+    related_packets:
+      - EP-004-PROJECT-PLANNING-AND-ACCEPTANCE
+      - EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS
+      - EP-012-USER-REVIEW-WORKBENCH-AND-ACCEPTANCE-STANDARD
+      - EP-013-POST-ACCEPTANCE-STATE-SYNC
+      - EP-014-USER-REVIEW-DECISION-CLI-SAFETY
+      - EP-018-ACCEPTED-ARTIFACT-PROTECTION
+    expected_document_section: "ТЗ"
+  -
+    task_id: M2026-06-T3
+    title: "Контур верификации, аудита и компактного рабочего контекста"
+    planned_hours: 15
+    related_packets:
+      - EP-007-VERIFICATION-DASHBOARD
+      - EP-009-CODEX-SPEC-AUDIT
+      - EP-015-VERIFICATION-DASHBOARD-RECONCILIATION
+      - EP-017-AUDIT-FINDINGS-CLEANUP
+      - EP-019-CODEX-CONTEXT-COMPACTION
+    expected_document_section: "Протокол испытаний"
+deliverables:
+  -
+    path: docs/monthly/2026-06/01-business-functional-requirements.md
+    title: "Бизнес-функциональные требования к инфраструктурному контуру прикладного прототипа ТАРТИП"
+    status: planned
+  -
+    path: docs/monthly/2026-06/02-technical-specification.md
+    title: "Техническое задание на разработку инфраструктурного контура прикладного прототипа ТАРТИП"
+    status: planned
+  -
+    path: docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md
+    title: "Протокол испытаний инфраструктурного контура прикладного прототипа ТАРТИП"
+    status: planned
