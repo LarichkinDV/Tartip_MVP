@@ -3,23 +3,33 @@
     <Name>Reference Governance</Name>
     <Responsibilities>
       <Item>Maintain source manifests and import logs for reference data.</Item>
+      <Item>Maintain reference-intake policy, authority catalog, intake manifest schema, and intake log.</Item>
       <Item>Reject LLM-generated content as evidence.</Item>
       <Item>Reject user decisions as evidence for normative FSNB fields or official KSI codes.</Item>
       <Item>Create structured questions when required evidence is missing.</Item>
+      <Item>Require checksum, source authority, review status, and user review before a source can become accepted.</Item>
     </Responsibilities>
     <Inputs>
       <Item>data/reference/inbox/** local user-provided files</Item>
       <Item>data/reference/manifests/source-manifest.yml</Item>
+      <Item>data/reference/manifests/intake-log.yml</Item>
+      <Item>data/reference/manifests/intake-manifest.schema.yml</Item>
+      <Item>data/reference/manifests/source-authority-catalog.yml</Item>
       <Item>rules/matching/*.yaml</Item>
     </Inputs>
     <Outputs>
       <Item>data/questions/*.yml</Item>
       <Item>data/reference/reports/**</Item>
+      <Item>docs/reference-intake/**</Item>
+      <Item>scripts/validate_reference_intake.py</Item>
     </Outputs>
     <Invariants>
       <Item>No source — no rule.</Item>
       <Item>source_origin=llm_generated implies source_authority=forbidden.</Item>
       <Item>Files in inbox are not trusted until accepted into raw with checksum.</Item>
+      <Item>Reference intake does not create normative rules or confirm KSI/GESN/FSNB correctness.</Item>
+      <Item>accepted_by and accepted_at are user-owned fields and must not be filled by Codex.</Item>
+      <Item>project_dictionary and user_decision cannot confirm official normative data.</Item>
     </Invariants>
   </Module>
 

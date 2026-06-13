@@ -1,0 +1,14 @@
+schema_version: 1
+updated_at: 2026-06-13
+official_public_source:
+  can_confirm_official_normative_data: true
+official_user_provided_file:
+  can_confirm_official_normative_data: true
+project_dictionary:
+  can_confirm_official_normative_data: false
+user_decision:
+  can_confirm_official_normative_data: false
+llm_generated:
+  can_confirm_official_normative_data: false
+forbidden:
+  can_confirm_official_normative_data: false

@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 0 |
+| ready_for_acceptance | 1 |
 | accepted | 21 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 0 |
+| pending | 1 |
 | protected_accepted_artifacts | 37 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - | - | - | - | - | - | - |
+| - [ ] требует проверки | EP-016-REFERENCE-INTAKE-PREPARATION | Reference intake preparation | Acceptance criteria and artifacts | docs/reference-intake/README.md, docs/reference-intake/source-intake-policy.md, docs/reference-intake/source-authority-model.md, docs/reference-intake/intake-workflow.md, ... | - | [docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md](docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md) |
 
 ## 3. Принятые задачи
 

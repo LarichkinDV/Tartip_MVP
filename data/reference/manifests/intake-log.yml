@@ -1,0 +1,12 @@
+schema_version: 1
+updated_at: 2026-06-13
+sources: []
+data_requirements:
+  -
+    requirement_id: DR-REF-001
+    title: "Предоставить официальный источник КСИ для проверки структуры кодов и статусов"
+    status: pending_user_input
+  -
+    requirement_id: DR-REF-002
+    title: "Предоставить официальный источник ФСНБ/ГЭСН для проверки версии, состава и статуса нормативных данных"
+    status: pending_user_input

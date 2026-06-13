@@ -345,6 +345,852 @@ artifacts:
       regeneration_command: null
       protected_since: null
   -
+    artifact_id: ART-REFERENCE-INTAKE-README
+    name: "Reference intake README"
+    type: documentation
+    path: docs/reference-intake/README.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Overview of the local source intake and review contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "New source policy artifact for EP-016; does not confirm KSI/GESN/FSNB records."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-SOURCE-POLICY
+    name: "Reference intake source policy"
+    type: documentation
+    path: docs/reference-intake/source-intake-policy.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Policy for source intake, checksum, review, and No source -- no rule boundaries."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+        - V-REF-INTAKE-004
+        - V-REF-INTAKE-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Documents source intake boundaries without creating active matching rules."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-AUTHORITY-MODEL
+    name: "Reference intake source authority model"
+    type: documentation
+    path: docs/reference-intake/source-authority-model.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Source origin, source authority, trust status, and review gate model."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+        - V-REF-INTAKE-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-SOURCE-POLICY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Separates official evidence, project dictionaries, user decisions, and forbidden LLM-generated evidence."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-WORKFLOW
+    name: "Reference intake workflow"
+    type: documentation
+    path: docs/reference-intake/intake-workflow.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Workflow from source file to inbox, manifest, checksum, review, and accepted source."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+        - V-REF-INTAKE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-SOURCE-POLICY
+      - ART-REFERENCE-INTAKE-AUTHORITY-MODEL
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Defines source intake workflow without parser/import implementation."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-MANIFEST-SCHEMA
+    name: "Reference intake manifest schema"
+    type: schema
+    path: data/reference/manifests/intake-manifest.schema.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Schema for source intake metadata fields and allowed enum values."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-SOURCE-POLICY
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Schema-only artifact; no real normative records are included."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake schema remains editable within EP-016 until user acceptance."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-LOG
+    name: "Reference intake log"
+    type: manifest
+    path: data/reference/manifests/intake-log.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Initial reference intake log with empty sources and pending data requirements."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-003
+        - V-REF-INTAKE-004
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-MANIFEST-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Initial sources list is empty; only pending user input requirements are registered."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake manifest remains editable within EP-016 until user acceptance."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-REFERENCE-INTAKE-AUTHORITY-CATALOG
+    name: "Reference intake source authority catalog"
+    type: manifest
+    path: data/reference/manifests/source-authority-catalog.yml
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Allowed source origins and whether they can confirm official normative data."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-AUTHORITY-MODEL
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Only official_public_source and official_user_provided_file can confirm official normative data after review."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New reference intake manifest remains editable within EP-016 until user acceptance."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-REFERENCE-INBOX-GITKEEP
+    name: "Reference inbox placeholder"
+    type: placeholder
+    path: data/reference/inbox/.gitkeep
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Placeholder for the local source inbox directory."
+    created_at: 2026-06-04
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Placeholder only; real source files are not added by EP-016."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Placeholder remains editable within reference governance packets."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-DATA-REFERENCE-RAW-GITKEEP
+    name: "Reference raw placeholder"
+    type: placeholder
+    path: data/reference/raw/.gitkeep
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Placeholder for the local raw source directory."
+    created_at: 2026-06-04
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Placeholder only; real source files are not added by EP-016."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Placeholder remains editable within reference governance packets."
+      source_category: reference_data
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-REFERENCE-INTAKE
+    name: "Reference intake validator"
+    type: script
+    path: scripts/validate_reference_intake.py
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Validator for reference-intake documents, manifests, authority model, checksum and user-owned field guardrails."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+        - V-REF-INTAKE-002
+        - V-REF-INTAKE-003
+        - V-REF-INTAKE-004
+        - V-REF-INTAKE-005
+        - V-REF-INTAKE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-MANIFEST-SCHEMA
+      - ART-REFERENCE-INTAKE-LOG
+      - ART-REFERENCE-INTAKE-AUTHORITY-CATALOG
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Connected to make validate-reference-intake, make verify, and make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Validation script remains modifiable by future execution packets."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-VALIDATE-REFERENCE-INTAKE
+    name: "Reference intake validator tests"
+    type: test
+    path: tests/test_validate_reference_intake.py
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Regression tests for reference-intake validator guardrails."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-004
+        - V-REF-INTAKE-005
+        - V-REF-INTAKE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-REFERENCE-INTAKE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests cover empty log, duplicate source_id, checksum/user field guardrails, forbidden sources, non-.gitkeep files, and customer-specific patterns."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test file remains modifiable by future execution packets."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-07-PLAN
+    name: "Monthly plan 2026-07"
+    type: monthly_plan
+    path: docs/monthly/2026-07/monthly-plan.yml
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Machine-readable July 2026 monthly plan for reference-intake contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "July block covers source accounting and review only."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-07-BFT
+    name: "July 2026 reference-intake BFT"
+    type: monthly_document
+    path: docs/monthly/2026-07/01-business-functional-requirements.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Business-functional requirements for the reference-intake contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-07-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer-facing monthly source document for reference-intake contour."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-07-TZ
+    name: "July 2026 reference-intake TZ"
+    type: monthly_document
+    path: docs/monthly/2026-07/02-technical-specification.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Technical specification for the reference-intake contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-07-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Monthly source document; it does not approve a normative database composition."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-07-TEST-PROTOCOL
+    name: "July 2026 reference-intake test protocol"
+    type: monthly_document
+    path: docs/monthly/2026-07/03-test-protocol-reference-intake.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Test protocol for the reference-intake contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-07-PLAN
+      - ART-VALIDATE-REFERENCE-INTAKE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Manual verification fields remain user-owned."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-016 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-016-REFERENCE-INTAKE-PREPARATION
+    name: "EP-016 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+    owner_module: M-REFERENCE-GOVERNANCE
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    related_requirements:
+      - REQ-024
+    status: active
+    description: "Acceptance report for EP-016 reference intake preparation."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-REF-INTAKE-001
+        - V-REF-INTAKE-002
+        - V-REF-INTAKE-003
+        - V-REF-INTAKE-004
+        - V-REF-INTAKE-005
+        - V-REF-INTAKE-006
+        - V-REF-INTAKE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-REFERENCE-INTAKE-README
+      - ART-REFERENCE-INTAKE-SOURCE-POLICY
+      - ART-REFERENCE-INTAKE-AUTHORITY-MODEL
+      - ART-REFERENCE-INTAKE-WORKFLOW
+      - ART-REFERENCE-INTAKE-MANIFEST-SCHEMA
+      - ART-REFERENCE-INTAKE-LOG
+      - ART-REFERENCE-INTAKE-AUTHORITY-CATALOG
+      - ART-VALIDATE-REFERENCE-INTAKE
+      - ART-TEST-VALIDATE-REFERENCE-INTAKE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-016 remains ready_for_acceptance; user-owned acceptance fields remain pending/empty."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Acceptance report remains pending until user acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
     artifact_id: ART-LEGAL-README
     name: "Legal/data boundary README"
     type: policy_index

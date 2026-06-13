@@ -8,12 +8,12 @@
 |---|---:|---:|---:|
 | critical | 171 | 0 | 171 |
 | high | 0 | 0 | 0 |
-| medium | 257 | 3 | 254 |
+| medium | 259 | 3 | 256 |
 | low | 16 | 0 | 16 |
 
-Всего findings: 444
+Всего findings: 446
 Current findings: 3
-Historical/stale findings: 441
+Historical/stale findings: 443
 Активных critical findings: 0
 
 ## 2. Проверка доменной логики
@@ -58,9 +58,9 @@ Historical/stale findings: 441
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | medium | AUD-GIT-002 | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | Merge запрещен для EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-016-REFERENCE-INTAKE-PREPARATION | medium | AUD-GIT-002 | docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md | Merge запрещен для EP-016-REFERENCE-INTAKE-PREPARATION: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
-| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-016-REFERENCE-INTAKE-PREPARATION | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-016-REFERENCE-INTAKE-PREPARATION нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 
 ## 10. Critical findings
 
@@ -72,8 +72,8 @@ Historical/stale findings: 441
 |---|---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | acceptance | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-001 | medium | git_workflow | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-002 | medium | git_workflow | 6 | 1 | 5 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
-| AUD-GIT-006 | medium | git_workflow | 13 | 1 | 12 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
+| AUD-GIT-002 | medium | git_workflow | 7 | 1 | 6 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
+| AUD-GIT-006 | medium | git_workflow | 14 | 1 | 13 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
 | AUD-LANG-001 | medium | language_policy | 251 | 0 | 251 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 
 ## 12. Findings, требующие решения пользователя

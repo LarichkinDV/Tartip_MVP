@@ -6,20 +6,17 @@
 
 ## 2. Текущий Execution Packet
 
-`none`
+`EP-016-REFERENCE-INTAKE-PREPARATION`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 last_accepted_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 last_completed_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
-deferred_follow_up_packets:
-  -
-    packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
-    reason: "Temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared."
+next_recommended_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+deferred_follow_up_packets: []
 ```
 
 ## 4. Состояние Acceptance Cycle
@@ -79,14 +76,15 @@ post_acceptance_baseline:
 - EP-022A принят пользователем Дмитрием 2026-06-13 и синхронизирован как post-acceptance состояние.
 - EP-022B принят пользователем Дмитрием 2026-06-13 и синхронизирован как post-acceptance состояние.
 - EP-023 подготовил БФТ, ТЗ, протокол испытаний и presentation outline для инфраструктурного контура первого месяца.
+- EP-016 подготовил documentation-first/schema-first контур учета и проверки нормативно-справочных источников без импорта реальных нормативных данных.
 
 ## 6. В работе
 
-Активных in-progress работ нет. `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS` подготовлен к пользовательской приемке.
+Активный пакет: `EP-016-REFERENCE-INTAKE-PREPARATION`.
 
 ## 7. Готово к приемке
 
-- [EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md)
+- [EP-016-REFERENCE-INTAKE-PREPARATION](acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md)
 
 ## 8. Принятый Baseline
 
@@ -110,13 +108,15 @@ post_acceptance_baseline:
 - [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
 - [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
 - [EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md)
+- [EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md)
 
 ## 9. Follow-Up Debt
 
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
-- `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: ready_for_acceptance; first month BFT, TZ, test protocol, and presentation outline are prepared.
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: next recommended packet after EP-023 acceptance; temporarily deferred record is preserved until EP-016 or a separate governance cleanup.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: ready_for_acceptance; reference intake documents, manifests, validator/tests and July monthly documents are prepared.
+- `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`: next recommended packet after EP-016 acceptance.
+- `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: accepted; first month documents are baseline.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -133,6 +133,7 @@ post_acceptance_baseline:
 - EP-022A does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the explicit monthly planning scope.
 - EP-022B policy notes are internal preliminary documents and require legal review before external contractual use.
 - EP-023 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the monthly customer documents scope.
+- EP-016 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the reference intake scope.
 
 ## 12. EP-006 Orphan Scope
 
@@ -144,10 +145,12 @@ post_acceptance_baseline:
 
 User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is temporarily deferred while customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared. This override is recorded only in internal governance files and is not part of the customer-facing roadmap.
 
+Planning override перед EP-016 завершен после принятого EP-023. `EP-016-REFERENCE-INTAKE-PREPARATION` является текущим packet, а `deferred_follow_up_packets` остается пустым.
+
 ## 14. Preflight Note
 
 `git pull --ff-only` did not complete because GitHub was unreachable over the network. This is not treated as an EP-013 blocker because local `main` and local `origin/main` both pointed to `c3a747707335e85fd4786688af3852a799da5bde`, the working tree was clean, and `/Users/larichkindv/Tartip` and `/Users/larichkindv/Documents/Tartip` resolve to the same repository path.
 
 ## 15. Следующий шаг
 
-EP-023 подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-023: `EP-016-REFERENCE-INTAKE-PREPARATION`.
+EP-016 подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-016: `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`.

@@ -658,6 +658,79 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-016-REFERENCE-INTAKE-PREPARATION" status="ready_for_acceptance">
+    <Name>Reference intake preparation</Name>
+    <Goal>Подготовить безопасный documentation-first/schema-first контур учета и проверки нормативно-справочных источников без импорта реальных нормативных данных и без создания active matching rules.</Goal>
+    <Scope>
+      <Item>Создать docs/reference-intake/ policy documents</Item>
+      <Item>Создать intake manifest schema, intake log и source authority catalog</Item>
+      <Item>Создать validator reference intake и regression tests</Item>
+      <Item>Создать июльские БФТ, ТЗ и протокол испытаний для контура учета источников</Item>
+      <Item>Подключить validate-reference-intake к make verify и make check</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-016</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/reference-intake/README.md</Artifact>
+      <Artifact>docs/reference-intake/source-intake-policy.md</Artifact>
+      <Artifact>docs/reference-intake/source-authority-model.md</Artifact>
+      <Artifact>docs/reference-intake/intake-workflow.md</Artifact>
+      <Artifact>data/reference/inbox/.gitkeep</Artifact>
+      <Artifact>data/reference/raw/.gitkeep</Artifact>
+      <Artifact>data/reference/manifests/intake-manifest.schema.yml</Artifact>
+      <Artifact>data/reference/manifests/intake-log.yml</Artifact>
+      <Artifact>data/reference/manifests/source-authority-catalog.yml</Artifact>
+      <Artifact>scripts/validate_reference_intake.py</Artifact>
+      <Artifact>tests/test_validate_reference_intake.py</Artifact>
+      <Artifact>docs/monthly/2026-07/monthly-plan.yml</Artifact>
+      <Artifact>docs/monthly/2026-07/01-business-functional-requirements.md</Artifact>
+      <Artifact>docs/monthly/2026-07/02-technical-specification.md</Artifact>
+      <Artifact>docs/monthly/2026-07/03-test-protocol-reference-intake.md</Artifact>
+      <Artifact>docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-016-001">Strict baseline после принятого EP-023 совпал перед стартом EP-016.</Criterion>
+      <Criterion id="AC-EP-016-002">Созданы reference-intake docs.</Criterion>
+      <Criterion id="AC-EP-016-003">Создана schema intake manifest.</Criterion>
+      <Criterion id="AC-EP-016-004">Созданы initial manifests без реальных нормативных данных.</Criterion>
+      <Criterion id="AC-EP-016-005">Создан source authority catalog.</Criterion>
+      <Criterion id="AC-EP-016-006">Создан validator reference intake.</Criterion>
+      <Criterion id="AC-EP-016-007">Созданы tests reference intake validator.</Criterion>
+      <Criterion id="AC-EP-016-008">Созданы июльские БФТ, ТЗ и протокол испытаний.</Criterion>
+      <Criterion id="AC-EP-016-009">Реальные КСИ/ФСНБ/ГЭСН данные не импортированы.</Criterion>
+      <Criterion id="AC-EP-016-010">Active matching rules не созданы.</Criterion>
+      <Criterion id="AC-EP-016-011">Прямая связь ModelElement -> GESNNorm не создана.</Criterion>
+      <Criterion id="AC-EP-016-012">Прямая связь KSIResultCode -> GESNNorm не создана.</Criterion>
+      <Criterion id="AC-EP-016-013">BIM-КСИ-ГЭСН методика не изменена.</Criterion>
+      <Criterion id="AC-EP-016-014">Реальные данные работодателя/Заказчика не добавлены.</Criterion>
+      <Criterion id="AC-EP-016-015">README.md, CHANGELOG.md и AGENTS.md не изменены.</Criterion>
+      <Criterion id="AC-EP-016-016">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-016-017">User-owned fields не заполнены Codex.</Criterion>
+      <Criterion id="AC-EP-016-018">last_completed_execution_packet на стадии ready_for_acceptance остался EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.</Criterion>
+      <Criterion id="AC-EP-016-019">make verify и make check проходят.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not import real KSI/FSNB/GESN data</Item>
+      <Item>Do not create official normative records</Item>
+      <Item>Do not create active matching rules</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not change README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md, or docs/02-domain-model.md</Item>
+      <Item>Do not change protected artifact change request registry</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not add real customer or employer data</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-017-AUDIT-FINDINGS-CLEANUP" status="accepted">
     <Name>Audit findings cleanup</Name>
     <Goal>Сократить шум в audit findings, user-action-dashboard и user-review-workbench без удаления истории и без закрытия findings от имени Codex.</Goal>

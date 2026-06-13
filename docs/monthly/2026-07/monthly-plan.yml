@@ -1,0 +1,40 @@
+month: 2026-07
+block_title: "Контур учета и проверки нормативно-справочных источников"
+customer_facing_title: "Документы для рассмотрения контура учета источников"
+status: ready_for_documentation
+planned_total_hours: 45
+tasks:
+  -
+    task_id: M2026-07-T1
+    title: "Политика учета и доверенности источников"
+    planned_hours: 15
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    expected_document_section: "БФТ"
+  -
+    task_id: M2026-07-T2
+    title: "Manifest schema и validator reference intake"
+    planned_hours: 15
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    expected_document_section: "ТЗ"
+  -
+    task_id: M2026-07-T3
+    title: "Проверка контура учета источников"
+    planned_hours: 15
+    related_packets:
+      - EP-016-REFERENCE-INTAKE-PREPARATION
+    expected_document_section: "Протокол испытаний"
+deliverables:
+  -
+    path: docs/monthly/2026-07/01-business-functional-requirements.md
+    title: "Бизнес-функциональные требования к контуру учета и проверки нормативно-справочных источников"
+    status: planned
+  -
+    path: docs/monthly/2026-07/02-technical-specification.md
+    title: "Техническое задание на контур учета и проверки нормативно-справочных источников"
+    status: planned
+  -
+    path: docs/monthly/2026-07/03-test-protocol-reference-intake.md
+    title: "Протокол испытаний контура reference intake"
+    status: planned

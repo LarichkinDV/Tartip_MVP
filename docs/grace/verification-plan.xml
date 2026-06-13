@@ -15,6 +15,34 @@
     <Name>file in inbox is not trusted until accepted into raw with checksum</Name>
     <Expected>Files in data/reference/inbox are not trusted evidence until accepted into raw with checksum_sha256 and manifest metadata.</Expected>
   </Scenario>
+  <Scenario id="V-REF-INTAKE-001" module="M-REFERENCE-GOVERNANCE">
+    <Name>reference-intake documents exist</Name>
+    <Expected>docs/reference-intake/ contains README, source intake policy, source authority model, and intake workflow documents.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-002" module="M-REFERENCE-GOVERNANCE">
+    <Name>intake manifest schema defines required fields and enums</Name>
+    <Expected>data/reference/manifests/intake-manifest.schema.yml defines source identity, authority, status, checksum, review, and user-owned acceptance fields.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-003" module="M-REFERENCE-GOVERNANCE">
+    <Name>initial intake manifests contain no normative records</Name>
+    <Expected>data/reference/manifests/intake-log.yml starts with sources=[] and pending data requirements instead of real KSI/FSNB/GESN records.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-004" module="M-REFERENCE-GOVERNANCE">
+    <Name>accepted source requires checksum and user-owned fields</Name>
+    <Expected>scripts/validate_reference_intake.py rejects accepted sources without checksum_sha256, accepted_by, or accepted_at and rejects accepted_by=Codex.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-005" module="M-REFERENCE-GOVERNANCE">
+    <Name>non-official origins cannot confirm official normative data</Name>
+    <Expected>scripts/validate_reference_intake.py rejects llm_generated official authority and rejects user_decision/project_dictionary confirmation of official KSI/GESN/FSNB data.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-006" module="M-REFERENCE-GOVERNANCE">
+    <Name>inbox and raw contain only placeholders before explicit source files</Name>
+    <Expected>scripts/validate_reference_intake.py rejects non-.gitkeep files in data/reference/inbox and data/reference/raw unless explicitly allowed for fixture tests.</Expected>
+  </Scenario>
+  <Scenario id="V-REF-INTAKE-007" module="M-REFERENCE-GOVERNANCE">
+    <Name>reference intake monthly documents preserve safety boundaries</Name>
+    <Expected>July 2026 BFT, TZ, and test protocol describe only source intake preparation and do not claim real source import, active matching, or customer data transfer.</Expected>
+  </Scenario>
   <Scenario id="V-REF-VERSION-001" module="M-REFERENCE-VERSIONING">
     <Name>importing identical records across releases does not create duplicate revisions</Name>
     <Expected>Records with identical canonical payload hashes reuse previous revisions.</Expected>

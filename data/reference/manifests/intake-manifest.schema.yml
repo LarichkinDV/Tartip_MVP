@@ -1,0 +1,70 @@
+schema_version: 1
+updated_at: 2026-06-13
+fields:
+  source_id:
+    required: true
+  source_name:
+    required: true
+  source_type:
+    required: true
+  source_origin:
+    required: true
+  source_authority:
+    required: true
+  source_status:
+    required: true
+  version_label:
+    required: false
+  effective_date:
+    required: false
+  received_at:
+    required: false
+  file_path:
+    required: false
+  checksum_sha256:
+    required: false
+  checksum_status:
+    required: true
+  review_status:
+    required: true
+  review_required:
+    required: true
+  accepted_by:
+    required: false
+  accepted_at:
+    required: false
+  notes:
+    required: false
+enums:
+  source_origin:
+    - official_public_source
+    - official_user_provided_file
+    - project_dictionary
+    - user_decision
+    - llm_generated
+    - forbidden
+  source_authority:
+    - official
+    - project_authorized
+    - user_asserted
+    - draft
+    - forbidden
+  source_status:
+    - inbox
+    - draft
+    - under_review
+    - accepted
+    - rejected
+    - forbidden
+    - requires_norm_review
+  checksum_status:
+    - missing
+    - calculated
+    - verified
+    - mismatch
+  review_status:
+    - not_reviewed
+    - pending_user_review
+    - accepted_by_user
+    - rejected_by_user
+    - requires_norm_review
