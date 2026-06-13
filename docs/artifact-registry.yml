@@ -1175,16 +1175,16 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "EP-016 remains ready_for_acceptance; user-owned acceptance fields remain pending/empty."
+    notes: "EP-016-REFERENCE-INTAKE-PREPARATION accepted by user; protected historical source artifact."
     protection:
-      protection_status: not_protected_pending
-      protection_reason: "Acceptance report remains pending until user acceptance."
+      protection_status: protected
+      protection_reason: "Accepted EP-016-REFERENCE-INTAKE-PREPARATION acceptance report is a historical user decision record."
       source_category: source_acceptance
-      accepted_in: null
-      user_decision_source: null
-      change_requires_user_approval: false
+      accepted_in: EP-016-REFERENCE-INTAKE-PREPARATION
+      user_decision_source: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
+      change_requires_user_approval: true
       allowed_update_modes:
-        - execution_packet_change
+        - approved_change_request_only
       generator: null
       derived_from:
         []

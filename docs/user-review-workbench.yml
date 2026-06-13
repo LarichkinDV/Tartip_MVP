@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: d2310369850c437bc5a590f34d6aa691d3374e7adbb4128fe503c5c2d6a6a5bd
+      checksum_sha256: e7c98184e3d2aac10cc964c66ca2503c788c059f5a171f9c7544d68199173cde
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: 3c2c929da110aa25a462c0ad886cf30ecee9158ecd336a4b9dbc5f1891c14f8a
+      checksum_sha256: d7617cd3ed9e07f3dd536c812d04e091925c5bf4c31a6aa1d716cf7228ef4971
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: fd5af9ff1d731270f0b24f863158760ff3ff3a008b3eba684abc5cbc46b36002
+      checksum_sha256: 09d731e094ba75ed60af3d1888e433bd16623730dade04170e0c4224bf894992
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: edd2b4ce5ab5e18486e7b652cc021e03cb5bb2fcb1bc7f6a17a2266c4b9a1790
+      checksum_sha256: bb31bbcd80eba4c58fb0bd6815effa52ed424209adfc6259608c4f0d917b4eae
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 4
     audit_finding_groups: 6
     historical_audit_findings: 366
-    accepted_hidden_from_active_queue: 21
+    accepted_hidden_from_active_queue: 22
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -138,6 +138,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-11
         acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
         hidden_from_active_queue: true
       -
         packet_id: EP-017-AUDIT-FINDINGS-CLEANUP
@@ -1456,181 +1462,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-016-REFERENCE-INTAKE-PREPARATION
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
-      title: "Reference intake preparation"
-      source_file: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
-      source_id: EP-016-REFERENCE-INTAKE-PREPARATION
-      source_checksum_sha256: 263a50d5a81056082fcf36a0cda9e73bf7a6e02285ce52ca81138aa298fe70d4
-      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
-      related_artifacts:
-        -
-          path: docs/reference-intake/README.md
-        -
-          path: docs/reference-intake/source-intake-policy.md
-        -
-          path: docs/reference-intake/source-authority-model.md
-        -
-          path: docs/reference-intake/intake-workflow.md
-        -
-          path: data/reference/manifests/intake-manifest.schema.yml
-        -
-          path: data/reference/manifests/intake-log.yml
-        -
-          path: data/reference/manifests/source-authority-catalog.yml
-        -
-          path: data/reference/inbox/.gitkeep
-        -
-          path: data/reference/raw/.gitkeep
-        -
-          path: scripts/validate_reference_intake.py
-        -
-          path: tests/test_validate_reference_intake.py
-        -
-          path: docs/monthly/2026-07/monthly-plan.yml
-        -
-          path: docs/monthly/2026-07/01-business-functional-requirements.md
-        -
-          path: docs/monthly/2026-07/02-technical-specification.md
-        -
-          path: docs/monthly/2026-07/03-test-protocol-reference-intake.md
-        -
-          path: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-016-001
-          text: "Strict baseline после принятого EP-023 совпал перед стартом EP-016."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-002
-          text: "Созданы reference-intake docs."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-003
-          text: "Создана schema intake manifest."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-004
-          text: "Созданы initial manifests без реальных нормативных данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-005
-          text: "Создан source authority catalog."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-006
-          text: "Создан validator reference intake."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-007
-          text: "Созданы tests reference intake validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-008
-          text: "Созданы июльские БФТ, ТЗ и протокол испытаний."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-009
-          text: "Реальные КСИ/ФСНБ/ГЭСН данные не импортированы."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-010
-          text: "Active matching rules не созданы."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-011
-          text: "Прямая связь ModelElement -> GESNNorm не создана."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-012
-          text: "Прямая связь KSIResultCode -> GESNNorm не создана."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-013
-          text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-014
-          text: "Реальные данные работодателя/Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-015
-          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-016
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-017
-          text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-018
-          text: "last_completed_execution_packet на стадии ready_for_acceptance остался EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-016-019
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -2171,6 +2002,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-11
       acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-13
+      acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
       hidden_from_active_queue: true
     -
       packet_id: EP-017-AUDIT-FINDINGS-CLEANUP

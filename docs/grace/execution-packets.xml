@@ -658,7 +658,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-016-REFERENCE-INTAKE-PREPARATION" status="ready_for_acceptance">
+  <Packet id="EP-016-REFERENCE-INTAKE-PREPARATION" status="accepted">
     <Name>Reference intake preparation</Name>
     <Goal>Подготовить безопасный documentation-first/schema-first контур учета и проверки нормативно-справочных источников без импорта реальных нормативных данных и без создания active matching rules.</Goal>
     <Scope>

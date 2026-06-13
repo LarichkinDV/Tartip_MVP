@@ -7,10 +7,10 @@ ready_for_acceptance
 ## 2. Пользовательское решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-13
+comments: Принято. Проверено: создан контур учета и проверки нормативно-справочных источников; созданы reference-intake documents, manifest schema, initial manifests, source authority catalog, validator и tests; созданы июльские БФТ, ТЗ и протокол испытаний; реальные КСИ/ФСНБ/ГЭСН данные не импортировались; active matching rules не создавались; BIM-КСИ-ГЭСН методика не изменена; реальные данные работодателя/Заказчика не добавлены; inbox/raw содержат только .gitkeep; user-owned поля Codex не заполнял; make verify и make check прошли.
 ```
 
 ## 3. Strict Baseline Result

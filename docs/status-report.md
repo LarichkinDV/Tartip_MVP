@@ -6,15 +6,15 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-016-REFERENCE-INTAKE-PREPARATION`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
-last_accepted_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-last_completed_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+last_completed_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 next_recommended_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 deferred_follow_up_packets: []
 ```
@@ -47,6 +47,7 @@ post_acceptance_baseline:
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
     - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
     - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    - EP-016-REFERENCE-INTAKE-PREPARATION
 ```
 
 ## 5. Выполнено

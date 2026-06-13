@@ -6,13 +6,13 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 21
+    ready_for_acceptance: 0
+    accepted: 22
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
-    protected_accepted_artifacts: 37
+    pending: 0
+    protected_accepted_artifacts: 38
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -86,6 +86,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-11
         acceptance_report: docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md
+      -
+        packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
       -
         packet_id: EP-017-AUDIT-FINDINGS-CLEANUP
         accepted_by: "Дмитрий"
@@ -2995,9 +3000,9 @@ acceptance_dashboard:
     -
       packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
       title: "Reference intake preparation"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md
       artifacts:
         -
@@ -3140,108 +3145,108 @@ acceptance_dashboard:
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_status: not_protected_pending
+          protection_status: protected
           source_category: source_acceptance
-          change_requires_user_approval: false
-          protection_locked: false
+          change_requires_user_approval: true
+          protection_locked: true
       verification_commands:
         []
       acceptance_criteria:
         -
           id: AC-EP-016-001
           text: "Strict baseline после принятого EP-023 совпал перед стартом EP-016."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-002
           text: "Созданы reference-intake docs."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-003
           text: "Создана schema intake manifest."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-004
           text: "Созданы initial manifests без реальных нормативных данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-005
           text: "Создан source authority catalog."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-006
           text: "Создан validator reference intake."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-007
           text: "Созданы tests reference intake validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-008
           text: "Созданы июльские БФТ, ТЗ и протокол испытаний."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-009
           text: "Реальные КСИ/ФСНБ/ГЭСН данные не импортированы."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-010
           text: "Active matching rules не созданы."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-011
           text: "Прямая связь ModelElement -> GESNNorm не создана."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-012
           text: "Прямая связь KSIResultCode -> GESNNorm не создана."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-013
           text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-014
           text: "Реальные данные работодателя/Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-015
           text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-016
           text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-017
           text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-018
           text: "last_completed_execution_packet на стадии ready_for_acceptance остался EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-016-019
           text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -3256,10 +3261,10 @@ acceptance_dashboard:
       risks:
         []
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-13
+        comments: "Принято. Проверено: создан контур учета и проверки нормативно-справочных источников; созданы reference-intake documents, manifest schema, initial manifests, source authority catalog, validator и tests; созданы июльские БФТ, ТЗ и протокол испытаний; реальные КСИ/ФСНБ/ГЭСН данные не импортировались; active matching rules не создавались; BIM-КСИ-ГЭСН методика не изменена; реальные данные работодателя/Заказчика не добавлены; inbox/raw содержат только .gitkeep; user-owned поля Codex не заполнял; make verify и make check прошли."
     -
       packet_id: EP-017-AUDIT-FINDINGS-CLEANUP
       title: "Audit findings cleanup"

@@ -12,13 +12,13 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `EP-016-REFERENCE-INTAKE-PREPARATION`.
+Current execution packet: `none`.
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
-last_accepted_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
-last_completed_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
+last_completed_execution_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 next_recommended_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 deferred_follow_up_packets: []
 ```
@@ -57,6 +57,7 @@ post_acceptance_baseline:
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
     - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
     - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    - EP-016-REFERENCE-INTAKE-PREPARATION
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -114,7 +115,7 @@ Planning override перед EP-016 завершен после принятог
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | Post-acceptance state sync | accepted | [EP-013 report](acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md) | Completed; EP-014 accepted after CLI safety review. |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | User review decision CLI safety | accepted | [EP-014 report](acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md) | Completed; next recommended packet is EP-018 accepted artifact protection. |
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | Verification dashboard reconciliation | accepted | [EP-015 report](acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md) | Completed; next recommended packet is EP-017 audit findings cleanup. |
-| EP-016-REFERENCE-INTAKE-PREPARATION | Reference intake preparation | ready_for_acceptance | [EP-016 report](acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md) | User reviews reference-intake docs, manifests, validator, tests and July monthly documents. |
+| EP-016-REFERENCE-INTAKE-PREPARATION | Reference intake preparation | accepted | [EP-016 report](acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md) | User reviews reference-intake docs, manifests, validator, tests and July monthly documents. |
 | EP-017-AUDIT-FINDINGS-CLEANUP | Audit findings cleanup | accepted | [EP-017 report](acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md) | Completed; next recommended packet is EP-021 post-acceptance sync automation. |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | Accepted artifact protection | accepted | [EP-018 report](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md) | Completed; EP-010 used the approved change request for README.md and CHANGELOG.md. |
 | EP-019-CODEX-CONTEXT-COMPACTION | Codex context compaction | accepted | [EP-019 report](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) | Completed; next recommended packet is EP-016 reference intake preparation. |

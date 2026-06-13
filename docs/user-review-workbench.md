@@ -6,8 +6,8 @@
 
 | Раздел | Количество |
 |---|---:|
-| Активные элементы проверки | 33 |
-| Пакеты готовы к приемке | 1 |
+| Активные элементы проверки | 32 |
+| Пакеты готовы к приемке | 0 |
 | Ручные проверки ожидают выполнения | 28 |
 | Вопросы требуют ответа | 4 |
 | Требуют user approval | 0 |
@@ -16,7 +16,7 @@
 | Активные блокеры | 4 |
 | Historical audit findings | 366 |
 | Audit finding groups | 6 |
-| Принятые пакеты скрыты из активной очереди | 21 |
+| Принятые пакеты скрыты из активной очереди | 22 |
 
 ## 2. Что требует моего решения сейчас
 
@@ -45,7 +45,6 @@
 | high | user_action | USER-ACTION-DR-REF-KSI-001 | - | Требуется локальный официальный или проектно разрешенный источник КСИ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/ksi/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-DR-REF-WORK-TYPES-001 | - | Требуется локальный официальный или проектно разрешенный источник видов работ | data/questions/data-requirements.yml | Поместить файл источника в `data/reference/inbox/work_types/` и указать authority, version, acquisition date и usage note. |
 | high | user_action | USER-ACTION-NR-RULE-PARTITION-BRICK-120-REINF-001 | - | Требуются официальные evidence references для правила сопоставления | data/questions/normative-review-questions.yml | Указать `source_id` и `normalized_record_id` для недостающих evidence fields: excluded_works, gesn_norm, included_works, ksi_process_code, ksi_result_code, norm_unit, resource_composition, technical_part_reference, work_type. |
-| medium | acceptance | ACCEPTANCE-EP-016-REFERENCE-INTAKE-PREPARATION | EP-016-REFERENCE-INTAKE-PREPARATION | Reference intake preparation | docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md | Проверить acceptance report, выполнить команды и заполнить решение пользователя. |
 | medium | manual_verification | VERIFICATION-VT-EP-005-003 | EP-005-ACCEPTANCE-AND-USER-ACTION-DASHBOARDS | Проверить, что accepted artifacts отображаются как protected | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-001 | - | Проверить наличие monthly-plan.yml | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
 | medium | manual_verification | VERIFICATION-VT-EP-006-002 | - | Проверить, что месячный блок содержит ровно 3 задачи | docs/verification-dashboard.yml | Выполнить ручную проверку и заполнить user_result в verification dashboard. |
@@ -60,7 +59,7 @@
 
 | EP | Название | Команды | Блокеры | Риски | Где заполнить решение |
 |---|---|---|---|---|---|
-| EP-016-REFERENCE-INTAKE-PREPARATION | Reference intake preparation | - | - | - | docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md |
+| - | - | - | - | - | - |
 
 ## 4. Ручные проверки
 
@@ -165,6 +164,7 @@ Accepted artifact protection is deferred to `EP-018-ACCEPTED-ARTIFACT-PROTECTION
 | EP-013-POST-ACCEPTANCE-STATE-SYNC | 2026-06-09 | Дмитрий | docs/acceptance/EP-013-POST-ACCEPTANCE-STATE-SYNC.acceptance.md |
 | EP-014-USER-REVIEW-DECISION-CLI-SAFETY | 2026-06-10 | Дмитрий | docs/acceptance/EP-014-USER-REVIEW-DECISION-CLI-SAFETY.acceptance.md |
 | EP-015-VERIFICATION-DASHBOARD-RECONCILIATION | 2026-06-11 | Дмитрий | docs/acceptance/EP-015-VERIFICATION-DASHBOARD-RECONCILIATION.acceptance.md |
+| EP-016-REFERENCE-INTAKE-PREPARATION | 2026-06-13 | Дмитрий | docs/acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md |
 | EP-017-AUDIT-FINDINGS-CLEANUP | 2026-06-12 | Дмитрий | docs/acceptance/EP-017-AUDIT-FINDINGS-CLEANUP.acceptance.md |
 | EP-018-ACCEPTED-ARTIFACT-PROTECTION | 2026-06-10 | Дмитрий | docs/acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md |
 | EP-019-CODEX-CONTEXT-COMPACTION | 2026-06-12 | Дмитрий | docs/acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md |
