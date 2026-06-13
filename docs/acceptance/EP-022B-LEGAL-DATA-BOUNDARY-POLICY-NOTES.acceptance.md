@@ -113,10 +113,10 @@ make check
 ## 9. User-owned решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-13
+comments: Принято. Проверено: созданы внутренние policy notes по IP, deliverables, границам данных Заказчика, opt-in data contribution, обезличиванию, агрегации и code/data separation; документы явно не являются юридическим заключением, договором, пользовательским соглашением, политикой обработки персональных данных или согласием Заказчика; зафиксированы local-first data boundary, default-off flags, запрет автоматической передачи данных, re-identification risk warning и разграничение code license/data use consent; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли.
 ```
 
 ## 10. Protected Artifact Discipline

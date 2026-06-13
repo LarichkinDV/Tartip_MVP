@@ -12,12 +12,12 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`.
+Current execution packet: `none`.
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-last_accepted_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 next_recommended_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 deferred_follow_up_packets:
@@ -58,6 +58,7 @@ post_acceptance_baseline:
     - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
     - EP-019-CODEX-CONTEXT-COMPACTION
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 ```
 
 EP-012 was the previous active packet before the acceptance queue was closed. EP-013 does not re-accept earlier packets; it only synchronizes state from user-owned acceptance reports.
@@ -116,7 +117,7 @@ User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is tem
 | EP-019-CODEX-CONTEXT-COMPACTION | Codex context compaction | accepted | [EP-019 report](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) | Completed; next recommended packet is EP-016 reference intake preparation. |
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | accepted | [EP-021 report](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) | Completed; next recommended packet is EP-019 context compaction. |
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | accepted | [EP-022A report](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) | Completed; next recommended packet is EP-022B legal/data boundary policy notes. |
-| EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | ready_for_acceptance | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | User reviews internal legal/data boundary policy notes and validator results. |
+| EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | accepted | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | User reviews internal legal/data boundary policy notes and validator results. |
 
 ## 8. Status Values
 

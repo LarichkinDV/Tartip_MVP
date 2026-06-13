@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 473c51780256eb53970a58d59cba4778b7c3f4b3928c55586d113959a9a27d31
+      checksum_sha256: 6d43306ffd65027e90131c8abe998dbded7aebb88c1133834369d051aa3ec0df
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: 9d2c0fb97878c4d9b5124d9c83dc15b03a17c2d97294a8bb504c9b305a35834b
+      checksum_sha256: 8bc56dcadca53ac463b95519e74507aaa5ddcbc2f92698a13ef9c840a74222a3
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: 98622816010af2ace08b6848106b7c781c679687b63e4cf0a3edd2ccd64de270
+      checksum_sha256: 3fdd745b64c8eb6a0f6634e749e33b64f8dcc96a464638768572c25a8426a1dc
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: b7f61d408c3d86aa38b83f5b08a5dcb41fb7298d6cd7354ddde0d50dd8b236e3
+      checksum_sha256: 62e1a986720dc04843255c19935bacf19b04c0c8c097b56fd00f31bffd292731
       status: present
       warning: ""
   summary:
-    active_review_items: 33
-    ready_for_acceptance: 1
+    active_review_items: 32
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 4
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 4
     audit_finding_groups: 6
     historical_audit_findings: 362
-    accepted_hidden_from_active_queue: 19
+    accepted_hidden_from_active_queue: 20
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -168,6 +168,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-13
+        acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
@@ -1444,159 +1450,6 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
-      id: ACCEPTANCE-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-      title: "Legal data boundary policy notes"
-      source_file: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
-      source_id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-      source_checksum_sha256: 7fe84948e86fd09ef1ecda7a1a0fc815904114f323259f62fbcc6e66a4043c98
-      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
-      related_artifacts:
-        -
-          path: docs/legal/README.md
-        -
-          path: docs/legal/ip-and-deliverables-policy-note.md
-        -
-          path: docs/legal/customer-data-boundary-policy-note.md
-        -
-          path: docs/legal/data-contribution-policy-note.md
-        -
-          path: docs/legal/anonymization-and-aggregation-policy-note.md
-        -
-          path: docs/legal/code-license-and-data-use-boundary-note.md
-        -
-          path: scripts/validate_legal_data_boundary_notes.py
-        -
-          path: tests/test_validate_legal_data_boundary_notes.py
-        -
-          path: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-022B-001
-          text: "Strict baseline после принятого EP-022A совпал перед стартом EP-022B."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-002
-          text: "Созданы внутренние legal/data boundary policy notes."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-003
-          text: "Каждая policy note содержит обязательный disclaimer и предупреждение о юридической проверке."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-004
-          text: "Policy notes явно не являются юридическим заключением, договором, пользовательским соглашением, политикой персональных данных или согласием Заказчика."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-005
-          text: "Data contribution описан как default-off и opt-in без автоматической передачи данных."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-006
-          text: "Customer data boundary разделяет operational, pseudonymized tenant, anonymized/generalized и aggregated signal уровни."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-007
-          text: "Anonymization/aggregation note содержит removal/generalization pipeline и re-identification warning."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-008
-          text: "Code license boundary содержит default-off flags telemetry, dataset contribution, external upload, AI training и commercial use."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-009
-          text: "Создан validator legal/data boundary notes."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-010
-          text: "Созданы tests для validator."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-011
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-012
-          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-013
-          text: "docs/01-methodology.md и docs/02-domain-model.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-014
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-015
-          text: "BIM-КСИ-ГЭСН методика не изменена."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-016
-          text: "Реальные данные работодателя или Заказчика не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-022B-017
-          text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        -
-          id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES-RISK-001
-          text: "Policy notes являются внутренними предварительными документами и требуют отдельной юридической проверки перед любым внешним договорным использованием."
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
-    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -2167,6 +2020,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-13
       acceptance_report: docs/acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-13
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []

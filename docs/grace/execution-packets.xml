@@ -891,7 +891,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES" status="ready_for_acceptance">
+  <Packet id="EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES" status="accepted">
     <Name>Legal data boundary policy notes</Name>
     <Goal>Создать внутренние project policy notes по границе IP, deliverables, customer data, opt-in data contribution, anonymization/aggregation и code/data boundary.</Goal>
     <Scope>

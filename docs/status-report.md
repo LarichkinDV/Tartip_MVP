@@ -6,14 +6,14 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-last_accepted_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 next_recommended_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 deferred_follow_up_packets:
@@ -48,6 +48,7 @@ post_acceptance_baseline:
     - EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
     - EP-019-CODEX-CONTEXT-COMPACTION
     - EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+    - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 ```
 
 ## 5. Выполнено
