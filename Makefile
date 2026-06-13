@@ -7,7 +7,7 @@ NPM ?= npm
 BACKEND_DIR := backend
 FRONTEND_DIR := frontend
 
-.PHONY: up down logs test lint format backup restore check regenerate verify validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-monthly-planning validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions sync-accepted-packet-dry-run sync-accepted-packet
+.PHONY: up down logs test lint format backup restore check regenerate verify validate-plan validate-reference validate-verification validate-dissertation-prompts validate-dissertation-sync validate-monthly-planning validate-legal-data-boundary-notes validate-git-workflow validate-git-workflow-strict validate-user-review-workbench validate-post-acceptance-state validate-accepted-artifact-protection audit-codex-spec audit-language validate-audit audit compare-reference-fixtures generate-data-questions generate-dissertation-prompts generate-acceptance-dashboard generate-user-action-dashboard generate-verification-dashboard generate-user-review-workbench generate-dashboards apply-user-review-decisions-dry-run apply-user-review-decisions sync-accepted-packet-dry-run sync-accepted-packet
 
 up:
 	$(COMPOSE) up --build
@@ -40,6 +40,7 @@ check:
 	$(MAKE) validate-dissertation-sync
 	$(MAKE) validate-dissertation-prompts
 	$(MAKE) validate-monthly-planning
+	$(MAKE) validate-legal-data-boundary-notes
 	$(MAKE) generate-acceptance-dashboard
 	$(MAKE) generate-verification-dashboard
 	$(MAKE) audit
@@ -65,6 +66,7 @@ verify:
 	$(MAKE) validate-dissertation-sync
 	$(MAKE) validate-dissertation-prompts
 	$(MAKE) validate-monthly-planning
+	$(MAKE) validate-legal-data-boundary-notes
 	$(MAKE) validate-plan
 	$(MAKE) validate-verification
 	$(MAKE) validate-user-review-workbench
@@ -89,6 +91,9 @@ validate-dissertation-sync:
 
 validate-monthly-planning:
 	$(PYTHON) scripts/validate_monthly_planning.py
+
+validate-legal-data-boundary-notes:
+	$(PYTHON) scripts/validate_legal_data_boundary_notes.py
 
 validate-git-workflow:
 	$(PYTHON) scripts/validate_git_workflow.py --advisory

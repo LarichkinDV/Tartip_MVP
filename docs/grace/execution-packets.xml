@@ -891,6 +891,70 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES" status="ready_for_acceptance">
+    <Name>Legal data boundary policy notes</Name>
+    <Goal>Создать внутренние project policy notes по границе IP, deliverables, customer data, opt-in data contribution, anonymization/aggregation и code/data boundary.</Goal>
+    <Scope>
+      <Item>Создать docs/legal/ с внутренними policy notes</Item>
+      <Item>Зафиксировать, что policy notes не являются legal opinion, contract, user agreement, personal data policy или customer consent</Item>
+      <Item>Зафиксировать default-off модель data contribution</Item>
+      <Item>Зафиксировать customer data boundary и запрет автоматической передачи данных</Item>
+      <Item>Создать validator legal/data boundary notes и regression tests</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-022B</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/legal/README.md</Artifact>
+      <Artifact>docs/legal/ip-and-deliverables-policy-note.md</Artifact>
+      <Artifact>docs/legal/customer-data-boundary-policy-note.md</Artifact>
+      <Artifact>docs/legal/data-contribution-policy-note.md</Artifact>
+      <Artifact>docs/legal/anonymization-and-aggregation-policy-note.md</Artifact>
+      <Artifact>docs/legal/code-license-and-data-use-boundary-note.md</Artifact>
+      <Artifact>scripts/validate_legal_data_boundary_notes.py</Artifact>
+      <Artifact>tests/test_validate_legal_data_boundary_notes.py</Artifact>
+      <Artifact>docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-022B-001">Strict baseline после принятого EP-022A совпал перед стартом EP-022B.</Criterion>
+      <Criterion id="AC-EP-022B-002">Созданы внутренние legal/data boundary policy notes.</Criterion>
+      <Criterion id="AC-EP-022B-003">Каждая policy note содержит обязательный disclaimer и предупреждение о юридической проверке.</Criterion>
+      <Criterion id="AC-EP-022B-004">Policy notes явно не являются юридическим заключением, договором, пользовательским соглашением, политикой персональных данных или согласием Заказчика.</Criterion>
+      <Criterion id="AC-EP-022B-005">Data contribution описан как default-off и opt-in без автоматической передачи данных.</Criterion>
+      <Criterion id="AC-EP-022B-006">Customer data boundary разделяет operational, pseudonymized tenant, anonymized/generalized и aggregated signal уровни.</Criterion>
+      <Criterion id="AC-EP-022B-007">Anonymization/aggregation note содержит removal/generalization pipeline и re-identification warning.</Criterion>
+      <Criterion id="AC-EP-022B-008">Code license boundary содержит default-off flags telemetry, dataset contribution, external upload, AI training и commercial use.</Criterion>
+      <Criterion id="AC-EP-022B-009">Создан validator legal/data boundary notes.</Criterion>
+      <Criterion id="AC-EP-022B-010">Созданы tests для validator.</Criterion>
+      <Criterion id="AC-EP-022B-011">make verify и make check проходят.</Criterion>
+      <Criterion id="AC-EP-022B-012">README.md, CHANGELOG.md и AGENTS.md не изменены.</Criterion>
+      <Criterion id="AC-EP-022B-013">docs/01-methodology.md и docs/02-domain-model.md не изменены.</Criterion>
+      <Criterion id="AC-EP-022B-014">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-022B-015">BIM-КСИ-ГЭСН методика не изменена.</Criterion>
+      <Criterion id="AC-EP-022B-016">Реальные данные работодателя или Заказчика не добавлены.</Criterion>
+      <Criterion id="AC-EP-022B-017">User-owned fields не заполнены Codex.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not create legal opinion, contract, user agreement, personal data policy, or customer consent</Item>
+      <Item>Do not implement data contribution layer</Item>
+      <Item>Do not create dataset schemas</Item>
+      <Item>Do not collect or add real customer or employer data</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not change README.md, CHANGELOG.md, or AGENTS.md</Item>
+      <Item>Do not change docs/01-methodology.md or docs/02-domain-model.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION" status="accepted">
     <Name>Post-acceptance sync automation</Name>
     <Goal>Создать безопасную автоматизацию синхронизации проектного состояния после пользовательской приемки execution packet.</Goal>

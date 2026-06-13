@@ -1,5 +1,5 @@
 registry_version: 1
-updated_at: 2026-06-12
+updated_at: 2026-06-13
 artifacts:
   -
     artifact_id: ART-AGENTS-001
@@ -339,6 +339,504 @@ artifacts:
       change_requires_user_approval: false
       allowed_update_modes:
         - future_execution_packet
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-README
+    name: "Legal/data boundary README"
+    type: policy_index
+    path: docs/legal/README.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Index for internal legal/data boundary policy notes."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Internal index only; not legal opinion, contract, user agreement, personal data policy, or customer consent."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-IP-DELIVERABLES-POLICY-NOTE
+    name: "IP and deliverables policy note"
+    type: policy_note
+    path: docs/legal/ip-and-deliverables-policy-note.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Internal policy note on code, universal components, deliverables, and customer-specific artifacts."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Preliminary internal policy note; requires legal review before external use."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+    name: "Customer data boundary policy note"
+    type: policy_note
+    path: docs/legal/customer-data-boundary-policy-note.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Internal policy note on local-first customer data boundary and data levels."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-004
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer data remains in the local customer contour by default."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-DATA-CONTRIBUTION-POLICY-NOTE
+    name: "Data contribution policy note"
+    type: policy_note
+    path: docs/legal/data-contribution-policy-note.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Internal policy note on default-off opt-in data contribution boundaries."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-004
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Data contribution remains opt-in and disabled by default."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-ANONYMIZATION-AGGREGATION-POLICY-NOTE
+    name: "Anonymization and aggregation policy note"
+    type: policy_note
+    path: docs/legal/anonymization-and-aggregation-policy-note.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Internal policy note on anonymization, generalization, aggregation, and re-identification risk checks."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Includes re-identification warning for single purchase records."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-LEGAL-CODE-LICENSE-DATA-USE-BOUNDARY-NOTE
+    name: "Code license and data use boundary note"
+    type: policy_note
+    path: docs/legal/code-license-and-data-use-boundary-note.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Internal policy note that code license does not imply customer data use consent."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+      - ART-LEGAL-DATA-CONTRIBUTION-POLICY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Default-off flags are required by validator."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New source/manual policy artifact remains editable within EP-022B until user acceptance."
+      source_category: source_policy
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-LEGAL-DATA-BOUNDARY-NOTES
+    name: "Legal data boundary notes validator"
+    type: script
+    path: scripts/validate_legal_data_boundary_notes.py
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Validator for internal legal/data boundary policy notes and default-off data use guardrails."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-004
+        - V-LEGAL-DATA-BOUNDARY-005
+        - V-LEGAL-DATA-BOUNDARY-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+      - ART-LEGAL-IP-DELIVERABLES-POLICY-NOTE
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+      - ART-LEGAL-DATA-CONTRIBUTION-POLICY-NOTE
+      - ART-LEGAL-ANONYMIZATION-AGGREGATION-POLICY-NOTE
+      - ART-LEGAL-CODE-LICENSE-DATA-USE-BOUNDARY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Connected to make validate-legal-data-boundary-notes, make verify, and make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Validation script remains modifiable by future execution packets."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-VALIDATE-LEGAL-DATA-BOUNDARY-NOTES
+    name: "Legal data boundary notes validator tests"
+    type: test
+    path: tests/test_validate_legal_data_boundary_notes.py
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Regression tests for legal/data boundary policy note validator."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-LEGAL-DATA-BOUNDARY-NOTES
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests cover valid notes, missing disclaimer, forbidden consent phrase, default-off flags, re-identification warning, and INN-like pattern rejection."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test file remains modifiable by future execution packets."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    name: "EP-022B acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+    owner_module: M-LEGAL-DATA-BOUNDARY
+    related_packets:
+      - EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    related_requirements:
+      - REQ-022B
+    status: active
+    description: "Acceptance report for EP-022B legal/data boundary policy notes."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-LEGAL-DATA-BOUNDARY-001
+        - V-LEGAL-DATA-BOUNDARY-002
+        - V-LEGAL-DATA-BOUNDARY-003
+        - V-LEGAL-DATA-BOUNDARY-004
+        - V-LEGAL-DATA-BOUNDARY-005
+        - V-LEGAL-DATA-BOUNDARY-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-LEGAL-README
+      - ART-LEGAL-IP-DELIVERABLES-POLICY-NOTE
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+      - ART-LEGAL-DATA-CONTRIBUTION-POLICY-NOTE
+      - ART-LEGAL-ANONYMIZATION-AGGREGATION-POLICY-NOTE
+      - ART-LEGAL-CODE-LICENSE-DATA-USE-BOUNDARY-NOTE
+      - ART-VALIDATE-LEGAL-DATA-BOUNDARY-NOTES
+      - ART-TEST-VALIDATE-LEGAL-DATA-BOUNDARY-NOTES
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-022B remains ready_for_acceptance until the user manually accepts it."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New acceptance report remains editable within EP-022B until user acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
       generator: null
       derived_from:
         []

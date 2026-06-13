@@ -42,9 +42,9 @@ audit_finding_groups:
     group_id: AUD-GIT-002
     severity: medium
     category: git_workflow
-    total_count: 4
+    total_count: 5
     current_detected_count: 0
-    historical_count: 4
+    historical_count: 5
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -53,6 +53,7 @@ audit_finding_groups:
       - AUD-GIT-002-MERGE-FORBIDDEN-EP-019-CODEX-CONTEXT-COMPACTION
       - AUD-GIT-002-MERGE-FORBIDDEN-EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION
       - AUD-GIT-002-MERGE-FORBIDDEN-EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
+      - AUD-GIT-002-MERGE-FORBIDDEN-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
   -
     group_id: AUD-GIT-005
     severity: medium
@@ -69,9 +70,9 @@ audit_finding_groups:
     group_id: AUD-GIT-006
     severity: medium
     category: git_workflow
-    total_count: 11
+    total_count: 12
     current_detected_count: 0
-    historical_count: 11
+    historical_count: 12
     active_blocking: false
     source_file: docs/audit/audit-findings.yml
     recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -3012,7 +3013,7 @@ findings:
     category: git_workflow
     file: .git
     line: null
-    issue: "Имя ветки ep-022a-customer-facing-mvp-roadmap-and-monthly-planning не соответствует packet EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING."
+    issue: "Имя ветки ep-022b-legal-data-boundary-policy-notes не соответствует packet EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES."
     recommendation: "Использовать формат ep-<number>-<short-slug>."
     status: open
     created_at: 2026-06-11
@@ -3108,13 +3109,30 @@ findings:
     last_seen_at: 2026-06-13
     current_detected: false
   -
+    id: AUD-GIT-002-MERGE-FORBIDDEN-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    check_id: AUD-GIT-002
+    severity: medium
+    category: git_workflow
+    file: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+    line: null
+    issue: "Merge запрещен для EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty."
+    recommendation: "Не готовить merge, пока пользователь не поставит accepted и accepted_by."
+    status: open
+    created_at: 2026-06-13
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-13
+    current_detected: false
+  -
     id: AUD-GIT-005-MIXED-EP-SCOPES
     check_id: AUD-GIT-005
     severity: medium
     category: git_workflow
     file: .git
     line: null
-    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-009, governance"
+    issue: "Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance"
     recommendation: "Не выполнять commit/merge до ручного разделения изменений или явного user approval."
     status: open
     created_at: 2026-06-08
@@ -3302,6 +3320,23 @@ findings:
     file: docs/git-workflow.md
     line: null
     issue: "Для EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING нет явного user approval на merge в main."
+    recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
+    status: open
+    created_at: 2026-06-13
+    resolved_by: null
+    resolved_at: null
+    resolution: null
+    preserve_user_resolution: true
+    last_seen_at: 2026-06-13
+    current_detected: false
+  -
+    id: AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+    check_id: AUD-GIT-006
+    severity: medium
+    category: git_workflow
+    file: docs/git-workflow.md
+    line: null
+    issue: "Для EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES нет явного user approval на merge в main."
     recommendation: "Получить явное разрешение пользователя после приемки и успешных проверок."
     status: open
     created_at: 2026-06-13

@@ -563,4 +563,28 @@
     <Name>monthly planning validator is connected</Name>
     <Expected>scripts/validate_monthly_planning.py and tests/test_validate_monthly_planning.py validate the monthly planning artifacts, and make verify/check include validate-monthly-planning.</Expected>
   </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-001" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>legal data boundary policy notes exist</Name>
+    <Expected>docs/legal/README.md and all EP-022B policy note files exist without adding real customer or employer data.</Expected>
+  </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-002" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>policy notes contain disclaimer and legal review warning</Name>
+    <Expected>Every legal/data boundary note starts with the mandatory internal policy note disclaimer and contains a legal review warning.</Expected>
+  </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-003" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>forbidden legal-confidence phrases are rejected</Name>
+    <Expected>scripts/validate_legal_data_boundary_notes.py rejects phrases that imply contract-grade policy, user consent, customer data rights transfer, or sufficient legal readiness.</Expected>
+  </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-004" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>customer data boundary remains local-first and default-off</Name>
+    <Expected>Policy notes state that customer data remains in the local customer contour by default and external transfer is disabled by default.</Expected>
+  </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-005" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>anonymization and aggregation require re-identification risk checks</Name>
+    <Expected>The anonymization note contains the required re-identification risk warning and pipeline before any aggregate or AI training signal.</Expected>
+  </Scenario>
+  <Scenario id="V-LEGAL-DATA-BOUNDARY-006" module="M-LEGAL-DATA-BOUNDARY">
+    <Name>default-off flags and tests are connected</Name>
+    <Expected>code/data boundary notes contain default-off flags, tests cover validator rules, and make verify/check include validate-legal-data-boundary-notes.</Expected>
+  </Scenario>
 </VerificationPlan>

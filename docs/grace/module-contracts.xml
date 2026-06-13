@@ -430,4 +430,36 @@
       <Item>accepted_by, decided_by, checked_by, and answered_by must not be Codex.</Item>
     </Invariants>
   </Module>
+  <Module id="M-LEGAL-DATA-BOUNDARY" status="ready_for_acceptance">
+    <Name>Legal Data Boundary Policy Notes</Name>
+    <Responsibilities>
+      <Item>Maintain internal project policy notes for IP, deliverables, customer data boundary, opt-in data contribution, anonymization, aggregation, and code/data separation.</Item>
+      <Item>Keep legal/data notes clearly marked as internal project assumptions that require legal review.</Item>
+      <Item>Keep customer data transfer, dataset contribution, external upload, AI training, and commercial use disabled by default.</Item>
+      <Item>Validate that policy notes do not contain legal-confidence phrases or real customer identifiers.</Item>
+    </Responsibilities>
+    <Inputs>
+      <Item>docs/legal/*.md</Item>
+      <Item>scripts/validate_legal_data_boundary_notes.py</Item>
+    </Inputs>
+    <Outputs>
+      <Item>docs/legal/*.md</Item>
+      <Item>tests/test_validate_legal_data_boundary_notes.py</Item>
+      <Item>docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md</Item>
+    </Outputs>
+    <Forbidden>
+      <Item>creating legal opinion, contract, user agreement, personal data policy, or customer consent</Item>
+      <Item>implementing data contribution layer or dataset schemas</Item>
+      <Item>collecting, importing, or adding real customer or employer data</Item>
+      <Item>changing BIM-KSI-GESN domain methodology</Item>
+      <Item>changing accepted reports of other execution packets</Item>
+    </Forbidden>
+    <Invariants>
+      <Item>Policy notes require legal review before external contractual use.</Item>
+      <Item>Customer data remains in the local customer contour by default.</Item>
+      <Item>Code license does not imply consent to transfer, anonymize, aggregate, train on, or commercially use customer data.</Item>
+      <Item>telemetry_enabled, dataset_contribution_enabled, external_upload_enabled, ai_training_allowed, and commercial_use_allowed default to false.</Item>
+      <Item>accepted_by, decided_by, checked_by, and answered_by must not be Codex.</Item>
+    </Invariants>
+  </Module>
 </ModuleContracts>

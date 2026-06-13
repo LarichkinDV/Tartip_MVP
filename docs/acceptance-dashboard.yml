@@ -6,12 +6,12 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 0
+    ready_for_acceptance: 1
     accepted: 19
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 0
+    pending: 1
     protected_accepted_artifacts: 35
   post_acceptance_baseline:
     project_state: accepted_baseline
@@ -3934,3 +3934,200 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-13
         comments: "Принято. Проверено: создана customer-facing дорожная карта 2026; создана политика месячного планирования; создан monthly-plan.yml на июнь 2026; создан валидатор monthly planning и тесты; planning override по EP-016 зафиксирован только во внутренних governance-файлах; roadmap не содержит planning override и запрещенные customer-facing формулировки; protected/manual artifacts не изменены; accepted reports других EP не изменены; реальные данные работодателя/Заказчика не добавлены; user-owned поля Codex не заполнял; make verify и make check прошли."
+    -
+      packet_id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+      title: "Legal data boundary policy notes"
+      status: ready_for_acceptance
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: pending
+      acceptance_report: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+      artifacts:
+        -
+          path: docs/legal/README.md
+          status: active
+          type: policy_index
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/legal/ip-and-deliverables-policy-note.md
+          status: active
+          type: policy_note
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/legal/customer-data-boundary-policy-note.md
+          status: active
+          type: policy_note
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/legal/data-contribution-policy-note.md
+          status: active
+          type: policy_note
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/legal/anonymization-and-aggregation-policy-note.md
+          status: active
+          type: policy_note
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/legal/code-license-and-data-use-boundary-note.md
+          status: active
+          type: policy_note
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_policy
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/validate_legal_data_boundary_notes.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: tests/test_validate_legal_data_boundary_notes.py
+          status: active
+          type: test
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: test
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_acceptance
+          change_requires_user_approval: false
+          protection_locked: false
+      verification_commands:
+        []
+      acceptance_criteria:
+        -
+          id: AC-EP-022B-001
+          text: "Strict baseline после принятого EP-022A совпал перед стартом EP-022B."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-002
+          text: "Созданы внутренние legal/data boundary policy notes."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-003
+          text: "Каждая policy note содержит обязательный disclaimer и предупреждение о юридической проверке."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-004
+          text: "Policy notes явно не являются юридическим заключением, договором, пользовательским соглашением, политикой персональных данных или согласием Заказчика."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-005
+          text: "Data contribution описан как default-off и opt-in без автоматической передачи данных."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-006
+          text: "Customer data boundary разделяет operational, pseudonymized tenant, anonymized/generalized и aggregated signal уровни."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-007
+          text: "Anonymization/aggregation note содержит removal/generalization pipeline и re-identification warning."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-008
+          text: "Code license boundary содержит default-off flags telemetry, dataset contribution, external upload, AI training и commercial use."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-009
+          text: "Создан validator legal/data boundary notes."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-010
+          text: "Созданы tests для validator."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-011
+          text: "make verify и make check проходят."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-012
+          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-013
+          text: "docs/01-methodology.md и docs/02-domain-model.md не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-014
+          text: "Accepted reports других EP не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-015
+          text: "BIM-КСИ-ГЭСН методика не изменена."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-016
+          text: "Реальные данные работодателя или Заказчика не добавлены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-022B-017
+          text: "User-owned fields не заполнены Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        -
+          id: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES-RISK-001
+          text: "Policy notes являются внутренними предварительными документами и требуют отдельной юридической проверки перед любым внешним договорным использованием."
+      user_decision:
+        decision: pending
+        decided_by: ""
+        decided_at: ""
+        comments: ""

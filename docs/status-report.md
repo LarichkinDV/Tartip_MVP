@@ -6,16 +6,16 @@
 
 ## 2. Текущий Execution Packet
 
-`none`
+`EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 last_accepted_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-last_completed_execution_packet: EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING
-next_recommended_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
+next_recommended_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 deferred_follow_up_packets:
   -
     packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
@@ -74,15 +74,16 @@ post_acceptance_baseline:
 - Создана автоматизация post-acceptance sync для уже принятых пользователем пакетов.
 - EP-021 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
 - EP-019 принят пользователем Дмитрием 2026-06-12 и синхронизирован как post-acceptance состояние.
-- EP-022A подготовил customer-facing roadmap 2026, monthly planning policy, monthly-plan.yml для 2026-06 и validator monthly planning.
+- EP-022A принят пользователем Дмитрием 2026-06-13 и синхронизирован как post-acceptance состояние.
+- EP-022B подготовил internal legal/data boundary policy notes, default-off data contribution model, anonymization/aggregation boundary и validator legal/data boundary notes.
 
 ## 6. В работе
 
-Активных in-progress работ нет. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` подготовлен к пользовательской приемке.
+Активных in-progress работ нет. `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES` подготовлен к пользовательской приемке.
 
 ## 7. Готово к приемке
 
-- [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
+- [EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md)
 
 ## 8. Принятый Baseline
 
@@ -104,13 +105,15 @@ post_acceptance_baseline:
 - [EP-018-ACCEPTED-ARTIFACT-PROTECTION](acceptance/EP-018-ACCEPTED-ARTIFACT-PROTECTION.acceptance.md)
 - [EP-019-CODEX-CONTEXT-COMPACTION](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md)
 - [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
+- [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
 
 ## 9. Follow-Up Debt
 
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared.
-- `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`: next recommended packet after EP-022A.
+- `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`: ready_for_acceptance; internal policy notes require legal review and do not create customer consent.
+- `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: next recommended packet after EP-022B acceptance.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
 
 ## 10. Блокеры
@@ -125,6 +128,7 @@ post_acceptance_baseline:
 - Current critical/high audit findings remain blocking gates; historical `current_detected: false` findings remain audit history.
 - EP-019 creates a recommended compact working context, but `AGENTS.md` mandatory reading policy is unchanged until a separate approved protected artifact change request allows editing `AGENTS.md`.
 - EP-022A does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the explicit monthly planning scope.
+- EP-022B policy notes are internal preliminary documents and require legal review before external contractual use.
 
 ## 12. EP-006 Orphan Scope
 
@@ -142,4 +146,4 @@ User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is tem
 
 ## 15. Следующий шаг
 
-EP-022A подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-022A: `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`.
+EP-022B подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-022B: `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`.
