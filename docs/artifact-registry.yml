@@ -843,6 +843,292 @@ artifacts:
       regeneration_command: null
       protected_since: null
   -
+    artifact_id: ART-MONTHLY-2026-06-BFT-INFRASTRUCTURE
+    name: "Month 01 infrastructure BFT"
+    type: monthly_deliverable
+    path: docs/monthly/2026-06/01-business-functional-requirements.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    related_requirements:
+      - REQ-023
+    status: active
+    description: "Business-functional requirements for month 01 infrastructure contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-CUSTOMER-DOCS-001
+        - V-MONTHLY-CUSTOMER-DOCS-002
+        - V-MONTHLY-CUSTOMER-DOCS-005
+        - V-MONTHLY-CUSTOMER-DOCS-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-06-PLAN
+      - ART-MONTHLY-PLANNING-README
+      - ART-LEGAL-IP-DELIVERABLES-POLICY-NOTE
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer-facing monthly source document; CHANGELOG.md is not changed by EP-023."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-023 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-06-TZ-INFRASTRUCTURE
+    name: "Month 01 infrastructure TZ"
+    type: monthly_deliverable
+    path: docs/monthly/2026-06/02-technical-specification.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    related_requirements:
+      - REQ-023
+    status: active
+    description: "Technical specification for month 01 infrastructure contour."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-CUSTOMER-DOCS-001
+        - V-MONTHLY-CUSTOMER-DOCS-003
+        - V-MONTHLY-CUSTOMER-DOCS-005
+        - V-MONTHLY-CUSTOMER-DOCS-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-06-PLAN
+      - ART-MONTHLY-PLANNING-README
+      - ART-LEGAL-IP-DELIVERABLES-POLICY-NOTE
+      - ART-LEGAL-CUSTOMER-DATA-BOUNDARY-POLICY-NOTE
+      - ART-LEGAL-DATA-CONTRIBUTION-POLICY-NOTE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer-facing monthly source document; not an approved production exploitation specification."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-023 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-06-TEST-PROTOCOL-INFRASTRUCTURE
+    name: "Month 01 infrastructure test protocol"
+    type: monthly_deliverable
+    path: docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    related_requirements:
+      - REQ-023
+    status: active
+    description: "Test protocol for month 01 infrastructure contour with user-owned manual result fields."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-CUSTOMER-DOCS-001
+        - V-MONTHLY-CUSTOMER-DOCS-004
+        - V-MONTHLY-CUSTOMER-DOCS-005
+        - V-MONTHLY-CUSTOMER-DOCS-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-06-PLAN
+      - ART-MONTHLY-PLANNING-README
+      - ART-MONTHLY-2026-06-BFT-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-TZ-INFRASTRUCTURE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Manual verification results remain user-owned and pending_user_check."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-023 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-06-PRESENTATION-OUTLINE
+    name: "Month 01 presentation outline"
+    type: monthly_deliverable
+    path: docs/monthly/2026-06/presentation-outline.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    related_requirements:
+      - REQ-023
+    status: active
+    description: "Presentation outline for month 01 defense without creating PPTX/DOCX/PDF artifacts."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-CUSTOMER-DOCS-001
+        - V-MONTHLY-CUSTOMER-DOCS-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-06-PLAN
+      - ART-MONTHLY-2026-06-BFT-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-TZ-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-TEST-PROTOCOL-INFRASTRUCTURE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "PowerPoint file is not created by EP-023."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-023 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    name: "EP-023 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+    owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
+    related_packets:
+      - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+    related_requirements:
+      - REQ-023
+    status: active
+    description: "Acceptance report for EP-023 month 01 infrastructure customer documents."
+    created_at: 2026-06-13
+    updated_at: 2026-06-13
+    verification:
+      status: pending
+      scenarios:
+        - V-MONTHLY-CUSTOMER-DOCS-001
+        - V-MONTHLY-CUSTOMER-DOCS-002
+        - V-MONTHLY-CUSTOMER-DOCS-003
+        - V-MONTHLY-CUSTOMER-DOCS-004
+        - V-MONTHLY-CUSTOMER-DOCS-005
+        - V-MONTHLY-CUSTOMER-DOCS-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-06-BFT-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-TZ-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-TEST-PROTOCOL-INFRASTRUCTURE
+      - ART-MONTHLY-2026-06-PRESENTATION-OUTLINE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-023 remains ready_for_acceptance until the user manually accepts it."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New acceptance report remains editable within EP-023 until user acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
     artifact_id: ART-PROJECT-PLAN
     name: "Project plan"
     type: status_report

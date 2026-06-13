@@ -955,6 +955,61 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS" status="ready_for_acceptance">
+    <Name>Month 01 infrastructure customer documents</Name>
+    <Goal>Создать первый комплект customer-facing документов месяца: БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты.</Goal>
+    <Scope>
+      <Item>Создать БФТ инфраструктурного контура прикладного прототипа ТАРТИП</Item>
+      <Item>Создать ТЗ инфраструктурного контура прикладного прототипа ТАРТИП</Item>
+      <Item>Создать протокол испытаний инфраструктурного контура</Item>
+      <Item>Создать presentation outline для ежемесячной защиты</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-023</Item>
+      <Item>Обновить governance files и generated dashboards</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/monthly/2026-06/01-business-functional-requirements.md</Artifact>
+      <Artifact>docs/monthly/2026-06/02-technical-specification.md</Artifact>
+      <Artifact>docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md</Artifact>
+      <Artifact>docs/monthly/2026-06/presentation-outline.md</Artifact>
+      <Artifact>docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-023-001">Создан БФТ.</Criterion>
+      <Criterion id="AC-EP-023-002">Создано ТЗ.</Criterion>
+      <Criterion id="AC-EP-023-003">Создан протокол испытаний.</Criterion>
+      <Criterion id="AC-EP-023-004">Создан presentation outline.</Criterion>
+      <Criterion id="AC-EP-023-005">Документы customer-facing и не выглядят как запрещенная продуктовая презентация.</Criterion>
+      <Criterion id="AC-EP-023-006">В документах есть разделы о правовом режиме исходных материалов и данных.</Criterion>
+      <Criterion id="AC-EP-023-007">Не заявлено, что реализован нормативный matching.</Criterion>
+      <Criterion id="AC-EP-023-008">Не заявлено, что данные Заказчика автоматически становятся частью Tartip dataset.</Criterion>
+      <Criterion id="AC-EP-023-009">Не заявлено, что пользователь разработал промышленный программный продукт.</Criterion>
+      <Criterion id="AC-EP-023-010">User-owned поля не заполнены Codex.</Criterion>
+      <Criterion id="AC-EP-023-011">make verify и make check проходят.</Criterion>
+      <Criterion id="AC-EP-023-012">Реальные данные работодателя/Заказчика не добавлены.</Criterion>
+      <Criterion id="AC-EP-023-013">README.md, CHANGELOG.md и AGENTS.md не изменены.</Criterion>
+      <Criterion id="AC-EP-023-014">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-023-015">BIM-КСИ-ГЭСН методика не изменена.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not create industrial production version</Item>
+      <Item>Do not import real normative sources</Item>
+      <Item>Do not create active KSI/GESN matching rules</Item>
+      <Item>Do not use real customer or employer data</Item>
+      <Item>Do not change BIM-KSI-GESN domain methodology</Item>
+      <Item>Do not change README.md, CHANGELOG.md, or AGENTS.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
   <Packet id="EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION" status="accepted">
     <Name>Post-acceptance sync automation</Name>
     <Goal>Создать безопасную автоматизацию синхронизации проектного состояния после пользовательской приемки execution packet.</Goal>

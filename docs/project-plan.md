@@ -12,14 +12,14 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `none`.
+Current execution packet: `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`.
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
 last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
 last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-next_recommended_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
 deferred_follow_up_packets:
   -
     packet_id: EP-016-REFERENCE-INTAKE-PREPARATION
@@ -30,7 +30,7 @@ deferred_follow_up_packets:
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован как compact context baseline. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES` подготовлен к приемке как internal policy notes packet без изменения `AGENTS.md`, README.md, CHANGELOG.md, методологии или предметной BIM-КСИ-ГЭСН логики.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован как compact context baseline. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS` подготовлен к приемке как первый комплект месячных customer-facing документов без изменения `AGENTS.md`, README.md, CHANGELOG.md, accepted reports других EP, методологии или предметной BIM-КСИ-ГЭСН логики.
 
 ## 5. Post-Acceptance Baseline
 
@@ -92,7 +92,8 @@ User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is tem
 | Post-Acceptance Sync Automation | Safe CLI automation for synchronizing already accepted packets without changing user-owned fields | accepted | [sync script](../scripts/sync_accepted_packet.py), [sync tests](../tests/test_sync_accepted_packet.py), [EP-021 acceptance](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) |
 | Codex Context Compaction | Compact startup context, source/generated/selective file classes, preserved acceptance and protection discipline | accepted | [Codex working context](codex-working-context.md), [EP-019 acceptance](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) |
 | Customer-Facing MVP Roadmap And Monthly Planning | Customer-facing 2026 roadmap, monthly planning policy, June 2026 monthly plan, and validator | accepted | [roadmap](roadmap/2026-customer-facing-mvp-roadmap.md), [monthly planning README](monthly/README.md), [EP-022A acceptance](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) |
-| Legal Data Boundary Policy Notes | Internal policy notes for IP/deliverables, customer data boundary, data contribution, anonymization/aggregation, and code/data separation | ready_for_acceptance | [legal notes](legal/README.md), [legal data boundary validator](../scripts/validate_legal_data_boundary_notes.py), [EP-022B acceptance](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) |
+| Legal Data Boundary Policy Notes | Internal policy notes for IP/deliverables, customer data boundary, data contribution, anonymization/aggregation, and code/data separation | accepted | [legal notes](legal/README.md), [legal data boundary validator](../scripts/validate_legal_data_boundary_notes.py), [EP-022B acceptance](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) |
+| Month 01 Infrastructure Customer Documents | БФТ, ТЗ, протокол испытаний and presentation outline for the first monthly infrastructure contour | ready_for_acceptance | [БФТ](monthly/2026-06/01-business-functional-requirements.md), [ТЗ](monthly/2026-06/02-technical-specification.md), [протокол](monthly/2026-06/03-test-protocol-infrastructure-contour.md), [EP-023 acceptance](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) |
 
 ## 7. Execution Packets
 
@@ -117,7 +118,8 @@ User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is tem
 | EP-019-CODEX-CONTEXT-COMPACTION | Codex context compaction | accepted | [EP-019 report](acceptance/EP-019-CODEX-CONTEXT-COMPACTION.acceptance.md) | Completed; next recommended packet is EP-016 reference intake preparation. |
 | EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION | Post-acceptance sync automation | accepted | [EP-021 report](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md) | Completed; next recommended packet is EP-019 context compaction. |
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | accepted | [EP-022A report](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) | Completed; next recommended packet is EP-022B legal/data boundary policy notes. |
-| EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | accepted | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | User reviews internal legal/data boundary policy notes and validator results. |
+| EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | accepted | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | Completed; next recommended packet is EP-023 month 01 customer documents. |
+| EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | ready_for_acceptance | [EP-023 report](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) | User reviews BFT, TZ, test protocol, presentation outline and verification results. |
 
 ## 8. Status Values
 
@@ -166,12 +168,12 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - [EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md](acceptance/EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION.acceptance.md)
 - [EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md)
 - [EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md)
+- [EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
-- `EP-016-REFERENCE-INTAKE-PREPARATION`: temporarily deferred by user planning override until customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared.
-- `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES`: ready_for_acceptance; internal policy notes are not legal opinion, contract, user agreement, personal data policy, or customer consent.
-- `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: next recommended packet after EP-022B acceptance.
+- `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: ready_for_acceptance; first month BFT, TZ, test protocol, and presentation outline are prepared.
+- `EP-016-REFERENCE-INTAKE-PREPARATION`: next recommended packet after EP-023 acceptance; temporarily deferred record is preserved until EP-016 or a separate governance cleanup.
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards remain derived artifacts.
@@ -186,6 +188,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - EP-019 creates a recommended compact working context, but `AGENTS.md` mandatory reading policy is unchanged until a separate approved protected artifact change request allows editing `AGENTS.md`.
 - EP-022A does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the explicit monthly planning scope.
 - EP-022B policy notes require legal review before any external contractual use and do not create customer consent, data transfer rights, or personal data policy.
+- EP-023 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the monthly customer documents scope.
 
 ## 13. Blockers
 
@@ -196,4 +199,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 
 ## 15. Next Step
 
-EP-022B подготовлен в статусе `ready_for_acceptance`. Пользователь проверяет internal legal/data boundary policy notes, default-off data contribution model, validator results и acceptance report. Следующий рекомендуемый пакет после приемки EP-022B: `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`.
+EP-023 подготовлен в статусе `ready_for_acceptance`. Пользователь проверяет БФТ, ТЗ, протокол испытаний, presentation outline и результаты проверок. Следующий рекомендуемый пакет после приемки EP-023: `EP-016-REFERENCE-INTAKE-PREPARATION`.

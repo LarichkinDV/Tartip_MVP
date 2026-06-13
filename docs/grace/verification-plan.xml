@@ -587,4 +587,28 @@
     <Name>default-off flags and tests are connected</Name>
     <Expected>code/data boundary notes contain default-off flags, tests cover validator rules, and make verify/check include validate-legal-data-boundary-notes.</Expected>
   </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-001" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>month 01 customer documents exist</Name>
+    <Expected>БФТ, ТЗ, протокол испытаний and presentation outline for 2026-06 infrastructure contour exist as source artifacts.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-002" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>business functional requirements preserve safe first month scope</Name>
+    <Expected>БФТ states that month 01 does not create industrial product, import real normative sources, create active KSI/GESN matching rules, or use real customer data.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-003" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>technical specification is not production exploitation approval</Name>
+    <Expected>ТЗ states that it defines infrastructure contour requirements and requires clarification before contractual development.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-004" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>test protocol preserves user-owned manual result fields</Name>
+    <Expected>Протокол испытаний uses pending_user_check for manual checks and does not let Codex fill checked_by, checked_at, or result passed.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-005" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>month 01 documents avoid forbidden customer-facing framing</Name>
+    <Expected>Monthly documents avoid forbidden customer-facing terms and do not present the result as a product pitch.</Expected>
+  </Scenario>
+  <Scenario id="V-MONTHLY-CUSTOMER-DOCS-006" module="M-PROJECT-PLANNING-AND-ACCEPTANCE">
+    <Name>month 01 documents preserve legal and data boundaries</Name>
+    <Expected>Monthly documents state that customer data stays local by default and no automatic data transfer, normative matching, or dataset contribution is introduced.</Expected>
+  </Scenario>
 </VerificationPlan>

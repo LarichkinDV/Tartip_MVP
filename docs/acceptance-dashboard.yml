@@ -6,12 +6,12 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 0
+    ready_for_acceptance: 1
     accepted: 20
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 0
+    pending: 1
     protected_accepted_artifacts: 36
   post_acceptance_baseline:
     project_state: accepted_baseline
@@ -4136,3 +4136,152 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-13
         comments: "Принято. Проверено: созданы внутренние policy notes по IP, deliverables, границам данных Заказчика, opt-in data contribution, обезличиванию, агрегации и code/data separation; документы явно не являются юридическим заключением, договором, пользовательским соглашением, политикой обработки персональных данных или согласием Заказчика; зафиксированы local-first data boundary, default-off flags, запрет автоматической передачи данных, re-identification risk warning и разграничение code license/data use consent; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли."
+    -
+      packet_id: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+      title: "Month 01 infrastructure customer documents"
+      status: ready_for_acceptance
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: pending
+      acceptance_report: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+      artifacts:
+        -
+          path: docs/monthly/2026-06/01-business-functional-requirements.md
+          status: active
+          type: monthly_deliverable
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-06/02-technical-specification.md
+          status: active
+          type: monthly_deliverable
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md
+          status: active
+          type: monthly_deliverable
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-06/presentation-outline.md
+          status: active
+          type: monthly_deliverable
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_acceptance
+          change_requires_user_approval: false
+          protection_locked: false
+      verification_commands:
+        []
+      acceptance_criteria:
+        -
+          id: AC-EP-023-001
+          text: "Создан БФТ."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-002
+          text: "Создано ТЗ."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-003
+          text: "Создан протокол испытаний."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-004
+          text: "Создан presentation outline."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-005
+          text: "Документы customer-facing и не выглядят как запрещенная продуктовая презентация."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-006
+          text: "В документах есть разделы о правовом режиме исходных материалов и данных."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-007
+          text: "Не заявлено, что реализован нормативный matching."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-008
+          text: "Не заявлено, что данные Заказчика автоматически становятся частью Tartip dataset."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-009
+          text: "Не заявлено, что пользователь разработал промышленный программный продукт."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-010
+          text: "User-owned поля не заполнены Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-011
+          text: "make verify и make check проходят."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-012
+          text: "Реальные данные работодателя/Заказчика не добавлены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-013
+          text: "README.md, CHANGELOG.md и AGENTS.md не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-014
+          text: "Accepted reports других EP не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-023-015
+          text: "BIM-КСИ-ГЭСН методика не изменена."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        []
+      user_decision:
+        decision: pending
+        decided_by: ""
+        decided_at: ""
+        comments: ""

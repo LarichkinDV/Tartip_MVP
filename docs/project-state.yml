@@ -1,11 +1,11 @@
 project_state:
   schema_version: 1
   updated_at: 2026-06-13
-  state_mode: accepted_baseline
-  active_execution_packet: none
+  state_mode: ready_for_acceptance
+  active_execution_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
   last_accepted_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
   last_completed_execution_packet: EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES
-  next_recommended_packet: EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
+  next_recommended_packet: EP-016-REFERENCE-INTAKE-PREPARATION
   deferred_follow_up_packets:
     -
       packet_id: EP-016-REFERENCE-INTAKE-PREPARATION

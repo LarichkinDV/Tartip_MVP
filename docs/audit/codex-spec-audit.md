@@ -8,12 +8,12 @@
 |---|---:|---:|---:|
 | critical | 171 | 0 | 171 |
 | high | 0 | 0 | 0 |
-| medium | 255 | 4 | 251 |
+| medium | 257 | 3 | 254 |
 | low | 16 | 0 | 16 |
 
-Всего findings: 442
-Current findings: 4
-Historical/stale findings: 438
+Всего findings: 444
+Current findings: 3
+Historical/stale findings: 441
 Активных critical findings: 0
 
 ## 2. Проверка доменной логики
@@ -58,10 +58,9 @@ Historical/stale findings: 438
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-001-BRANCH-NAME-MISMATCH | medium | AUD-GIT-001 | .git | Имя ветки ep-022b-legal-data-boundary-policy-notes не соответствует packet EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES. | Использовать формат ep-<number>-<short-slug>. | open |
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | medium | AUD-GIT-002 | docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md | Merge запрещен для EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
-| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
-| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | medium | AUD-GIT-002 | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | Merge запрещен для EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 
 ## 10. Critical findings
 
@@ -72,9 +71,9 @@ Historical/stale findings: 438
 | Group | Severity | Category | Total | Current | Historical | Active blocking | Recommendation |
 |---|---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | acceptance | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-001 | medium | git_workflow | 2 | 1 | 1 | False | Использовать формат ep-<number>-<short-slug>. |
-| AUD-GIT-002 | medium | git_workflow | 5 | 1 | 4 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
-| AUD-GIT-006 | medium | git_workflow | 12 | 1 | 11 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
+| AUD-GIT-001 | medium | git_workflow | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
+| AUD-GIT-002 | medium | git_workflow | 6 | 1 | 5 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
+| AUD-GIT-006 | medium | git_workflow | 13 | 1 | 12 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
 | AUD-LANG-001 | medium | language_policy | 251 | 0 | 251 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 
 ## 12. Findings, требующие решения пользователя

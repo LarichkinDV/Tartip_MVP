@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 0 |
+| ready_for_acceptance | 1 |
 | accepted | 20 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 0 |
+| pending | 1 |
 | protected_accepted_artifacts | 36 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - | - | - | - | - | - | - |
+| - [ ] требует проверки | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | Acceptance criteria and artifacts | docs/monthly/2026-06/01-business-functional-requirements.md, docs/monthly/2026-06/02-technical-specification.md, docs/monthly/2026-06/03-test-protocol-infrastructure-contour.md, docs/monthly/2026-06/presentation-outline.md, ... | - | [docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md](docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) |
 
 ## 3. Принятые задачи
 
