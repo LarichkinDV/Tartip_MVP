@@ -6,13 +6,13 @@ acceptance_dashboard:
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 1
-    accepted: 23
+    ready_for_acceptance: 0
+    accepted: 24
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 1
-    protected_accepted_artifacts: 39
+    pending: 0
+    protected_accepted_artifacts: 40
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -131,6 +131,11 @@ acceptance_dashboard:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      -
+        packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-14
+        acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
     planning_note: "Accepted source/manual artifacts are classified by EP-018-ACCEPTED-ARTIFACT-PROTECTION; generated dashboards remain regenerable."
@@ -4852,9 +4857,9 @@ acceptance_dashboard:
     -
       packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
       title: "Evidence-gated matching workspace"
-      status: ready_for_acceptance
+      status: accepted
       acceptance_owner: "Дмитрий"
-      acceptance_decision: pending
+      acceptance_decision: accepted
       acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
       artifacts:
         -
@@ -5015,10 +5020,10 @@ acceptance_dashboard:
           status: active
           type: acceptance_report
           acceptance_status: pending
-          protection_status: not_protected_pending
+          protection_status: protected
           source_category: source_acceptance
-          change_requires_user_approval: false
-          protection_locked: false
+          change_requires_user_approval: true
+          protection_locked: true
         -
           path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
           status: active
@@ -5034,93 +5039,93 @@ acceptance_dashboard:
         -
           id: AC-EP-025-001
           text: "Strict baseline после EP-024 acceptance совпал перед стартом EP-025."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-002
           text: "Создан docs/matching-workspace контур с README и evidence-gated workflow."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-003
           text: "Созданы domain schemas для draft matching workspace."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-004
           text: "Создан vertical scenario для кирпичной армированной перегородки 120 мм."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-005
           text: "Vertical scenario имеет status draft_requires_data, normative_status not_active, evidence_status missing_official_sources и activation_allowed false."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-006
           text: "Official classifier/normative fields остаются null/placeholders с requires_official_source true."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-007
           text: "Для missing official fields созданы structured data requirements."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-008
           text: "Validator запрещает direct forbidden domain edges."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-009
           text: "Validator запрещает active status и activation_allowed true при missing evidence."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-010
           text: "Validator запрещает LLM-generated, forbidden authority и user decision evidence для official fields."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-011
           text: "Validator требует WorkPackage context для WorkQuantity, ScheduleTask, ActualRecord и PlanFactComparison."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-012
           text: "Создан monthly block 2026-09 с тремя задачами по 15 часов."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-013
           text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-014
           text: "README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md и docs/02-domain-model.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-015
           text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-016
           text: "Нормативные данные, active matching rules и customer data не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-017
           text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
         -
           id: AC-EP-025-018
           text: "EP-025 остается ready_for_acceptance и не добавлен в accepted_packets."
-          codex_status: ready_for_acceptance
-          user_status: pending
+          codex_status: accepted
+          user_status: accepted
       user_checklist:
         -
           item: "Open the detailed acceptance report."
@@ -5135,7 +5140,7 @@ acceptance_dashboard:
       risks:
         []
       user_decision:
-        decision: pending
-        decided_by: ""
-        decided_at: ""
-        comments: ""
+        decision: accepted
+        decided_by: "Дмитрий"
+        decided_at: 2026-06-14
+        comments: "Принято. Проверено: создан draft-only Evidence-Gated Matching Workspace для вертикального сценария перегородки 120 мм; реальные КСИ/ГЭСН/ФСНБ данные не добавлены; active matching rules не создавались; нормативные значения оставлены как placeholders/null и требуют официальных источников; project-authorized источники не трактуются как подтверждение official normative status; запрещенные прямые связи BIM/КСИ/ГЭСН/календарь/факт не созданы; ActualRecord связан через WorkPackage/зону/захватку, а не напрямую с одиночным ModelElement; BIM-КСИ-ГЭСН методика не изменена; protected/manual artifacts и accepted reports других EP не изменены; user-owned поля Codex не заполнял; make verify и make check прошли."

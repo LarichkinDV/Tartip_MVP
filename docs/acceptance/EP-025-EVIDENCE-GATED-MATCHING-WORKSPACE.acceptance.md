@@ -7,10 +7,10 @@ ready_for_acceptance
 ## 2. Пользовательское решение
 
 ```yaml
-acceptance_decision: pending
-accepted_by:
-accepted_at:
-comments:
+acceptance_decision: accepted
+accepted_by: Дмитрий
+accepted_at: 2026-06-14
+comments: Принято. Проверено: создан draft-only Evidence-Gated Matching Workspace для вертикального сценария перегородки 120 мм; реальные КСИ/ГЭСН/ФСНБ данные не добавлены; active matching rules не создавались; нормативные значения оставлены как placeholders/null и требуют официальных источников; project-authorized источники не трактуются как подтверждение official normative status; запрещенные прямые связи BIM/КСИ/ГЭСН/календарь/факт не созданы; ActualRecord связан через WorkPackage/зону/захватку, а не напрямую с одиночным ModelElement; BIM-КСИ-ГЭСН методика не изменена; protected/manual artifacts и accepted reports других EP не изменены; user-owned поля Codex не заполнял; make verify и make check прошли.
 ```
 
 ## 3. Результат strict baseline

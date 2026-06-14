@@ -149,7 +149,7 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует источник classifier result для draft matching workspace"
-      question: "Предоставить official или project-authorized источник classifier result с версией и review metadata для draft workspace."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для synthetic scenario кирпичной перегородки 120 мм."
       expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/ksi/
@@ -170,7 +170,7 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует источник candidate norm для draft matching workspace"
-      question: "Предоставить official или project-authorized normative source с версией и review metadata для candidate norm placeholder."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для candidate norm evidence."
       expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/fsnb/
@@ -191,9 +191,9 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует source version evidence для draft matching workspace"
-      question: "Предоставить official или project-authorized source version evidence для candidate normative placeholder."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для source version evidence."
-      expected_input: "Source version metadata с authority, checksum, acquisition note и review decision."
+      expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/fsnb/
       blocks:
         -
@@ -212,7 +212,7 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует normative unit evidence для draft matching workspace"
-      question: "Предоставить official или project-authorized normative unit evidence для candidate calculation template."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для normative unit evidence."
       expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/fsnb/
@@ -233,7 +233,7 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует work composition evidence для draft matching workspace"
-      question: "Предоставить official или project-authorized work composition evidence для candidate normative placeholder."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для work composition evidence."
       expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/fsnb/
@@ -254,7 +254,7 @@ user_action_dashboard:
       priority: high
       status: open
       topic: "Отсутствует resource composition evidence для draft matching workspace"
-      question: "Предоставить official или project-authorized resource composition evidence для candidate normative placeholder."
+      question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
       expected_action: "Проверка evidence gate для resource composition evidence."
       expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       target_path: data/reference/inbox/fsnb/

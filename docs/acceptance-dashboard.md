@@ -6,19 +6,19 @@
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 1 |
-| accepted | 23 |
+| ready_for_acceptance | 0 |
+| accepted | 24 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 1 |
-| protected_accepted_artifacts | 39 |
+| pending | 0 |
+| protected_accepted_artifacts | 40 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - [ ] требует проверки | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Evidence-gated matching workspace | Acceptance criteria and artifacts | docs/matching-workspace/README.md, docs/matching-workspace/evidence-gated-workflow.md, schemas/domain/matching-workspace-session.schema.yml, schemas/domain/matching-workspace-group.schema.yml, ... | - | [docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md](docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md) |
+| - | - | - | - | - | - | - |
 
 ## 3. Принятые задачи
 
@@ -47,6 +47,7 @@
 | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | Дмитрий | 2026-06-13 | Принято. Проверено: созданы внутренние policy notes по IP, deliverables, границам данных Заказчика, opt-in data contribution, обезличиванию, агрегации и code/data separation; документы явно не являются юридическим заключением, договором, пользовательским соглашением, политикой обработки персональных данных или согласием Заказчика; зафиксированы local-first data boundary, default-off flags, запрет автоматической передачи данных, re-identification risk warning и разграничение code license/data use consent; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли. | accepted/protected |
 | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | Дмитрий | 2026-06-13 | Принято. Проверено: созданы БФТ, ТЗ, протокол испытаний и outline ежемесячной защиты для инфраструктурного контура прикладного прототипа; документы оформлены как customer-facing source artifacts, а не prompts; не заявлена промышленная готовность продукта; не выполнялся импорт реальных нормативных источников; не создавались active КСИ/ГЭСН rules; не заявлена автоматическая передача данных Заказчика; реальные данные работодателя/Заказчика не добавлены; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; make verify и make check прошли. | accepted/protected |
 | EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Data contribution and anonymization layer | Дмитрий | 2026-06-13 | Принято. Проверено: создан schema-first/documentation-first контур добровольной передачи, обезличивания и агрегации данных; реальные данные работодателя/Заказчика не добавлены; телеметрия, dataset contribution, external upload, AI training и commercial use отключены по умолчанию; examples являются synthetic-only; commercial_use_allowed=true допускается только для synthetic approved aggregate; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; user-owned поля Codex не заполнял; make verify и make check прошли. | accepted/protected |
+| EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Evidence-gated matching workspace | Дмитрий | 2026-06-14 | Принято. Проверено: создан draft-only Evidence-Gated Matching Workspace для вертикального сценария перегородки 120 мм; реальные КСИ/ГЭСН/ФСНБ данные не добавлены; active matching rules не создавались; нормативные значения оставлены как placeholders/null и требуют официальных источников; project-authorized источники не трактуются как подтверждение official normative status; запрещенные прямые связи BIM/КСИ/ГЭСН/календарь/факт не созданы; ActualRecord связан через WorkPackage/зону/захватку, а не напрямую с одиночным ModelElement; BIM-КСИ-ГЭСН методика не изменена; protected/manual artifacts и accepted reports других EP не изменены; user-owned поля Codex не заполнял; make verify и make check прошли. | accepted/protected |
 
 ## 4. Защищенные принятые артефакты
 
@@ -122,7 +123,8 @@
 | docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md | EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
-| docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | - | - | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Дмитрий | 2026-06-14 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Дмитрий | 2026-06-14 | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 

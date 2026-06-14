@@ -6,15 +6,15 @@
 
 ## 2. Текущий Execution Packet
 
-`EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`
+`none`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: ready_for_acceptance
-active_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
-last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+project_state: accepted_baseline
+active_execution_packet: none
+last_accepted_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+last_completed_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
 next_recommended_packet: none
 deferred_follow_up_packets: []
 ```
@@ -49,6 +49,7 @@ post_acceptance_baseline:
     - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
     - EP-016-REFERENCE-INTAKE-PREPARATION
     - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
 ```
 
 ## 5. Выполнено

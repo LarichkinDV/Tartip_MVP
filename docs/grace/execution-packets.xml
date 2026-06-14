@@ -1232,7 +1232,7 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
-  <Packet id="EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE" status="ready_for_acceptance">
+  <Packet id="EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE" status="accepted">
     <Name>Evidence-gated matching workspace</Name>
     <Goal>Создать первый проверяемый schema-first/documentation-first контур сопоставления данных ЦИМ с видами работ для одного draft-only элемента информационной модели.</Goal>
     <Scope>

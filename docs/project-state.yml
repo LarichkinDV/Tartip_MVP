@@ -1,10 +1,10 @@
 project_state:
   schema_version: 1
   updated_at: 2026-06-14
-  state_mode: ready_for_acceptance
-  active_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
-  last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-  last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+  state_mode: accepted_baseline
+  active_execution_packet: none
+  last_accepted_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+  last_completed_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
   next_recommended_packet: none
   deferred_follow_up_packets: []
   accepted_packets:
@@ -31,6 +31,7 @@ project_state:
     - EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS
     - EP-016-REFERENCE-INTAKE-PREPARATION
     - EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
+    - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
   monthly_scopes:
     -
       scope_id: MONTHLY-2026-06

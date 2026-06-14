@@ -6,7 +6,7 @@ user_review_workbench:
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 929be0c4bd558e143b711ee46b43eed035c758f689ed450a79c337b2537c0733
+      checksum_sha256: e790cf380552a77509ab9b8de8773dcce76cfda73139c87c6d39f863858bb07e
       status: present
       warning: ""
     -
@@ -16,7 +16,7 @@ user_review_workbench:
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: 7649ecba79d97bcb4fa6306a50ea6eaa825d1ce2553541692dd87b9a80269d8a
+      checksum_sha256: 0b50a5dc91fe0390a40fc4ac11f9207fac4f90a37c4499a948d0de4c5799911f
       status: present
       warning: ""
     -
@@ -26,22 +26,22 @@ user_review_workbench:
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: 2ed8f7f49f7198c27615e856f63bbd3222d0852e96f4fc83e8c157a186cc2ba3
+      checksum_sha256: 2b35bc99f59f9c6af4be4728f739de72856d585526d0727cca074d41fc61399e
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: db3d57c9f9978160ff3afb7ea6f16b54ba63f885782872f1c456c9e6a0255093
+      checksum_sha256: 162f407a6a691c18e172df4833fa6347e17d4b6996fc05340518c312cfe5ec2e
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: b864d098111aac15feb8b4d9cc78bbe4ff77199c22ed7e76449a55af6cde370f
+      checksum_sha256: d44569b026a4138db9da5add50eeb5e5469f4a41e3b29baeeefa022715d4f1fc
       status: present
       warning: ""
   summary:
-    active_review_items: 39
-    ready_for_acceptance: 1
+    active_review_items: 38
+    ready_for_acceptance: 0
     needs_revision: 0
     pending_manual_checks: 28
     open_user_actions: 10
@@ -51,7 +51,7 @@ user_review_workbench:
     active_blockers: 10
     audit_finding_groups: 6
     historical_audit_findings: 370
-    accepted_hidden_from_active_queue: 23
+    accepted_hidden_from_active_queue: 24
   post_acceptance_baseline:
     project_state: accepted_baseline
     accepted_packets:
@@ -192,6 +192,12 @@ user_review_workbench:
         accepted_by: "Дмитрий"
         accepted_at: 2026-06-13
         acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+        hidden_from_active_queue: true
+      -
+        packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+        accepted_by: "Дмитрий"
+        accepted_at: 2026-06-14
+        acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
         hidden_from_active_queue: true
     protection_flags_status: classified_by_EP-018
     protection_packet: EP-018-ACCEPTED-ARTIFACT-PROTECTION
@@ -1280,7 +1286,7 @@ user_review_workbench:
       title: "Отсутствует source version evidence для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-FSNB-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1295,7 +1301,7 @@ user_review_workbench:
           text: "activation evidence slot DR-MW-FSNB-001"
       risks:
         []
-      required_user_action: "Source version metadata с authority, checksum, acquisition note и review decision."
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
       how_to_check:
         -
           step: "Открыть data/questions/data-requirements.yml."
@@ -1329,7 +1335,7 @@ user_review_workbench:
       title: "Отсутствует источник candidate norm для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-GESN-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1378,7 +1384,7 @@ user_review_workbench:
       title: "Отсутствует источник classifier result для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-KSI-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1427,7 +1433,7 @@ user_review_workbench:
       title: "Отсутствует normative unit evidence для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-NORMUNIT-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1476,7 +1482,7 @@ user_review_workbench:
       title: "Отсутствует resource composition evidence для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-RESCOMP-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1525,7 +1531,7 @@ user_review_workbench:
       title: "Отсутствует work composition evidence для draft matching workspace"
       source_file: data/questions/data-requirements.yml
       source_id: DR-MW-WORKCOMP-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1574,7 +1580,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник ФСНБ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-FSNB-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1623,7 +1629,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник КСИ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-KSI-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1672,7 +1678,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник видов работ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-WORK-TYPES-001
-      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      source_checksum_sha256: 36a1e194e100c6e00edfe8952de8a022cf82ea28ee585bde2c46e83d1a1d9178
       acceptance_report: ""
       related_artifacts:
         -
@@ -1761,182 +1767,6 @@ user_review_workbench:
       apply_policy:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
-    -
-      id: ACCEPTANCE-EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
-      type: acceptance
-      priority: medium
-      status: ready_for_acceptance
-      packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
-      title: "Evidence-gated matching workspace"
-      source_file: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
-      source_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
-      source_checksum_sha256: 279bf6cbe25d1300e8e79cbc50c171ddb6c0d0c97aba95b5f1ab305e4f9870be
-      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
-      related_artifacts:
-        -
-          path: docs/matching-workspace/README.md
-        -
-          path: docs/matching-workspace/evidence-gated-workflow.md
-        -
-          path: schemas/domain/matching-workspace-session.schema.yml
-        -
-          path: schemas/domain/matching-workspace-group.schema.yml
-        -
-          path: schemas/domain/evidence-slot.schema.yml
-        -
-          path: schemas/domain/calculation-unit-candidate.schema.yml
-        -
-          path: schemas/domain/work-quantity.schema.yml
-        -
-          path: schemas/domain/work-package.schema.yml
-        -
-          path: schemas/domain/actual-record.schema.yml
-        -
-          path: schemas/domain/plan-fact-comparison.schema.yml
-        -
-          path: examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml
-        -
-          path: scripts/validate_matching_workspace.py
-        -
-          path: tests/test_validate_matching_workspace.py
-        -
-          path: docs/monthly/2026-09/monthly-plan.yml
-        -
-          path: docs/monthly/2026-09/01-business-functional-requirements.md
-        -
-          path: docs/monthly/2026-09/02-technical-specification.md
-        -
-          path: docs/monthly/2026-09/03-test-protocol-matching-workspace.md
-        -
-          path: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
-        -
-          path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
-      commands:
-        []
-      acceptance_criteria:
-        -
-          id: AC-EP-025-001
-          text: "Strict baseline после EP-024 acceptance совпал перед стартом EP-025."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-002
-          text: "Создан docs/matching-workspace контур с README и evidence-gated workflow."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-003
-          text: "Созданы domain schemas для draft matching workspace."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-004
-          text: "Создан vertical scenario для кирпичной армированной перегородки 120 мм."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-005
-          text: "Vertical scenario имеет status draft_requires_data, normative_status not_active, evidence_status missing_official_sources и activation_allowed false."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-006
-          text: "Official classifier/normative fields остаются null/placeholders с requires_official_source true."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-007
-          text: "Для missing official fields созданы structured data requirements."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-008
-          text: "Validator запрещает direct forbidden domain edges."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-009
-          text: "Validator запрещает active status и activation_allowed true при missing evidence."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-010
-          text: "Validator запрещает LLM-generated, forbidden authority и user decision evidence для official fields."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-011
-          text: "Validator требует WorkPackage context для WorkQuantity, ScheduleTask, ActualRecord и PlanFactComparison."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-012
-          text: "Создан monthly block 2026-09 с тремя задачами по 15 часов."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-013
-          text: "make verify и make check проходят."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-014
-          text: "README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md и docs/02-domain-model.md не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-015
-          text: "Accepted reports других EP не изменены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-016
-          text: "Нормативные данные, active matching rules и customer data не добавлены."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-017
-          text: "User-owned fields не заполнены Codex."
-          codex_status: ready_for_acceptance
-          user_status: pending
-        -
-          id: AC-EP-025-018
-          text: "EP-025 остается ready_for_acceptance и не добавлен в accepted_packets."
-          codex_status: ready_for_acceptance
-          user_status: pending
-      blockers:
-        []
-      risks:
-        []
-      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
-      how_to_check:
-        -
-          step: "Открыть acceptance report."
-        -
-          step: "Проверить критерии приемки, артефакты, блокеры и риски."
-        -
-          step: "Выполнить указанные команды проверки."
-      expected_result:
-        -
-          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
-      target_decision_file: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
-      target_fields_to_fill:
-        -
-          field: acceptance_decision
-        -
-          field: accepted_by
-        -
-          field: accepted_at
-        -
-          field: comments
-      user_decision:
-        acceptance_decision: pending
-        accepted_by: ""
-        accepted_at: ""
-        comments: ""
-      apply_policy:
-        can_apply: false
-        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
     -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
@@ -2532,6 +2362,12 @@ user_review_workbench:
       accepted_by: "Дмитрий"
       accepted_at: 2026-06-13
       acceptance_report: docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md
+      hidden_from_active_queue: true
+    -
+      packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+      accepted_by: "Дмитрий"
+      accepted_at: 2026-06-14
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
       hidden_from_active_queue: true
   warnings:
     []
