@@ -1232,4 +1232,84 @@
       <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
     </NonGoals>
   </Packet>
+  <Packet id="EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE" status="ready_for_acceptance">
+    <Name>Evidence-gated matching workspace</Name>
+    <Goal>Создать первый проверяемый schema-first/documentation-first контур сопоставления данных ЦИМ с видами работ для одного draft-only элемента информационной модели.</Goal>
+    <Scope>
+      <Item>Создать docs/matching-workspace с README и evidence-gated workflow</Item>
+      <Item>Создать domain schemas для matching workspace session, group, evidence slot, calculation unit candidate, work quantity, work package, actual record and plan-fact comparison</Item>
+      <Item>Создать draft-only vertical scenario для кирпичной армированной перегородки 120 мм</Item>
+      <Item>Создать data requirements для отсутствующих official classifier/normative fields</Item>
+      <Item>Создать scripts/validate_matching_workspace.py и tests/test_validate_matching_workspace.py</Item>
+      <Item>Создать monthly artifacts для 2026-09 matching workspace contour</Item>
+      <Item>Подключить validate-matching-workspace к make verify и make check</Item>
+      <Item>Обновить governance files и dashboards для EP-025</Item>
+      <Item>Подготовить acceptance report для пользовательской приемки EP-025</Item>
+    </Scope>
+    <ExpectedArtifacts>
+      <Artifact>docs/matching-workspace/README.md</Artifact>
+      <Artifact>docs/matching-workspace/evidence-gated-workflow.md</Artifact>
+      <Artifact>schemas/domain/matching-workspace-session.schema.yml</Artifact>
+      <Artifact>schemas/domain/matching-workspace-group.schema.yml</Artifact>
+      <Artifact>schemas/domain/evidence-slot.schema.yml</Artifact>
+      <Artifact>schemas/domain/calculation-unit-candidate.schema.yml</Artifact>
+      <Artifact>schemas/domain/work-quantity.schema.yml</Artifact>
+      <Artifact>schemas/domain/work-package.schema.yml</Artifact>
+      <Artifact>schemas/domain/actual-record.schema.yml</Artifact>
+      <Artifact>schemas/domain/plan-fact-comparison.schema.yml</Artifact>
+      <Artifact>examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml</Artifact>
+      <Artifact>data/questions/data-requirements.yml</Artifact>
+      <Artifact>scripts/validate_matching_workspace.py</Artifact>
+      <Artifact>tests/test_validate_matching_workspace.py</Artifact>
+      <Artifact>docs/monthly/2026-09/monthly-plan.yml</Artifact>
+      <Artifact>docs/monthly/2026-09/01-business-functional-requirements.md</Artifact>
+      <Artifact>docs/monthly/2026-09/02-technical-specification.md</Artifact>
+      <Artifact>docs/monthly/2026-09/03-test-protocol-matching-workspace.md</Artifact>
+      <Artifact>docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md</Artifact>
+      <Artifact>docs/project-state.yml</Artifact>
+      <Artifact>docs/grace/execution-packets.xml</Artifact>
+      <Artifact>docs/grace/module-contracts.xml</Artifact>
+      <Artifact>docs/grace/verification-plan.xml</Artifact>
+      <Artifact>docs/artifact-registry.yml</Artifact>
+      <Artifact>docs/project-plan.md</Artifact>
+      <Artifact>docs/status-report.md</Artifact>
+      <Artifact>docs/traceability-matrix.md</Artifact>
+      <Artifact>Makefile</Artifact>
+    </ExpectedArtifacts>
+    <AcceptanceCriteria>
+      <Criterion id="AC-EP-025-001">Strict baseline после EP-024 acceptance совпал перед стартом EP-025.</Criterion>
+      <Criterion id="AC-EP-025-002">Создан docs/matching-workspace контур с README и evidence-gated workflow.</Criterion>
+      <Criterion id="AC-EP-025-003">Созданы domain schemas для draft matching workspace.</Criterion>
+      <Criterion id="AC-EP-025-004">Создан vertical scenario для кирпичной армированной перегородки 120 мм.</Criterion>
+      <Criterion id="AC-EP-025-005">Vertical scenario имеет status draft_requires_data, normative_status not_active, evidence_status missing_official_sources и activation_allowed false.</Criterion>
+      <Criterion id="AC-EP-025-006">Official classifier/normative fields остаются null/placeholders с requires_official_source true.</Criterion>
+      <Criterion id="AC-EP-025-007">Для missing official fields созданы structured data requirements.</Criterion>
+      <Criterion id="AC-EP-025-008">Validator запрещает direct forbidden domain edges.</Criterion>
+      <Criterion id="AC-EP-025-009">Validator запрещает active status и activation_allowed true при missing evidence.</Criterion>
+      <Criterion id="AC-EP-025-010">Validator запрещает LLM-generated, forbidden authority и user decision evidence для official fields.</Criterion>
+      <Criterion id="AC-EP-025-011">Validator требует WorkPackage context для WorkQuantity, ScheduleTask, ActualRecord и PlanFactComparison.</Criterion>
+      <Criterion id="AC-EP-025-012">Создан monthly block 2026-09 с тремя задачами по 15 часов.</Criterion>
+      <Criterion id="AC-EP-025-013">make verify и make check проходят.</Criterion>
+      <Criterion id="AC-EP-025-014">README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md и docs/02-domain-model.md не изменены.</Criterion>
+      <Criterion id="AC-EP-025-015">Accepted reports других EP не изменены.</Criterion>
+      <Criterion id="AC-EP-025-016">Нормативные данные, active matching rules и customer data не добавлены.</Criterion>
+      <Criterion id="AC-EP-025-017">User-owned fields не заполнены Codex.</Criterion>
+      <Criterion id="AC-EP-025-018">EP-025 остается ready_for_acceptance и не добавлен в accepted_packets.</Criterion>
+    </AcceptanceCriteria>
+    <AcceptanceOwner>Дмитрий</AcceptanceOwner>
+    <NonGoals>
+      <Item>Do not implement backend runtime, web UI, database tables, or production service</Item>
+      <Item>Do not import real normative sources or customer data</Item>
+      <Item>Do not create active matching rules</Item>
+      <Item>Do not create direct ModelElement to GESNNorm mapping</Item>
+      <Item>Do not create direct KSIResultCode to GESNNorm selection</Item>
+      <Item>Do not create direct GESNNorm to ScheduleTask link</Item>
+      <Item>Do not store fact data in CalculationUnit</Item>
+      <Item>Do not link ActualRecord only to one ModelElement</Item>
+      <Item>Do not change README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md, or docs/02-domain-model.md</Item>
+      <Item>Do not change accepted reports of other execution packets</Item>
+      <Item>Do not create or edit DOCX/PDF files</Item>
+      <Item>Do not run git add, commit, merge, push, rebase, reset, clean, or branch deletion</Item>
+    </NonGoals>
+  </Packet>
 </ExecutionPackets>

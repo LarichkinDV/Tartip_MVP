@@ -1,6 +1,6 @@
 # Codex Spec Audit
 
-Дата обновления: 2026-06-13
+Дата обновления: 2026-06-14
 
 ## 1. Сводка
 
@@ -8,12 +8,12 @@
 |---|---:|---:|---:|
 | critical | 171 | 0 | 171 |
 | high | 0 | 0 | 0 |
-| medium | 261 | 3 | 258 |
+| medium | 263 | 3 | 260 |
 | low | 16 | 0 | 16 |
 
-Всего findings: 448
+Всего findings: 450
 Current findings: 3
-Historical/stale findings: 445
+Historical/stale findings: 447
 Активных critical findings: 0
 
 ## 2. Проверка доменной логики
@@ -58,9 +58,9 @@ Historical/stale findings: 445
 
 | ID | Severity | Check | File | Issue | Recommendation | Status |
 |---|---|---|---|---|---|---|
-| AUD-GIT-002-MERGE-FORBIDDEN-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | medium | AUD-GIT-002 | docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md | Merge запрещен для EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
+| AUD-GIT-002-MERGE-FORBIDDEN-EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | medium | AUD-GIT-002 | docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md | Merge запрещен для EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE: status=ready_for_acceptance, acceptance_decision=pending, accepted_by=empty. | Не готовить merge, пока пользователь не поставит accepted и accepted_by. | open |
 | AUD-GIT-005-MIXED-EP-SCOPES | medium | AUD-GIT-005 | .git | Working tree содержит изменения нескольких EP scopes: EP-005, EP-006, EP-007, EP-009, governance | Не выполнять commit/merge до ручного разделения изменений или явного user approval. | open |
-| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
+| AUD-GIT-006-NO-MAIN-MERGE-APPROVAL-EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | medium | AUD-GIT-006 | docs/git-workflow.md | Для EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE нет явного user approval на merge в main. | Получить явное разрешение пользователя после приемки и успешных проверок. | open |
 
 ## 10. Critical findings
 
@@ -72,8 +72,8 @@ Historical/stale findings: 445
 |---|---|---|---:|---:|---:|---|---|
 | AUD-ACCEPT-CODEX-USER-FIELD | critical | acceptance | 171 | 0 | 171 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 | AUD-GIT-001 | medium | git_workflow | 2 | 0 | 2 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
-| AUD-GIT-002 | medium | git_workflow | 8 | 1 | 7 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
-| AUD-GIT-006 | medium | git_workflow | 15 | 1 | 14 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
+| AUD-GIT-002 | medium | git_workflow | 9 | 1 | 8 | False | Не готовить merge, пока пользователь не поставит accepted и accepted_by. |
+| AUD-GIT-006 | medium | git_workflow | 16 | 1 | 15 | False | Получить явное разрешение пользователя после приемки и успешных проверок. |
 | AUD-LANG-001 | medium | language_policy | 251 | 0 | 251 | False | Historical findings are preserved but hidden from active_review_items while current_detected=false. |
 
 ## 12. Findings, требующие решения пользователя

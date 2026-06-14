@@ -66,7 +66,20 @@
       <Item>Prevent active status when required evidence is missing.</Item>
       <Item>Track dependencies on reference objects and revisions.</Item>
       <Item>Move rules to requires_norm_review when depended normative reference revisions change.</Item>
+      <Item>Maintain draft evidence-gated matching workspace schemas and vertical scenarios before runtime implementation.</Item>
+      <Item>Validate that WorkPackage mediates work quantities, schedule tasks, actual records, plan-fact comparisons, and control decisions.</Item>
     </Responsibilities>
+    <Inputs>
+      <Item>docs/matching-workspace/*.md</Item>
+      <Item>schemas/domain/*.schema.yml</Item>
+      <Item>examples/vertical-scenarios/*.workspace.yml</Item>
+      <Item>data/questions/*.yml</Item>
+    </Inputs>
+    <Outputs>
+      <Item>scripts/validate_matching_workspace.py</Item>
+      <Item>tests/test_validate_matching_workspace.py</Item>
+      <Item>docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md</Item>
+    </Outputs>
     <EvidenceRequirements>
       <Item field="ksi_result_code" required_authority="classifier_authoritative"/>
       <Item field="ksi_process_code" required_authority="classifier_authoritative"/>
@@ -82,7 +95,11 @@
       <Item>ModelElement must not map directly to GESNNorm.</Item>
       <Item>KSIResultCode must not directly select GESNNorm.</Item>
       <Item>GESNNorm must not create ScheduleTask directly.</Item>
+      <Item>CalculationUnit must not store ActualRecord or fact context.</Item>
+      <Item>ActualRecord must use WorkPackage / zone context and must not be linked only to a single ModelElement.</Item>
+      <Item>ScheduleTask must be planned through WorkPackage.</Item>
       <Item>Missing evidence blocks active status.</Item>
+      <Item>Draft workspace with missing official sources must keep activation_allowed=false.</Item>
     </Invariants>
   </Module>
   <Module id="M-PROJECT-PLANNING-AND-ACCEPTANCE" status="ready_for_acceptance">

@@ -345,6 +345,952 @@ artifacts:
       regeneration_command: null
       protected_since: null
   -
+    artifact_id: ART-MATCHING-WORKSPACE-README
+    name: "Matching workspace README"
+    type: documentation
+    path: docs/matching-workspace/README.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Overview of the draft evidence-gated matching workspace contour."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      []
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "New source document for EP-025; no active matching rules are created."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New matching workspace source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-WORKFLOW
+    name: "Evidence-gated workflow"
+    type: documentation
+    path: docs/matching-workspace/evidence-gated-workflow.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Workflow from model group to evidence slots, WorkPackage, planning, facts, comparison, and control decision."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-002
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Workflow is documentation-only and keeps activation_allowed=false until evidence is complete."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New matching workspace source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-SESSION-SCHEMA
+    name: "Matching workspace session schema"
+    type: schema
+    path: schemas/domain/matching-workspace-session.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for matching workspace session status and root structure."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+        - V-MATCHING-WORKSPACE-002
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Schema excludes active workspace status."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-GROUP-SCHEMA
+    name: "Matching workspace group schema"
+    type: schema
+    path: schemas/domain/matching-workspace-group.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for model group and element properties."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-SESSION-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Model group is not treated as construction work by itself."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-EVIDENCE-SLOT-SCHEMA
+    name: "Evidence slot schema"
+    type: schema
+    path: schemas/domain/evidence-slot.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for official source requirement placeholders and review status."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-003
+        - V-MATCHING-WORKSPACE-005
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-SESSION-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Evidence slot schema rejects LLM-generated and forbidden evidence in validator."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-CALCULATION-UNIT-SCHEMA
+    name: "Calculation unit candidate schema"
+    type: schema
+    path: schemas/domain/calculation-unit-candidate.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for calculation unit candidate as normative-calculation template."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-004
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-EVIDENCE-SLOT-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Calculation unit candidate does not store fact records."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-WORK-QUANTITY-SCHEMA
+    name: "Work quantity schema"
+    type: schema
+    path: schemas/domain/work-quantity.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for WorkQuantity aggregated into WorkPackage."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-SESSION-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "WorkQuantity must target WorkPackage before planning and fact comparison."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-WORK-PACKAGE-SCHEMA
+    name: "Work package schema"
+    type: schema
+    path: schemas/domain/work-package.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for WorkPackage as production grouping."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-WORK-QUANTITY-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "WorkPackage mediates quantities, schedule tasks and actual records."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-ACTUAL-RECORD-SCHEMA
+    name: "Actual record schema"
+    type: schema
+    path: schemas/domain/actual-record.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for ActualRecord with WorkPackage and zone context."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-004
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-WORK-PACKAGE-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Manual check fields remain user-owned."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-PLAN-FACT-SCHEMA
+    name: "Plan-fact comparison schema"
+    type: schema
+    path: schemas/domain/plan-fact-comparison.schema.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Draft schema for plan-fact comparison through WorkPackage context."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-ACTUAL-RECORD-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Comparison keeps WorkPackage context."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New domain schema remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MATCHING-WORKSPACE-VERTICAL-SCENARIO
+    name: "Partition brick 120 reinforced workspace scenario"
+    type: example_data
+    path: examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Synthetic draft-only vertical scenario for one model element group."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-002
+        - V-MATCHING-WORKSPACE-003
+        - V-MATCHING-WORKSPACE-006
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-SESSION-SCHEMA
+      - ART-MATCHING-WORKSPACE-EVIDENCE-SLOT-SCHEMA
+      - ART-MATCHING-WORKSPACE-WORK-PACKAGE-SCHEMA
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Synthetic scenario only; official fields are null/placeholders."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New synthetic scenario remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-VALIDATE-MATCHING-WORKSPACE
+    name: "Matching workspace validator"
+    type: script
+    path: scripts/validate_matching_workspace.py
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Validator for EP-025 evidence-gated matching workspace artifacts."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+        - V-MATCHING-WORKSPACE-002
+        - V-MATCHING-WORKSPACE-003
+        - V-MATCHING-WORKSPACE-004
+        - V-MATCHING-WORKSPACE-005
+        - V-MATCHING-WORKSPACE-006
+        - V-MATCHING-WORKSPACE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-VERTICAL-SCENARIO
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Validator is connected to make validate-matching-workspace, make verify, and make check."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Validation script remains modifiable by future execution packets."
+      source_category: script
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-TEST-VALIDATE-MATCHING-WORKSPACE
+    name: "Matching workspace validator tests"
+    type: test
+    path: tests/test_validate_matching_workspace.py
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Regression tests for EP-025 matching workspace safety gates."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-VALIDATE-MATCHING-WORKSPACE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Tests cover forbidden edges, inactive status, evidence sources, WorkPackage context, and user-owned fields."
+    protection:
+      protection_status: not_protected_code
+      protection_reason: "Test file remains modifiable by future execution packets."
+      source_category: test
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-09-PLAN
+    name: "Monthly plan 2026-09"
+    type: monthly_plan
+    path: docs/monthly/2026-09/monthly-plan.yml
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "September 2026 monthly plan for evidence-gated matching workspace contour."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-README
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Monthly block has three tasks with planned_hours=15."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-09-BFT-MATCHING-WORKSPACE
+    name: "September 2026 matching workspace BFT"
+    type: monthly_document
+    path: docs/monthly/2026-09/01-business-functional-requirements.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Business functional requirements for the evidence-gated matching workspace contour."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-09-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Customer-facing monthly source document for September matching workspace contour."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-09-TZ-MATCHING-WORKSPACE
+    name: "September 2026 matching workspace TZ"
+    type: monthly_document
+    path: docs/monthly/2026-09/02-technical-specification.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Technical specification for the evidence-gated matching workspace contour."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+        - V-MATCHING-WORKSPACE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-09-PLAN
+      - ART-VALIDATE-MATCHING-WORKSPACE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Technical specification does not introduce APIs, runtime, UI, migrations, or active rules."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-MONTHLY-2026-09-TEST-PROTOCOL-MATCHING-WORKSPACE
+    name: "September 2026 matching workspace test protocol"
+    type: monthly_test_protocol
+    path: docs/monthly/2026-09/03-test-protocol-matching-workspace.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Manual and automated test protocol for evidence-gated matching workspace safety gates."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MONTHLY-2026-09-PLAN
+      - ART-VALIDATE-MATCHING-WORKSPACE
+      - ART-TEST-VALIDATE-MATCHING-WORKSPACE
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "Manual review fields remain user-owned and pending."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "New monthly source artifact remains editable within EP-025 until user acceptance."
+      source_category: source_manual
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
+    artifact_id: ART-ACCEPTANCE-EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    name: "EP-025 acceptance report"
+    type: acceptance_report
+    path: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+    owner_module: M-MATCHING
+    related_packets:
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+    related_requirements:
+      - REQ-026
+    status: active
+    description: "Acceptance report for EP-025 evidence-gated matching workspace."
+    created_at: 2026-06-14
+    updated_at: 2026-06-14
+    verification:
+      status: pending
+      scenarios:
+        - V-MATCHING-WORKSPACE-001
+        - V-MATCHING-WORKSPACE-002
+        - V-MATCHING-WORKSPACE-003
+        - V-MATCHING-WORKSPACE-004
+        - V-MATCHING-WORKSPACE-005
+        - V-MATCHING-WORKSPACE-006
+        - V-MATCHING-WORKSPACE-007
+      last_checked_at: null
+      evidence: null
+    acceptance:
+      required: true
+      owner: "Дмитрий"
+      status: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      accepted_at: null
+      accepted_by: null
+      comments: null
+    depends_on:
+      - ART-MATCHING-WORKSPACE-README
+      - ART-MATCHING-WORKSPACE-VERTICAL-SCENARIO
+      - ART-VALIDATE-MATCHING-WORKSPACE
+      - ART-TEST-VALIDATE-MATCHING-WORKSPACE
+      - ART-MONTHLY-2026-09-PLAN
+    supersedes:
+      []
+    git:
+      branch: null
+      commit: null
+      pull_request: null
+    notes: "EP-025 remains ready_for_acceptance until user decision."
+    protection:
+      protection_status: not_protected_pending
+      protection_reason: "Pending EP-025 acceptance report is not protected until user acceptance."
+      source_category: source_acceptance
+      accepted_in: null
+      user_decision_source: null
+      change_requires_user_approval: false
+      allowed_update_modes:
+        - execution_packet_change
+      generator: null
+      derived_from:
+        []
+      regeneration_command: null
+      protected_since: null
+  -
     artifact_id: ART-DATA-CONTRIBUTION-README
     name: "Data contribution README"
     type: documentation
@@ -3411,14 +4357,16 @@ artifacts:
     owner_module: M-PROJECT-PLANNING-AND-ACCEPTANCE
     related_packets:
       - EP-002-REFERENCE-GOVERNANCE
+      - EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
     related_requirements:
       - REQ-005
       - REQ-006
+      - REQ-026
       - REQ-008
     status: active
     description: "Acceptance checklist for reference governance."
     created_at: 2026-06-05
-    updated_at: 2026-06-05
+    updated_at: 2026-06-14
     verification:
       status: verified
       scenarios:
@@ -3986,7 +4934,7 @@ artifacts:
       branch: null
       commit: null
       pull_request: null
-    notes: "Other question registry files live in data/questions/."
+    notes: "Other question registry files live in data/questions/. EP-025 adds open evidence requirements for draft matching workspace official fields."
     protection:
       protection_status: not_protected_pending
       protection_reason: "Data or draft artifact is governed by source evidence discipline and future execution packets."

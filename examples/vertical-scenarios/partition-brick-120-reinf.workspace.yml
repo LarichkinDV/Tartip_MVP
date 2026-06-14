@@ -1,0 +1,186 @@
+workspace_id: MW-EP025-PARTITION-BRICK-120-REINF
+status: draft_requires_data
+normative_status: not_active
+evidence_status: missing_official_sources
+activation_allowed: false
+data_classification: synthetic_example_only
+source_status: synthetic
+scenario_title: "Кирпичная армированная перегородка 120 мм"
+model_group:
+  group_id: CIM-GROUP-PARTITION-BRICK-120-REINF
+  group_type: cim_group
+  review_status: draft
+  properties:
+    element_kind: partition
+    material_family: brick
+    reinforcement: true
+    thickness_mm: 120
+  model_elements:
+    -
+      model_element_id: SYNTH-MODEL-ELEMENT-001
+      properties_ref: CIM-GROUP-PARTITION-BRICK-120-REINF
+ksi_result_code:
+  requires_official_source: true
+  value: null
+  question_id: DR-MW-KSI-001
+  review_status: pending_user_input
+  activation_allowed: false
+calculation_unit_candidate:
+  candidate_id: CU-CANDIDATE-PARTITION-BRICK-120-REINF
+  status: draft_requires_data
+  version: draft-0
+  calculation_template_kind: partition_masonry_candidate
+  candidate_work_type:
+    value: null
+    review_status: pending_user_input
+  normative_unit:
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-NORMUNIT-001
+    review_status: pending_user_input
+    activation_allowed: false
+  candidate_norm:
+    gesn_norm_code:
+      requires_official_source: true
+      value: null
+      question_id: DR-MW-GESN-001
+      review_status: pending_user_input
+      activation_allowed: false
+    fsnb_version:
+      requires_official_source: true
+      value: null
+      question_id: DR-MW-FSNB-001
+      review_status: pending_user_input
+      activation_allowed: false
+    work_composition:
+      requires_official_source: true
+      value: null
+      question_id: DR-MW-WORKCOMP-001
+      review_status: pending_user_input
+      activation_allowed: false
+    resource_composition:
+      requires_official_source: true
+      value: null
+      question_id: DR-MW-RESCOMP-001
+      review_status: pending_user_input
+      activation_allowed: false
+  evidence_slots:
+    - ES-KSI-RESULT
+    - ES-GESN-NORM
+    - ES-FSNB-VERSION
+    - ES-NORMATIVE-UNIT
+    - ES-WORK-COMPOSITION
+    - ES-RESOURCE-COMPOSITION
+evidence_slots:
+  -
+    slot_id: ES-KSI-RESULT
+    target_field: ksi_result_code
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-KSI-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+  -
+    slot_id: ES-GESN-NORM
+    target_field: gesn_norm_code
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-GESN-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+  -
+    slot_id: ES-FSNB-VERSION
+    target_field: fsnb_version
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-FSNB-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+  -
+    slot_id: ES-NORMATIVE-UNIT
+    target_field: normative_unit
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-NORMUNIT-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+  -
+    slot_id: ES-WORK-COMPOSITION
+    target_field: work_composition
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-WORKCOMP-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+  -
+    slot_id: ES-RESOURCE-COMPOSITION
+    target_field: resource_composition
+    requires_official_source: true
+    value: null
+    question_id: DR-MW-RESCOMP-001
+    source_origin: missing
+    source_authority: missing
+    review_status: pending_user_input
+    activation_allowed: false
+work_quantities:
+  -
+    work_quantity_id: WQ-PARTITION-BRICK-120-REINF-001
+    model_element_ids:
+      - SYNTH-MODEL-ELEMENT-001
+    quantity_kind: draft_area
+    quantity_value: null
+    unit: null
+    work_package_id: WP-PARTITION-BRICK-120-REINF-001
+    review_status: pending_user_input
+work_packages:
+  -
+    work_package_id: WP-PARTITION-BRICK-120-REINF-001
+    zone_id: synthetic_zone
+    work_quantity_ids:
+      - WQ-PARTITION-BRICK-120-REINF-001
+    schedule_task_ids:
+      - ST-PARTITION-BRICK-120-REINF-001
+    actual_record_ids:
+      - AR-PARTITION-BRICK-120-REINF-001
+    review_status: draft
+schedule_tasks:
+  -
+    schedule_task_id: ST-PARTITION-BRICK-120-REINF-001
+    work_package_id: WP-PARTITION-BRICK-120-REINF-001
+    task_status: draft
+    review_status: pending_user_input
+actual_records:
+  -
+    actual_record_id: AR-PARTITION-BRICK-120-REINF-001
+    work_package_id: WP-PARTITION-BRICK-120-REINF-001
+    zone_id: synthetic_zone
+    record_kind: draft_fact_placeholder
+    quantity_value: null
+    unit: null
+    checked_by:
+    checked_at:
+    result: pending_user_check
+plan_fact_comparisons:
+  -
+    comparison_id: PFC-PARTITION-BRICK-120-REINF-001
+    schedule_task_id: ST-PARTITION-BRICK-120-REINF-001
+    actual_record_id: AR-PARTITION-BRICK-120-REINF-001
+    work_package_id: WP-PARTITION-BRICK-120-REINF-001
+    result_status: requires_review
+    control_decision_id: CD-PARTITION-BRICK-120-REINF-001
+control_decisions:
+  -
+    control_decision_id: CD-PARTITION-BRICK-120-REINF-001
+    decision_status: requires_review
+    reason: missing_official_sources
+matching_rules: []

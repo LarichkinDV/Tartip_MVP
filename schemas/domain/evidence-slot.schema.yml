@@ -1,0 +1,35 @@
+schema_id: evidence-slot
+schema_version: 1
+title: Evidence slot schema
+status: draft
+required_fields:
+  - slot_id
+  - target_field
+  - requires_official_source
+  - value
+  - question_id
+  - source_origin
+  - source_authority
+  - review_status
+  - activation_allowed
+allowed_source_origins:
+  - missing
+  - official_public_source
+  - official_user_provided_file
+  - project_dictionary
+  - user_decision
+  - llm_generated
+allowed_source_authorities:
+  - missing
+  - official
+  - project_authorized
+  - user_asserted
+  - forbidden
+allowed_review_statuses:
+  - pending_user_input
+  - accepted_by_user
+  - rejected_by_user
+  - requires_norm_review
+notes:
+  - "llm_generated and forbidden sources cannot be evidence."
+  - "user_decision cannot confirm official classifier or normative fields."

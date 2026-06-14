@@ -2,20 +2,20 @@
 
 ## 1. Дата обновления
 
-2026-06-13
+2026-06-14
 
 ## 2. Текущий Execution Packet
 
-`none`
+`EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`
 
 ## 3. Текущий статус
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
 last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-next_recommended_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+next_recommended_packet: none
 deferred_follow_up_packets: []
 ```
 
@@ -79,15 +79,16 @@ post_acceptance_baseline:
 - EP-022B принят пользователем Дмитрием 2026-06-13 и синхронизирован как post-acceptance состояние.
 - EP-023 подготовил БФТ, ТЗ, протокол испытаний и presentation outline для инфраструктурного контура первого месяца.
 - EP-016 принят пользователем и синхронизирован как documentation-first/schema-first контур учета и проверки нормативно-справочных источников без импорта реальных нормативных данных.
-- EP-024 подготовил schema-first/documentation-first контур добровольной передачи, anonymization, generalization, aggregation, synthetic examples, validator/tests и August monthly documents без сбора реальных customer data.
+- EP-024 принят пользователем и синхронизирован как schema-first/documentation-first контур добровольной передачи, anonymization, generalization, aggregation, synthetic examples, validator/tests и August monthly documents без сбора реальных customer data.
+- EP-025 подготовил draft-only Evidence-Gated Matching Workspace для кирпичной армированной перегородки 120 мм без активного нормативного сопоставления.
 
 ## 6. В работе
 
-Активный пакет: `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`.
+Активный пакет: `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`.
 
 ## 7. Готово к приемке
 
-- [EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md)
+- [EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE](acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md)
 
 ## 8. Принятый Baseline
 
@@ -113,13 +114,14 @@ post_acceptance_baseline:
 - [EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md)
 - [EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md)
 - [EP-016-REFERENCE-INTAKE-PREPARATION](acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md)
+- [EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md)
 
 ## 9. Follow-Up Debt
 
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
 - `EP-019-CODEX-CONTEXT-COMPACTION`: accepted; compact working context accepted by the user and post-acceptance state synchronized.
-- `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`: ready_for_acceptance; data contribution docs, schemas, synthetic examples, validator/tests and August monthly documents are prepared.
-- `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`: next recommended packet after EP-024 acceptance.
+- `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`: ready_for_acceptance; draft workspace docs, schemas, vertical scenario, validator/tests and September monthly documents are prepared.
+- `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`: accepted; data contribution docs, schemas, synthetic examples, validator/tests and August monthly documents are baseline.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: accepted; reference intake documents, manifests, validator/tests and July monthly documents are baseline.
 - `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: accepted; first month documents are baseline.
 - `EP-018-ACCEPTED-ARTIFACT-PROTECTION`: accepted; protected source/manual artifacts are classified, generated dashboards/workbench remain derived artifacts.
@@ -141,6 +143,8 @@ post_acceptance_baseline:
 - EP-016 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the reference intake scope.
 - EP-024 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the data contribution scope.
 - EP-024 dissertation impact: none; пакет создает engineering governance контур и не меняет научное содержание, методику исследования, источники или DOCX/PDF артефакты.
+- EP-025 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the matching workspace scope.
+- EP-025 dissertation impact: none; пакет создает engineering governance контур и не меняет научное содержание, методику исследования, источники или DOCX/PDF артефакты.
 
 ## 12. EP-006 Orphan Scope
 
@@ -152,7 +156,7 @@ post_acceptance_baseline:
 
 User planning override for EP-022A: `EP-016-REFERENCE-INTAKE-PREPARATION` is temporarily deferred while customer-facing roadmap, monthly planning, and legal/data boundary notes are prepared. This override is recorded only in internal governance files and is not part of the customer-facing roadmap.
 
-Planning override перед EP-016 завершен после принятого EP-023. `EP-016-REFERENCE-INTAKE-PREPARATION` принят и синхронизирован. `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER` является текущим packet, а `deferred_follow_up_packets` остается пустым.
+Planning override перед EP-016 завершен после принятого EP-023. `EP-016-REFERENCE-INTAKE-PREPARATION` принят и синхронизирован. `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER` принят и синхронизирован. `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE` является текущим packet, а `deferred_follow_up_packets` остается пустым.
 
 ## 14. Preflight Note
 
@@ -160,4 +164,4 @@ Planning override перед EP-016 завершен после принятог
 
 ## 15. Следующий шаг
 
-EP-024 подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет после приемки EP-024: `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`.
+EP-025 подготовлен в статусе `ready_for_acceptance`. Следующий рекомендуемый пакет пока не задан: `none`.

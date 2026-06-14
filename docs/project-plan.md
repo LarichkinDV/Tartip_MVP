@@ -12,14 +12,14 @@ Create a local-first system for BIM5D cost-schedule matching that keeps BIM elem
 
 ## 3. Project State
 
-Current execution packet: `none`.
+Current execution packet: `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`.
 
 ```yaml
-project_state: accepted_baseline
-active_execution_packet: none
+project_state: ready_for_acceptance
+active_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
 last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
 last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-next_recommended_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+next_recommended_packet: none
 deferred_follow_up_packets: []
 ```
 
@@ -27,7 +27,7 @@ deferred_follow_up_packets: []
 
 The accepted baseline through EP-014 is closed by user decisions in `docs/acceptance/*.acceptance.md`. EP-014 synchronized the user-review decision CLI safety gap without repeating EP-012 and without changing accepted decisions EP-001 through EP-013.
 
-EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован как compact context baseline. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS` принят пользователем и синхронизирован как baseline первого месячного комплекта. `EP-016-REFERENCE-INTAKE-PREPARATION` принят пользователем и синхронизирован как documentation-first/schema-first контур учета источников без импорта реальных нормативных данных. `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER` подготовлен к приемке как schema-first/documentation-first контур добровольной передачи, anonymization и aggregation без реальных customer data.
+EP-018 принят пользователем 2026-06-10 и синхронизирован в post-acceptance baseline. `CR-EP-010-README-CHANGELOG-LANGUAGE-NORMALIZATION` approved пользователем до старта EP-010. `EP-010-LANGUAGE-NORMALIZATION` принят пользователем 2026-06-10 после нормализации только пользовательских фрагментов README.md и CHANGELOG.md без изменения технических идентификаторов, команд, enum-статусов, кодовых блоков и предметной методики. `EP-015-VERIFICATION-DASHBOARD-RECONCILIATION` принят пользователем 2026-06-11 и синхронизирован в post-acceptance baseline. `EP-017-AUDIT-FINDINGS-CLEANUP` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; stale audit/workbench noise сокращен без удаления истории findings. `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION` принят пользователем 2026-06-12 и синхронизирован в post-acceptance baseline; sync automation остается инструментом для уже принятых пользователем пакетов и не принимает пакеты от имени Codex. `EP-019-CODEX-CONTEXT-COMPACTION` принят пользователем и синхронизирован как compact context baseline. `EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES` принят пользователем 2026-06-13 и синхронизирован в baseline. `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS` принят пользователем и синхронизирован как baseline первого месячного комплекта. `EP-016-REFERENCE-INTAKE-PREPARATION` принят пользователем и синхронизирован как documentation-first/schema-first контур учета источников без импорта реальных нормативных данных. `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER` принят пользователем и синхронизирован как schema-first/documentation-first контур data contribution без реальных customer data. `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE` подготовлен к приемке как draft-only контур сопоставления данных ЦИМ с видами работ без активного нормативного сопоставления.
 
 ## 5. Post-Acceptance Baseline
 
@@ -97,7 +97,8 @@ Planning override перед EP-016 завершен после принятог
 | Legal Data Boundary Policy Notes | Internal policy notes for IP/deliverables, customer data boundary, data contribution, anonymization/aggregation, and code/data separation | accepted | [legal notes](legal/README.md), [legal data boundary validator](../scripts/validate_legal_data_boundary_notes.py), [EP-022B acceptance](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) |
 | Month 01 Infrastructure Customer Documents | БФТ, ТЗ, протокол испытаний and presentation outline for the first monthly infrastructure contour | accepted | [БФТ](monthly/2026-06/01-business-functional-requirements.md), [ТЗ](monthly/2026-06/02-technical-specification.md), [протокол](monthly/2026-06/03-test-protocol-infrastructure-contour.md), [EP-023 acceptance](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) |
 | Reference Intake Preparation | Контур учета и проверки нормативно-справочных источников без импорта реальных нормативных данных | accepted | [reference intake docs](reference-intake/README.md), [intake log](../data/reference/manifests/intake-log.yml), [EP-016 acceptance](acceptance/EP-016-REFERENCE-INTAKE-PREPARATION.acceptance.md) |
-| Data Contribution And Anonymization Layer | Schema-first контур добровольной передачи, anonymization, generalization, aggregation и synthetic examples | ready_for_acceptance | [data contribution docs](data-contribution/README.md), [schemas](../schemas/data-contribution/data-contribution-consent.schema.yml), [EP-024 acceptance](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md) |
+| Data Contribution And Anonymization Layer | Schema-first контур добровольной передачи, anonymization, generalization, aggregation и synthetic examples | accepted | [data contribution docs](data-contribution/README.md), [schemas](../schemas/data-contribution/data-contribution-consent.schema.yml), [EP-024 acceptance](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md) |
+| Evidence-Gated Matching Workspace | Draft-only контур сопоставления данных ЦИМ с видами работ через evidence slots и WorkPackage context | ready_for_acceptance | [matching workspace docs](matching-workspace/README.md), [vertical scenario](../examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml), [EP-025 acceptance](acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md) |
 
 ## 7. Execution Packets
 
@@ -125,7 +126,8 @@ Planning override перед EP-016 завершен после принятог
 | EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING | Customer-facing MVP roadmap and monthly planning | accepted | [EP-022A report](acceptance/EP-022A-CUSTOMER-FACING-MVP-ROADMAP-AND-MONTHLY-PLANNING.acceptance.md) | Completed; next recommended packet is EP-022B legal/data boundary policy notes. |
 | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Legal data boundary policy notes | accepted | [EP-022B report](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md) | Completed; next recommended packet is EP-023 month 01 customer documents. |
 | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Month 01 infrastructure customer documents | accepted | [EP-023 report](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md) | Completed; EP-016 reference intake preparation is accepted. |
-| EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Data contribution and anonymization layer | accepted | [EP-024 report](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md) | User reviews schema-first data contribution docs, schemas, synthetic examples, validator/tests and August monthly documents. |
+| EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Data contribution and anonymization layer | accepted | [EP-024 report](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md) | Completed; EP-025 evidence-gated matching workspace is active. |
+| EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Evidence-gated matching workspace | ready_for_acceptance | [EP-025 report](acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md) | User reviews draft workspace docs, schemas, vertical scenario, validator/tests and September monthly documents. |
 
 ## 8. Status Values
 
@@ -177,11 +179,12 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - [EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md](acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md)
 - [EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md](acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md)
 - [EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md](acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md)
+- [EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md](acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md)
 
 ## 11. Follow-Up Roadmap
 
-- `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`: ready_for_acceptance; data contribution docs, schemas, synthetic examples, validator/tests and August monthly documents are prepared.
-- `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`: next recommended packet after EP-024 acceptance.
+- `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`: ready_for_acceptance; draft workspace docs, schemas, vertical scenario, validator/tests and September monthly documents are prepared.
+- `EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER`: accepted; data contribution docs, schemas, synthetic examples, validator/tests and August monthly documents are baseline.
 - `EP-016-REFERENCE-INTAKE-PREPARATION`: accepted; reference intake documents, manifests, validator/tests and July monthly documents are baseline.
 - `EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS`: accepted; first month BFT, TZ, test protocol, and presentation outline are baseline.
 - `EP-021-POST-ACCEPTANCE-SYNC-AUTOMATION`: accepted; post-acceptance sync automation is available for already accepted packets.
@@ -201,6 +204,7 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 - EP-023 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the monthly customer documents scope.
 - EP-016 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the reference intake scope.
 - EP-024 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the data contribution scope.
+- EP-025 does not change `CHANGELOG.md` because the current packet scope forbids changing protected artifacts outside the matching workspace scope.
 
 ## 13. Blockers
 
@@ -211,4 +215,4 @@ Codex may prepare `ready_for_acceptance`; `accepted` statuses for EP-013, EP-014
 
 ## 15. Next Step
 
-EP-024 подготовлен в статусе `ready_for_acceptance`. Пользователь проверяет data contribution docs, YAML-схемы, synthetic examples, validator/tests, августовские БФТ/ТЗ/протокол и результаты проверок. Следующий рекомендуемый пакет после приемки EP-024: `EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE`.
+EP-025 подготовлен в статусе `ready_for_acceptance`. Пользователь проверяет matching workspace docs, domain schemas, draft vertical scenario, validator/tests, сентябрьские БФТ/ТЗ/протокол и результаты проверок. Следующий рекомендуемый пакет пока не задан: `none`.

@@ -61,3 +61,93 @@ questions:
     created_at: 2026-06-04
     resolved_at: null
     resolution: null
+  -
+    id: DR-MW-KSI-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует источник classifier result для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для synthetic scenario кирпичной перегородки 120 мм."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/ksi/
+    blocks: "activation evidence slot DR-MW-KSI-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null
+  -
+    id: DR-MW-GESN-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует источник candidate norm для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для candidate norm evidence."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/fsnb/
+    blocks: "activation evidence slot DR-MW-GESN-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null
+  -
+    id: DR-MW-FSNB-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует source version evidence для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для source version evidence."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/fsnb/
+    blocks: "activation evidence slot DR-MW-FSNB-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null
+  -
+    id: DR-MW-NORMUNIT-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует normative unit evidence для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для normative unit evidence."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/fsnb/
+    blocks: "activation evidence slot DR-MW-NORMUNIT-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null
+  -
+    id: DR-MW-WORKCOMP-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует work composition evidence для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для work composition evidence."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/fsnb/
+    blocks: "activation evidence slot DR-MW-WORKCOMP-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null
+  -
+    id: DR-MW-RESCOMP-001
+    type: data_requirement
+    status: open
+    priority: high
+    module: M-MATCHING
+    topic: "Отсутствует resource composition evidence для draft matching workspace"
+    question: "Предоставить official source для подтверждения official normative field либо project-authorized project dictionary entry только для draft/non-official candidate context."
+    needed_for: "Проверка evidence gate для resource composition evidence."
+    expected_input: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+    target_path: data/reference/inbox/fsnb/
+    blocks: "activation evidence slot DR-MW-RESCOMP-001"
+    created_at: 2026-06-14
+    resolved_at: null
+    resolution: null

@@ -1,11 +1,11 @@
 project_state:
   schema_version: 1
-  updated_at: 2026-06-13
-  state_mode: accepted_baseline
-  active_execution_packet: none
+  updated_at: 2026-06-14
+  state_mode: ready_for_acceptance
+  active_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
   last_accepted_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
   last_completed_execution_packet: EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER
-  next_recommended_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+  next_recommended_packet: none
   deferred_follow_up_packets: []
   accepted_packets:
     - EP-001-INFRA

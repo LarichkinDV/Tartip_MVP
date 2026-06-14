@@ -1,0 +1,19 @@
+schema_id: matching-workspace-group
+schema_version: 1
+title: Matching workspace group schema
+status: draft
+required_fields:
+  - group_id
+  - group_type
+  - model_elements
+  - properties
+  - review_status
+allowed_group_types:
+  - cim_group
+  - bim_group
+allowed_review_statuses:
+  - pending_user_input
+  - requires_review
+  - draft
+notes:
+  - "The group describes source model context, not a construction work by itself."

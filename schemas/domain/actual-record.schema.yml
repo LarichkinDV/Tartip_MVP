@@ -1,0 +1,17 @@
+schema_id: actual-record
+schema_version: 1
+title: Actual record schema
+status: draft
+required_fields:
+  - actual_record_id
+  - work_package_id
+  - zone_id
+  - record_kind
+  - quantity_value
+  - unit
+  - checked_by
+  - checked_at
+  - result
+notes:
+  - "Manual check fields are user-owned."
+  - "ActualRecord must use WorkPackage / zone context."

@@ -1,0 +1,13 @@
+schema_id: work-package
+schema_version: 1
+title: Work package schema
+status: draft
+required_fields:
+  - work_package_id
+  - zone_id
+  - work_quantity_ids
+  - schedule_task_ids
+  - actual_record_ids
+  - review_status
+notes:
+  - "WorkPackage is the production grouping between quantities, schedule tasks, and fact records."

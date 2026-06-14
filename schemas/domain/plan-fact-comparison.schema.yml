@@ -1,0 +1,17 @@
+schema_id: plan-fact-comparison
+schema_version: 1
+title: Plan fact comparison schema
+status: draft
+required_fields:
+  - comparison_id
+  - schedule_task_id
+  - actual_record_id
+  - work_package_id
+  - result_status
+  - control_decision_id
+allowed_result_statuses:
+  - requires_review
+  - blocked
+  - draft
+notes:
+  - "Comparison uses plan source and fact source through WorkPackage context."

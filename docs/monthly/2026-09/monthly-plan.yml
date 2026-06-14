@@ -1,0 +1,32 @@
+monthly_plan:
+  schema_version: 1
+  month: 2026-09
+  title: "Контур сопоставления данных ЦИМ с видами работ"
+  status: ready_for_acceptance
+  related_execution_packet: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+  planned_total_hours: 45
+  tasks:
+    -
+      task_id: MONTHLY-2026-09-T01
+      title: "БФТ evidence-gated matching workspace"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-09/01-business-functional-requirements.md
+      owner: "Дмитрий"
+      status: planned
+    -
+      task_id: MONTHLY-2026-09-T02
+      title: "ТЗ draft matching workspace schemas"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-09/02-technical-specification.md
+      owner: "Дмитрий"
+      status: planned
+    -
+      task_id: MONTHLY-2026-09-T03
+      title: "Протокол проверки evidence gates"
+      planned_hours: 15
+      deliverable: docs/monthly/2026-09/03-test-protocol-matching-workspace.md
+      owner: "Дмитрий"
+      status: planned
+  notes:
+    - "Месячный блок описывает только schema-first/documentation-first контур."
+    - "Официальные classifier/normative values не заполняются без sources."

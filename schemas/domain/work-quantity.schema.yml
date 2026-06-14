@@ -1,0 +1,14 @@
+schema_id: work-quantity
+schema_version: 1
+title: Work quantity schema
+status: draft
+required_fields:
+  - work_quantity_id
+  - model_element_ids
+  - quantity_kind
+  - quantity_value
+  - unit
+  - work_package_id
+  - review_status
+notes:
+  - "WorkQuantity is aggregated into WorkPackage before planning and fact comparison."

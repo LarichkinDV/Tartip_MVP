@@ -1,24 +1,24 @@
 # Единое окно приемки проекта Tartip
 
-Дата обновления: 2026-06-13
+Дата обновления: 2026-06-14
 
 ## 1. Сводка
 
 | Статус | Количество |
 |---|---:|
-| ready_for_acceptance | 0 |
+| ready_for_acceptance | 1 |
 | accepted | 23 |
 | needs_revision | 0 |
 | rejected | 0 |
 | blocked | 0 |
-| pending | 0 |
+| pending | 1 |
 | protected_accepted_artifacts | 39 |
 
 ## 2. Требуют приемки
 
 | Галочка | Пакет | Наименование | Что проверить | Артефакты | Команды | Детальный отчет |
 |---|---|---|---|---|---|---|
-| - | - | - | - | - | - | - |
+| - [ ] требует проверки | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | Evidence-gated matching workspace | Acceptance criteria and artifacts | docs/matching-workspace/README.md, docs/matching-workspace/evidence-gated-workflow.md, schemas/domain/matching-workspace-session.schema.yml, schemas/domain/matching-workspace-group.schema.yml, ... | - | [docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md](docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md) |
 
 ## 3. Принятые задачи
 
@@ -122,6 +122,7 @@
 | docs/acceptance/EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES.acceptance.md | EP-022B-LEGAL-DATA-BOUNDARY-POLICY-NOTES | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS.acceptance.md | EP-023-MONTH-01-INFRASTRUCTURE-CUSTOMER-DOCUMENTS | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
 | docs/acceptance/EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER.acceptance.md | EP-024-DATA-CONTRIBUTION-AND-ANONYMIZATION-LAYER | Дмитрий | 2026-06-13 | Изменение требует user approval и новой ревизии |
+| docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md | EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE | - | - | Изменение требует user approval и новой ревизии |
 
 Historical accepted comments may mention earlier EP-014 protection planning; the current accepted artifact protection packet is `EP-018-ACCEPTED-ARTIFACT-PROTECTION`.
 

@@ -1,0 +1,30 @@
+schema_id: matching-workspace-session
+schema_version: 1
+title: Matching workspace session schema
+status: draft
+required_fields:
+  - workspace_id
+  - status
+  - normative_status
+  - evidence_status
+  - activation_allowed
+  - model_group
+  - calculation_unit_candidate
+  - evidence_slots
+  - work_quantities
+  - work_packages
+  - schedule_tasks
+  - actual_records
+  - plan_fact_comparisons
+  - control_decisions
+allowed_statuses:
+  - draft_requires_data
+  - requires_review
+  - blocked
+required_defaults:
+  normative_status: not_active
+  evidence_status: missing_official_sources
+  activation_allowed: false
+notes:
+  - "Workspace remains draft-only until official evidence and user-owned review are complete."
+  - "No active matching rules are created by this schema."

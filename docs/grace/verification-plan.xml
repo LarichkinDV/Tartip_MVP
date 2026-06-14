@@ -667,4 +667,32 @@
     <Name>EP-024 validator and tests are connected</Name>
     <Expected>scripts/validate_data_contribution.py and tests/test_validate_data_contribution.py validate EP-024 artifacts, and make verify/check include validate-data-contribution.</Expected>
   </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-001" module="M-MATCHING">
+    <Name>matching workspace source artifacts exist</Name>
+    <Expected>docs/matching-workspace, schemas/domain matching workspace schemas, the vertical scenario, and September 2026 monthly artifacts exist for EP-025.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-002" module="M-MATCHING">
+    <Name>draft workspace remains inactive</Name>
+    <Expected>The vertical scenario uses status draft_requires_data, normative_status not_active, evidence_status missing_official_sources, and activation_allowed false.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-003" module="M-MATCHING">
+    <Name>official fields use placeholders until evidence exists</Name>
+    <Expected>KSI, GESN, FSNB, normative unit, work composition, and resource composition fields remain null with requires_official_source true and pending question ids.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-004" module="M-MATCHING">
+    <Name>forbidden domain edges are rejected</Name>
+    <Expected>scripts/validate_matching_workspace.py rejects direct model element to norm, classifier to norm, norm to schedule task, calculation unit to fact, and actual record only to model element links.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-005" module="M-MATCHING">
+    <Name>evidence sources are gated</Name>
+    <Expected>LLM-generated evidence, forbidden source authority, and user decision confirmation of official classifier/normative fields are rejected.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-006" module="M-MATCHING">
+    <Name>WorkPackage mediates quantity schedule and fact context</Name>
+    <Expected>WorkQuantity, ScheduleTask, ActualRecord, and PlanFactComparison keep WorkPackage context in the vertical scenario.</Expected>
+  </Scenario>
+  <Scenario id="V-MATCHING-WORKSPACE-007" module="M-MATCHING">
+    <Name>EP-025 validator and tests are connected</Name>
+    <Expected>scripts/validate_matching_workspace.py and tests/test_validate_matching_workspace.py validate EP-025 artifacts, and make verify/check include validate-matching-workspace.</Expected>
+  </Scenario>
 </VerificationPlan>

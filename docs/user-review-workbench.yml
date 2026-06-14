@@ -1,56 +1,56 @@
 user_review_workbench:
   schema_version: 1
-  generated_at: 2026-06-13
+  generated_at: 2026-06-14
   generated_by: Codex
   mode: active_user_review_queue
   source_files:
     -
       path: docs/acceptance-dashboard.yml
-      checksum_sha256: 31ee8cf8807d4f704f365cc73a933deebdc1e7bc1597b80b59db2383565e5461
+      checksum_sha256: 929be0c4bd558e143b711ee46b43eed035c758f689ed450a79c337b2537c0733
       status: present
       warning: ""
     -
       path: docs/verification-dashboard.yml
-      checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       status: present
       warning: ""
     -
       path: docs/user-action-dashboard.yml
-      checksum_sha256: ea061ecaff2b207fc75eb412190ed0c2d1b3ad0fe196eeb2c30c3d3d51596bdc
+      checksum_sha256: 7649ecba79d97bcb4fa6306a50ea6eaa825d1ce2553541692dd87b9a80269d8a
       status: present
       warning: ""
     -
       path: docs/audit/audit-findings.yml
-      checksum_sha256: 578d794164f031110cbe32e8b3bf0339d5e7e17859461723caa6c542a7d709ff
+      checksum_sha256: d5f68a0f0413779d321e2bdd3f6f6e4f8dbabe8a7c3381c9d7c3b7617a333fa8
       status: present
       warning: ""
     -
       path: docs/artifact-registry.yml
-      checksum_sha256: 1ccdeae04e6cb64288d3529f9785432e12b4447f68fe414a97e39ccc3043ce46
+      checksum_sha256: 2ed8f7f49f7198c27615e856f63bbd3222d0852e96f4fc83e8c157a186cc2ba3
       status: present
       warning: ""
     -
       path: docs/status-report.md
-      checksum_sha256: 974954ee3494d849e3ca988e9c907a911bdfa0ace1c4b356923c833a1471d4e9
+      checksum_sha256: db3d57c9f9978160ff3afb7ea6f16b54ba63f885782872f1c456c9e6a0255093
       status: present
       warning: ""
     -
       path: docs/grace/execution-packets.xml
-      checksum_sha256: 0a43c6e0d2d396ee35637981dcb6d117f9e39b56e6c3e4cec3280159785c8e54
+      checksum_sha256: b864d098111aac15feb8b4d9cc78bbe4ff77199c22ed7e76449a55af6cde370f
       status: present
       warning: ""
   summary:
-    active_review_items: 32
-    ready_for_acceptance: 0
+    active_review_items: 39
+    ready_for_acceptance: 1
     needs_revision: 0
     pending_manual_checks: 28
-    open_user_actions: 4
+    open_user_actions: 10
     requires_user_approval: 0
     critical_audit_findings: 0
     high_audit_findings: 0
-    active_blockers: 4
+    active_blockers: 10
     audit_finding_groups: 6
-    historical_audit_findings: 368
+    historical_audit_findings: 370
     accepted_hidden_from_active_queue: 23
   post_acceptance_baseline:
     project_state: accepted_baseline
@@ -253,9 +253,9 @@ user_review_workbench:
       group_id: AUD-GIT-002
       severity: medium
       category: git_workflow
-      total_count: 8
+      total_count: 9
       current_detected_count: 0
-      historical_count: 8
+      historical_count: 9
       active_blocking: false
       source_file: docs/audit/audit-findings.yml
       recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -281,9 +281,9 @@ user_review_workbench:
       group_id: AUD-GIT-006
       severity: medium
       category: git_workflow
-      total_count: 15
+      total_count: 16
       current_detected_count: 0
-      historical_count: 15
+      historical_count: 16
       active_blocking: false
       source_file: docs/audit/audit-findings.yml
       recommendation: "Historical findings are preserved but hidden from active_review_items while current_detected=false."
@@ -319,7 +319,7 @@ user_review_workbench:
       title: "Проверить наличие docs/project-plan.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-001
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -370,7 +370,7 @@ user_review_workbench:
       title: "Проверить наличие docs/artifact-registry.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-002
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -421,7 +421,7 @@ user_review_workbench:
       title: "Проверить, что accepted_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-004-003
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -472,7 +472,7 @@ user_review_workbench:
       title: "Проверить, что open questions отображаются в user-action-dashboard"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-004
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -527,7 +527,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-001
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -576,7 +576,7 @@ user_review_workbench:
       title: "Проверить наличие verification-dashboard.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-002
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -625,7 +625,7 @@ user_review_workbench:
       title: "Проверить, что manual checks не отмечены Codex как passed"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-003
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -676,7 +676,7 @@ user_review_workbench:
       title: "Проверить, что checked_by не может быть Codex"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-004
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -727,7 +727,7 @@ user_review_workbench:
       title: "Проверить, что verification dashboard связан с протоколом тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-007-005
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -780,7 +780,7 @@ user_review_workbench:
       title: "Проверить наличие docs/dissertation/README.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-001
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -829,7 +829,7 @@ user_review_workbench:
       title: "Проверить наличие forbidden-claims.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-002
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -878,7 +878,7 @@ user_review_workbench:
       title: "Проверить, что acceptance_decision остается pending"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-006
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -929,7 +929,7 @@ user_review_workbench:
       title: "Проверить Language policy в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-004
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -978,7 +978,7 @@ user_review_workbench:
       title: "Проверить Audit discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-005
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1027,7 +1027,7 @@ user_review_workbench:
       title: "Проверить preservation audit findings"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-008
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1082,7 +1082,7 @@ user_review_workbench:
       title: "Проверить Git workflow discipline в AGENTS.md"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-002
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1131,7 +1131,7 @@ user_review_workbench:
       title: "Проверить branch naming policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-003
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1180,7 +1180,7 @@ user_review_workbench:
       title: "Проверить merge policy"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-004
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1231,7 +1231,7 @@ user_review_workbench:
       title: "Проверить, что validator не выполняет Git mutations"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-011-008
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1272,6 +1272,300 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script применяет только acceptance decisions."
     -
+      id: USER-ACTION-DR-MW-FSNB-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует source version evidence для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-FSNB-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-FSNB-001"
+      risks:
+        []
+      required_user_action: "Source version metadata с authority, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-MW-GESN-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует источник candidate norm для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-GESN-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-GESN-001"
+      risks:
+        []
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-MW-KSI-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует источник classifier result для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-KSI-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/ksi/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-KSI-001"
+      risks:
+        []
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-MW-NORMUNIT-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует normative unit evidence для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-NORMUNIT-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-NORMUNIT-001"
+      risks:
+        []
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-MW-RESCOMP-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует resource composition evidence для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-RESCOMP-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-RESCOMP-001"
+      risks:
+        []
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
+      id: USER-ACTION-DR-MW-WORKCOMP-001
+      type: user_action
+      priority: high
+      status: open
+      packet_id: ""
+      title: "Отсутствует work composition evidence для draft matching workspace"
+      source_file: data/questions/data-requirements.yml
+      source_id: DR-MW-WORKCOMP-001
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
+      acceptance_report: ""
+      related_artifacts:
+        -
+          path: data/reference/inbox/fsnb/
+      commands:
+        []
+      acceptance_criteria:
+        []
+      blockers:
+        -
+          id: BLOCK-001
+          text: "activation evidence slot DR-MW-WORKCOMP-001"
+      risks:
+        []
+      required_user_action: "Source file или source reference с authority, version, checksum, acquisition note и review decision."
+      how_to_check:
+        -
+          step: "Открыть data/questions/data-requirements.yml."
+      expected_result:
+        -
+          result: "Пользователь заполняет профильные поля ответа в source file."
+      target_decision_file: data/questions/data-requirements.yml
+      target_fields_to_fill:
+        -
+          field: resolution
+        -
+          field: answered_by
+        -
+          field: answered_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Первый apply script не применяет user actions."
+    -
       id: USER-ACTION-DR-REF-FSNB-001
       type: user_action
       priority: high
@@ -1280,7 +1574,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник ФСНБ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-FSNB-001
-      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
       acceptance_report: ""
       related_artifacts:
         -
@@ -1329,7 +1623,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник КСИ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-KSI-001
-      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
       acceptance_report: ""
       related_artifacts:
         -
@@ -1378,7 +1672,7 @@ user_review_workbench:
       title: "Требуется локальный официальный или проектно разрешенный источник видов работ"
       source_file: data/questions/data-requirements.yml
       source_id: DR-REF-WORK-TYPES-001
-      source_checksum_sha256: 9395750e7aa65bf23d917ad1c0ea13e874537eea059a90de516bb6b63345ffd7
+      source_checksum_sha256: 4242f11210a5fe37b283720347ab287ad464c2633a61107bf834adc1f376218a
       acceptance_report: ""
       related_artifacts:
         -
@@ -1468,6 +1762,182 @@ user_review_workbench:
         can_apply: false
         reason: "Первый apply script не применяет user actions."
     -
+      id: ACCEPTANCE-EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+      type: acceptance
+      priority: medium
+      status: ready_for_acceptance
+      packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+      title: "Evidence-gated matching workspace"
+      source_file: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      source_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+      source_checksum_sha256: 279bf6cbe25d1300e8e79cbc50c171ddb6c0d0c97aba95b5f1ab305e4f9870be
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      related_artifacts:
+        -
+          path: docs/matching-workspace/README.md
+        -
+          path: docs/matching-workspace/evidence-gated-workflow.md
+        -
+          path: schemas/domain/matching-workspace-session.schema.yml
+        -
+          path: schemas/domain/matching-workspace-group.schema.yml
+        -
+          path: schemas/domain/evidence-slot.schema.yml
+        -
+          path: schemas/domain/calculation-unit-candidate.schema.yml
+        -
+          path: schemas/domain/work-quantity.schema.yml
+        -
+          path: schemas/domain/work-package.schema.yml
+        -
+          path: schemas/domain/actual-record.schema.yml
+        -
+          path: schemas/domain/plan-fact-comparison.schema.yml
+        -
+          path: examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml
+        -
+          path: scripts/validate_matching_workspace.py
+        -
+          path: tests/test_validate_matching_workspace.py
+        -
+          path: docs/monthly/2026-09/monthly-plan.yml
+        -
+          path: docs/monthly/2026-09/01-business-functional-requirements.md
+        -
+          path: docs/monthly/2026-09/02-technical-specification.md
+        -
+          path: docs/monthly/2026-09/03-test-protocol-matching-workspace.md
+        -
+          path: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+        -
+          path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+      commands:
+        []
+      acceptance_criteria:
+        -
+          id: AC-EP-025-001
+          text: "Strict baseline после EP-024 acceptance совпал перед стартом EP-025."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-002
+          text: "Создан docs/matching-workspace контур с README и evidence-gated workflow."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-003
+          text: "Созданы domain schemas для draft matching workspace."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-004
+          text: "Создан vertical scenario для кирпичной армированной перегородки 120 мм."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-005
+          text: "Vertical scenario имеет status draft_requires_data, normative_status not_active, evidence_status missing_official_sources и activation_allowed false."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-006
+          text: "Official classifier/normative fields остаются null/placeholders с requires_official_source true."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-007
+          text: "Для missing official fields созданы structured data requirements."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-008
+          text: "Validator запрещает direct forbidden domain edges."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-009
+          text: "Validator запрещает active status и activation_allowed true при missing evidence."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-010
+          text: "Validator запрещает LLM-generated, forbidden authority и user decision evidence для official fields."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-011
+          text: "Validator требует WorkPackage context для WorkQuantity, ScheduleTask, ActualRecord и PlanFactComparison."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-012
+          text: "Создан monthly block 2026-09 с тремя задачами по 15 часов."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-013
+          text: "make verify и make check проходят."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-014
+          text: "README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md и docs/02-domain-model.md не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-015
+          text: "Accepted reports других EP не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-016
+          text: "Нормативные данные, active matching rules и customer data не добавлены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-017
+          text: "User-owned fields не заполнены Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-018
+          text: "EP-025 остается ready_for_acceptance и не добавлен в accepted_packets."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      blockers:
+        []
+      risks:
+        []
+      required_user_action: "Проверить acceptance report, выполнить команды и заполнить решение пользователя."
+      how_to_check:
+        -
+          step: "Открыть acceptance report."
+        -
+          step: "Проверить критерии приемки, артефакты, блокеры и риски."
+        -
+          step: "Выполнить указанные команды проверки."
+      expected_result:
+        -
+          result: "Пользователь вручную принимает решение в workbench или непосредственно в acceptance report."
+      target_decision_file: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      target_fields_to_fill:
+        -
+          field: acceptance_decision
+        -
+          field: accepted_by
+        -
+          field: accepted_at
+        -
+          field: comments
+      user_decision:
+        acceptance_decision: pending
+        accepted_by: ""
+        accepted_at: ""
+        comments: ""
+      apply_policy:
+        can_apply: false
+        reason: "Заполните user_decision и примените через scripts/apply_user_review_decisions.py."
+    -
       id: VERIFICATION-VT-EP-005-003
       type: manual_verification
       priority: medium
@@ -1476,7 +1946,7 @@ user_review_workbench:
       title: "Проверить, что accepted artifacts отображаются как protected"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-005-003
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1529,7 +1999,7 @@ user_review_workbench:
       title: "Проверить наличие monthly-plan.yml"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-001
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1578,7 +2048,7 @@ user_review_workbench:
       title: "Проверить, что месячный блок содержит ровно 3 задачи"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-002
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1629,7 +2099,7 @@ user_review_workbench:
       title: "Проверить, что каждая задача имеет 15 человеко-часов"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-003
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1680,7 +2150,7 @@ user_review_workbench:
       title: "Проверить наличие БФТ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-004
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1729,7 +2199,7 @@ user_review_workbench:
       title: "Проверить наличие ТЗ"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-005
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1778,7 +2248,7 @@ user_review_workbench:
       title: "Проверить наличие протокола тестирования"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-006-006
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1827,7 +2297,7 @@ user_review_workbench:
       title: "Проверить защиту accepted/protected artifacts"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-008-007
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -
@@ -1880,7 +2350,7 @@ user_review_workbench:
       title: "Проверить, что EP-009 не mass-rewrite packet"
       source_file: docs/verification-dashboard.yml
       source_id: VT-EP-009-010
-      source_checksum_sha256: 9d610e7cf3122bb425953e33179643aa133ac703c3d3150a3658d5e57b0ee14f
+      source_checksum_sha256: 2f41c4d4b1412c3d8c6bc86682a5c8f82dc7e027a5c278c653f5d43bac9bf253
       acceptance_report: ""
       related_artifacts:
         -

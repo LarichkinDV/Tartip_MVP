@@ -1,17 +1,17 @@
 acceptance_dashboard:
-  updated_at: 2026-06-13
+  updated_at: 2026-06-14
   source_files:
     - docs/grace/execution-packets.xml
     - docs/artifact-registry.yml
     - docs/acceptance/
     - docs/status-report.md
   summary:
-    ready_for_acceptance: 0
+    ready_for_acceptance: 1
     accepted: 23
     needs_revision: 0
     rejected: 0
     blocked: 0
-    pending: 0
+    pending: 1
     protected_accepted_artifacts: 39
   post_acceptance_baseline:
     project_state: accepted_baseline
@@ -4849,3 +4849,293 @@ acceptance_dashboard:
         decided_by: "Дмитрий"
         decided_at: 2026-06-13
         comments: "Принято. Проверено: создан schema-first/documentation-first контур добровольной передачи, обезличивания и агрегации данных; реальные данные работодателя/Заказчика не добавлены; телеметрия, dataset contribution, external upload, AI training и commercial use отключены по умолчанию; examples являются synthetic-only; commercial_use_allowed=true допускается только для synthetic approved aggregate; protected/manual artifacts и accepted reports других EP не изменены; BIM-КСИ-ГЭСН методика и нормативные данные не изменены; user-owned поля Codex не заполнял; make verify и make check прошли."
+    -
+      packet_id: EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE
+      title: "Evidence-gated matching workspace"
+      status: ready_for_acceptance
+      acceptance_owner: "Дмитрий"
+      acceptance_decision: pending
+      acceptance_report: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+      artifacts:
+        -
+          path: docs/matching-workspace/README.md
+          status: active
+          type: documentation
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/matching-workspace/evidence-gated-workflow.md
+          status: active
+          type: documentation
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/matching-workspace-session.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/matching-workspace-group.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/evidence-slot.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/calculation-unit-candidate.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/work-quantity.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/work-package.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/actual-record.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: schemas/domain/plan-fact-comparison.schema.yml
+          status: active
+          type: schema
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: examples/vertical-scenarios/partition-brick-120-reinf.workspace.yml
+          status: active
+          type: example_data
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: scripts/validate_matching_workspace.py
+          status: active
+          type: script
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: script
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: tests/test_validate_matching_workspace.py
+          status: active
+          type: test
+          acceptance_status: pending
+          protection_status: not_protected_code
+          source_category: test
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-09/monthly-plan.yml
+          status: active
+          type: monthly_plan
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-09/01-business-functional-requirements.md
+          status: active
+          type: monthly_document
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-09/02-technical-specification.md
+          status: active
+          type: monthly_document
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/monthly/2026-09/03-test-protocol-matching-workspace.md
+          status: active
+          type: monthly_test_protocol
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_manual
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-025-EVIDENCE-GATED-MATCHING-WORKSPACE.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: not_protected_pending
+          source_category: source_acceptance
+          change_requires_user_approval: false
+          protection_locked: false
+        -
+          path: docs/acceptance/EP-002-REFERENCE-GOVERNANCE.acceptance.md
+          status: active
+          type: acceptance_report
+          acceptance_status: pending
+          protection_status: protected
+          source_category: source_acceptance
+          change_requires_user_approval: true
+          protection_locked: true
+      verification_commands:
+        []
+      acceptance_criteria:
+        -
+          id: AC-EP-025-001
+          text: "Strict baseline после EP-024 acceptance совпал перед стартом EP-025."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-002
+          text: "Создан docs/matching-workspace контур с README и evidence-gated workflow."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-003
+          text: "Созданы domain schemas для draft matching workspace."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-004
+          text: "Создан vertical scenario для кирпичной армированной перегородки 120 мм."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-005
+          text: "Vertical scenario имеет status draft_requires_data, normative_status not_active, evidence_status missing_official_sources и activation_allowed false."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-006
+          text: "Official classifier/normative fields остаются null/placeholders с requires_official_source true."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-007
+          text: "Для missing official fields созданы structured data requirements."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-008
+          text: "Validator запрещает direct forbidden domain edges."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-009
+          text: "Validator запрещает active status и activation_allowed true при missing evidence."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-010
+          text: "Validator запрещает LLM-generated, forbidden authority и user decision evidence для official fields."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-011
+          text: "Validator требует WorkPackage context для WorkQuantity, ScheduleTask, ActualRecord и PlanFactComparison."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-012
+          text: "Создан monthly block 2026-09 с тремя задачами по 15 часов."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-013
+          text: "make verify и make check проходят."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-014
+          text: "README.md, CHANGELOG.md, AGENTS.md, docs/01-methodology.md и docs/02-domain-model.md не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-015
+          text: "Accepted reports других EP не изменены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-016
+          text: "Нормативные данные, active matching rules и customer data не добавлены."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-017
+          text: "User-owned fields не заполнены Codex."
+          codex_status: ready_for_acceptance
+          user_status: pending
+        -
+          id: AC-EP-025-018
+          text: "EP-025 остается ready_for_acceptance и не добавлен в accepted_packets."
+          codex_status: ready_for_acceptance
+          user_status: pending
+      user_checklist:
+        -
+          item: "Open the detailed acceptance report."
+        -
+          item: "Review artifacts and criteria."
+        -
+          item: "Run verification commands."
+        -
+          item: "Fill user decision fields manually."
+      blockers:
+        []
+      risks:
+        []
+      user_decision:
+        decision: pending
+        decided_by: ""
+        decided_at: ""
+        comments: ""
